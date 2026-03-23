@@ -1,0 +1,84 @@
+[
+  {
+    "slug": "gynzy-education-platform",
+    "title": "Gynzy Education Platform",
+    "shortDescription": "Cross-platform educational software built with Flutter and Ember.js for classrooms.",
+    "description": "Contributing to Gynzy's interactive education platform used by teachers and students. Working as a fullstack medior developer building features across the Flutter mobile/desktop app and the Ember.js web application. Focus on delivering intuitive, reliable tools for classroom use.",
+    "image": "/images/logo-gynzy.svg",
+    "techStack": ["Flutter", "Ember.js", "Dart", "JavaScript"],
+    "features": [
+      "Cross-platform development with Flutter",
+      "Interactive web application with Ember.js",
+      "Educational tools for classroom use",
+      "Hybrid team collaboration"
+    ],
+    "liveUrl": "",
+    "githubUrl": ""
+  },
+  {
+    "slug": "azure-devops-pipelines",
+    "title": "Cloud Infrastructure & CI/CD",
+    "shortDescription": "Azure cloud solutions and DevOps pipelines across multiple enterprise clients.",
+    "description": "Designed and maintained cloud infrastructure and CI/CD pipelines for six enterprise clients at Info Support — including Air Miles, Moba Group, and Agrifac Machinery. Built infrastructure-as-code with Bicep, automated deployments via Azure DevOps, and developed .NET microservices running on Azure Functions.",
+    "image": "",
+    "techStack": ["Azure", "Bicep", "Azure DevOps", "C#", ".NET", "Azure Functions"],
+    "features": [
+      "Infrastructure-as-code with Bicep",
+      "Automated CI/CD pipelines in Azure DevOps",
+      "Serverless functions with Azure Functions",
+      ".NET microservice architecture",
+      "Multi-client enterprise delivery"
+    ],
+    "liveUrl": "",
+    "githubUrl": ""
+  },
+  {
+    "slug": "hololens-ar-workspaces",
+    "title": "HoloLens AR Workspaces",
+    "shortDescription": "Virtual screens in augmented reality on the Microsoft HoloLens 2 for remote workers.",
+    "description": "Built an augmented reality application for the Microsoft HoloLens 2 that creates virtual screens for remote office workers. The project explored how AR can replace physical monitors, enabling flexible workspaces anywhere. Developed with Unity3D, C#, UWP, and the Mixed Reality Toolkit.",
+    "image": "/images/logo-ictgroup.svg",
+    "techStack": ["Unity3D", "C#", "UWP", "MRTK", "HoloLens 2"],
+    "features": [
+      "Virtual screen placement in AR space",
+      "Hand tracking and gesture interaction via MRTK",
+      "Spatial anchoring for persistent screen positions",
+      "Built for Microsoft HoloLens 2"
+    ],
+    "liveUrl": "",
+    "githubUrl": ""
+  },
+  {
+    "slug": "react-native-mobile-app",
+    "title": "Mobile App — Colours Agency",
+    "shortDescription": "Cross-platform mobile application built with React Native at a digital agency.",
+    "description": "Developed a cross-platform mobile application during an internship at Colours, a digital agency in 's-Hertogenbosch. Gained hands-on experience building production React Native apps, working within a professional team, and delivering for real clients.",
+    "image": "",
+    "techStack": ["React Native", "JavaScript", "Mobile Development"],
+    "features": [
+      "Cross-platform iOS and Android app",
+      "React Native with native modules",
+      "Professional agency workflow",
+      "Client-facing deliverable"
+    ],
+    "liveUrl": "",
+    "githubUrl": ""
+  },
+  {
+    "slug": "developer-portfolio",
+    "title": "This Portfolio",
+    "shortDescription": "The site you're looking at — built with React, Three.js, and Framer Motion.",
+    "description": "A bold, modern developer portfolio featuring a 3D interactive hero, theme switching, scroll-driven animations, and responsive design. Built to showcase fullstack development skills.",
+    "image": "",
+    "techStack": ["React", "Three.js", "Framer Motion", "CSS Modules", "Vite"],
+    "features": [
+      "3D interactive hero with React Three Fiber",
+      "4-theme switcher with localStorage persistence",
+      "Scroll-driven reveal animations",
+      "Responsive design with mobile-first approach",
+      "Page transitions with AnimatePresence"
+    ],
+    "liveUrl": "",
+    "githubUrl": ""
+  }
+]

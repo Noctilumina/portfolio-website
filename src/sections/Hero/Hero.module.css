@@ -1,0 +1,62 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.content {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.accentBlock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110%;
+  height: 70%;
+  background: var(--color-primary);
+  border: 0.25em solid var(--color-border);
+  border-radius: 0.3em;
+  box-shadow: 0.5em 0.5em 0 var(--color-shadow, #000);
+  z-index: -1;
+  transform-origin: left center;
+}
+
+.name {
+  font-size: clamp(3rem, 10vw, 7rem);
+  font-weight: 700;
+  color: var(--color-surface);
+  line-height: 1;
+  margin-bottom: 0.3em;
+  text-shadow: 0.04em 0.04em 0 var(--color-border);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.tagline {
+  font-size: clamp(1rem, 3vw, 1.8rem);
+  font-family: var(--font-heading);
+  color: var(--color-text);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.developerWord {
+  color: var(--color-surface);
+}
+
+.decorLine {
+  margin: 1.5em auto 0;
+  width: 4em;
+  height: 0.25em;
+  background: #000000;
+  border: 0.1em solid var(--color-border);
+  transform-origin: left center;
+}

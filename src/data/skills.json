@@ -1,0 +1,32 @@
+{
+  "Frontend": [
+    { "name": "Flutter", "icon": "📱" },
+    { "name": "Ember.js", "icon": "🐹" },
+    { "name": "React / React Native", "icon": "⚛️" },
+    { "name": "Angular", "icon": "🅰️" },
+    { "name": "TypeScript", "icon": "📘" },
+    { "name": "JavaScript", "icon": "🟨" },
+    { "name": "HTML / CSS", "icon": "🌐" },
+    { "name": "jQuery", "icon": "📜" }
+  ],
+  "Backend": [
+    { "name": "C# / .NET", "icon": "🟪" },
+    { "name": "ASP.NET", "icon": "🔷" },
+    { "name": "Entity Framework", "icon": "🗄️" },
+    { "name": "SQL / T-SQL", "icon": "🐘" },
+    { "name": "SQL Server", "icon": "💾" },
+    { "name": "REST APIs", "icon": "🔗" },
+    { "name": "PHP", "icon": "🐘" },
+    { "name": "Java", "icon": "☕" }
+  ],
+  "DevOps & Tools": [
+    { "name": "Azure", "icon": "☁️" },
+    { "name": "Azure DevOps", "icon": "🔄" },
+    { "name": "Azure Functions", "icon": "⚡" },
+    { "name": "Bicep / IaC", "icon": "🏗️" },
+    { "name": "Docker", "icon": "🐳" },
+    { "name": "CI/CD", "icon": "🚀" },
+    { "name": "Git / GitHub", "icon": "🔀" },
+    { "name": "Unity3D", "icon": "🎮" }
+  ]
+}

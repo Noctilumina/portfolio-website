@@ -1,0 +1,233 @@
+.card {
+  --card-radius: 0.6em;
+  --shadow: #000000;
+
+  display: block;
+  position: relative;
+  background: var(--card-bg, var(--color-surface));
+  border: 0.35em solid var(--shadow);
+  border-radius: var(--card-radius);
+  box-shadow:
+    0.7em 0.7em 0 var(--shadow),
+    inset 0 0 0 0.15em rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  overflow: hidden;
+  cursor: pointer;
+  transform-origin: center;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card:hover,
+.card:focus-visible {
+  transform: translate(-0.4em, -0.4em) scale(1.02);
+  box-shadow: 1em 1em 0 var(--shadow);
+  outline: none;
+}
+
+.card:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.card:active {
+  transform: translate(0.1em, 0.1em) scale(0.98);
+  box-shadow: 0.5em 0.5em 0 var(--shadow);
+}
+
+/* Corner accent triangle — positioned via inline styles */
+.cornerTriangle {
+  position: absolute;
+  width: 4em;
+  height: 4em;
+  background: #00E5A0;
+  border: 0.15em solid var(--shadow);
+  border-radius: 0.3em;
+  transform: rotate(45deg);
+  z-index: 3;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .cornerTriangle {
+  transform: rotate(55deg) scale(1.05);
+}
+
+/* Grid pattern overlay */
+.patternGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 0.5em 0.5em;
+  pointer-events: none;
+  opacity: 0.5;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.card:hover .patternGrid {
+  opacity: 1;
+}
+
+/* Dot overlay on hover */
+.overlayDots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 1em 1em;
+  background-position: -0.5em -0.5em;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.card:hover .overlayDots {
+  opacity: 1;
+}
+
+/* Title area */
+.titleArea {
+  position: relative;
+  padding: 1.4em;
+  background: var(--color-secondary);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.35em solid var(--shadow);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.titleArea::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.1) 0.5em,
+    transparent 0.5em,
+    transparent 1em
+  );
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.titleText {
+  position: relative;
+  z-index: 1;
+}
+
+/* Logo area */
+.imageWrapper {
+  width: 100%;
+  height: 160px;
+  background: rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: var(--card-text, var(--color-text));
+  opacity: 0.7;
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+  border-bottom: 0.35em solid var(--shadow);
+}
+
+.logo {
+  max-height: 70px;
+  max-width: 80%;
+  object-fit: contain;
+}
+
+/* Body */
+.body {
+  position: relative;
+  padding: 1.5em;
+  z-index: 2;
+}
+
+.description {
+  font-size: 0.95em;
+  color: var(--card-muted, var(--color-muted));
+  margin-bottom: 1.5em;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  font-size: 0.6em;
+  font-weight: 800;
+  padding: 0.4em 0.8em;
+  background: var(--card-bg, var(--color-surface));
+  color: var(--card-tag-text, var(--color-primary));
+  border: 0.15em solid var(--shadow);
+  border-radius: 0.3em;
+  box-shadow: 0.2em 0.2em 0 var(--shadow);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Accent shapes — positioned via inline styles, matching original border style */
+.accentShape {
+  position: absolute;
+  width: 2.5em;
+  height: 2.5em;
+  background: #00E5A0;
+  border: 0.15em solid var(--shadow);
+  border-radius: 0.3em;
+  transform: rotate(45deg);
+  z-index: 0;
+  transition: transform 0.3s ease;
+}
+
+.accentShapeSmall {
+  position: absolute;
+  width: 1.4em;
+  height: 1.4em;
+  background: #FFD700;
+  border: 0.15em solid var(--shadow);
+  border-radius: 0.3em;
+  transform: rotate(45deg);
+  z-index: 0;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .accentShape {
+  transform: rotate(55deg) scale(1.1);
+}
+
+.card:hover .accentShapeSmall {
+  transform: rotate(35deg) scale(1.15);
+}
+
+/* Corner slice — positioned via inline styles */
+.cornerSlice {
+  position: absolute;
+  width: 1.5em;
+  height: 1.5em;
+  background: var(--card-bg, var(--color-surface));
+  z-index: 3;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .cornerSlice {
+  transform: rotate(5deg) scale(1.1);
+}

@@ -1,0 +1,106 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 500px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: var(--font-heading);
+  color: var(--color-text);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.input,
+.textarea {
+  padding: 0.75rem 1rem;
+  background: var(--color-surface);
+  border: 0.15em solid var(--color-border);
+  border-radius: 0.3em;
+  box-shadow: 0.25em 0.25em 0 var(--color-shadow, #000);
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+  outline: none;
+}
+
+.input:focus,
+.textarea:focus {
+  transform: translate(-0.1em, -0.1em);
+  box-shadow: 0.35em 0.35em 0 var(--color-shadow, #000);
+  border-color: var(--color-primary);
+}
+
+.textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.button {
+  --button_radius: 0.3em;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--button_radius);
+  background: var(--color-border);
+  align-self: flex-start;
+  padding: 0;
+}
+
+.buttonTop {
+  display: block;
+  box-sizing: border-box;
+  border: 0.15em solid var(--color-border);
+  border-radius: var(--button_radius);
+  padding: 0.75em 1.5em;
+  background: var(--color-primary);
+  color: #ffffff;
+  transform: translateY(-0.2em);
+  transition: transform 0.1s ease;
+}
+
+.button:hover .buttonTop {
+  transform: translateY(-0.33em);
+}
+
+.button:active .buttonTop {
+  transform: translateY(0);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button:disabled .buttonTop {
+  transform: translateY(-0.2em);
+}
+
+.success {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.error {
+  color: #c62828;
+  font-weight: 600;
+}
+
+.button:focus-visible .buttonTop {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}

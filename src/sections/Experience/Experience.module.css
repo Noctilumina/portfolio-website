@@ -1,0 +1,46 @@
+.section {
+  padding: 6rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tinted {
+  max-width: 100%;
+  background: var(--color-secondary);
+  --tl-text: #1a1a1a;
+  --tl-muted: #666666;
+  --tl-accent: var(--color-primary);
+  --tl-border: #000000;
+  --tl-shadow: rgba(0, 0, 0, 0.4);
+  --tl-dot-bg: #ffffff;
+  --tl-dot-border: var(--color-secondary);
+  --tl-dot-shadow: #ffffff;
+}
+
+.tinted > * {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heading {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 3rem;
+  color: #ffffff;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 2rem;
+  bottom: 0;
+  width: 3px;
+  background: var(--tl-border, var(--color-border));
+}

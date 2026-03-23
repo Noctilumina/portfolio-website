@@ -1,0 +1,51 @@
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.9rem;
+  background: var(--color-primary);
+  border: 0.15em solid var(--color-border);
+  border-radius: 0.3em;
+  box-shadow: 0.2em 0.2em 0 var(--color-shadow, #000);
+  font-size: 0.85rem;
+  color: var(--color-text);
+  user-select: none;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s, color 0.3s;
+}
+
+/* Inner fill that wipes away on hover to reveal the primary color behind */
+.badge::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-surface);
+  z-index: -1;
+  transform-origin: right;
+  transition: transform 0.4s ease;
+}
+
+.badge:hover {
+  transform: translate(-0.1em, -0.1em);
+  box-shadow: 0.3em 0.3em 0 var(--color-shadow, #000);
+  color: #ffffff;
+}
+
+.badge:hover::after {
+  transform: scaleX(0);
+}
+
+.icon {
+  font-size: 1rem;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.name {
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+}
