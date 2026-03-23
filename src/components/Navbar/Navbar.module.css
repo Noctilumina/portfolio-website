@@ -96,8 +96,14 @@
 .navLink:hover::after,
 .navLink:hover::before,
 .navLink:focus-visible::after,
-.navLink:focus-visible::before {
+.navLink:focus-visible::before,
+.navLinkActive::after,
+.navLinkActive::before {
   width: 100%;
+}
+
+.navLinkActive {
+  color: var(--color-primary);
 }
 
 .hamburger {
@@ -165,7 +171,8 @@
   cursor: pointer;
 }
 
-.mobileLink:hover {
+.mobileLink:hover,
+.mobileLinkActive {
   color: var(--color-primary);
 }
 

@@ -15,6 +15,7 @@ export default function Navbar() {
   const [hidden, setHidden] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [activeSection, setActiveSection] = useState('hero');
   const location = useLocation();
   const { startTransition } = usePageTransition();
   const hamburgerRef = useRef(null);
@@ -30,9 +31,37 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
+  // Track which section is currently in view on the home page
+  useEffect(() => {
+    if (location.pathname !== '/') return;
+
+    const sectionIds = NAV_ITEMS.map((item) => item.target);
+
+    const updateActive = () => {
+      const offset = 150;
+      let current = sectionIds[0];
+
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= offset) {
+          current = id;
+        }
+      }
+
+      setActiveSection(current);
+    };
+
+    updateActive();
+    window.addEventListener('scroll', updateActive, { passive: true });
+    return () => window.removeEventListener('scroll', updateActive);
+  }, [location.pathname]);
+
+  const isOnAbout = location.pathname === '/about';
+  const isOnHome = location.pathname === '/';
+
   const scrollToSection = (target) => {
     setMobileOpen(false);
-    if (location.pathname !== '/') {
+    if (!isOnHome) {
       startTransition('/', { state: { scrollTo: target } });
       return;
     }
@@ -62,17 +91,19 @@ export default function Navbar() {
           {NAV_ITEMS.map((item) => (
             <button
               key={item.target}
-              className={styles.navLink}
+              className={`${styles.navLink} ${isOnHome && activeSection === item.target ? styles.navLinkActive : ''}`}
               onClick={() => scrollToSection(item.target)}
               role="listitem"
+              aria-current={isOnHome && activeSection === item.target ? 'true' : undefined}
             >
               {item.label}
             </button>
           ))}
           <button
-            className={styles.navLink}
+            className={`${styles.navLink} ${isOnAbout ? styles.navLinkActive : ''}`}
             onClick={() => { setMobileOpen(false); startTransition('/about'); }}
             role="listitem"
+            aria-current={isOnAbout ? 'page' : undefined}
           >
             About
           </button>
@@ -101,7 +132,7 @@ export default function Navbar() {
         {NAV_ITEMS.map((item) => (
           <button
             key={item.target}
-            className={styles.mobileLink}
+            className={`${styles.mobileLink} ${isOnHome && activeSection === item.target ? styles.mobileLinkActive : ''}`}
             onClick={() => { scrollToSection(item.target); closeMobileMenu(); }}
             tabIndex={mobileOpen ? 0 : -1}
           >
@@ -109,7 +140,7 @@ export default function Navbar() {
           </button>
         ))}
         <button
-          className={styles.mobileLink}
+          className={`${styles.mobileLink} ${isOnAbout ? styles.mobileLinkActive : ''}`}
           onClick={() => { closeMobileMenu(); startTransition('/about'); }}
           tabIndex={mobileOpen ? 0 : -1}
         >
