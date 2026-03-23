@@ -6,6 +6,8 @@
     { "name": "Angular", "icon": "🅰️" },
     { "name": "TypeScript", "icon": "📘" },
     { "name": "JavaScript", "icon": "🟨" },
+    { "name": "Lit", "icon": "🔥" },
+    { "name": "Gatsby", "icon": "🟣" },
     { "name": "HTML / CSS", "icon": "🌐" },
     { "name": "jQuery", "icon": "📜" }
   ],
@@ -27,6 +29,7 @@
     { "name": "Docker", "icon": "🐳" },
     { "name": "CI/CD", "icon": "🚀" },
     { "name": "Git / GitHub", "icon": "🔀" },
+    { "name": "Storyblok", "icon": "📦" },
     { "name": "Unity3D", "icon": "🎮" }
   ]
 }

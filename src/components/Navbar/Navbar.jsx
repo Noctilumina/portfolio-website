@@ -69,6 +69,13 @@ export default function Navbar() {
               {item.label}
             </button>
           ))}
+          <button
+            className={styles.navLink}
+            onClick={() => { setMobileOpen(false); startTransition('/about'); }}
+            role="listitem"
+          >
+            About
+          </button>
         </div>
         <button
           ref={hamburgerRef}
@@ -101,6 +108,13 @@ export default function Navbar() {
             {item.label}
           </button>
         ))}
+        <button
+          className={styles.mobileLink}
+          onClick={() => { closeMobileMenu(); startTransition('/about'); }}
+          tabIndex={mobileOpen ? 0 : -1}
+        >
+          About
+        </button>
       </div>
     </>
   );

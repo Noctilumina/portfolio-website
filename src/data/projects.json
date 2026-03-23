@@ -5,7 +5,7 @@
     "shortDescription": "Cross-platform educational software built with Flutter and Ember.js for classrooms.",
     "description": "Contributing to Gynzy's interactive education platform used by teachers and students. Working as a fullstack medior developer building features across the Flutter mobile/desktop app and the Ember.js web application. Focus on delivering intuitive, reliable tools for classroom use.",
     "image": "/images/classroom_banner.gif",
-    "techStack": ["Flutter", "Ember.js", "Dart", "JavaScript"],
+    "techStack": ["Flutter", "Ember.js", "Lit", "Gatsby", "Storyblok", "Dart", "JavaScript"],
     "features": [
       "Cross-platform development with Flutter",
       "Interactive web application with Ember.js",

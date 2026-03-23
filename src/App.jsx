@@ -5,6 +5,7 @@ import { DitherCanvas } from './components/PageTransition/PageTransition';
 import Navbar from './components/Navbar/Navbar';
 import Home from './pages/Home';
 import ProjectDetail from './pages/ProjectDetail/ProjectDetail';
+import About from './pages/About/About';
 import styles from './App.module.css';
 
 const TransitionContext = createContext();
@@ -95,6 +96,7 @@ const router = createBrowserRouter(
       children: [
         { path: '/', element: <Home /> },
         { path: '/project/:slug', element: <ProjectDetail /> },
+        { path: '/about', element: <About /> },
       ],
     },
   ],
