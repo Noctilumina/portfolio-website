@@ -4,20 +4,20 @@ import styles from './ProjectCard.module.css';
 const LAYOUTS = [
   {
     corner: { top: '-0.8em', right: '-0.8em' },
-    accent: { bottom: '-1.1em', right: '1.5em' },
-    accentSmall: { bottom: '0.4em', right: '4.5em' },
+    accent: { bottom: '-0.8em', right: '1.5em' },
+    accentSmall: { bottom: '1em', right: '4.5em' },
     slice: { bottom: 0, left: 0, borderRight: '0.15em solid #000', borderTop: '0.15em solid #000', borderRadius: '0 0.4em 0 0' },
   },
   {
     corner: { bottom: '-0.8em', right: '-0.8em' },
-    accent: { top: '-1.1em', right: '2em' },
-    accentSmall: { top: '4em', left: '0.3em' },
+    accent: { top: '-0.8em', right: '2em' },
+    accentSmall: { top: '4em', left: '0.5em' },
     slice: { top: 0, left: 0, borderRight: '0.15em solid #000', borderBottom: '0.15em solid #000', borderRadius: '0 0 0.4em 0' },
   },
   {
     corner: { top: '-0.8em', right: '3em' },
-    accent: { bottom: '-1.1em', left: '2em' },
-    accentSmall: { bottom: '0.6em', right: '1.5em' },
+    accent: { bottom: '-0.8em', left: '2em' },
+    accentSmall: { bottom: '1em', right: '1.5em' },
     slice: { top: 0, right: 0, borderLeft: '0.15em solid #000', borderBottom: '0.15em solid #000', borderRadius: '0 0 0 0.4em' },
   },
 ];
