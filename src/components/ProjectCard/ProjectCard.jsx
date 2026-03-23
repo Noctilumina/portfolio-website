@@ -48,7 +48,12 @@ export default function ProjectCard({ project, index = 0 }) {
 
       <div className={styles.imageWrapper} aria-hidden="true">
         {project.image ? (
-          <img src={project.image} alt="" className={styles.logo} />
+          <img
+            src={`${import.meta.env.BASE_URL}${project.image.replace(/^\//, '')}`}
+            alt=""
+            className={styles.logo}
+            style={project.imagePosition ? { objectPosition: project.imagePosition } : undefined}
+          />
         ) : (
           project.title.charAt(0)
         )}

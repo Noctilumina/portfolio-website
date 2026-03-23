@@ -4,7 +4,7 @@
     "title": "Gynzy Education Platform",
     "shortDescription": "Cross-platform educational software built with Flutter and Ember.js for classrooms.",
     "description": "Contributing to Gynzy's interactive education platform used by teachers and students. Working as a fullstack medior developer building features across the Flutter mobile/desktop app and the Ember.js web application. Focus on delivering intuitive, reliable tools for classroom use.",
-    "image": "/images/logo-gynzy.svg",
+    "image": "/images/classroom_banner.gif",
     "techStack": ["Flutter", "Ember.js", "Dart", "JavaScript"],
     "features": [
       "Cross-platform development with Flutter",
@@ -20,7 +20,7 @@
     "title": "Cloud Infrastructure & CI/CD",
     "shortDescription": "Azure cloud solutions and DevOps pipelines across multiple enterprise clients.",
     "description": "Designed and maintained cloud infrastructure and CI/CD pipelines for six enterprise clients at Info Support — including Air Miles, Moba Group, and Agrifac Machinery. Built infrastructure-as-code with Bicep, automated deployments via Azure DevOps, and developed .NET microservices running on Azure Functions.",
-    "image": "",
+    "image": "/images/cloud_computing_banner.webp",
     "techStack": ["Azure", "Bicep", "Azure DevOps", "C#", ".NET", "Azure Functions"],
     "features": [
       "Infrastructure-as-code with Bicep",
@@ -37,7 +37,8 @@
     "title": "HoloLens AR Workspaces",
     "shortDescription": "Virtual screens in augmented reality on the Microsoft HoloLens 2 for remote workers.",
     "description": "Built an augmented reality application for the Microsoft HoloLens 2 that creates virtual screens for remote office workers. The project explored how AR can replace physical monitors, enabling flexible workspaces anywhere. Developed with Unity3D, C#, UWP, and the Mixed Reality Toolkit.",
-    "image": "/images/logo-ictgroup.svg",
+    "image": "/images/virtual_reality_banner.jpg",
+    "imagePosition": "center 60%",
     "techStack": ["Unity3D", "C#", "UWP", "MRTK", "HoloLens 2"],
     "features": [
       "Virtual screen placement in AR space",
@@ -53,7 +54,7 @@
     "title": "Mobile App — Colours Agency",
     "shortDescription": "Cross-platform mobile application built with React Native at a digital agency.",
     "description": "Developed a cross-platform mobile application during an internship at Colours, a digital agency in 's-Hertogenbosch. Gained hands-on experience building production React Native apps, working within a professional team, and delivering for real clients.",
-    "image": "",
+    "image": "/images/web_development_banner.jpg",
     "techStack": ["React Native", "JavaScript", "Mobile Development"],
     "features": [
       "Cross-platform iOS and Android app",
@@ -69,7 +70,7 @@
     "title": "This Portfolio",
     "shortDescription": "The site you're looking at — built with React, Three.js, and Framer Motion.",
     "description": "A bold, modern developer portfolio featuring a 3D interactive hero, theme switching, scroll-driven animations, and responsive design. Built to showcase fullstack development skills.",
-    "image": "",
+    "image": "/images/cat_jamming.webp",
     "techStack": ["React", "Three.js", "Framer Motion", "CSS Modules", "Vite"],
     "features": [
       "3D interactive hero with React Three Fiber",
