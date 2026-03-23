@@ -33,7 +33,18 @@ export default function ProjectDetail() {
           </button>
         </nav>
 
-        <div className={styles.banner} aria-hidden="true">{project.title.charAt(0)}</div>
+        <div className={styles.banner} aria-hidden="true">
+          {project.image ? (
+            <img
+              src={`${import.meta.env.BASE_URL}${project.image.replace(/^\//, '')}`}
+              alt=""
+              className={styles.bannerImage}
+              style={project.imagePosition ? { objectPosition: project.imagePosition } : undefined}
+            />
+          ) : (
+            project.title.charAt(0)
+          )}
+        </div>
 
         <h1 className={styles.title}>{project.title}</h1>
         <p className={styles.description}>{project.description}</p>

@@ -46,7 +46,8 @@ function TransitionProvider() {
 
     setPhase('covered');
 
-    requestAnimationFrame(() => {
+    // Wait for new route to fully mount before scrolling
+    setTimeout(() => {
       if (scrollTarget) {
         const el = document.getElementById(scrollTarget);
         if (el) {
@@ -60,7 +61,7 @@ function TransitionProvider() {
       requestAnimationFrame(() => {
         setPhase('reveal');
       });
-    });
+    }, 50);
   }, [blocker]);
 
   const handleRevealComplete = useCallback(() => {
