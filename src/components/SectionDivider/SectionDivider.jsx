@@ -1,17 +1,47 @@
-import { useMemo } from 'react';
+import { useRef, useEffect } from 'react';
 import styles from './SectionDivider.module.css';
 
 export default function SectionDivider({ flip = false, color = 'var(--color-primary)' }) {
-  const dots = useMemo(() => {
-    const result = [];
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    const w = canvas.offsetWidth;
+    const h = canvas.offsetHeight;
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    ctx.scale(dpr, dpr);
+
+    // Resolve CSS variable color
+    const temp = document.createElement('div');
+    temp.style.color = color;
+    document.body.appendChild(temp);
+    const resolved = getComputedStyle(temp).color;
+    document.body.removeChild(temp);
+
+    ctx.fillStyle = resolved;
+
+    // Draw solid polygon below diagonal
+    const diagY0 = h;
+    const diagY1 = h * 0.4;
+    ctx.beginPath();
+    ctx.moveTo(0, diagY0);
+    ctx.lineTo(w, diagY1);
+    ctx.lineTo(w, h);
+    ctx.closePath();
+    ctx.fill();
+
+    // Draw halftone dots along diagonal edge
     const spacing = 10;
     const maxRadius = spacing / 2 + 2;
-
-    const angle = Math.atan2(-84, 1440);
+    const angle = Math.atan2(diagY1 - diagY0, w);
     const cos = Math.cos(angle);
     const sin = Math.sin(angle);
-
-    const uCount = 160;
+    const uCount = Math.ceil(Math.sqrt(w * w + h * h) / spacing) + 10;
 
     for (let ui = -5; ui < uCount; ui++) {
       for (let vi = -8; vi <= 2; vi++) {
@@ -20,11 +50,10 @@ export default function SectionDivider({ flip = false, color = 'var(--color-prim
         const v = vi * spacing + vOffset;
 
         const x = u * cos - v * sin;
-        const y = u * sin + v * cos + 140;
+        const y = u * sin + v * cos + diagY0;
 
-        if (x < -10 || x > 1450 || y < -10 || y > 155) continue;
+        if (x < -maxRadius || x > w + maxRadius || y < -maxRadius || y > h + maxRadius) continue;
 
-        // closeness: 1 at solid edge, 0 far above
         let closeness;
         if (v >= 0) {
           closeness = 1;
@@ -33,36 +62,19 @@ export default function SectionDivider({ flip = false, color = 'var(--color-prim
           if (closeness <= 0.05) continue;
         }
 
-        // Every dot gets placed — size varies. True halftone.
         const radius = Math.pow(closeness, 2.5) * maxRadius;
-        result.push({ x, y, radius, key: `${ui}-${vi}` });
+        if (radius > 0.3) {
+          ctx.beginPath();
+          ctx.arc(x, y, radius, 0, Math.PI * 2);
+          ctx.fill();
+        }
       }
     }
-    return result;
-  }, []);
+  }, [color]);
 
   return (
     <div className={`${styles.divider} ${flip ? styles.flip : ''}`} aria-hidden="true">
-      <svg
-        viewBox="0 0 1440 140"
-        preserveAspectRatio="xMinYMin slice"
-        className={styles.svg}
-        role="presentation"
-      >
-        <polygon
-          points="0,140 1440,56 1440,140"
-          fill={color}
-        />
-        {dots.map((dot) => (
-          <circle
-            key={dot.key}
-            cx={dot.x}
-            cy={dot.y}
-            r={dot.radius}
-            fill={color}
-          />
-        ))}
-      </svg>
+      <canvas ref={canvasRef} className={styles.canvas} />
     </div>
   );
 }
