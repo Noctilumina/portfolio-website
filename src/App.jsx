@@ -83,19 +83,22 @@ function TransitionProvider() {
   );
 }
 
-const router = createBrowserRouter([
-  {
-    element: (
-      <ThemeProvider>
-        <TransitionProvider />
-      </ThemeProvider>
-    ),
-    children: [
-      { path: '/', element: <Home /> },
-      { path: '/project/:slug', element: <ProjectDetail /> },
-    ],
-  },
-]);
+const router = createBrowserRouter(
+  [
+    {
+      element: (
+        <ThemeProvider>
+          <TransitionProvider />
+        </ThemeProvider>
+      ),
+      children: [
+        { path: '/', element: <Home /> },
+        { path: '/project/:slug', element: <ProjectDetail /> },
+      ],
+    },
+  ],
+  { basename: '/portfolio-website' }
+);
 
 function App() {
   return <RouterProvider router={router} />;

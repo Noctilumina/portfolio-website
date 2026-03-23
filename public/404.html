@@ -2,15 +2,185 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-    <title>Iris Peters — Fullstack Developer</title>
+    <title>404 — Iris Peters</title>
+    <script>
+      // SPA redirect: if this is a valid app route, redirect to index with the path
+      (function() {
+        var defined = ['/', '/project/'];
+        var path = window.location.pathname;
+        var base = '/portfolio-website';
+        var relative = path.replace(base, '');
+        for (var i = 0; i < defined.length; i++) {
+          if (relative === defined[i] || relative.startsWith(defined[i])) {
+            sessionStorage.setItem('spa-redirect', relative);
+            window.location.replace(base + '/?redirect=' + encodeURIComponent(relative));
+            return;
+          }
+        }
+      })();
+    </script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f5f0eb;
+        color: #1a1a1a;
+        font-family: 'Inter', system-ui, sans-serif;
+        overflow: hidden;
+      }
+
+      .container {
+        text-align: center;
+        padding: 2rem;
+        position: relative;
+      }
+
+      .code {
+        font-family: 'Space Mono', monospace;
+        font-size: clamp(6rem, 20vw, 14rem);
+        font-weight: 700;
+        line-height: 1;
+        color: #E91E63;
+        text-shadow: 0.06em 0.06em 0 #000;
+        position: relative;
+        margin-bottom: 0.2em;
+      }
+
+      .accent-block {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 115%;
+        height: 75%;
+        background: #E91E63;
+        border: 0.15em solid #000;
+        border-radius: 0.3em;
+        box-shadow: 0.4em 0.4em 0 #000;
+        z-index: -1;
+      }
+
+      .code span {
+        color: #fff;
+        position: relative;
+        z-index: 1;
+      }
+
+      .message {
+        font-family: 'Space Mono', monospace;
+        font-size: clamp(1rem, 3vw, 1.4rem);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 2rem;
+        color: #666;
+      }
+
+      .home-link {
+        display: inline-block;
+        font-family: 'Space Mono', monospace;
+        font-size: 1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #fff;
+        background: #000;
+        border: 0.15em solid #000;
+        border-radius: 0.3em;
+        padding: 0;
+      }
+
+      .home-link-inner {
+        display: block;
+        padding: 0.75em 1.5em;
+        background: #E91E63;
+        border: 0.15em solid #000;
+        border-radius: 0.2em;
+        transform: translateY(-0.2em);
+        transition: transform 0.1s ease;
+      }
+
+      .home-link:hover .home-link-inner {
+        transform: translateY(-0.33em);
+      }
+
+      .home-link:active .home-link-inner {
+        transform: translateY(0);
+      }
+
+      /* Decorative shapes */
+      .shape {
+        position: absolute;
+        border: 0.15em solid #000;
+        border-radius: 0.3em;
+        transform: rotate(45deg);
+      }
+
+      .shape-1 {
+        width: 3em;
+        height: 3em;
+        background: #00E5A0;
+        top: -1em;
+        right: -2em;
+        box-shadow: 0.2em 0.2em 0 #000;
+      }
+
+      .shape-2 {
+        width: 1.8em;
+        height: 1.8em;
+        background: #FFD700;
+        bottom: 0;
+        left: -3em;
+        box-shadow: 0.15em 0.15em 0 #000;
+      }
+
+      .shape-3 {
+        width: 2.2em;
+        height: 2.2em;
+        background: #9C27B0;
+        bottom: -2em;
+        right: 2em;
+        box-shadow: 0.2em 0.2em 0 #000;
+      }
+
+      .shape:hover {
+        transform: rotate(55deg) scale(1.1);
+        transition: transform 0.3s ease;
+      }
+
+      .grid-pattern {
+        position: fixed;
+        inset: 0;
+        background-image:
+          linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
+        background-size: 18px 18px;
+        pointer-events: none;
+        z-index: -2;
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <div class="grid-pattern" aria-hidden="true"></div>
+    <div class="container">
+      <div class="code">
+        <div class="accent-block" aria-hidden="true"></div>
+        <span>404</span>
+      </div>
+      <p class="message">Page not found</p>
+      <a href="/portfolio-website/" class="home-link">
+        <span class="home-link-inner">← Back to Home</span>
+      </a>
+      <div class="shape shape-1" aria-hidden="true"></div>
+      <div class="shape shape-2" aria-hidden="true"></div>
+      <div class="shape shape-3" aria-hidden="true"></div>
+    </div>
   </body>
 </html>
