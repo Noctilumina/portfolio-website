@@ -29,7 +29,7 @@ export default function ScrollReveal({
       className={className}
       initial={{ opacity: 0, ...offset }}
       animate={isVisible ? { opacity: 1, x: 0, y: 0 } : {}}
-      transition={{ duration: 0.6, delay, ease: 'easeOut' }}
+      transition={{ duration: 0.35, delay: delay * 0.7, ease: 'easeOut' }}
     >
       {children}
     </motion.div>
