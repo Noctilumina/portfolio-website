@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "painting-my-hema-mask",
+    "title": "Painting My HEMA Mask",
+    "titleNl": "Mijn HEMA Masker Verven",
+    "date": "2026-03-24",
+    "tags": ["personal", "hema", "craft"],
+    "excerpt": "I painted my fencing mask because everyone's looks the same. Here's how it went.",
+    "excerptNl": "Ik heb mijn schermmasker geverfd omdat die van iedereen er hetzelfde uitziet. Zo ging het."
+  },
+  {
+    "slug": "building-a-ttrpg-map-maker",
+    "title": "Building a TTRPG Map Maker (Because the Free Ones Suck)",
+    "titleNl": "Een TTRPG Map Maker Bouwen (Want de Gratis Zijn Bagger)",
+    "date": "2026-03-24",
+    "tags": ["technical", "gamedev", "ttrpg"],
+    "excerpt": "I got tired of bad free map tools for my Cyberpunk Red campaigns, so I'm building my own. Here's where it's at.",
+    "excerptNl": "Ik was de slechte gratis map tools voor mijn Cyberpunk Red-campagnes zat, dus ik bouw mijn eigen. Hier staat het nu."
+  },
+  {
+    "slug": "building-this-portfolio",
+    "title": "Building This Portfolio: A Pop Art Experiment",
+    "titleNl": "Dit Portfolio Bouwen: Een Pop Art Experiment",
+    "date": "2026-03-24",
+    "tags": ["technical", "react", "design"],
+    "excerpt": "How I went from a standard dark-themed portfolio to a neo-brutalist site with halftone dithering, hard shadows, and canvas-rendered page transitions.",
+    "excerptNl": "Hoe ik van een standaard donker-thema portfolio naar een neo-brutalistische site ging met halftoon dithering, harde schaduwen en canvas-gerenderde paginatransities."
+  },
+  {
+    "slug": "hello-world",
+    "title": "Hello World: My First Blog Post",
+    "titleNl": "Hallo Wereld: Mijn Eerste Blogpost",
+    "date": "2026-03-23",
+    "tags": ["personal", "meta"],
+    "excerpt": "Welcome to my blog! A quick intro about what to expect here.",
+    "excerptNl": "Welkom op mijn blog! Een korte introductie over wat je hier kunt verwachten."
+  }
+]
