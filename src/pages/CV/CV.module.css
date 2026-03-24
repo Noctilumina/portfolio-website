@@ -52,6 +52,7 @@
 /* Two column layout */
 .columns {
   display: flex;
+  align-items: stretch;
 }
 
 /* Left sidebar — Skills, Profile, Contact */
@@ -60,6 +61,7 @@
   background: #E91E63;
   color: #ffffff;
   padding: 2rem 1.5rem;
+  min-height: 100%;
 }
 
 /* Right main — Experience, Education */
