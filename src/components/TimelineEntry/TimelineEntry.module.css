@@ -60,6 +60,23 @@
   border: 0.1em solid #000000;
   border-radius: 0.3em;
   box-shadow: 0.15em 0.15em 0 #000000;
+  position: relative;
+  overflow: hidden;
+}
+
+.client::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(233, 30, 99, 0.08) 2px, transparent 2px);
+  background-size: 10px 10px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.client > * {
+  position: relative;
+  z-index: 1;
 }
 
 .clientHeader {

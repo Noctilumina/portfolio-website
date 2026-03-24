@@ -21,8 +21,10 @@
 
 .socials {
   display: flex;
-  gap: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
   margin-top: 3rem;
+  padding-right: 1rem;
 }
 
 .socialLink {
