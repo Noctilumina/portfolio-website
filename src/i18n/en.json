@@ -82,6 +82,16 @@
     "notMe": "Not me! That's my dog",
     "plantLabel": "Not me! That's my dog"
   },
+  "cv": {
+    "name": "Iris Peters",
+    "role": "Fullstack Developer",
+    "piersonCollege": "ds. Pierson College",
+    "piersonDegree": "Nature & Technology",
+    "printButton": "Print / Save as PDF",
+    "aboutMe": "About Me",
+    "education": "Education",
+    "aboutText": "Fullstack developer with 4+ years of experience in web applications, cloud infrastructure, and CI/CD pipelines. Broad experience in diverse sectors. Outside of work, an active HEMA practitioner (sword fighting), Cyberpunk Red GM, and hobbyist game developer."
+  },
   "projectDetail": {
     "notFound": "Project not found",
     "backHome": "← Back to home",

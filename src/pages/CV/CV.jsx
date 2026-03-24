@@ -21,7 +21,7 @@ export default function CV() {
       <div className={styles.printHide}>
         <button className={styles.printButton} onClick={handlePrint}>
           <span className={styles.printButtonTop}>
-            {locale === 'nl' ? 'Print / Opslaan als PDF' : 'Print / Save as PDF'}
+            {t('cv.printButton')}
           </span>
         </button>
       </div>
@@ -36,13 +36,10 @@ export default function CV() {
 
             <section className={styles.section}>
               <h2 className={styles.sideSectionTitle}>
-                {locale === 'nl' ? 'Over Mij' : 'About Me'}
+                {t('cv.aboutMe')}
               </h2>
               <p className={styles.profileText}>
-                {locale === 'nl'
-                  ? 'Fullstack developer met 4+ jaar ervaring in webapplicaties, cloudinfrastructuur en CI/CD-pipelines. Brede ervaring opgedaan door consultancy bij zes enterprise klanten in diverse sectoren. Buiten werk actief HEMA-beoefenaar (zwaardvechten), GM voor Cyberpunk Red-campagnes, en hobbymatig game developer.'
-                  : 'Fullstack developer with 4+ years of experience in web applications, cloud infrastructure, and CI/CD pipelines. Broad experience gained through consulting across six enterprise clients in diverse sectors. Outside of work, an active HEMA practitioner (sword fighting), Cyberpunk Red game master, and hobbyist game developer.'
-                }
+                {t('cv.aboutText')}
               </p>
             </section>
 
@@ -61,7 +58,7 @@ export default function CV() {
             </section>
 
             <section className={styles.section}>
-              <h2 className={styles.sideSectionTitle}>Contact</h2>
+              <h2 className={styles.sideSectionTitle}>{t('nav.contact')}</h2>
               <div className={styles.contactList}>
                 <p><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> irispeters05@gmail.com</p>
                 <p><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> 's-Hertogenbosch, NL</p>
@@ -76,8 +73,8 @@ export default function CV() {
           {/* Right main */}
           <div className={styles.mainCol}>
             <header className={styles.header}>
-              <h1 className={styles.name}>Iris Peters</h1>
-              <p className={styles.role}>Fullstack Developer</p>
+              <h1 className={styles.name}>{t('cv.name')}</h1>
+              <p className={styles.role}>{t('cv.role')}</p>
             </header>
 
             <section className={styles.section}>
@@ -109,7 +106,7 @@ export default function CV() {
 
             <section className={styles.section}>
               <h2 className={styles.sectionTitle}>
-                {locale === 'nl' ? 'Opleiding' : 'Education'}
+                {t('cv.education')}
               </h2>
               {education.map((entry) => (
                 <div key={entry.id} className={styles.entry}>
@@ -124,11 +121,11 @@ export default function CV() {
               <div className={styles.entry}>
                 <div className={styles.entryHeader}>
                   <h3 className={styles.entryRole}>
-                    {locale === 'nl' ? 'Natuur en Techniek' : 'Nature & Technology'}
+                    {t('cv.piersonDegree')}
                   </h3>
                   <span className={styles.entryPeriod}>2011 — 2015</span>
                 </div>
-                <p className={styles.entryCompany}>ds. Pierson College</p>
+                <p className={styles.entryCompany}>{t('cv.piersonCollege')}</p>
               </div>
             </section>
           </div>

@@ -82,6 +82,16 @@
     "notMe": "Niet ik! Dat is mijn hond",
     "plantLabel": "Niet ik! Dat is mijn hond"
   },
+  "cv": {
+    "name": "Iris Peters",
+    "role": "Fullstack Developer",
+    "piersonCollege": "ds. Pierson College",
+    "piersonDegree": "Natuur en Techniek",
+    "printButton": "Print / Opslaan als PDF",
+    "aboutMe": "Over Mij",
+    "education": "Opleiding",
+    "aboutText": "Fullstack developer met 4+ jaar ervaring in webapplicaties, cloudinfrastructuur en CI/CD-pipelines. Brede ervaring opgedaan in diverse sectoren. Buiten werk actief HEMA-beoefenaar (zwaardvechten), GM voor Cyberpunk Red-campagnes, en hobbymatig game developer."
+  },
   "projectDetail": {
     "notFound": "Project niet gevonden",
     "backHome": "← Terug naar home",
