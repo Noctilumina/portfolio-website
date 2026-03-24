@@ -30,22 +30,48 @@ So I'm building my own. A browser-based grid map editor where you can:
 - Export maps as images in proper A4 format for printing
 - Ship with modern/cyberpunk tilesets by default, not just fantasy
 
+## The Tech Stack
+
+I went with React, TypeScript, and Konva.js for the canvas rendering. Konva gives me a proper scene graph with layers, hit detection, and drag-and-drop out of the box. State management is handled by Zustand, which keeps things clean — map data in one store, editor UI state in another, undo/redo history in a third.
+
+The whole thing runs in the browser. No backend, no account, no subscription. Your maps are saved locally to IndexedDB with auto-save, and you can export them as portable JSON files or high-res PNGs for print.
+
 ## Where I'm At
 
-Still early days. I'm figuring out the right approach for the rendering layer. Do I go full canvas? Do I use a library like Pixi.js? How do I handle layers and z-ordering without making it a performance nightmare?
+The MVP is working. Here's what's in:
 
-The grid system is working, basic tile painting is in, and I've got a rough UI. Nothing I'd show off yet, but the foundation is there.
+- **Grid canvas** with pan, zoom, and configurable grid size and scale (2m for Cyberpunk Red, 5ft for D&D)
+- **Tile placement** with a stamp tool — click an asset, click the grid, tiles snap into place
+- **Four layers** — Floor, Walls, Objects, and GM Notes — with visibility and lock toggles
+- **Select tool** with click, shift-multi-select, drag-to-move, and box selection
+- **Eraser** and **pan** tools with keyboard shortcuts for quick switching (V, B, E, H)
+- **Undo/redo** with Ctrl+Z/Y
+- **Properties panel** for rotation, flip, and delete on selected elements
+- **PNG export** with configurable DPI (150 for drafts, 300 for print)
+- **Project save/load** as JSON files
 
 ![Early state of the map maker](/images/blog/Mapmaker_initial_state.png)
+
+Right now I'm using colored placeholder tiles instead of real art, but the system is designed so you can import your own assets. That's coming next.
+
+## What's Next
+
+Phase 2 is all about making it actually useful for building real maps:
+
+- **Map backgrounds** — solid color or a tiled image behind the grid
+- **Custom image import** — drag and drop your own PNGs into the asset browser
+- **Hierarchy panel** — Unity-style scene tree so you can group elements into rooms and move them together
+- **Snap toggle** — sometimes you want pixel-perfect placement, sometimes you want grid snap
+- **Asset customization** — tint, opacity, and resizable elements
 
 ## The Hard Part
 
 Rendering is actually the easy part. The hard part is UX. Map tools have this problem where you need a ton of functionality but you can't bury it behind 50 menus. Every tool I've used suffers from this. Powerful but painful to actually use.
 
-I'm trying to keep it keyboard-driven where possible. Quick shortcuts for common actions, minimal clicking. If I have to click more than twice to place a wall, something's wrong.
+I'm keeping it keyboard-driven where possible. Quick shortcuts for common actions, minimal clicking. If I have to click more than twice to place a wall, something's wrong. The hierarchy/grouping system is inspired by game engines like Unity and Godot — if it works for game devs, it should work for GMs building battle maps.
 
 ## Will It Ever Be Done?
 
 Probably not in the "finished product" sense. It's a side project that I chip away at between work, HEMA practice, and all the other things competing for my time. But that's fine. Even a half-finished map maker that does exactly what I need is better than a polished one that doesn't.
 
-I'll post updates here as it progresses. If you're a fellow DM who's been frustrated by the same problems, stay tuned.
+I'll post updates here as it progresses. If you're a fellow GM who's been frustrated by the same problems, stay tuned.

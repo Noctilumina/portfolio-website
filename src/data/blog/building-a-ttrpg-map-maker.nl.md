@@ -1,10 +1,10 @@
-# Een TTRPG Map Maker Bouwen (Want de Gratis Zijn Bagger)
+# Een TTRPG Map Maker Bouwen (Want de gratis opties zijn bagger)
 
-Ik run een paar Cyberpunk Red-campagnes. Als je ooit een fatsoenlijke battle map hebt geprobeerd te maken voor een tabletop RPG zonder een vermogen uit te geven, ken je de pijn. De meeste gratis tools zijn of lomp, beperkt, of zien eruit alsof ze in 2005 zijn ontworpen. De betaalde zijn prima, maar ik ben een developer. Hoe moeilijk kan het zijn?
+Sinds eind vorig jaar run ik een Cyberpunk Red-campagne. Als je ooit een fatsoenlijke battle map hebt geprobeerd te maken voor een tabletop RPG zonder een vermogen uit te geven, ken je de pijn. De meeste gratis tools zijn of lomp, beperkt, of zien eruit alsof ze in 2005 zijn ontworpen. De betaalde zijn prima, maar ik ben een developer. Hoe moeilijk kan het zijn?
 
 Beroemde laatste woorden.
 
-## De Frustratie
+## De frustratie
 
 Elke sessie besteedde ik veel te lang aan het worstelen met een of andere map tool die bijna deed wat ik wilde, maar net niet helemaal. De problemen bleven zich opstapelen:
 
@@ -18,9 +18,9 @@ Elke sessie besteedde ik veel te lang aan het worstelen met een of andere map to
 
 **Pen en papier werkt, maar...** Natuurlijk tekende ik maps met de hand. Pen op ruitjespapier, snelle schetsen, doet z'n werk. Maar als je eenmaal hebt gezien hoe een goed getekende top-down map met echte assets eruitziet op tafel, is het lastig om terug te gaan. De spelers zijn meer betrokken, het tactische gevecht is duidelijker, en eerlijk gezegd ziet het er gewoon gaaf uit. Ik wil dat niveau van kwaliteit zonder het gedoe.
 
-Eerlijk gezegd zou het al enorm helpen om gewoon een bestaande map in te kunnen laden en er een eigen grid overheen te leggen. Niet alle maps hebben zichtbare tegels. Je hebt niet per se een grid nodig, maar ik vind het persoonlijk prettig omdat het dingen wat simpeler maakt.
+Het zou mij al enorm helpen om gewoon een bestaande map in te kunnen laden en er een eigen grid overheen te leggen. Niet alle maps hebben zichtbare tegels. Je hebt niet per se een grid nodig, maar ik vind het persoonlijk prettig omdat het dingen (voor mij als GM) wat simpeler maakt.
 
-## Het Plan
+## Het plan
 
 Dus ik bouw mijn eigen tool. Een browser-gebaseerde grid map editor waar je:
 
@@ -30,7 +30,7 @@ Dus ik bouw mijn eigen tool. Een browser-gebaseerde grid map editor waar je:
 - Maps kunt exporteren als afbeeldingen in correct A4-formaat voor printen
 - Standaard met moderne/cyberpunk tilesets wordt geleverd, niet alleen fantasy
 
-## Waar Ik Nu Ben
+## Waar ik nu ben
 
 Nog vroeg in het proces. Ik ben aan het uitzoeken wat de juiste aanpak is voor de rendering-laag. Ga ik vol canvas? Gebruik ik een library zoals Pixi.js? Hoe ga ik om met layers en z-ordering zonder dat het een performance-nachtmerrie wordt?
 
@@ -38,13 +38,13 @@ Het grid-systeem werkt, basis tegel-schilderen zit erin, en ik heb een ruwe UI. 
 
 ![Vroege staat van de map maker](/images/blog/Mapmaker_initial_state.png)
 
-## Het Moeilijke Deel
+## Het moeilijke deel
 
 Rendering is eigenlijk het makkelijke deel. Het moeilijke is UX. Map tools hebben dit probleem dat je een ton aan functionaliteit nodig hebt maar het niet achter 50 menu's kunt verstoppen. Elke tool die ik heb gebruikt heeft hier last van. Krachtig maar vervelend om daadwerkelijk te gebruiken.
 
 Ik probeer het zoveel mogelijk keyboard-gestuurd te houden. Snelle sneltoetsen voor veelgebruikte acties, minimaal klikken. Als ik meer dan twee keer moet klikken om een muur te plaatsen, klopt er iets niet.
 
-## Wordt Het Ooit Af?
+## Is het ooit af?
 
 Waarschijnlijk niet in de "af product" zin. Het is een side project waar ik aan werk tussen werk, HEMA-training en alle andere dingen die om mijn tijd strijden. Maar dat is prima. Zelfs een half-af map maker die precies doet wat ik nodig heb is beter dan een gepolijste die dat niet doet.
 
