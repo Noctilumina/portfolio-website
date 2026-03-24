@@ -252,6 +252,8 @@
 
 .articleContent img {
   max-width: 100%;
+  max-height: 450px;
+  object-fit: cover;
   border: 0.15em solid var(--color-border);
   border-radius: 0.3em;
   box-shadow: 0.25em 0.25em 0 var(--color-shadow, #000);
