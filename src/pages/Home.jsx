@@ -1,3 +1,4 @@
+import { useI18n } from '../i18n/I18nContext';
 import Hero from '../sections/Hero/Hero';
 import Projects from '../sections/Projects/Projects';
 import Skills from '../sections/Skills/Skills';
@@ -6,6 +7,8 @@ import Contact from '../sections/Contact/Contact';
 import SectionDivider from '../components/SectionDivider/SectionDivider';
 
 export default function Home() {
+  const { t } = useI18n();
+
   return (
     <main id="main-content">
       <Hero />
@@ -24,7 +27,7 @@ export default function Home() {
         fontSize: '0.85rem',
         borderTop: '1px solid var(--color-border)',
       }}>
-        © {new Date().getFullYear()} Iris Peters. Built with React.
+        {t('footer.text', { year: new Date().getFullYear() })}
       </footer>
     </main>
   );

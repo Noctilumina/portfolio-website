@@ -114,6 +114,7 @@
   border: none;
   cursor: pointer;
   padding: 4px;
+  padding-right: 8px;
 }
 
 .hamburger:focus-visible {

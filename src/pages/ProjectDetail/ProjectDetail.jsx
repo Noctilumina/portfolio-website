@@ -1,25 +1,35 @@
 import { useParams } from 'react-router-dom';
 import { usePageTransition } from '../../App';
+import { useI18n } from '../../i18n/I18nContext';
 import projects from '../../data/projects.json';
 import styles from './ProjectDetail.module.css';
 
 export default function ProjectDetail() {
   const { slug } = useParams();
   const { startTransition } = usePageTransition();
-  const project = projects.find((p) => p.slug === slug);
+  const { t } = useI18n();
+  const projectIndex = projects.findIndex((p) => p.slug === slug);
+  const projectRaw = projectIndex !== -1 ? projects[projectIndex] : null;
 
-  if (!project) {
+  if (!projectRaw) {
     return (
       <main id="main-content" className={styles.page}>
         <div className={styles.notFound}>
-          <h1>Project not found</h1>
+          <h1>{t('projectDetail.notFound')}</h1>
           <button className={styles.backButton} onClick={() => startTransition('/')}>
-            ← Back to home
+            {t('projectDetail.backHome')}
           </button>
         </div>
       </main>
     );
   }
+
+  const project = {
+    ...projectRaw,
+    title: t(`projectData.${projectIndex}.title`) || projectRaw.title,
+    description: t(`projectData.${projectIndex}.description`) || projectRaw.description,
+    features: t(`projectData.${projectIndex}.features`) || projectRaw.features,
+  };
 
   return (
     <main id="main-content" className={styles.page}>
@@ -29,7 +39,7 @@ export default function ProjectDetail() {
             className={styles.backButton}
             onClick={() => startTransition('/', { state: { scrollTo: 'projects' } })}
           >
-            ← Back to projects
+            {t('projectDetail.backProjects')}
           </button>
         </nav>
 
@@ -49,16 +59,16 @@ export default function ProjectDetail() {
         <h1 className={styles.title}>{project.title}</h1>
         <p className={styles.description}>{project.description}</p>
 
-        <h2 className={styles.sectionTitle}>Tech Stack</h2>
-        <div className={styles.techStack} aria-label="Technologies used">
+        <h2 className={styles.sectionTitle}>{t('projectDetail.techStack')}</h2>
+        <div className={styles.techStack} aria-label={t('projects.techUsed')}>
           {project.techStack.map((tech) => (
             <span key={tech} className={styles.tag}>{tech}</span>
           ))}
         </div>
 
-        <h2 className={styles.sectionTitle}>Key Features</h2>
+        <h2 className={styles.sectionTitle}>{t('projectDetail.keyFeatures')}</h2>
         <ul className={styles.features}>
-          {project.features.map((feature) => (
+          {Array.isArray(project.features) && project.features.map((feature) => (
             <li key={feature}>{feature}</li>
           ))}
         </ul>
@@ -67,12 +77,12 @@ export default function ProjectDetail() {
           <div className={styles.links}>
             {project.liveUrl && (
               <a className={`${styles.link} ${styles.primaryLink}`} href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                Live Demo
+                {t('projectDetail.liveDemo')}
               </a>
             )}
             {project.githubUrl && (
               <a className={`${styles.link} ${styles.secondaryLink}`} href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                GitHub
+                {t('projectDetail.github')}
               </a>
             )}
           </div>
