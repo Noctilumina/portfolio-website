@@ -30,16 +30,15 @@
     { "name": "CI/CD", "icon": "🚀" },
     { "name": "Git / GitHub", "icon": "🔀" },
     { "name": "Storyblok", "icon": "📦" },
-    { "name": "Unity3D", "icon": "🎮" }
+    { "name": "Unity3D", "icon": "🎮" },
+    { "name": "Godot", "icon": "🤖" }
   ],
   "Methodology & Soft Skills": [
     { "name": "Scrum", "icon": "🔄" },
     { "name": "Kanban", "icon": "📋" },
-    { "name": "Agile", "icon": "🏃" },
     { "name": "DevOps", "icon": "♾️" },
     { "name": "IT Consulting", "icon": "💼" },
-    { "name": "Confluence", "icon": "📝" },
-    { "name": "Secure Programming", "icon": "🔒" }
+    { "name": "TDD & DDD", "icon": "🧪" }
   ],
   "Languages": [
     { "name": "Dutch (native)", "nameNl": "Nederlands (moedertaal)", "icon": "🇳🇱" },

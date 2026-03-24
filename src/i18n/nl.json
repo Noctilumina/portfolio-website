@@ -165,13 +165,13 @@
       "role": "Fullstack Medior Developer",
       "company": "Gynzy",
       "period": "Mei 2025 — Heden",
-      "description": "Educatieve software bouwen als fullstack developer. Werken met Flutter voor cross-platform ontwikkeling en Ember.js voor webapplicaties in een hybride teamomgeving."
+      "description": "Educatieve software bouwen als fullstack developer. Werken met Flutter en Dart voor cross-platform ontwikkeling, Ember.js en Lit voor web components, en Gatsby met Storyblok voor content-gedreven pagina's."
     },
     {
       "role": "IT Consultant",
       "company": "Info Support",
       "period": "Feb 2021 — Mei 2025",
-      "description": "Gedetacheerd als DevOps engineer bij meerdere klantorganisaties. Intensieve opleiding afgerond in C#, Angular, Docker, Entity Framework en secure programming."
+      "description": "Gedetacheerd als DevOps engineer bij meerdere klantorganisaties. Intensieve opleiding afgerond in C#, Angular, Docker, Entity Framework en gerelateerde soft skills."
     },
     {
       "role": "AR Development Stagiair",
@@ -189,7 +189,7 @@
       "role": "React Native Developer Stagiair",
       "company": "Colours",
       "period": "Sep 2018 — Jan 2019",
-      "description": "Cross-platform mobiele applicaties gebouwd met React Native tijdens een stage bij een digitaal bureau in 's-Hertogenbosch."
+      "description": "Cross-platform mobiele applicaties gebouwd met React Native en Sitecore als headless CMS tijdens een stage bij een digitaal bureau in 's-Hertogenbosch."
     },
     {
       "role": "BASc Computer Software Engineering",

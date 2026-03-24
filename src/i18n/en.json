@@ -165,13 +165,13 @@
       "role": "Fullstack Medior Developer",
       "company": "Gynzy",
       "period": "May 2025 — Present",
-      "description": "Building educational software as a fullstack developer. Working with Flutter for cross-platform development and Ember.js for web applications in a hybrid team environment."
+      "description": "Building educational software as a fullstack developer. Working with Flutter and Dart for cross-platform development, Ember.js and Lit for web components, and Gatsby with Storyblok for content-driven pages."
     },
     {
       "role": "IT Consultant",
       "company": "Info Support",
       "period": "Feb 2021 — May 2025",
-      "description": "Consulted as a DevOps engineer across multiple client organizations. Completed intensive training in C#, Angular, Docker, Entity Framework, and secure programming."
+      "description": "Consulted as a DevOps engineer across multiple client organizations. Completed intensive training in C#, Angular, Docker, Entity Framework, and related soft skills."
     },
     {
       "role": "AR Development Intern",
@@ -189,7 +189,7 @@
       "role": "React Native Developer Intern",
       "company": "Colours",
       "period": "Sep 2018 — Jan 2019",
-      "description": "Built cross-platform mobile applications using React Native during an internship at a digital agency in 's-Hertogenbosch."
+      "description": "Built cross-platform mobile applications using React Native with Sitecore as a headless CMS during an internship at a digital agency in 's-Hertogenbosch."
     },
     {
       "role": "BASc Computer Software Engineering",
