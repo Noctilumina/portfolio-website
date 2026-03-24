@@ -1,11 +1,13 @@
 import { createBrowserRouter, RouterProvider, useLocation, useNavigate, useBlocker, Outlet } from 'react-router-dom';
 import { createContext, useContext, useState, useCallback, useRef, useEffect } from 'react';
 import { ThemeProvider } from './context/ThemeContext';
+import { I18nProvider } from './i18n/I18nContext';
 import { DitherCanvas } from './components/PageTransition/PageTransition';
 import Navbar from './components/Navbar/Navbar';
 import Home from './pages/Home';
 import ProjectDetail from './pages/ProjectDetail/ProjectDetail';
 import About from './pages/About/About';
+import CV from './pages/CV/CV';
 import styles from './App.module.css';
 
 const TransitionContext = createContext();
@@ -89,14 +91,17 @@ const router = createBrowserRouter(
   [
     {
       element: (
-        <ThemeProvider>
-          <TransitionProvider />
-        </ThemeProvider>
+        <I18nProvider>
+          <ThemeProvider>
+            <TransitionProvider />
+          </ThemeProvider>
+        </I18nProvider>
       ),
       children: [
         { path: '/', element: <Home /> },
         { path: '/project/:slug', element: <ProjectDetail /> },
         { path: '/about', element: <About /> },
+        { path: '/cv', element: <CV /> },
       ],
     },
   ],

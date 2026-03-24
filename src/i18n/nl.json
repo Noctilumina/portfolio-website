@@ -1,0 +1,191 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projecten",
+    "skills": "Vaardigheden",
+    "experience": "Ervaring",
+    "contact": "Contact",
+    "about": "Over mij",
+    "portfolio": "Portfolio",
+    "skipToContent": "Ga naar hoofdinhoud",
+    "goToTop": "Ga naar boven",
+    "toggleMenu": "Menu openen/sluiten",
+    "navMenu": "Navigatiemenu"
+  },
+  "hero": {
+    "name": "Iris Peters",
+    "rolePrefix": "Fullstack",
+    "roleSuffix": "Developer"
+  },
+  "projects": {
+    "heading": "Projecten",
+    "viewProject": "Bekijk project: {title}",
+    "techUsed": "Gebruikte technologieën"
+  },
+  "skills": {
+    "heading": "Vaardigheden",
+    "categories": {
+      "Frontend": "Frontend",
+      "Backend": "Backend",
+      "DevOps & Tools": "DevOps & Tools",
+      "Methodology & Soft Skills": "Methodologie & Soft Skills",
+      "Languages": "Talen"
+    }
+  },
+  "experience": {
+    "heading": "Ervaring"
+  },
+  "contact": {
+    "heading": "Neem Contact Op",
+    "subtitle": "Heb je een project in gedachten of wil je gewoon even praten? Stuur me een bericht en ik neem contact met je op.",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "E-mail",
+    "form": {
+      "name": "Naam",
+      "emailLabel": "E-mail",
+      "message": "Bericht",
+      "send": "Verstuur Bericht",
+      "sending": "Versturen...",
+      "success": "Bedankt! Ik neem zo snel mogelijk contact met je op.",
+      "error": "Er is iets misgegaan. Probeer het opnieuw.",
+      "required": "verplicht",
+      "ariaLabel": "Contactformulier"
+    }
+  },
+  "footer": {
+    "text": "© {year} Iris Peters. Gebouwd met React."
+  },
+  "about": {
+    "title": "Over Mij",
+    "me": "ik!",
+    "initials": "IP",
+    "intro": "Hoi, ik ben <strong>Iris Peters</strong> — een fullstack developer uit 's-Hertogenbosch, Nederland. Ik bouw webapplicaties, cloudinfrastructuur en alles daartussenin.",
+    "backgroundTitle": "Achtergrond",
+    "background": "Met een Bachelor of Applied Science in Computer Software Engineering van Avans Hogeschool, heb ik meer dan 4 jaar ervaring opgebouwd over de hele stack. Van het bouwen van CI/CD-pipelines en Azure-infrastructuur bij Info Support, tot het ontwikkelen van AR-applicaties op de HoloLens 2, tot mijn huidige rol als fullstack medior developer bij Gynzy waar ik educatieve software bouw.",
+    "backgroundText": "Met een Bachelor of Applied Science in Computer Software Engineering van Avans Hogeschool, heb ik meer dan 4 jaar ervaring opgebouwd over de hele stack. Van het bouwen van CI/CD-pipelines en Azure-infrastructuur bij Info Support, tot het ontwikkelen van AR-applicaties op de HoloLens 2, tot mijn huidige rol als fullstack medior developer bij Gynzy waar ik educatieve software bouw.",
+    "whatIDoTitle": "Wat Ik Doe",
+    "whatIDo": "Ik werk graag over de hele stack — of het nu gaat om het bouwen van responsive frontends met Flutter, Ember.js of React, het ontwerpen van cloudarchitecturen op Azure, of het opzetten van robuuste DevOps-pipelines. Ik ben altijd op zoek naar nieuwe technologieën en manieren om mijn vaardigheden te verbeteren.",
+    "whatIDoText": "Ik werk graag over de hele stack — of het nu gaat om het bouwen van responsive frontends met Flutter, Ember.js of React, het ontwerpen van cloudarchitecturen op Azure, of het opzetten van robuuste DevOps-pipelines. Ik ben altijd op zoek naar nieuwe technologieën en manieren om mijn vaardigheden te verbeteren.",
+    "beyondCodeTitle": "Naast Code",
+    "beyondCode": "Als ik niet aan het coderen ben, kun je me vinden bij een van mijn hobby's. Mijn grootste passie tot nu toe is absoluut HEMA (Historische Europese Martial Arts), waar ik vecht met een tweehandig zwaard genaamd een federschwert.",
+    "beyondCodeText": "Als ik niet aan het coderen ben, kun je me vinden bij een van mijn hobby's. Mijn grootste passie tot nu toe is absoluut HEMA (Historische Europese Martial Arts), waar ik vecht met een tweehandig zwaard genaamd een federschwert.",
+    "alsoMe": "ook ik!",
+    "hemaAlt": "Iris bij HEMA",
+    "hobbiesIntro": "Daarnaast vind ik het ook leuk om:",
+    "hobbies": [
+      "DM te zijn voor een paar Cyberpunk Red-campagnes",
+      "Mijn uitgebreide plantencollectie te onderhouden",
+      "Games te ontwikkelen wanneer ik tijd heb",
+      "En als er daarna nog tijd over is, mijn huis elke dag een beetje beter te maken"
+    ],
+    "notMe": "Niet ik! Dat is mijn plant",
+    "plantLabel": "Niet ik! Dat is mijn plant"
+  },
+  "projectDetail": {
+    "notFound": "Project niet gevonden",
+    "backHome": "← Terug naar home",
+    "backProjects": "← Terug naar projecten",
+    "techStack": "Technologieën",
+    "keyFeatures": "Belangrijkste Features",
+    "liveDemo": "Live Demo",
+    "github": "GitHub"
+  },
+  "projectData": [
+    {
+      "title": "Gynzy Educatieplatform",
+      "shortDescription": "Cross-platform educatieve software gebouwd met Flutter en Ember.js voor klaslokalen.",
+      "description": "Bijdragen aan het interactieve educatieplatform van Gynzy dat wordt gebruikt door docenten en leerlingen. Werkzaam als fullstack medior developer aan features voor de Flutter mobiele/desktop app en de Ember.js webapplicatie. Focus op het leveren van intuïtieve, betrouwbare tools voor gebruik in het klaslokaal.",
+      "features": [
+        "Cross-platform ontwikkeling met Flutter",
+        "Interactieve webapplicatie met Ember.js",
+        "Educatieve tools voor klaslokaalgebruik",
+        "Hybride teamsamenwerking"
+      ]
+    },
+    {
+      "title": "Cloudinfrastructuur & CI/CD",
+      "shortDescription": "Azure cloudoplossingen en DevOps-pipelines voor meerdere enterprise klanten.",
+      "description": "Ontwerp en onderhoud van cloudinfrastructuur en CI/CD-pipelines voor zes enterprise klanten bij Info Support — waaronder Air Miles, Moba Group en Agrifac Machinery. Infrastructure-as-code gebouwd met Bicep, geautomatiseerde deployments via Azure DevOps en .NET microservices ontwikkeld op Azure Functions.",
+      "features": [
+        "Infrastructure-as-code met Bicep",
+        "Geautomatiseerde CI/CD-pipelines in Azure DevOps",
+        "Serverless functions met Azure Functions",
+        ".NET microservice-architectuur",
+        "Levering aan meerdere enterprise klanten"
+      ]
+    },
+    {
+      "title": "HoloLens AR Werkruimtes",
+      "shortDescription": "Virtuele schermen in augmented reality op de Microsoft HoloLens 2 voor thuiswerkers.",
+      "description": "Een augmented reality-applicatie gebouwd voor de Microsoft HoloLens 2 die virtuele schermen creëert voor kantoormedewerkers die thuiswerken. Het project onderzocht hoe AR fysieke monitoren kan vervangen en flexibele werkruimtes overal mogelijk maakt. Ontwikkeld met Unity3D, C#, UWP en de Mixed Reality Toolkit.",
+      "features": [
+        "Virtuele schermplaatsing in AR-ruimte",
+        "Handtracking en gebareninteractie via MRTK",
+        "Ruimtelijke verankering voor persistente schermpositites",
+        "Gebouwd voor Microsoft HoloLens 2"
+      ]
+    },
+    {
+      "title": "Mobiele App — Colours Agency",
+      "shortDescription": "Cross-platform mobiele applicatie gebouwd met React Native bij een digitaal bureau.",
+      "description": "Een cross-platform mobiele applicatie ontwikkeld tijdens een stage bij Colours, een digitaal bureau in 's-Hertogenbosch. Praktijkervaring opgedaan met het bouwen van productie React Native apps, werken in een professioneel team en leveren voor echte klanten.",
+      "features": [
+        "Cross-platform iOS en Android app",
+        "React Native met native modules",
+        "Professionele bureau-workflow",
+        "Klantgerichte oplevering"
+      ]
+    },
+    {
+      "title": "Dit Portfolio",
+      "shortDescription": "De site die je nu bekijkt — gebouwd met React, Three.js en Framer Motion.",
+      "description": "Een brutalistisch modern developer portfolio met een 3D interactieve hero, thema-wisseling, scroll-gestuurde animaties en responsive design. Gebouwd om fullstack development vaardigheden te laten zien.",
+      "features": [
+        "3D interactieve hero met React Three Fiber",
+        "4-thema wisselaar met localStorage persistentie",
+        "Scroll-gestuurde reveal animaties",
+        "Responsive design met mobile-first aanpak",
+        "Paginatransities met AnimatePresence"
+      ]
+    }
+  ],
+  "experienceData": [
+    {
+      "role": "Fullstack Medior Developer",
+      "company": "Gynzy",
+      "period": "Mei 2025 — Heden",
+      "description": "Educatieve software bouwen als fullstack developer. Werken met Flutter voor cross-platform ontwikkeling en Ember.js voor webapplicaties in een hybride teamomgeving."
+    },
+    {
+      "role": "IT Consultant",
+      "company": "Info Support",
+      "period": "Feb 2021 — Mei 2025",
+      "description": "Gedetacheerd als DevOps engineer bij meerdere klantorganisaties. Intensieve opleiding afgerond in C#, Angular, Docker, Entity Framework en secure programming."
+    },
+    {
+      "role": "AR Development Stagiair",
+      "company": "ICT Group",
+      "period": "Sep 2020 — Jan 2021",
+      "description": "Virtuele schermen ontwikkeld in augmented reality op de Microsoft HoloLens 2 voor thuiswerkende kantoormedewerkers. Gebouwd met Unity3D, C#, UWP en de Mixed Reality Toolkit (MRTK)."
+    },
+    {
+      "role": "Junior Software Developer",
+      "company": "OrcaGroup Communication Solutions",
+      "period": "Mrt 2019 — Aug 2019",
+      "description": "Softwareoplossingen ontwikkeld bij een communicatietechnologiebedrijf. Praktijkervaring opgedaan met professionele ontwikkelworkflows en teamsamenwerking."
+    },
+    {
+      "role": "React Native Developer Stagiair",
+      "company": "Colours",
+      "period": "Sep 2018 — Jan 2019",
+      "description": "Cross-platform mobiele applicaties gebouwd met React Native tijdens een stage bij een digitaal bureau in 's-Hertogenbosch."
+    },
+    {
+      "role": "BASc Computer Software Engineering",
+      "company": "Avans Hogeschool",
+      "period": "2017 — 2021",
+      "description": "Bachelor of Applied Science in Computer Software Engineering. Een sterke basis opgebouwd in software-architectuur, webontwikkeling en agile projectmanagement."
+    }
+  ]
+}

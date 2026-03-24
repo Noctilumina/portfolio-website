@@ -1,0 +1,51 @@
+import { createContext, useContext, useState, useCallback } from 'react';
+import en from './en.json';
+import nl from './nl.json';
+
+const translations = { en, nl };
+const I18nContext = createContext();
+
+export function I18nProvider({ children }) {
+  const [locale, setLocale] = useState(() => {
+    const saved = localStorage.getItem('portfolio-lang');
+    if (saved && translations[saved]) return saved;
+    // Dutch for Netherlands (nl-NL) and Flanders/Belgium (nl-BE)
+    const lang = navigator.language;
+    if (lang === 'nl' || lang.startsWith('nl-')) return 'nl';
+    return 'en';
+  });
+
+  const toggleLocale = useCallback(() => {
+    setLocale((current) => {
+      const next = current === 'en' ? 'nl' : 'en';
+      localStorage.setItem('portfolio-lang', next);
+      return next;
+    });
+  }, []);
+
+  const t = useCallback((key, params) => {
+    const keys = key.split('.');
+    let value = translations[locale];
+    for (const k of keys) {
+      if (value == null) return key;
+      value = value[k];
+    }
+    if (value == null) return key;
+    if (typeof value === 'string' && params) {
+      return value.replace(/\{(\w+)\}/g, (_, k) => params[k] ?? `{${k}}`);
+    }
+    return value;
+  }, [locale]);
+
+  return (
+    <I18nContext.Provider value={{ locale, toggleLocale, t }}>
+      {children}
+    </I18nContext.Provider>
+  );
+}
+
+export function useI18n() {
+  const context = useContext(I18nContext);
+  if (!context) throw new Error('useI18n must be used within I18nProvider');
+  return context;
+}

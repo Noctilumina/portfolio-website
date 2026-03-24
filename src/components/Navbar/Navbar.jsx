@@ -1,15 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { usePageTransition } from '../../App';
+import { useI18n } from '../../i18n/I18nContext';
 import styles from './Navbar.module.css';
-
-const NAV_ITEMS = [
-  { label: 'Home', target: 'hero' },
-  { label: 'Projects', target: 'projects' },
-  { label: 'Skills', target: 'skills' },
-  { label: 'Experience', target: 'experience' },
-  { label: 'Contact', target: 'contact' },
-];
 
 export default function Navbar() {
   const [hidden, setHidden] = useState(false);
@@ -19,6 +12,15 @@ export default function Navbar() {
   const location = useLocation();
   const { startTransition } = usePageTransition();
   const hamburgerRef = useRef(null);
+  const { locale, toggleLocale, t } = useI18n();
+
+  const navItems = [
+    { label: t('nav.home'), target: 'hero' },
+    { label: t('nav.projects'), target: 'projects' },
+    { label: t('nav.skills'), target: 'skills' },
+    { label: t('nav.experience'), target: 'experience' },
+    { label: t('nav.contact'), target: 'contact' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,7 +37,7 @@ export default function Navbar() {
   useEffect(() => {
     if (location.pathname !== '/') return;
 
-    const sectionIds = NAV_ITEMS.map((item) => item.target);
+    const sectionIds = navItems.map((item) => item.target);
 
     const updateActive = () => {
       const offset = 150;
@@ -57,6 +59,7 @@ export default function Navbar() {
   }, [location.pathname]);
 
   const isOnAbout = location.pathname === '/about';
+  const isOnCV = location.pathname === '/cv';
   const isOnHome = location.pathname === '/';
 
   const scrollToSection = (target) => {
@@ -77,18 +80,18 @@ export default function Navbar() {
   return (
     <>
       <a href="#main-content" className={styles.skipLink}>
-        Skip to main content
+        {t('nav.skipToContent')}
       </a>
       <nav className={`${styles.navbar} ${hidden ? styles.hidden : ''}`} aria-label="Main navigation">
         <button
           className={styles.logo}
           onClick={() => scrollToSection('hero')}
-          aria-label="Go to top of page"
+          aria-label={t('nav.goToTop')}
         >
-          Portfolio
+          {t('nav.portfolio')}
         </button>
         <div className={styles.navLinks} role="list">
-          {NAV_ITEMS.map((item) => (
+          {navItems.map((item) => (
             <button
               key={item.target}
               className={`${styles.navLink} ${isOnHome && activeSection === item.target ? styles.navLinkActive : ''}`}
@@ -105,14 +108,25 @@ export default function Navbar() {
             role="listitem"
             aria-current={isOnAbout ? 'page' : undefined}
           >
-            About
+            {t('nav.about')}
+          </button>
+          <button
+            className={`${styles.navLink} ${isOnCV ? styles.navLinkActive : ''}`}
+            onClick={() => { setMobileOpen(false); startTransition('/cv'); }}
+            role="listitem"
+            aria-current={isOnCV ? 'page' : undefined}
+          >
+            CV
+          </button>
+          <button className={styles.navLink} onClick={toggleLocale} role="listitem">
+            {locale === 'en' ? 'NL' : 'EN'}
           </button>
         </div>
         <button
           ref={hamburgerRef}
           className={`${styles.hamburger} ${mobileOpen ? styles.hamburgerOpen : ''}`}
           onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle navigation menu"
+          aria-label={t('nav.toggleMenu')}
           aria-expanded={mobileOpen}
           aria-controls="mobile-menu"
         >
@@ -126,10 +140,10 @@ export default function Navbar() {
         id="mobile-menu"
         className={`${styles.mobileMenu} ${mobileOpen ? styles.mobileMenuOpen : ''}`}
         role="dialog"
-        aria-label="Navigation menu"
+        aria-label={t('nav.navMenu')}
         aria-hidden={!mobileOpen}
       >
-        {NAV_ITEMS.map((item) => (
+        {navItems.map((item) => (
           <button
             key={item.target}
             className={`${styles.mobileLink} ${isOnHome && activeSection === item.target ? styles.mobileLinkActive : ''}`}
@@ -144,7 +158,17 @@ export default function Navbar() {
           onClick={() => { closeMobileMenu(); startTransition('/about'); }}
           tabIndex={mobileOpen ? 0 : -1}
         >
-          About
+          {t('nav.about')}
+        </button>
+        <button
+          className={`${styles.mobileLink} ${isOnCV ? styles.mobileLinkActive : ''}`}
+          onClick={() => { closeMobileMenu(); startTransition('/cv'); }}
+          tabIndex={mobileOpen ? 0 : -1}
+        >
+          CV
+        </button>
+        <button className={styles.navLink} onClick={toggleLocale} tabIndex={mobileOpen ? 0 : -1}>
+          {locale === 'en' ? 'NL' : 'EN'}
         </button>
       </div>
     </>

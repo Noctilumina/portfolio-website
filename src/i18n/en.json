@@ -1,0 +1,191 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "skills": "Skills",
+    "experience": "Experience",
+    "contact": "Contact",
+    "about": "About",
+    "portfolio": "Portfolio",
+    "skipToContent": "Skip to main content",
+    "goToTop": "Go to top of page",
+    "toggleMenu": "Toggle navigation menu",
+    "navMenu": "Navigation menu"
+  },
+  "hero": {
+    "name": "Iris Peters",
+    "rolePrefix": "Fullstack",
+    "roleSuffix": "Developer"
+  },
+  "projects": {
+    "heading": "Projects",
+    "viewProject": "View project: {title}",
+    "techUsed": "Technologies used"
+  },
+  "skills": {
+    "heading": "Skills",
+    "categories": {
+      "Frontend": "Frontend",
+      "Backend": "Backend",
+      "DevOps & Tools": "DevOps & Tools",
+      "Methodology & Soft Skills": "Methodology & Soft Skills",
+      "Languages": "Languages"
+    }
+  },
+  "experience": {
+    "heading": "Experience"
+  },
+  "contact": {
+    "heading": "Get In Touch",
+    "subtitle": "Have a project in mind or just want to chat? Drop me a message and I'll get back to you.",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "Email",
+    "form": {
+      "name": "Name",
+      "emailLabel": "Email",
+      "message": "Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Thanks! I'll get back to you soon.",
+      "error": "Something went wrong. Please try again.",
+      "required": "required",
+      "ariaLabel": "Contact form"
+    }
+  },
+  "footer": {
+    "text": "© {year} Iris Peters. Built with React."
+  },
+  "about": {
+    "title": "About Me",
+    "me": "me!",
+    "initials": "IP",
+    "intro": "Hi, I'm <strong>Iris Peters</strong> — a fullstack developer based in 's-Hertogenbosch, the Netherlands. I build web applications, cloud infrastructure, and everything in between.",
+    "backgroundTitle": "Background",
+    "background": "With a Bachelor's in Computer Software Engineering from Avans Hogeschool, I've spent 4+ years working across the full stack. From building CI/CD pipelines and Azure infrastructure at Info Support, to developing AR applications on the HoloLens 2, to my current role as a fullstack medior developer at Gynzy building educational software.",
+    "backgroundText": "With a Bachelor's in Computer Software Engineering from Avans Hogeschool, I've spent 4+ years working across the full stack. From building CI/CD pipelines and Azure infrastructure at Info Support, to developing AR applications on the HoloLens 2, to my current role as a fullstack medior developer at Gynzy building educational software.",
+    "whatIDoTitle": "What I Do",
+    "whatIDo": "I enjoy working across the entire stack — whether that's crafting responsive frontends with Flutter, Ember.js, or React, designing cloud architectures on Azure, or setting up robust DevOps pipelines. I'm always looking to learn new technologies and improve my craft.",
+    "whatIDoText": "I enjoy working across the entire stack — whether that's crafting responsive frontends with Flutter, Ember.js, or React, designing cloud architectures on Azure, or setting up robust DevOps pipelines. I'm always looking to learn new technologies and improve my craft.",
+    "beyondCodeTitle": "Beyond Code",
+    "beyondCode": "When I'm not coding, you can find me enjoying one of my hobbies. My greatest passion so far in life has definitely been HEMA (Historical European Martial Arts), where I fight with a two handed sword called a federschwert.",
+    "beyondCodeText": "When I'm not coding, you can find me enjoying one of my hobbies. My greatest passion so far in life has definitely been HEMA (Historical European Martial Arts), where I fight with a two handed sword called a federschwert.",
+    "alsoMe": "also me!",
+    "hemaAlt": "Iris at HEMA",
+    "hobbiesIntro": "Besides that I also like:",
+    "hobbies": [
+      "DM-ing a few Cyberpunk Red games",
+      "Maintaining an extensive plant collection",
+      "Trying to develop games whenever I have time",
+      "And if there is anything left after all that, making my house a little bit better day by day"
+    ],
+    "notMe": "Not me! That's my plant",
+    "plantLabel": "Not me! That's my plant"
+  },
+  "projectDetail": {
+    "notFound": "Project not found",
+    "backHome": "← Back to home",
+    "backProjects": "← Back to projects",
+    "techStack": "Tech Stack",
+    "keyFeatures": "Key Features",
+    "liveDemo": "Live Demo",
+    "github": "GitHub"
+  },
+  "projectData": [
+    {
+      "title": "Gynzy Education Platform",
+      "shortDescription": "Cross-platform educational software built with Flutter and Ember.js for classrooms.",
+      "description": "Contributing to Gynzy's interactive education platform used by teachers and students. Working as a fullstack medior developer building features across the Flutter mobile/desktop app and the Ember.js web application. Focus on delivering intuitive, reliable tools for classroom use.",
+      "features": [
+        "Cross-platform development with Flutter",
+        "Interactive web application with Ember.js",
+        "Educational tools for classroom use",
+        "Hybrid team collaboration"
+      ]
+    },
+    {
+      "title": "Cloud Infrastructure & CI/CD",
+      "shortDescription": "Azure cloud solutions and DevOps pipelines across multiple enterprise clients.",
+      "description": "Designed and maintained cloud infrastructure and CI/CD pipelines for six enterprise clients at Info Support — including Air Miles, Moba Group, and Agrifac Machinery. Built infrastructure-as-code with Bicep, automated deployments via Azure DevOps, and developed .NET microservices running on Azure Functions.",
+      "features": [
+        "Infrastructure-as-code with Bicep",
+        "Automated CI/CD pipelines in Azure DevOps",
+        "Serverless functions with Azure Functions",
+        ".NET microservice architecture",
+        "Multi-client enterprise delivery"
+      ]
+    },
+    {
+      "title": "HoloLens AR Workspaces",
+      "shortDescription": "Virtual screens in augmented reality on the Microsoft HoloLens 2 for remote workers.",
+      "description": "Built an augmented reality application for the Microsoft HoloLens 2 that creates virtual screens for remote office workers. The project explored how AR can replace physical monitors, enabling flexible workspaces anywhere. Developed with Unity3D, C#, UWP, and the Mixed Reality Toolkit.",
+      "features": [
+        "Virtual screen placement in AR space",
+        "Hand tracking and gesture interaction via MRTK",
+        "Spatial anchoring for persistent screen positions",
+        "Built for Microsoft HoloLens 2"
+      ]
+    },
+    {
+      "title": "Mobile App — Colours Agency",
+      "shortDescription": "Cross-platform mobile application built with React Native at a digital agency.",
+      "description": "Developed a cross-platform mobile application during an internship at Colours, a digital agency in 's-Hertogenbosch. Gained hands-on experience building production React Native apps, working within a professional team, and delivering for real clients.",
+      "features": [
+        "Cross-platform iOS and Android app",
+        "React Native with native modules",
+        "Professional agency workflow",
+        "Client-facing deliverable"
+      ]
+    },
+    {
+      "title": "This Portfolio",
+      "shortDescription": "The site you're looking at — built with React, Three.js, and Framer Motion.",
+      "description": "A bold, modern developer portfolio featuring a 3D interactive hero, theme switching, scroll-driven animations, and responsive design. Built to showcase fullstack development skills.",
+      "features": [
+        "3D interactive hero with React Three Fiber",
+        "4-theme switcher with localStorage persistence",
+        "Scroll-driven reveal animations",
+        "Responsive design with mobile-first approach",
+        "Page transitions with AnimatePresence"
+      ]
+    }
+  ],
+  "experienceData": [
+    {
+      "role": "Fullstack Medior Developer",
+      "company": "Gynzy",
+      "period": "May 2025 — Present",
+      "description": "Building educational software as a fullstack developer. Working with Flutter for cross-platform development and Ember.js for web applications in a hybrid team environment."
+    },
+    {
+      "role": "IT Consultant",
+      "company": "Info Support",
+      "period": "Feb 2021 — May 2025",
+      "description": "Consulted as a DevOps engineer across multiple client organizations. Completed intensive training in C#, Angular, Docker, Entity Framework, and secure programming."
+    },
+    {
+      "role": "AR Development Intern",
+      "company": "ICT Group",
+      "period": "Sep 2020 — Jan 2021",
+      "description": "Developed virtual screens in augmented reality on the Microsoft HoloLens 2 for remote office workers. Built with Unity3D, C#, UWP, and the Mixed Reality Toolkit (MRTK)."
+    },
+    {
+      "role": "Junior Software Developer",
+      "company": "OrcaGroup Communication Solutions",
+      "period": "Mar 2019 — Aug 2019",
+      "description": "Developed software solutions at a communication technology company, gaining hands-on experience with professional development workflows and team collaboration."
+    },
+    {
+      "role": "React Native Developer Intern",
+      "company": "Colours",
+      "period": "Sep 2018 — Jan 2019",
+      "description": "Built cross-platform mobile applications using React Native during an internship at a digital agency in 's-Hertogenbosch."
+    },
+    {
+      "role": "BASc Computer Software Engineering",
+      "company": "Avans Hogeschool",
+      "period": "2017 — 2021",
+      "description": "Bachelor of Applied Science in Computer Software Engineering. Built a strong foundation in software architecture, web development, and agile project management."
+    }
+  ]
+}
