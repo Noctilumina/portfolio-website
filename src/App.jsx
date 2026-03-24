@@ -8,6 +8,8 @@ import Home from './pages/Home';
 import ProjectDetail from './pages/ProjectDetail/ProjectDetail';
 import About from './pages/About/About';
 import CV from './pages/CV/CV';
+import BlogList from './pages/Blog/BlogList';
+import BlogPost from './pages/Blog/BlogPost';
 import styles from './App.module.css';
 
 const TransitionContext = createContext();
@@ -102,6 +104,8 @@ const router = createBrowserRouter(
         { path: '/project/:slug', element: <ProjectDetail /> },
         { path: '/about', element: <About /> },
         { path: '/cv', element: <CV /> },
+        { path: '/blog', element: <BlogList /> },
+        { path: '/blog/:slug', element: <BlogPost /> },
       ],
     },
   ],
