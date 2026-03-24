@@ -52,7 +52,6 @@
 /* Two column layout */
 .columns {
   display: flex;
-  min-height: 100vh;
 }
 
 /* Left sidebar — Skills, Profile, Contact */
@@ -66,7 +65,9 @@
 /* Right main — Experience, Education */
 .mainCol {
   flex: 1;
+  min-width: 0;
   padding: 2rem 2rem;
+  overflow-wrap: break-word;
 }
 
 /* Portrait */
@@ -118,7 +119,7 @@
 
 /* Sections */
 .section {
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.6rem;
 }
 
 /* Section titles for main column */
@@ -147,7 +148,7 @@
 
 /* Experience entries */
 .entry {
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.4rem;
 }
 
 .entryHeader {
@@ -186,8 +187,9 @@
 .clientGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.3rem;
-  margin-top: 0.4rem;
+  gap: 0.2rem;
+  margin-top: 0.3rem;
+  max-width: 100%;
 }
 
 .client {
@@ -195,6 +197,8 @@
   padding: 0.3rem 0.4rem;
   border-left: 2px solid var(--color-primary);
   background: rgba(233, 30, 99, 0.03);
+  min-width: 0;
+  overflow: hidden;
 }
 
 .clientHeader {
@@ -206,6 +210,9 @@
 .clientName {
   font-weight: 700;
   color: var(--color-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .clientPeriod {
@@ -220,7 +227,7 @@
 
 /* Skills (sidebar) */
 .skillCategory {
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.35rem;
 }
 
 .skillCategoryTitle {

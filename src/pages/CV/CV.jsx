@@ -16,10 +16,6 @@ export default function CV() {
 
   const handlePrint = () => window.print();
 
-  const interests = locale === 'nl'
-    ? ['HEMA (zwaardvechten)', 'Cyberpunk Red (DM)', 'Game development', 'Planten verzamelen']
-    : ['HEMA (sword fighting)', 'Cyberpunk Red (DM)', 'Game development', 'Plant collecting'];
-
   return (
     <main id="main-content" className={styles.page}>
       <div className={styles.printHide}>
@@ -71,18 +67,20 @@ export default function CV() {
                 <p>'s-Hertogenbosch, NL</p>
                 <p>linkedin.com/in/iris-peters-421774158</p>
                 <p>github.com/Noctilumina</p>
+                <p>noctilumina.github.io/portfolio-website</p>
               </div>
             </section>
 
             <section className={styles.section}>
               <h2 className={styles.sideSectionTitle}>
-                {locale === 'nl' ? 'Interesses' : 'Interests'}
+                {locale === 'nl' ? 'Over Mij' : 'About Me'}
               </h2>
-              <ul className={styles.interestList}>
-                {interests.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
+              <p className={styles.profileText}>
+                {locale === 'nl'
+                  ? 'Naast mijn werk als developer ben ik een actief HEMA-beoefenaar (zwaardvechten), DM voor Cyberpunk Red-campagnes, en hobbymatig game developer. Ik hou ervan om technische uitdagingen aan te gaan, zowel professioneel als in mijn vrije tijd.'
+                  : 'Outside of work I\'m an active HEMA practitioner (sword fighting), a Cyberpunk Red game master, and a hobbyist game developer. I enjoy taking on technical challenges both professionally and in my spare time.'
+                }
+              </p>
             </section>
           </div>
 
