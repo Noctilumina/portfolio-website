@@ -1,0 +1,358 @@
+.page {
+  padding: 6rem 2rem 4rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.printHide {
+  margin-bottom: 2rem;
+}
+
+.printButton {
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.3em;
+  background: var(--color-border);
+  padding: 0;
+}
+
+.printButtonTop {
+  display: block;
+  box-sizing: border-box;
+  border: 0.15em solid var(--color-border);
+  border-radius: 0.3em;
+  padding: 0.75em 1.5em;
+  background: var(--color-primary);
+  color: #ffffff;
+  transform: translateY(-0.2em);
+  transition: transform 0.1s ease;
+}
+
+.printButton:hover .printButtonTop {
+  transform: translateY(-0.33em);
+}
+
+.printButton:active .printButtonTop {
+  transform: translateY(0);
+}
+
+.cv {
+  background: var(--color-surface);
+  border: 0.2em solid var(--color-border);
+  border-radius: 0.3em;
+  box-shadow: 0.5em 0.5em 0 var(--color-shadow, #000);
+  overflow: hidden;
+}
+
+/* Two column layout */
+.columns {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Left sidebar — Skills, Profile, Contact */
+.sideCol {
+  flex: 0 0 35%;
+  background: #E91E63;
+  color: #ffffff;
+  padding: 2rem 1.5rem;
+}
+
+/* Right main — Experience, Education */
+.mainCol {
+  flex: 1;
+  padding: 2rem 2rem;
+}
+
+/* Portrait */
+.portrait {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  overflow: hidden;
+  background: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.portraitPlaceholder {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.portraitImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Header (right column) */
+.header {
+  margin-bottom: 1.5rem;
+}
+
+.name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-text);
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.role {
+  font-size: 1rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-top: 0.2rem;
+}
+
+/* Sections */
+.section {
+  margin-bottom: 1.2rem;
+}
+
+/* Section titles for main column */
+.sectionTitle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-primary);
+  margin-bottom: 0.6rem;
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 0.25rem;
+}
+
+/* Section titles for sidebar */
+.sideSectionTitle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #ffffff;
+  margin-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  padding-bottom: 0.25rem;
+}
+
+/* Experience entries */
+.entry {
+  margin-bottom: 0.7rem;
+}
+
+.entryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.entryRole {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+.entryCompany {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+.entryPeriod {
+  font-size: 0.7rem;
+  color: var(--color-muted);
+  font-family: var(--font-heading);
+  white-space: nowrap;
+}
+
+.entryDescription {
+  font-size: 0.7rem;
+  line-height: 1.4;
+  color: var(--color-muted);
+  margin-top: 0.2rem;
+}
+
+.clientGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.3rem;
+  margin-top: 0.4rem;
+}
+
+.client {
+  font-size: 0.65rem;
+  padding: 0.3rem 0.4rem;
+  border-left: 2px solid var(--color-primary);
+  background: rgba(233, 30, 99, 0.03);
+}
+
+.clientHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.3rem;
+}
+
+.clientName {
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.clientPeriod {
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+
+.clientSkills {
+  color: var(--color-primary);
+  font-size: 0.6rem;
+}
+
+/* Skills (sidebar) */
+.skillCategory {
+  margin-bottom: 0.6rem;
+}
+
+.skillCategoryTitle {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  margin-bottom: 0.15rem;
+  font-family: var(--font-body);
+}
+
+.skillList {
+  font-size: 0.7rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Profile (sidebar) */
+.profileText {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Contact (sidebar) */
+.contactList {
+  font-size: 0.7rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.interestList {
+  list-style: none;
+  padding: 0;
+  font-size: 0.7rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.interestList li::before {
+  content: '→ ';
+  color: #ffffff;
+}
+
+/* Print styles */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .page {
+    padding: 0;
+    max-width: none;
+  }
+
+  .printHide {
+    display: none !important;
+  }
+
+  .cv {
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .columns {
+    display: flex !important;
+    flex-direction: row !important;
+    min-height: 100vh !important;
+  }
+
+  .sideCol {
+    flex: 0 0 35% !important;
+    background: #E91E63 !important;
+    color: #f0f0f0 !important;
+  }
+
+  .mainCol {
+    flex: 1 !important;
+  }
+
+  .section {
+    break-inside: avoid;
+  }
+
+  .entry {
+    break-inside: avoid;
+  }
+
+  .sectionTitle {
+    color: #E91E63;
+  }
+
+  .sideSectionTitle {
+    color: #E91E63;
+  }
+
+  .role {
+    color: #E91E63;
+  }
+
+  .portrait {
+    background: #E91E63;
+  }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .cv {
+    overflow: visible;
+  }
+
+  .columns {
+    flex-direction: column;
+  }
+
+  .sideCol {
+    flex: none;
+  }
+
+  .mainCol {
+    padding: 1.5rem;
+  }
+
+  .entryHeader {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+}
