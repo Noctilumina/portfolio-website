@@ -95,6 +95,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform: scale(1.5);
+  object-position: center 20%;
 }
 
 /* Header (right column) */

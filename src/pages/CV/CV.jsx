@@ -31,17 +31,17 @@ export default function CV() {
           {/* Left sidebar */}
           <div className={styles.sideCol}>
             <div className={styles.portrait}>
-              <span className={styles.portraitPlaceholder}>IP</span>
+              <img src={`${import.meta.env.BASE_URL}images/blog/headshot_iris.jpeg`} alt="Iris Peters" className={styles.portraitImage} />
             </div>
 
             <section className={styles.section}>
               <h2 className={styles.sideSectionTitle}>
-                {locale === 'nl' ? 'Profiel' : 'Profile'}
+                {locale === 'nl' ? 'Over Mij' : 'About Me'}
               </h2>
               <p className={styles.profileText}>
                 {locale === 'nl'
-                  ? 'Fullstack developer met 4+ jaar ervaring in webapplicaties, cloudinfrastructuur en CI/CD-pipelines. Brede ervaring door consultancy bij meerdere enterprise klanten in diverse sectoren.'
-                  : 'Fullstack developer with 4+ years of experience in web applications, cloud infrastructure, and CI/CD pipelines. Broad experience through consulting across multiple enterprise clients in diverse sectors.'
+                  ? 'Fullstack developer met 4+ jaar ervaring in webapplicaties, cloudinfrastructuur en CI/CD-pipelines. Brede ervaring opgedaan door consultancy bij zes enterprise klanten in diverse sectoren. Buiten werk actief HEMA-beoefenaar (zwaardvechten), GM voor Cyberpunk Red-campagnes, en hobbymatig game developer.'
+                  : 'Fullstack developer with 4+ years of experience in web applications, cloud infrastructure, and CI/CD pipelines. Broad experience gained through consulting across six enterprise clients in diverse sectors. Outside of work, an active HEMA practitioner (sword fighting), Cyberpunk Red game master, and hobbyist game developer.'
                 }
               </p>
             </section>
@@ -71,17 +71,6 @@ export default function CV() {
               </div>
             </section>
 
-            <section className={styles.section}>
-              <h2 className={styles.sideSectionTitle}>
-                {locale === 'nl' ? 'Over Mij' : 'About Me'}
-              </h2>
-              <p className={styles.profileText}>
-                {locale === 'nl'
-                  ? 'Naast mijn werk als developer ben ik een actief HEMA-beoefenaar (zwaardvechten), DM voor Cyberpunk Red-campagnes, en hobbymatig game developer. Ik hou ervan om technische uitdagingen aan te gaan, zowel professioneel als in mijn vrije tijd.'
-                  : 'Outside of work I\'m an active HEMA practitioner (sword fighting), a Cyberpunk Red game master, and a hobbyist game developer. I enjoy taking on technical challenges both professionally and in my spare time.'
-                }
-              </p>
-            </section>
           </div>
 
           {/* Right main */}

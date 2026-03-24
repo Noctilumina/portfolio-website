@@ -20,7 +20,7 @@ export default function About() {
               </svg>
             </div>
             <div className={styles.portrait}>
-              <span className={styles.portraitPlaceholder}>{t('about.initials')}</span>
+              <img src={`${import.meta.env.BASE_URL}images/blog/headshot_turtleneck_iris.jpeg`} alt="Iris Peters" className={styles.portraitImage} />
             </div>
           </div>
         </div>
