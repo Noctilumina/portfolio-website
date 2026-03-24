@@ -184,6 +184,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.plantCircle:hover {
+  transform: translateY(-4px);
+  box-shadow: 0.35em 0.35em 0 var(--color-shadow, #000);
+}
+
+.plantCircleFlip {
+  animation: flipCircle 0.3s ease;
+}
+
+@keyframes flipCircle {
+  0% { transform: rotateY(0deg); }
+  50% { transform: rotateY(90deg); }
+  100% { transform: rotateY(0deg); }
 }
 
 .plantPlaceholder {

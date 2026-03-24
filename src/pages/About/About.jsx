@@ -1,10 +1,33 @@
+import { useState } from 'react';
 import { useI18n } from '../../i18n/I18nContext';
 import ScrollReveal from '../../components/ScrollReveal/ScrollReveal';
 import styles from './About.module.css';
 
+const dollyImages = [
+  'dolly_1.jpeg',
+  'dolly_2.jpeg',
+  'dolly_3.jpeg',
+  'dolly_4.jpeg',
+  'dolly_5.jpeg',
+];
+
 export default function About() {
   const { t } = useI18n();
   const hobbies = t('about.hobbies');
+  const [dollyIndex, setDollyIndex] = useState(0);
+  const [flipping, setFlipping] = useState(false);
+
+  const nextDolly = () => {
+    if (flipping) return;
+    setFlipping(true);
+    // Swap image at halfway point when circle is edge-on
+    setTimeout(() => {
+      setDollyIndex((i) => (i + 1) % dollyImages.length);
+    }, 150);
+    setTimeout(() => {
+      setFlipping(false);
+    }, 300);
+  };
 
   return (
     <main id="main-content" className={styles.page}>
@@ -87,8 +110,15 @@ export default function About() {
                   </svg>
                 </div>
               </div>
-              <div className={styles.plantCircle}>
-                <span className={styles.plantPlaceholder}>🪴</span>
+              <div
+                className={`${styles.plantCircle} ${flipping ? styles.plantCircleFlip : ''}`}
+                onClick={nextDolly}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => e.key === 'Enter' && nextDolly()}
+                aria-label="Click to see more pictures of Dolly"
+              >
+                <img src={`${import.meta.env.BASE_URL}images/${dollyImages[dollyIndex]}`} alt="Dolly the dog" className={styles.plantImage} />
               </div>
             </div>
           </div>
