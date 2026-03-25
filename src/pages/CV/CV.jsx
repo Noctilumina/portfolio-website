@@ -12,7 +12,7 @@ export default function CV() {
   }));
 
   const workExperience = localizedExperience.filter((e) => e.id <= 5);
-  const education = localizedExperience.filter((e) => e.id === 6);
+  const education = localizedExperience.filter((e) => e.id >= 6);
 
   const handlePrint = () => window.print();
 
@@ -118,15 +118,6 @@ export default function CV() {
                   <p className={styles.entryDescription}>{entry.description}</p>
                 </div>
               ))}
-              <div className={styles.entry}>
-                <div className={styles.entryHeader}>
-                  <h3 className={styles.entryRole}>
-                    {t('cv.piersonDegree')}
-                  </h3>
-                  <span className={styles.entryPeriod}>2011 — 2015</span>
-                </div>
-                <p className={styles.entryCompany}>{t('cv.piersonCollege')}</p>
-              </div>
             </section>
           </div>
         </div>

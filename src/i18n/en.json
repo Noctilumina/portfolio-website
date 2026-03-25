@@ -171,7 +171,7 @@
       "role": "IT Consultant",
       "company": "Info Support",
       "period": "Feb 2021 — May 2025",
-      "description": "Consulted as a DevOps engineer across multiple client organizations. Completed intensive training in C#, Angular, Docker, Entity Framework, and related soft skills."
+      "description": "Consulted as a DevOps engineer across multiple client organizations. Mainly focussed on the Microsoft techstack with JavaScript framework frontends"
     },
     {
       "role": "AR Development Intern",
@@ -193,9 +193,15 @@
     },
     {
       "role": "BASc Computer Software Engineering",
-      "company": "Avans Hogeschool",
+      "company": "Avans university of applied sciences",
       "period": "2017 — 2021",
       "description": "Bachelor of Applied Science in Computer Software Engineering. Built a strong foundation in software architecture, web development, and agile project management."
+    },
+    {
+      "role": "Nature & Technology",
+      "company": "ds. Pierson College",
+      "period": "2011 — 2015",
+      "description": ""
     }
   ]
 }
