@@ -6,9 +6,9 @@ Toen ik begon met het bouwen van mijn portfolio, wist ik dat ik geen standaard d
 
 Het project begon als een vrij standaard React portfolio: donker thema, vloeiende animaties, een 3D hero met Three.js, en de gebruikelijke secties. Het werkte, maar het voelde... veilig. Zoals elke andere developer portfolio.
 
-## De Draai naar Neo-Brutalisme
+## De Draai naar Pop Art
 
-Het keerpunt kwam toen ik begon te experimenteren met kaartontwerpen. Ik vond deze stoere, neo-brutalistische stijl met dikke zwarte randen, harde slagschaduwen en geometrische accentvormen. Ineens had de site *karakter*. Ik schrapte het donkere thema, schakelde over naar een warme crème basis en herbouwde alles rond deze esthetiek.
+Het keerpunt kwam toen ik begon te experimenteren met kaartontwerpen. Ik vond deze stoere, pop art stijl met dikke zwarte randen, harde slagschaduwen en geometrische accentvormen. Ineens had de site *karakter*. Ik schrapte het donkere thema, schakelde over naar een warme crème basis en herbouwde alles rond deze esthetiek.
 
 De belangrijkste designelementen:
 
@@ -41,7 +41,7 @@ De site ondersteunt Engels en Nederlands, met automatische detectie op basis van
 ## Wat Ik Geleerd Heb
 
 - **Minder is meer met animaties.** De scroll reveals zijn snel (0.35s) en subtiel. Zware animaties worden snel vervelend.
-- **Brutalisme heeft terughoudendheid nodig.** Het is makkelijk om te overdrijven. De accentvormen en patronen zitten alleen op projectkaarten. Al het andere gebruikt alleen randen en schaduwen.
+- **Pop art heeft terughoudendheid nodig.** Het is makkelijk om te overdrijven. De accentvormen en patronen zitten alleen op projectkaarten. Al het andere gebruikt alleen randen en schaduwen.
 - **Canvas verslaat SVG voor herhalende vormen.** De dithering begon als 800+ SVG cirkels per overgang. Overschakelen naar canvas was een enorme performancewinst.
 - **`useBlocker` is krachtig.** Het is de juiste manier om paginatransities te doen in React Router v7. Geen hacky popstate-listeners nodig.
 

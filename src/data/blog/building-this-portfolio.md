@@ -6,9 +6,9 @@ When I set out to build my portfolio, I knew I didn't want another cookie-cutter
 
 The project began as a fairly standard React portfolio: dark theme, smooth animations, a 3D hero with Three.js, and the usual sections. It worked, but it felt... safe. Like every other developer portfolio out there.
 
-## The Pivot to Neo-Brutalism
+## The Pivot to Pop Art
 
-The turning point came when I started experimenting with card designs. I found this bold, neo-brutalist style with thick black borders, hard drop shadows, and geometric accent shapes. Suddenly the site had *attitude*. I scrapped the dark theme, switched to a warm cream base, and rebuilt everything around this aesthetic.
+The turning point came when I started experimenting with card designs. I found this bold, pop art style with thick black borders, hard drop shadows, and geometric accent shapes. Suddenly the site had *attitude*. I scrapped the dark theme, switched to a warm cream base, and rebuilt everything around this aesthetic.
 
 The key design elements that define the look:
 
@@ -41,7 +41,7 @@ The site supports English and Dutch, with automatic detection based on browser l
 ## What I Learned
 
 - **Less is more with animations.** The scroll reveals are fast (0.35s) and subtle. Heavy animations get old quick.
-- **Brutalism needs restraint.** It's easy to go overboard. The accent shapes and patterns are only on project cards. Everything else uses just borders and shadows.
+- **Pop art needs restraint.** It's easy to go overboard. The accent shapes and patterns are only on project cards. Everything else uses just borders and shadows.
 - **Canvas beats SVG for repetitive shapes.** The dithering started as 800+ SVG circles per divider. Switching to canvas was a massive performance win.
 - **`useBlocker` is powerful.** It's the right way to do page transitions in React Router v7. No hacky popstate listeners needed.
 

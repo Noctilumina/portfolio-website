@@ -23,8 +23,8 @@
     "titleNl": "Dit Portfolio Bouwen: Een Pop Art Experiment",
     "date": "2026-03-24",
     "tags": ["technical", "react", "design"],
-    "excerpt": "How I went from a standard dark-themed portfolio to a neo-brutalist site with halftone dithering, hard shadows, and canvas-rendered page transitions.",
-    "excerptNl": "Hoe ik van een standaard donker-thema portfolio naar een neo-brutalistische site ging met halftoon dithering, harde schaduwen en canvas-gerenderde paginatransities."
+    "excerpt": "How I went from a standard dark-themed portfolio to a pop art site with halftone dithering, hard shadows, and canvas-rendered page transitions.",
+    "excerptNl": "Hoe ik van een standaard donker-thema portfolio naar een pop art site ging met halftoon dithering, harde schaduwen en canvas-gerenderde paginatransities."
   },
   {
     "slug": "hello-world",
