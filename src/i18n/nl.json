@@ -10,7 +10,8 @@
     "skipToContent": "Ga naar hoofdinhoud",
     "goToTop": "Ga naar boven",
     "toggleMenu": "Menu openen/sluiten",
-    "navMenu": "Navigatiemenu"
+    "navMenu": "Navigatiemenu",
+    "tools": "Tools"
   },
   "hero": {
     "name": "Iris Peters",
@@ -91,6 +92,186 @@
     "aboutMe": "Over Mij",
     "education": "Opleiding",
     "aboutText": "Fullstack developer met 4+ jaar ervaring in webapplicaties, cloudinfrastructuur en CI/CD-pipelines. Brede ervaring opgedaan in diverse sectoren met name agricultuur en het onderwijs. Buiten werk actief HEMA-beoefenaar (zwaardvechten), actief sportschoolbezoeker, GM voor Cyberpunk Red-campagnes, en hobbymatig game developer."
+  },
+  "tools": {
+    "heading": "Tools",
+    "subtitle": "Hulpmiddelen en developer tools die ik heb gebouwd.",
+    "liveDemo": "Live Demo",
+    "searchPlaceholder": "Zoek tools...",
+    "noResults": "Geen tools gevonden.",
+    "backHome": "\u2190 Terug naar home"
+  },
+  "toolData": [
+    {
+      "title": "CV Bouwer",
+      "shortDescription": "Maak een professioneel tweekoloms CV met live preview en print het als PDF."
+    },
+    {
+      "title": "Markdown Editor",
+      "shortDescription": "Schrijf en bekijk Markdown in de pop-art stijl van het portfolio. Open, bewerk en download .md bestanden."
+    },
+    {
+      "title": "JSON Formatter",
+      "shortDescription": "Verfraai, minimaliseer en verken JSON met een inklapbare boomweergave."
+    },
+    {
+      "title": "Cyberpunk Red Generator",
+      "shortDescription": "Willekeurige ontmoetingen, NPC's, buit en locaties voor Cyberpunk Red TTRPG-sessies."
+    },
+    {
+      "title": "CPR Regelreferentie",
+      "shortDescription": "Doorzoekbare wiki van Cyberpunk Red kernmechanismen. Stats, vaardigheden, gevecht, netrunning en meer."
+    },
+    {
+      "title": "Diff Checker",
+      "shortDescription": "Vergelijk twee teksten naast elkaar met gemarkeerde verschillen per regel."
+    },
+    {
+      "title": "CSS Stijl Verkenner",
+      "shortDescription": "Verken designstromingen van Pop Art tot Cyberpunk. Kies een preset, pas alles aan, kopieer de CSS."
+    },
+    {
+      "title": "Image Tagger",
+      "shortDescription": "Tag en organiseer afbeeldingen met aangepaste labels. Lokale repo — binnenkort beschikbaar."
+    },
+    {
+      "title": "Sprite Selector",
+      "shortDescription": "Selecteer en extraheer sprites uit sprite sheets. Lokale repo — binnenkort beschikbaar."
+    },
+    {
+      "title": "TTRPG Map Maker",
+      "shortDescription": "Rastergebaseerde kaartbouwer voor tabletop RPG-sessies. Lokale repo — binnenkort beschikbaar."
+    }
+  ],
+  "diffChecker": {
+    "heading": "Diff Checker",
+    "subtitle": "Plak twee teksten om ze regel voor regel te vergelijken met gemarkeerde verschillen.",
+    "compare": "Vergelijk",
+    "clear": "Wissen",
+    "original": "Origineel",
+    "modified": "Aangepast",
+    "pasteHere": "Plak tekst hier...",
+    "unchanged": "ongewijzigd",
+    "changed": "gewijzigd",
+    "added": "toegevoegd",
+    "removed": "verwijderd",
+    "backTools": "\u2190 Terug naar tools"
+  },
+  "styleExplorer": {
+    "heading": "CSS Stijl Verkenner",
+    "subtitle": "Kies een designstroming-preset, pas de eigenschappen aan en kopieer de CSS.",
+    "presets": "Design Presets",
+    "background": "Achtergrond",
+    "type": "Type",
+    "solid": "Effen",
+    "linearGradient": "Lineair Verloop",
+    "radialGradient": "Radiaal Verloop",
+    "color": "Kleur",
+    "angle": "Hoek",
+    "border": "Rand",
+    "width": "Breedte",
+    "radius": "Radius",
+    "shadow": "Schaduw",
+    "opacity": "Dekking",
+    "typography": "Typografie",
+    "fontSize": "Lettergrootte",
+    "fontWeight": "Letterdikte",
+    "letterSpacing": "Letterafstand",
+    "textTransform": "Teksttransformatie",
+    "textColor": "Tekstkleur",
+    "style": "Stijl",
+    "backdropFilter": "Achtergrondfilter",
+    "clipPath": "Clip Path",
+    "enableClipPath": "Clip-path inschakelen",
+    "addPoint": "Punt Toevoegen",
+    "removePoint": "Punt Verwijderen",
+    "reset": "Reset",
+    "hoverEffect": "Hover Effect",
+    "effect": "Effect",
+    "duration": "Duur",
+    "easing": "Easing",
+    "copy": "Kopieer CSS",
+    "backTools": "\u2190 Terug naar tools"
+  },
+  "jsonFormatter": {
+    "heading": "JSON Formatter",
+    "subtitle": "Plak JSON om te verfraaiien, minimaliseren of te verkennen als inklapbare boom.",
+    "prettify": "Verfraai",
+    "minify": "Minimaliseer",
+    "treeView": "Boomweergave",
+    "copy": "Kopieer",
+    "input": "Invoer",
+    "output": "Uitvoer",
+    "placeholder": "Plak hier je JSON...",
+    "backTools": "\u2190 Terug naar tools"
+  },
+  "cpred": {
+    "heading": "Cyberpunk Red Generator",
+    "subtitle": "Genereer willekeurige ontmoetingen, NPC's, buit en Night City-locaties voor je Cyberpunk Red-sessies.",
+    "encounters": "Ontmoetingen",
+    "npcs": "NPC's",
+    "loot": "Buit",
+    "locations": "Locaties",
+    "nightMarket": "Nachtmarkt",
+    "midnightMarket": "Midnight Market",
+    "balancer": "Balancer",
+    "filterWeapon": "Wapentype",
+    "allTypes": "Alle Types",
+    "roll": "Opnieuw Rollen",
+    "backTools": "\u2190 Terug naar tools"
+  },
+  "mdEditor": {
+    "heading": "Markdown Editor",
+    "subtitle": "Schrijf Markdown en bekijk het live gerenderd in de portfolio-stijl. Open .md bestanden, bewerk en download.",
+    "editTab": "Bewerken",
+    "previewTab": "Preview",
+    "open": "Bestand Openen",
+    "download": "Download .md",
+    "copyMd": "Kopieer Markdown",
+    "copyHtml": "Kopieer HTML",
+    "backTools": "\u2190 Terug naar tools"
+  },
+  "cvBuilder": {
+    "heading": "CV Bouwer",
+    "subtitle": "Vul je gegevens in en bekijk een live preview van je CV. Print of sla op als PDF wanneer je klaar bent.",
+    "editTab": "Bewerken",
+    "previewTab": "Preview",
+    "personalInfo": "Persoonlijke Gegevens",
+    "fullName": "Volledige Naam",
+    "jobTitle": "Functietitel",
+    "photo": "Foto",
+    "uploadPhoto": "Foto Uploaden",
+    "or": "of",
+    "pasteUrl": "Plak afbeeldings-URL...",
+    "photoFromUrl": "Van URL",
+    "aboutYou": "Over Jou",
+    "accentColor": "Accentkleur",
+    "contactInfo": "Contactgegevens",
+    "emailLabel": "E-mail",
+    "location": "Locatie",
+    "website": "Website",
+    "skills": "Vaardigheden",
+    "categoryName": "Categorie",
+    "skillsList": "Vaardigheden",
+    "skillsPlaceholder": "React, TypeScript, Node.js...",
+    "addCategory": "Categorie Toevoegen",
+    "experience": "Ervaring",
+    "roleTitle": "Rol / Titel",
+    "company": "Bedrijf",
+    "period": "Periode",
+    "description": "Beschrijving",
+    "clients": "Klanten",
+    "clientName": "Klantnaam",
+    "clientSkillsPlaceholder": "C#, Azure, React...",
+    "addClient": "Klant Toevoegen",
+    "addExperience": "Ervaring Toevoegen",
+    "education": "Opleiding",
+    "degree": "Diploma / Opleiding",
+    "institution": "Instelling",
+    "addEducation": "Opleiding Toevoegen",
+    "print": "Print / Opslaan als PDF",
+    "clearAll": "Alles Wissen",
+    "backTools": "\u2190 Terug naar tools"
   },
   "projectDetail": {
     "notFound": "Project niet gevonden",

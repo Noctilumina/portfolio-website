@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell.exe -Command \"winget install OpenJS.NodeJS.LTS --accept-source-agreements --accept-package-agreements\" 2>&1)",
+      "Bash(export PATH=\"/c/Program Files/nodejs:$PATH\")",
+      "Bash(npm install:*)",
+      "Bash(powershell.exe -Command \"winget install poppler --accept-source-agreements --accept-package-agreements\" 2>&1)",
+      "Bash(export PATH=/c/Users/tompe/AppData/Local/Microsoft/WinGet/Links:$PATH)",
+      "Bash(pdftotext C:/Users/tompe/Downloads/Cyberpunk_Red.pdf -)",
+      "Bash(grep -n \"^[A-Z][A-Z ]*$\")",
+      "Bash(pdftotext -f 72 -l 106 \"C:/Users/tompe/Downloads/Cyberpunk_Red.pdf\" /c/Users/irisp/Documents/Portfolio/cpred_extract_stats_skills.txt)",
+      "Bash(pdftotext -f 126 -l 166 \"C:/Users/tompe/Downloads/Cyberpunk_Red.pdf\" /c/Users/irisp/Documents/Portfolio/cpred_extract_actions_roles.txt)",
+      "Bash(pdftotext -f 167 -l 218 \"C:/Users/tompe/Downloads/Cyberpunk_Red.pdf\" /c/Users/irisp/Documents/Portfolio/cpred_extract_combat_net.txt)",
+      "Bash(pdftotext -f 219 -l 232 \"C:/Users/tompe/Downloads/Cyberpunk_Red.pdf\" /c/Users/irisp/Documents/Portfolio/cpred_extract_trauma_drugs.txt)"
+    ]
+  }
+}

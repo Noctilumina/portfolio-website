@@ -61,6 +61,7 @@ export default function Navbar() {
   const isOnAbout = location.pathname === '/about';
   const isOnCV = location.pathname === '/cv';
   const isOnBlog = location.pathname.startsWith('/blog');
+  const isOnTools = location.pathname === '/tools';
   const isOnHome = location.pathname === '/';
 
   const scrollToSection = (target) => {
@@ -127,6 +128,14 @@ export default function Navbar() {
           >
             CV
           </button>
+          <button
+            className={`${styles.navLink} ${isOnTools ? styles.navLinkActive : ''}`}
+            onClick={() => { setMobileOpen(false); startTransition('/tools'); }}
+            role="listitem"
+            aria-current={isOnTools ? 'page' : undefined}
+          >
+            {t('nav.tools')}
+          </button>
           <button className={styles.navLink} onClick={toggleLocale} role="listitem">
             {locale === 'en' ? 'NL' : 'EN'}
           </button>
@@ -182,6 +191,13 @@ export default function Navbar() {
           tabIndex={mobileOpen ? 0 : -1}
         >
           CV
+        </button>
+        <button
+          className={`${styles.mobileLink} ${isOnTools ? styles.mobileLinkActive : ''}`}
+          onClick={() => { closeMobileMenu(); startTransition('/tools'); }}
+          tabIndex={mobileOpen ? 0 : -1}
+        >
+          {t('nav.tools')}
         </button>
         <button className={styles.navLink} onClick={toggleLocale} tabIndex={mobileOpen ? 0 : -1}>
           {locale === 'en' ? 'NL' : 'EN'}

@@ -1,0 +1,649 @@
+.page {
+  padding: 6rem 2rem 4rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--color-text);
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 1.25rem;
+  border: 0.15em solid var(--color-border);
+  border-radius: 0.3em;
+  overflow: hidden;
+}
+
+.tab {
+  flex: 1;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.6em 0.5em;
+  background: var(--color-surface);
+  color: var(--color-muted);
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.tab + .tab {
+  border-left: 0.15em solid var(--color-border);
+}
+
+.tabActive {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+/* Roll button */
+.rollBtn {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  width: 100%;
+  padding: 0.7em;
+  margin-bottom: 1.5rem;
+  border: none;
+  border-radius: 0.3em;
+  cursor: pointer;
+  background: var(--color-border);
+}
+
+.rollBtn {
+  display: block;
+  box-sizing: border-box;
+  border: 0.15em solid var(--color-border);
+  border-radius: 0.3em;
+  padding: 0.75em 1.5em;
+  background: var(--color-primary);
+  color: #ffffff;
+  box-shadow: 0 0.25em 0 var(--color-border);
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.rollBtn:hover {
+  transform: translateY(-0.1em);
+  box-shadow: 0 0.35em 0 var(--color-border);
+}
+
+.rollBtn:active {
+  transform: translateY(0.1em);
+  box-shadow: 0 0.1em 0 var(--color-border);
+}
+
+/* Results */
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.newest {
+  animation: slideIn 0.3s ease;
+}
+
+.older {
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+.older:hover {
+  opacity: 0.85;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Result card */
+.resultCard {
+  background: var(--color-surface);
+  border: 0.2em solid var(--color-border);
+  border-radius: 0.3em;
+  box-shadow: 0.35em 0.35em 0 var(--color-shadow, #000);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.resultHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.resultTitle {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text);
+  text-transform: uppercase;
+}
+
+.badge {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.2em 0.6em;
+  border-radius: 0.2em;
+  background: var(--color-primary);
+  color: #fff;
+  white-space: nowrap;
+}
+
+/* Threat level badges */
+.threatLowMedium { background: #FF9800; }
+.threatMedium { background: #F57C00; }
+.threatMediumHigh { background: #E65100; }
+.threatHigh { background: #D32F2F; }
+.threatVeryHigh { background: #B71C1C; }
+.threatExtreme { background: #880E4F; }
+
+/* Rarity badges */
+.rarityCommon { background: #607D8B; }
+.rarityUncommon { background: #4CAF50; }
+.rarityRare { background: #2196F3; }
+.rarityVeryRare { background: #9C27B0; }
+.rarityLegendary { background: #FF6F00; }
+
+.resultRow {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+
+.label {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  white-space: nowrap;
+  min-width: 5.5em;
+  flex-shrink: 0;
+  padding-top: 0.1em;
+}
+
+.flavorText {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--color-muted);
+  border-left: 3px solid var(--color-primary);
+  padding-left: 0.75rem;
+}
+
+.eddies {
+  color: #FFD700;
+  font-weight: 700;
+  font-family: var(--font-heading);
+}
+
+/* Stats grid */
+.statsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.25rem;
+}
+
+.statBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--color-bg);
+  border: 0.1em solid var(--color-border);
+  border-radius: 0.2em;
+  padding: 0.25em 0.5em;
+  min-width: 3em;
+}
+
+.statLabel {
+  font-family: var(--font-heading);
+  font-size: 0.55rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.statVal {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+/* Hook box */
+.hookBox {
+  background: rgba(233, 30, 99, 0.05);
+  border: 0.1em dashed var(--color-primary);
+  border-radius: 0.2em;
+  padding: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+
+.hookBox .label {
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+/* Weapon filter row */
+.filterRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.filterLabel {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.filterSelect {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  padding: 0.35em 0.6em;
+  border: 0.12em solid var(--color-border);
+  border-radius: 0.2em;
+  background: var(--color-surface);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+/* Item blocks (weapon/gear/cyberware) */
+.itemBlock {
+  padding: 0.5rem 0.6rem;
+  border-left: 3px solid var(--color-primary);
+  background: rgba(233, 30, 99, 0.03);
+  margin-bottom: 0.3rem;
+}
+
+.itemHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.itemName {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.itemType {
+  font-family: var(--font-heading);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  background: var(--color-bg);
+  padding: 0.1em 0.4em;
+  border-radius: 0.15em;
+  border: 1px solid var(--color-border);
+}
+
+.itemQuality {
+  font-family: var(--font-heading);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  padding: 0.1em 0.4em;
+  border-radius: 0.15em;
+  color: #fff;
+}
+
+.qualityPoor { background: #78909C; }
+.qualityStandard { background: #607D8B; }
+.qualityExcellent { background: #2196F3; }
+.qualityLegendary { background: #FF6F00; }
+
+.itemDamage {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  color: #F44336;
+  font-weight: 700;
+}
+
+.itemFlavor {
+  font-size: 0.75rem;
+  font-style: italic;
+  color: var(--color-muted);
+  line-height: 1.4;
+  margin-top: 0.15rem;
+}
+
+.itemFound {
+  font-size: 0.65rem;
+  color: var(--color-muted);
+  opacity: 0.7;
+  margin-top: 0.1rem;
+}
+
+/* Vendor cards (night market) */
+.vendorList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.vendorCard {
+  background: var(--color-bg);
+  border: 0.12em solid var(--color-border);
+  border-radius: 0.2em;
+  padding: 0.6rem;
+}
+
+.vendorHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.3rem;
+}
+
+.vendorType {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.vendorPrice {
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  color: #FFD700;
+  font-weight: 700;
+}
+
+.vendorQuirk {
+  font-size: 0.75rem;
+  font-style: italic;
+  color: var(--color-muted);
+  margin-bottom: 0.3rem;
+}
+
+.vendorInventory {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+/* Night Market stall items (RAW) */
+.stallSection {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background: var(--color-bg);
+  border: 0.12em solid var(--color-border);
+  border-radius: 0.2em;
+}
+
+.stallSection + .stallSection {
+  margin-top: 0.5rem;
+}
+
+.marketItem {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+}
+
+.marketItem:last-child {
+  border-bottom: none;
+}
+
+.marketRoll {
+  font-family: var(--font-heading);
+  font-size: 0.6rem;
+  color: var(--color-muted);
+  background: var(--color-surface);
+  padding: 0.1em 0.4em;
+  border-radius: 0.15em;
+  border: 1px solid var(--color-border);
+  min-width: 4em;
+  text-align: center;
+}
+
+.marketItemName {
+  font-weight: 700;
+  color: var(--color-text);
+  flex: 1;
+}
+
+.marketItemMeta {
+  font-family: var(--font-heading);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.marketItemPrice {
+  font-family: var(--font-heading);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* Encounter Balancer */
+.balancerPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pcList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pcCard {
+  background: var(--color-surface);
+  border: 0.15em solid var(--color-border);
+  border-radius: 0.2em;
+  box-shadow: 0.2em 0.2em 0 var(--color-shadow, #000);
+  padding: 0.75rem;
+}
+
+.pcCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.pcNameInput {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--color-primary);
+  color: var(--color-text);
+  padding: 0.2em 0;
+  outline: none;
+  width: 60%;
+}
+
+.pcRemove {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  width: 1.6em;
+  height: 1.6em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.1em solid var(--color-border);
+  border-radius: 0.2em;
+  background: var(--color-bg);
+  color: var(--color-muted);
+  cursor: pointer;
+}
+
+.pcRemove:hover {
+  color: #e53935;
+  border-color: #e53935;
+}
+
+.pcStats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.pcStat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  flex: 1;
+  min-width: 4em;
+}
+
+.pcStat span {
+  font-family: var(--font-heading);
+  font-size: 0.55rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.pcStat input {
+  width: 100%;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 0.25em;
+  border: 0.1em solid var(--color-border);
+  border-radius: 0.2em;
+  background: var(--color-bg);
+  color: var(--color-text);
+  outline: none;
+}
+
+.pcStat input:focus {
+  border-color: var(--color-primary);
+}
+
+.addPcBtn {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  background: none;
+  border: 0.12em dashed var(--color-primary);
+  border-radius: 0.2em;
+  padding: 0.5em;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.addPcBtn:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.balancerResults {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.warningList {
+  margin-top: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.warning {
+  font-size: 0.75rem;
+  color: #FF9800;
+  padding: 0.3em 0.5em;
+  background: rgba(255, 152, 0, 0.08);
+  border-left: 3px solid #FF9800;
+  border-radius: 0.15em;
+}
+
+/* Difficulty badges */
+.diffEasy { background: #4CAF50; }
+.diffMedium { background: #FF9800; }
+.diffHard { background: #F44336; }
+.diffVeryHard { background: #D32F2F; }
+.diffDeadly { background: #880E4F; }
+
+/* Back */
+.backWrapper {
+  margin-top: 2.5rem;
+}
+
+.backButton {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.backButton:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .tab {
+    font-size: 0.65rem;
+    padding: 0.5em 0.3em;
+  }
+}

@@ -10,6 +10,14 @@ import About from './pages/About/About';
 import CV from './pages/CV/CV';
 import BlogList from './pages/Blog/BlogList';
 import BlogPost from './pages/Blog/BlogPost';
+import Tools from './pages/Tools/Tools';
+import CvBuilder from './pages/Tools/CvBuilder/CvBuilder';
+import MdEditor from './pages/Tools/MdEditor/MdEditor';
+import JsonFormatter from './pages/Tools/JsonFormatter/JsonFormatter';
+import CpRedGenerator from './pages/Tools/CpRedGenerator/CpRedGenerator';
+import CpRedWiki from './pages/Tools/CpRedGenerator/CpRedWiki';
+import DiffChecker from './pages/Tools/DiffChecker/DiffChecker';
+import StyleExplorer from './pages/Tools/StyleExplorer/StyleExplorer';
 import styles from './App.module.css';
 
 const TransitionContext = createContext();
@@ -106,6 +114,14 @@ const router = createBrowserRouter(
         { path: '/cv', element: <CV /> },
         { path: '/blog', element: <BlogList /> },
         { path: '/blog/:slug', element: <BlogPost /> },
+        { path: '/tools', element: <Tools /> },
+        { path: '/tools/cv-builder', element: <CvBuilder /> },
+        { path: '/tools/md-editor', element: <MdEditor /> },
+        { path: '/tools/json-formatter', element: <JsonFormatter /> },
+        { path: '/tools/cpred-generator', element: <CpRedGenerator /> },
+        { path: '/tools/cpred-wiki', element: <CpRedWiki /> },
+        { path: '/tools/diff-checker', element: <DiffChecker /> },
+        { path: '/tools/style-explorer', element: <StyleExplorer /> },
       ],
     },
   ],

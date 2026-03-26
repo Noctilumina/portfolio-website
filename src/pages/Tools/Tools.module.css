@@ -1,0 +1,306 @@
+.page {
+  padding: 6rem 2rem 4rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  color: var(--color-text);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--color-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* Filter bar */
+.filterBar {
+  margin-bottom: 2rem;
+}
+
+/* Search input — pop art style with typing animation */
+.searchInput {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  padding: 0.6em 0.9em;
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 0.15em solid var(--color-border);
+  border-radius: 0.3em;
+  box-shadow: 0.2em 0.2em 0 var(--color-shadow, #000);
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+  margin-bottom: 0.75rem;
+}
+
+.searchInput:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0.25em 0.25em 0 var(--color-primary);
+  animation: inputPulse 1.5s ease infinite;
+}
+
+@keyframes inputPulse {
+  0%, 100% {
+    box-shadow: 0.25em 0.25em 0 var(--color-primary);
+  }
+  50% {
+    box-shadow: 0.3em 0.3em 0 var(--color-primary), 0 0 0 0.15em rgba(233, 30, 99, 0.15);
+  }
+}
+
+/* Keystroke thump — shadow kicks on each keypress */
+.searchThump {
+  animation: thump 0.12s ease;
+}
+
+@keyframes thump {
+  0% { box-shadow: 0.25em 0.25em 0 var(--color-primary); }
+  50% { box-shadow: 0.15em 0.15em 0 var(--color-primary); transform: translate(0.05em, 0.05em); }
+  100% { box-shadow: 0.25em 0.25em 0 var(--color-primary); transform: translate(0, 0); }
+}
+
+/* Typing caret blink — thicker pop art cursor */
+.searchInput::placeholder {
+  transition: color 0.2s;
+}
+
+.searchInput:focus::placeholder {
+  color: transparent;
+}
+
+.chipRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+/* Filter chips — matching SkillBadge pop art style */
+.filterChip {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.35rem 0.7rem;
+  background: var(--color-primary);
+  border: 0.15em solid var(--color-border);
+  border-radius: 0.3em;
+  box-shadow: 0.15em 0.15em 0 var(--color-shadow, #000);
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-text);
+  cursor: pointer;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s, color 0.3s;
+}
+
+.filterChip::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-surface);
+  z-index: -1;
+  transform-origin: right;
+  transition: transform 0.4s ease;
+}
+
+.filterChip:hover {
+  transform: translate(-0.08em, -0.08em);
+  box-shadow: 0.23em 0.23em 0 var(--color-shadow, #000);
+  color: #ffffff;
+}
+
+.filterChip:hover::after {
+  transform: scaleX(0);
+}
+
+/* Active chip — pressed into the page, shadow collapses */
+.filterChipActive {
+  color: #ffffff;
+  transform: translate(0.15em, 0.15em);
+  box-shadow: 0 0 0 var(--color-shadow, #000);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, color 0.3s;
+}
+
+.filterChipActive:hover {
+  transform: translate(0.15em, 0.15em);
+  box-shadow: 0 0 0 var(--color-shadow, #000);
+}
+
+.filterChipActive::after {
+  transform: scaleX(0);
+}
+
+.filterChipText {
+  position: relative;
+  z-index: 1;
+  line-height: 1;
+}
+
+.noResults {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  text-align: center;
+  padding: 2rem 0;
+}
+
+/* Grid — fixed 2-column to prevent layout jump */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  min-height: 20rem;
+  align-content: start;
+}
+
+/* Cards */
+.card {
+  background: var(--color-surface);
+  border: 0.2em solid var(--color-border);
+  border-radius: 0.3em;
+  box-shadow: 0.4em 0.4em 0 var(--color-shadow, #000);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cardClickable {
+  cursor: pointer;
+  position: relative;
+}
+
+.card:hover {
+  transform: translate(-0.15em, -0.15em);
+  box-shadow: 0.55em 0.55em 0 var(--color-shadow, #000);
+}
+
+.openArrow {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  transition: transform 0.2s;
+}
+
+.card:hover .openArrow {
+  transform: translateX(0.2em);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cardTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+}
+
+.cardDescription {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-muted);
+  flex: 1;
+}
+
+/* Card tags — same pop art chip style */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.6rem;
+  background: var(--color-primary);
+  border: 0.12em solid var(--color-border);
+  border-radius: 0.2em;
+  box-shadow: 0.12em 0.12em 0 var(--color-shadow, #000);
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-text);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.tag::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-surface);
+  z-index: -1;
+}
+
+/* Links */
+.links {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.link {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0.3em 0.8em;
+  border: 0.12em solid var(--color-primary);
+  border-radius: 0.2em;
+  transition: background 0.15s, color 0.15s;
+}
+
+.link:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+/* Back */
+.backWrapper {
+  margin-top: 3rem;
+}
+
+.backButton {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.backButton:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

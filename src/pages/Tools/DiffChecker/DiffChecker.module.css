@@ -1,0 +1,221 @@
+.page {
+  padding: 6rem 2rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header { margin-bottom: 1rem; }
+
+.title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--color-text);
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.toolbarBtn, .toolbarBtnSecondary {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.4em 0.9em;
+  border: 0.12em solid var(--color-border);
+  border-radius: 0.2em;
+  box-shadow: 0.15em 0.15em 0 var(--color-shadow, #000);
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.toolbarBtn {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.toolbarBtnSecondary {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.toolbarBtn:hover, .toolbarBtnSecondary:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.2em 0.2em 0 var(--color-shadow, #000);
+}
+
+.inputArea {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  min-height: 30vh;
+}
+
+.pane {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.paneLabel {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 0.4rem;
+}
+
+.textarea {
+  flex: 1;
+  width: 100%;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  padding: 1rem;
+  background: #1a1a1a;
+  color: #f0f0f0;
+  border: 0.2em solid var(--color-border);
+  border-radius: 0.3em;
+  box-shadow: 0.4em 0.4em 0 var(--color-shadow, #000);
+  resize: none;
+  outline: none;
+}
+
+.textarea:focus { border-color: var(--color-primary); }
+
+/* Stats */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.statSame { color: var(--color-muted); }
+.statChanged { color: #FF9800; }
+.statAdded { color: #4CAF50; }
+.statRemoved { color: #F44336; }
+
+/* Diff output */
+.diffOutput {
+  background: #1a1a1a;
+  border: 0.2em solid var(--color-border);
+  border-radius: 0.3em;
+  box-shadow: 0.4em 0.4em 0 var(--color-shadow, #000);
+  overflow-x: auto;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.diffTable { min-width: 100%; }
+
+.diffRow {
+  display: flex;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.lineNum {
+  flex: 0 0 2.5em;
+  text-align: right;
+  padding: 0.1em 0.5em;
+  color: #607D8B;
+  user-select: none;
+}
+
+.diffLeft, .diffRight {
+  flex: 1;
+  padding: 0.1em 0.6em;
+  white-space: pre-wrap;
+  word-break: break-all;
+  min-width: 0;
+}
+
+.diffSep {
+  flex: 0 0 1.5em;
+  text-align: center;
+  padding: 0.1em 0;
+  font-weight: 700;
+  user-select: none;
+}
+
+.diff_same {
+  color: #aaa;
+}
+
+.diff_changed {
+  background: rgba(255, 152, 0, 0.1);
+  color: #FFD54F;
+}
+
+.diff_changed .diffLeft {
+  background: rgba(244, 67, 54, 0.1);
+  text-decoration: line-through;
+  color: #EF9A9A;
+}
+
+.diff_changed .diffRight {
+  background: rgba(76, 175, 80, 0.1);
+  color: #A5D6A7;
+}
+
+.diff_changed .diffSep { color: #FF9800; }
+
+.diff_added {
+  background: rgba(76, 175, 80, 0.1);
+  color: #A5D6A7;
+}
+
+.diff_added .diffSep { color: #4CAF50; }
+
+.diff_removed {
+  background: rgba(244, 67, 54, 0.1);
+  color: #EF9A9A;
+}
+
+.diff_removed .diffSep { color: #F44336; }
+
+/* Back */
+.backWrapper { margin-top: 2rem; }
+
+.backButton {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.backButton:hover { text-decoration: underline; }
+
+@media (max-width: 900px) {
+  .inputArea {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .pane { min-height: 20vh; }
+
+  .diffLeft, .diffRight { font-size: 0.7rem; }
+}

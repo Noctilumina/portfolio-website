@@ -1,0 +1,99 @@
+[
+  {
+    "slug": "cv-builder",
+    "title": "CV Builder",
+    "shortDescription": "Build a professional two-column CV with a live preview and print it as a PDF.",
+    "techStack": ["React", "CSS Modules"],
+    "categories": ["Productivity", "PDF", "Builder"],
+    "route": "/tools/cv-builder",
+    "githubUrl": "",
+    "liveUrl": ""
+  },
+  {
+    "slug": "md-editor",
+    "title": "Markdown Editor",
+    "shortDescription": "Write and preview Markdown in the portfolio's pop art style. Open, edit, and download .md files.",
+    "techStack": ["React", "react-markdown"],
+    "categories": ["Editor", "Writing", "Productivity"],
+    "route": "/tools/md-editor",
+    "githubUrl": "",
+    "liveUrl": ""
+  },
+  {
+    "slug": "json-formatter",
+    "title": "JSON Formatter",
+    "shortDescription": "Prettify, minify, and explore JSON with a collapsible tree view.",
+    "techStack": ["React"],
+    "categories": ["Developer", "Formatter", "Data"],
+    "route": "/tools/json-formatter",
+    "githubUrl": "",
+    "liveUrl": ""
+  },
+  {
+    "slug": "cpred-generator",
+    "title": "Cyberpunk Red Generator",
+    "shortDescription": "Random encounter, NPC, loot, and location generators for Cyberpunk Red TTRPG sessions.",
+    "techStack": ["React"],
+    "categories": ["TTRPG", "Generator", "Creative"],
+    "route": "/tools/cpred-generator",
+    "githubUrl": "",
+    "liveUrl": ""
+  },
+  {
+    "slug": "cpred-wiki",
+    "title": "CPR Rules Reference",
+    "shortDescription": "Searchable wiki of Cyberpunk Red core mechanics. Stats, skills, combat, netrunning, and more.",
+    "techStack": ["React", "react-markdown"],
+    "categories": ["TTRPG", "Productivity"],
+    "route": "/tools/cpred-wiki",
+    "githubUrl": "",
+    "liveUrl": ""
+  },
+  {
+    "slug": "diff-checker",
+    "title": "Diff Checker",
+    "shortDescription": "Compare two texts side-by-side and see differences highlighted line-by-line.",
+    "techStack": ["React"],
+    "categories": ["Developer", "Comparison", "Productivity"],
+    "route": "/tools/diff-checker",
+    "githubUrl": "",
+    "liveUrl": ""
+  },
+  {
+    "slug": "style-explorer",
+    "title": "CSS Style Explorer",
+    "shortDescription": "Explore design movements from Pop Art to Cyberpunk. Pick a preset, tweak every property, copy the CSS.",
+    "techStack": ["React", "CSS"],
+    "categories": ["Design", "CSS", "Creative"],
+    "route": "/tools/style-explorer",
+    "githubUrl": "",
+    "liveUrl": ""
+  },
+  {
+    "slug": "image-tagger",
+    "title": "Image Tagger",
+    "shortDescription": "Tag and organize images with custom labels. Local repo — coming soon.",
+    "techStack": ["React"],
+    "categories": ["Images", "Productivity"],
+    "githubUrl": "",
+    "liveUrl": ""
+  },
+  {
+    "slug": "sprite-selector",
+    "title": "Sprite Selector",
+    "shortDescription": "Select and extract sprites from sprite sheets. Local repo — coming soon.",
+    "techStack": ["React", "Canvas API"],
+    "categories": ["Images", "Gamedev", "Creative"],
+    "githubUrl": "",
+    "liveUrl": ""
+  },
+  {
+    "slug": "ttrpg-map-maker",
+    "title": "TTRPG Map Maker",
+    "shortDescription": "Grid-based map builder for tabletop RPG sessions. Local repo — coming soon.",
+    "techStack": ["React", "Konva.js"],
+    "categories": ["TTRPG", "Gamedev", "Builder", "Creative"],
+    "githubUrl": "",
+    "liveUrl": ""
+  }
+]

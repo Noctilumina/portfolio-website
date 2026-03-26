@@ -10,7 +10,8 @@
     "skipToContent": "Skip to main content",
     "goToTop": "Go to top of page",
     "toggleMenu": "Toggle navigation menu",
-    "navMenu": "Navigation menu"
+    "navMenu": "Navigation menu",
+    "tools": "Tools"
   },
   "hero": {
     "name": "Iris Peters",
@@ -91,6 +92,186 @@
     "aboutMe": "About Me",
     "education": "Education",
     "aboutText": "Fullstack developer with 4+ years of experience in web applications, cloud infrastructure, and CI/CD pipelines. Broad experience in diverse sectors. Outside of work, an active HEMA practitioner (sword fighting), Cyberpunk Red GM, and hobbyist game developer."
+  },
+  "tools": {
+    "heading": "Tools",
+    "subtitle": "Utilities and developer tools I've built.",
+    "liveDemo": "Live Demo",
+    "searchPlaceholder": "Search tools...",
+    "noResults": "No tools match your search.",
+    "backHome": "\u2190 Back to home"
+  },
+  "toolData": [
+    {
+      "title": "CV Builder",
+      "shortDescription": "Build a professional two-column CV with a live preview and print it as a PDF."
+    },
+    {
+      "title": "Markdown Editor",
+      "shortDescription": "Write and preview Markdown in the portfolio's pop art style. Open, edit, and download .md files."
+    },
+    {
+      "title": "JSON Formatter",
+      "shortDescription": "Prettify, minify, and explore JSON with a collapsible tree view."
+    },
+    {
+      "title": "Cyberpunk Red Generator",
+      "shortDescription": "Random encounter, NPC, loot, and location generators for Cyberpunk Red TTRPG sessions."
+    },
+    {
+      "title": "CPR Rules Reference",
+      "shortDescription": "Searchable wiki of Cyberpunk Red core mechanics. Stats, skills, combat, netrunning, and more."
+    },
+    {
+      "title": "Diff Checker",
+      "shortDescription": "Compare two texts side-by-side and see differences highlighted line-by-line."
+    },
+    {
+      "title": "CSS Style Explorer",
+      "shortDescription": "Explore design movements from Pop Art to Cyberpunk. Pick a preset, tweak every property, copy the CSS."
+    },
+    {
+      "title": "Image Tagger",
+      "shortDescription": "Tag and organize images with custom labels. Local repo — coming soon."
+    },
+    {
+      "title": "Sprite Selector",
+      "shortDescription": "Select and extract sprites from sprite sheets. Local repo — coming soon."
+    },
+    {
+      "title": "TTRPG Map Maker",
+      "shortDescription": "Grid-based map builder for tabletop RPG sessions. Local repo — coming soon."
+    }
+  ],
+  "diffChecker": {
+    "heading": "Diff Checker",
+    "subtitle": "Paste two texts to compare them line-by-line with highlighted differences.",
+    "compare": "Compare",
+    "clear": "Clear",
+    "original": "Original",
+    "modified": "Modified",
+    "pasteHere": "Paste text here...",
+    "unchanged": "unchanged",
+    "changed": "changed",
+    "added": "added",
+    "removed": "removed",
+    "backTools": "\u2190 Back to tools"
+  },
+  "styleExplorer": {
+    "heading": "CSS Style Explorer",
+    "subtitle": "Pick a design movement preset, tweak the properties, and copy the CSS.",
+    "presets": "Design Presets",
+    "background": "Background",
+    "type": "Type",
+    "solid": "Solid",
+    "linearGradient": "Linear Gradient",
+    "radialGradient": "Radial Gradient",
+    "color": "Color",
+    "angle": "Angle",
+    "border": "Border",
+    "width": "Width",
+    "radius": "Radius",
+    "shadow": "Shadow",
+    "opacity": "Opacity",
+    "typography": "Typography",
+    "fontSize": "Font Size",
+    "fontWeight": "Font Weight",
+    "letterSpacing": "Letter Spacing",
+    "textTransform": "Text Transform",
+    "textColor": "Text Color",
+    "style": "Style",
+    "backdropFilter": "Backdrop Filter",
+    "clipPath": "Clip Path",
+    "enableClipPath": "Enable clip-path",
+    "addPoint": "Add Point",
+    "removePoint": "Remove Point",
+    "reset": "Reset",
+    "hoverEffect": "Hover Effect",
+    "effect": "Effect",
+    "duration": "Duration",
+    "easing": "Easing",
+    "copy": "Copy CSS",
+    "backTools": "\u2190 Back to tools"
+  },
+  "jsonFormatter": {
+    "heading": "JSON Formatter",
+    "subtitle": "Paste JSON to prettify, minify, or explore it as a collapsible tree.",
+    "prettify": "Prettify",
+    "minify": "Minify",
+    "treeView": "Tree View",
+    "copy": "Copy",
+    "input": "Input",
+    "output": "Output",
+    "placeholder": "Paste your JSON here...",
+    "backTools": "\u2190 Back to tools"
+  },
+  "cpred": {
+    "heading": "Cyberpunk Red Generator",
+    "subtitle": "Roll random encounters, NPCs, loot drops, and Night City locations for your Cyberpunk Red sessions.",
+    "encounters": "Encounters",
+    "npcs": "NPCs",
+    "loot": "Loot",
+    "locations": "Locations",
+    "nightMarket": "Night Market",
+    "midnightMarket": "Midnight Market",
+    "balancer": "Balancer",
+    "filterWeapon": "Weapon Type",
+    "allTypes": "All Types",
+    "roll": "Roll Again",
+    "backTools": "\u2190 Back to tools"
+  },
+  "mdEditor": {
+    "heading": "Markdown Editor",
+    "subtitle": "Write Markdown and see it rendered live in the portfolio style. Open .md files, edit, and download.",
+    "editTab": "Edit",
+    "previewTab": "Preview",
+    "open": "Open File",
+    "download": "Download .md",
+    "copyMd": "Copy Markdown",
+    "copyHtml": "Copy HTML",
+    "backTools": "\u2190 Back to tools"
+  },
+  "cvBuilder": {
+    "heading": "CV Builder",
+    "subtitle": "Fill in your details and see a live preview of your CV. Print or save as PDF when you're done.",
+    "editTab": "Edit",
+    "previewTab": "Preview",
+    "personalInfo": "Personal Info",
+    "fullName": "Full Name",
+    "jobTitle": "Job Title",
+    "photo": "Photo",
+    "uploadPhoto": "Upload Photo",
+    "or": "or",
+    "pasteUrl": "Paste image URL...",
+    "photoFromUrl": "From URL",
+    "aboutYou": "About You",
+    "accentColor": "Accent Color",
+    "contactInfo": "Contact Info",
+    "emailLabel": "Email",
+    "location": "Location",
+    "website": "Website",
+    "skills": "Skills",
+    "categoryName": "Category",
+    "skillsList": "Skills",
+    "skillsPlaceholder": "React, TypeScript, Node.js...",
+    "addCategory": "Add Category",
+    "experience": "Experience",
+    "roleTitle": "Role / Title",
+    "company": "Company",
+    "period": "Period",
+    "description": "Description",
+    "clients": "Clients",
+    "clientName": "Client name",
+    "clientSkillsPlaceholder": "C#, Azure, React...",
+    "addClient": "Add Client",
+    "addExperience": "Add Experience",
+    "education": "Education",
+    "degree": "Degree / Program",
+    "institution": "Institution",
+    "addEducation": "Add Education",
+    "print": "Print / Save as PDF",
+    "clearAll": "Clear All",
+    "backTools": "\u2190 Back to tools"
   },
   "projectDetail": {
     "notFound": "Project not found",
