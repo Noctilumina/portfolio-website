@@ -1,5 +1,32 @@
 [
   {
+    "slug": "building-a-tools-page",
+    "title": "Building a Tools Page (Because My Portfolio Was Getting Crowded)",
+    "titleNl": "Een Tools Pagina Bouwen (Want Mijn Portfolio Werd Te Vol)",
+    "date": "2026-03-26",
+    "tags": ["technical", "react", "portfolio"],
+    "excerpt": "I had too many small utilities lying around. So I built them a home inside my portfolio with search, filter chips, and pop art styling.",
+    "excerptNl": "Ik had te veel kleine tools rondslingeren. Dus bouwde ik ze een thuis in mijn portfolio met zoeken, filterchips en pop-art styling."
+  },
+  {
+    "slug": "building-a-cpr-wiki",
+    "title": "Building a Cyberpunk Red Rules Wiki (From PDF to 500 Searchable Entries)",
+    "titleNl": "Een Cyberpunk Red Regels Wiki Bouwen (Van PDF naar 500 Doorzoekbare Items)",
+    "date": "2026-03-26",
+    "tags": ["technical", "ttrpg", "cyberpunk-red"],
+    "excerpt": "I built a searchable rules wiki with 400+ quick-ref procedures because I kept forgetting how grappling works mid-session.",
+    "excerptNl": "Ik bouwde een doorzoekbare regels-wiki met 400+ snelreferenties omdat ik steeds vergat hoe grappling werkt midden in een sessie."
+  },
+  {
+    "slug": "cyberpunk-red-gm-toolkit",
+    "title": "The Cyberpunk Red GM Toolkit I Wish I Had When I Started",
+    "titleNl": "De Cyberpunk Red GM Toolkit Die Ik Wilde Hebben Toen Ik Begon",
+    "date": "2026-03-26",
+    "tags": ["technical", "ttrpg", "cyberpunk-red", "gamedev"],
+    "excerpt": "A full GM companion: encounter balancer, Night Market generator (following RAW), NPC/loot generators with flavor text, and a rules wiki.",
+    "excerptNl": "Een complete GM-companion: encounter balancer, Nachtmarkt generator (volgens de regels), NPC/buit generators met smaaktekst, en een regels-wiki."
+  },
+  {
     "slug": "painting-my-hema-mask",
     "title": "Painting My HEMA Mask",
     "titleNl": "Mijn HEMA Masker Verven",

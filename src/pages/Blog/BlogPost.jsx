@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Markdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { useI18n } from '../../i18n/I18nContext';
 import { usePageTransition } from '../../App';
 import blogIndex from '../../data/blog/index.json';
@@ -55,7 +56,7 @@ export default function BlogPost() {
         </header>
 
         <div className={styles.articleContent}>
-          <Markdown components={{
+          <Markdown remarkPlugins={[remarkGfm]} components={{
             img: ({ src, alt, ...props }) => (
               <img
                 src={src?.startsWith('/') ? `${import.meta.env.BASE_URL}${src.replace(/^\//, '')}` : src}

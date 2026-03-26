@@ -11,7 +11,15 @@
       "Bash(pdftotext -f 72 -l 106 \"C:/Users/tompe/Downloads/Cyberpunk_Red.pdf\" /c/Users/irisp/Documents/Portfolio/cpred_extract_stats_skills.txt)",
       "Bash(pdftotext -f 126 -l 166 \"C:/Users/tompe/Downloads/Cyberpunk_Red.pdf\" /c/Users/irisp/Documents/Portfolio/cpred_extract_actions_roles.txt)",
       "Bash(pdftotext -f 167 -l 218 \"C:/Users/tompe/Downloads/Cyberpunk_Red.pdf\" /c/Users/irisp/Documents/Portfolio/cpred_extract_combat_net.txt)",
-      "Bash(pdftotext -f 219 -l 232 \"C:/Users/tompe/Downloads/Cyberpunk_Red.pdf\" /c/Users/irisp/Documents/Portfolio/cpred_extract_trauma_drugs.txt)"
+      "Bash(pdftotext -f 219 -l 232 \"C:/Users/tompe/Downloads/Cyberpunk_Red.pdf\" /c/Users/irisp/Documents/Portfolio/cpred_extract_trauma_drugs.txt)",
+      "Bash(node -e \"const {WIKI_ENTRIES, WIKI_CATEGORIES} = require\\(''./src/pages/Tools/CpRedGenerator/wikidata.js''\\); console.log\\(''Categories:'', WIKI_CATEGORIES.length\\); console.log\\(''Entries:'', WIKI_ENTRIES.length\\); WIKI_CATEGORIES.forEach\\(c => { const count = WIKI_ENTRIES.filter\\(e => e.category === c\\).length; console.log\\(''  '' + c + '': '' + count\\); }\\);\")",
+      "Bash(node -e \":*)",
+      "Bash(pdftotext -f 40 -l 70 \"C:/Users/tompe/Downloads/Cyberpunk_Red.pdf\" /c/Users/irisp/Documents/Portfolio/cpred_extract_chargen_lifepath.txt)",
+      "Bash(pdftotext -f 99 -l 106 \"C:/Users/tompe/Downloads/Cyberpunk_Red.pdf\" /c/Users/irisp/Documents/Portfolio/cpred_extract_fashion.txt)",
+      "Bash(pdftotext -f 195 -l 218 \"C:/Users/tompe/Downloads/Cyberpunk_Red.pdf\" /c/Users/irisp/Documents/Portfolio/cpred_extract_netarch_programs.txt)",
+      "Bash(pdftotext -f 372 -l 380 \"C:/Users/tompe/Downloads/Cyberpunk_Red.pdf\" /c/Users/irisp/Documents/Portfolio/cpred_extract_services_housing.txt)",
+      "Bash(pdftotext -f 110 -l 120 \"C:/Users/tompe/Downloads/Cyberpunk_Red.pdf\" /c/Users/irisp/Documents/Portfolio/cpred_extract_cyberware_detail.txt)",
+      "Bash(pdftotext -f 377 -l 380 C:/Users/tompe/Downloads/Cyberpunk_Red.pdf -)"
     ]
   }
 }

@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import Markdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { useI18n } from '../../../i18n/I18nContext';
 import { usePageTransition } from '../../../App';
 import styles from './MdEditor.module.css';
@@ -137,7 +138,7 @@ export default function MdEditor() {
         </div>
         <div className={`${styles.previewPane} ${tab === 'preview' ? styles.panelVisible : styles.panelHidden}`}>
           <div id="md-preview-content" className={styles.articleContent}>
-            <Markdown>{md}</Markdown>
+            <Markdown remarkPlugins={[remarkGfm]}>{md}</Markdown>
           </div>
         </div>
       </div>
