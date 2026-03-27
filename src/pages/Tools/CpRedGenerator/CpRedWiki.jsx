@@ -1,8 +1,8 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useRef, useEffect, useCallback } from 'react';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { useI18n } from '../../../i18n/I18nContext';
-import { usePageTransition } from '../../../App';
+import ToolNavbar from '../../../components/ToolNavbar/ToolNavbar';
 import { WIKI_ENTRIES, WIKI_CATEGORIES } from './wikidata';
 import { QUICK_REF, QUICK_REF_TOPICS } from './quickref';
 import styles from './CpRedWiki.module.css';
@@ -97,13 +97,27 @@ function QuickRefPanel({ onNavigateWiki }) {
   );
 }
 
+// Persist wiki state across HMR/remounts
+const wikiState = { mode: 'quickref', activeId: WIKI_ENTRIES[0]?.id || '', search: '' };
+
 export default function CpRedWiki() {
   const { t } = useI18n();
-  const { startTransition } = usePageTransition();
-  const [mode, setMode] = useState('quickref');
-  const [activeId, setActiveId] = useState(WIKI_ENTRIES[0]?.id || '');
-  const [search, setSearch] = useState('');
+  const [mode, _setMode] = useState(wikiState.mode);
+  const [activeId, _setActiveId] = useState(wikiState.activeId);
+  const [searchInput, setSearchInput] = useState(wikiState.search);
+  const [search, setSearch] = useState(wikiState.search);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const debounceRef = useRef(null);
+
+  const setMode = (m) => { wikiState.mode = m; _setMode(m); };
+  const setActiveId = (id) => { wikiState.activeId = id; _setActiveId(id); };
+
+  const handleSearchChange = useCallback((e) => {
+    const val = e.target.value;
+    setSearchInput(val);
+    if (debounceRef.current) clearTimeout(debounceRef.current);
+    debounceRef.current = setTimeout(() => setSearch(val), 200);
+  }, []);
 
   const activeEntry = WIKI_ENTRIES.find((e) => e.id === activeId) || WIKI_ENTRIES[0];
 
@@ -117,6 +131,42 @@ export default function CpRedWiki() {
     });
     return map;
   }, [search]);
+
+  // Full-text search results with snippets
+  const searchResults = useMemo(() => {
+    if (!search || search.length < 2) return [];
+    const q = search.toLowerCase();
+    return WIKI_ENTRIES
+      .map((entry) => {
+        const titleMatch = entry.title.toLowerCase().includes(q);
+        const contentLower = entry.content.toLowerCase();
+        const contentIdx = contentLower.indexOf(q);
+        if (!titleMatch && contentIdx === -1) return null;
+        let snippet = '';
+        if (contentIdx !== -1) {
+          const start = Math.max(0, contentIdx - 60);
+          const end = Math.min(entry.content.length, contentIdx + q.length + 60);
+          snippet = (start > 0 ? '...' : '') + entry.content.slice(start, end).replace(/\n/g, ' ') + (end < entry.content.length ? '...' : '');
+        }
+        return { entry, titleMatch, snippet, relevance: titleMatch ? 2 : 1 };
+      })
+      .filter(Boolean)
+      .sort((a, b) => b.relevance - a.relevance)
+      .slice(0, 20);
+  }, [search]);
+
+  const highlightMatch = (text, query) => {
+    if (!query || query.length < 2) return text;
+    const idx = text.toLowerCase().indexOf(query.toLowerCase());
+    if (idx === -1) return text;
+    return (
+      <>
+        {text.slice(0, idx)}
+        <mark className={styles.highlight}>{text.slice(idx, idx + query.length)}</mark>
+        {text.slice(idx + query.length)}
+      </>
+    );
+  };
 
   const navigateTo = (id) => {
     setActiveId(id);
@@ -134,11 +184,21 @@ export default function CpRedWiki() {
 
   return (
     <main id="main-content" className={styles.page}>
-      <div className={styles.topBar}>
-        <button className={styles.sidebarToggle} onClick={() => setSidebarOpen(!sidebarOpen)}>
-          {sidebarOpen ? '\u2715' : '\u2630'}
-        </button>
-        <h1 className={styles.title}>CPR Reference</h1>
+      <ToolNavbar title="CPR Reference" backTo="/tools/cpred-generator" backLabel={t('cpred.backTools')}>
+        {mode === 'wiki' && (
+          <button className={styles.sidebarToggle} onClick={() => setSidebarOpen(!sidebarOpen)}>
+            {sidebarOpen ? '\u2715' : '\u2630'}
+          </button>
+        )}
+        {mode === 'wiki' && (
+          <input
+            className={styles.navSearchInput}
+            type="text"
+            value={searchInput}
+            onChange={handleSearchChange}
+            placeholder="Search wiki..."
+          />
+        )}
         <div className={styles.modeTabs}>
           <button className={`${styles.modeTab} ${mode === 'quickref' ? styles.modeTabActive : ''}`} onClick={() => setMode('quickref')}>
             Quick Ref
@@ -147,10 +207,7 @@ export default function CpRedWiki() {
             Full Wiki
           </button>
         </div>
-        <button className={styles.backButton} onClick={() => startTransition('/tools/cpred-generator')}>
-          {t('cpred.backTools')}
-        </button>
-      </div>
+      </ToolNavbar>
 
       {mode === 'quickref' ? (
         <div className={styles.quickRefWrapper}>
@@ -159,13 +216,6 @@ export default function CpRedWiki() {
       ) : (
         <div className={styles.layout}>
           <aside className={`${styles.sidebar} ${sidebarOpen ? styles.sidebarOpen : ''}`}>
-            <input
-              className={styles.searchInput}
-              type="text"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search rules..."
-            />
             <nav className={styles.sidebarNav}>
               {WIKI_CATEGORIES.map((cat) => {
                 const entries = filteredByCategory[cat];
@@ -189,53 +239,73 @@ export default function CpRedWiki() {
           </aside>
 
           <article className={styles.content}>
-            <div className={styles.breadcrumb}>
-              <span className={styles.breadcrumbCat}>{activeEntry.category}</span>
-              <span className={styles.breadcrumbSep}>/</span>
-              <span className={styles.breadcrumbTitle}>{activeEntry.title}</span>
-            </div>
-
-            <div className={styles.articleBody}>
-              <Markdown
-                remarkPlugins={[remarkGfm]}
-                components={{
-                  a: ({ href, children, ...props }) => {
-                    if (href?.startsWith('#wiki:')) {
-                      const targetId = href.replace('#wiki:', '');
-                      return (
-                        <a
-                          href={href}
-                          className={styles.wikiLink}
-                          onClick={(e) => { e.preventDefault(); navigateTo(targetId); }}
-                          {...props}
-                        >
-                          {children}
-                        </a>
-                      );
-                    }
-                    return <a href={href} {...props}>{children}</a>;
-                  },
-                }}
-              >
-                {processContent(activeEntry.content)}
-              </Markdown>
-            </div>
-
-            {activeEntry.related && activeEntry.related.length > 0 && (
-              <div className={styles.relatedSection}>
-                <span className={styles.relatedTitle}>Related</span>
-                <div className={styles.relatedLinks}>
-                  {activeEntry.related.map((relId) => {
-                    const rel = WIKI_ENTRIES.find((e) => e.id === relId);
-                    if (!rel) return null;
-                    return (
-                      <button key={relId} className={styles.relatedLink} onClick={() => navigateTo(relId)}>
-                        {rel.title}
-                      </button>
-                    );
-                  })}
-                </div>
+            {search && search.length >= 2 ? (
+              <div className={styles.searchResultsMain}>
+                <h2 className={styles.searchResultsHeading}>{searchResults.length} result{searchResults.length !== 1 ? 's' : ''} for "{search}"</h2>
+                {searchResults.length === 0 && (
+                  <p className={styles.searchEmpty}>No articles match your search. Try different keywords.</p>
+                )}
+                {searchResults.map(({ entry, snippet }) => (
+                  <button key={entry.id} className={styles.searchResultCard} onClick={() => { setSearchInput(''); setSearch(''); navigateTo(entry.id); }}>
+                    <div className={styles.searchResultCardHeader}>
+                      <span className={styles.searchResultTitle}>{highlightMatch(entry.title, search)}</span>
+                      <span className={styles.searchResultCat}>{entry.category}</span>
+                    </div>
+                    {snippet && <p className={styles.searchResultSnippet}>{highlightMatch(snippet, search)}</p>}
+                  </button>
+                ))}
               </div>
+            ) : (
+              <>
+                <div className={styles.breadcrumb}>
+                  <span className={styles.breadcrumbCat}>{activeEntry.category}</span>
+                  <span className={styles.breadcrumbSep}>/</span>
+                  <span className={styles.breadcrumbTitle}>{activeEntry.title}</span>
+                </div>
+
+                <div className={styles.articleBody}>
+                  <Markdown
+                    remarkPlugins={[remarkGfm]}
+                    components={{
+                      a: ({ href, children, ...props }) => {
+                        if (href?.startsWith('#wiki:')) {
+                          const targetId = href.replace('#wiki:', '');
+                          return (
+                            <a
+                              href={href}
+                              className={styles.wikiLink}
+                              onClick={(e) => { e.preventDefault(); navigateTo(targetId); }}
+                              {...props}
+                            >
+                              {children}
+                            </a>
+                          );
+                        }
+                        return <a href={href} {...props}>{children}</a>;
+                      },
+                    }}
+                  >
+                    {processContent(activeEntry.content)}
+                  </Markdown>
+                </div>
+
+                {activeEntry.related && activeEntry.related.length > 0 && (
+                  <div className={styles.relatedSection}>
+                    <span className={styles.relatedTitle}>Related</span>
+                    <div className={styles.relatedLinks}>
+                      {activeEntry.related.map((relId) => {
+                        const rel = WIKI_ENTRIES.find((e) => e.id === relId);
+                        if (!rel) return null;
+                        return (
+                          <button key={relId} className={styles.relatedLink} onClick={() => navigateTo(relId)}>
+                            {rel.title}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+              </>
             )}
           </article>
         </div>

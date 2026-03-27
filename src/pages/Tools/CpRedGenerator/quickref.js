@@ -1,4 +1,4 @@
-// Merged quick reference — 455 entries across 17 topics
+// Merged quick reference — 602 entries across 17 topics
 
 export const QUICK_REF_TOPICS = [
   "Character Creation",
@@ -1038,7 +1038,7 @@ export const QUICK_REF = [
       "The character (or their Agent + Biomonitor) must **call Trauma Team**. Calling costs **1 Action**. With a Biomonitor, it auto-calls when HP drops below BODY or a body part is lost.",
       "The character must have an **active Trauma Team subscription**: **Silver** (500eb/month, surgery extra) or **Executive** (1,000eb/month, surgery included).",
       "Roll **1d6** to determine response time in **combat rounds**. The Trauma Team arrives in an **AV-4** and joins at the **top of the Initiative Queue**.",
-      "The team consists of: **1 Doctor** (Combat 10, SP11, HP20, Heavy Pistol, Cryopump, 2x Rapidetox), **1 Medical Assistant** (Combat 10, SP7, HP25, Bulletproof Shield), **1 Pilot** (Combat 10, SP7, HP25), **2 Security Officers** (Combat 10, SP13, HP30, Assault Rifles).",
+      "The team consists of: **1 Doctor** (Combat 10, SP11, HP20, Heavy Pistol, Cryopump, 2x Rapidetox), **1 Medical Assistant** (Combat 10, SP7, HP25, Bulletproof Shield), **1 Pilot** (Combat 10, SP7, HP25, Very Heavy Pistol), **2 Security Officers** (Combat 10, SP13, HP30, Assault Rifles).",
       "Trauma Team will stabilize and extract the subscriber. They will engage hostiles if necessary to reach their client. They do **not** treat non-subscribers.",
       "Plans are **transferable 1-for-1**: a subscriber can cover one friend instead of themselves, but not both simultaneously."
     ],
@@ -6406,13 +6406,13 @@ export const QUICK_REF = [
     ],
     "icon": "🏃",
     "steps": [
-      "Athletics is a **DEX-linked** Awareness Skill covering all physical feats: climbing, swimming, jumping, throwing, and lifting.",
-      "Roll: **DEX + Athletics + 1d10** vs. DV set by the GM. Standard DVs: Simple (DV9), Everyday (DV13), Difficult (DV15), Professional (DV17).",
-      "**Climbing:** DV depends on surface — ladder (DV9), rough wall (DV13), smooth wall (DV17). Failure = fall.",
-      "**Swimming:** DV9 for calm water, DV13 for rough, DV17 for stormy. Failure = start drowning (take BODY damage direct to HP each Turn).",
-      "**Jumping:** Can jump up to MOVE x 2 meters horizontally or MOVE meters vertically with a running start (halved from standing).",
-      "**Throwing:** Used to throw weapons or grenades up to 25 m/yds. Roll DEX + Athletics + 1d10 vs. Grenade Launcher DVs on the range table.",
-      "**Catching edges:** DV15 Athletics check to catch yourself during a fall."
+      "**What it is:** The skill of jumping, climbing, throwing, swimming, and lifting weights -- your go-to for all active physical feats.",
+      "**How to roll:** **DEX + Athletics + 1d10** vs DV set by the GM. Climbing a ladder DV9, rough wall DV13, smooth wall DV17. Swimming calm water DV9, rough DV13, stormy DV17. Throwing grenades uses Grenade Launcher DVs on the range table.",
+      "**When to use it:** Any time a character attempts an active physical feat: scaling a building, leaping across rooftops (MOVE x2 m horizontal, MOVE m vertical with running start, halved from standing), swimming a flooded tunnel, throwing a grenade, or catching a ledge mid-fall (DV15).",
+      "**When NOT to use it -- use Endurance instead:** Athletics is for **active** physical feats (climbing, jumping, swimming). Endurance is for **passive** physical resistance (marching all day, going without sleep, resisting harsh weather). If the character is *doing* something physical, it is Athletics. If they are *enduring* something physical, it is Endurance.",
+      "**When NOT to use it -- use Evasion instead:** Athletics does not cover dodging attacks in combat. Dodging melee or ranged attacks is always Evasion (DEX + Evasion). Athletics can be used to break free from a grapple as an alternative to Brawling.",
+      "**Key DVs:** Ladder DV9, rough wall DV13, smooth wall DV17. Calm water DV9, rough DV13, stormy DV17. Catching a ledge DV15. Failure on climbing = fall. Failure on swimming = start drowning (BODY damage direct to HP each Turn).",
+      "**Special rules:** Athletics is a Basic Skill (all characters start with at least 2). It is one of the most commonly called-for skills outside combat -- keep it reasonably high on any physical character."
     ]
   },
   {
@@ -6431,13 +6431,13 @@ export const QUICK_REF = [
     ],
     "icon": "👊",
     "steps": [
-      "Brawling is a **DEX-linked** Fighting Skill for unarmed combat (punches, kicks, headbutts).",
-      "Attack roll: **DEX + Brawling + 1d10** vs. defender's **DEX + (Evasion or Brawling) + 1d10**.",
-      "Damage is based on **BODY stat**: BODY 4–5 = 1d6, BODY 6–7 = 2d6, BODY 8–9 = 3d6, BODY 10–11 = 4d6, BODY 12+ = 5d6.",
-      "Brawling attacks do **not** halve the target's armor (unlike melee weapons). Full SP applies.",
-      "Rate of Fire: **2** — you can make up to 2 Brawling attacks per Turn.",
-      "Also used for **grappling**: DEX + Brawling + 1d10 to grab, choke (3d6 direct to HP), or throw (1d6 + prone).",
-      "Breaking free from a grapple: DEX + (Brawling or Athletics) + 1d10 vs. grappler's DEX + Brawling + 1d10."
+      "**What it is:** The skill of fighting and grappling with brute strength -- untrained unarmed combat including punches, kicks, headbutts, and wrestling.",
+      "**How to roll:** **DEX + Brawling + 1d10** vs defender's **DEX + Evasion + 1d10** (or DEX + Brawling + 1d10 for grapple attempts). Damage based on BODY: BODY 4-5 = 1d6, BODY 6-7 = 2d6, BODY 8-9 = 3d6, BODY 10-11 = 4d6, BODY 12+ = 5d6. ROF 2 (two strikes per Action).",
+      "**When to use it:** Unarmed strikes, grappling (grab, choke, throw), barroom brawls, any untrained hand-to-hand fighting. Also used to resist grapple attempts and break free from grabs.",
+      "**When NOT to use it -- use Martial Arts instead:** Brawling is **untrained** fighting -- raw punches and brute force. Martial Arts is **trained** fighting with a specific form (Karate, Taekwondo, Judo, Aikido) that grants special moves and halves enemy armor. Brawling does NOT halve armor; full SP applies. If a character has invested in Martial Arts, they should almost always use it over Brawling for attacks.",
+      "**When NOT to use it -- use Melee Weapon instead:** If the character is wielding any melee weapon (knife, bat, sword), use DEX + Melee Weapon, not Brawling. Brawling is strictly empty-handed (or with cyberware body weapons like Big Knucks that explicitly use Brawling).",
+      "**Key rules:** Brawling is a Basic Skill (all characters start with at least 2). Grapple: DEX + Brawling to grab (Evasion cannot resist a grab), then choke (BODY stat direct to HP, 3 successive rounds = unconscious) or throw (BODY stat direct to HP + prone). Both participants take -2 to all Actions while grappling.",
+      "**Special note:** Brawling damage scales with BODY, making it especially effective for high-BODY characters. Cyberarms with BODY bonuses increase Brawling damage when striking with that arm."
     ]
   },
   {
@@ -6455,13 +6455,13 @@ export const QUICK_REF = [
     ],
     "icon": "🧠",
     "steps": [
-      "Concentration is a **WILL-linked** Awareness Skill for maintaining mental focus under pressure.",
-      "Primary use: **Resisting Facedowns.** When someone tries to intimidate you, they roll COOL + Personal Grooming + Rep Modifier + 1d10 vs. your **COOL + Concentration + 1d10**.",
-      "If you lose the Facedown, you back down from the confrontation — you don't have to flee, but you yield.",
-      "Also used to **resist Suppressive Fire**: WILL + Concentration + 1d10 vs. your own REF + Autofire + 1d10.",
-      "Staying focused during distracting situations (torture, interrogation alongside Resist Torture/Drugs, loud environments).",
-      "GMs may call for Concentration checks to maintain focus during complex tasks while under stress.",
-      "A high Concentration makes you hard to rattle — essential for characters who face down gangers and corporate threats."
+      "**What it is:** The skill of focus and mental control, encompassing feats of memory, recall, ignoring distractions, and physiological mastery.",
+      "**How to roll:** **WILL + Concentration + 1d10** vs DV or opposed. Most commonly rolled as a **defense**: COOL + Concentration + 1d10 to resist Facedowns, WILL + Concentration + 1d10 to resist Suppressive Fire.",
+      "**When to use it:** Resisting Facedowns (intimidation), resisting Suppressive Fire, staying focused under stress, maintaining composure during distractions, feats of memory or recall.",
+      "**When NOT to use it -- use Resist Torture/Drugs instead:** Concentration is for **mental focus and composure** (Facedowns, suppressive fire, distractions). Resist Torture/Drugs is for **physical endurance against pain, drugs, and poisons** (interrogation, drug secondary effects, biotoxin). If someone is being intimidated socially, it is Concentration. If someone is being physically tortured or drugged, it is Resist Torture/Drugs.",
+      "**When NOT to use it -- use Endurance instead:** Concentration is mental resilience. Endurance is physical resilience against harsh conditions and prolonged exertion. A sleepless stakeout might call for Endurance (physical toll) AND Concentration (staying alert).",
+      "**Key rules:** Concentration is a Basic Skill (all characters start with at least 2). It is the primary **social defense** stat -- almost every social attack (Persuasion, Facedowns) is resisted with Concentration. If you lose a Facedown, you back down from the confrontation but do not have to flee.",
+      "**Special note:** A character with high COOL + Concentration is extremely hard to rattle socially. This is the single most important defensive social skill in the game."
     ]
   },
   {
@@ -6479,13 +6479,13 @@ export const QUICK_REF = [
     ],
     "icon": "💬",
     "steps": [
-      "Conversation is an **EMP-linked** Social Skill for extracting information through casual, friendly dialogue.",
-      "Roll: **EMP + Conversation + 1d10** vs. target's **COOL + Concentration + 1d10** (opposed) or a DV set by the GM.",
-      "Use it to: get someone talking about a sensitive topic, slip in questions without arousing suspicion, learn secrets through charm.",
-      "Different from Persuasion: Conversation is **subtle extraction**, while Persuasion is **direct convincing**.",
-      "Different from Human Perception: Conversation **gets them to talk**, while Human Perception **reads** what they're thinking.",
-      "Works best in social settings — bars, parties, casual meetings. Less effective in hostile or formal situations.",
-      "A failed Conversation check means the target realizes you're fishing for info and clams up or becomes suspicious."
+      "**What it is:** The skill of extracting information from people without alerting them, through careful and casual conversation.",
+      "**How to roll:** **EMP + Conversation + 1d10** vs target's **COOL + Concentration + 1d10** (opposed) or a DV set by the GM.",
+      "**When to use it:** Getting someone talking about a sensitive topic at a bar, slipping questions into friendly chat, learning secrets through charm, social information-gathering without raising suspicion.",
+      "**When NOT to use it -- use Persuasion instead:** Conversation is **subtle extraction** -- you are trying to get information out of someone without them realizing it. Persuasion is **direct convincing** -- you are openly trying to change their mind or get them to do something. If the player says 'I try to convince the guard to let us in,' that is Persuasion. If the player says 'I chat up the guard to find out when shifts change,' that is Conversation.",
+      "**When NOT to use it -- use Human Perception instead:** Conversation **gets them to talk**; Human Perception **reads them**. Use Conversation to draw out information, then Human Perception to check if what they said was true.",
+      "**Key rules:** Conversation is a Basic Skill (all characters start with at least 2). It is EMP-linked, so losing Humanity to cyberware directly weakens it. Failed checks mean the target realizes you are fishing for info and clams up or becomes suspicious.",
+      "**Special note:** Works best in casual social settings (bars, parties, meetings). Less effective in hostile or formal situations where the target is already on guard. Pairs extremely well with Human Perception for a 'chat then read' approach."
     ]
   },
   {
@@ -6503,13 +6503,13 @@ export const QUICK_REF = [
     ],
     "icon": "📚",
     "steps": [
-      "Education is an **INT-linked** Education Skill covering general knowledge: reading, writing, math, history, science, and current events.",
-      "Roll: **INT + Education + 1d10** vs. DV set by the GM based on how obscure the knowledge is.",
-      "DV examples: Common knowledge (DV9), specialized topic (DV13), obscure fact (DV15), extremely rare knowledge (DV17+).",
-      "Covers a **broad range** of topics — the \"catch-all\" knowledge Skill when no specialized Skill applies.",
-      "For specialized knowledge, other Skills may be more appropriate: Science (specific fields), Local Expert (area knowledge), Criminology (criminal behavior).",
-      "Education is always useful for identifying historical events, understanding politics, reading technical manuals, and general trivia.",
-      "A character with high Education is well-read and widely knowledgeable, even if not an expert in any one field."
+      "**What it is:** The skill of general knowledge, equivalent to a basic school education -- reading, writing, basic math, history, and enough knowledge to get by in the world.",
+      "**How to roll:** **INT + Education + 1d10** vs DV set by GM. Common knowledge DV9, specialized topic DV13, obscure fact DV15, extremely rare knowledge DV17+.",
+      "**When to use it:** Whenever a character needs to recall general knowledge that does not fall under a more specific skill -- identifying a historical event, understanding politics, reading a technical manual, general trivia, current events.",
+      "**When NOT to use it -- use Science instead:** Education covers **broad general knowledge**. Science covers **specific academic fields** (physics, chemistry, biology, etc.) in depth. If the question is 'do I know what radiation does to a person?' that is Education. If the question is 'can I calculate the radiation dosage from this isotope?' that is Science.",
+      "**When NOT to use it -- use Library Search instead:** Education is what you **already know**. Library Search is **looking things up** in databases, Data Pools, and archives. If the character has to research it, use Library Search. If it is something they would just know from their education, use Education.",
+      "**Key rules:** Education is a Basic Skill (all characters start with at least 2). It is the 'catch-all' knowledge skill when no specialized skill applies. DVs: Common DV9, Specialized DV13, Obscure DV15, Rare DV17+.",
+      "**Special note:** A complementary Education check can grant +1 to subsequent related skill checks. A well-educated character saves time by not needing to research what they already know."
     ]
   },
   {
@@ -6527,13 +6527,13 @@ export const QUICK_REF = [
     ],
     "icon": "💨",
     "steps": [
-      "Evasion is a **DEX-linked** Fighting Skill for dodging attacks.",
-      "Against **melee attacks**: Defender rolls **DEX + Evasion + 1d10** vs. attacker's melee attack roll. Always available.",
-      "Against **ranged attacks**: You can only dodge bullets if your **REF is 8 or higher**. Roll DEX + Evasion + 1d10 vs. the attacker's ranged attack roll.",
-      "If your REF is below 8, ranged attacks are resolved against the **Range DV** only — you cannot actively dodge.",
-      "Evasion is used as a **reaction** — it does not cost your Action. You can evade and still take your normal turn.",
-      "You **cannot** use Evasion if you are unaware of the attack (ambushed, attacked from behind with no warning).",
-      "Also used to dodge vehicle attacks: **DEX + Evasion + 1d10 vs. DV13** to leap out of the way."
+      "**What it is:** The skill of getting out of the way of someone attacking you -- your primary combat defense skill for dodging melee and (if fast enough) ranged attacks.",
+      "**How to roll:** **DEX + Evasion + 1d10** vs attacker's attack roll. Against melee: always available. Against ranged: only if your **REF is 8 or higher**. Against vehicles: DEX + Evasion + 1d10 vs DV13.",
+      "**When to use it:** Dodging any incoming attack you are aware of. This is a **reaction** -- it does not cost your Action, so you can evade and still act on your turn. Used against melee strikes, ranged shots (REF 8+ only), and vehicle rams.",
+      "**When NOT to use it -- use Brawling instead:** You cannot use Evasion to resist a **Grab** (grapple attempt). Grabs are opposed by DEX + Brawling + 1d10, not Evasion. Once grabbed, escaping also uses Brawling (or Athletics), not Evasion.",
+      "**When NOT to use it -- use Athletics instead:** Evasion is strictly for dodging **attacks**. Jumping across a gap, dodging falling debris, or other non-attack physical avoidance is Athletics. If it is a combat attack roll, use Evasion. If it is an environmental hazard, use Athletics.",
+      "**Key rules:** Evasion is a Basic Skill (all characters start with at least 2). You CANNOT evade attacks you are unaware of (ambush, attacked from behind). If REF < 8, ranged attacks hit against the Range DV only -- you cannot actively dodge bullets.",
+      "**Special note:** Evasion is arguably the single most important combat survival skill. Even 2-3 points can make the difference between life and death. Solos can add Combat Awareness points to Evasion via Damage Deflection."
     ]
   },
   {
@@ -6551,13 +6551,13 @@ export const QUICK_REF = [
     ],
     "icon": "🩹",
     "steps": [
-      "First Aid is a **TECH-linked** Technique Skill. All characters have at least **+2** in First Aid (everyone knows basic first aid).",
-      "Roll: **TECH + First Aid + 1d10** vs. DV.",
-      "**Stabilize** a Mortally Wounded character: **DV13**. Stops Death Saves and brings them to 1 HP.",
-      "**Quick Fix** common Critical Injuries: DV varies by injury (DV13 for Foreign Object, Torn Muscle, Concussion; DV15 for others).",
-      "First Aid **cannot** treat severe Critical Injuries — those require Paramedic or Surgery.",
-      "First Aid can be used **once per injury** — if you fail, only Paramedic or Surgery can help.",
-      "Quick Fix is **temporary** — it negates the effect but the injury is not fully healed until properly Treated."
+      "**What it is:** The skill of applying basic medical treatment to keep a wounded person from dying and to temporarily fix the most common Critical Injuries.",
+      "**How to roll:** **TECH + First Aid + 1d10** vs DV. Stabilize Mortally Wounded: DV13. Quick Fix varies by injury: DV13 (Foreign Object, Torn Muscle, Concussion) to DV15 (others).",
+      "**When to use it:** Stabilizing someone at 0 HP to stop Death Saves (brings to 1 HP), Quick Fixing common Critical Injuries in the field, basic wound care. This is the first response to any combat injury.",
+      "**When NOT to use it -- use Paramedic instead:** First Aid handles **stabilization and common injuries only**. Paramedic can treat **all Critical Injuries not requiring Surgery** (Collapsed Lung, Spinal Injury, Cracked Skull, etc.). If First Aid fails on an injury, only Paramedic or Surgery can help -- you cannot retry with First Aid.",
+      "**When NOT to use it -- use Surgery (Medtech only) instead:** The most severe injuries (Lost Limb, Lost Eye, Brain Injury) require Surgery, which is only available through the Medtech's Medicine Role Ability. Neither First Aid nor Paramedic can treat these.",
+      "**Key rules:** First Aid is a Basic Skill (all characters start with at least 2). Quick Fix is **temporary** -- it negates the injury's effect but does not fully heal it. Only one First Aid attempt per injury. Paramedic is the x2-cost upgrade path.",
+      "**Special note:** Every party member should have decent First Aid. In combat, stabilizing a downed ally takes one Action and DV13 -- achievable even with moderate TECH + 2 base skill."
     ]
   },
   {
@@ -6575,13 +6575,13 @@ export const QUICK_REF = [
     ],
     "icon": "🧐",
     "steps": [
-      "Human Perception is an **EMP-linked** Social Skill for reading people, detecting lies, and understanding motives.",
-      "Roll: **EMP + Human Perception + 1d10** vs. target's **COOL + Acting + 1d10** (if lying) or a DV set by the GM.",
-      "Use it to: detect if someone is lying, read body language for intent, sense emotional state, judge trustworthiness.",
-      "This is a **reactive/analytical** Skill — you're reading them, not influencing them.",
-      "Cyberware bonus: **Voice Stress Analyzer** grants +2 to Human Perception and Interrogation checks.",
-      "Works well paired with Conversation (get them talking, then read them) or after Persuasion (check if they really agreed).",
-      "A failed Human Perception check means you can't get a read — you're not sure if they're lying or telling the truth."
+      "**What it is:** The skill of reading a person's facial expressions and body language to discern their emotional state and detect lies or deception.",
+      "**How to roll:** **EMP + Human Perception + 1d10** vs target's **COOL + Acting + 1d10** (if they are lying/hiding something) or a DV set by the GM for general reads.",
+      "**When to use it:** Detecting lies, reading body language for intent, sensing emotional state, judging trustworthiness, noticing if someone is nervous, afraid, or hiding something. This is a **reactive/analytical** skill -- you are reading them, not influencing them.",
+      "**When NOT to use it -- use Perception instead:** Human Perception is for reading **people** (emotions, lies, intent). Perception is for noticing **things and environments** (hidden objects, ambushes, clues). If you are trying to spot a hidden enemy, use Perception. If you are trying to tell if someone is lying to your face, use Human Perception.",
+      "**When NOT to use it -- use Conversation instead:** Human Perception **reads** what someone is feeling or hiding. Conversation **gets them to talk** and reveal information. Use Conversation to draw them out, then Human Perception to verify what they said.",
+      "**Key rules:** Human Perception is a Basic Skill (all characters start with at least 2). It is EMP-linked, so heavy cyberware users lose effectiveness. Cyberware bonus: **Voice Stress Analyzer** grants +2 to Human Perception and Interrogation checks.",
+      "**Special note:** A failed check means you cannot get a read -- you are not sure if they are lying or telling the truth. The target does not know you tried to read them (this is passive, unlike Interrogation which is active and obvious)."
     ]
   },
   {
@@ -6600,14 +6600,13 @@ export const QUICK_REF = [
     ],
     "icon": "🔍",
     "steps": [
-      "Perception is an **INT-linked** Awareness Skill for noticing things in your environment.",
-      "Roll: **INT + Perception + 1d10** vs. DV or vs. an opposed Stealth check.",
-      "Spotting hidden enemies: Opposed check vs. their **DEX + Stealth + 1d10**.",
-      "Noticing details: DV9 (obvious clue), DV13 (hidden but findable), DV15 (well-concealed), DV17+ (expertly hidden).",
-      "Detecting ambushes: GM rolls your Perception passively or you actively search before entering an area.",
-      "Cyberware bonuses: **Image Enhance** (+2 Perception visual), **Amplified Hearing** (+2 Perception auditory).",
-      "Solos can boost Perception with **Threat Detection** from Combat Awareness, adding +1 per point allocated.",
-      "One of the most commonly rolled Skills in the game — keep it high for survival."
+      "**What it is:** The skill of spotting hidden things like clues, traps, and people using the Stealth skill -- your environmental awareness and observational ability.",
+      "**How to roll:** **INT + Perception + 1d10** vs DV or vs an opposed **DEX + Stealth + 1d10** check. DV examples: obvious clue DV9, hidden but findable DV13, well-concealed DV15, expertly hidden DV17+.",
+      "**When to use it:** Spotting hidden enemies, detecting ambushes, noticing environmental details and clues, searching an area, hearing suspicious sounds, catching someone following you.",
+      "**When NOT to use it -- use Human Perception instead:** Perception is for **things and environments** (hidden objects, traps, ambushes, clues). Human Perception is for **reading people** (detecting lies, reading emotions, judging intent). Spotting someone hiding behind a wall = Perception. Spotting that someone is lying to your face = Human Perception.",
+      "**When NOT to use it -- use Conceal/Reveal Object instead:** Perception spots hidden **people** (opposed by Stealth) and environmental details. Finding hidden **objects** that someone deliberately concealed uses Conceal/Reveal Object (opposed by their Conceal/Reveal). A casual search of a room is Perception; a targeted search for a hidden weapon is Conceal/Reveal.",
+      "**Key DVs and bonuses:** Cyberware: **Image Enhance** (+2 Perception visual), **Amplified Hearing** (+2 auditory). Solos: **Threat Detection** from Combat Awareness adds +1 per allocated point. The GM may roll Perception passively for detecting ambushes.",
+      "**Special note:** Perception is a Basic Skill (all characters start with at least 2). It is one of the most commonly rolled skills in the game. Keep it high for survival -- missing an ambush means you cannot use Evasion against the first attack."
     ]
   },
   {
@@ -6625,13 +6624,13 @@ export const QUICK_REF = [
     ],
     "icon": "🗣",
     "steps": [
-      "Persuasion is a **COOL-linked** Social Skill for directly convincing or influencing people.",
-      "Roll: **COOL + Persuasion + 1d10** vs. target's **COOL + Concentration + 1d10** (opposed) or a DV set by the GM.",
-      "DV guidelines: Reasonable request (DV13), against their interest (DV15), dangerous request (DV17), life-threatening (DV21+).",
-      "Use it to: talk your way past guards, convince NPCs to help, negotiate deals, calm hostile situations.",
-      "Different from Conversation (subtle extraction) and Trading (commercial negotiations).",
-      "Repeated Persuasion attempts on the same target about the same topic typically increase the DV by +2 each time.",
-      "NPCs with strong motivations against your request may be impossible to Persuade — GM discretion."
+      "**What it is:** The skill of convincing, persuading, or influencing individuals -- honest, direct attempts to change someone's mind or get them to act.",
+      "**How to roll:** **COOL + Persuasion + 1d10** vs target's **COOL + Concentration + 1d10** (opposed) or DV set by GM. DVs: reasonable request DV13, against their interest DV15, dangerous request DV17, life-threatening DV21+.",
+      "**When to use it:** Talking your way past guards, convincing NPCs to help, calming hostile situations, negotiating non-commercial agreements, making a case for your point of view. Persuasion is **honest convincing** -- you believe what you are saying.",
+      "**When NOT to use it -- use Conversation instead:** Persuasion is **direct convincing** -- the target knows you are trying to influence them. Conversation is **subtle extraction** -- you are trying to get information without them realizing. 'I convince the fixer to give us the job' = Persuasion. 'I chat with the fixer to learn who else is bidding' = Conversation.",
+      "**When NOT to use it -- use Trading instead:** Persuasion is for **non-commercial** convincing. Trading is specifically for **buy/sell price negotiation**. Haggling over the price of a weapon = Trading. Convincing a vendor to sell you something they do not normally sell = Persuasion.",
+      "**Key rules:** Persuasion is a Basic Skill (all characters start with at least 2). Repeated attempts on the same target/topic increase DV by +2 each time. NPCs with strong opposing motivations may be impossible to Persuade. COOL-linked, so it is unaffected by Humanity loss.",
+      "**Special note:** If the character is **lying** rather than honestly persuading, use COOL + Acting (deception) or EMP + Conversation (subtle misdirection) instead. Persuasion assumes the speaker believes their own argument."
     ]
   },
   {
@@ -6649,13 +6648,13 @@ export const QUICK_REF = [
     ],
     "icon": "🥷",
     "steps": [
-      "Stealth is a **DEX-linked** Awareness Skill for moving quietly, hiding, and tailing targets.",
-      "Roll: **DEX + Stealth + 1d10** vs. observer's **INT + Perception + 1d10** (opposed).",
-      "**Sneaking:** Move without being heard or seen. Movement may be limited to half MOVE while sneaking (GM discretion).",
-      "**Hiding:** Find concealment and stay undetected. Success depends on available cover and lighting.",
-      "**Shadowing/Tailing:** Follow someone without them noticing. Opposed check each significant interval.",
-      "Modifiers: Low light/darkness gives **-1 to -4** on the observer's Perception. Noisy environments help sneaking.",
-      "Combat applications: If you succeed at Stealth before combat starts, you can **ambush** — the target cannot use Evasion against your first attack."
+      "**What it is:** The skill of moving quietly, hiding, doing an Action discreetly, or otherwise evading detection -- your personal invisibility skill.",
+      "**How to roll:** **DEX + Stealth + 1d10** vs observer's **INT + Perception + 1d10** (opposed). Movement may be limited to half MOVE while sneaking (GM discretion).",
+      "**When to use it:** Sneaking past guards, hiding in shadows, tailing/shadowing someone, performing an action without being noticed, setting up an ambush. Opposed check each significant interval when tailing.",
+      "**When NOT to use it -- use Conceal/Reveal Object instead:** Stealth is for hiding **yourself** (your whole body, your movement, your presence). Conceal/Reveal Object is for hiding **items** (weapons on your person, objects in a room, evidence). Sneaking past a guard = Stealth. Hiding a gun under your jacket = Conceal/Reveal.",
+      "**When NOT to use it -- use Acting instead:** Stealth is about being **unseen and unheard**. Acting is about being **seen but not recognized** (disguise, impersonation). If you want to avoid detection entirely, use Stealth. If you want to walk through openly but as someone else, use Acting.",
+      "**Key rules:** Stealth is a Basic Skill (all characters start with at least 2). Modifiers: low light/darkness gives -1 to -4 on the observer's Perception. Noisy environments help sneaking. Success before combat = **ambush** (target cannot use Evasion against your first attack).",
+      "**Special note:** Stealth is DEX-linked and pairs naturally with ambush tactics. A successful Stealth + first-strike combo is one of the most lethal openers in the game, especially for Solos who can pile on Combat Awareness bonuses."
     ]
   },
   {
@@ -6673,13 +6672,13 @@ export const QUICK_REF = [
     ],
     "icon": "💪",
     "steps": [
-      "Resist Torture/Drugs is a **WILL-linked** Body Skill for withstanding interrogation, torture, and drug effects.",
-      "Roll: **WILL + Resist Torture/Drugs + 1d10** vs. DV.",
-      "**Resisting drug secondary effects:** When a drug's primary effect wears off, roll vs. the drug's Secondary Effect DV (usually DV15) to avoid addiction or penalties.",
-      "**Resisting interrogation/torture:** Opposed check vs. interrogator's technique, or DV set by GM based on severity.",
-      "**Resisting poisons:** Roll vs. poison Resist DV: Mild DV11, Strong DV13, Deadly DV15. Failure = take poison damage.",
-      "**Biotoxin resistance:** Biotoxin-tipped arrows/grenades require DV15 Resist Torture/Drugs or take 3d6 direct to HP.",
-      "Cyberware bonus: **Toxin Binders** grant +2 to Resist Torture/Drugs checks."
+      "**What it is:** The skill of resisting painful effects including interrogation, torture, drugs, and poisons -- your body's trained resistance to being broken.",
+      "**How to roll:** **WILL + Resist Torture/Drugs + 1d10** vs DV or opposed. Drug secondary effects: usually DV15. Poisons: Mild DV11, Strong DV13, Deadly DV15. Biotoxin: DV15 or 3d6 direct to HP. Interrogation: opposed vs COOL + Interrogation + 1d10.",
+      "**When to use it:** Resisting drug side effects and addiction, resisting poisons and biotoxins, withstanding interrogation and torture, resisting truth serums, enduring physical pain without breaking.",
+      "**When NOT to use it -- use Concentration instead:** Resist Torture/Drugs is for **physical pain, drugs, and poisons**. Concentration is for **mental focus and composure** (resisting Facedowns, Suppressive Fire, staying alert under stress). If someone threatens you verbally, that is Concentration. If someone is physically hurting you or drugging you, that is Resist Torture/Drugs.",
+      "**When NOT to use it -- use Endurance instead:** Resist Torture/Drugs is for **acute painful effects** (torture, drugs, poisons). Endurance is for **prolonged physical hardship** (days without sleep, marching, harsh weather). Being tortured for information = Resist Torture/Drugs. Surviving a desert crossing = Endurance.",
+      "**Key rules:** Cyberware bonus: **Toxin Binders** grant +2 to Resist Torture/Drugs checks. Drug secondary effects trigger when the primary effect wears off. Failure against poison = take poison damage. Failure against biotoxin = 3d6 direct to HP.",
+      "**Special note:** A high-WILL character with invested skill points and Toxin Binders is extremely hard to crack through interrogation or poison. Defenders can spend LUCK on these rolls like any other check."
     ]
   },
   {
@@ -6698,13 +6697,13 @@ export const QUICK_REF = [
     ],
     "icon": "💵",
     "steps": [
-      "Trading is a **COOL-linked** Social Skill for negotiating prices when buying and selling goods.",
-      "Roll: **COOL + Trading + 1d10** vs. seller/buyer's **COOL + Trading + 1d10** (opposed).",
-      "Success means you negotiate a better deal — typically **10–20%** off the listed price (GM discretion on exact amount).",
-      "Failure means you pay/receive the standard listed price. A critical failure might mean the seller raises the price.",
-      "Fixers add their **Operator Rank** to Trading checks for their Haggle ability, making them the best negotiators.",
-      "Trading also applies when **selling loot** — you generally get about **50%** of listed price, but Trading can push that higher.",
-      "Buying from Night Markets, Midnight Markets, or through Fixer contacts may have different pricing rules."
+      "**What it is:** The skill of striking a good bargain with a merchant or customer -- commercial price negotiation for buying and selling goods.",
+      "**How to roll:** **COOL + Trading + 1d10** vs seller/buyer's **COOL + Trading + 1d10** (opposed). Success = better deal (typically 10-20% off). Failure = standard listed price. Critical failure = seller raises the price.",
+      "**When to use it:** Haggling over prices at shops, negotiating loot sale prices, bartering goods, any commercial buy/sell negotiation. Also used when selling loot (base is ~50% of listed price; Trading can push it higher).",
+      "**When NOT to use it -- use Persuasion instead:** Trading is strictly for **commercial price negotiation**. Persuasion is for **non-commercial convincing**. 'I want to pay less for this gun' = Trading. 'I want the vendor to sell me something he says is not for sale' = Persuasion. Once Persuasion gets the item on the table, Trading sets the price.",
+      "**When NOT to use it -- use Streetwise instead:** Trading handles the **price negotiation**. Streetwise handles **finding** the illegal goods, black market dealers, and contraband sources in the first place. You need Streetwise to locate the dealer, then Trading to haggle the price.",
+      "**Key rules:** Fixers add their **Operator Rank** to Trading checks via their Haggle ability, making them by far the best negotiators. Night Markets and Midnight Markets may have different pricing rules. COOL-linked, unaffected by Humanity loss.",
+      "**Special note:** Trading is one of the most economically impactful skills in the game. A Fixer with high Operator Rank + Trading can save the party thousands of eddies over a campaign."
     ]
   },
   {
@@ -6722,13 +6721,13 @@ export const QUICK_REF = [
     ],
     "icon": "🏙",
     "steps": [
-      "Streetwise is a **COOL-linked** Social Skill for navigating the criminal underworld and street culture.",
-      "Roll: **COOL + Streetwise + 1d10** vs. DV set by the GM.",
-      "Use it to: find illegal goods, locate black market dealers, identify gang affiliations, get word on the street.",
-      "DV examples: Common street info (DV9), specific illegal item (DV13), rare contraband (DV15), well-hidden criminal (DV17+).",
-      "Streetwise is about **knowing the right people and places** — it's the social navigation of the street.",
-      "Different from Trading (which handles the actual price negotiation) and Conversation (which extracts specific info from individuals).",
-      "A high-Streetwise character knows where to find a gun, who runs which gang, and which alley to avoid after dark."
+      "**What it is:** The skill of making and using contacts to get illegal goods and contraband, talking to the criminal element, and avoiding bad situations in bad neighborhoods.",
+      "**How to roll:** **COOL + Streetwise + 1d10** vs DV set by GM. Common street info DV9, specific illegal item DV13, rare contraband DV15, well-hidden criminal DV17+.",
+      "**When to use it:** Finding illegal goods, locating black market dealers, identifying gang affiliations and turf, reading street situations, getting word on the street, knowing which alleys to avoid, finding underground services.",
+      "**When NOT to use it -- use Local Expert instead:** Streetwise is **general street culture and criminal underworld knowledge** that applies anywhere. Local Expert is **specific to one neighborhood** -- detailed knowledge of who lives there, what businesses exist, local power structures. 'Do I know where to buy illegal chrome in Night City?' = Streetwise. 'Do I know the back entrance to that specific ripperdoc's clinic in Little China?' = Local Expert: Little China.",
+      "**When NOT to use it -- use Trading instead:** Streetwise **finds** the dealer or the goods. Trading **negotiates the price**. They are often used sequentially: Streetwise to locate the black market source, then Trading to haggle.",
+      "**Key rules:** COOL-linked, unaffected by Humanity loss. Streetwise is about knowing the right people and places -- the social navigation of the street. A Fixer's Operator ability overlaps significantly, but Streetwise is available to everyone.",
+      "**Special note:** Streetwise pairs naturally with Local Expert and Conversation. A character with high scores in all three is a master of the Night City social landscape -- they know where to go, who to talk to, and how to get what they need."
     ]
   },
   {
@@ -6746,13 +6745,13 @@ export const QUICK_REF = [
     ],
     "icon": "🛠",
     "steps": [
-      "Basic Tech is a **TECH-linked** Technique Skill for repairing simple electronics and all items **not covered** by other TECH Skills.",
-      "Roll: **TECH + Basic Tech + 1d10** vs. DV based on complexity.",
-      "DVs: Simple repair (DV9), moderate damage (DV13), complex repair (DV15), near-destroyed item (DV17+).",
-      "Covers: household electronics, basic machinery, non-weapon/non-vehicle/non-cyber items, doors, locks, generic equipment.",
-      "Does **not** cover: weapons (Weaponstech), cyberware (Cybertech), vehicles (Land/Air/Sea Vehicle Tech), complex electronics/security (Electronics/Security Tech).",
-      "Techs add their **Field Expertise** Rank to Basic Tech checks made for non-Maker purposes.",
-      "A successful repair restores the item to working condition. Time depends on complexity (minutes to hours)."
+      "**What it is:** The skill of identifying, understanding, and repairing simple electronic and mechanical devices and **all items not covered by another Technique Skill**.",
+      "**How to roll:** **TECH + Basic Tech + 1d10** vs DV. Simple repair DV9, moderate damage DV13, complex repair DV15, near-destroyed DV17+. Repair DVs also scale by price category: Cheap/Everyday DV9, Costly DV13, Premium DV17, Expensive DV21.",
+      "**When to use it:** Repairing household electronics, basic machinery, doors, locks (mechanical components), generic equipment, non-weapon/non-vehicle/non-cyber items. Basic Tech is the **catch-all** repair skill.",
+      "**When NOT to use it -- use Cybertech instead:** Basic Tech is for **general items**. Cybertech is for **cyberware** (cyberlimbs, implants, neural hardware). If the item is installed in a person, it is probably Cybertech. If it is sitting on a table, it is probably Basic Tech.",
+      "**When NOT to use it -- use Weaponstech or Vehicle Tech instead:** Weapons (firearms, melee weapons) use **Weaponstech**. Vehicles use **Land/Air/Sea Vehicle Tech**. Complex electronics and security systems use **Electronics/Security Tech**. Basic Tech only covers what none of these specialized skills cover.",
+      "**Key rules:** Techs add their **Field Expertise** Rank to Basic Tech checks for non-Maker purposes. Repair time scales with price: Cheap/Everyday 1 hour, Costly 6 hours, Premium 1 day, Expensive 1 week, Very Expensive 2 weeks, Luxury 1 month.",
+      "**Special note:** Basic Tech is the broadest TECH skill and the most commonly needed. If you can only invest in one TECH skill as a non-Tech character, this is the one -- it covers the widest range of situations."
     ]
   },
   {
@@ -6770,13 +6769,13 @@ export const QUICK_REF = [
     ],
     "icon": "🤖",
     "steps": [
-      "Cybertech is a **TECH-linked** Technique Skill for repairing and maintaining cyberware.",
-      "Roll: **TECH + Cybertech + 1d10** vs. DV.",
-      "Used to: repair damaged cyberware, Quick Fix/Treat Critical Injuries to cybernetic replacement parts, maintain implants.",
-      "EMP Grenade/Microwaver recovery: **DV15 Cybertech** check or GM disables 2 pieces of cyberware/electronics for 1 minute.",
-      "Cybertech does **not** allow installation of cyberware — that requires the **Surgery** Skill (Medtech only).",
-      "Techs add their **Field Expertise** Rank to Cybertech checks made for non-Maker purposes.",
-      "Essential for any team that relies heavily on cyberware — a cyberarm with a broken actuator is just dead weight."
+      "**What it is:** The skill of identifying, understanding, and repairing cybernetics -- maintenance and repair of all cyberware implants and cybernetic systems.",
+      "**How to roll:** **TECH + Cybertech + 1d10** vs DV. Standard repair DVs by price category apply. EMP Grenade/Microwaver recovery: DV15 Cybertech check.",
+      "**When to use it:** Repairing damaged cyberware (cyberlimbs, optics, neural hardware), recovering cyberware disabled by EMP, Quick Fixing/Treating Critical Injuries to cybernetic replacement parts, routine cyberware maintenance.",
+      "**When NOT to use it -- use Basic Tech instead:** Cybertech is specifically for **cyberware** (items installed in a person's body). Basic Tech is for **general electronics and devices** not installed in a person. A cyberdeck sitting on a table might be Electronics/Security Tech; a cyberarm is Cybertech.",
+      "**When NOT to use it -- use Surgery (Medtech) instead:** Cybertech can **repair** existing cyberware but cannot **install or remove** cyberware. Installation and removal require the **Surgery** skill, which is only available through the Medtech's Medicine Role Ability.",
+      "**Key rules:** Techs add **Field Expertise** Rank to Cybertech checks for non-Maker purposes. EMP disables 2 pieces of cyberware/electronics for 1 minute unless recovered with a DV15 Cybertech check. Repair time follows standard price category rules.",
+      "**Special note:** Essential for any team relying on cyberware. A cyberarm with a broken actuator is dead weight. Having a team member with decent Cybertech means faster recovery from EMP grenades and Microwaver attacks, which are increasingly common threats."
     ]
   },
   {
@@ -6794,13 +6793,13 @@ export const QUICK_REF = [
     ],
     "icon": "🔫",
     "steps": [
-      "Weaponstech is a **TECH-linked** Technique Skill for repairing and maintaining all weapon types.",
-      "Roll: **TECH + Weaponstech + 1d10** vs. DV.",
-      "Covers: firearms, melee weapons, heavy weapons, exotic weapons, ammunition, and weapon modifications.",
-      "Repair DVs follow the standard scale: Simple (DV9), Everyday (DV13), Difficult (DV15), Professional (DV17).",
-      "Techs using **Upgrade Expertise** can use Weaponstech to improve weapons: raise quality tier, make concealable, add option slots, etc.",
-      "Techs using **Fabrication Expertise** can use Weaponstech to craft weapons from cheaper materials.",
-      "Field Expertise Rank adds to Weaponstech checks for non-Maker purposes. Essential for keeping your team armed and operational."
+      "**What it is:** The skill of repairing and maintaining weapons of all types -- firearms, melee weapons, heavy weapons, exotic weapons, ammunition, and weapon modifications.",
+      "**How to roll:** **TECH + Weaponstech + 1d10** vs DV. Repair DVs by price: Cheap/Everyday DV9, Costly DV13, Premium DV17, Expensive DV21, Very Expensive DV24, Luxury DV29.",
+      "**When to use it:** Repairing damaged weapons, maintaining weapons to prevent degradation, field-stripping and cleaning, diagnosing weapon malfunctions. Also the relevant skill for Tech Maker abilities (Upgrade, Fabrication) applied to weapons.",
+      "**When NOT to use it -- use Basic Tech instead:** Weaponstech is exclusively for **weapons** (anything designed to deal damage). Basic Tech covers **everything else** (electronics, machinery, general equipment). If it is a gun, sword, or explosive device, it is Weaponstech. If it is a tool, comm unit, or household device, it is Basic Tech.",
+      "**When NOT to use it -- use Demolitions instead:** Weaponstech covers weapons including grenades and launchers. Demolitions covers **setting and defusing explosive charges** (C4, mines, shaped charges). Repairing a grenade launcher = Weaponstech. Planting a shaped charge on a wall = Demolitions.",
+      "**Key rules:** Techs add **Field Expertise** Rank to Weaponstech checks for non-Maker purposes. Techs with **Upgrade Expertise** can raise weapon quality tier, make weapons concealable, or add option slots. **Fabrication Expertise** allows crafting weapons from cheaper materials.",
+      "**Special note:** Weaponstech is essential for keeping the team armed and operational. A broken weapon in a firefight is a death sentence. Weapon repairs follow the standard time-by-price rules."
     ]
   },
   {
@@ -6819,13 +6818,13 @@ export const QUICK_REF = [
     ],
     "icon": "🔌",
     "steps": [
-      "Electronics/Security Tech is a **TECH-linked** Technique Skill (costs **x2 IP** to improve) for complex electronics, cyberdecks, and security systems.",
-      "Roll: **TECH + Electronics/Security Tech + 1d10** vs. DV.",
-      "Use it to: bypass alarm systems, disable cameras, hack physical electronics, crack electronic locks, repair cyberdecks.",
-      "This is the **physical hardware** counterpart to Netrunning — you work on the actual devices, not through the NET.",
-      "Security system DVs are based on system complexity and price. Higher-end corporate security can have DV17+ to bypass.",
-      "Also used to undo elaborate electronic pranks (e.g., hacked streetlights = DV14 Electronics/Security check).",
-      "As a **x2 Skill**, it costs double IP to level up: Level 1 = 40 IP, Level 5 = 200 IP, Level 10 = 400 IP."
+      "**What it is:** The skill of identifying, understanding, repairing, countering, and installing complex electronic devices including computers, cyberdecks, personal electronics, electronic security systems, bugs, tracers, pressure plates, and laser tripwires.",
+      "**How to roll:** **TECH + Electronics/Security Tech + 1d10** vs DV. Cheap alarms DV9, standard DV13, high-security DV17, corporate-grade DV21+. This is a **x2 cost skill** (double IP to level: Level 1 = 40 IP, Level 5 = 200 IP, Level 10 = 400 IP).",
+      "**When to use it:** Bypassing alarm systems, disabling cameras, cracking electronic locks, repairing cyberdecks, planting or detecting bugs and tracers, installing complex electronics, working with security hardware.",
+      "**When NOT to use it -- use Basic Tech instead:** Electronics/Security Tech covers **complex** electronics, security systems, and cyberdecks. Basic Tech covers **simple** electronics and general devices. If it is a security camera, electronic lock, or cyberdeck, use Electronics/Security Tech. If it is a radio, flashlight, or household appliance, use Basic Tech.",
+      "**When NOT to use it -- use Netrunning instead:** Electronics/Security Tech is the **physical hardware** approach -- you work on the actual devices with your hands. Netrunning is the **software/virtual** approach -- you jack into the NET Architecture remotely. A Netrunner can disable alarms through the NET; an Electronics/Security Tech specialist does it at the physical panel.",
+      "**Key rules:** Techs add **Field Expertise** Rank to checks for non-Maker purposes. Failure when bypassing an alarm **triggers the alarm** unless the GM rules otherwise. Electronic locks cannot be bypassed with Pick Lock -- they require this skill. Time: ~1 min for DV9, ~5 min for DV13-17, longer for DV21+.",
+      "**Special note:** The x2 IP cost makes this an expensive investment, but it is irreplaceable for heist-style missions. Many groups rely on a Netrunner for electronic bypass, but having a physical Electronics/Security specialist provides a crucial backup when the NET Architecture is not accessible."
     ]
   },
   {
@@ -6843,13 +6842,13 @@ export const QUICK_REF = [
     ],
     "icon": "🔧",
     "steps": [
-      "Land Vehicle Tech is a **TECH-linked** Technique Skill for repairing and maintaining land vehicles.",
-      "Roll: **TECH + Land Vehicle Tech + 1d10** vs. DV.",
-      "Covers: groundcars, superbikes, roadbikes, trucks, APCs, and any ground-based vehicle.",
-      "Repair DVs scale with damage: minor dents/scratches (DV9), moderate damage (DV13), severe structural damage (DV15), near-totaled (DV17+).",
-      "Nomads add their **Moto Rank** to Land Vehicle Tech checks, making them the best vehicle mechanics.",
-      "Techs add their **Field Expertise** Rank to Land Vehicle Tech checks for non-Maker purposes.",
-      "Destroyed Nomad Family vehicles are repaired by the Family in 1 week for 500eb, but non-Family vehicles need manual repair."
+      "**What it is:** The skill of repairing and maintaining land vehicles -- groundcars, superbikes, roadbikes, trucks, APCs, and any ground-based vehicle.",
+      "**How to roll:** **TECH + Land Vehicle Tech + 1d10** vs DV. DVs follow standard price category scale: Cheap/Everyday DV9, Costly DV13, Premium DV17, Expensive DV21, Very Expensive DV24, Luxury DV29.",
+      "**When to use it:** Repairing vehicle damage after combat or accidents, routine maintenance, diagnosing mechanical problems, field repairs on the road, restoring wrecked vehicles.",
+      "**When NOT to use it -- use Air/Sea Vehicle Tech instead:** Land Vehicle Tech covers **ground vehicles only**. Air vehicles (AVs, gyrocopters, helicopters) use **Air Vehicle Tech**. Sea vehicles (boats, subs) use **Sea Vehicle Tech**. Each vehicle type has its own dedicated repair skill.",
+      "**When NOT to use it -- use Drive Land Vehicle instead:** Land Vehicle Tech is for **repairing and maintaining** vehicles. Drive Land Vehicle is for **operating** them (driving, maneuvers, chases). Fixing a busted engine = Land Vehicle Tech. Performing a bootleg turn = Drive Land Vehicle.",
+      "**Key rules:** **Nomads** add their Moto Rank to Land Vehicle Tech checks, making them the best vehicle mechanics. **Techs** add Field Expertise Rank for non-Maker purposes. Destroyed Nomad Family vehicles are repaired by the Family in 1 week for 500eb; non-Family vehicles need manual repair.",
+      "**Special note:** Repair time scales with price category (1 hour to 1 month). Having a dedicated mechanic in the party saves enormous amounts of money, since professional vehicle repair in Night City is expensive and unreliable."
     ]
   },
   {
@@ -6867,14 +6866,13 @@ export const QUICK_REF = [
     ],
     "icon": "🚑",
     "steps": [
-      "Paramedic is a **TECH-linked** Technique Skill (costs **x2 IP** to improve) for treating serious injuries.",
-      "Roll: **TECH + Paramedic + 1d10** vs. DV.",
-      "**Stabilize** a Mortally Wounded character: **DV13** (same as First Aid).",
-      "**Quick Fix** Critical Injuries: Collapsed Lung DV15, Broken Ribs/Arm/Leg DV13, Spinal Injury DV15, Cracked Skull DV15, Whiplash DV13, Damaged Eye/Ear DV13–15.",
-      "**Treatment** (permanent fix): Broken Ribs/Arm/Leg DV15, Collapsed Lung/Spinal Injury DV15, Broken Jaw/Whiplash DV13.",
-      "Paramedic **cannot** treat the most severe injuries (Lost Limb, Lost Eye, Brain Injury) — those require **Surgery**.",
-      "As a **x2 Skill**, it costs double IP: Level 1 = 40 IP, Level 5 = 200 IP, Level 10 = 400 IP.",
-      "Can be used in the field, unlike Surgery which requires a hospital or clinic."
+      "**What it is:** The skill of applying advanced medical treatment to treat all Critical Injuries not requiring Surgery and to keep wounded people from dying -- the step above First Aid.",
+      "**How to roll:** **TECH + Paramedic + 1d10** vs DV. Stabilize Mortally Wounded: DV13. Quick Fix: Collapsed Lung DV15, Broken Ribs/Arm/Leg DV13, Spinal Injury DV15, Cracked Skull DV15, Whiplash DV13. Treatment (permanent fix): Broken Ribs/Arm/Leg DV15, Collapsed Lung/Spinal Injury DV15.",
+      "**When to use it:** Treating Critical Injuries that First Aid cannot handle, stabilizing mortally wounded characters (same as First Aid), performing field treatments when Surgery is not available, treating injuries permanently (Treatment vs Quick Fix).",
+      "**When NOT to use it -- use First Aid instead:** First Aid is the **basic** medical skill for stabilization and common injuries. Paramedic handles **serious** Critical Injuries. If First Aid can handle it (and has not already been tried and failed on that injury), try First Aid first -- it is cheaper to level. Paramedic is needed when First Aid fails or the injury is beyond its scope.",
+      "**When NOT to use it -- use Surgery (Medtech) instead:** Paramedic cannot treat the **most severe injuries**: Lost Limb, Lost Eye, Brain Injury. These require **Surgery**, which is only available through the Medtech's Medicine Role Ability and requires a hospital or clinic.",
+      "**Key rules:** This is a **x2 cost skill** (Level 1 = 40 IP, Level 5 = 200 IP, Level 10 = 400 IP). Quick Fix is temporary (negates effect but does not fully heal). Treatment is permanent but has higher DVs. Can be used in the field, unlike Surgery.",
+      "**Special note:** Paramedic is the most important medical skill for non-Medtech characters. A party without a Medtech desperately needs someone with Paramedic to handle Collapsed Lungs, Spinal Injuries, and other serious battlefield injuries."
     ]
   },
   {
@@ -6892,13 +6890,13 @@ export const QUICK_REF = [
     ],
     "icon": "💣",
     "steps": [
-      "Demolitions is a **TECH-linked** Technique Skill for setting and defusing explosives.",
-      "Roll: **TECH + Demolitions + 1d10** vs. DV.",
-      "**Setting explosives:** DV depends on desired effect — simple detonation (DV9), shaped charge to breach a wall (DV13), precision demolition (DV15), complex timed sequence (DV17+).",
-      "**Defusing explosives:** Opposed check vs. the setter's TECH + Demolitions + 1d10, or vs. a DV set by the GM.",
-      "Failure when **setting**: the explosive may detonate prematurely or fail to go off. Failure when **defusing**: it goes off in your face.",
-      "Explosive types include: grenades (fragmentation, incendiary, flashbang, smoke, EMP, teargas, biotoxin), mines, C4-equivalent charges.",
-      "Demolitions knowledge also helps identify explosive traps and understand structural weak points for maximum effect."
+      "**What it is:** The skill of setting and defusing explosives, and knowing how much explosive will accomplish a desired result. This is a **x2 cost skill** (double IP to level).",
+      "**How to roll:** **TECH + Demolitions + 1d10** vs DV. Setting: simple detonation DV9, shaped charge/wall breach DV13, precision demolition DV15, complex timed sequence DV17+. Defusing: opposed vs setter's TECH + Demolitions + 1d10 or GM-set DV.",
+      "**When to use it:** Setting explosive charges (C4-equivalent, mines, shaped charges), defusing bombs and mines, breaching walls and doors with explosives, identifying explosive traps, understanding structural weak points for maximum demolition effect.",
+      "**When NOT to use it -- use Heavy Weapons instead:** Demolitions is for **setting and defusing stationary explosive charges**. Heavy Weapons is for **firing** explosive weapons (grenade launchers, rocket launchers) in combat. Planting a charge on a wall = Demolitions. Firing a grenade launcher at an enemy = REF + Heavy Weapons.",
+      "**When NOT to use it -- use Weaponstech instead:** Demolitions covers **using** explosives tactically. Weaponstech covers **repairing** explosive weapons (grenade launchers, rocket launchers). Building a bomb = Demolitions. Fixing a jammed grenade launcher = Weaponstech.",
+      "**Key rules:** x2 cost skill (Level 1 = 40 IP, Level 10 = 400 IP). Failure when setting = premature detonation or dud. Failure when defusing = it goes off in your face. Explosive types: grenades (frag, incendiary, flashbang, smoke, EMP, teargas, biotoxin), mines, shaped charges.",
+      "**Special note:** Demolitions knowledge helps identify traps and calculate blast radius. A character with high Demolitions can create precise breaching charges that open a wall without collapsing the building -- invaluable for heist and extraction missions."
     ]
   },
   {
@@ -10442,6 +10440,3335 @@ export const QUICK_REF = [
       "A **Fixer** in the party often handles selling and distribution, using their Haggle ability to maximize value.",
       "Disputes over loot can be great **roleplay opportunities**, just make sure it doesn't derail the session.",
       "For mission pay from a Fixer, the standard is **per-person payment** (everyone gets the agreed amount, not a split of one sum)."
+    ]
+  },
+  {
+    "id": "luck-spending",
+    "title": "How LUCK spending works",
+    "topic": "Stats",
+    "tags": [
+      "luck",
+      "luck pool",
+      "spend luck",
+      "luck points",
+      "reroll",
+      "bonus"
+    ],
+    "icon": "🍀",
+    "steps": [
+      "Each character has a **LUCK pool** equal to their LUCK stat that **refreshes at the start of each session**.",
+      "You may spend LUCK points **before OR after rolling** to add **+1 per point spent** to any check.",
+      "LUCK can be added to **any Skill Check, Attack Check, or opposed roll** — there is no limit to how many points you spend on a single roll.",
+      "LUCK **cannot** be added to **damage rolls**, **Death Saves**, or **Humanity Loss rolls**.",
+      "You can only spend LUCK on **your own rolls** — never on another character's roll or an NPC's roll.",
+      "Once your pool is empty, you cannot spend more LUCK until the **next session** when it fully refills."
+    ]
+  },
+  {
+    "id": "initiative-ties",
+    "title": "Resolving initiative ties",
+    "topic": "Combat",
+    "tags": [
+      "initiative",
+      "tie",
+      "ties",
+      "turn order",
+      "ref",
+      "simultaneous"
+    ],
+    "icon": "⚔️",
+    "steps": [
+      "Initiative is rolled as **REF + 1d10** at the start of combat. Characters act in **descending order**.",
+      "If two or more characters tie on Initiative, the character with the **highest REF stat** goes first.",
+      "If REF stats are also tied, those characters **act simultaneously** — their Actions resolve at the same time, meaning both can hit (or kill) each other in the same moment.",
+      "The Initiative queue **repeats each Round** in the same order once established."
+    ]
+  },
+  {
+    "id": "autofire-into-melee",
+    "title": "Autofire into melee",
+    "topic": "Combat",
+    "tags": [
+      "autofire",
+      "melee",
+      "friendly fire",
+      "miss",
+      "stray bullets",
+      "full auto"
+    ],
+    "icon": "💥",
+    "steps": [
+      "You **can** use Autofire against a target currently engaged in melee combat with an ally.",
+      "Roll **REF + Autofire + 1d10** vs the **Autofire DV** for range as normal.",
+      "If you **miss by 4 or less**, the burst hits their **melee opponent** (your ally) instead — roll full Autofire damage against them.",
+      "If you miss by **5 or more**, the burst goes wide and hits nobody.",
+      "Autofire costs **10 bullets** and uses the **Autofire Skill** and **Autofire DV table**, not the weapon's standard Skill. SMG max multiplier is **3**, Assault Rifle max multiplier is **4**."
+    ]
+  },
+  {
+    "id": "explosives-enclosed-space",
+    "title": "Explosives in enclosed spaces",
+    "topic": "Combat",
+    "tags": [
+      "explosive",
+      "grenade",
+      "room",
+      "enclosed",
+      "blast radius",
+      "indoors",
+      "aoe"
+    ],
+    "icon": "💣",
+    "steps": [
+      "Explosive weapons deal damage in a **10 m/yd x 10 m/yd area** (5x5 squares). Damage is rolled **once** for all targets.",
+      "In an **enclosed space** (a room smaller than the blast radius), there is **no escaping the blast** — everyone in the room takes damage.",
+      "**Cover within the room still works**: if a target is fully behind cover with sufficient HP, the cover absorbs damage normally. If the explosive damage would destroy the cover, the target takes **full damage**.",
+      "If cover is destroyed (reduced to **0 HP**) by the blast, excess damage from explosives **does** pass through to targets behind it — unlike normal ranged attacks where excess damage is lost.",
+      "Targets with **REF 8+** can individually attempt to dodge the blast even indoors."
+    ]
+  },
+  {
+    "id": "vehicle-as-cover",
+    "title": "Using a vehicle as cover",
+    "topic": "Combat",
+    "tags": [
+      "vehicle",
+      "cover",
+      "car",
+      "hide",
+      "sdp",
+      "vehicle hp",
+      "destruction"
+    ],
+    "icon": "🚗",
+    "steps": [
+      "Vehicles function as cover just like walls — they have **Structural Damage Points (SDP)** that absorb incoming attacks. Example: Compact Groundcar has **50 SDP**.",
+      "Vehicle glass has **no HP** and provides **no cover** — attackers can target occupants directly through windows.",
+      "When a vehicle used as cover takes damage, reduce its **SDP** by the damage dealt. Once SDP reaches **0**, the vehicle is **Destroyed**.",
+      "A destroyed vehicle **no longer provides cover**, cannot move, and all occupants take **6d6 damage**.",
+      "Unlike normal cover, excess damage that destroys a vehicle does **not** automatically pass through — occupants take the flat **6d6 destruction damage** instead."
+    ]
+  },
+  {
+    "id": "dual-wield-melee",
+    "title": "Dual-wielding melee weapons",
+    "topic": "Combat",
+    "tags": [
+      "dual wield",
+      "two weapons",
+      "melee",
+      "ambidextrous",
+      "off hand"
+    ],
+    "icon": "🗡️",
+    "steps": [
+      "Cyberpunk RED has **no official dual-wielding rules** for melee weapons. This is a **GM ruling** situation.",
+      "Each melee weapon already has a **Rate of Fire (ROF)**. Light and Medium Melee Weapons have **ROF 2** (two attacks per Action). Heavy Melee has **ROF 2**. Very Heavy Melee has **ROF 1**.",
+      "Since ROF 2 weapons already allow **two attack rolls per Action**, holding a second weapon does not grant additional attacks — you are already swinging twice.",
+      "A common GM ruling: dual-wielding lets you use **either weapon** for each of your ROF attacks, but does **not** increase total attacks beyond the weapon's ROF.",
+      "Two-handed weapons require both hands unless the wielder has **BODY 8+**, which allows wielding a two-handed weapon in one hand."
+    ]
+  },
+  {
+    "id": "armor-layering",
+    "title": "Armor layering rules",
+    "topic": "Equipment",
+    "tags": [
+      "armor",
+      "layering",
+      "stacking",
+      "sp",
+      "penalty",
+      "multiple armor"
+    ],
+    "icon": "🛡️",
+    "steps": [
+      "You **can** wear multiple pieces of armor at the same time (e.g., Kevlar under a Light Armorjack).",
+      "However, **only the highest SP counts** — armor SP does **not** stack. Wearing SP 7 Kevlar under SP 11 Light Armorjack gives you **SP 11**, not SP 18.",
+      "**Penalties from all worn armor stack**: if you wear Medium Armorjack (**-2 REF, DEX, MOVE**) and also have Subdermal Armor, you still suffer the **-2 penalty** from the Armorjack even though Subdermal has no penalty.",
+      "When you are hit and take damage through armor, **all worn armor in that location is ablated simultaneously** — each piece loses **1 SP**.",
+      "Armor penalty is applied once using the **worst penalty** among all worn armor pieces."
+    ]
+  },
+  {
+    "id": "friendly-fire",
+    "title": "Friendly fire rules",
+    "topic": "Combat",
+    "tags": [
+      "friendly fire",
+      "allies",
+      "hitting friends",
+      "miss",
+      "aoe",
+      "collateral"
+    ],
+    "icon": "🎯",
+    "steps": [
+      "Under normal single-shot ranged or melee attacks, there is **no friendly fire** — a miss simply misses. Stray bullets do not randomly hit allies.",
+      "**Autofire exception**: if you miss your Autofire check by **4 or less**, the burst hits an **adjacent ally or bystander** in melee with the target. Roll full Autofire damage against them.",
+      "**Explosives exception**: grenades, rockets, and explosive weapons deal damage to **everyone** in the **10 m/yd x 10 m/yd blast area** — allies included. There is no way to exclude friends from the blast.",
+      "**Suppressive Fire** forces **everyone on foot within 25 m/yds**, out of cover, and in your line of sight to resist — including allies. Failed saves force them to seek cover.",
+      "**Shotgun Shells** hit **every target in front of you within 6 m/yds** that you can see — allies in the cone are also hit."
+    ]
+  },
+  {
+    "id": "critical-on-melee",
+    "title": "Critical Injuries on melee attacks",
+    "topic": "Combat",
+    "tags": [
+      "critical",
+      "crit",
+      "melee",
+      "injury",
+      "halve armor",
+      "double six"
+    ],
+    "icon": "🩸",
+    "steps": [
+      "Critical Injuries trigger when **2 or more damage dice show a 6** on any attack — melee attacks included.",
+      "When a Critical Injury triggers, roll **2d6** on the Body Critical Injury table (or Head table if it was a head Aimed Shot). The injury deals an additional **5 Bonus Damage** directly to HP, ignoring armor.",
+      "Melee weapons (not Brawling) **halve the defender's armor SP** (round up) before applying damage. Example: SP 11 armor becomes **SP 6** against melee.",
+      "The Critical Injury is inflicted **regardless** of whether the melee damage gets through the halved armor — even **0 damage through SP** still causes the Critical Injury and its **5 Bonus Damage**.",
+      "Brawling attacks do **not** halve armor, but they **can** still trigger Critical Injuries if 2+ dice show 6."
+    ]
+  },
+  {
+    "id": "can-npcs-use-luck",
+    "title": "Can NPCs use LUCK?",
+    "topic": "GM Tips",
+    "tags": [
+      "npc",
+      "luck",
+      "gm",
+      "enemies",
+      "mooks",
+      "boss"
+    ],
+    "icon": "🎲",
+    "steps": [
+      "By default, **NPCs do not have LUCK** and cannot spend LUCK points on their rolls.",
+      "The NPC stat blocks in the core rules list a **Combat Number** (STAT + Skill combined) but do **not** include a LUCK pool.",
+      "The GM **may** choose to give a specific NPC a LUCK pool as a special ability — for example, a recurring villain or major boss. This is entirely at the GM's discretion.",
+      "If the GM grants an NPC LUCK, it follows the same rules: **spend before or after rolling**, **+1 per point**, **cannot add to damage or Death Saves**, and **refreshes each session**.",
+      "For most encounters, enemies rely purely on their **Combat Number + 1d10** without any LUCK cushion — which is why Edgerunners have a meaningful advantage."
+    ]
+  },
+  {
+    "id": "how-field-expertise-works",
+    "title": "How Field Expertise works",
+    "topic": "Skills",
+    "tags": [
+      "field expertise",
+      "tech",
+      "maker",
+      "repair",
+      "jury rig",
+      "fix"
+    ],
+    "icon": "🔧",
+    "steps": [
+      "Field Expertise is a **Maker Specialty** available to the Tech role. Each time the Tech gains a Maker rank, they allocate **1 point** to two Maker Specialties of their choice.",
+      "**Passive bonus**: Add your Field Expertise rank to **any TECH Skill Check** made for non-Maker purposes (e.g., repairing items normally with Basic Tech).",
+      "**Jury-Rig** (Action): As an Action, restore any item to **perfect working condition** temporarily. It lasts **10 minutes per Field Expertise rank**, then reverts to its previous state.",
+      "Normal repairs use **TECH + relevant repair Skill + 1d10 vs DV**. The DV depends on the item's price category: Cheap/Everyday **DV 9**, Costly **DV 13**, Premium **DV 17**, Expensive **DV 21**, Very Expensive **DV 24**, Luxury **DV 29**.",
+      "Each repair attempt takes time based on price: Cheap/Everyday **1 hour**, Costly **6 hours**, Premium **1 day**, Expensive **1 week**, Very Expensive **2 weeks**, Luxury **1 month**."
+    ]
+  },
+  {
+    "id": "how-upgrade-works",
+    "title": "How Upgrade Expertise works",
+    "topic": "Skills",
+    "tags": [
+      "upgrade",
+      "tech",
+      "maker",
+      "improve",
+      "weapon",
+      "armor",
+      "quality"
+    ],
+    "icon": "⬆️",
+    "steps": [
+      "Upgrade Expertise is a **Maker Specialty** for the Tech role. It permanently improves existing items.",
+      "Roll **TECH + relevant repair Skill + Upgrade Expertise rank + 1d10** vs the DV for the item's price category.",
+      "Possible upgrades include: **lower Humanity Loss by 1d6**, add option slots, simplify repair time, make a weapon concealable, raise weapon quality, or **add +1 SP to armor**.",
+      "Weapon quality can be raised one tier (Poor to Standard, Standard to Excellent). Excellent quality grants **+1 to Attack checks**.",
+      "DV by price category: Cheap/Everyday **DV 9**, Costly **DV 13**, Premium **DV 17**, Expensive **DV 21**, Very Expensive **DV 24**, Luxury/Super Luxury **DV 29**.",
+      "Each upgrade requires **materials** and time matching the price category. A failed Upgrade check does **NOT** waste materials — both the materials and the item being upgraded are uninjured. You must start over from scratch but can **reuse the same materials**."
+    ]
+  },
+  {
+    "id": "how-fabrication-works",
+    "title": "How Fabrication Expertise works",
+    "topic": "Skills",
+    "tags": [
+      "fabrication",
+      "tech",
+      "maker",
+      "craft",
+      "build",
+      "create",
+      "materials"
+    ],
+    "icon": "🏭",
+    "steps": [
+      "Fabrication Expertise is a **Maker Specialty** for the Tech role. It lets you build items from scratch.",
+      "Fabrication works for **any existing item** (standard weapons, armor, gear) without needing separate blueprints. For items that don't already exist, you must first invent them using **Invention Expertise** to create the blueprint.",
+      "Materials cost **one price category lower** than the finished item. Example: building a Premium item (100eb) requires Costly materials (50eb).",
+      "Roll **TECH + relevant repair Skill + Fabrication Expertise rank + 1d10** vs the DV for the item's price category.",
+      "DV and time: Cheap/Everyday **DV 9 / 1 hour**, Costly **DV 13 / 6 hours**, Premium **DV 17 / 1 day**, Expensive **DV 21 / 1 week**, Very Expensive **DV 24 / 2 weeks**, Luxury **DV 29 / 1 month**.",
+      "A failed Fabrication check does **NOT** waste materials — they are uninjured. You must start over from scratch but can **reuse the same materials**."
+    ]
+  },
+  {
+    "id": "how-invention-works",
+    "title": "How Invention Expertise works",
+    "topic": "Skills",
+    "tags": [
+      "invention",
+      "tech",
+      "maker",
+      "invent",
+      "new item",
+      "create",
+      "homebrew"
+    ],
+    "icon": "💡",
+    "steps": [
+      "Invention Expertise is a **Maker Specialty** for the Tech role. It allows creating **entirely new items or upgrades** that don't already exist.",
+      "The GM sets the **Price Category** of the invention (minimum **Expensive / DV 21**). More powerful inventions cost more.",
+      "Roll **TECH + relevant repair Skill + Invention Expertise rank + 1d10** vs the DV set by the GM based on the item's price category.",
+      "Invention creates the **design/blueprint** — it does not build the physical item. The physical item is then built using **Fabrication Expertise** (which costs materials one price category lower). Invention itself requires time and a check.",
+      "Once successfully invented, the Tech gains the **blueprint** and can use **Fabrication Expertise** to produce the actual item (or additional copies).",
+      "The GM has final say on what can be invented and at what price category. Inventions that break game balance should be priced appropriately high."
+    ]
+  },
+  {
+    "id": "repairing-armor",
+    "title": "Repairing ablated armor",
+    "topic": "Equipment",
+    "tags": [
+      "repair",
+      "armor",
+      "ablation",
+      "sp",
+      "fix armor",
+      "restore",
+      "tech"
+    ],
+    "icon": "🛠️",
+    "steps": [
+      "When armor is hit and damage gets through, it is **ablated** — SP reduced by **1** per hit (or **2** with Armor-Piercing ammo).",
+      "To repair armor, roll **TECH + Basic Tech + 1d10** vs the DV based on the armor's price category: Everyday **DV 9**, Costly **DV 13**, Premium **DV 17**, Expensive **DV 21**, Luxury **DV 29**.",
+      "A successful repair restores the armor to **full SP**. A failed repair wastes materials but the armor is not further damaged.",
+      "Repair requires **materials** costing based on the armor's price category and takes time: Everyday **1 hour**, Costly **6 hours**, Premium **1 day**, Expensive **1 week**.",
+      "**Skin Weave** (SP 7) and **Subdermal Armor** (SP 11) self-repair at **1 SP per day** and do not require a Tech check to restore.",
+      "Armor at **0 SP** still functions — it just provides no protection until repaired. It is not destroyed."
+    ]
+  },
+  {
+    "id": "repairing-cyberware",
+    "title": "Repairing damaged cyberware",
+    "topic": "Cyberware",
+    "tags": [
+      "repair",
+      "cyberware",
+      "cybertech",
+      "ripperdoc",
+      "fix",
+      "broken",
+      "tech"
+    ],
+    "icon": "🦾",
+    "steps": [
+      "Damaged cyberware is repaired using **TECH + Cybertech + 1d10** vs a DV based on the cyberware's price category.",
+      "DV by price: Cheap/Everyday **DV 9**, Costly **DV 13**, Premium **DV 17**, Expensive **DV 21**, Very Expensive **DV 24**, Luxury **DV 29**.",
+      "**External** cyberware (cyberarms, cyberlegs, external options) can often be repaired by any character with the Cybertech skill.",
+      "**Internal** cyberware and **neuralware** typically require a **ripperdoc (Medtech)** to access and repair, as the Surgery skill may be needed to open the patient up.",
+      "Cyberware destroyed by a Critical Injury (e.g., Dismembered Arm) needs full **replacement** — a cloned part (no HL) or new cybernetic (costs Humanity Loss as listed).",
+      "Repair time follows the same price-category table: Cheap/Everyday **1 hour**, Costly **6 hours**, Premium **1 day**, Expensive **1 week**, Very Expensive **2 weeks**."
+    ]
+  },
+  {
+    "id": "programs-vs-black-ice",
+    "title": "Programs vs Black ICE combat",
+    "topic": "Netrunning",
+    "tags": [
+      "program",
+      "black ice",
+      "net combat",
+      "rez",
+      "attack",
+      "interface",
+      "zap"
+    ],
+    "icon": "🖥️",
+    "steps": [
+      "**Anti-Program attacks** (Sword, Banhammer): Roll **Interface + Program ATK + 1d10** vs **target's DEF + 1d10**. On hit, deal program's listed REZ damage.",
+      "**Sword** deals **3d6 REZ** to Black ICE, **2d6 REZ** to Non-Black ICE. **Banhammer** deals **3d6 REZ** to Non-Black ICE, **2d6 REZ** to Black ICE.",
+      "**Zap** (Interface Ability): Roll **Interface + 1d10** vs **target Program's DEF + 1d10** or enemy **Netrunner's Interface + 1d10**. Deals **1d6 damage** to REZ or directly to a Netrunner's brain HP.",
+      "**Black ICE attacks you**: It rolls **ATK + 1d10** vs your **Interface + 1d10**. Anti-Personnel ICE damages your brain; Anti-Program ICE targets your active Programs' REZ.",
+      "When a Program or Black ICE reaches **0 REZ**, it is **Derezzed** (non-functional but still installed). Deactivate + Activate to restore it. If a Liche or Dragon derezes a target, it is **Destroyed** permanently.",
+      "Defender Programs trigger automatically: **Shield** blocks the first brain damage then derezes, **Armor** reduces brain damage by **4**, **Flak** reduces a Non-Black ICE attacker's ATK to **0**. Each is one-use per Netrun."
+    ]
+  },
+  {
+    "id": "what-is-rez",
+    "title": "What is REZ?",
+    "topic": "Netrunning",
+    "tags": [
+      "rez",
+      "program hp",
+      "hit points",
+      "black ice hp",
+      "derez",
+      "destroyed"
+    ],
+    "icon": "📊",
+    "steps": [
+      "**REZ** is the hit points of Programs and Black ICE in the NET. It functions exactly like HP does for characters in meatspace.",
+      "When a Program or Black ICE takes damage from an attack (Sword, Banhammer, Zap, or enemy ICE), reduce its **REZ** by the damage dealt.",
+      "At **0 REZ**, the Program or Black ICE is **Derezzed** — it stops functioning but remains installed in the Cyberdeck.",
+      "A Derezzed Program can be restored by using a NET Action to **Deactivate** it, then another NET Action to **Activate** it. This restores it to full REZ.",
+      "A **Destroyed** Program (from Liche or Dragon effects) is permanently erased from the Cyberdeck and must be repurchased and reinstalled (**1 hour** to install).",
+      "Common REZ values: Booster/Defender Programs have **7 REZ**. Black ICE ranges from **15 REZ** (Asp, Raven, Wisp) to **25 REZ** (Giant, Kraken, Dragon)."
+    ]
+  },
+  {
+    "id": "net-architecture-floors",
+    "title": "NET Architecture floors explained",
+    "topic": "Netrunning",
+    "tags": [
+      "architecture",
+      "floors",
+      "net",
+      "password",
+      "file",
+      "control node",
+      "black ice",
+      "structure"
+    ],
+    "icon": "🏗️",
+    "steps": [
+      "A NET Architecture is a series of **floors** stacked vertically. The Netrunner enters at the top and descends deeper.",
+      "Each floor contains **one thing**: a **Password** (barrier requiring Backdoor to pass), a **File** (data that can be copied or identified with Eye-Dee), a **Control Node** (lets you operate connected devices), or **Black ICE** (hostile program that attacks).",
+      "Moving between floors costs **no NET Actions** — you move **1 floor per move** as part of your NET turn. Moving is free but you can only move to adjacent floors.",
+      "The Netrunner can use **Pathfinder** (1 NET Action) to reveal the map — see a number of floors equal to their check result, up to the first obstruction with a DV higher than the roll.",
+      "Architectures typically have **3 to 10+ floors** depending on the facility's security level. Higher-security systems have more Black ICE, harder Passwords, and deeper Control Nodes.",
+      "**One Demon** may be placed per **6 floors** of Architecture. Demons operate Control Nodes to defend physical spaces and cannot be loaded into Cyberdecks."
+    ]
+  },
+  {
+    "id": "interface-abilities-list",
+    "title": "All Interface abilities at a glance",
+    "topic": "Netrunning",
+    "tags": [
+      "interface",
+      "abilities",
+      "netrunner",
+      "backdoor",
+      "cloak",
+      "control",
+      "zap",
+      "scanner",
+      "slide",
+      "virus",
+      "pathfinder",
+      "eye-dee"
+    ],
+    "icon": "🔌",
+    "steps": [
+      "**Scanner** (Meat Action, not NET Action): Locate meatspace access points to nearby NET Architectures. Higher rolls find more access points at greater distance.",
+      "**Backdoor** (NET Action): Break through **Passwords** in an Architecture. Roll **Interface + 1d10 vs Password DV**. If you know the password, you pass automatically.",
+      "**Cloak** (NET Action): Hide your presence and any Virus you left. Another Netrunner must beat your Cloak check with **Pathfinder** to detect your traces.",
+      "**Control** (NET Action): Operate devices connected to a **Control Node** — cameras, drones, turrets, elevators, doors. Each device operation is a **separate NET Action**.",
+      "**Eye-Dee** (NET Action): Identify a File's contents and value. Some Files have a DV to identify. **Pathfinder** (NET Action): Reveal the Architecture map — see floors equal to your check.",
+      "**Slide** (NET Action): Escape combat with one **Non-Demon** Black ICE. Roll **Interface + 1d10 vs Black ICE's PER + 1d10**. Success = flee to adjacent floor, ICE stops chasing. Once per Turn.",
+      "**Virus** (NET Action, lowest floor only): Leave a custom Virus to perform up to **2 actions/changes**. GM sets the DV. Destroying the Virus requires beating your Virus check. **Zap** (NET Action): Deal **1d6 damage** to a Program's REZ or directly to an enemy Netrunner's brain."
+    ]
+  },
+  {
+    "id": "what-happens-flatlined-in-net",
+    "title": "What happens if you flatline in the NET",
+    "topic": "Netrunning",
+    "tags": [
+      "flatline",
+      "brain death",
+      "netrunner death",
+      "brain damage",
+      "killed in net",
+      "jack out"
+    ],
+    "icon": "💀",
+    "steps": [
+      "Anti-Personnel Black ICE and Anti-Personnel Programs deal damage directly to the Netrunner's **brain** (treated as HP). This damage **bypasses all meatspace armor**.",
+      "If a Netrunner's brain HP reaches **0**, they are **brain-dead** — permanent, irreversible death. The body remains alive but the mind is gone. There is no Death Save for brain death.",
+      "**Unsafe Jack Out**: If forced to Jack Out while Black ICE is on your floor (via DeckKRASH or Giant/Kraken), you suffer the **effects of all Black ICE** on your current floor simultaneously before disconnecting.",
+      "**Safe Jack Out**: You can voluntarily Jack Out as a **NET Action** if no Black ICE is on your current floor. This is clean and safe.",
+      "Defender Programs help prevent brain death: **Shield** absorbs the first instance of brain damage then derezes, **Armor** reduces one instance by **4 damage**, **Flak** reduces a Non-Black ICE attacker's ATK to 0. Each is one-use per Netrun.",
+      "**Virtuality Goggles** let you see both the NET and meatspace simultaneously. Without them, you are effectively **blind and unconscious** in meatspace while Netrunning."
+    ]
+  },
+  {
+    "id": "can-netrunner-act-in-meatspace",
+    "title": "Can a Netrunner act in meatspace?",
+    "topic": "Netrunning",
+    "tags": [
+      "netrunner",
+      "meatspace",
+      "meat action",
+      "real world",
+      "multitask",
+      "distracted"
+    ],
+    "icon": "🧠",
+    "steps": [
+      "Yes — on each Turn, a Netrunner chooses **one**: take a normal **Meat Action** (attack, use skill, etc.) **OR** take **NET Actions** (2-5 depending on Interface rank). Not both.",
+      "The Netrunner **always** gets their **Move Action** in meatspace regardless of whether they chose Meat or NET Actions.",
+      "NET Actions per Turn by Interface rank: Rank **1-3** = **2 NET Actions**, Rank **4-6** = **3**, Rank **7-9** = **4**, Rank **10** = **5**.",
+      "While jacked in, the Netrunner is splitting attention between cyberspace and reality. **Virtuality Goggles** are required to see both — without them, the Netrunner is **effectively blind** in meatspace.",
+      "A Netrunner **must be within 6 m/yds** of a physical access point (cable connection) to jack into a local Architecture. Wireless Netrunning across the old NET is not possible in the Time of the Red."
+    ]
+  },
+  {
+    "id": "vehicle-weak-points-detailed",
+    "title": "Targeting vehicle weak points",
+    "topic": "Vehicles",
+    "tags": [
+      "vehicle",
+      "weak point",
+      "aimed shot",
+      "tires",
+      "engine",
+      "fuel tank",
+      "disable"
+    ],
+    "icon": "🎯",
+    "steps": [
+      "Targeting a vehicle weak point is an **Aimed Shot** with **-8 to the attack check**. On a hit, damage that gets through SP is multiplied by **2**.",
+      "**Tires**: A successful hit that deals damage **halves the vehicle's MOVE** (round down). A second tire hit reduces MOVE to **0** (vehicle stops). Driver must make a **DV13 control check** or Lose Control.",
+      "**Engine**: A successful hit that deals damage **disables the engine** — the vehicle decelerates and cannot accelerate. Driver must make a **DV13 control check** or Lose Control on subsequent turns.",
+      "**Fuel Tank**: A successful hit that deals damage creates an **explosion risk** — the GM determines if the vehicle catches fire. A burning vehicle deals **2 HP/turn** to all occupants until extinguished or evacuated.",
+      "If the vehicle is **stationary**, melee attacks against it **automatically hit** (no roll needed). Against a **moving vehicle**, you must beat **DV 13** to hit.",
+      "Vehicle glass has **no HP** and provides **no cover** — you can target occupants directly through windows without needing an Aimed Shot."
+    ]
+  },
+  {
+    "id": "passenger-actions-in-vehicle",
+    "title": "What passengers can do in a vehicle",
+    "topic": "Vehicles",
+    "tags": [
+      "passenger",
+      "vehicle",
+      "shoot from car",
+      "bail out",
+      "actions",
+      "drive-by"
+    ],
+    "icon": "🚙",
+    "steps": [
+      "Passengers can **fire ranged weapons** from a moving vehicle at a **-4 penalty** to their attack check (unstable platform).",
+      "Passengers can **reload weapons**, **use skills**, and **use objects** normally — these do not require the -4 penalty.",
+      "Passengers can use their **Move Action** to change seats within the vehicle or to **bail out**.",
+      "**Bailing out** of a moving vehicle means jumping — the passenger takes **falling damage** based on speed. At typical combat speeds, this is treated as a fall and requires a **DV15 Athletics check** to avoid a **Broken Leg** Critical Injury.",
+      "Passengers **cannot** drive the vehicle or perform Vehicle Maneuvers unless they switch to the driver seat (uses a Move Action) and then use an Action to start driving.",
+      "The driver can fire an **Onboard Machine Gun** or **Onboard Flamethrower** (vehicle upgrades) but cannot fire personal weapons while driving."
+    ]
+  },
+  {
+    "id": "vehicle-destruction",
+    "title": "What happens when a vehicle is destroyed",
+    "topic": "Vehicles",
+    "tags": [
+      "vehicle",
+      "destroyed",
+      "sdp",
+      "zero hp",
+      "explosion",
+      "crash",
+      "fire"
+    ],
+    "icon": "🔥",
+    "steps": [
+      "When a vehicle reaches **0 SDP** (Structural Damage Points), it is **Destroyed** — it can no longer move or provide cover.",
+      "All occupants of a destroyed vehicle take **6d6 damage** immediately. This damage is soaked by personal armor as normal.",
+      "All occupants also suffer the **Whiplash** Critical Injury (Death Save Penalty **+1**).",
+      "The destroyed vehicle **may catch fire** at the GM's discretion, dealing **2 HP/turn** to anyone inside until they exit or the fire is extinguished.",
+      "Occupants must use their next Action to **exit the vehicle** (Get into Vehicle action in reverse). If they cannot exit, they continue taking fire damage each turn.",
+      "Vehicle repair is possible: Minor damage **DV 9 / 3 hours**, Major damage **DV 13 / 1 day**, Destroyed **DV 17 / 1 week**. Uses **TECH + Land/Air/Sea Vehicle Tech + 1d10**."
+    ]
+  },
+  {
+    "id": "ramming-rules-detailed",
+    "title": "Ramming rules in detail",
+    "topic": "Vehicles",
+    "tags": [
+      "ram",
+      "ramming",
+      "crash",
+      "vehicle combat",
+      "collision",
+      "whiplash"
+    ],
+    "icon": "💢",
+    "steps": [
+      "To ram a target, the driver makes an **opposed check**: **REF + Drive Land Vehicle + 1d10** vs the target's **REF + Drive Land Vehicle + 1d10** (if in a vehicle) or **DEX + Evasion + 1d10 vs DV 13** (if on foot).",
+      "On a successful ram, **both vehicles** take **6d6 damage** to their SDP. This damage is not reduced by vehicle armor.",
+      "All occupants of **both vehicles** take **4d6 damage** (soaked by personal armor) and suffer the **Whiplash** Critical Injury (Death Save Penalty +1).",
+      "A pedestrian hit by a ram takes **6d6 damage** (soaked by armor). They can attempt to dodge with **DEX + Evasion + 1d10 vs DV 13**. On success, they may choose to end up **on top of** the vehicle.",
+      "The **Combat Plow** vehicle upgrade negates ram damage to your own vehicle and prevents Whiplash for your occupants — the target still takes full damage.",
+      "After a ram, the driver must make a **DV13 control check** or **Lose Control** — the GM determines the vehicle's trajectory and any additional collisions."
+    ]
+  },
+  {
+    "id": "how-reputation-changes",
+    "title": "How Reputation changes",
+    "topic": "Social",
+    "tags": [
+      "reputation",
+      "rep",
+      "fame",
+      "infamy",
+      "gm",
+      "level",
+      "social"
+    ],
+    "icon": "⭐",
+    "steps": [
+      "Reputation is **awarded by the GM** based on notable actions the character performs during play. There is no IP cost or skill check involved.",
+      "Reputation ranges from **Level 0** (nobody) to **Level 10** (known worldwide). When someone new meets you, they roll **1d10** — if the result is **under** your Reputation Level, they have heard of you.",
+      "A new Reputation **only replaces** the old one if the new Level is **higher**. You cannot lose Reputation levels, but your Reputation can become **negative** (known for cowardice, betrayal, failure).",
+      "**Negative Reputation** works mechanically the same — people have heard of you — but they know about your **failures and disgrace** rather than your accomplishments.",
+      "Reputation is used in **Facedowns**: Roll **COOL + Reputation + 1d10** vs opponent's **COOL + Reputation + 1d10**. Negative Reputation counts as a **negative number** in Facedowns.",
+      "Examples of actions that earn Reputation: pulling off a legendary heist, defeating a notorious gang leader, publicly humiliating a Corp exec, saving a neighborhood from disaster."
+    ]
+  },
+  {
+    "id": "how-facedown-modifiers-work",
+    "title": "Facedown modifiers and bonuses",
+    "topic": "Social",
+    "tags": [
+      "facedown",
+      "intimidation",
+      "cool",
+      "reputation",
+      "modifiers",
+      "weapon display",
+      "cyberware"
+    ],
+    "icon": "😎",
+    "steps": [
+      "A Facedown is a duel of wills. Both sides roll **COOL + Reputation + 1d10** — highest total wins. Ties mean both are uncertain and nothing happens.",
+      "The **loser** must choose: either **Back Down** (concede) or take **-2 to all Actions** against the winner until they defeat them at least once.",
+      "**Weapon display**: Visibly drawing or brandishing a weapon can give a **situational bonus** at the GM's discretion — a heavy weapon or exotic cyberweapon is more intimidating than a knife.",
+      "**Visible cyberware**: Characters with obviously dangerous cyberware (Wolvers, chrome limbs, full-body conversions) may receive a **situational bonus** from the GM based on how threatening they appear.",
+      "**Negative Reputation** (earned through cowardice or betrayal) counts as a **negative modifier** — your Reputation Level is subtracted rather than added to the Facedown roll.",
+      "LUCK **can** be spent on Facedown rolls since it is a standard opposed check. The GM calls for Facedowns when appropriate — typically before a fight or tense standoff."
+    ]
+  },
+  {
+    "id": "how-does-the-humanity-system-work",
+    "title": "How the Humanity system works",
+    "topic": "Cyberware",
+    "tags": [
+      "humanity",
+      "empathy",
+      "emp",
+      "cyberpsychosis",
+      "humanity loss",
+      "cyberware cost"
+    ],
+    "icon": "🧬",
+    "steps": [
+      "Starting Humanity equals **EMP x 10**. For example, EMP 7 = **70 Humanity**.",
+      "Each piece of cyberware costs **Humanity Loss (HL)** when installed. During character creation, HL is a preset number. After character creation, HL is rolled as **dice** (e.g., 2d6 or 3d6).",
+      "Your effective **EMP** equals your current Humanity divided by 10, **rounded down**. Example: 44 Humanity = EMP **4**. Drop to 39 Humanity = EMP **3**.",
+      "EMP affects all EMP-linked skills: **Conversation**, **Human Perception**, **Persuasion**, and other social skills. Losing EMP makes you worse at connecting with people.",
+      "If Humanity drops **below 0**, the character enters **cyberpsychosis** and becomes an **NPC** under GM control. This is permanent unless treated with extensive Therapy.",
+      "**Therapy** can restore Humanity: Standard Therapy recovers **2d6 Humanity** (DV15, costs 500eb, 1 week). Extreme Therapy recovers **4d6 Humanity** (DV17, costs 1,000eb, 1 week). Max recoverable Humanity is reduced by **2 per installed cyberware** (4 per borgware)."
+    ]
+  },
+  {
+    "id": "how-do-languages-work",
+    "title": "How languages work",
+    "topic": "Skills",
+    "tags": [
+      "language",
+      "languages",
+      "speak",
+      "lifepath",
+      "skill",
+      "ip",
+      "education"
+    ],
+    "icon": "🗣️",
+    "steps": [
+      "Each language is its own **Language Skill** under the Education category, linked to **INT**. You choose a specific language each time you take the skill (e.g., Language: Japanese, Language: Spanish).",
+      "Your **Streetslang** (the common tongue of Night City) starts at a functional level from your Lifepath. Additional languages are also gained during **Lifepath generation** based on your cultural background.",
+      "Language skill levels represent fluency: Level **1-2** = broken/tourist phrases, Level **3-4** = conversational, Level **5-6** = fluent, Level **7-8** = native speaker, Level **9-10** = literary/poetic mastery.",
+      "Languages are improved with **Improvement Points (IP)** like any other skill: the cost is **current level x 20 IP** per level (Language is a standard skill, not a difficult x2 skill).",
+      "The GM may call for a **Language Skill Check** (INT + Language + 1d10 vs DV) when trying to understand technical jargon, thick accents, slang, or coded speech in that language.",
+      "Fixer's **Grease** ability grants bonus languages at certain ranks: Rank 3-4 grants **+1 language at Skill 4**, with more at higher ranks."
+    ]
+  },
+  {
+    "id": "how-does-ip-spending-work-detailed",
+    "title": "IP spending rules in detail",
+    "topic": "GM Tips",
+    "tags": [
+      "ip",
+      "improvement points",
+      "experience",
+      "xp",
+      "level up",
+      "advancement",
+      "skill cost",
+      "role ability"
+    ],
+    "icon": "📈",
+    "steps": [
+      "IP is awarded by the GM after each session, typically **40-80 IP** based on group achievement and individual playstyle performance (Warrior, Socializer, Explorer, Roleplayer).",
+      "**Standard Skill improvement**: costs **current level x 20 IP** per level. Level 1 costs **20 IP**, Level 2 costs **40 IP**, Level 3 costs **60 IP**, and so on up to Level 10 at **200 IP**.",
+      "**Difficult (x2) Skill improvement** (Martial Arts, Autofire, Pilot Air Vehicle, etc.): costs **current level x 40 IP** per level. Level 1 costs **40 IP**, Level 5 costs **200 IP**, Level 10 costs **400 IP**.",
+      "**Role Ability Rank improvement**: costs **current rank x 60 IP** per rank. Rank 1 costs **60 IP**, Rank 5 costs **300 IP**, Rank 10 costs **600 IP**.",
+      "You **cannot skip levels or ranks** — each must be purchased in order. The GM should ensure characters spend some time at a new level before advancing again.",
+      "**Multiclassing**: After reaching Rank 4 in your primary Role, you can buy Rank 1 in a second Role for **60 IP**. You cannot multiclass again until the new Role reaches Rank 4. You keep all features of both Roles."
+    ]
+  },
+  {
+    "id": "using-handgun-skill",
+    "title": "Using the Handgun skill",
+    "topic": "Skills",
+    "tags": [
+      "handgun",
+      "pistol",
+      "smg",
+      "medium pistol",
+      "heavy pistol",
+      "very heavy pistol",
+      "heavy smg",
+      "shooting"
+    ],
+    "icon": "🔫",
+    "steps": [
+      "**What it is:** The skill of accurately firing handheld projectile weapons -- pistols and SMGs. Covers Medium Pistol (2d6, 12 rds, ROF 2), Heavy Pistol (3d6, 8 rds, ROF 2), Very Heavy Pistol (4d6, 8 rds, ROF 1), SMG (2d6, 30 rds, ROF 1), and Heavy SMG (3d6, 40 rds, ROF 1).",
+      "**How to roll:** **REF + Handgun + 1d10** vs the DV for the weapon type at your range. Pistol DVs: 13/15/20/25/30 (0-6m through 51-100m). SMG DVs: 15/13/15/20/25 (best at 7-12m).",
+      "**When to use it:** Any single-shot attack with a pistol or SMG. ROF 2 weapons (Medium and Heavy Pistol) can fire twice per Action at same or different targets, rolling separately.",
+      "**When NOT to use it -- use Autofire instead:** When an SMG or Heavy SMG uses its **Autofire** or **Suppressive Fire** mode, you roll **REF + Autofire + 1d10**, not Handgun. Handgun is for single shots only. Autofire costs 10 bullets per use and has its own DV table.",
+      "**When NOT to use it -- use Shoulder Arms instead:** Handgun covers **one-handed** weapons (pistols and SMGs). Shoulder Arms covers **two-handed** long guns (shotgun, assault rifle, sniper rifle). If it braces against the shoulder, it is Shoulder Arms.",
+      "**Key rules:** Medium Pistol, Heavy Pistol, and SMG are **concealable**. Very Heavy Pistol and Heavy SMG are not. All are one-handed -- you can hold a second item in the other hand. Reloading takes 1 Action.",
+      "**Special note:** Handgun is the most versatile ranged combat skill -- it covers five different weapons from concealed sidearms to heavy firepower. Most starting characters should invest here for basic combat capability."
+    ]
+  },
+  {
+    "id": "using-shoulder-arms",
+    "title": "Using the Shoulder Arms skill",
+    "topic": "Skills",
+    "tags": [
+      "shoulder arms",
+      "shotgun",
+      "assault rifle",
+      "sniper rifle",
+      "rifle",
+      "long gun",
+      "two-handed"
+    ],
+    "icon": "🎯",
+    "steps": [
+      "**What it is:** The skill of accurately firing shoulder-braced projectile weapons -- rifles and shotguns. Covers Shotgun (5d6, 4 slugs, ROF 1), Assault Rifle (5d6, 25 rds, ROF 1), and Sniper Rifle (5d6, 4 rds, ROF 1). All require two hands, all not concealable.",
+      "**How to roll:** **REF + Shoulder Arms + 1d10** vs DV at range. Shotgun best at 0-6m (DV13). Assault Rifle best at 13-25m (DV13). Sniper Rifle excels at 51-100m (DV13). All cost 500eb (Expensive).",
+      "**When to use it:** Any single-shot attack with a shotgun, assault rifle, or sniper rifle. Shotgun Shells hit every target in front of you within 6m that you can see (roll damage once for all targets, no Aimed Shots with shells).",
+      "**When NOT to use it -- use Autofire instead:** When an Assault Rifle uses **Autofire (4)** or **Suppressive Fire** mode, roll **REF + Autofire + 1d10**, not Shoulder Arms. Shoulder Arms is for single shots only. Autofire costs 10 bullets per use.",
+      "**When NOT to use it -- use Handgun instead:** Shoulder Arms covers **two-handed long guns** that brace on the shoulder. Handgun covers **one-handed pistols and SMGs**. If you can fire it with one hand, it is Handgun. If it requires two hands and a shoulder brace, it is Shoulder Arms.",
+      "**Key rules:** Reloading takes 1 Action. Shotgun Shells cannot be used for Aimed Shots. Shoulder Arms weapons accept attachments: Bayonets (usable as Light Melee), Grenade Launcher Underbarrels (1 grenade), Shotgun Underbarrels (2 shots).",
+      "**Special note:** All three Shoulder Arms weapons deal 5d6 damage, making them the hardest-hitting standard firearms. The tradeoff is two-handed use, no concealment, and ROF 1. Shoulder Arms is the go-to skill for dedicated combat characters."
+    ]
+  },
+  {
+    "id": "using-autofire-skill",
+    "title": "Using the Autofire skill",
+    "topic": "Skills",
+    "tags": [
+      "autofire",
+      "suppressive fire",
+      "full auto",
+      "spray",
+      "automatic",
+      "smg",
+      "assault rifle"
+    ],
+    "icon": "💥",
+    "steps": [
+      "**What it is:** The skill of keeping a weapon's Autofire firing mode on target through recoil -- a separate skill from Handgun and Shoulder Arms used exclusively for full-auto attacks and Suppressive Fire.",
+      "**How to roll:** **REF + Autofire + 1d10** vs the **Autofire DV table** (different from single-shot DVs). Costs 10 bullets per use. SMG Autofire DVs: 20/17/20/25. Assault Rifle Autofire DVs: 22/20/17/20/25. On a hit: 2d6 x (amount you beat the DV), capped at weapon's Autofire value (3 for SMGs, 4 for ARs).",
+      "**When to use it:** Any time a character fires a weapon in full-auto mode (SMG, Heavy SMG, Assault Rifle) or uses Suppressive Fire. Suppressive Fire costs 10 bullets, deals no damage, but forces everyone on foot/out of cover within 25m to pass WILL + Concentration vs your Autofire roll or take cover.",
+      "**When NOT to use it -- use Handgun instead:** Autofire is ONLY for full-auto bursts and Suppressive Fire. Single shots from an SMG or Heavy SMG use **REF + Handgun**. Single shots from an Assault Rifle use **REF + Shoulder Arms**. You need both skills to use these weapons to their full potential.",
+      "**When NOT to use it -- use Heavy Weapons instead:** Autofire does not apply to grenade launchers, rocket launchers, or flamethrowers, even though they are 'heavy.' Those all use the Heavy Weapons skill. Autofire only applies to weapons with the Autofire firing mode (SMGs, Heavy SMGs, Assault Rifles).",
+      "**Key rules:** This is a **x2 cost skill** (Level 1 = 40 IP, Level 10 = 400 IP). Armor is ablated by 1 SP if any damage gets through (standard ablation, not extra). You need 10+ bullets in the magazine to use Autofire -- if fewer remain, you cannot use it.",
+      "**Special note:** Autofire is extremely powerful at high skill levels but very expensive to level. The 2d6 x multiplier damage formula means a skilled autofire user can deal devastating damage in a single burst. The x2 IP cost is the balancing factor."
+    ]
+  },
+  {
+    "id": "using-heavy-weapons",
+    "title": "Using the Heavy Weapons skill",
+    "topic": "Skills",
+    "tags": [
+      "heavy weapons",
+      "grenade launcher",
+      "rocket launcher",
+      "flamethrower",
+      "explosive",
+      "exotic"
+    ],
+    "icon": "💣",
+    "steps": [
+      "**What it is:** The skill of accurately firing extremely large projectile weapons, including grenade and rocket launchers. Covers Grenade Launcher (6d6, 2 grenades, ROF 1), Rocket Launcher (8d6, 1 rocket, ROF 1), Flamethrower, and Railgun.",
+      "**How to roll:** **REF + Heavy Weapons + 1d10** vs DV at range. Grenade Launcher DVs: 16/15/15/20/20/25/30. Rocket Launcher: 17/15/15/20/20/25/30. Both are Explosive (5m radius, everyone inside takes damage). This is a **x2 cost skill**.",
+      "**When to use it:** Firing grenade launchers, rocket launchers, flamethrowers, or railguns. Area denial, anti-vehicle combat, breaching fortified positions, dealing with groups of enemies.",
+      "**When NOT to use it -- use Demolitions instead:** Heavy Weapons is for **firing** explosive weapons in combat. Demolitions is for **setting and defusing** stationary explosive charges (C4, mines, shaped charges). Launching a grenade = Heavy Weapons. Planting a bomb on a door = Demolitions.",
+      "**When NOT to use it -- use Shoulder Arms or Handgun instead:** Heavy Weapons covers only the heaviest launchers and exotic weapons. Standard firearms (pistols, SMGs, rifles, shotguns) use Handgun or Shoulder Arms. If it fires bullets, it is probably not Heavy Weapons.",
+      "**Key rules:** x2 cost skill (Level 1 = 40 IP, Level 10 = 400 IP). All require two hands, not concealable, 500eb each. Flamethrower: fires incendiary only, ignited targets take 4 HP/turn, cannot cause Critical Injuries. Railgun: ignores armor below SP 11, requires BODY 11+ unless mounted.",
+      "**Special note:** Explosive ammo types include Basic, AP, Biotoxin, EMP, Flashbang, Incendiary, Poison, Sleep, Smoke, and Teargas grenades -- each with unique secondary effects. Heavy Weapons are expensive to use and expensive to skill up, but nothing else clears a room like a grenade."
+    ]
+  },
+  {
+    "id": "using-archery",
+    "title": "Using the Archery skill",
+    "topic": "Skills",
+    "tags": [
+      "archery",
+      "bow",
+      "crossbow",
+      "arrow",
+      "silent",
+      "ranged"
+    ],
+    "icon": "🏹",
+    "steps": [
+      "**What it is:** The skill of accurately firing bolt- or arrow-launching projectile weapons -- bows and crossbows. Damage 4d6, two hands, not concealable, 100eb (Costly).",
+      "**How to roll:** **REF + Archery + 1d10** vs DV at range. DVs: 15 (0-6m), 13 (7-12m, best), 15 (13-25m), 17 (26-50m), 20 (51-100m), 22 (101-200m). Cannot hit beyond 200m. ROF 1.",
+      "**When to use it:** Silent ranged attacks, stealth operations where gunfire would compromise the mission, sustained operations where ammo cost matters, any situation where being quiet is more important than raw damage.",
+      "**When NOT to use it -- use Handgun or Shoulder Arms instead:** Archery does 4d6 damage with ROF 1. Firearms generally do more damage (5d6 for rifles) or have ROF 2 (pistols). Archery's advantages are **silence** and **no reload action** -- if neither matters, firearms are strictly better. Choose Archery when stealth or economy matter; choose firearms when raw combat power matters.",
+      "**When NOT to use it -- use Heavy Weapons instead:** Archery cannot do area damage or anti-vehicle work. If you need explosive ordnance, that is Heavy Weapons. Archery is a precision single-target skill.",
+      "**Key rules:** Bows **never need a Reload Action** -- nocking is part of the attack, making them uniquely action-efficient. Basic arrows are **retrievable** after combat (no ongoing ammo cost). Bows are **completely silent** -- no gunshot to alert enemies. Special arrows: AP (ablate 2 SP) and Poison available.",
+      "**Special note:** Archery is the premier stealth ranged weapon. A character with high Stealth + Archery can eliminate targets silently at range without ever revealing their position. The no-reload-action advantage means you never waste a turn reloading."
+    ]
+  },
+  {
+    "id": "using-martial-arts",
+    "title": "Using the Martial Arts skill",
+    "topic": "Skills",
+    "tags": [
+      "martial arts",
+      "karate",
+      "taekwondo",
+      "judo",
+      "aikido",
+      "unarmed",
+      "melee",
+      "special moves"
+    ],
+    "icon": "🥋",
+    "steps": [
+      "**What it is:** The skill of fighting with a trained Martial Arts Form (Karate, Taekwondo, Judo, or Aikido) -- each form grants unique special moves. You must choose a specific form when you take this skill. This is a **x2 cost skill**.",
+      "**How to roll:** **DEX + Martial Arts + 1d10** vs defender's **DEX + Evasion + 1d10**. ROF 2. Damage based on BODY: 1d6 (BODY 4-), 2d6 (BODY 5-6), 3d6 (BODY 7-10), 4d6 (BODY 11+). MA damage **halves the defender's armor SP** (round up -- SP 11 counts as SP 6).",
+      "**When to use it:** Trained unarmed combat, using special form moves (Bone Breaking Strike, Flying Kick, Counter Throw, etc.), any situation where armor-halving unarmed damage is needed.",
+      "**When NOT to use it -- use Brawling instead:** Martial Arts requires at least **1 point** invested and is x2 cost. Brawling is the **untrained** alternative -- no special moves, no armor halving, but it is a Basic Skill everyone has. If a character has no Martial Arts training, they must use Brawling. Brawling does NOT halve armor; MA does. This makes MA far superior against armored targets.",
+      "**When NOT to use it -- use Melee Weapon instead:** Martial Arts is **unarmed** fighting. If the character is wielding a melee weapon (knife, sword, bat), use DEX + Melee Weapon. Melee weapons have their own damage dice independent of BODY, while MA damage scales with BODY.",
+      "**Forms:** **Karate**: Armor Breaking Combo (DV15, ablate 2 extra SP), Bone Breaking Strike (WILL 8+, inflicts Broken Ribs). **Taekwondo**: Pressure Point Strike (WILL 8+, inflicts Spinal Injury), Flying Kick (MOVE 8+, prone + vehicle dismount). **Judo**: Counter Throw (DV15, unavoidable throw), Grab Escape (DV15, break free + Broken Arm). **Aikido**: Disarming Combo (DV15, disarm), Iron Grip (DV15, -2 escape + no ranged).",
+      "**Key rules:** All forms share **Recovery** (DV13 to stand from Prone without spending an Action). Special Moves cannot be used for Aimed Shots. x2 cost skill (Level 1 = 40 IP, Level 10 = 400 IP). You can learn multiple forms separately."
+    ]
+  },
+  {
+    "id": "using-drive-land-vehicle",
+    "title": "Using Drive Land Vehicle",
+    "topic": "Skills",
+    "tags": [
+      "drive",
+      "driving",
+      "car",
+      "vehicle",
+      "chase",
+      "maneuver",
+      "groundcar",
+      "motorcycle"
+    ],
+    "icon": "🚗",
+    "steps": [
+      "**What it is:** The skill of driving and maneuvering land vehicles -- cars, motorcycles, trucks, APCs, and any ground-based vehicle.",
+      "**How to roll:** **REF + Drive Land Vehicle + 1d10** vs DV. If REF + skill > 9, basic driving needs no check. Otherwise DV10 each turn or lose control. Maneuvers: Swerve DV13, Sharp Turn DV13, Emergency Stop DV13, Bootleg Turn DV17, Jump DV17. Each maneuver requires Action + Move Action.",
+      "**When to use it:** Driving in combat, performing vehicle maneuvers, chases, evasive driving, any time vehicle control is in question. Starting a vehicle takes an Action (after an Action to get in).",
+      "**When NOT to use it -- use Land Vehicle Tech instead:** Drive Land Vehicle is for **operating** the vehicle (driving, maneuvers). Land Vehicle Tech is for **repairing and maintaining** it. Performing a bootleg turn = Drive Land Vehicle. Fixing a busted engine = Land Vehicle Tech.",
+      "**When NOT to use it -- use Pilot Air/Sea Vehicle instead:** Drive Land Vehicle covers **ground vehicles** only. Air vehicles use **Pilot Air Vehicle** (x2 cost). Sea vehicles use **Pilot Sea Vehicle**. Each vehicle domain has its own control skill.",
+      "**Key rules:** Failed maneuver = Lose Control (GM decides movement). Ramming: 6d6 damage to both vehicle and target, everyone suffers Whiplash. Driver goes to top of Initiative; vehicle MOVE replaces personal MOVE; no Run Action. Glass provides no cover and no HP -- occupants are targetable through windows.",
+      "**Special note:** **Nomads** add their Moto Rank to all Drive Land Vehicle checks, making them far superior drivers. A Nomad with Moto 4 + Drive Land Vehicle 6 already exceeds the DV10 threshold for basic driving without rolling."
+    ]
+  },
+  {
+    "id": "using-pilot-air-vehicle",
+    "title": "Using Pilot Air Vehicle",
+    "topic": "Skills",
+    "tags": [
+      "pilot",
+      "flying",
+      "av-4",
+      "gyrocopter",
+      "helicopter",
+      "aerozep",
+      "air vehicle"
+    ],
+    "icon": "🚁",
+    "steps": [
+      "**What it is:** The skill of piloting and maneuvering air vehicles -- gyrocopters, helicopters, AVs, and aerozeps. This is a **x2 cost skill** (double IP to level).",
+      "**How to roll:** **REF + Pilot Air Vehicle + 1d10** vs DV. If REF + skill > 9, level flight needs no check. Otherwise DV10 each turn or lose control (catastrophic in the air). Landing DV13, Aerobatic Maneuver DV17. Standard maneuvers (Swerve, Sharp Turn, Emergency Stop all DV13) also apply.",
+      "**When to use it:** Piloting any air vehicle in combat or tricky conditions, performing aerial maneuvers, landing, takeoff, air chases.",
+      "**When NOT to use it -- use Drive Land Vehicle instead:** Pilot Air Vehicle is for **air vehicles** only (AVs, gyrocopters, helicopters). Ground vehicles use **Drive Land Vehicle**. Sea vehicles use **Pilot Sea Vehicle**. Each vehicle domain has its own control skill.",
+      "**When NOT to use it -- use Air Vehicle Tech instead:** Pilot Air Vehicle is for **flying** the vehicle. Air Vehicle Tech is for **repairing and maintaining** it. Performing an aerobatic maneuver = Pilot Air Vehicle. Fixing a damaged rotor = Air Vehicle Tech.",
+      "**Key rules:** x2 cost skill (Level 1 = 40 IP, Level 10 = 400 IP). Nomads add **Moto Rank** to checks. Access is rank-dependent: Gyrocopter at Rank 1-4, Helicopter at Rank 5-6, AV-4 at Rank 7-8, AV-9 at Rank 9-10. Air vehicles are hard to dodge on the ground (DEX + Evasion vs DV13).",
+      "**Special note:** Air vehicles provide massive tactical advantages -- altitude makes melee impossible, passengers can fire down normally, and air superiority dominates ground engagements. The x2 IP cost reflects how powerful air mobility is."
+    ]
+  },
+  {
+    "id": "using-conceal-reveal",
+    "title": "Using Conceal/Reveal Object",
+    "topic": "Skills",
+    "tags": [
+      "conceal",
+      "reveal",
+      "hide",
+      "hidden",
+      "search",
+      "find",
+      "object",
+      "weapon"
+    ],
+    "icon": "🔍",
+    "steps": [
+      "**What it is:** The skill of hiding objects and finding objects that have been hidden -- including concealing weapons under clothing and detecting concealed weapons.",
+      "**How to roll:** **INT + Conceal/Reveal Object + 1d10** vs DV (to hide) or opposed vs hider's **INT + Conceal/Reveal + 1d10** (to find). DV varies by item size and concealment difficulty. Searching takes 1 Action in combat, 5-10 minutes outside.",
+      "**When to use it:** Hiding a weapon on your person, concealing evidence at a scene, searching someone for hidden items (pat-down), finding objects hidden in a location, detecting concealed weapons at a security checkpoint.",
+      "**When NOT to use it -- use Stealth instead:** Conceal/Reveal is for hiding **objects** (weapons, evidence, items). Stealth is for hiding **yourself** (your body, your movement). Hiding a gun under your jacket = Conceal/Reveal. Hiding behind a dumpster = Stealth. The two skills serve completely different purposes.",
+      "**When NOT to use it -- use Perception instead:** Conceal/Reveal detects **deliberately hidden objects**. Perception notices **environmental details and hidden people**. Finding a gun taped under a table = Conceal/Reveal. Spotting a tripwire across a doorway = Perception. Finding a person hiding = Perception (vs their Stealth).",
+      "**Key rules:** Only weapons marked **Concealable** can be hidden on your person: Medium Pistol, Heavy Pistol, SMG, Light Melee, Medium Melee. VHP, Heavy SMG, Shotgun, AR, Sniper, and Heavy Weapons are NEVER concealable. Cyberware: **Image Enhance** grants +2 to Conceal/Reveal checks.",
+      "**Special note:** A Tech with **Upgrade Expertise** can modify a non-concealable weapon to become concealable. Cyberware weapons (Popup, Big Knucks, Wolvers) are inherently concealed inside the body and need no check."
+    ]
+  },
+  {
+    "id": "using-forgery",
+    "title": "Using Forgery",
+    "topic": "Skills",
+    "tags": [
+      "forgery",
+      "fake",
+      "document",
+      "id",
+      "counterfeit",
+      "papers",
+      "detect"
+    ],
+    "icon": "📝",
+    "steps": [
+      "**What it is:** The skill of creating and detecting false documents and identification -- fake IDs, permits, corporate badges, forged letters, and counterfeit credentials.",
+      "**How to roll:** **TECH + Forgery + 1d10** vs DV to create. Simple document DV13, official ID/corporate badge DV15-17, government-level secure DV21+. Detection: opposed vs examiner's **INT + Forgery + 1d10** (trained) or **INT + Perception + 1d10** (untrained).",
+      "**When to use it:** Creating fake IDs, forging permits and documents, making counterfeit corporate badges, detecting forged documents presented to you, creating false evidence.",
+      "**When NOT to use it -- use Acting instead:** Forgery creates the **physical document or credential**. Acting lets you **impersonate the person** the document belongs to. Often used together: Forgery to create the fake badge, Acting to play the role of the person whose badge it is.",
+      "**When NOT to use it -- use Electronics/Security Tech instead:** In the Time of the Red, most IDs are **Agent-based digital credentials**. Forgery creates the physical/visual component, but replicating the digital signature may also require an Electronics/Security Tech check. Complex forgeries may need both skills.",
+      "**Key rules:** Quick forgery takes ~1 hour, quality work 4-8 hours, masterwork days. Rushing imposes -2 to -4 penalty. Working without proper tools imposes -2 penalty. Materials needed: blank stock, holographic overlays, chip writers for secure docs.",
+      "**Special note:** Forgery is a TECH skill, not an INT skill -- it is about the technical craft of creating convincing fakes, not just knowing what a real document looks like. A complementary Library Search or Education check can help determine what details the forgery needs."
+    ]
+  },
+  {
+    "id": "using-library-search",
+    "title": "Using Library Search",
+    "topic": "Skills",
+    "tags": [
+      "library search",
+      "research",
+      "data pool",
+      "information",
+      "database",
+      "knowledge"
+    ],
+    "icon": "📚",
+    "steps": [
+      "**What it is:** The skill of using databases, Data Pools, libraries, and other compiled information sources to find facts -- your research and information retrieval skill.",
+      "**How to roll:** **INT + Library Search + 1d10** vs DV. Common knowledge DV9, public but specific DV13, restricted/specialized DV15, obscure/buried DV17, secret/classified DV21+.",
+      "**When to use it:** Researching a target before a mission, finding public records, looking up corporate information, accessing the Data Pool for specific facts, checking news archives, finding blueprints or technical data.",
+      "**When NOT to use it -- use Education instead:** Library Search is for **actively looking things up** in databases and archives. Education is for **things you already know** from your general education. If the character has to sit down and research it, that is Library Search. If it is something they would recall from school or common knowledge, that is Education.",
+      "**When NOT to use it -- use Local Expert instead:** Library Search finds information from **recorded sources** (databases, archives). Local Expert provides **personal knowledge** of a specific neighborhood (who runs it, hidden locations, local customs). You can Library Search for a gang's public history, but you need Local Expert to know where their current hideout is.",
+      "**Key rules:** The Data Pool is a patchwork of local city networks (not a global internet). Data Terms are public access points (free for basic lookups, 5-20eb for extended research). Each search takes 10 min to 1 hour. Taking 4x longer grants +1 bonus. A successful Library Search can grant +1 as a complementary bonus to subsequent related checks.",
+      "**Special note:** Library Search is one of the best complementary skills in the game. Researching a target before Interrogation, a building before infiltration, or a corp before negotiation can provide +1 bonuses to the primary skill check."
+    ]
+  },
+  {
+    "id": "using-local-expert",
+    "title": "Using Local Expert",
+    "topic": "Skills",
+    "tags": [
+      "local expert",
+      "neighborhood",
+      "contacts",
+      "area knowledge",
+      "streetwise",
+      "location"
+    ],
+    "icon": "🏙",
+    "steps": [
+      "**What it is:** The skill of knowing a specific area well and knowing the agendas of its various factions, both political and criminal. You choose a specific location (no larger than a single neighborhood) each time you increase this skill.",
+      "**How to roll:** **INT + Local Expert + 1d10** vs DV. Common neighborhood info DV9, insider knowledge DV13, secret DV17, deeply hidden DV21. You can have multiple Local Expert skills for different areas.",
+      "**When to use it:** Finding people, places, and services in a specific neighborhood. Need a ripperdoc in Little China? A black market in the Combat Zone? A safe house in Heywood? Local Expert tells you if it exists there and where to find it.",
+      "**When NOT to use it -- use Streetwise instead:** Local Expert is **specific to one neighborhood** (Little China, Heywood, etc.). Streetwise is **general street knowledge** that applies anywhere -- criminal culture, gang dynamics, underworld navigation. 'Where is the best ripperdoc in Little China?' = Local Expert: Little China. 'How do I approach a black market dealer without getting shot?' = Streetwise.",
+      "**When NOT to use it -- use Library Search instead:** Local Expert provides **personal knowledge** from living in/knowing an area. Library Search finds information from **recorded sources** (Data Pool, archives). You know the local gang's hideout from Local Expert; you find their corporate connections through Library Search.",
+      "**Key rules:** All characters start with **Local Expert: Your Home** during Character Creation. Fixers gain additional areas through their Grease ability. Pairs powerfully with Streetwise and Library Search for complementary bonuses.",
+      "**Special note:** Local Expert is one of the most underrated skills for GMs to call for. Before any job in a specific neighborhood, check if anyone in the party has Local Expert for that area -- it can provide critical advance intelligence."
+    ]
+  },
+  {
+    "id": "using-criminology",
+    "title": "Using Criminology",
+    "topic": "Skills",
+    "tags": [
+      "criminology",
+      "forensics",
+      "investigation",
+      "crime scene",
+      "evidence",
+      "detective"
+    ],
+    "icon": "🔬",
+    "steps": [
+      "**What it is:** The skill of looking for clues by dusting for fingerprints, doing ballistic tests, examining evidence, and searching through police records and files -- crime-scene investigation and forensic analysis.",
+      "**How to roll:** **INT + Criminology + 1d10** vs DV. Obvious evidence DV9, typical crime scene DV13, professionally cleaned DV15, expert concealment DV17, near-perfect cover-up DV21+.",
+      "**When to use it:** Examining crime scenes, analyzing evidence (cause of death, time, number of participants, weapons used, direction of escape), reading forensic data, working police records, understanding criminal patterns and MOs.",
+      "**When NOT to use it -- use Deduction instead:** Criminology is **crime-scene specific** -- examining physical evidence, forensic analysis, police records. Deduction is **general logical reasoning** -- connecting disparate clues, solving puzzles, predicting behavior. Analyzing blood spatter = Criminology. Figuring out the killer's motive from a set of clues = Deduction.",
+      "**When NOT to use it -- use Perception instead:** Criminology **analyzes** evidence that has been found. Perception **finds** the evidence in the first place. Use Perception to spot the shell casing in the corner, then Criminology to determine the caliber and firing angle. Criminology can provide +1 complementary bonus to subsequent Perception or Tracking checks at the same scene.",
+      "**Key rules:** Processing a crime scene takes 30 minutes to several hours. Rushing imposes penalties. Proper forensic tools avoid the -2 no-tools penalty. Lawman Backup at Rank 10 provides agents with forensic support.",
+      "**Special note:** Criminology is invaluable for investigation-focused campaigns. A character with high Criminology turns every crime scene into a wealth of information. Pairs excellently with Library Search (checking records) and Tracking (following trails from the scene)."
+    ]
+  },
+  {
+    "id": "using-wardrobe-style",
+    "title": "Using Wardrobe & Style",
+    "topic": "Skills",
+    "tags": [
+      "wardrobe",
+      "style",
+      "fashion",
+      "clothes",
+      "appearance",
+      "social",
+      "impression"
+    ],
+    "icon": "👔",
+    "steps": [
+      "**What it is:** The skill of knowing the right clothes to wear and when to wear them -- dressing appropriately or impressively for any social situation.",
+      "**How to roll:** **COOL + Wardrobe & Style + 1d10** vs DV. Fit in at a street bar DV9, impress at a club DV13, corporate function DV15, high-society gala DV17, set a new trend DV21.",
+      "**When to use it:** Dressing for a social occasion, making a first impression, fitting in at a location above or below your station, looking the part for an infiltration, impressing contacts and fixers.",
+      "**When NOT to use it -- use Personal Grooming instead:** Wardrobe & Style is about **clothes and accessories** -- what you wear. Personal Grooming is about **your body and presentation** -- hair, skin, hygiene, makeup. Together they define your complete visual identity. Picking the right outfit = Wardrobe & Style. Having the right haircut and clean nails for the meeting = Personal Grooming.",
+      "**When NOT to use it -- use Acting instead:** Wardrobe & Style makes you **look right**. Acting makes you **behave right**. Use Wardrobe & Style to dress like a corporate exec, then Acting to convincingly play the role. Looking the part is step one; performing the role is step two.",
+      "**Key rules:** A successful check grants **+1 complementary bonus** to subsequent social checks (Persuasion, Acting, Personal Grooming) when first impressions matter. Cyberware: **3+ Light Tattoos** grants +2 to Wardrobe & Style. COOL-linked, unaffected by Humanity loss.",
+      "**Special note:** In Cyberpunk Red, style matters -- 'style over substance' is a core tenet. Looking the part can be the difference between getting past a bouncer, impressing a fixer, or being ignored. This skill is more useful than it first appears."
+    ]
+  },
+  {
+    "id": "how-do-interrogations-work",
+    "title": "How do interrogations work",
+    "topic": "Social",
+    "tags": [
+      "interrogation",
+      "interrogate",
+      "question",
+      "extract",
+      "information",
+      "torture",
+      "resist"
+    ],
+    "icon": "💬",
+    "steps": [
+      "Interrogation is an **opposed check**: roll **COOL + Interrogation + 1d10** vs the target's **WILL + Resist Torture/Drugs + 1d10**. The interrogator is trying to extract information; the target is resisting.",
+      "**Cyberware advantage**: a **Voice Stress Analyzer** (Mall install, 100eb) grants **+2 to Human Perception and Interrogation** checks, helping detect lies and apply pressure effectively.",
+      "**Time pressure** matters. A quick field interrogation might be a single opposed roll. Extended interrogation over hours or days can involve **multiple rolls**, with cumulative fatigue penalties on the target.",
+      "**Torture** increases pressure but has diminishing returns. A tortured target may say anything to stop the pain. The GM may rule that after prolonged torture, information becomes **unreliable** -- the target tells you what you want to hear, not the truth.",
+      "**Drugs** can assist: administering a drug to lower resistance (the target must resist with **WILL + Resist Torture/Drugs**). Failure means the drug takes full effect. **Rapidetox** can counter drug effects if administered in time.",
+      "The defender can spend **LUCK** on their Resist Torture/Drugs roll just like any other check. A high-WILL character with invested skill points is extremely difficult to crack."
+    ]
+  },
+  {
+    "id": "concealing-a-weapon",
+    "title": "Concealing a weapon on your person",
+    "topic": "Equipment",
+    "tags": [
+      "conceal",
+      "weapon",
+      "hidden",
+      "carry",
+      "pistol",
+      "smg",
+      "melee",
+      "pat down"
+    ],
+    "icon": "🔒",
+    "steps": [
+      "Only weapons marked **Concealable** can be hidden on your person: **Medium Pistol**, **Heavy Pistol**, **SMG**, **Light Melee Weapon**, and **Medium Melee Weapon**.",
+      "To conceal: roll **INT + Conceal/Reveal Object + 1d10** vs a GM-set DV. Typical DV: **13** for loose clothing, **15** for fitted clothes, **17** for minimal clothing.",
+      "To detect: another character rolls **INT + Perception + 1d10** (casual observation) or **INT + Conceal/Reveal + 1d10** (active search/pat-down). This is opposed by the original concealment roll.",
+      "**Not concealable** (ever): Very Heavy Pistol, Heavy SMG, Shotgun, Assault Rifle, Sniper Rifle, all Heavy Weapons, Very Heavy Melee Weapons, and any two-handed weapon.",
+      "A **Tech with Upgrade Expertise** can modify a non-concealable weapon to become concealable using the **Make Weapon Concealable** upgrade. This requires a TECH + appropriate repair skill + Upgrade Rank + 1d10 vs DV based on weapon cost.",
+      "**Cyberware weapons** (Popup weapons, Big Knucks, Wolvers, etc.) are inherently concealed inside the body and require no check to hide. They are revealed when deployed."
+    ]
+  },
+  {
+    "id": "escaping-restraints",
+    "title": "Escaping restraints",
+    "topic": "Combat",
+    "tags": [
+      "escape",
+      "restraints",
+      "handcuffs",
+      "zip ties",
+      "bindings",
+      "tied up",
+      "contortionist"
+    ],
+    "icon": "⛓",
+    "steps": [
+      "To escape physical restraints, roll **DEX + Contortionist + 1d10** vs a DV based on restraint type. **Contortionist** is the primary skill for escaping bindings, fitting through tight spaces, and dislocating joints.",
+      "Typical DVs: **rope or duct tape DV13**, **zip ties DV15**, **handcuffs DV17**, **professional restraints or chains DV21**. High-quality corporate restraints may be DV24+.",
+      "**Athletics** (DEX) can substitute for brute-force escapes -- breaking the restraints rather than slipping them. DV is typically **higher** (add +2 to +4) and may require **BODY 7+** for metal restraints.",
+      "Each escape attempt takes approximately **1 minute** outside combat, or **1 full Action** during combat. Failed attempts may alert captors. The GM may limit the number of attempts before the character is too fatigued.",
+      "**Cyberware advantage**: characters with cyberlimbs may have enhanced BODY for breaking restraints, or specific options (like a **Tool Hand** or **hidden compartment**) that provide an edge.",
+      "Being **restrained** in combat means you **cannot Move or take Actions requiring hands**. You can still speak, use purely mental abilities, and attempt to escape on your turn."
+    ]
+  },
+  {
+    "id": "seriously-wounded-penalty",
+    "title": "The Seriously Wounded penalty",
+    "topic": "Medical",
+    "tags": [
+      "seriously wounded",
+      "wound state",
+      "penalty",
+      "half hp",
+      "threshold",
+      "pain",
+      "actions"
+    ],
+    "icon": "🩹",
+    "steps": [
+      "When your HP drops to or below your **Seriously Wounded Threshold** (half your max HP, rounded up), you enter the **Seriously Wounded** wound state and take a **-2 penalty to ALL actions**.",
+      "This penalty applies to **everything**: attack rolls, skill checks, Evasion, Initiative (if re-rolled), and any other roll you make. It stacks with other penalties (darkness -1, stress -2, etc.).",
+      "You **can still fight and act normally** -- you are not incapacitated. You just do everything worse. Many combats are decided by who crosses this threshold first.",
+      "**Ignoring the penalty**: **Black Lace** (street drug, 50eb) grants immunity to Seriously Wounded penalties for 24 hours as its Primary Effect, but risks a devastating Secondary Effect (addiction). **Stim** (Medtech pharmaceutical) removes the penalty for 1 hour, once per day.",
+      "**Pain Editor** (Nervous System cyberware, Clinic install, 1,000eb) lets you turn off pain entirely, ignoring the Seriously Wounded penalty permanently while active. However, you also cannot feel injuries, which the GM may use against you.",
+      "Healing above the threshold removes the penalty immediately. **Speedheal** (Medtech pharmaceutical) heals **BODY + WILL** HP instantly and may push you back above the threshold in one Action."
+    ]
+  },
+  {
+    "id": "tailing-someone",
+    "title": "Tailing someone without being noticed",
+    "topic": "Environment",
+    "tags": [
+      "tail",
+      "follow",
+      "stealth",
+      "surveillance",
+      "tracking",
+      "shadowing",
+      "perception"
+    ],
+    "icon": "👤",
+    "steps": [
+      "On foot, tailing is an **opposed check**: your **DEX + Stealth + 1d10** vs the target's **INT + Perception + 1d10**. The GM rolls periodically (every few blocks or whenever the target has reason to check).",
+      "**Distance matters**: staying far back gives **+1 to +2 to Stealth** but risks losing the target. Staying close gives **-1 to -2 to Stealth** but the target is easier to track.",
+      "**Crowded areas** grant a **+1 to +2 bonus** to the tail's Stealth check -- more people to blend into. Empty streets impose **-1 to -2** as there is nowhere to hide.",
+      "**In a vehicle**, use **REF + Drive Land Vehicle + 1d10** (to keep up) and the target rolls **INT + Perception + 1d10** to notice they are being followed. Staying 2-3 cars back is standard technique.",
+      "If the target **spots you**, they can attempt to lose you: opposed **DEX + Athletics + 1d10** (on foot) or **REF + Drive Land Vehicle + 1d10** (in vehicles) for a chase sequence.",
+      "**Complementary skills**: a successful **INT + Local Expert + 1d10** check before the tail can grant **+1** -- you know shortcuts, chokepoints, and alternate routes in the area."
+    ]
+  },
+  {
+    "id": "stakeout-mechanics",
+    "title": "Running a stakeout",
+    "topic": "Environment",
+    "tags": [
+      "stakeout",
+      "observation",
+      "watch",
+      "surveillance",
+      "perception",
+      "patience",
+      "waiting"
+    ],
+    "icon": "👁",
+    "steps": [
+      "A stakeout uses **INT + Perception + 1d10** to observe a location over time. The GM sets a DV based on what you are looking for: **DV9** (obvious activity), **DV13** (normal patterns), **DV17** (subtle details), **DV21** (hidden operations).",
+      "**Concentration** (WILL) is critical for long stakeouts. After each hour of observation, the GM may call for a **WILL + Concentration + 1d10 vs DV13** check to stay focused. Failure means you miss events during that period.",
+      "**Fatigue** builds over time. After **8+ hours**, checks take a cumulative **-1 penalty** per additional 2 hours. After 16+ hours without rest, you are **Exhausted** (-4 to all checks).",
+      "Useful gear: **Binoculars** or **Teleoptics cybereye** for distance observation. **Image Enhance cybereyes** grant **+2 to Perception** checks. A recording device captures evidence for later review.",
+      "**Multiple watchers** can rotate shifts to avoid fatigue. If one character spots something with a successful Perception roll, they can alert the others -- no additional check needed.",
+      "Detect patterns over time: the GM may grant **automatic information** after sufficient observation (e.g., \"after 3 days you notice the guards change shifts at 2 AM\") without requiring a roll."
+    ]
+  },
+  {
+    "id": "hiring-muscle",
+    "title": "Hiring muscle (bodyguards and soldiers)",
+    "topic": "Social",
+    "tags": [
+      "hire",
+      "muscle",
+      "bodyguard",
+      "solo",
+      "mercenary",
+      "fixer",
+      "cost",
+      "loyalty"
+    ],
+    "icon": "💪",
+    "steps": [
+      "Finding hired muscle typically requires a **Fixer**. Roll **COOL + Trading + Operator Rank + 1d10** or use the Fixer's contact network. Without a Fixer, use **INT + Local Expert + 1d10 vs DV15** to find freelance muscle in your area.",
+      "Typical rates for hired Solos: **100-500eb per day** depending on skill level and danger. Low-end boosterganger: 100eb/day. Competent street solo: 200-300eb/day. Elite professional: 500eb+/day.",
+      "Hired muscle **follows instructions** but is not suicidally loyal. If the job turns out to be far more dangerous than advertised, they may demand hazard pay, refuse specific tasks, or abandon the contract entirely.",
+      "**Loyalty** is not formally tracked for hired NPCs (unlike Exec Team Members). The GM adjudicates based on pay, treatment, and how badly the job goes. Underpaying or lying about the job's danger causes problems.",
+      "For **ongoing protection**, a dedicated bodyguard costs **1,000-5,000eb per month** plus expenses. This is a significant lifestyle cost but provides reliable security.",
+      "**Exec Team Members** are the formalized version of this -- loyal employees with tracked Loyalty scores, specific skill sets, and clear rules for what they will and will not do. Only Execs get this structured option."
+    ]
+  },
+  {
+    "id": "setting-up-safehouse",
+    "title": "Setting up a safehouse",
+    "topic": "Lifestyle",
+    "tags": [
+      "safehouse",
+      "hideout",
+      "security",
+      "rent",
+      "locks",
+      "alarms",
+      "safe",
+      "housing"
+    ],
+    "icon": "🏠",
+    "steps": [
+      "A safehouse is a secondary residence used for hiding, storing gear, or laying low. Rent costs: **Cargo Container** (free, no security), **Cube Hotel** (100eb/month), **Conapt** (1,000eb/month), **Beaverville House** (10,000eb/month).",
+      "**Locks** are the first line of security. Standard lock **DV13** to pick. Quality lock **DV15-17**. High-security lock **DV21**. Electronic locks can be hacked via **Interface** or bypassed with **Electronics/Security Tech**.",
+      "**Alarms** alert you to intrusion. Basic alarm **DV13** to bypass with Electronics/Security Tech. Quality system **DV15-17**. Corporate-grade system **DV21+**. Alarms can notify your Agent or trigger other defenses.",
+      "**Location matters by zone**: safe corporate zones are expensive but rarely raided; Combat Zone locations are cheap (even free in squats) but attract attention and may be contested by gangs.",
+      "Useful additions: **hidden compartment** for stashing weapons/contraband (Conceal/Reveal DV to find), **medical supplies** for patching up, **spare clothes and identity documents**, **non-perishable food**.",
+      "Keep the safehouse **compartmentalized** -- ideally only you (and maybe one trusted ally) know the location. If a team member is captured and interrogated, they cannot reveal what they do not know."
+    ]
+  },
+  {
+    "id": "car-crash-rules",
+    "title": "What happens in a car crash",
+    "topic": "Vehicles",
+    "tags": [
+      "crash",
+      "car",
+      "accident",
+      "ram",
+      "collision",
+      "vehicle damage",
+      "whiplash",
+      "lose control"
+    ],
+    "icon": "💥",
+    "steps": [
+      "A crash occurs when a driver **fails a maneuver check** (REF + Drive Land Vehicle + 1d10 vs DV) and the vehicle hits something, or when a driver deliberately **Rams** a target.",
+      "On a **Ram or crash**, both the vehicle and the target take **6d6 damage**. For vehicles, this is applied to their **SDP** (Structural Damage Points). At 0 SDP the vehicle is **Destroyed**.",
+      "All **occupants** of a crashing vehicle suffer the **Whiplash** Critical Injury automatically. This is a Critical Injury to the Body -- no damage dice need to show sixes. Quick Fix: Paramedic DV13.",
+      "Vehicle armor (**Armored Chassis SP13**) reduces incoming damage to the vehicle. Occupant armor reduces Whiplash bonus damage (5 HP direct) but does not prevent the Critical Injury itself.",
+      "If the driver **Loses Control** (failed maneuver), the GM determines where the vehicle ends up. It may hit a wall, another vehicle, pedestrians, or careen off the road. Each collision is a separate Ram.",
+      "**Dodging a vehicle** on foot: **DEX + Evasion + 1d10 vs DV13**. On success, you avoid being hit. You can even choose to end up **on top of the vehicle** if you succeed."
+    ]
+  },
+  {
+    "id": "what-happens-when-seriously-wounded",
+    "title": "What happens when you cross the Seriously Wounded threshold",
+    "topic": "Medical",
+    "tags": [
+      "seriously wounded",
+      "threshold",
+      "half hp",
+      "wound state",
+      "critical injury",
+      "penalty",
+      "combat"
+    ],
+    "icon": "❤",
+    "steps": [
+      "Your **Seriously Wounded Threshold** is half your maximum HP, **rounded up**. For example, a character with 40 max HP crosses the threshold at 20 HP or below.",
+      "The moment you drop to or below this threshold, you enter the **Seriously Wounded** wound state. You immediately take a **-2 penalty to ALL actions** -- attacks, skills, evasion, everything.",
+      "A **Critical Injury** is triggered when two or more damage dice come up **6** on a single attack, regardless of whether the damage got through armor. This can happen on the same hit that crosses the Seriously Wounded threshold.",
+      "You **can still fight, move, and act normally** -- you are not incapacitated. The -2 penalty is painful but manageable. Many characters push through it to finish a fight.",
+      "**Ways to remove the penalty**: heal above the threshold (First Aid, Paramedic, Speedheal), use **Stim** (Medtech pharma, 1 hour), take **Black Lace** (street drug, 24 hours but risk addiction), or have a **Pain Editor** (cyberware, permanent while active).",
+      "If you drop to **0 HP**, you skip Seriously Wounded and go straight to **Mortally Wounded**: unconscious, Death Saves each turn. Stabilization (First Aid or Paramedic DV15) brings you to 1 HP in the Seriously Wounded state.",
+      "**Tracking matters**: keep a clear HP tracker. The difference between 21 HP and 20 HP (on a 40 HP character) is the difference between full effectiveness and a -2 to everything."
+    ]
+  },
+  {
+    "id": "my-nomad-calls-family",
+    "title": "My Nomad calls Family for a vehicle",
+    "topic": "Roles",
+    "tags": [
+      "nomad",
+      "moto",
+      "family",
+      "motorpool",
+      "vehicle",
+      "call",
+      "role ability"
+    ],
+    "icon": "🚐",
+    "steps": [
+      "The Nomad's **Moto** ability gives access to the **Family Motorpool**. Only **one Family vehicle** can be out at a time (unless Rank 10). Swapping vehicles requires waiting until the **next morning**.",
+      "Vehicles available by Rank: **Rank 1-4**: Compact Groundcar, Gyrocopter, Jetski, Roadbike. **Rank 5-6**: adds Helicopter, High Performance Groundcar, Speedboat. **Rank 7-8**: adds AV-4, Cabin Cruiser, Superbike. **Rank 9-10**: adds Aerozep, AV-9, Super Groundcar, Yacht.",
+      "Each time the Nomad **increases Moto Rank**, they either add a **new stock vehicle** of that Rank or lower, or **upgrade an existing vehicle** with a vehicle upgrade (Armored Chassis, NOS, Weapons, etc.).",
+      "**Vehicle Familiarity**: the Nomad adds their **Moto Rank to all vehicle skill checks** -- Drive Land Vehicle, Pilot Air Vehicle, Pilot Sea Vehicle, and all vehicle Tech skills. This is a massive bonus.",
+      "If a Family vehicle is **destroyed**, the Family repairs it in **1 week for 500eb**. This is remarkably cheap -- a Compact Groundcar is normally worth 30,000eb.",
+      "At **Rank 10**, the Nomad is promoted to **Family leadership** and can have **all vehicles out at once**. This effectively gives the entire party a fleet of vehicles for operations."
+    ]
+  },
+  {
+    "id": "my-media-publishes-story",
+    "title": "My Media publishes a story",
+    "topic": "Roles",
+    "tags": [
+      "media",
+      "credibility",
+      "story",
+      "publish",
+      "audience",
+      "impact",
+      "news",
+      "reporter"
+    ],
+    "icon": "📰",
+    "steps": [
+      "The Media's **Credibility** ability determines four things: **Audience** (who sees it), **Access/Sources** (who they can reach), **Believability** (is it trusted), and **Impact** (what changes).",
+      "**Audience by Rank**: Rank 1-2 (immediate neighborhood), Rank 3-4 (well-known local contributor), Rank 5-6 (citywide), Rank 7-8 (statewide, minor celebrity), Rank 9 (nationally known), Rank 10 (worldwide).",
+      "**Believability** scales from **2/10** at Rank 1-2 to **7/10** at Rank 10. Verifiable evidence grants **+1** (single piece) or **+2** (4+ pieces). LUCK **cannot** be spent on Believability rolls.",
+      "**Impact by Rank**: Rank 1-2 (small, incremental change), Rank 3-4 (small bad guys arrested), Rank 5-6 (changes all over the City), Rank 7-8 (changes across several cities), Rank 9 (national-level), Rank 10 (worldwide, Megacorps may fall).",
+      "**Rumors**: at least twice per week the GM secretly rolls **Credibility Rank + 1d10** against passive Rumor DVs (Vague DV7, Typical DV9, Substantial DV11, Detailed DV13). The Media can also actively investigate rumors at higher DVs (13/15/17/21).",
+      "Publishing a damaging story about a powerful target (Corp, gang leader, politician) **will provoke retaliation**. The Media's Credibility is their shield -- destroying a high-Credibility Media's reputation is harder than silencing them."
+    ]
+  },
+  {
+    "id": "my-rockerboy-rallies-crowd",
+    "title": "My Rockerboy rallies a crowd",
+    "topic": "Roles",
+    "tags": [
+      "rockerboy",
+      "charismatic impact",
+      "fans",
+      "crowd",
+      "rally",
+      "influence",
+      "performance"
+    ],
+    "icon": "🎸",
+    "steps": [
+      "The Rockerboy uses **Charismatic Impact** to influence fans. Roll **Charismatic Impact + 1d10** vs a DV based on group size: **DV8** (single person), **DV10** (small group, up to 6), **DV12** (huge group).",
+      "**Venue scales with Rank**: Rank 1-2 (small local clubs), Rank 3-4 (well-known clubs), Rank 5-6 (large important clubs), Rank 7-8 (small concert halls, local video), Rank 9 (large halls, national video), Rank 10 (huge stadiums, international).",
+      "**What favors you can ask** (Single Fan, DV8): Rank 1-2 (small favor: drink, meal, ride), Rank 3-4 (major favor: bed, good word), Rank 5-6 (commit minor crime), Rank 7-8 (risk life without question), Rank 9 (commit major crime), Rank 10 (sacrifice self).",
+      "**Small Groups** (DV10): Rank 1-2 (ask for autographs), Rank 3-4 (hang out, provide party favors), Rank 5-6 (act as personal posse), Rank 7-8 (commit minor crime for you), Rank 9+ (commit major crime, risk lives).",
+      "**Huge Groups** (DV12): Rank 5-6 (fans all over City, do major favors), Rank 7-8 (rabidly loyal, fight rivals, info networks), Rank 9 (cult-like, will riot, destroy, even kill), Rank 10 (worldwide cult-like army).",
+      "On a **failed check**, the Rockerboy cannot ask the same favor from those fans for **one week**. This means failed rallies have real consequences -- you cannot just keep trying."
+    ]
+  },
+  {
+    "id": "my-exec-sends-team",
+    "title": "My Exec sends a Team Member on a mission",
+    "topic": "Roles",
+    "tags": [
+      "exec",
+      "teamwork",
+      "team member",
+      "corporate",
+      "loyalty",
+      "mission",
+      "employee"
+    ],
+    "icon": "💼",
+    "steps": [
+      "Execs gain **Team Members** at Rank 3 (first), Rank 5 (second), and Rank 9 (third, max 3). Team types: **Company Bodyguard**, **Covert Operative**, **Driver**, **Netrunner**, and **Technician**, rolled from special charts.",
+      "Team Members are controlled by the **GM**, not the player, based on their **Loyalty** score (starting 1d6+1, max 10). Before each task, the GM rolls **1d6 under current Loyalty**. Failure means the Team Member refuses, botches, or betrays.",
+      "**Building Loyalty**: compliment work (+1), give bonus/perk 200eb+ (+4), support against Management (+4), give 20% cut of earnings (+6), paid time off for entire session (+6), risk physical harm for them (+8).",
+      "**Losing Loyalty**: no Loyalty gained during session (-1), berate/chew out (-2), ignore contribution (-4), forget birthday (-6), fail to deliver promised bonus (-6), throw under bus to Management (-8), abandon under fire (lose ALL remaining).",
+      "At **Loyalty 0 or below**, the Team Member **actively betrays** the Exec -- selling secrets, sabotaging missions, or defecting to a rival. This is catastrophic and often irreversible.",
+      "Team Members **cannot wear armor heavier than Light Armorjack** and **do not improve Skills** over time. They are useful but not as powerful as player characters. They are expendable assets, not equals."
+    ]
+  },
+  {
+    "id": "my-lawman-arrests-someone",
+    "title": "My Lawman arrests someone",
+    "topic": "Roles",
+    "tags": [
+      "lawman",
+      "arrest",
+      "backup",
+      "authority",
+      "jurisdiction",
+      "police",
+      "legal"
+    ],
+    "icon": "🚔",
+    "steps": [
+      "A Lawman's authority comes from their **Backup** role ability. This represents their agency affiliation (Corporate Security, NCPD, County, C-SWAT, Federal). **Without jurisdiction, an arrest is just kidnapping.**",
+      "To call **Backup**: spend an **Action** and roll **d10 equal to or under your Backup Rank**. Success means backup is dispatched. Roll **d6** for arrival time in **Rounds**. On a **6**, backup arrives from the **next highest tier**.",
+      "**Backup by Rank**: Rank 1-2 (4 Corporate Security, Heavy Pistols, Kevlar), Rank 3-4 (4 Beat Cops, 2 cars), Rank 5-7 (2 County Mounties, ARs, Heavy Armorjack), Rank 8 (Recovery Zone Marshal), Rank 9 (2 C-SWAT, AV-4, Assault Rifles, Rocket Launchers, Metalgear SP18), Rank 10 (FBI/Interpol/Netwatch).",
+      "**Legal arrest** requires probable cause or witnessing a crime. In the Time of the Red, this is loosely enforced -- Lawmen have wide discretion, especially in lower-zone areas. Corporate zones have stricter procedures.",
+      "**Abusing Backup** (calling it for personal vendettas, using excessive force without cause, or involving backup in criminal activity) gets you **fired or fined**. Repeated abuse may result in losing the Backup ability entirely.",
+      "Rank 10 agents are special: they **stick around to investigate**, respond to all related calls until the case is closed, and can use their **Combat Number for investigation skills** (Criminology, Perception, Stealth, Tracking, etc.)."
+    ]
+  },
+  {
+    "id": "my-fixer-sets-up-night-market",
+    "title": "My Fixer sets up a Night Market",
+    "topic": "Roles",
+    "tags": [
+      "fixer",
+      "operator",
+      "night market",
+      "midnight market",
+      "buying",
+      "selling",
+      "deals",
+      "rare items"
+    ],
+    "icon": "🏪",
+    "steps": [
+      "At **Operator Rank 5-6**, a Fixer can organize a **Night Market** once per month. This is an open event where items from **all price categories** become available for purchase -- including things normally hard to source.",
+      "At **Rank 9+**, the Fixer can organize a **Midnight Market** -- an invite-only flash market containing **1d10+5 rare items** and gathering criminal underworld leadership. This is exclusive and dangerous.",
+      "**Haggle Check** at the market: **COOL + Trading + Operator Rank + 1d10** vs the seller's **COOL + Trading + their Operator Rank (if Fixer) + 1d10**. Only **one Fixer deal per transaction**.",
+      "**Haggle benefits by Rank**: Rank 1-2 (10% better price), Rank 3-4 (buy 5+ get 1 free), Rank 5-6 (negotiate job pay +20%), Rank 7-8 (Luxury/Super Luxury pay half now, half in 1 month), Rank 9 (20% better buy/sell), Rank 10 (double pay for dangerous jobs).",
+      "**Reach** determines what you can source outside markets: Rank 1-2 (Cheap/Everyday), Rank 3-4 (up to Expensive), Rank 5-6 (up to Super Luxury at Night Market), Rank 7-8 (up to Very Expensive), Rank 9 (up to Luxury, plus Midnight Market), Rank 10 (up to Super Luxury anytime).",
+      "Night Markets are **social events** as much as commercial ones. They are opportunities to make contacts, gather rumors, show off reputation, and set up future deals. The Fixer who organizes it gains significant social capital."
+    ]
+  },
+  {
+    "id": "my-tech-upgrades-weapon",
+    "title": "My Tech upgrades a weapon",
+    "topic": "Roles",
+    "tags": [
+      "tech",
+      "maker",
+      "upgrade",
+      "weapon",
+      "modify",
+      "improve",
+      "craft",
+      "expertise"
+    ],
+    "icon": "🔧",
+    "steps": [
+      "A Tech uses **Upgrade Expertise** (a Maker Specialty) to improve weapons. Roll **TECH + appropriate repair skill + Upgrade Expertise Rank + 1d10** vs a DV based on the upgrade's price category.",
+      "Available weapon upgrades include: **+1 to Attack checks** (weapon accuracy), **+1 damage for melee weapons**, **Expanded Magazine** (increased ammo capacity), **Make Weapon Concealable** (non-concealable becomes concealable), and **Raise Weapon Quality** (Excellent quality grants +1 to attacks).",
+      "**DV and Time by price category**: Cheap/Everyday (DV9, 1 hour), Costly (DV13, 6 hours), Premium (DV17, 1 day), Expensive (DV21, 1 week), Very Expensive (DV24, 2 weeks), Luxury (DV29, 1 month).",
+      "**Upgrade Expertise** also covers non-weapon improvements: **lower cyberware Humanity Loss by 1d6**, **add option slots** to cyberware, **add SP +1 to armor**, and **simplify repair time** for complex items.",
+      "A Tech needs **appropriate tools** for the job. Working without them imposes the standard **-2 penalty**. A fully equipped workshop is ideal. Field modifications using **Field Expertise** (jury-rig) last only **10 minutes per Rank**.",
+      "**Fabrication Expertise** lets a Tech create items from materials **one price category lower** than normal. Combined with Upgrade Expertise, a Tech can build a weapon cheaply and then upgrade it to exceed factory specs."
+    ]
+  },
+  {
+    "id": "my-medtech-makes-drugs",
+    "title": "My Medtech synthesizes pharmaceuticals",
+    "topic": "Roles",
+    "tags": [
+      "medtech",
+      "pharmaceuticals",
+      "drugs",
+      "craft",
+      "medicine",
+      "antibiotic",
+      "speedheal",
+      "stim",
+      "surge",
+      "rapidetox"
+    ],
+    "icon": "💊",
+    "steps": [
+      "A Medtech with **Pharmaceuticals** specialty points can synthesize pharma drugs. Each Pharmaceuticals point grants **1 point in Medical Tech Skill** (max 10) and access to one pharmaceutical (5 total).",
+      "The five pharmaceuticals (in unlock order): **Antibiotic** (heals extra 2 HP/day for 1 week on an already-healing target), **Rapidetox** (immediately purges any drug, poison, or intoxicant), **Speedheal** (heals BODY + WILL HP instantly, 1/day), **Stim** (ignore Seriously Wounded penalties for 1 hour, 1/day), **Surge** (no sleep needed for 24 hours, 1/week).",
+      "To synthesize: roll **TECH + Medical Tech + 1d10 vs DV13**. Materials cost **200eb per batch**. Each successful batch produces doses equal to your **Medical Tech Skill level**. Synthesis takes **1 hour per batch**.",
+      "Applying a dose costs **1 Action** to a willing target. Against an **unwilling target**, use a **Melee Weapon Attack with an Airhypo** -- on a hit, the dose is administered instead of dealing damage.",
+      "**Stim** is arguably the most tactically valuable pharma in combat -- it removes the Seriously Wounded -2 penalty for a full hour. Applying Stim to a wounded ally mid-fight can turn the tide.",
+      "Only a **Medtech** can administer Pharmaceuticals correctly. Non-Medtechs **cannot** use them — these require training to get medically correct proportions.",
+      "**Cryosystem Operation** (the third Medicine specialty) provides Cryopumps and Cryotanks for stabilizing Mortally Wounded characters long-term. At 5 points: 3 charges, holds 3 people, plus 6 Cryotanks total."
+    ]
+  },
+  {
+    "id": "shooting-in-total-darkness",
+    "title": "Shooting in total darkness",
+    "topic": "Combat",
+    "tags": [
+      "darkness",
+      "dark",
+      "blind",
+      "night",
+      "visibility",
+      "infrared",
+      "lowlight",
+      "penalty"
+    ],
+    "icon": "🌑",
+    "steps": [
+      "Attacking in **total darkness** applies a **-4 penalty** to all ranged attack rolls.",
+      "You **cannot make Aimed Shots** in total darkness — you can't see well enough to target a specific body location.",
+      "Targets beyond **25 m/yds** are **effectively invisible** — you cannot attack them at all without special optics.",
+      "**Infrared or Low-Light cyberoptics** negate the penalty entirely, letting you see and shoot normally in the dark.",
+      "Melee attacks in darkness also suffer the **-4 penalty** unless you have some way to perceive your opponent."
+    ]
+  },
+  {
+    "id": "attacking-while-prone",
+    "title": "Attacking while prone",
+    "topic": "Combat",
+    "tags": [
+      "prone",
+      "lying down",
+      "ground",
+      "stand up",
+      "melee",
+      "ranged",
+      "move action"
+    ],
+    "icon": "🛡️",
+    "steps": [
+      "**Ranged attacks** while prone are made at **no penalty** — lying down and shooting is perfectly viable.",
+      "**Melee attacks** while prone take a **-2 penalty** to the attack roll — you're at a serious disadvantage swinging from the ground.",
+      "**Standing up** from prone costs your **Action** (the Get Up Action). While prone, you **cannot use your Move Action** until you first Get Up.",
+      "Being prone makes you **harder to hit at range** (GM ruling on cover), but easier to hit in melee since you can't dodge effectively.",
+      "You can **drop prone for free** at any time on your turn — it only costs an Action to get back up."
+    ]
+  },
+  {
+    "id": "kick-grenade-away",
+    "title": "Kicking a grenade away",
+    "topic": "Combat",
+    "tags": [
+      "grenade",
+      "kick",
+      "athletics",
+      "dex",
+      "explosive",
+      "reaction",
+      "gm ruling"
+    ],
+    "icon": "🦵",
+    "steps": [
+      "Kicking a live grenade away is a **GM ruling** situation — there are no hard RAW rules for it, but a common house call.",
+      "The standard ruling is a **DEX + Athletics check at DV 17** — this is not easy and represents a desperate, risky move.",
+      "On a **success**, the grenade moves **5 m/yds** in a direction you choose — potentially saving your team from the blast.",
+      "On a **failure**, the grenade **detonates at your feet** — you take full damage and are ground zero for the explosion.",
+      "This typically costs your **Action for the turn** — you're diving to kick an explosive, not casually booting it aside."
+    ]
+  },
+  {
+    "id": "fighting-on-stairs",
+    "title": "Fighting on stairs / high ground",
+    "topic": "Combat",
+    "tags": [
+      "stairs",
+      "high ground",
+      "elevation",
+      "cover",
+      "concealment",
+      "terrain"
+    ],
+    "icon": "🪜",
+    "steps": [
+      "Cyberpunk RED has **no specific mechanical bonus** for high ground or fighting on stairs — unlike some TTRPGs.",
+      "However, the GM **can rule** that the higher position grants **cover or concealment** advantages depending on the situation.",
+      "A character at the top of stairs may be treated as having **partial cover** (head and shoulders visible) against those below.",
+      "Melee combat on stairs is unchanged mechanically, but the GM may impose **movement penalties** for difficult terrain.",
+      "Tactical positioning still matters — funneling enemies up a staircase limits how many can engage you in melee at once."
+    ]
+  },
+  {
+    "id": "double-grapple",
+    "title": "Two people grappling one target",
+    "topic": "Combat",
+    "tags": [
+      "grapple",
+      "grab",
+      "double",
+      "two grapplers",
+      "restrain",
+      "hold",
+      "melee"
+    ],
+    "icon": "🤼",
+    "steps": [
+      "**Two characters can grapple the same target** — each one establishes and maintains their own **Grab** independently.",
+      "Each grappler must have succeeded on their own **DEX + Brawling** check vs the target's **DEX + Brawling/Evasion** to initiate the Grab.",
+      "The target takes a **-2 penalty from each active grapple**, making it extremely difficult to break free or act.",
+      "To **escape**, the target must break **each Grab separately** — succeeding against one grappler doesn't free them from the other.",
+      "Each grappler can independently choose to **Choke, restrain, or hold** the target on their own turns using their Action."
+    ]
+  },
+  {
+    "id": "attacking-through-window",
+    "title": "Attacking through a window",
+    "topic": "Combat",
+    "tags": [
+      "window",
+      "glass",
+      "cover",
+      "full cover",
+      "shatter",
+      "break",
+      "building"
+    ],
+    "icon": "🪟",
+    "steps": [
+      "Unbroken glass gives targets behind it **full cover** — you cannot target someone through an intact window.",
+      "Glass has only **1 HP** — any attack that hits the window **shatters it instantly** with no meaningful damage reduction.",
+      "Once the glass is broken, the window opening provides **no cover at all** — targets are fully exposed through the gap.",
+      "You can deliberately **shoot out a window** on your turn (auto-hit, costs your Action) to open a line of fire for the next Round.",
+      "Diving through a window deals **1d6 damage** from broken glass — a classic Night City entrance."
+    ]
+  },
+  {
+    "id": "crit-fail-melee",
+    "title": "Critical failure on melee attack",
+    "topic": "Combat",
+    "tags": [
+      "critical failure",
+      "nat 1",
+      "fumble",
+      "melee",
+      "weapon break",
+      "poor quality"
+    ],
+    "icon": "💔",
+    "steps": [
+      "A **natural 1** on your attack d10 IS a **Critical Failure**. Roll another **d10** and **subtract** the result from your total. There is no confirmation roll — the natural 1 itself triggers the penalty.",
+      "A second 1 on the subtraction die simply means you subtract 1 (the minimum penalty) — it does **not** trigger further subtraction.",
+      "On a Critical Failure with a **Poor Quality melee weapon**, the weapon **breaks and is destroyed** on any natural 1 attack roll — it cannot be repaired.",
+      "On a Critical Failure with a **Standard or Excellent Quality weapon**, the attack simply **misses badly** — no additional penalty beyond the lost Action and the subtracted d10.",
+      "Critical Failures apply to **all attack types** (melee, ranged, autofire) — the mechanic (roll 1, subtract another d10) is the same across the board."
+    ]
+  },
+  {
+    "id": "fighting-in-civilian-crowd",
+    "title": "Fighting in a civilian crowd",
+    "topic": "Combat",
+    "tags": [
+      "civilians",
+      "crowd",
+      "bystanders",
+      "collateral",
+      "reputation",
+      "autofire",
+      "stray bullets"
+    ],
+    "icon": "👥",
+    "steps": [
+      "**Missed shots in a crowd** may hit civilians — this is a **GM ruling** based on the density of the crowd and weapon used.",
+      "**Autofire is especially dangerous** in crowds — the wide spray of bullets makes collateral damage almost guaranteed on a miss.",
+      "Killing innocent bystanders causes **Reputation loss** at the GM's discretion — Night City is violent, but indiscriminate killing is bad for business.",
+      "The GM may assign civilians **simple stats** (HP 15, no armor) or simply narrate the consequences without rolling.",
+      "Gangs and corps **will remember** if you shot up their neighborhood — expect retaliation or bounties from affected factions."
+    ]
+  },
+  {
+    "id": "shooting-someone-point-blank",
+    "title": "Shooting someone point-blank",
+    "topic": "Combat",
+    "tags": [
+      "point blank",
+      "close range",
+      "melee range",
+      "0-6m",
+      "pistol",
+      "shotgun"
+    ],
+    "icon": "🔫",
+    "steps": [
+      "CPR has **no special point-blank rules** — there is no bonus for pressing a gun against someone at contact distance.",
+      "At point-blank range, use the weapon's **0-6 m/yd range DV** — this is typically DV 13 for most weapons, making it easy to hit.",
+      "**Melee weapons can also be used** at this range — the defender can choose to **Dodge or Parry** as normal.",
+      "A ranged attacker engaged in melee is **not at a disadvantage** for using their firearm — they roll their normal ranged attack.",
+      "The target can attempt to **Grab** the weapon using the Grapple rules if they want to disarm the shooter at this range."
+    ]
+  },
+  {
+    "id": "cyberarm-dismembered",
+    "title": "Losing a cyberarm (dismemberment)",
+    "topic": "Cyberware",
+    "tags": [
+      "cyberarm",
+      "dismember",
+      "critical injury",
+      "broken",
+      "lost arm",
+      "replacement",
+      "surgery"
+    ],
+    "icon": "🦾",
+    "steps": [
+      "If you suffer the **Dismembered Arm Critical Injury**, you lose the arm AND **all cyberware options installed in it** — they are destroyed.",
+      "This includes any **weapons, tool hands, grapple hands, or other options** slotted into that cyberarm — all gone.",
+      "The **Broken Cyberarm** Critical Injury is less severe — the arm stops functioning but can be **repaired** rather than replaced.",
+      "A replacement cyberarm must be **purchased and installed fresh** by a Ripperdoc — you don't get the old options back for free.",
+      "The Surgery DV to install a new cyberarm is **DV 15**, and the Humanity Loss is paid again for the new arm and any new options."
+    ]
+  },
+  {
+    "id": "two-cyberarms",
+    "title": "Having two cyberarms",
+    "topic": "Cyberware",
+    "tags": [
+      "cyberarm",
+      "two arms",
+      "dual",
+      "both arms",
+      "option slots",
+      "humanity loss"
+    ],
+    "icon": "💪",
+    "steps": [
+      "Yes, you **can have two cyberarms** — each arm is a separate piece of cyberware installed independently.",
+      "Each cyberarm has its **own set of option slots** — you can install different options in each arm.",
+      "Each cyberarm costs **separate Humanity Loss** — installing two arms means paying HL twice (2d6 per arm).",
+      "Having two cyberarms does **not** grant extra attacks — you still get one Action per turn like everyone else.",
+      "Two cyberarms with **Big Knucks or Wolvers** do let you switch between weapons without spending an Action to draw."
+    ]
+  },
+  {
+    "id": "cyberware-after-death",
+    "title": "Harvesting cyberware from the dead",
+    "topic": "Cyberware",
+    "tags": [
+      "harvest",
+      "dead",
+      "corpse",
+      "salvage",
+      "ripperdoc",
+      "sell",
+      "surgery",
+      "loot"
+    ],
+    "icon": "⚙️",
+    "steps": [
+      "Cyberware **can be harvested** from a dead body using a **TECH + Surgery** check — the DV matches the original installation DV.",
+      "Harvested cyberware **may degrade in quality** at the GM's discretion — chrome ripped from a corpse isn't always in top shape.",
+      "Ripperdocs will typically buy harvested cyberware at roughly **50% of its market value** — they know where it came from.",
+      "You need proper **surgical tools** to extract cyberware — you can't just rip it out with pliers in an alley (well, you can, but it'll be destroyed).",
+      "Installing harvested cyberware into a new recipient still requires a **full Surgery check** and the recipient pays **Humanity Loss** as normal."
+    ]
+  },
+  {
+    "id": "can-cyberware-be-hacked",
+    "title": "Can cyberware be hacked?",
+    "topic": "Netrunning",
+    "tags": [
+      "cyberware",
+      "hack",
+      "hacking",
+      "emp",
+      "microwaver",
+      "disable",
+      "netrunner",
+      "electronics"
+    ],
+    "icon": "📡",
+    "steps": [
+      "Cyberware **cannot be hacked directly via the NET** — Netrunners cannot remotely take control of someone's chrome.",
+      "**EMP grenades or EMP ammo** can disable cyberware — a successful hit **disables 2 pieces of cyberware for 1 minute**.",
+      "The **Microwaver exotic weapon** can also disable cyberware — the target must make a **DV 15 Cybertech check** or lose functionality.",
+      "The owner of disabled cyberware **chooses which pieces** are affected — they pick their least important chrome to shut down first.",
+      "Disabled cyberware **reactivates after 1 minute** (roughly 10 combat Rounds) — no repair needed, it just reboots."
+    ]
+  },
+  {
+    "id": "pvp-facedown",
+    "title": "PvP facedown between players",
+    "topic": "Social",
+    "tags": [
+      "facedown",
+      "pvp",
+      "player vs player",
+      "cool",
+      "reputation",
+      "intimidate",
+      "social combat"
+    ],
+    "icon": "😤",
+    "steps": [
+      "PvP facedowns work **mechanically the same** as NPC facedowns — both players roll **COOL + Reputation + 1d10**.",
+      "The **loser** of the opposed roll decides whether to **back down or escalate** to violence — the system doesn't force either outcome.",
+      "Backing down means the loser **concedes the social situation** — they lose face but avoid combat.",
+      "This is a **great roleplay opportunity** — let the dice inform the scene, but the players decide how their characters react.",
+      "The GM should ensure **both players consent** to the facedown mechanic — forced PvP social combat can feel bad if one player isn't into it."
+    ]
+  },
+  {
+    "id": "beating-lie-detector",
+    "title": "Beating a lie detector / reading lies",
+    "topic": "Social",
+    "tags": [
+      "lie",
+      "deception",
+      "acting",
+      "human perception",
+      "voice stress analyzer",
+      "detect lie"
+    ],
+    "icon": "🎭",
+    "steps": [
+      "Detecting lies is an **opposed roll**: the detector rolls **INT + Human Perception** vs the liar's **COOL + Acting**.",
+      "If the detector wins, they **sense the deception** — they know something is off, though not necessarily what the truth is.",
+      "The **Voice Stress Analyzer** cyberware gives a **+2 bonus to the detection roll** — very useful for Fixers and Lawmen.",
+      "A skilled liar with high **COOL and Acting** can beat even cyberware-enhanced detection — chrome isn't foolproof.",
+      "The GM may grant **situational modifiers** if the lie is particularly outrageous (+2 to detect) or well-prepared (-2 to detect)."
+    ]
+  },
+  {
+    "id": "refusing-fixer-job",
+    "title": "Refusing a job from a Fixer",
+    "topic": "Social",
+    "tags": [
+      "fixer",
+      "job",
+      "refuse",
+      "reputation",
+      "night market",
+      "consequences",
+      "work"
+    ],
+    "icon": "🤝",
+    "steps": [
+      "There is **no immediate mechanical penalty** for turning down a single job — Fixers understand that not every gig is a good fit.",
+      "**Repeated refusals** damage your relationship with that Fixer — they'll stop calling and offer work to more reliable edgerunners.",
+      "Losing a Fixer's trust may mean losing access to their **Night Markets** — your source for rare gear and cyberware dries up.",
+      "Other Fixers in the area **may hear** that you're unreliable — word travels fast in Night City's underworld.",
+      "The GM should use this as a **narrative consequence**, not a punishment — there are always other Fixers, but burning bridges has a cost."
+    ]
+  },
+  {
+    "id": "pvp-combat",
+    "title": "PvP combat between players",
+    "topic": "Combat",
+    "tags": [
+      "pvp",
+      "player vs player",
+      "combat",
+      "attack",
+      "player killing",
+      "pk",
+      "drama"
+    ],
+    "icon": "⚡",
+    "steps": [
+      "PvP combat works **mechanically identical** to NPC combat — same attack rolls, same damage, same armor, no special rules.",
+      "The GM should ensure **both players are okay with PvP** before it happens — surprise PvP kills can ruin a campaign.",
+      "Initiative, Actions, dodging, and damage all follow the **standard combat rules** — no player gets special treatment.",
+      "PvP combat **can cause real table drama** — discuss it out-of-character before resolving it in-character if tensions are high.",
+      "Consider offering **alternatives to lethal PvP**: facedowns, non-lethal weapons, or simply splitting the party temporarily."
+    ]
+  },
+  {
+    "id": "counterfeit-eddies",
+    "title": "Counterfeiting eddies",
+    "topic": "Social",
+    "tags": [
+      "counterfeit",
+      "money",
+      "eddies",
+      "forgery",
+      "crime",
+      "tech",
+      "perception",
+      "fake money"
+    ],
+    "icon": "💵",
+    "steps": [
+      "Creating counterfeit eddies requires a **TECH + Forgery** check — the DV depends on the quality of fakes you're trying to produce.",
+      "Detecting counterfeits is an **INT + Perception** check or an **electronic scanner** — merchants in high-end areas check routinely.",
+      "Getting caught passing fake eddies is a **serious criminal charge** — NCPD and corporate security don't take kindly to it.",
+      "**Corporations track serial numbers** on high-denomination credchips — trying to counterfeit corpo scrip is especially dangerous.",
+      "Even successful counterfeits have a **shelf life** — word spreads about fake bills in circulation and merchants get wary."
+    ]
+  },
+  {
+    "id": "stealing-from-corps",
+    "title": "Stealing from corporations",
+    "topic": "Night City",
+    "tags": [
+      "corporation",
+      "theft",
+      "corporate",
+      "security",
+      "tracker",
+      "arasaka",
+      "stolen gear"
+    ],
+    "icon": "🏢",
+    "steps": [
+      "Corporations **track their inventory** meticulously — stolen equipment is flagged in their systems almost immediately.",
+      "Stolen corporate gear **may have embedded trackers** — a TECH + Electronics/Security Tech check can find and disable them.",
+      "**Corporate security will investigate** missing assets — the value of the theft determines how hard they look.",
+      "Selling stolen corp gear requires a **Fixer or black market connection** — legitimate shops won't touch hot merchandise.",
+      "**Arasaka never forgets** — stealing from the biggest corps means they will eventually send someone to recover their property (and punish you)."
+    ]
+  },
+  {
+    "id": "trauma-team-as-insurance",
+    "title": "Trauma Team coverage and costs",
+    "topic": "Lifestyle",
+    "tags": [
+      "trauma team",
+      "insurance",
+      "medical",
+      "health",
+      "extraction",
+      "emt",
+      "cost",
+      "monthly"
+    ],
+    "icon": "🚁",
+    "steps": [
+      "**Silver coverage** costs **500 eb/month** — this is the basic tier most edgerunners can barely afford.",
+      "**Executive coverage** costs **1,000 eb/month** — faster response and better treatment for those with deeper pockets.",
+      "Response time is **1d6 combat Rounds** (~3-18 seconds) after activation — your Trauma Team card sends a signal when your vitals crash.",
+      "Trauma Team **extracts and treats you** on-site or in transit — they stabilize you and get you to a medical facility alive.",
+      "The response team includes **armed security** who will protect the medics — they will shoot anyone who interferes with the extraction.",
+      "Trauma Team **does not care** about the legality of your situation — they save your life, not your reputation. But they won't enter active warzones for Silver members."
+    ]
+  },
+  {
+    "id": "scouting-a-location",
+    "title": "Scouting a location",
+    "topic": "Environment",
+    "tags": [
+      "scouting",
+      "recon",
+      "perception",
+      "guards",
+      "entry point",
+      "observation",
+      "intel",
+      "infiltration"
+    ],
+    "icon": "🔭",
+    "steps": [
+      "Roll **INT + Perception + 1d10** to observe a target location — the GM sets the DV based on how well-secured it is (DV13 for lightly guarded, DV15 for standard, DV17+ for high-security).",
+      "On a success, you learn useful details: **guard count and positions**, visible entry/exit points, lighting conditions, and any obvious security hardware (cameras, fences, checkpoints).",
+      "**Time spent improves information quality** — a quick drive-by (1 minute) gives surface-level details, while an extended stakeout (1+ hours) reveals patrol timing, shift changes, and blind spots.",
+      "Beating the DV by **4 or more** reveals additional intel the GM chooses: hidden entrances, camera blind spots, or weaknesses in the security routine.",
+      "Failing the check means you **learn nothing useful** — and on a Critical Failure, security may notice you watching, increasing alertness for later attempts."
+    ]
+  },
+  {
+    "id": "disabling-alarms",
+    "title": "Disabling alarm systems",
+    "topic": "Skills",
+    "tags": [
+      "alarm",
+      "security",
+      "tech",
+      "electronics",
+      "disable",
+      "stealth",
+      "infiltration",
+      "trap"
+    ],
+    "icon": "🚨",
+    "steps": [
+      "Disabling an alarm requires a **TECH + Electronics/Security Tech + 1d10** check vs the alarm's DV — cheap alarms are **DV9**, standard are **DV13**, high-security are **DV17**, and corporate-grade are **DV21**.",
+      "Electronics/Security Tech is a **x2 cost Skill** (double IP to level up), so many characters will have low ranks — consider bringing a specialist or a Netrunner.",
+      "**Failure triggers the alarm** unless the GM rules otherwise — this typically alerts guards, locks down entry points, and may summon backup within 1d6 Turns.",
+      "A Netrunner can bypass alarms remotely by accessing the building's **NET Architecture** and using **Control Node** actions to disable them — this avoids the physical check entirely.",
+      "Disabling takes approximately **1 minute for DV9**, **5 minutes for DV13-17**, and longer for DV21+ systems — plan accordingly when guards patrol nearby."
+    ]
+  },
+  {
+    "id": "bypassing-security-cameras",
+    "title": "Bypassing security cameras",
+    "topic": "Skills",
+    "tags": [
+      "camera",
+      "security",
+      "stealth",
+      "netrunner",
+      "electronics",
+      "infiltration",
+      "bypass",
+      "surveillance"
+    ],
+    "icon": "📹",
+    "steps": [
+      "There are three approaches: **disable them** (TECH + Electronics/Security Tech), **avoid them** (DEX + Stealth), or **hack them** (Netrunner via Control Node).",
+      "To physically disable a camera, roll **TECH + Electronics/Security Tech + 1d10** vs the camera's DV (typically **DV9** for standard observation cameras). Each camera is a separate check.",
+      "To sneak past, roll **DEX + Stealth + 1d10** — cameras have a **Perception DV17 to spot** them first, and the GM determines the DV to avoid their field of view based on available cover.",
+      "A **Netrunner jacked into the building's NET Architecture** can use a Control Node action to disable, loop, or redirect cameras — one NET Action per camera or per linked group.",
+      "Observation cameras have only **5 HP** and can be shot out, but gunfire is loud and the destroyed feed will alert security monitoring stations immediately."
+    ]
+  },
+  {
+    "id": "social-engineering-entry",
+    "title": "Social engineering past guards",
+    "topic": "Social",
+    "tags": [
+      "social",
+      "persuasion",
+      "conversation",
+      "disguise",
+      "bluff",
+      "guards",
+      "infiltration",
+      "cool"
+    ],
+    "icon": "🎭",
+    "steps": [
+      "Roll **COOL + Persuasion + 1d10** (to convince) or **COOL + Conversation + 1d10** (to chat your way in) as an **opposed check** vs the guard's **INT + Human Perception + 1d10**.",
+      "Having a **convincing disguise** (correct uniform, badge, or corporate attire) can lower the DV by **-2 to -4** at GM discretion — looking the part matters more than talking.",
+      "A **prepared cover story** that makes sense for the location (delivery, maintenance, expected visitor) gives a further **+2 bonus** — the more specific and verifiable, the better.",
+      "On a failure, the guard gets **suspicious** — they may ask for ID, call their supervisor, or deny entry. A Critical Failure means they raise the alarm immediately.",
+      "**COOL + Acting + 1d10** can supplement the approach if you need to maintain a persona over an extended interaction — one slip and the guard may re-check your credentials."
+    ]
+  },
+  {
+    "id": "picking-a-lock-detailed",
+    "title": "Picking locks (detailed)",
+    "topic": "Skills",
+    "tags": [
+      "lock",
+      "pick lock",
+      "tech",
+      "lockpick",
+      "door",
+      "entry",
+      "infiltration",
+      "security"
+    ],
+    "icon": "🔐",
+    "steps": [
+      "Roll **TECH + Pick Lock + 1d10** vs the lock's DV: **DV13** for cheap/residential locks, **DV15** for standard commercial, and **DV17** for high-security mechanical locks.",
+      "**Electronic locks** cannot be picked with Pick Lock — they require **TECH + Electronics/Security Tech + 1d10** instead, at the same DV range or higher (DV17-21 for corporate).",
+      "You need **lock picking tools** (50eb, Costly) — without them, you take a **-2 penalty** or the GM may rule it impossible for higher-DV locks.",
+      "Each attempt takes roughly **1 minute** — if guards patrol nearby, you may need to make multiple attempts between patrol windows, increasing the risk of discovery.",
+      "Failure means the lock **doesn't open** but isn't damaged. On a Critical Failure, the pick breaks inside the lock, jamming it — now it can't be picked at all and must be forced or bypassed."
+    ]
+  },
+  {
+    "id": "cutting-through-walls",
+    "title": "Cutting through walls & barriers",
+    "topic": "Equipment",
+    "tags": [
+      "wall",
+      "breach",
+      "cutting torch",
+      "explosives",
+      "demolitions",
+      "melee",
+      "entry",
+      "infiltration"
+    ],
+    "icon": "🧱",
+    "steps": [
+      "A **cutting torch** (100eb, Premium) can slice through walls and doors but takes time — approximately **1 minute per inch of material** — and produces visible sparks and noise.",
+      "**Explosives** are faster: a standard charge blows through most walls in one Round, but requires a **TECH + Demolitions + 1d10** check (DV varies by wall thickness) and is extremely loud.",
+      "You can attack barriers with **melee weapons** — walls and doors have HP assigned by the GM (light interior wall ~15 HP, reinforced door ~25 HP, concrete wall ~40 HP). Subtract weapon damage each hit.",
+      "Demolitions is a **x2 cost Skill** — if nobody in the crew has it, consider buying pre-set charges from a Fixer, but mishandling explosives without the Skill risks premature detonation.",
+      "The **noise factor** matters: cutting torches are audible within a room, melee bashing echoes through corridors, and explosives alert everyone in the building plus neighbors."
+    ]
+  },
+  {
+    "id": "guard-patrol-timing",
+    "title": "Timing guard patrols",
+    "topic": "GM Tips",
+    "tags": [
+      "guards",
+      "patrol",
+      "timing",
+      "perception",
+      "infiltration",
+      "window",
+      "stealth",
+      "planning"
+    ],
+    "icon": "⏱️",
+    "steps": [
+      "Roll **INT + Perception + 1d10** to identify a guard patrol pattern — **DV13** for regular clockwork patrols, **DV15** for semi-regular with minor variation, **DV17** for deliberately randomized routes.",
+      "On success, you learn the **patrol interval** (how often guards pass a given point) and the **window duration** (how long you have between passes to move through an area undetected).",
+      "A typical patrol window is **2-5 minutes** for tight security and **10-15 minutes** for lax security — the GM should establish this before the infiltration begins.",
+      "**Multiple observation periods** (watching for 30+ minutes) grant a **+2 bonus** to the check — patterns become clearer with more data points.",
+      "GMs should note that **randomized patrols** (DV17) mean there is no guaranteed safe window — players must accept risk or find ways to distract or neutralize the patrol."
+    ]
+  },
+  {
+    "id": "training-between-sessions",
+    "title": "Training between sessions",
+    "topic": "Character Creation",
+    "tags": [
+      "training",
+      "ip",
+      "improvement points",
+      "skills",
+      "downtime",
+      "leveling",
+      "advancement",
+      "role ability"
+    ],
+    "icon": "📚",
+    "steps": [
+      "Between sessions, spend **Improvement Points (IP)** to raise Skills or Role Ability Ranks. Typical Skill cost: **20 IP per level** (Level 1 = 20 IP, Level 2 = 40 IP, up to Level 10 = 200 IP).",
+      "**x2 Skills** (Demolitions, Electronics/Security Tech, etc.) cost **double** — 40 IP for Level 1, 80 IP for Level 2, and so on up to 400 IP for Level 10.",
+      "**Role Ability Ranks** cost more: **60 IP per Rank** (Rank 1 = 60 IP, Rank 2 = 120 IP, up to Rank 10 = 600 IP). You cannot skip ranks.",
+      "The GM decides **how much in-game time passes** between sessions — training should logically fit the timeline. A week between jobs is enough for a Skill point; a month allows more.",
+      "You **cannot raise a Skill above your current level +1** per downtime period at GM discretion — this represents needing time to practice and consolidate new abilities."
+    ]
+  },
+  {
+    "id": "working-a-day-job",
+    "title": "Working a day job",
+    "topic": "Lifestyle",
+    "tags": [
+      "job",
+      "work",
+      "income",
+      "lifestyle",
+      "money",
+      "downtime",
+      "rent",
+      "eurobucks"
+    ],
+    "icon": "💼",
+    "steps": [
+      "A day job earns enough to cover your **monthly lifestyle costs** — this keeps you fed and housed but won't make you rich. The exact pay depends on your Role and the GM.",
+      "Monthly costs vary: **Kibble lifestyle is 100eb/month**, **Good Prepak is 200eb**, and housing ranges from **free (street) to 1,000eb+ (Cargo Container and up)**.",
+      "Your **Role determines job type**: Solos do security work, Techs do repairs, Medtechs work clinics, Fixers broker deals, Netrunners do contract hacking, and Rockerboys play gigs.",
+      "Working a day job consumes your **entire downtime** for that period — you can't also train, scout locations, or do other downtime activities during the same time window.",
+      "If you skip work and can't pay rent, you face **eviction** — and if you can't afford food, starvation rules apply (GM discretion, typically penalties similar to sleep deprivation)."
+    ]
+  },
+  {
+    "id": "shopping-for-gear",
+    "title": "Shopping for gear",
+    "topic": "Equipment",
+    "tags": [
+      "shopping",
+      "night market",
+      "fixer",
+      "gear",
+      "equipment",
+      "buying",
+      "downtime",
+      "price"
+    ],
+    "icon": "🛒",
+    "steps": [
+      "The easiest source is a **Fixer contact** — their **Operator Rank determines what price category** they can source: Rank 1-2 gets Cheap/Everyday, Rank 3-4 up to Expensive, Rank 7-8 up to Very Expensive, Rank 9+ up to Luxury/Super Luxury.",
+      "**Night Markets** (set up by Rank 5+ Fixers, once per month) offer **all price categories** in one location — this is where you find the good stuff. Midnight Markets (Rank 9+) have rare items.",
+      "Legitimate stores sell **legal goods at full price** — no haggling. For weapons, ammo, and restricted gear, you need the black market (Fixer or Night Market).",
+      "A Fixer can **Haggle** the price: **COOL + Trading + Operator Rank + 1d10** vs the seller's roll. Success gives **10-20% off** depending on Fixer Rank.",
+      "Time to find items varies by price: **Cheap/Everyday takes 1 hour**, Costly takes **6 hours**, Premium takes **1 day**, Expensive takes **1 week**, Very Expensive takes **2 weeks**, Luxury+ takes **1 month**."
+    ]
+  },
+  {
+    "id": "recovery-downtime",
+    "title": "Recovering during downtime",
+    "topic": "Medical",
+    "tags": [
+      "healing",
+      "recovery",
+      "rest",
+      "hospital",
+      "therapy",
+      "humanity",
+      "critical injury",
+      "downtime"
+    ],
+    "icon": "🏥",
+    "steps": [
+      "Once stabilized, natural healing restores **HP equal to your BODY stat per full day** of rest (light activity only). Pushing yourself means no healing that day and needing re-stabilization.",
+      "**Speedheal** drugs heal **BODY + WILL HP immediately** (once per day, only if not Mortally Wounded). **Antibiotics** add an extra **2 HP/day for 1 week** on top of natural healing.",
+      "**Critical Injuries** don't heal naturally — they require specific medical treatment: **First Aid or Paramedic checks** for minor ones, **Surgery** (DV13-DV17) for severe ones like dismemberment.",
+      "**Therapy** restores lost Humanity: standard therapy costs **500eb**, takes **1 full week**, and requires a Medtech's **DV15 Medical Tech check** — recovering **2d6 Humanity** on success. Extreme therapy costs 1,000eb for **4d6 Humanity** at DV17.",
+      "Enhanced Antibodies cyberware (500eb, Mall) **doubles natural healing** to BODY x 2 per day — a worthwhile investment for characters who take a lot of damage between jobs."
+    ]
+  },
+  {
+    "id": "building-relationships",
+    "title": "Building NPC relationships",
+    "topic": "Social",
+    "tags": [
+      "npc",
+      "relationship",
+      "loyalty",
+      "persuasion",
+      "favor",
+      "contact",
+      "downtime",
+      "reputation"
+    ],
+    "icon": "🤝",
+    "steps": [
+      "Building trust with NPCs uses **COOL + Persuasion + 1d10** or **COOL + Conversation + 1d10** over multiple interactions — the GM tracks NPC disposition from hostile to loyal.",
+      "**Doing favors** for an NPC (no check needed) is the most reliable way to improve their disposition — actions speak louder than words in Night City. Each meaningful favor shifts attitude one step.",
+      "**Shared dangerous experiences** (surviving a firefight together, pulling them out of trouble) create strong bonds faster than smooth talk — the GM may grant bonus disposition shifts.",
+      "For Fixers, NPC relationships tie into the **Operator ability** — contacts gained through Rank have built-in Loyalty scores. The GM rolls **1d6 under current Loyalty** for task compliance; failure means refusal or betrayal.",
+      "Neglecting contacts or betraying trust **permanently damages relationships** — some NPCs may become enemies, sell you out, or refuse future dealings entirely."
+    ]
+  },
+  {
+    "id": "improving-your-home",
+    "title": "Improving your home security",
+    "topic": "Lifestyle",
+    "tags": [
+      "home",
+      "security",
+      "upgrade",
+      "alarm",
+      "camera",
+      "defense",
+      "housing",
+      "downtime",
+      "net architecture"
+    ],
+    "icon": "🏠",
+    "steps": [
+      "Home security upgrades range from basic locks to lethal automated defenses. Installation requires a **TECH + Electronics/Security Tech** check at the defense's DV (DV9 to DV21) and costs vary from **500eb to 10,000eb+**.",
+      "**Environmental defenses** include observation cameras (DV9, 500eb), electrical flooring (DV13, 1,000eb), laser grids (DV17, 5,000eb), and more — each has a **Perception DV17 to spot** by intruders.",
+      "**Active defenses** like drones (ground, air, spider walkers) cost more but can pursue intruders. They range from **mini air drones** (DV17 to counter) to **spider walking drones** with heavy weapons (DV21).",
+      "Linking defenses to a **NET Architecture** allows a Netrunner or programmed Demon to control them remotely via Control Nodes — this turns your home into a defended network.",
+      "Costs add up fast: a basic camera setup runs **500eb**, a full automated turret is **5,000eb+**, and a complete NET Architecture with Demon defenders can reach **10,000eb or more** — plan your budget."
+    ]
+  },
+  {
+    "id": "gathering-intel-for-job",
+    "title": "Gathering intel for a job",
+    "topic": "Social",
+    "tags": [
+      "intel",
+      "information",
+      "streetwise",
+      "library search",
+      "fixer",
+      "bribe",
+      "planning",
+      "investigation"
+    ],
+    "icon": "🕵️",
+    "steps": [
+      "**Street-level info**: Roll **COOL + Streetwise + 1d10** — this taps into the criminal grapevine for rumors, gang territory info, and word on the street about your target. DV13 for common knowledge, DV17 for obscure details.",
+      "**Public records**: Roll **INT + Library Search + 1d10** — access the Data Pool for corporate filings, property records, news archives, and publicly available information. DV13 for basic info, DV15+ for deeper digs.",
+      "**Fixer contacts**: A Fixer's **Operator ability** provides access to a network of informants — higher Rank Fixers know more powerful people. This may cost favors or eurobucks rather than a Skill check.",
+      "**Bribing for specifics**: Cold hard eddies loosen tongues. The GM sets a price based on how dangerous the info is — expect to pay **50-100eb** for low-risk intel, **500-1,000eb** for insider corporate details.",
+      "Combine multiple sources for the best picture — Streetwise gives you who, Library Search gives you what, and Fixer contacts fill in the gaps that aren't public or street knowledge."
+    ]
+  },
+  {
+    "id": "hiring-specialists",
+    "title": "Hiring NPC specialists",
+    "topic": "Social",
+    "tags": [
+      "hire",
+      "npc",
+      "specialist",
+      "fixer",
+      "solo",
+      "netrunner",
+      "medtech",
+      "planning",
+      "cost"
+    ],
+    "icon": "📋",
+    "steps": [
+      "Finding specialists typically goes through a **Fixer** — their Operator Rank determines the caliber of talent they can locate. Higher-rank Fixers connect you with more skilled (and expensive) professionals.",
+      "**Typical NPC rates**: Solos charge **200-500eb/day** for muscle and security, Netrunners charge **500-1,000eb per job** for NET runs, and Medtechs charge **100-300eb/day** for on-site medical support.",
+      "**Techs** charge **200-500eb per job** for equipment work, demolitions, or electronics bypass. **Drivers/Nomads** charge **100-300eb/day** plus vehicle costs for transport and getaway services.",
+      "Hired NPCs are **not as reliable as crew** — the GM may assign a Loyalty score or make Loyalty checks. Cheap hires are more likely to bail under fire or sell information about the job.",
+      "Always **negotiate terms upfront**: half up front and half on completion is standard. Hazard pay (combat expected) typically **doubles the rate**. Betrayal in either direction burns the Fixer connection."
+    ]
+  },
+  {
+    "id": "getting-blueprints",
+    "title": "Getting building blueprints",
+    "topic": "Skills",
+    "tags": [
+      "blueprints",
+      "floor plan",
+      "library search",
+      "fixer",
+      "netrunner",
+      "architecture",
+      "planning",
+      "maps"
+    ],
+    "icon": "📐",
+    "steps": [
+      "**Public buildings** (government offices, hospitals, older structures): Roll **INT + Library Search + 1d10 vs DV13** — these records are often accessible through the Data Pool or city archives.",
+      "**Private/corporate buildings**: Require a Fixer contact (typically **500-2,000eb** depending on the corp's security level) or a favor owed — these blueprints are not publicly filed.",
+      "A **Netrunner** can steal blueprints by infiltrating the building's **NET Architecture** or the construction company's records — this requires a full NET run with its own risks and time investment.",
+      "Blueprints may be **outdated or incomplete** — renovations, secret rooms, and security additions since construction won't appear on original plans. The GM should note any discrepancies.",
+      "Even partial blueprints give a significant advantage: knowing the **general layout, stairwell locations, elevator access, and room sizes** lets the team plan entry routes and escape paths before going in."
+    ]
+  },
+  {
+    "id": "buying-specific-gear",
+    "title": "Buying mission-specific gear",
+    "topic": "Equipment",
+    "tags": [
+      "gear",
+      "fixer",
+      "night market",
+      "reach",
+      "equipment",
+      "planning",
+      "rare",
+      "shopping"
+    ],
+    "icon": "🎯",
+    "steps": [
+      "A Fixer's **Operator Reach** sets the ceiling: Rank 1-2 sources only **Cheap/Everyday** items, Rank 3-4 up to **Expensive**, Rank 7-8 up to **Very Expensive**, and Rank 9-10 up to **Super Luxury**.",
+      "**Night Markets** (Rank 5+ Fixer, once per month) are the best option for mission-critical shopping — all price categories available, plus the chance to find unusual or rare items.",
+      "**Time to acquire** scales with rarity: Everyday items within **1 hour**, Costly in **6 hours**, Premium in **1 day**, Expensive in **1 week**, Very Expensive in **2 weeks**, Luxury/Super Luxury in **1 month per 10,000eb**.",
+      "For time-sensitive jobs, the crew may need to **pay a premium** (GM ruling, typically 25-50% markup) to rush acquisition, or settle for lower-quality alternatives that are available immediately.",
+      "Plan gear needs **early in downtime** — waiting until the night before the job to source Very Expensive equipment means you won't have it in time. Smart crews start shopping as soon as a job is confirmed."
+    ]
+  },
+  {
+    "id": "using-environment-as-weapon",
+    "title": "Using the environment as a weapon",
+    "topic": "Combat",
+    "tags": [
+      "environment",
+      "push",
+      "fall",
+      "electrify",
+      "demolitions",
+      "terrain",
+      "hazard",
+      "creative"
+    ],
+    "icon": "⚡",
+    "steps": [
+      "**Push someone off a height**: Use the **Grab** action (DEX + Brawling + 1d10 vs DEX + Brawling/Evasion + 1d10), then spend your next Action to shove them off. Fall damage is assigned by the GM based on height.",
+      "**Electrify water or metal**: Requires **TECH + Electronics + 1d10** (DV set by GM, typically DV15) and a power source. Targets in contact take **6d6 electrical damage** (similar to Electrical Flooring defense rules).",
+      "**Collapse a structure**: Roll **TECH + Demolitions + 1d10** vs a DV based on structural integrity (DV13 for damaged buildings, DV17 for reinforced). Demolitions is a **x2 cost Skill** — not everyone can do this.",
+      "**Environmental hazards** already present (exposed wiring, gas leaks, unstable floors) can be triggered with appropriate Skill checks — the GM determines the DV and resulting damage.",
+      "Characters with **2 Cyberlegs** don't take fall damage for falls under **30 m/yds** — keep this in mind when pushing enemies off buildings; chrome-legged opponents may survive the drop."
+    ]
+  },
+  {
+    "id": "taking-hostages",
+    "title": "Taking a hostage",
+    "topic": "Social",
+    "tags": [
+      "hostage",
+      "grab",
+      "human shield",
+      "negotiation",
+      "facedown",
+      "intimidation",
+      "threat"
+    ],
+    "icon": "🔪",
+    "steps": [
+      "First, **Grab** the target: roll **DEX + Brawling + 1d10** vs their **DEX + Brawling or Evasion + 1d10**. On success, you and the target enter a **Grapple** (both suffer **-2 to all Actions**).",
+      "With a weapon to their throat, you can use the **Human Shield** action — the hostage is treated as **cover for Ranged Attacks** (not Melee or head-targeted Aimed Shots). Attackers hit the hostage first.",
+      "Initiate a **Facedown** (COOL + Persuasion or Interrogation + 1d10) with a **massive bonus** (GM discretion, typically +4 to +6) — having a blade or gun to someone's throat is very persuasive.",
+      "**NCPD** may negotiate (especially for civilian hostages) but **corporate security** may calculate acceptable losses. Some factions (Psycho Squad, Animals, Maelstrom) **do not negotiate at all**.",
+      "If the hostage is killed or released, you **immediately lose your leverage** and the Human Shield cover bonus — enemies will open fire without hesitation."
+    ]
+  },
+  {
+    "id": "surrendering-in-combat",
+    "title": "Surrendering in combat",
+    "topic": "Combat",
+    "tags": [
+      "surrender",
+      "give up",
+      "drop weapon",
+      "prone",
+      "mercy",
+      "capture",
+      "prisoner"
+    ],
+    "icon": "🏳️",
+    "steps": [
+      "**Drop your weapons** as a free action and **go prone** — make it visually obvious you are giving up. Announce your surrender clearly.",
+      "Whether enemies **accept surrender is entirely at GM discretion** — rational opponents (corporate security, NCPD, professional mercs) are more likely to accept than irrational ones.",
+      "**Cyberpsychos, boosted gangers (Animals, Maelstrom), and some Solos** may not accept surrender at all — they may execute prisoners, torture for information, or simply not care.",
+      "If accepted, you are typically **disarmed, restrained, and searched**. Cyberware weapons (Wolvers, Big Knuckles, Popup weapons) may be overlooked if concealed — **TECH + Conceal/Reveal** to hide them.",
+      "Surrendering is a **gamble** — it preserves your life in the moment but puts you at the complete mercy of your captors. Have a backup plan or hope your crew mounts a rescue."
+    ]
+  },
+  {
+    "id": "playing-dead",
+    "title": "Playing dead",
+    "topic": "Social",
+    "tags": [
+      "playing dead",
+      "feign death",
+      "acting",
+      "deception",
+      "perception",
+      "cool",
+      "stealth",
+      "trick"
+    ],
+    "icon": "💀",
+    "steps": [
+      "Roll **COOL + Acting + 1d10** vs the observer's **INT + Human Perception + 1d10** — this is an opposed check, and trained observers are much harder to fool.",
+      "Being **actually wounded** gives a significant bonus (GM discretion, typically **+2 to +4**) — blood, genuine pain reactions, and visible injuries make the act far more convincing.",
+      "You must **remain perfectly still** — any movement triggers a new opposed check, and the observer gets **+2** on the re-check since they're already suspicious.",
+      "The major risk is **confirmation shots** — professional enemies (corporate security, experienced Solos) may put a round into downed targets as standard procedure. If they do, you take real damage.",
+      "This works best in **chaotic combat situations** with multiple downed combatants — a single \"corpse\" on an otherwise clear battlefield is far more suspicious than one body among many."
+    ]
+  },
+  {
+    "id": "improvised-weapons",
+    "title": "Using improvised weapons",
+    "topic": "Combat",
+    "tags": [
+      "improvised",
+      "weapon",
+      "bottle",
+      "chair",
+      "pipe",
+      "melee",
+      "light melee",
+      "poor quality",
+      "break"
+    ],
+    "icon": "🪑",
+    "steps": [
+      "Any object used as a weapon (bottle, chair, pipe, brick, fire extinguisher) is treated as a **Light Melee Weapon** dealing **1d6 damage** with a ROF of 2.",
+      "Improvised weapons are always **Poor Quality** — they have no bonus and are likely to break. After combat ends, the weapon is **destroyed** (it doesn't survive sustained use).",
+      "Attack rolls use **DEX + Melee Weapon + 1d10** — since improvised weapons are treated as Light Melee Weapons, they use the Melee Weapon skill. The GM may alternatively allow Brawling.",
+      "**Thrown improvised weapons** (bottles, bricks) use **DEX + Athletics + 1d10** with Grenade Launcher DVs for range — they deal their melee damage but don't halve SP on the way in.",
+      "In a pinch, improvised weapons are better than fists (which deal **1d6 damage** as Light Melee anyway) only because some objects give reach or can be thrown — the real advantage is psychological."
+    ]
+  },
+  {
+    "id": "throwing-objects-as-weapons",
+    "title": "Throwing objects as weapons",
+    "topic": "Combat",
+    "tags": [
+      "throw",
+      "thrown",
+      "improvised",
+      "athletics",
+      "grenade launcher",
+      "range",
+      "toss"
+    ],
+    "icon": "🪨",
+    "steps": [
+      "Throwing any object uses an Action and rolls **DEX + Athletics + 1d10** against the **Grenade Launcher DV table** for range — not the standard ranged DV table.",
+      "Melee weapons that are thrown deal their **stated melee damage** (e.g., a knife deals 1d6, a machete deals 2d6) but do **not** halve the target's SP like melee attacks normally would.",
+      "Improvised thrown objects (bottles, rocks, loose debris) deal **1d6 damage** at GM discretion — they are not designed as weapons.",
+      "Maximum throwing range is **25 m/yds** regardless of the object. Beyond that, it simply cannot be thrown accurately enough to matter.",
+      "Grenades are also thrown using DEX + Athletics and use the Grenade Launcher DV table, but they deal their **normal explosive damage** in a 10m x 10m area on impact."
+    ]
+  },
+  {
+    "id": "fighting-handcuffed",
+    "title": "Fighting while handcuffed or restrained",
+    "topic": "Combat",
+    "tags": [
+      "handcuffs",
+      "restrained",
+      "bound",
+      "escape",
+      "contortionist",
+      "grapple",
+      "cuffed"
+    ],
+    "icon": "🔗",
+    "steps": [
+      "A handcuffed or bound character suffers **-4 to all Actions** that require the use of their hands — this includes most attacks, reloading, and skill checks involving manipulation.",
+      "The character **can still kick** using **Brawling at -2** (feet are free), dealing Brawling damage based on BODY. This is the primary offensive option while restrained.",
+      "To escape handcuffs, roll **DEX + Contortionist + 1d10** against a DV set by the GM (typically **DV15** for standard cuffs, higher for reinforced). Alternatively, brute-force escape uses **DEX + Athletics**.",
+      "While restrained, the character **cannot use two-handed weapons**, cannot Grab or Grapple effectively, and cannot perform any Action requiring fine motor control without the -4 penalty.",
+      "An ally can attempt to free you by picking the lock (**TECH + Pick Lock**) or cutting the restraint with an appropriate tool."
+    ]
+  },
+  {
+    "id": "vehicle-crashes-into-building",
+    "title": "Vehicle crashing into a building",
+    "topic": "Vehicles",
+    "tags": [
+      "vehicle",
+      "crash",
+      "building",
+      "wall",
+      "ram",
+      "structure",
+      "collapse",
+      "sdp"
+    ],
+    "icon": "🏚️",
+    "steps": [
+      "Treat a building collision as a **Ram** — both the vehicle and the structure take damage. The vehicle takes damage equal to the **wall's HP**, and the wall takes damage equal to the **vehicle's remaining SDP**.",
+      "All occupants of the vehicle take **6d6 damage** from the impact and suffer the **Whiplash** Critical Injury (Death Save Penalty +1), just like a standard Ram.",
+      "If the wall's HP is reduced to **0**, the vehicle punches through. Anyone on the other side of the wall may be hit at GM discretion — treat them as targets of a Ram (**6d6 damage**).",
+      "Structural collapse is a **GM call** — if a load-bearing wall is destroyed, the GM may rule that part of the building collapses, dealing additional damage (typically **4d6 to 6d6**) to anyone in the area.",
+      "The vehicle's SDP is reduced by the wall's HP. If SDP hits **0**, the vehicle is **Destroyed** and all occupants take the flat **6d6 destruction damage** on top of Ram damage."
+    ]
+  },
+  {
+    "id": "vehicle-gets-emp",
+    "title": "EMP grenade vs. a vehicle",
+    "topic": "Vehicles",
+    "tags": [
+      "emp",
+      "grenade",
+      "vehicle",
+      "electronics",
+      "disable",
+      "cyberware",
+      "electromagnetic"
+    ],
+    "icon": "⚡",
+    "steps": [
+      "An **EMP grenade** deals no direct damage but forces a **DV15 Cybertech check** or the GM disables **2 pieces of cyberware or electronics** on each affected target for **1 minute**.",
+      "Vehicle electronics (ignition, targeting systems, Agent dashboards) count as electronics. A disabled ignition means the vehicle **coasts to a stop** — the driver loses power steering and acceleration.",
+      "Occupants with **cyberware** are also affected — each must make the DV15 check or lose 2 pieces of cyberware for 1 minute. Neural Links, Cybereyes, Interface Plugs, and Speedware are all valid targets.",
+      "Cyberware with **Hardened Shielding** (1,000eb cyberlimb option) is **immune** to EMP and Non-Black ICE disabling effects.",
+      "The driver must still maintain control of a coasting vehicle — roll **REF + Drive Land Vehicle + 1d10 vs. DV13** (Emergency Stop maneuver) or **Lose Control**, which the GM resolves as an uncontrolled Ram."
+    ]
+  },
+  {
+    "id": "running-someone-over",
+    "title": "Running someone over with a vehicle",
+    "topic": "Vehicles",
+    "tags": [
+      "vehicle",
+      "run over",
+      "ram",
+      "pedestrian",
+      "drive",
+      "hit",
+      "roadkill"
+    ],
+    "icon": "🚗",
+    "steps": [
+      "Hitting a pedestrian with a vehicle is treated as a **Ram attack**. The pedestrian can attempt to dodge: **DEX + Evasion + 1d10 vs. DV13**.",
+      "If the pedestrian fails to dodge, they take **6d6 damage** and suffer the **Whiplash** Critical Injury (Death Save Penalty +1). This damage is direct — pedestrian armor applies normally.",
+      "The vehicle takes **no meaningful damage** from hitting a person — human bodies do not have enough mass to damage a vehicle's SDP in the way another vehicle or wall would.",
+      "If the pedestrian succeeds on their dodge (beats DV13), they can choose to end up **beside the vehicle or on top of it** — potentially setting up a dramatic next action.",
+      "The driver suffers no Whiplash from hitting a pedestrian. The Ram rules are designed for vehicle-vs-vehicle, so hitting a person is mechanically simpler — the vehicle just keeps going."
+    ]
+  },
+  {
+    "id": "unarmed-vs-armed",
+    "title": "Fighting unarmed against armed opponents",
+    "topic": "Combat",
+    "tags": [
+      "unarmed",
+      "brawling",
+      "melee",
+      "ranged",
+      "disadvantage",
+      "fist",
+      "body"
+    ],
+    "icon": "👊",
+    "steps": [
+      "Unarmed attacks use **DEX + Brawling + 1d10** vs. the defender's **DEX + Evasion + 1d10**. Damage is determined by BODY: **1d6** (BODY 4-), **2d6** (BODY 5-6 or 4+ with Cyberarm), **3d6** (BODY 7-10), **4d6** (BODY 11+).",
+      "Unlike melee weapons, Brawling attacks do **not** halve the defender's armor SP — you are punching directly into their full armor value, making it very hard to hurt armored targets.",
+      "Against a **ranged** opponent, you must close distance fast. You get **MOVE x 2 m/yds** of movement per Turn plus a **Run Action** (MOVE x 4 total). If you cannot reach them in one Turn, you are eating bullets.",
+      "Brawling is **2 ROF** (two punches per Action), which helps offset the lower damage. Combined with a Grab Action, you can grapple an armed opponent to neutralize their weapon advantage.",
+      "Best strategy: **close distance immediately**, use a **Grab** to enter a Grapple (both at -2 to Actions, neither can use two-handed weapons), then **Choke** for BODY damage direct to HP ignoring armor."
+    ]
+  },
+  {
+    "id": "detached-cyberlimb-as-weapon",
+    "title": "Using a detached cyberlimb as a weapon",
+    "topic": "Combat",
+    "tags": [
+      "cyberlimb",
+      "cyberarm",
+      "cyberleg",
+      "improvised",
+      "weapon",
+      "melee",
+      "detached"
+    ],
+    "icon": "🦾",
+    "steps": [
+      "There is no explicit rule for this — it falls under **GM ruling**. A detached Cyberarm or Cyberleg is a solid chunk of metal and plastic, making it a reasonable improvised weapon.",
+      "Treat it as an **improvised Heavy Melee Weapon** dealing **3d6 damage** — it has the weight and rigidity of a club or pipe. The GM may rule it as Medium Melee (2d6) for a smaller limb.",
+      "As an improvised weapon, it should be treated as **Poor quality** — on a natural roll of **1** on the attack die, it jams (or in this case, breaks or becomes unwieldy for the rest of the fight).",
+      "The attack roll uses **DEX + Melee Weapon + 1d10** vs. the defender's **DEX + Evasion + 1d10**, and like all melee weapons, it **halves the target's armor SP** (rounded up).",
+      "The original owner of the limb now has a **Dismembered Arm/Leg Critical Injury** — drop held items, Death Save Penalty +1, and for a leg: -6 MOVE (min 1) and cannot dodge."
+    ]
+  },
+  {
+    "id": "multiple-netrunners-same-arch",
+    "title": "Multiple Netrunners in the same Architecture",
+    "topic": "Netrunning",
+    "tags": [
+      "netrunner",
+      "multiple",
+      "architecture",
+      "coop",
+      "same net",
+      "two netrunners",
+      "team"
+    ],
+    "icon": "🌐",
+    "steps": [
+      "Multiple Netrunners **can** be jacked into the same NET Architecture simultaneously — each one navigates the floors independently on their own Initiative.",
+      "They can **share information** about what they have found — revealed floors, Black ICE positions, Password DVs, File locations — by communicating in meatspace or via Agent.",
+      "One Netrunner can **trigger Black ICE** on a floor, causing it to chase them, which **clears the way** for the second Netrunner to pass that floor safely.",
+      "Each Netrunner uses their own **Cyberdeck, Programs, and Interface Rank** independently. NET Actions are not pooled — each gets their own allotment based on their Interface Rank (2-5 per Turn).",
+      "If one Netrunner uses **Cloak**, it only hides their own traces — the other Netrunner must Cloak separately or their presence is automatically detectable via Pathfinder."
+    ]
+  },
+  {
+    "id": "netrunner-vs-netrunner",
+    "title": "Netrunner vs. Netrunner combat in the NET",
+    "topic": "Netrunning",
+    "tags": [
+      "netrunner",
+      "pvp",
+      "net combat",
+      "zap",
+      "brain damage",
+      "sword",
+      "attack program"
+    ],
+    "icon": "⚔️",
+    "steps": [
+      "**Zap** is the basic Netrunner-vs-Netrunner attack: **Interface + 1d10 vs. enemy Netrunner's Interface + 1d10**. On a hit, it deals **1d6 damage directly to the target's brain** (their HP, not a Program).",
+      "**Anti-Personnel Attacker Programs** also work against enemy Netrunners — Hellbolt deals **2d6 brain damage** and sets the target's Cyberdeck on fire, Vrizzbolt deals **1d6 brain damage** and costs them a NET Action.",
+      "Programs like **Sword** (ATK 1, 3d6 to Black ICE / 2d6 to Non-Black ICE) and **Banhammer** are Anti-Program weapons — they target the enemy's **Programs and their REZ**, not the Netrunner's brain directly.",
+      "**Defender Programs** protect the Netrunner's brain: **Armor** reduces brain damage by 4, **Shield** stops the first hit of Non-Black ICE brain damage, **Flak** reduces Non-Black ICE ATK to 0.",
+      "If a Netrunner's **HP reaches 0** from brain damage, they are **brain-dead** — permanently and irreversibly dead. There is **no Death Save** for brain death in the NET. Their body in meatspace collapses, lifeless."
+    ]
+  },
+  {
+    "id": "access-point-destroyed-while-jacked",
+    "title": "Access point destroyed while jacked in",
+    "topic": "Netrunning",
+    "tags": [
+      "access point",
+      "destroyed",
+      "jack out",
+      "forced",
+      "damage",
+      "disconnect",
+      "netrunner"
+    ],
+    "icon": "🔌",
+    "steps": [
+      "If the access point is destroyed while a Netrunner is jacked in, the Netrunner is **forcefully jacked out** — this is not a safe disconnection.",
+      "An unsafe Jack Out means the Netrunner suffers the effects of **all Black ICE currently in combat with them** — each piece of Black ICE gets to apply its Effect one final time as the connection severs.",
+      "The forced disconnection also deals **direct brain damage** — typically **2d6 damage directly to HP** — as the neural link is violently interrupted. This damage ignores armor.",
+      "Any Programs the Netrunner had **active are Deactivated** but not Destroyed — they can be Reactivated on the next Netrun. The Cyberdeck itself is not damaged unless Black ICE specifically caused fire.",
+      "The Netrunner must find a **new access point** to jack back in. Access points must be within **6 m/yds** to connect — the old wireless NET died in the DataKrash and has not returned."
+    ]
+  },
+  {
+    "id": "can-you-netrun-wirelessly",
+    "title": "Can you Netrun wirelessly?",
+    "topic": "Netrunning",
+    "tags": [
+      "wireless",
+      "wifi",
+      "remote",
+      "access point",
+      "jack in",
+      "datakrash",
+      "old net"
+    ],
+    "icon": "📡",
+    "steps": [
+      "**No.** Wireless Netrunning is not possible in Cyberpunk RED. The old global wireless NET was destroyed in the **DataKrash** of 2022 when Rache Bartmoss unleashed RABIDS (self-replicating AI viruses).",
+      "To Netrun, you must be **physically jacked in** via cable to an access point that is within **6 m/yds** of your position. This requires **Neural Link + Interface Plugs** cyberware.",
+      "NET Architectures are now **local** — each building, compound, or facility has its own isolated Architecture. There is no global network to surf from your couch.",
+      "The **Data Pool** exists as a city-level network for basic communication (Agents, messaging, media), but it is **not** Netrunnable — it has no Architecture, no ICE, and no loot. It is just infrastructure.",
+      "This physical limitation is why Netrunners must **go on missions** with the team — they need to reach the access point in meatspace before they can do anything in the NET."
+    ]
+  },
+  {
+    "id": "time-in-net-vs-meatspace",
+    "title": "Time in the NET vs. meatspace",
+    "topic": "Netrunning",
+    "tags": [
+      "net",
+      "time",
+      "meatspace",
+      "initiative",
+      "speed",
+      "turns",
+      "action economy"
+    ],
+    "icon": "⏱️",
+    "steps": [
+      "There is **no time dilation** in the NET. NET Actions happen at the **same speed** as Meat Actions — one Turn in the NET is one Turn (6 seconds) in meatspace.",
+      "A Netrunner acts on their **normal Initiative** (REF + 1d10). On their Turn, they choose to take either **Meat Actions** (one Action in reality) or **NET Actions** (multiple actions in the NET).",
+      "The number of NET Actions per Turn depends on **Interface Rank**: Rank 1-3 = **2 NET Actions**, Rank 4-6 = **3**, Rank 7-9 = **4**, Rank 10 = **5**.",
+      "The Netrunner always gets their **Move Action** regardless of whether they chose Meat or NET Actions — they can physically reposition in meatspace even while Netrunning.",
+      "Without **Virtuality Goggles**, a Netrunner jacked into the NET is effectively **Unconscious** in meatspace — they cannot perceive reality. With goggles, cyberspace is overlaid on their real-world vision."
+    ]
+  },
+  {
+    "id": "both-medtechs-down",
+    "title": "What to do when both Medtechs are down",
+    "topic": "Medical",
+    "tags": [
+      "medtech",
+      "down",
+      "first aid",
+      "stabilize",
+      "no medic",
+      "emergency",
+      "anyone"
+    ],
+    "icon": "🚑",
+    "steps": [
+      "**Anyone** can attempt First Aid — the check is **TECH + First Aid + 1d10** vs. the wound state DV. Every character has at least a base of +2 in First Aid, so even untrained characters can try.",
+      "Stabilization DVs are: **DV10** (Lightly Wounded), **DV13** (Seriously Wounded), **DV15** (Mortally Wounded). Mortally Wounded is the critical one — success heals to **1 HP** and the target falls Unconscious for 1 minute.",
+      "Only a **Medtech** can perform **Surgery** (treating the deadliest Critical Injuries like Dismembered Arm, Brain Injury, Lost Eye) and synthesize **Pharmaceuticals** (Speedheal, Stim, etc.).",
+      "**Paramedic** (TECH-linked, x2 cost skill) can Quick Fix or Treat most Critical Injuries short of the deadliest. It is separate from the Medtech role — anyone can invest in it.",
+      "Priority order when no Medtech is available: **1)** Stabilize Mortally Wounded characters (DV15), **2)** Quick Fix Critical Injuries causing Death Save Penalty increases, **3)** Get to a hospital (100eb/night, treatments included)."
+    ]
+  },
+  {
+    "id": "surgery-on-yourself",
+    "title": "Can you perform surgery on yourself?",
+    "topic": "Medical",
+    "tags": [
+      "surgery",
+      "self",
+      "first aid",
+      "self-surgery",
+      "medtech",
+      "treat",
+      "quick fix"
+    ],
+    "icon": "🩹",
+    "steps": [
+      "**First Aid on yourself** is allowed with no stated penalty — roll **TECH + First Aid + 1d10** vs. the DV as normal. This includes stabilizing your own wounds.",
+      "**Quick Fix** on yourself is also allowed — it removes a Critical Injury's Effect for the rest of the day, takes **1 minute**, and uses First Aid, Paramedic, or Cybertech depending on the injury.",
+      "**Treatment** (the permanent fix for Critical Injuries) **cannot be performed on yourself** — it takes **4 hours** and the rules explicitly state it cannot be self-administered.",
+      "**Surgery** is a Medtech-only skill used for Treatment of the deadliest injuries (DV17 entries like Dismembered Arm, Brain Injury, Lost Eye). Since Treatment cannot be self-performed, Surgery on yourself is **not possible** under standard rules.",
+      "In a desperate situation, a GM might allow a self-surgery attempt at a **severe penalty** (-4 or worse), but this is a house rule, not RAW."
+    ]
+  },
+  {
+    "id": "can-you-revive-the-dead",
+    "title": "Can you revive a dead character?",
+    "topic": "Medical",
+    "tags": [
+      "dead",
+      "death",
+      "revive",
+      "resurrection",
+      "death save",
+      "failed",
+      "permanent death"
+    ],
+    "icon": "💀",
+    "steps": [
+      "**No.** Once a character fails a single Death Save, they are **dead**. There is no resurrection, revival, or second chance in Cyberpunk RED's standard rules.",
+      "Death Saves are rolled at the start of each Turn while **Mortally Wounded** (below 1 HP): roll **d10 and must roll UNDER your BODY stat** to survive. A roll of **10 always fails**.",
+      "The Death Save Penalty increases by **+1 for each Death Save made** AND **+1 each time the Mortally Wounded character takes damage**. This means death comes fast — a BODY 6 character might only survive 5-6 rolls.",
+      "Stabilization is the only way to save a Mortally Wounded character — a successful **TECH + First Aid/Paramedic + 1d10 vs. DV15** heals them to **1 HP** and resets the penalty to their Base Death Save Penalty.",
+      "Certain Critical Injuries (Dismembered Arm, Collapsed Lung, Spinal Injury, etc.) permanently increase the **Base Death Save Penalty by +1** each, making future Mortally Wounded situations even more dangerous."
+    ]
+  },
+  {
+    "id": "bleeding-out-timeline",
+    "title": "How fast can you bleed out?",
+    "topic": "Medical",
+    "tags": [
+      "bleeding",
+      "mortally wounded",
+      "death save",
+      "timeline",
+      "dying",
+      "turns",
+      "rounds"
+    ],
+    "icon": "🩸",
+    "steps": [
+      "A **Mortally Wounded** character (below 1 HP) must make a **Death Save** at the start of each Turn. Each Turn is **6 seconds**, so the clock is ticking fast.",
+      "The Death Save Penalty increases by **+1 per Death Save rolled** — first save is at base penalty, second at +1, third at +2, and so on. A BODY 6 character starts failing reliably by the 4th or 5th roll.",
+      "Taking **any damage** while Mortally Wounded adds another **+1 to the Death Save Penalty** AND inflicts an additional **Critical Injury**. Getting shot while dying can push the penalty past your BODY instantly.",
+      "Mortally Wounded also imposes **-4 to all Actions** and **-6 to MOVE** (minimum 1). The character is barely functional — crawling, gasping, fading.",
+      "Realistic timeline: a character with **BODY 6** and no prior injuries has roughly **18-30 seconds** (3-5 Turns) before the escalating penalty makes death nearly certain. With incoming fire, it can be **one Turn**."
+    ]
+  },
+  {
+    "id": "prosthetic-replacement",
+    "title": "Replacing a lost limb",
+    "topic": "Medical",
+    "tags": [
+      "prosthetic",
+      "cyberarm",
+      "cyberleg",
+      "dismembered",
+      "replacement",
+      "limb",
+      "surgery",
+      "humanity"
+    ],
+    "icon": "🦿",
+    "steps": [
+      "A lost limb (from Dismembered Arm/Hand/Leg Critical Injuries) can be replaced with a **Cyberarm** (500eb, Hospital install, **7 Humanity Loss**) or **Cyberleg** (100eb, Hospital install, **3 Humanity Loss**).",
+      "Installation requires **Surgery** (Medtech role ability) at the appropriate DV — typically **DV17** for dismemberment Treatment. The limb cannot be installed while the Critical Injury is untreated.",
+      "Cyberlimbs come with **Option Slots** (Cyberarm: 4 slots, Cyberleg: 3 slots) that can hold upgrades like Wolvers, Popup Weapons, Grip Foot, Jump Booster, and more.",
+      "Alternatively, a **biosculpted meat replacement** (medical-grade, therapeutic purpose) has **no Humanity cost** but offers no enhancement — it is just a normal limb. This is more expensive and harder to obtain.",
+      "Each piece of cyberware installed reduces your **maximum recoverable Humanity by 2** (4 for borgware). A Cyberarm replacement means your Humanity cap drops by 2 permanently unless the cyberware is later removed."
+    ]
+  },
+  {
+    "id": "forcefully-drugging-someone",
+    "title": "Forcefully drugging someone",
+    "topic": "Drugs",
+    "tags": [
+      "drug",
+      "airhypo",
+      "force",
+      "unwilling",
+      "inject",
+      "restrained",
+      "grab",
+      "dose"
+    ],
+    "icon": "💉",
+    "steps": [
+      "Drugs are administered via **Airhypo**. For a willing target, it costs **1 Action**. For an unwilling target, it requires a **Melee Weapon Attack** — on a hit, the dose is administered instead of dealing damage.",
+      "The Airhypo attack uses **DEX + Melee Weapon Skill + 1d10** vs. the target's **DEX + Evasion + 1d10**. If the target is **restrained or Grabbed**, they cannot effectively dodge.",
+      "Once dosed, the target is **automatically affected** by the drug's Primary Effect — there is no Resist check for the Primary Effect. The target only rolls **WILL + Resist Torture/Drugs + 1d10** against the **Secondary Effect DV** when the Primary Effect wears off.",
+      "A Grabbed or restrained target makes drugging much easier — the Grapple imposes **-2 to all Actions** for both parties, and a restrained target effectively cannot resist the Airhypo delivery.",
+      "Medtech **Pharmaceuticals** (Rapidetox, Speedheal, Stim, etc.) follow the same delivery rules — the Airhypo is the universal delivery method. Rapidetox can also be used to **purge** an unwanted drug already in effect."
+    ]
+  },
+  {
+    "id": "equipment-in-water",
+    "title": "Equipment behavior underwater",
+    "topic": "Equipment",
+    "tags": [
+      "water",
+      "underwater",
+      "swimming",
+      "electronics",
+      "guns",
+      "melee",
+      "waterproof"
+    ],
+    "icon": "🌊",
+    "steps": [
+      "**Electronics** (Agents, Cyberdecks, non-sealed cyberware) will short out underwater unless specifically waterproofed — this is a GM ruling, as CPR does not have explicit waterproofing rules for most gear.",
+      "**Guns can fire underwater** but at a significant penalty — apply at least **-4** to the attack roll due to water resistance, reduced visibility, and altered ballistics. Exact ruling is GM discretion.",
+      "**Melee weapons** work normally underwater — water resistance slows the swing but the rules do not impose a specific mechanical penalty. A knife fight underwater is just as dangerous.",
+      "**Armor SP is unchanged** by water — Armorjack, Kevlar, and body armor still provide their listed SP. However, heavy armor may impose additional swimming difficulties at GM discretion.",
+      "**Swimming** uses **DEX + Athletics + 1d10** for checks. Characters in heavy armor (Medium Armorjack or heavier, which already impose **-2 to DEX**) will struggle significantly."
+    ]
+  },
+  {
+    "id": "improvised-armor",
+    "title": "Using improvised objects as armor and cover",
+    "topic": "Equipment",
+    "tags": [
+      "improvised",
+      "cover",
+      "table",
+      "car door",
+      "dumpster",
+      "hp",
+      "barrier"
+    ],
+    "icon": "🪑",
+    "steps": [
+      "Improvised cover is treated as **barriers with HP** — they absorb damage until destroyed, at which point they no longer provide protection. This is **not** SP on your body.",
+      "Typical HP values at GM discretion: a flipped **table** has roughly **10 HP**, a **car door** about **25 HP** (vehicle glass has **0 HP** and provides no cover), a **dumpster** around **30 HP**.",
+      "When a barrier is hit, reduce its HP by the **full damage** of the attack. Unlike body armor, barriers do **not** ablate — they simply lose HP until they hit 0 and are destroyed.",
+      "For **explosives**, if the blast destroys the cover (reduces it to 0 HP), excess damage **passes through** to targets behind it. This is different from normal ranged attacks, where excess damage is lost.",
+      "You cannot wear improvised objects as armor — holding a car door in front of you is cover, not worn SP. The distinction matters: cover requires positioning, worn armor goes everywhere with you."
+    ]
+  },
+  {
+    "id": "weapon-maintenance",
+    "title": "Weapon maintenance and degradation",
+    "topic": "Equipment",
+    "tags": [
+      "weapon",
+      "maintenance",
+      "degrade",
+      "jam",
+      "poor quality",
+      "repair",
+      "break"
+    ],
+    "icon": "🔧",
+    "steps": [
+      "Cyberpunk RED has **no explicit weapon maintenance or degradation rules** — standard and excellent quality weapons do not wear out, jam, or break from normal use.",
+      "**Poor quality weapons** have one critical weakness: on a natural roll of **1** on the attack die (before Critical Failure), the weapon **jams** and cannot be used until cleared (requires an Action).",
+      "Weapons can be damaged or destroyed by **Critical Injury effects** or specific narrative circumstances (GM ruling), but there is no round count or cleaning schedule.",
+      "A **Tech** character can repair damaged weapons using **TECH + Weaponstech + 1d10** against an appropriate DV. This also applies to upgrading weapon quality from Poor to Standard.",
+      "The simplicity is intentional — CPR focuses on action movie pacing, not gear maintenance simulationism. If your weapon works, it works until the story says otherwise."
+    ]
+  },
+  {
+    "id": "modifying-armor",
+    "title": "Modifying and improving armor",
+    "topic": "Equipment",
+    "tags": [
+      "armor",
+      "modify",
+      "upgrade",
+      "sp",
+      "ablation",
+      "repair",
+      "layering",
+      "tech"
+    ],
+    "icon": "🛡️",
+    "steps": [
+      "You **cannot add SP** to existing armor through modification — there is no crafting rule to turn SP11 Armorjack into SP13. What you buy is what you get.",
+      "A **Tech** can repair **ablated SP** using **TECH + Basic Tech + 1d10** at an appropriate DV — this restores SP lost from combat, returning the armor to its original value.",
+      "**Layering armor** is the only way to increase protection: wear two pieces, but **only the highest SP counts**. The lower-SP layer acts as a backup when the outer layer is fully ablated.",
+      "Armor ablates by **1 SP** each time damage gets through it (2 SP for Armor-Piercing ammo). Once SP hits 0, the armor is destroyed and must be replaced.",
+      "**Subdermal Armor** (SP11, 1,000eb cyberware) and **Skin Weave** (SP7, 500eb cyberware) do not stack with worn body armor — only the highest SP applies, same as layering."
+    ]
+  },
+  {
+    "id": "negotiating-with-gangs",
+    "title": "Negotiating with gangs",
+    "topic": "Social",
+    "tags": [
+      "gang",
+      "negotiate",
+      "streetwise",
+      "persuasion",
+      "cool",
+      "reputation",
+      "social"
+    ],
+    "icon": "🤝",
+    "steps": [
+      "Before negotiating, roll **COOL + Streetwise + 1d10** to assess the gang's culture, hierarchy, and what they value. This determines whether you even know the right approach — wrong customs can start a fight.",
+      "The actual negotiation uses **COOL + Persuasion + 1d10** as an **Opposed Check** vs. the gang leader's **COOL + Persuasion (or Concentration) + 1d10**. Offer something they want to lower the effective DV.",
+      "**Reputation** matters enormously — if the gang leader rolls under your Rep Level on a d10, they have heard of you. A high Rep can grant bonuses to social checks or make negotiation unnecessary.",
+      "Bringing a **Fixer** helps — their **Operator** role ability provides Contacts who may have existing relationships with the gang, and their **Haggle** ability applies to deals involving goods or services.",
+      "A wrong approach (insulting their colors, showing disrespect to leadership, flashing rival gang signs) can instantly escalate to combat. The GM sets the consequences based on the gang's temperament."
+    ]
+  },
+  {
+    "id": "blackmail-mechanics",
+    "title": "How blackmail works mechanically",
+    "topic": "Social",
+    "tags": [
+      "blackmail",
+      "leverage",
+      "persuasion",
+      "social",
+      "evidence",
+      "threat",
+      "coercion"
+    ],
+    "icon": "📁",
+    "steps": [
+      "Having genuine **leverage** (evidence of a crime, compromising information, proof of betrayal) effectively **skips the Persuasion check** for most reasonable requests — the target complies to avoid exposure.",
+      "For extreme demands (betray their gang, give up their life savings, kill someone), the GM may still require a **COOL + Persuasion + 1d10** check even with leverage, as the target weighs compliance against consequences.",
+      "The target may respond with **violence** instead of compliance — especially if they believe they can eliminate you and the evidence. Cornered people are dangerous; always have a dead man's switch.",
+      "A **Fixer's** contacts can help **verify or obtain** blackmail material through the Operator ability. A **Media's Credibility** ability can threaten to publish, adding pressure through audience reach.",
+      "Counter-blackmail is possible: the target may hire a Netrunner to find and destroy digital evidence, a Solo to eliminate you, or a Fixer to dig up dirt on you in return."
+    ]
+  },
+  {
+    "id": "spreading-false-info",
+    "title": "Spreading false information",
+    "topic": "Social",
+    "tags": [
+      "lies",
+      "deception",
+      "false info",
+      "media",
+      "credibility",
+      "conversation",
+      "human perception"
+    ],
+    "icon": "📰",
+    "steps": [
+      "For **mass disinformation**, a Media's **Credibility** role ability is the primary tool — higher Credibility Rank means larger Audience, greater Believability, and wider Impact of published stories.",
+      "For **individual deception**, use **COOL + Conversation + 1d10** (for extracting info through careful conversation) or **COOL + Persuasion + 1d10** (for convincing someone of something specific).",
+      "Detecting lies uses **INT + Human Perception + 1d10** as an Opposed Check against the liar's Persuasion or Conversation check. The detector wins ties.",
+      "A **Fixer** can spread rumors through their contact network using the **Operator** ability — this is street-level disinformation that spreads organically through the criminal underworld.",
+      "Digital disinformation requires a **Netrunner** to plant false files in a NET Architecture or manipulate data accessed through Control Nodes — this is a full Netrun with appropriate risks."
+    ]
+  },
+  {
+    "id": "building-a-crew",
+    "title": "Building a crew for a job",
+    "topic": "Social",
+    "tags": [
+      "crew",
+      "team",
+      "fixer",
+      "contacts",
+      "hiring",
+      "loyalty",
+      "jobs",
+      "party"
+    ],
+    "icon": "👥",
+    "steps": [
+      "There are **no formal crew mechanics** in Cyberpunk RED — assembling a team is driven by roleplay, contacts, and the Fixer's Operator ability. Loyalty is earned through shared experience, not a stat.",
+      "**Fixers** are the primary crew-builders — their **Operator** ability provides Contacts at various loyalty levels and Reach to find specialists. Higher Operator Rank = more contacts and wider reach.",
+      "Common crew compositions: **Neocorporate** (Exec, Netrunner, Fixer, Tech/Medtech, Solos), **Mercenary** (Fixer, Netrunner, Tech, Medtech, Solos/Nomads), **Band** (Rockerboys, Fixer manager, Tech, Solo bodyguards).",
+      "Trust is established through **shared jobs** — the GM can use the Lifepath system to create shared history, or simply have the crew's first mission together serve as the bonding experience.",
+      "Betrayal is always possible. NPCs hired for a job have their own agendas. A Fixer's contacts come with loyalty ratings, but even loyal contacts may flip if the price is right or the danger too great."
+    ]
+  },
+  {
+    "id": "using-lip-reading",
+    "title": "How does Lip Reading work?",
+    "topic": "Skills",
+    "tags": [
+      "lip reading",
+      "read lips",
+      "silent",
+      "observation",
+      "awareness",
+      "distance"
+    ],
+    "icon": "👄",
+    "steps": [
+      "**What it is:** The skill of reading someone's lips to tell what they are saying -- visual eavesdropping from a distance without needing to hear them.",
+      "**How to roll:** **INT + Lip Reading + 1d10** vs DV set by GM. Clear view at close range DV13, far away or partial view DV17. This is a **x2 cost skill** (double IP to level).",
+      "**When to use it:** Surveillance from a distance, reading a conversation through a window, eavesdropping in a loud environment where audio is useless, gathering intel without approaching the target.",
+      "**When NOT to use it -- use Perception instead:** Lip Reading determines **what someone is saying**. Perception determines **what is happening around you**. You need Perception to spot the target in the first place, then Lip Reading to understand their conversation. They often work sequentially.",
+      "**When NOT to use it -- use Human Perception instead:** Lip Reading tells you **the words** being spoken. Human Perception tells you **the emotions and intent** behind what someone says. Lip Reading is for gathering intel at a distance; Human Perception is for reading someone up close.",
+      "**Key rules:** Requires **line of sight** to the target's face. Masks, being turned away, or obstructions make it impossible. x2 cost skill (Level 1 = 40 IP, Level 10 = 400 IP). The target language must be one you speak.",
+      "**Special note:** Lip Reading is a niche but powerful surveillance skill. Combined with Image Enhance cybereyes and binoculars, a character can eavesdrop on conversations from across a crowded plaza or through a distant window."
+    ]
+  },
+  {
+    "id": "using-pilot-sea-vehicle",
+    "title": "How does Pilot Sea Vehicle work?",
+    "topic": "Skills",
+    "tags": [
+      "pilot",
+      "sea",
+      "boat",
+      "ship",
+      "submarine",
+      "water vehicle",
+      "sailing"
+    ],
+    "icon": "⛵",
+    "steps": [
+      "**What it is:** The skill of piloting and maneuvering sea vehicles -- boats, yachts, jet skis, submarines, and cargo subs.",
+      "**How to roll:** **REF + Pilot Sea Vehicle + 1d10** vs DV. Calm water DV13, rough seas DV15, storm DV17. If REF + skill > 9, basic piloting needs no check.",
+      "**When to use it:** Piloting any watercraft, performing maneuvers on water, navigating rough seas, submarine operations, waterborne chases.",
+      "**When NOT to use it -- use Drive Land Vehicle or Pilot Air Vehicle instead:** Pilot Sea Vehicle is strictly for **water vehicles**. Ground vehicles use Drive Land Vehicle. Air vehicles use Pilot Air Vehicle. Each domain has its own control skill.",
+      "**When NOT to use it -- use Sea Vehicle Tech instead:** Pilot Sea Vehicle is for **operating** the vessel. Sea Vehicle Tech is for **repairing and maintaining** it. Navigating rough seas = Pilot Sea Vehicle. Fixing a hull breach = Sea Vehicle Tech.",
+      "**Key rules:** Failed checks risk capsizing or collision. Occupants of a capsized vessel may need to swim (DEX + Athletics). Nomads with Moto add their rank to this skill. Same basic control rules as land vehicles apply.",
+      "**Special note:** Sea vehicles are less common in most campaigns but critical for coastal operations and the shipping lanes around Night City. Ship Rat Nomad families specialize in sea operations."
+    ]
+  },
+  {
+    "id": "using-riding",
+    "title": "How does Riding work?",
+    "topic": "Skills",
+    "tags": [
+      "riding",
+      "horse",
+      "animal",
+      "mount",
+      "control"
+    ],
+    "icon": "🐎",
+    "steps": [
+      "**What it is:** The skill of riding a living creature trained for the purpose -- horses, camels, and other rideable animals.",
+      "**How to roll:** **REF + Riding + 1d10** vs DV. Simple riding DV9, difficult maneuvers (gallop through traffic) DV15, combat while mounted DV17.",
+      "**When to use it:** Riding a horse or other mount, mounted combat, controlling an animal during stressful situations, performing riding maneuvers.",
+      "**When NOT to use it -- use Animal Handling instead:** Riding is for **controlling a mount while riding it**. Animal Handling is for **interacting with animals in general** (calming, training, commanding). Galloping a horse through a firefight = Riding. Getting a spooked horse to calm down before you mount = Animal Handling.",
+      "**When NOT to use it -- use Drive Land Vehicle instead:** Riding is for **living mounts**. Drive Land Vehicle is for **motorized ground vehicles**. In the Badlands, Nomads may use both -- motorcycles on roads, horses in rough terrain.",
+      "**Key rules:** Falling from a mount is treated as falling damage based on speed. Mounted characters gain height advantage but are also larger targets. Mounts have their own HP and can be targeted separately.",
+      "**Special note:** Riding is most relevant in Badlands campaigns where Nomad families may use horses for patrol and transport. In urban Night City, it is rare but not unheard of -- some gangs use horses for style and practicality in areas where vehicles cannot reach."
+    ]
+  },
+  {
+    "id": "using-accounting",
+    "title": "How does Accounting work?",
+    "topic": "Skills",
+    "tags": [
+      "accounting",
+      "money",
+      "finance",
+      "books",
+      "audit",
+      "fraud"
+    ],
+    "icon": "📊",
+    "steps": [
+      "**What it is:** The skill of balancing books, creating and identifying false books, juggling numbers, creating budgets, and handling day-to-day business operations from a financial perspective.",
+      "**How to roll:** **INT + Accounting + 1d10** vs DV. Simple books DV13, corporate accounting DV15, deliberately hidden fraud DV17+. This is a **x2 cost skill** (double IP to level).",
+      "**When to use it:** Analyzing financial records, detecting embezzlement, tracing money flows, identifying fraud, understanding corporate finances, creating convincing false financial records, auditing books.",
+      "**When NOT to use it -- use Business instead:** Accounting is for **financial records and number-crunching** specifically. Business is for **broader commercial knowledge** (corporate structures, market analysis, management, deals). Tracing money through shell companies = Accounting. Understanding a corporation's market strategy = Business.",
+      "**When NOT to use it -- use Criminology instead:** Accounting finds **financial** crimes (embezzlement, fraud, money laundering). Criminology investigates **physical** crimes (murder, theft, forensics). If the evidence is in a spreadsheet, use Accounting. If it is at a crime scene, use Criminology.",
+      "**Key rules:** x2 cost skill (Level 1 = 40 IP, Level 10 = 400 IP). Creating false books uses the same skill as detecting them (opposed check). A complementary Accounting check can grant +1 to subsequent investigation or social checks involving corporate targets.",
+      "**Special note:** Accounting is niche but invaluable for campaigns involving corporate intrigue. Execs, Fixers, and Medias investigating corporations will find this skill opens doors that no amount of Persuasion can."
+    ]
+  },
+  {
+    "id": "using-animal-handling",
+    "title": "How does Animal Handling work?",
+    "topic": "Skills",
+    "tags": [
+      "animal handling",
+      "tame",
+      "train",
+      "calm",
+      "animals",
+      "beast"
+    ],
+    "icon": "🐾",
+    "steps": [
+      "**What it is:** The skill of handling, training, and caring for animals -- calming hostile creatures, training commands, and managing domesticated or wild animals.",
+      "**How to roll:** **INT + Animal Handling + 1d10** vs DV. Train a basic command DV13, calm a hostile animal DV15, handle an exotic animal DV17.",
+      "**When to use it:** Calming a hostile or frightened animal, training an animal to follow commands, caring for pack animals, interacting with guard dogs, managing livestock, approaching wild animals safely.",
+      "**When NOT to use it -- use Riding instead:** Animal Handling is for **interacting with animals** (calming, training, commanding). Riding is for **controlling a mount while riding it**. Getting a wild horse to accept a saddle = Animal Handling. Galloping that horse through a firefight = Riding.",
+      "**When NOT to use it -- use Wilderness Survival instead:** Animal Handling is for **direct interaction** with specific animals. Wilderness Survival covers **general outdoor knowledge** including avoiding dangerous wildlife, finding animal trails, and understanding animal behavior in the wild at a broader level.",
+      "**Key rules:** Failed checks may result in the animal attacking or fleeing. Time for training varies: basic commands take days to weeks of consistent work. Exotic or dangerous animals may have higher DVs at GM discretion.",
+      "**Special note:** Most useful in Badlands campaigns where feral animals and Nomad pack animals are common. In urban Night City, guard dogs and bioengineered animals may require this skill. Some Nomad families use trained animals for security and transport."
+    ]
+  },
+  {
+    "id": "using-bureaucracy",
+    "title": "How does Bureaucracy work?",
+    "topic": "Skills",
+    "tags": [
+      "bureaucracy",
+      "government",
+      "paperwork",
+      "permits",
+      "red tape",
+      "official"
+    ],
+    "icon": "📋",
+    "steps": [
+      "**What it is:** The skill of dealing with bureaucrats, knowing who to talk to in a bureaucracy, how to reach them, and how to extract information from bureaucracies -- navigating government and official systems.",
+      "**How to roll:** **INT + Bureaucracy + 1d10** vs DV. Standard requests DV13, expedited processing DV15, bending rules DV17+.",
+      "**When to use it:** Getting permits, filing paperwork, understanding regulations, dealing with government agencies, navigating corporate HR departments, expediting official processes, finding the right person in an organization.",
+      "**When NOT to use it -- use Business instead:** Bureaucracy is for **government and official systems** (permits, regulations, government agencies). Business is for **commercial and corporate operations** (market analysis, corporate structure, business deals). Getting a building permit from city hall = Bureaucracy. Understanding Arasaka's corporate hierarchy = Business.",
+      "**When NOT to use it -- use Persuasion instead:** Bureaucracy is about **knowing the system** (who to talk to, what forms to file, how to expedite). Persuasion is about **convincing a specific person**. Knowing which office handles your request = Bureaucracy. Convincing the clerk to process it faster = Persuasion.",
+      "**Key rules:** Night City's bureaucracy is a mess. Most edgerunners skip it entirely, which is why Fixers exist. However, sometimes the legal route is the safest route, especially when dealing with Lawmen or official investigations.",
+      "**Special note:** Bureaucracy is surprisingly useful for Lawmen and Execs who operate within official systems. A complementary Bureaucracy check before dealing with government entities can provide +1 to subsequent social checks with officials."
+    ]
+  },
+  {
+    "id": "using-business",
+    "title": "How does Business work?",
+    "topic": "Skills",
+    "tags": [
+      "business",
+      "commerce",
+      "management",
+      "corporate",
+      "negotiate",
+      "deal"
+    ],
+    "icon": "💼",
+    "steps": [
+      "**What it is:** The skill of basic business practices, laws of supply and demand, employee management, procurement, sales, and marketing -- commercial and corporate knowledge. This is a **x2 cost skill**.",
+      "**How to roll:** **INT + Business + 1d10** vs DV. Basic business knowledge DV13, market analysis DV15, complex corporate maneuvering DV17+.",
+      "**When to use it:** Understanding corporate structures, evaluating business deals, managing resources, market analysis, identifying profitable opportunities, understanding corporate politics and power dynamics.",
+      "**When NOT to use it -- use Bureaucracy instead:** Business is for **commercial and corporate operations** (deals, markets, corporate structure). Bureaucracy is for **government and official systems** (permits, regulations, agencies). Evaluating a merger opportunity = Business. Filing the regulatory paperwork for the merger = Bureaucracy.",
+      "**When NOT to use it -- use Accounting instead:** Business covers **broad commercial knowledge** (strategy, management, markets). Accounting is specifically **financial records and number-crunching** (auditing, fraud detection, budgets). Understanding why a company is failing = Business. Finding where the money went = Accounting.",
+      "**Key rules:** x2 cost skill (Level 1 = 40 IP, Level 10 = 400 IP). Essential for Execs running corporate operations. A complementary Business check can grant +1 to negotiations involving corporate deals or resource management.",
+      "**Special note:** Business is the Exec's bread and butter. Combined with the Exec's Team role ability, high Business skill lets an Exec character navigate the corporate world with authority. Also useful for Fixers evaluating deals and Medias investigating corporate stories."
+    ]
+  },
+  {
+    "id": "using-composition",
+    "title": "How does Composition work?",
+    "topic": "Skills",
+    "tags": [
+      "composition",
+      "writing",
+      "poetry",
+      "songwriting",
+      "lyrics",
+      "creative writing"
+    ],
+    "icon": "✍",
+    "steps": [
+      "**What it is:** The skill of professionally writing songs, articles, stories, poetry, propaganda, and other written works.",
+      "**How to roll:** **INT + Composition + 1d10** vs DV. Decent work DV13, professional quality DV15, something truly moving/viral DV17+.",
+      "**When to use it:** Writing songs (Rockerboys), articles and screamsheet copy (Medias), propaganda, manifestos, compelling letters, creative writing, coded messages disguised as normal text.",
+      "**When NOT to use it -- use Forgery instead:** Composition creates **original written works** (songs, articles, stories). Forgery creates **fake documents designed to pass as real** (IDs, permits, official correspondence). Writing a propaganda broadsheet = Composition. Creating a fake corporate memo = Forgery.",
+      "**When NOT to use it -- use Education instead:** Composition is the **craft of writing** -- creating compelling, well-structured text. Education is **general knowledge** including basic literacy. Anyone with Education can write a coherent sentence; Composition makes it persuasive, moving, or publishable.",
+      "**Key rules:** Composition is an INT skill -- it rewards smart characters who can structure arguments and craft narratives. A complementary Composition check can grant +1 to subsequent Persuasion or social checks if the written piece is distributed beforehand.",
+      "**Special note:** Rockerboys use Composition for lyrics paired with Play Instrument and Charismatic Impact. Medias use it for articles paired with Photography/Film and Credibility. A well-composed piece of propaganda can shift public opinion without the author ever being present."
+    ]
+  },
+  {
+    "id": "using-deduction",
+    "title": "How does Deduction work?",
+    "topic": "Skills",
+    "tags": [
+      "deduction",
+      "logic",
+      "reasoning",
+      "puzzle",
+      "figure out",
+      "analyze"
+    ],
+    "icon": "🧠",
+    "steps": [
+      "**INT + Deduction + 1d10** vs DV to figure things out through logic.",
+      "Analyze clues, solve puzzles, connect disparate information, predict behavior.",
+      "DV13 for straightforward deductions, DV15 for complex reasoning, DV17+ for leaps of logic.",
+      "The GM may give bonus information or hints on a successful check."
+    ]
+  },
+  {
+    "id": "using-gamble",
+    "title": "How does Gamble work?",
+    "topic": "Skills",
+    "tags": [
+      "gamble",
+      "gambling",
+      "cards",
+      "poker",
+      "dice",
+      "betting",
+      "casino"
+    ],
+    "icon": "🎰",
+    "steps": [
+      "**INT + Gamble + 1d10** vs opponent's INT + Gamble + 1d10 (opposed).",
+      "Covers card games, dice, betting strategy, reading other gamblers.",
+      "Can also be used vs a static DV for games of chance with a skill element.",
+      "Cheating uses **TECH + Conceal/Reveal + 1d10** to hide the cheat, detected by opponent's INT + Gamble."
+    ]
+  },
+  {
+    "id": "using-wilderness-survival",
+    "title": "How does Wilderness Survival work?",
+    "topic": "Skills",
+    "tags": [
+      "wilderness",
+      "survival",
+      "badlands",
+      "camping",
+      "foraging",
+      "navigation",
+      "outdoor"
+    ],
+    "icon": "🏕",
+    "steps": [
+      "**INT + Wilderness Survival + 1d10** vs DV for surviving outside the city.",
+      "Find food/water DV13, navigate without GPS DV15, survive harsh conditions DV17.",
+      "Critical in the Badlands where there are no services and Nomad territory is vast.",
+      "Failed checks may mean getting lost, going hungry, or stumbling into danger."
+    ]
+  },
+  {
+    "id": "using-play-instrument",
+    "title": "How does Play Instrument work?",
+    "topic": "Skills",
+    "tags": [
+      "instrument",
+      "music",
+      "guitar",
+      "play",
+      "performance",
+      "band"
+    ],
+    "icon": "🎸",
+    "steps": [
+      "**TECH + Play Instrument + 1d10** vs DV for musical performance.",
+      "Each instrument is a separate skill (guitar, drums, synth, etc.).",
+      "DV13 for competent performance, DV15 for impressive, DV17+ for virtuoso.",
+      "Rockerboys combine this with Charismatic Impact for maximum crowd effect."
+    ]
+  },
+  {
+    "id": "using-air-vehicle-tech",
+    "title": "How does Air Vehicle Tech work?",
+    "topic": "Skills",
+    "tags": [
+      "air vehicle",
+      "tech",
+      "repair",
+      "av",
+      "helicopter",
+      "gyrocopter",
+      "maintain"
+    ],
+    "icon": "✈",
+    "steps": [
+      "**TECH + Air Vehicle Tech + 1d10** vs DV to repair/maintain air vehicles.",
+      "Covers AVs, gyrocopters, helicopters, aerozeps, and deltajocks.",
+      "DV13 for routine maintenance, DV15 for field repairs, DV17+ for major damage.",
+      "Nomads with Moto add their rank to this skill. Parts may need to be sourced from Fixers."
+    ]
+  },
+  {
+    "id": "using-paint-draw-sculpt",
+    "title": "How does Paint/Draw/Sculpt work?",
+    "topic": "Skills",
+    "tags": [
+      "paint",
+      "draw",
+      "sculpt",
+      "art",
+      "creative",
+      "visual art",
+      "illustration"
+    ],
+    "icon": "🎨",
+    "steps": [
+      "**TECH + Paint/Draw/Sculpt + 1d10** vs DV for visual art creation.",
+      "Create paintings, sketches, sculptures, tattoo designs, graffiti, forgeries of art.",
+      "DV13 for decent work, DV15 for professional, DV17+ for masterpiece.",
+      "Can be used to create visual forgeries (opposed by INT + Forgery to detect)."
+    ]
+  },
+  {
+    "id": "using-photography-film",
+    "title": "How does Photography/Film work?",
+    "topic": "Skills",
+    "tags": [
+      "photography",
+      "film",
+      "camera",
+      "video",
+      "record",
+      "surveillance",
+      "media"
+    ],
+    "icon": "📷",
+    "steps": [
+      "**TECH + Photography/Film + 1d10** vs DV for capturing images/video.",
+      "Surveillance footage, evidence photography, media broadcasts, braindance recording.",
+      "DV13 for clear documentation, DV15 for professional composition, DV17+ for award-winning.",
+      "Medias use this constantly. Also useful for evidence gathering and surveillance."
+    ]
+  },
+  {
+    "id": "using-sea-vehicle-tech",
+    "title": "How does Sea Vehicle Tech work?",
+    "topic": "Skills",
+    "tags": [
+      "sea vehicle",
+      "tech",
+      "repair",
+      "boat",
+      "ship",
+      "submarine",
+      "maintain"
+    ],
+    "icon": "⚓",
+    "steps": [
+      "**TECH + Sea Vehicle Tech + 1d10** vs DV to repair/maintain sea vehicles.",
+      "Covers boats, yachts, jet skis, submarines, cargo subs.",
+      "DV13 for routine maintenance, DV15 for field repairs, DV17+ for major damage.",
+      "Nomads with Moto add their rank to this skill. Ship Rat Nomads specialize in this."
     ]
   }
 ];
