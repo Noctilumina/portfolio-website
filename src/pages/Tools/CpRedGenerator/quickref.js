@@ -1,4 +1,4 @@
-// Merged quick reference — 448 entries across 17 topics
+// Merged quick reference — 455 entries across 17 topics
 
 export const QUICK_REF_TOPICS = [
   "Character Creation",
@@ -10281,6 +10281,167 @@ export const QUICK_REF = [
       "These create a nightmare of unending, bland horror -- an experience designed to be deeply unpleasant without causing physical harm.",
       "This system allows the city to incarcerate large numbers of prisoners cheaply, as cryotanks take up little space.",
       "The psychological effects of extended braindance punishment are severe and long-lasting."
+    ]
+  },
+  {
+    "id": "looting-a-body",
+    "title": "Looting a fallen enemy",
+    "topic": "Equipment",
+    "tags": [
+      "loot",
+      "looting",
+      "body",
+      "dead",
+      "search",
+      "pickup",
+      "scavenge",
+      "fallen"
+    ],
+    "icon": "📦",
+    "steps": [
+      "Looting a body costs **1 Action** (takes your whole turn in combat, or about 1 minute outside combat).",
+      "You find whatever the NPC was carrying: their **weapon**, **ammo** (remaining in magazine + spare), **armor** (at current ablated SP), and any **personal items**.",
+      "Armor looted from enemies is at its **current SP** (already ablated from the fight). It can be repaired with **TECH + Basic Tech**.",
+      "Weapons looted retain their **quality** (Poor/Standard/Excellent) and any attachments.",
+      "The GM decides if the NPC had any **eddies**, **drugs**, **data chips**, or other valuables. Mooks typically carry **10-50eb**. Lieutenants may carry **50-200eb**."
+    ]
+  },
+  {
+    "id": "looting-a-location",
+    "title": "Searching a room or location",
+    "topic": "Equipment",
+    "tags": [
+      "search",
+      "loot",
+      "room",
+      "location",
+      "find",
+      "hidden",
+      "stash",
+      "scavenge"
+    ],
+    "icon": "🔍",
+    "steps": [
+      "Searching a room takes **1 minute per 3m x 3m area** (roughly one small room).",
+      "Roll **INT + Perception + 1d10** vs a DV set by the GM (hidden safe DV17, concealed compartment DV15, obvious desk drawer DV9).",
+      "Finding hidden items may require **TECH + Electronics/Security Tech** (for electronic locks/safes) or **TECH + Pick Lock** (for physical locks).",
+      "Larger locations (warehouses, offices) should be broken into zones. Each zone takes a separate search.",
+      "Time pressure matters: searching during or right after combat risks reinforcements, alarms, or NCPD arrival."
+    ]
+  },
+  {
+    "id": "selling-loot",
+    "title": "Selling looted gear",
+    "topic": "Equipment",
+    "tags": [
+      "sell",
+      "selling",
+      "loot",
+      "fence",
+      "pawn",
+      "value",
+      "trade",
+      "fixer"
+    ],
+    "icon": "💰",
+    "steps": [
+      "Looted gear sells for roughly **half its book price** at pawn shops and street dealers.",
+      "A **Fixer** with the **Haggle** ability can negotiate better prices, potentially getting closer to full value depending on their rank.",
+      "Use **COOL + Trading + 1d10** vs the buyer to negotiate price. Beat their roll and you get a better deal.",
+      "**Hot merchandise** (visibly stolen corpo gear, identifiable weapons) sells for less and may attract unwanted attention.",
+      "Cyberware can only be sold to **ripperdocs**, who will pay roughly half price. Removing installed cyberware from a body requires **Surgery**."
+    ]
+  },
+  {
+    "id": "stripping-cyberware",
+    "title": "Taking cyberware from a body",
+    "topic": "Cyberware",
+    "tags": [
+      "cyberware",
+      "loot",
+      "strip",
+      "harvest",
+      "ripperdoc",
+      "surgery",
+      "remove",
+      "body"
+    ],
+    "icon": "✂",
+    "steps": [
+      "Removing cyberware from a body (alive or dead) requires **TECH + Surgery + 1d10** vs a DV based on the cyberware type.",
+      "You need a **Medtech Bag** or proper surgical tools. Improvised tools impose a **-2 penalty**.",
+      "Cyberware removed from a **dead body** has a chance of being damaged. GM may rule a quality check.",
+      "Cyberware removed from a **living person** without anesthesia causes massive trauma. The subject takes damage and must make **Death Saves** if not already Mortally Wounded.",
+      "Found cyberware still needs to be **installed by a ripperdoc** before you can use it. Installation costs and Humanity Loss still apply."
+    ]
+  },
+  {
+    "id": "what-do-enemies-carry",
+    "title": "What do enemies typically carry?",
+    "topic": "GM Tips",
+    "tags": [
+      "loot",
+      "enemies",
+      "carry",
+      "equipment",
+      "mook",
+      "gear",
+      "npc",
+      "inventory"
+    ],
+    "icon": "🎒",
+    "steps": [
+      "**Boostergangers**: VH Pistol, Rippers, Light Armorjack (SP4), 1d6 x 10eb, street drugs (50% chance).",
+      "**Bodyguards**: Shotgun or VH Pistol, Heavy Armorjack (SP7), 2d6 x 10eb, spare ammo.",
+      "**Security Operatives**: Assault Rifle, VH Pistol, Heavy Armorjack (SP7), corporate ID, 3d6 x 10eb.",
+      "**Security Officers**: Assault Rifle, VH Pistol, Medium Melee, Flak (SP13), corporate ID, 5d6 x 10eb, possible encrypted data chip.",
+      "**Netrunners**: VH Pistol, Light Armorjack (SP11), Cyberdeck with programs, 3d6 x 10eb, data chips.",
+      "**Cyberpsycho**: Multiple weapons, SP11 armor, extensive cyberware (not easily removable), 1d6 x 100eb."
+    ]
+  },
+  {
+    "id": "loot-tables-explained",
+    "title": "How do loot tables work?",
+    "topic": "GM Tips",
+    "tags": [
+      "loot",
+      "table",
+      "random",
+      "generator",
+      "drops",
+      "rewards",
+      "treasure"
+    ],
+    "icon": "🎰",
+    "steps": [
+      "CPR doesn't have traditional \"loot tables\" like D&D. Instead, NPCs carry **what makes sense for their role and situation**.",
+      "The GM decides loot based on the enemy type: a corporate guard carries corporate weapons, a boosterganger carries street gear.",
+      "For **random loot**, the Night Market tables (d100 per category) work well as a \"what did they have on them?\" generator.",
+      "Weapon **quality** should match the enemy tier: Mooks carry Poor/Standard, Lieutenants carry Standard, Mini Bosses carry Standard/Excellent.",
+      "The real loot in CPR is **information**: data chips, access codes, blackmail material, and contacts. These are often more valuable than gear."
+    ]
+  },
+  {
+    "id": "dividing-loot",
+    "title": "How to split loot in a group",
+    "topic": "Social",
+    "tags": [
+      "loot",
+      "split",
+      "divide",
+      "share",
+      "party",
+      "eddies",
+      "group",
+      "fair"
+    ],
+    "icon": "⚖",
+    "steps": [
+      "CPR has no official loot-splitting rules. It's a **roleplay decision** for the crew.",
+      "Common approaches: **equal split** of eddies, **need-based** for gear (whoever can use it best), or **finders keepers** (whoever searched gets it).",
+      "A **Fixer** in the party often handles selling and distribution, using their Haggle ability to maximize value.",
+      "Disputes over loot can be great **roleplay opportunities**, just make sure it doesn't derail the session.",
+      "For mission pay from a Fixer, the standard is **per-person payment** (everyone gets the agreed amount, not a split of one sum)."
     ]
   }
 ];

@@ -62,7 +62,7 @@ All items have flavor text and a "Found:" field so you know where characters mig
 
 1. **Follow the actual rules.** My first Night Market generator just made stuff up. It worked fine for improv, but the book has specific tables that produce better variety than I'd come up with on the fly.
 2. **Flavor text matters.** "Heavy Pistol, 3d6, 100eb" is forgettable. "Midnight Arms Borg. Massive hand cannon. Named for what it takes to handle the recoil" makes your players want it. Good flavor is free worldbuilding.
-3. **Verification is critical.** I used LLMs to extract the rules from the PDF, and the first draft had death saves backwards and drug effects wrong. The mechanics were close enough that I'd been running them "approximately right" for sessions, but having the exact rules means fewer arguments and fairer outcomes.
+3. **Verification is critical.** I used LLM-based structured data extraction to pull rules from the PDF, then ran an LLM-as-judge verification pass to cross-check against the source. The first draft had death saves backwards and drug effects hallucinated. The mechanics were close enough that I'd been running them "approximately right" for sessions, but having the exact rules means fewer arguments and fairer outcomes.
 4. **Automate the busywork, not the creativity.** I don't want a tool that runs my sessions for me. I want one that handles the tedious mechanical lookups so I can focus on reacting to my players, building atmosphere, and improvising the moments that make the game memorable.
 
 If you're a CPR GM, the whole thing lives in my portfolio's Tools section. Roll some encounters, generate a Night Market, and let me know if you find any rules I got wrong.

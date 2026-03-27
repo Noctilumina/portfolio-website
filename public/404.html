@@ -8,19 +8,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
     <title>404 — Iris Peters</title>
     <script>
-      // SPA redirect: if this is a valid app route, redirect to index with the path
+      // SPA redirect for GitHub Pages
+      // All unknown routes hit this 404.html. We store the path and redirect
+      // to index.html, where a script picks it up and lets React Router handle it.
       (function() {
-        var defined = ['/', '/project/'];
-        var path = window.location.pathname;
         var base = '/portfolio-website';
-        var relative = path.replace(base, '');
-        for (var i = 0; i < defined.length; i++) {
-          if (relative === defined[i] || relative.startsWith(defined[i])) {
-            sessionStorage.setItem('spa-redirect', relative);
-            window.location.replace(base + '/?redirect=' + encodeURIComponent(relative));
-            return;
-          }
-        }
+        var path = window.location.pathname.replace(base, '') || '/';
+        var search = window.location.search || '';
+        var hash = window.location.hash || '';
+        sessionStorage.setItem('spa-redirect', path + search + hash);
+        window.location.replace(base + '/');
       })();
     </script>
     <style>

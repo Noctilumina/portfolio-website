@@ -1,6 +1,6 @@
 # Building a Tools Page (Because My Portfolio Was Getting Crowded)
 
-I've been building small tools for years. A CV builder here, a markdown editor there, a JSON formatter for when I'm too lazy to open a proper IDE. They were all sitting in random repos, half-forgotten. Then I realized: my portfolio already has the infrastructure. Why not give them a home?
+I'd built a handful of small tools. A CV builder here, a markdown editor there, a JSON formatter for when I'm too lazy to open a proper IDE. They were sitting in random repos, half-forgotten. Then I realized: my portfolio already has the infrastructure. Why not give them a home?
 
 ## The Problem
 

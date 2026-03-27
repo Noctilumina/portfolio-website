@@ -14,9 +14,9 @@ I wanted to spend my energy on making sessions memorable, not on being a rules l
 
 ## Extracting the Rules
 
-The Cyberpunk Red core rulebook is a PDF. I converted specific page ranges to text, then used LLMs to structure the raw text into organized wiki entries. Each entry gets an ID, title, category, markdown content, and cross-reference links to related entries.
+The Cyberpunk Red core rulebook is a PDF. I used a **retrieval-augmented generation** approach: extract specific page ranges to text, then use an LLM to perform **structured data extraction**, converting raw prose and tables into organized wiki entries with consistent schemas (ID, title, category, markdown content, cross-reference links).
 
-The LLM approach worked well for the initial extraction but introduced some interesting errors (more on that below). The key was treating the LLM output as a first draft, not a finished product.
+For larger sections I used **task decomposition**, splitting the book into thematic chunks and processing them in parallel with separate LLM agents. Each agent had a focused scope (combat mechanics, equipment catalogs, lore) which improved extraction accuracy over trying to process everything at once.
 
 ## The Wiki: 100 Articles, 23 Categories
 
@@ -42,19 +42,21 @@ This is the part I'm most excited to actually use. The "Quick Ref" mode has a bi
 
 Each entry has tags for fuzzy search, an emoji icon, and 4-7 numbered steps with the key mechanics in bold.
 
-## Verification Pass
+## Verification: LLM-as-Judge
 
-Here's the thing about using LLMs to extract rules: they confidently get things wrong. My first pass had death saves backwards (roll UNDER BODY, not over), grapple damage wrong (BODY stat, not 3d6), suppressive fire dealing damage (it doesn't), and drug effects that were completely fabricated.
+Here's the thing about LLM-generated content: it's confidently wrong in ways that are hard to spot. My first extraction pass had death saves backwards, grapple damage wrong, suppressive fire dealing damage (it doesn't), and drug effects that were hallucinated entirely.
 
-I ran a verification pass where I cross-checked every single quick ref entry against the actual PDF text. Found 67 errors across 47 entries, plus 35 missing mechanics. Some highlights of what was wrong:
+To catch these, I used an **LLM-as-judge** pattern: separate verification agents that cross-referenced every quick ref entry against the source PDF text, flagging discrepancies. This is essentially **automated peer review**, where the judge agent has no knowledge of what the extraction agent produced and evaluates purely against the source material.
 
-- Death saves: roll UNDER BODY to survive, 10 always fails (LLM had it backwards)
-- Critical injuries trigger on two or more 6s on damage dice (not crossing wound thresholds)
-- Falling damage is 2d6 per 10m and armor DOES help (LLM had 1d6 per meter, armor doesn't help)
-- Every single drug entry was wrong
-- Several "gangs" were from Cyberpunk 2077, not the RED core book
+The judges found 67 errors across 47 entries, plus 35 missing mechanics:
 
-Lesson: always verify against the source. LLM-extracted data is a great starting point but needs a human pass before you trust it at the table.
+- Death saves: roll UNDER BODY to survive, 10 always fails (extraction agent had it inverted)
+- Critical injuries trigger on two or more 6s on damage dice (not crossing wound thresholds, a **confabulation** where the LLM filled in plausible-sounding but incorrect logic)
+- Falling damage is 2d6 per 10m and armor DOES help (entirely fabricated damage scale)
+- Every single drug entry had hallucinated stat bonuses
+- Several "gangs" were from Cyberpunk 2077, not the RED core book (**domain contamination** from training data)
+
+The judge pattern caught issues I wouldn't have noticed myself, since many of the errors sounded mechanically reasonable. It's a good reminder that LLM extraction needs systematic validation, not just a quick skim.
 
 ## Testing It
 
