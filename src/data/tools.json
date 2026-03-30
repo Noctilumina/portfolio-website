@@ -82,28 +82,28 @@
   {
     "slug": "image-tagger",
     "title": "Image Tagger",
-    "shortDescription": "Tag and organize images with custom labels. Local repo — coming soon.",
+    "shortDescription": "Tag and organize images with custom labels.",
     "techStack": ["React"],
     "categories": ["Images", "Productivity"],
     "githubUrl": "",
-    "liveUrl": ""
+    "liveUrl": "https://noctilumina.github.io/MapMaker/tag-editor.html"
   },
   {
     "slug": "sprite-selector",
-    "title": "Sprite Selector",
-    "shortDescription": "Select and extract sprites from sprite sheets. Local repo — coming soon.",
+    "title": "Sprite Extractor",
+    "shortDescription": "Select and extract sprites from sprite sheets.",
     "techStack": ["React", "Canvas API"],
     "categories": ["Images", "Gamedev", "Creative"],
     "githubUrl": "",
-    "liveUrl": ""
+    "liveUrl": "https://noctilumina.github.io/MapMaker/sprite-extractor.html"
   },
   {
     "slug": "ttrpg-map-maker",
     "title": "TTRPG Map Maker",
-    "shortDescription": "Grid-based map builder for tabletop RPG sessions. Local repo — coming soon.",
+    "shortDescription": "Grid-based map builder for tabletop RPG sessions.",
     "techStack": ["React", "Konva.js"],
     "categories": ["TTRPG", "Gamedev", "Builder", "Creative"],
     "githubUrl": "",
-    "liveUrl": ""
+    "liveUrl": "https://noctilumina.github.io/MapMaker/"
   }
 ]

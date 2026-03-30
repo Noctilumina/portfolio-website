@@ -136,15 +136,15 @@
     },
     "image-tagger": {
       "title": "Image Tagger",
-      "shortDescription": "Tag en organiseer afbeeldingen met aangepaste labels. Lokale repo — binnenkort beschikbaar."
+      "shortDescription": "Tag en organiseer afbeeldingen met aangepaste labels."
     },
     "sprite-selector": {
-      "title": "Sprite Selector",
-      "shortDescription": "Selecteer en extraheer sprites uit sprite sheets. Lokale repo — binnenkort beschikbaar."
+      "title": "Sprite Extractor",
+      "shortDescription": "Selecteer en extraheer sprites uit sprite sheets."
     },
     "ttrpg-map-maker": {
       "title": "TTRPG Map Maker",
-      "shortDescription": "Rastergebaseerde kaartbouwer voor tabletop RPG-sessies. Lokale repo — binnenkort beschikbaar."
+      "shortDescription": "Rastergebaseerde kaartbouwer voor tabletop RPG-sessies."
     }
   },
   "diffChecker": {
