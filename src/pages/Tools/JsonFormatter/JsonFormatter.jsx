@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useI18n } from '../../../i18n/I18nContext';
 import { usePageTransition } from '../../../App';
+import { Routes } from '../../../constants/routes';
 import styles from './JsonFormatter.module.css';
 
 function JsonTree({ data, depth = 0 }) {
@@ -144,7 +145,7 @@ export default function JsonFormatter() {
       </div>
 
       <div className={styles.backWrapper}>
-        <button className={styles.backButton} onClick={() => startTransition('/tools')}>
+        <button className={styles.backButton} onClick={() => startTransition(Routes.TOOLS)}>
           {t('jsonFormatter.backTools')}
         </button>
       </div>

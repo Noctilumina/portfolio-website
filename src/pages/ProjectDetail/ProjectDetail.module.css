@@ -17,7 +17,7 @@
   cursor: pointer;
   background: none;
   border: none;
-  transition: color 0.2s;
+  transition: color var(--transition-slow);
 }
 
 .backButton:hover {
@@ -28,9 +28,9 @@
   width: 100%;
   height: 300px;
   background: var(--color-primary);
-  border: 0.2em solid var(--color-border);
-  border-radius: 0.3em;
-  box-shadow: 0.5em 0.5em 0 var(--color-shadow, #000);
+  border: var(--border-heavy) solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-2xl);
   margin-bottom: 2rem;
   display: flex;
   align-items: center;
@@ -84,9 +84,9 @@
   padding: 0.3em 0.7em;
   background: var(--color-surface);
   color: var(--color-primary);
-  border: 0.12em solid var(--color-border);
-  border-radius: 0.3em;
-  box-shadow: 0.15em 0.15em 0 rgba(0, 0, 0, 0.3);
+  border: var(--border-light) solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -106,7 +106,7 @@
 }
 
 .features li::before {
-  content: '→';
+  content: '\2192';
   color: var(--color-primary);
   font-weight: 700;
 }
@@ -119,18 +119,18 @@
 
 .link {
   padding: 0.6rem 1.5rem;
-  border: 0.15em solid var(--color-border);
-  border-radius: 0.3em;
-  box-shadow: 0.2em 0.2em 0 var(--color-shadow, #000);
+  border: var(--border-medium) solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
   font-weight: 700;
   font-size: 0.9rem;
   text-transform: uppercase;
-  transition: transform 0.15s, box-shadow 0.15s;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
 }
 
 .link:hover {
   transform: translate(-0.1em, -0.1em);
-  box-shadow: 0.3em 0.3em 0 var(--color-shadow, #000);
+  box-shadow: var(--shadow-lg);
 }
 
 .primaryLink {

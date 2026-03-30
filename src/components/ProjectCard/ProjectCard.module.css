@@ -41,11 +41,11 @@
   width: 4em;
   height: 4em;
   background: #00E5A0;
-  border: 0.15em solid var(--shadow);
-  border-radius: 0.3em;
+  border: var(--border-medium) solid var(--shadow);
+  border-radius: var(--radius-md);
   transform: rotate(45deg);
   z-index: 3;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-paint);
 }
 
 .card:hover .cornerTriangle {
@@ -62,7 +62,7 @@
   background-size: 0.5em 0.5em;
   pointer-events: none;
   opacity: 0.5;
-  transition: opacity 0.4s ease;
+  transition: opacity var(--transition-wipe);
   z-index: 1;
 }
 
@@ -79,7 +79,7 @@
   background-position: -0.5em -0.5em;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity var(--transition-wipe);
   z-index: 1;
 }
 
@@ -178,8 +178,8 @@
   padding: 0.4em 0.8em;
   background: var(--card-bg, var(--color-surface));
   color: var(--card-tag-text, var(--color-primary));
-  border: 0.15em solid var(--shadow);
-  border-radius: 0.3em;
+  border: var(--border-medium) solid var(--shadow);
+  border-radius: var(--radius-md);
   box-shadow: 0.2em 0.2em 0 var(--shadow);
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -191,11 +191,11 @@
   width: 2.5em;
   height: 2.5em;
   background: #00E5A0;
-  border: 0.15em solid var(--shadow);
-  border-radius: 0.3em;
+  border: var(--border-medium) solid var(--shadow);
+  border-radius: var(--radius-md);
   transform: rotate(45deg);
   z-index: 4;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-paint);
 }
 
 .accentShapeSmall {
@@ -203,11 +203,11 @@
   width: 1.4em;
   height: 1.4em;
   background: #FFD700;
-  border: 0.15em solid var(--shadow);
-  border-radius: 0.3em;
+  border: var(--border-medium) solid var(--shadow);
+  border-radius: var(--radius-md);
   transform: rotate(45deg);
   z-index: 4;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-paint);
 }
 
 .card:hover .accentShape {
@@ -225,7 +225,7 @@
   height: 1.5em;
   background: var(--card-bg, var(--color-surface));
   z-index: 3;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-paint);
 }
 
 .card:hover .cornerSlice {

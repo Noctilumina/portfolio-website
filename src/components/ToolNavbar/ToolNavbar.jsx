@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { usePageTransition } from '../../App';
 import { useI18n } from '../../i18n/I18nContext';
+import { Routes } from '../../constants/routes';
 import styles from './ToolNavbar.module.css';
 
 /**
@@ -26,7 +27,7 @@ export default function ToolNavbar({ title, backTo, backLabel, children }) {
     <div className={styles.toolbar} role="navigation" aria-label="Tool navigation">
       <button
         className={styles.logo}
-        onClick={() => startTransition('/')}
+        onClick={() => startTransition(Routes.HOME)}
         aria-label={t('nav.goToTop')}
       >
         {t('nav.portfolio')}

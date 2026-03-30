@@ -8,10 +8,10 @@
   font-weight: 700;
   font-family: var(--font-heading);
   text-transform: uppercase;
-  border: 0.15em solid var(--color-border);
-  border-radius: 0.3em;
-  z-index: 200;
-  transition: top 0.2s;
+  border: var(--border-medium) solid var(--color-border);
+  border-radius: var(--radius-md);
+  z-index: var(--z-modal);
+  transition: top var(--transition-slow);
 }
 
 .skipLink:focus {
@@ -23,15 +23,15 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: var(--z-navbar);
   padding: 0.8rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: var(--color-bg);
-  border-bottom: 0.2em solid var(--color-border);
+  border-bottom: var(--border-heavy) solid var(--color-border);
   box-shadow: 0 0.3em 0 var(--color-shadow, #000);
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-paint);
 }
 
 .hidden {
@@ -127,7 +127,7 @@
   width: 24px;
   height: 3px;
   background: var(--color-text);
-  transition: transform 0.3s, opacity 0.3s;
+  transition: transform var(--transition-paint), opacity var(--transition-paint);
 }
 
 .hamburgerOpen span:nth-child(1) {

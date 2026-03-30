@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useI18n } from '../../../i18n/I18nContext';
 import { usePageTransition } from '../../../App';
+import { Routes } from '../../../constants/routes';
 import styles from './ShadowGenerator.module.css';
 
 const PRESETS = [
@@ -244,7 +245,7 @@ export default function ShadowGenerator() {
       </div>
 
       <div className={styles.backWrapper}>
-        <button className={styles.backButton} onClick={() => startTransition('/tools')}>
+        <button className={styles.backButton} onClick={() => startTransition(Routes.TOOLS)}>
           {t('shadowGen.backTools')}
         </button>
       </div>

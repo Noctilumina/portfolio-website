@@ -4,9 +4,9 @@
   padding-left: 2.5rem;
   margin-bottom: 1.5rem;
   background: var(--color-surface, #ffffff);
-  border: 0.15em solid var(--tl-border, var(--color-border));
-  border-radius: 0.3em;
-  box-shadow: 0.3em 0.3em 0 var(--tl-shadow, var(--color-shadow, #000));
+  border: var(--border-medium) solid var(--tl-border, var(--color-border));
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
 }
 
 .dot {
@@ -15,7 +15,7 @@
   top: 1.2rem;
   width: 14px;
   height: 14px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   background: var(--tl-dot-bg, var(--color-primary));
   border: 3px solid var(--tl-dot-border, var(--color-bg));
   box-shadow: 0 0 0 2px var(--tl-dot-shadow, var(--color-primary));
@@ -57,9 +57,9 @@
 .client {
   padding: 0.75rem 1rem;
   background: var(--color-bg, #f5f0eb);
-  border: 0.1em solid #000000;
-  border-radius: 0.3em;
-  box-shadow: 0.15em 0.15em 0 #000000;
+  border: var(--border-thin) solid #000000;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
   position: relative;
   overflow: hidden;
 }
@@ -111,9 +111,9 @@
   padding: 0.4em 0.8em;
   background: var(--color-surface, #ffffff);
   color: var(--color-primary);
-  border: 0.1em solid #000000;
-  border-radius: 0.3em;
-  box-shadow: 0.12em 0.12em 0 #000000;
+  border: var(--border-thin) solid #000000;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xs);
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }

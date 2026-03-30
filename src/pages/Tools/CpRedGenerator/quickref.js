@@ -13619,10 +13619,11 @@ export const QUICK_REF = [
     ],
     "icon": "🧠",
     "steps": [
-      "**INT + Deduction + 1d10** vs DV to figure things out through logic.",
-      "Analyze clues, solve puzzles, connect disparate information, predict behavior.",
-      "DV13 for straightforward deductions, DV15 for complex reasoning, DV17+ for leaps of logic.",
-      "The GM may give bonus information or hints on a successful check."
+      "**What it is:** The skill of logical reasoning, connecting clues, and drawing conclusions from available information.",
+      "**How to roll:** **INT + Deduction + 1d10** vs DV set by GM (DV13 straightforward, DV15 complex, DV17+ leaps of logic).",
+      "**When to use it:** Analyzing clues at a scene, solving puzzles, predicting someone's next move based on their pattern, connecting disparate pieces of information.",
+      "**When to use something else:** Use **Criminology** for crime-scene-specific analysis (forensics, cause of death, evidence reading). Use **Education** for recalling known facts. Deduction is for *figuring out new things* from what you already know.",
+      "**Key details:** The GM may provide bonus information or reveal hidden connections on a successful check. Complementary to Criminology and Perception."
     ]
   },
   {
@@ -13640,10 +13641,11 @@ export const QUICK_REF = [
     ],
     "icon": "🎰",
     "steps": [
-      "**INT + Gamble + 1d10** vs opponent's INT + Gamble + 1d10 (opposed).",
-      "Covers card games, dice, betting strategy, reading other gamblers.",
-      "Can also be used vs a static DV for games of chance with a skill element.",
-      "Cheating uses **TECH + Conceal/Reveal + 1d10** to hide the cheat, detected by opponent's INT + Gamble."
+      "**What it is:** Knowledge of gambling games, betting strategy, reading other players, and knowing when to fold.",
+      "**How to roll:** **INT + Gamble + 1d10** vs opponent's **INT + Gamble + 1d10** (opposed) for player-vs-player games.",
+      "**When to use it:** Card games, dice games, betting on fights/races, reading a bluff at the poker table.",
+      "**When to use something else:** Use **Human Perception** to read someone's emotions (Gamble only reads gambling tells). Use **TECH + Conceal/Reveal** to cheat (hiding cards, loaded dice), detected by opponent's **INT + Gamble**.",
+      "**Key details:** Can be used for earning eddies during downtime. House always has an edge at DV-based games of chance."
     ]
   },
   {
@@ -13661,10 +13663,11 @@ export const QUICK_REF = [
     ],
     "icon": "🏕",
     "steps": [
-      "**INT + Wilderness Survival + 1d10** vs DV for surviving outside the city.",
-      "Find food/water DV13, navigate without GPS DV15, survive harsh conditions DV17.",
-      "Critical in the Badlands where there are no services and Nomad territory is vast.",
-      "Failed checks may mean getting lost, going hungry, or stumbling into danger."
+      "**What it is:** Knowing how to survive outside the city: finding food, water, shelter, navigation, and avoiding environmental hazards.",
+      "**How to roll:** **INT + Wilderness Survival + 1d10** vs DV (find food/water DV13, navigate without GPS DV15, survive harsh conditions DV17).",
+      "**When to use it:** Travelling through the Badlands, surviving after a vehicle breakdown, foraging for food, reading weather, avoiding natural hazards.",
+      "**When to use something else:** Use **Athletics** for physical feats in the wild (climbing, swimming). Use **Tracking** to follow someone through wilderness. Wilderness Survival is about *staying alive*, not pursuing targets.",
+      "**Key details:** Critical in the Badlands. Failed checks mean getting lost, going hungry, or stumbling into danger. Nomads often have this at high levels."
     ]
   },
   {
@@ -13681,10 +13684,11 @@ export const QUICK_REF = [
     ],
     "icon": "🎸",
     "steps": [
-      "**TECH + Play Instrument + 1d10** vs DV for musical performance.",
-      "Each instrument is a separate skill (guitar, drums, synth, etc.).",
-      "DV13 for competent performance, DV15 for impressive, DV17+ for virtuoso.",
-      "Rockerboys combine this with Charismatic Impact for maximum crowd effect."
+      "**What it is:** The ability to play a musical instrument with skill. Each instrument is a *separate* skill (guitar, drums, synth, violin, etc.).",
+      "**How to roll:** **TECH + Play Instrument + 1d10** vs DV (DV13 competent, DV15 impressive, DV17+ virtuoso).",
+      "**When to use it:** Performing at a venue, busking for eddies, accompanying a Rockerboy, impressing someone, creating a distraction.",
+      "**When to use something else:** Use **Composition** for *writing* music. Use **Charismatic Impact** (Rockerboy ability) for *moving crowds*. Play Instrument is the technical execution, not the creative or social impact.",
+      "**Key details:** Rockerboys combine this with Charismatic Impact for maximum effect. You need an actual instrument to use this skill."
     ]
   },
   {
@@ -13702,10 +13706,11 @@ export const QUICK_REF = [
     ],
     "icon": "✈",
     "steps": [
-      "**TECH + Air Vehicle Tech + 1d10** vs DV to repair/maintain air vehicles.",
-      "Covers AVs, gyrocopters, helicopters, aerozeps, and deltajocks.",
-      "DV13 for routine maintenance, DV15 for field repairs, DV17+ for major damage.",
-      "Nomads with Moto add their rank to this skill. Parts may need to be sourced from Fixers."
+      "**What it is:** The technical skill of repairing, maintaining, and modifying air vehicles (AVs, gyrocopters, helicopters, aerozeps).",
+      "**How to roll:** **TECH + Air Vehicle Tech + 1d10** vs DV (routine maintenance DV13, field repairs DV15, major damage DV17+).",
+      "**When to use it:** Fixing a damaged AV after combat, performing pre-flight checks, modifying an air vehicle, diagnosing engine problems.",
+      "**When to use something else:** Use **Land Vehicle Tech** for ground vehicles. Use **Sea Vehicle Tech** for boats. Use **Basic Tech** only if no specific vehicle tech skill applies (and at higher DV). Use **Pilot Air Vehicle** for *flying*, not repairing.",
+      "**Key details:** Nomads with Moto ability add their rank to this skill. Air vehicle parts are expensive and hard to find."
     ]
   },
   {
@@ -13723,10 +13728,11 @@ export const QUICK_REF = [
     ],
     "icon": "🎨",
     "steps": [
-      "**TECH + Paint/Draw/Sculpt + 1d10** vs DV for visual art creation.",
-      "Create paintings, sketches, sculptures, tattoo designs, graffiti, forgeries of art.",
-      "DV13 for decent work, DV15 for professional, DV17+ for masterpiece.",
-      "Can be used to create visual forgeries (opposed by INT + Forgery to detect)."
+      "**What it is:** Creating visual art: painting, drawing, sculpting, tattoo design, graffiti, murals, and digital art.",
+      "**How to roll:** **TECH + Paint/Draw/Sculpt + 1d10** vs DV (DV13 decent, DV15 professional, DV17+ masterpiece).",
+      "**When to use it:** Creating art for sale, designing tattoos, painting gang tags, creating visual forgeries, sketching a suspect from description.",
+      "**When to use something else:** Use **Forgery** for *documents and IDs*. Use **Composition** for *written works*. Use **Photography/Film** for *capturing* images rather than *creating* them. Paint/Draw/Sculpt is handmade visual creation.",
+      "**Key details:** Can be used to create visual forgeries of art (opposed by INT + Forgery to detect). Useful for earning downtime eddies."
     ]
   },
   {
@@ -13744,10 +13750,11 @@ export const QUICK_REF = [
     ],
     "icon": "📷",
     "steps": [
-      "**TECH + Photography/Film + 1d10** vs DV for capturing images/video.",
-      "Surveillance footage, evidence photography, media broadcasts, braindance recording.",
-      "DV13 for clear documentation, DV15 for professional composition, DV17+ for award-winning.",
-      "Medias use this constantly. Also useful for evidence gathering and surveillance."
+      "**What it is:** Capturing images and video with professional quality: surveillance footage, evidence, media broadcasts, braindance recording.",
+      "**How to roll:** **TECH + Photography/Film + 1d10** vs DV (DV13 clear documentation, DV15 professional composition, DV17+ award-winning).",
+      "**When to use it:** Documenting evidence, surveillance photography, media broadcasts, recording braindance content, creating promotional material.",
+      "**When to use something else:** Use **Paint/Draw/Sculpt** for *creating* images by hand. Use **Perception** for *noticing* things (Photography is about *capturing* them). Medias use Photography/Film constantly.",
+      "**Key details:** Useful for evidence gathering, insurance claims, and blackmail material. Quality of the recording matters for credibility."
     ]
   },
   {
@@ -13765,10 +13772,11 @@ export const QUICK_REF = [
     ],
     "icon": "⚓",
     "steps": [
-      "**TECH + Sea Vehicle Tech + 1d10** vs DV to repair/maintain sea vehicles.",
-      "Covers boats, yachts, jet skis, submarines, cargo subs.",
-      "DV13 for routine maintenance, DV15 for field repairs, DV17+ for major damage.",
-      "Nomads with Moto add their rank to this skill. Ship Rat Nomads specialize in this."
+      "**What it is:** The technical skill of repairing, maintaining, and modifying sea vehicles (boats, yachts, jet skis, submarines, cargo subs).",
+      "**How to roll:** **TECH + Sea Vehicle Tech + 1d10** vs DV (routine maintenance DV13, field repairs DV15, major damage DV17+).",
+      "**When to use it:** Fixing a damaged boat, performing hull maintenance, modifying a sea vehicle, diagnosing engine problems on the water.",
+      "**When to use something else:** Use **Land Vehicle Tech** for ground vehicles. Use **Air Vehicle Tech** for aircraft. Use **Basic Tech** only if no specific vehicle tech applies. Use **Pilot Sea Vehicle** for *operating*, not repairing.",
+      "**Key details:** Nomads with Moto add their rank. Ship Rat Nomad families specialize in this. Sea vehicle parts may need to be sourced through Fixers."
     ]
   }
 ];

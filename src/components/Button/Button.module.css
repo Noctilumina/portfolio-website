@@ -1,0 +1,174 @@
+/* Base button */
+.btn {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  padding: 0.4em 0.9em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3em;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-normal), color var(--transition-normal);
+}
+
+/* Outline (default) */
+.outline {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: var(--border-light) solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.outline:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: var(--shadow-md);
+}
+
+.outline:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: var(--shadow-xs);
+}
+
+/* Primary */
+.primary {
+  background: var(--color-primary);
+  color: #fff;
+  border: var(--border-light) solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.primary:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: var(--shadow-md);
+}
+
+.primary:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: var(--shadow-xs);
+}
+
+/* Secondary */
+.secondary {
+  background: var(--color-secondary);
+  color: #fff;
+  border: var(--border-light) solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.secondary:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: var(--shadow-md);
+}
+
+.secondary:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: var(--shadow-xs);
+}
+
+/* Danger */
+.danger {
+  background: var(--color-surface);
+  color: #e53935;
+  border: var(--border-light) solid #e53935;
+  box-shadow: none;
+}
+
+.danger:hover {
+  background: #e53935;
+  color: #fff;
+}
+
+/* Dashed */
+.dashed {
+  background: none;
+  color: var(--color-primary);
+  border: var(--border-light) dashed var(--color-primary);
+  box-shadow: none;
+}
+
+.dashed:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+/* Ghost (text-only) */
+.ghost {
+  background: none;
+  color: var(--color-primary);
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.ghost:hover {
+  text-decoration: underline;
+}
+
+/* Raised (3D push button) */
+.raised {
+  border: none;
+  border-radius: var(--radius-md);
+  background: var(--color-border);
+  padding: 0;
+  box-shadow: none;
+}
+
+.raisedTop {
+  display: block;
+  box-sizing: border-box;
+  border: var(--border-medium) solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.75em 1.5em;
+  background: var(--color-surface);
+  color: var(--color-text);
+  transform: translateY(-0.2em);
+  transition: transform var(--transition-fast);
+}
+
+.raisedPrimary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.raisedSecondary {
+  background: var(--color-secondary);
+  color: #fff;
+}
+
+.raisedDanger {
+  background: #e53935;
+  color: #fff;
+}
+
+.raised:hover .raisedTop {
+  transform: translateY(-0.33em);
+}
+
+.raised:active .raisedTop {
+  transform: translateY(0);
+}
+
+/* Size modifiers */
+.small {
+  font-size: 0.65rem;
+  padding: 0.3em 0.6em;
+}
+
+.small.raised .raisedTop {
+  padding: 0.4em 0.8em;
+}
+
+/* Full width */
+.fullWidth {
+  width: 100%;
+}
+
+@media print {
+  .btn {
+    display: none !important;
+  }
+}

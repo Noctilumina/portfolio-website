@@ -1,6 +1,7 @@
 import { useState, useMemo, useRef, useCallback } from 'react';
 import tools from '../../data/tools.json';
 import { useI18n } from '../../i18n/I18nContext';
+import { Routes } from '../../constants/routes';
 import ScrollReveal from '../../components/ScrollReveal/ScrollReveal';
 import { usePageTransition } from '../../App';
 import styles from './Tools.module.css';
@@ -31,11 +32,17 @@ export default function Tools() {
     el.classList.add(styles.searchThump);
   }, []);
 
-  const localizedTools = tools.map((tool, i) => ({
-    ...tool,
-    title: t(`toolData.${i}.title`) || tool.title,
-    shortDescription: t(`toolData.${i}.shortDescription`) || tool.shortDescription,
-  }));
+  const localizedTools = tools.map((tool) => {
+    const titleKey = `toolData.${tool.slug}.title`;
+    const descKey = `toolData.${tool.slug}.shortDescription`;
+    const localTitle = t(titleKey);
+    const localDesc = t(descKey);
+    return {
+      ...tool,
+      title: (localTitle !== titleKey) ? localTitle : tool.title,
+      shortDescription: (localDesc !== descKey) ? localDesc : tool.shortDescription,
+    };
+  });
 
   const allChips = useMemo(() => {
     const set = new Set();
@@ -134,7 +141,7 @@ export default function Tools() {
       </div>
 
       <div className={styles.backWrapper}>
-        <button className={styles.backButton} onClick={() => startTransition('/')}>
+        <button className={styles.backButton} onClick={() => startTransition(Routes.HOME)}>
           {t('tools.backHome')}
         </button>
       </div>

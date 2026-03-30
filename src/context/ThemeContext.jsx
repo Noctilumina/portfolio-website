@@ -1,11 +1,12 @@
 import { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { themes, defaultTheme, themeKeys } from '../themes/themes';
+import { StorageKey } from '../constants/storage';
 
 const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
   const [themeName, setThemeName] = useState(() => {
-    const saved = localStorage.getItem('portfolio-theme');
+    const saved = localStorage.getItem(StorageKey.THEME);
     return saved && themes[saved] ? saved : defaultTheme;
   });
 
@@ -15,7 +16,7 @@ export function ThemeProvider({ children }) {
     Object.entries(theme.properties).forEach(([key, value]) => {
       root.style.setProperty(key, value);
     });
-    localStorage.setItem('portfolio-theme', themeName);
+    localStorage.setItem(StorageKey.THEME, themeName);
   }, [themeName]);
 
   const cycleTheme = useCallback(() => {

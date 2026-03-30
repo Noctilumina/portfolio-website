@@ -9,7 +9,7 @@ export default function Skills() {
 
   return (
     <section id="skills" className={styles.section}>
-      <ScrollReveal>
+      <ScrollReveal textOnly>
         <h2 className={styles.heading}>{t('skills.heading')}</h2>
       </ScrollReveal>
       {Object.entries(skills).map(([category, items], catIdx) => (

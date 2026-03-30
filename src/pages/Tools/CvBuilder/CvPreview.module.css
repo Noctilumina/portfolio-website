@@ -1,8 +1,8 @@
 .cv {
   background: var(--color-surface);
-  border: 0.2em solid var(--color-border);
-  border-radius: 0.3em;
-  box-shadow: 0.5em 0.5em 0 var(--color-shadow, #000);
+  border: var(--border-heavy) solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-2xl);
   overflow: hidden;
 }
 
@@ -29,7 +29,7 @@
 .portrait {
   width: 140px;
   height: 140px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   border: 3px solid #ffffff;
   overflow: hidden;
   display: flex;

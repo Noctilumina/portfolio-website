@@ -33,11 +33,11 @@
   font-weight: 700;
   text-transform: uppercase;
   padding: 0.4em 0.9em;
-  border: 0.12em solid var(--color-border);
-  border-radius: 0.2em;
-  box-shadow: 0.15em 0.15em 0 var(--color-shadow, #000);
+  border: var(--border-light) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
   cursor: pointer;
-  transition: transform 0.1s, box-shadow 0.1s;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .toolbarBtn {
@@ -52,7 +52,7 @@
 
 .toolbarBtn:hover, .toolbarBtnSecondary:hover {
   transform: translate(-0.05em, -0.05em);
-  box-shadow: 0.2em 0.2em 0 var(--color-shadow, #000);
+  box-shadow: var(--shadow-md);
 }
 
 .inputArea {
@@ -87,9 +87,9 @@
   padding: 1rem;
   background: #1a1a1a;
   color: #f0f0f0;
-  border: 0.2em solid var(--color-border);
-  border-radius: 0.3em;
-  box-shadow: 0.4em 0.4em 0 var(--color-shadow, #000);
+  border: var(--border-heavy) solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xl);
   resize: none;
   outline: none;
 }
@@ -116,9 +116,9 @@
 /* Diff output */
 .diffOutput {
   background: #1a1a1a;
-  border: 0.2em solid var(--color-border);
-  border-radius: 0.3em;
-  box-shadow: 0.4em 0.4em 0 var(--color-shadow, #000);
+  border: var(--border-heavy) solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xl);
   overflow-x: auto;
   font-family: 'Space Mono', monospace;
   font-size: 0.8rem;

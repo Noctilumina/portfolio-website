@@ -1,9 +1,10 @@
 import { useI18n } from '../../i18n/I18nContext';
+import { Locale } from '../../constants/locale';
 import styles from './SkillBadge.module.css';
 
 export default function SkillBadge({ skill }) {
   const { locale } = useI18n();
-  const displayName = locale === 'nl' && skill.nameNl ? skill.nameNl : skill.name;
+  const displayName = locale === Locale.NL && skill.nameNl ? skill.nameNl : skill.name;
 
   return (
     <div className={styles.badge}>

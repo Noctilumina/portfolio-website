@@ -1,6 +1,8 @@
 import { useParams } from 'react-router-dom';
 import { usePageTransition } from '../../App';
 import { useI18n } from '../../i18n/I18nContext';
+import { Routes } from '../../constants/routes';
+import { NavSection } from '../../constants/nav';
 import projects from '../../data/projects.json';
 import styles from './ProjectDetail.module.css';
 
@@ -16,7 +18,7 @@ export default function ProjectDetail() {
       <main id="main-content" className={styles.page}>
         <div className={styles.notFound}>
           <h1>{t('projectDetail.notFound')}</h1>
-          <button className={styles.backButton} onClick={() => startTransition('/')}>
+          <button className={styles.backButton} onClick={() => startTransition(Routes.HOME)}>
             {t('projectDetail.backHome')}
           </button>
         </div>
@@ -37,7 +39,7 @@ export default function ProjectDetail() {
         <nav aria-label="Breadcrumb">
           <button
             className={styles.backButton}
-            onClick={() => startTransition('/', { state: { scrollTo: 'projects' } })}
+            onClick={() => startTransition(Routes.HOME, { state: { scrollTo: NavSection.PROJECTS } })}
           >
             {t('projectDetail.backProjects')}
           </button>

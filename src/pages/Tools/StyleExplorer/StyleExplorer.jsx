@@ -1,6 +1,7 @@
 import { useState, useRef, useCallback } from 'react';
 import { useI18n } from '../../../i18n/I18nContext';
 import { usePageTransition } from '../../../App';
+import { Routes } from '../../../constants/routes';
 import styles from './StyleExplorer.module.css';
 
 // ── Presets ──
@@ -435,7 +436,7 @@ export default function StyleExplorer() {
       </div>
 
       <div className={styles.backWrapper}>
-        <button className={styles.backButton} onClick={() => startTransition('/tools')}>
+        <button className={styles.backButton} onClick={() => startTransition(Routes.TOOLS)}>
           {t('styleExplorer.backTools')}
         </button>
       </div>

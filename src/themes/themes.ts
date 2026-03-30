@@ -1,5 +1,7 @@
+import { ThemeName } from '../constants/themes';
+
 export const themes = {
-  'light-brutalist': {
+  [ThemeName.LIGHT]: {
     name: 'Light',
     properties: {
       '--color-bg': '#f5f0eb',
@@ -13,7 +15,7 @@ export const themes = {
       '--color-shadow': '#000000',
     },
   },
-  'dark-brutalist': {
+  [ThemeName.DARK]: {
     name: 'Dark',
     properties: {
       '--color-bg': '#1a1a1a',
@@ -30,4 +32,4 @@ export const themes = {
 };
 
 export const themeKeys = Object.keys(themes);
-export const defaultTheme = 'light-brutalist';
+export const defaultTheme = ThemeName.LIGHT;

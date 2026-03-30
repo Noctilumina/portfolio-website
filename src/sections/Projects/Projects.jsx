@@ -15,7 +15,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className={`${styles.section} ${styles.tinted}`}>
-      <ScrollReveal>
+      <ScrollReveal textOnly>
         <h2 className={styles.heading}>{t('projects.heading')}</h2>
       </ScrollReveal>
       <div className={styles.grid}>

@@ -99,50 +99,54 @@
     "liveDemo": "Live Demo",
     "searchPlaceholder": "Zoek tools...",
     "noResults": "Geen tools gevonden.",
-    "backHome": "\u2190 Terug naar home"
+    "backHome": "← Terug naar home"
   },
-  "toolData": [
-    {
+  "toolData": {
+    "cv-builder": {
       "title": "CV Bouwer",
       "shortDescription": "Maak een professioneel tweekoloms CV met live preview en print het als PDF."
     },
-    {
+    "md-editor": {
       "title": "Markdown Editor",
       "shortDescription": "Schrijf en bekijk Markdown in de pop-art stijl van het portfolio. Open, bewerk en download .md bestanden."
     },
-    {
+    "json-formatter": {
       "title": "JSON Formatter",
       "shortDescription": "Verfraai, minimaliseer en verken JSON met een inklapbare boomweergave."
     },
-    {
+    "cpred-generator": {
       "title": "Cyberpunk Red Generator",
       "shortDescription": "Willekeurige ontmoetingen, NPC's, buit en locaties voor Cyberpunk Red TTRPG-sessies."
     },
-    {
+    "cpred-wiki": {
       "title": "CPR Regelreferentie",
       "shortDescription": "Doorzoekbare wiki van Cyberpunk Red kernmechanismen. Stats, vaardigheden, gevecht, netrunning en meer."
     },
-    {
+    "component-gallery": {
+      "title": "Component Galerij",
+      "shortDescription": "Interactieve galerij van alle UI-componenten in het portfolio. Wissel thema's, pas props aan, kopieer JSX."
+    },
+    "diff-checker": {
       "title": "Diff Checker",
       "shortDescription": "Vergelijk twee teksten naast elkaar met gemarkeerde verschillen per regel."
     },
-    {
+    "style-explorer": {
       "title": "CSS Stijl Verkenner",
       "shortDescription": "Verken designstromingen van Pop Art tot Cyberpunk. Kies een preset, pas alles aan, kopieer de CSS."
     },
-    {
+    "image-tagger": {
       "title": "Image Tagger",
       "shortDescription": "Tag en organiseer afbeeldingen met aangepaste labels. Lokale repo — binnenkort beschikbaar."
     },
-    {
+    "sprite-selector": {
       "title": "Sprite Selector",
       "shortDescription": "Selecteer en extraheer sprites uit sprite sheets. Lokale repo — binnenkort beschikbaar."
     },
-    {
+    "ttrpg-map-maker": {
       "title": "TTRPG Map Maker",
       "shortDescription": "Rastergebaseerde kaartbouwer voor tabletop RPG-sessies. Lokale repo — binnenkort beschikbaar."
     }
-  ],
+  },
   "diffChecker": {
     "heading": "Diff Checker",
     "subtitle": "Plak twee teksten om ze regel voor regel te vergelijken met gemarkeerde verschillen.",
@@ -155,7 +159,7 @@
     "changed": "gewijzigd",
     "added": "toegevoegd",
     "removed": "verwijderd",
-    "backTools": "\u2190 Terug naar tools"
+    "backTools": "← Terug naar tools"
   },
   "styleExplorer": {
     "heading": "CSS Stijl Verkenner",
@@ -191,7 +195,7 @@
     "duration": "Duur",
     "easing": "Easing",
     "copy": "Kopieer CSS",
-    "backTools": "\u2190 Terug naar tools"
+    "backTools": "← Terug naar tools"
   },
   "jsonFormatter": {
     "heading": "JSON Formatter",
@@ -203,7 +207,7 @@
     "input": "Invoer",
     "output": "Uitvoer",
     "placeholder": "Plak hier je JSON...",
-    "backTools": "\u2190 Terug naar tools"
+    "backTools": "← Terug naar tools"
   },
   "cpred": {
     "heading": "Cyberpunk Red Generator",
@@ -218,18 +222,19 @@
     "filterWeapon": "Wapentype",
     "allTypes": "Alle Types",
     "roll": "Opnieuw Rollen",
-    "backTools": "\u2190 Terug naar tools"
+    "backTools": "← Terug naar tools"
   },
   "mdEditor": {
     "heading": "Markdown Editor",
     "subtitle": "Schrijf Markdown en bekijk het live gerenderd in de portfolio-stijl. Open .md bestanden, bewerk en download.",
     "editTab": "Bewerken",
     "previewTab": "Preview",
-    "open": "Bestand Openen",
+    "open": "Bestand importeren",
     "download": "Download .md",
     "copyMd": "Kopieer Markdown",
     "copyHtml": "Kopieer HTML",
-    "backTools": "\u2190 Terug naar tools"
+    "print": "Print / PDF",
+    "backTools": "← Terug naar tools"
   },
   "cvBuilder": {
     "heading": "CV Bouwer",
@@ -271,7 +276,7 @@
     "addEducation": "Opleiding Toevoegen",
     "print": "Print / Opslaan als PDF",
     "clearAll": "Alles Wissen",
-    "backTools": "\u2190 Terug naar tools"
+    "backTools": "← Terug naar tools"
   },
   "projectDetail": {
     "notFound": "Project niet gevonden",

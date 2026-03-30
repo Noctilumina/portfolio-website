@@ -50,6 +50,16 @@
     "liveUrl": ""
   },
   {
+    "slug": "component-gallery",
+    "title": "Component Gallery",
+    "shortDescription": "Interactive gallery of all UI components used in the portfolio. Toggle themes, adjust props, copy JSX.",
+    "techStack": ["React", "CSS Modules"],
+    "categories": ["Developer", "Design"],
+    "route": "/tools/component-gallery",
+    "githubUrl": "",
+    "liveUrl": ""
+  },
+  {
     "slug": "diff-checker",
     "title": "Diff Checker",
     "shortDescription": "Compare two texts side-by-side and see differences highlighted line-by-line.",

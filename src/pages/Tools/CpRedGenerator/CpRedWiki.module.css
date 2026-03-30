@@ -26,10 +26,10 @@
   padding: 0.35em 0.6em;
   background: var(--color-surface);
   color: var(--color-text);
-  border: 0.12em solid var(--color-border);
-  border-radius: 0.2em;
+  border: var(--border-light) solid var(--color-border);
+  border-radius: var(--radius-sm);
   outline: none;
-  transition: border-color 0.15s;
+  transition: border-color var(--transition-normal);
 }
 
 .navSearchInput:focus {
@@ -40,8 +40,8 @@
 .modeTabs {
   display: flex;
   gap: 0;
-  border: 0.12em solid var(--color-border);
-  border-radius: 0.2em;
+  border: var(--border-light) solid var(--color-border);
+  border-radius: var(--radius-sm);
   overflow: hidden;
   margin-right: auto;
 }
@@ -56,10 +56,10 @@
   color: var(--color-muted);
   border: none;
   cursor: pointer;
-  transition: background 0.15s, color 0.15s;
+  transition: background var(--transition-normal), color var(--transition-normal);
 }
 
-.modeTab + .modeTab { border-left: 0.12em solid var(--color-border); }
+.modeTab + .modeTab { border-left: var(--border-light) solid var(--color-border); }
 
 .modeTabActive {
   background: var(--color-primary);
@@ -104,11 +104,11 @@
   padding: 0.7em 1em;
   background: var(--color-surface);
   color: var(--color-text);
-  border: 0.2em solid var(--color-border);
-  border-radius: 0.3em;
-  box-shadow: 0.3em 0.3em 0 var(--color-shadow, #000);
+  border: var(--border-heavy) solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
   outline: none;
-  transition: border-color 0.15s;
+  transition: border-color var(--transition-normal);
 }
 
 .panicSearch:focus { border-color: var(--color-primary); }
@@ -129,14 +129,14 @@
   padding: 0.3em 0.6em;
   background: var(--color-primary);
   color: var(--color-text);
-  border: 0.12em solid var(--color-border);
-  border-radius: 0.2em;
-  box-shadow: 0.1em 0.1em 0 var(--color-shadow, #000);
+  border: var(--border-light) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-xs);
   cursor: pointer;
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  transition: transform 0.15s, box-shadow 0.15s, color 0.2s;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), color var(--transition-slow);
 }
 
 .topicChip::after {
@@ -146,7 +146,7 @@
   background: var(--color-surface);
   z-index: -1;
   transform-origin: right;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-paint);
 }
 
 .topicChip:hover {
@@ -160,7 +160,7 @@
 .topicChipActive {
   color: #fff;
   transform: translate(0.1em, 0.1em);
-  box-shadow: 0 0 0 var(--color-shadow, #000);
+  box-shadow: var(--shadow-none);
 }
 
 .topicChipActive::after {
@@ -182,9 +182,9 @@
 
 .panicCard {
   background: var(--color-surface);
-  border: 0.15em solid var(--color-border);
-  border-radius: 0.3em;
-  box-shadow: 0.25em 0.25em 0 var(--color-shadow, #000);
+  border: var(--border-medium) solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
   overflow: hidden;
 }
 
@@ -198,7 +198,7 @@
   border: none;
   cursor: pointer;
   text-align: left;
-  transition: background 0.1s;
+  transition: background var(--transition-fast);
 }
 
 .panicCardHeader:hover { background: var(--color-bg); }
@@ -258,7 +258,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 0.15em;
+  border-radius: var(--radius-xs);
 }
 
 .stepItem strong {
@@ -278,7 +278,7 @@
   width: 260px;
   flex-shrink: 0;
   background: var(--color-surface);
-  border-right: 0.15em solid var(--color-border);
+  border-right: var(--border-medium) solid var(--color-border);
   overflow-y: auto;
   padding: 0.75rem;
   position: sticky;
@@ -293,11 +293,11 @@
   padding: 0.45em 0.6em;
   background: var(--color-bg);
   color: var(--color-text);
-  border: 0.12em solid var(--color-border);
-  border-radius: 0.2em;
+  border: var(--border-light) solid var(--color-border);
+  border-radius: var(--radius-sm);
   outline: none;
   margin-bottom: 0.75rem;
-  transition: border-color 0.15s;
+  transition: border-color var(--transition-normal);
 }
 
 .searchInput:focus { border-color: var(--color-primary); }
@@ -331,17 +331,17 @@
   width: 100%;
   text-align: left;
   background: var(--color-surface);
-  border: 0.12em solid var(--color-border);
-  border-radius: 0.3em;
-  box-shadow: 0.2em 0.2em 0 var(--color-shadow, #000);
+  border: var(--border-light) solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
   padding: 0.75rem 1rem;
   cursor: pointer;
-  transition: transform 0.15s, box-shadow 0.15s;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
 }
 
 .searchResultCard:hover {
   transform: translate(-0.1em, -0.1em);
-  box-shadow: 0.3em 0.3em 0 var(--color-shadow, #000);
+  box-shadow: var(--shadow-lg);
 }
 
 .searchResultCardHeader {
@@ -363,7 +363,7 @@
   color: #fff;
   background: var(--color-primary);
   padding: 0.15em 0.5em;
-  border-radius: 0.15em;
+  border-radius: var(--radius-xs);
   flex-shrink: 0;
 }
 
@@ -372,7 +372,7 @@
   color: var(--color-primary);
   font-weight: 700;
   padding: 0.05em 0.15em;
-  border-radius: 0.1em;
+  border-radius: var(--radius-xs);
 }
 
 .searchResultSnippet {
@@ -418,9 +418,9 @@
   background: none;
   border: none;
   padding: 0.3em 0.5em;
-  border-radius: 0.15em;
+  border-radius: var(--radius-xs);
   cursor: pointer;
-  transition: background 0.1s, color 0.1s;
+  transition: background var(--transition-fast), color var(--transition-fast);
   line-height: 1.4;
 }
 
@@ -521,7 +521,7 @@
   font-size: 0.85em;
   background: var(--color-bg);
   border: 1px solid var(--color-border);
-  border-radius: 0.2em;
+  border-radius: var(--radius-sm);
   padding: 0.1em 0.3em;
   color: var(--color-primary);
 }
@@ -529,9 +529,9 @@
 .articleBody :global(pre) {
   background: #1a1a1a;
   color: #f0f0f0;
-  border: 0.15em solid var(--color-border);
-  border-radius: 0.3em;
-  box-shadow: 0.2em 0.2em 0 var(--color-shadow, #000);
+  border: var(--border-medium) solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
   padding: 1rem;
   overflow-x: auto;
   margin-bottom: 1rem;
@@ -561,9 +561,9 @@
   border-spacing: 0;
   margin: 1rem 0;
   font-size: 0.8rem;
-  border: 0.15em solid var(--color-border);
-  border-radius: 0.3em;
-  box-shadow: 0.2em 0.2em 0 var(--color-shadow, #000);
+  border: var(--border-medium) solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
   overflow: hidden;
 }
 
@@ -577,7 +577,7 @@
   padding: 0.5em 0.7em;
   background: var(--color-primary);
   color: #fff;
-  border-bottom: 0.15em solid var(--color-border);
+  border-bottom: var(--border-medium) solid var(--color-border);
 }
 
 .articleBody :global(th) + :global(th) {
@@ -664,10 +664,10 @@
   padding: 0.3em 0.7em;
   background: var(--color-surface);
   color: var(--color-primary);
-  border: 0.12em solid var(--color-primary);
-  border-radius: 0.2em;
+  border: var(--border-light) solid var(--color-primary);
+  border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: background 0.15s, color 0.15s;
+  transition: background var(--transition-normal), color var(--transition-normal);
 }
 
 .relatedLink:hover {
@@ -686,9 +686,9 @@
     top: 3.5rem;
     left: 0;
     bottom: 0;
-    z-index: 15;
+    z-index: var(--z-sidebar);
     transform: translateX(-100%);
-    transition: transform 0.2s ease;
+    transition: transform var(--transition-slow);
     box-shadow: 4px 0 12px rgba(0, 0, 0, 0.15);
   }
 

@@ -1,11 +1,13 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
+import styles from './ScrollReveal.module.css';
 
 export default function ScrollReveal({
   children,
   delay = 0,
   direction = 'up',
   className,
+  textOnly = false,
 }) {
   const { ref, isVisible } = useScrollReveal();
   const prefersReducedMotion = useReducedMotion();
@@ -22,6 +24,17 @@ export default function ScrollReveal({
   };
 
   const offset = offsets[direction] || offsets.up;
+
+  if (textOnly) {
+    return (
+      <div
+        ref={ref}
+        className={`${className || ''} ${isVisible ? styles.textRevealed : styles.textHidden}`}
+      >
+        {children}
+      </div>
+    );
+  }
 
   return (
     <motion.div

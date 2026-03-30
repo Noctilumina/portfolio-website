@@ -99,50 +99,8 @@
     "liveDemo": "Live Demo",
     "searchPlaceholder": "Search tools...",
     "noResults": "No tools match your search.",
-    "backHome": "\u2190 Back to home"
+    "backHome": "← Back to home"
   },
-  "toolData": [
-    {
-      "title": "CV Builder",
-      "shortDescription": "Build a professional two-column CV with a live preview and print it as a PDF."
-    },
-    {
-      "title": "Markdown Editor",
-      "shortDescription": "Write and preview Markdown in the portfolio's pop art style. Open, edit, and download .md files."
-    },
-    {
-      "title": "JSON Formatter",
-      "shortDescription": "Prettify, minify, and explore JSON with a collapsible tree view."
-    },
-    {
-      "title": "Cyberpunk Red Generator",
-      "shortDescription": "Random encounter, NPC, loot, and location generators for Cyberpunk Red TTRPG sessions."
-    },
-    {
-      "title": "CPR Rules Reference",
-      "shortDescription": "Searchable wiki of Cyberpunk Red core mechanics. Stats, skills, combat, netrunning, and more."
-    },
-    {
-      "title": "Diff Checker",
-      "shortDescription": "Compare two texts side-by-side and see differences highlighted line-by-line."
-    },
-    {
-      "title": "CSS Style Explorer",
-      "shortDescription": "Explore design movements from Pop Art to Cyberpunk. Pick a preset, tweak every property, copy the CSS."
-    },
-    {
-      "title": "Image Tagger",
-      "shortDescription": "Tag and organize images with custom labels. Local repo — coming soon."
-    },
-    {
-      "title": "Sprite Selector",
-      "shortDescription": "Select and extract sprites from sprite sheets. Local repo — coming soon."
-    },
-    {
-      "title": "TTRPG Map Maker",
-      "shortDescription": "Grid-based map builder for tabletop RPG sessions. Local repo — coming soon."
-    }
-  ],
   "diffChecker": {
     "heading": "Diff Checker",
     "subtitle": "Paste two texts to compare them line-by-line with highlighted differences.",
@@ -155,7 +113,7 @@
     "changed": "changed",
     "added": "added",
     "removed": "removed",
-    "backTools": "\u2190 Back to tools"
+    "backTools": "← Back to tools"
   },
   "styleExplorer": {
     "heading": "CSS Style Explorer",
@@ -191,7 +149,7 @@
     "duration": "Duration",
     "easing": "Easing",
     "copy": "Copy CSS",
-    "backTools": "\u2190 Back to tools"
+    "backTools": "← Back to tools"
   },
   "jsonFormatter": {
     "heading": "JSON Formatter",
@@ -203,7 +161,7 @@
     "input": "Input",
     "output": "Output",
     "placeholder": "Paste your JSON here...",
-    "backTools": "\u2190 Back to tools"
+    "backTools": "← Back to tools"
   },
   "cpred": {
     "heading": "Cyberpunk Red Generator",
@@ -218,7 +176,7 @@
     "filterWeapon": "Weapon Type",
     "allTypes": "All Types",
     "roll": "Roll Again",
-    "backTools": "\u2190 Back to tools"
+    "backTools": "← Back to tools"
   },
   "mdEditor": {
     "heading": "Markdown Editor",
@@ -229,7 +187,8 @@
     "download": "Download .md",
     "copyMd": "Copy Markdown",
     "copyHtml": "Copy HTML",
-    "backTools": "\u2190 Back to tools"
+    "print": "Print / PDF",
+    "backTools": "← Back to tools"
   },
   "cvBuilder": {
     "heading": "CV Builder",
@@ -271,7 +230,7 @@
     "addEducation": "Add Education",
     "print": "Print / Save as PDF",
     "clearAll": "Clear All",
-    "backTools": "\u2190 Back to tools"
+    "backTools": "← Back to tools"
   },
   "projectDetail": {
     "notFound": "Project not found",

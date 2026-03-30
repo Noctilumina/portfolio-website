@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import { useI18n } from '../../../i18n/I18nContext';
 import { usePageTransition } from '../../../App';
+import { Routes } from '../../../constants/routes';
 import CvPreview from './CvPreview';
 import styles from './CvBuilder.module.css';
 
@@ -281,7 +282,7 @@ export default function CvBuilder() {
             {data.skillCategories.map((cat, i) => (
               <div key={i} className={styles.repeaterItem}>
                 <div className={styles.repeaterRow}>
-                  <label className={styles.label} style={{ flex: 1 }}>
+                  <label className={`${styles.label} ${styles.flexGrow}`}>
                     {t('cvBuilder.categoryName')}
                     <input className={styles.input} value={cat.category} onChange={(e) => update(`skillCategories.${i}.category`, e.target.value)} />
                   </label>
@@ -304,18 +305,18 @@ export default function CvBuilder() {
             {data.experience.map((exp, i) => (
               <div key={i} className={styles.repeaterItem}>
                 <div className={styles.repeaterRow}>
-                  <label className={styles.label} style={{ flex: 1 }}>
+                  <label className={`${styles.label} ${styles.flexGrow}`}>
                     {t('cvBuilder.roleTitle')}
                     <input className={styles.input} value={exp.role} onChange={(e) => update(`experience.${i}.role`, e.target.value)} />
                   </label>
                   <button className={styles.removeBtn} onClick={() => removeItem('experience', i)} aria-label="Remove">x</button>
                 </div>
                 <div className={styles.row}>
-                  <label className={styles.label} style={{ flex: 1 }}>
+                  <label className={`${styles.label} ${styles.flexGrow}`}>
                     {t('cvBuilder.company')}
                     <input className={styles.input} value={exp.company} onChange={(e) => update(`experience.${i}.company`, e.target.value)} />
                   </label>
-                  <label className={styles.label} style={{ flex: 1 }}>
+                  <label className={`${styles.label} ${styles.flexGrow}`}>
                     {t('cvBuilder.period')}
                     <input className={styles.input} value={exp.period} onChange={(e) => update(`experience.${i}.period`, e.target.value)} placeholder="Jan 2020 — Present" />
                   </label>
@@ -331,8 +332,8 @@ export default function CvBuilder() {
                     {exp.clients.map((client, j) => (
                       <div key={j} className={styles.clientEntry}>
                         <div className={styles.repeaterRow}>
-                          <input className={styles.input} value={client.company} onChange={(e) => update(`experience.${i}.clients.${j}.company`, e.target.value)} placeholder={t('cvBuilder.clientName')} style={{ flex: 1 }} />
-                          <input className={styles.input} value={client.period} onChange={(e) => update(`experience.${i}.clients.${j}.period`, e.target.value)} placeholder={t('cvBuilder.period')} style={{ flex: 1 }} />
+                          <input className={`${styles.input} ${styles.flexGrow}`} value={client.company} onChange={(e) => update(`experience.${i}.clients.${j}.company`, e.target.value)} placeholder={t('cvBuilder.clientName')} />
+                          <input className={`${styles.input} ${styles.flexGrow}`} value={client.period} onChange={(e) => update(`experience.${i}.clients.${j}.period`, e.target.value)} placeholder={t('cvBuilder.period')} />
                           <button className={styles.removeBtn} onClick={() => removeItem(`experience.${i}.clients`, j)} aria-label="Remove">x</button>
                         </div>
                         <input className={styles.input} value={client.skills} onChange={(e) => update(`experience.${i}.clients.${j}.skills`, e.target.value)} placeholder={t('cvBuilder.clientSkillsPlaceholder')} />
@@ -356,18 +357,18 @@ export default function CvBuilder() {
             {data.education.map((edu, i) => (
               <div key={i} className={styles.repeaterItem}>
                 <div className={styles.repeaterRow}>
-                  <label className={styles.label} style={{ flex: 1 }}>
+                  <label className={`${styles.label} ${styles.flexGrow}`}>
                     {t('cvBuilder.degree')}
                     <input className={styles.input} value={edu.role} onChange={(e) => update(`education.${i}.role`, e.target.value)} />
                   </label>
                   <button className={styles.removeBtn} onClick={() => removeItem('education', i)} aria-label="Remove">x</button>
                 </div>
                 <div className={styles.row}>
-                  <label className={styles.label} style={{ flex: 1 }}>
+                  <label className={`${styles.label} ${styles.flexGrow}`}>
                     {t('cvBuilder.institution')}
                     <input className={styles.input} value={edu.company} onChange={(e) => update(`education.${i}.company`, e.target.value)} />
                   </label>
-                  <label className={styles.label} style={{ flex: 1 }}>
+                  <label className={`${styles.label} ${styles.flexGrow}`}>
                     {t('cvBuilder.period')}
                     <input className={styles.input} value={edu.period} onChange={(e) => update(`education.${i}.period`, e.target.value)} />
                   </label>
@@ -398,7 +399,7 @@ export default function CvBuilder() {
       </div>
 
       <div className={styles.backWrapper}>
-        <button className={styles.backButton} onClick={() => startTransition('/tools')}>
+        <button className={styles.backButton} onClick={() => startTransition(Routes.TOOLS)}>
           {t('cvBuilder.backTools')}
         </button>
       </div>

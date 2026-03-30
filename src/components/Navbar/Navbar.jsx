@@ -2,24 +2,26 @@ import { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { usePageTransition } from '../../App';
 import { useI18n } from '../../i18n/I18nContext';
+import { Routes } from '../../constants/routes';
+import { NavSection } from '../../constants/nav';
+import { Locale } from '../../constants/locale';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
   const [hidden, setHidden] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [activeSection, setActiveSection] = useState('hero');
+  const [activeSection, setActiveSection] = useState(NavSection.HOME);
   const location = useLocation();
   const { startTransition } = usePageTransition();
   const hamburgerRef = useRef(null);
   const { locale, toggleLocale, t } = useI18n();
 
   const navItems = [
-    { label: t('nav.home'), target: 'hero' },
-    { label: t('nav.projects'), target: 'projects' },
-    { label: t('nav.skills'), target: 'skills' },
-    { label: t('nav.experience'), target: 'experience' },
-    { label: t('nav.contact'), target: 'contact' },
+    { label: t('nav.home'), target: NavSection.HOME },
+    { label: t('nav.projects'), target: NavSection.PROJECTS },
+    { label: t('nav.skills'), target: NavSection.SKILLS },
+    { label: t('nav.experience'), target: NavSection.EXPERIENCE },
   ];
 
   useEffect(() => {
@@ -35,7 +37,7 @@ export default function Navbar() {
 
   // Track which section is currently in view on the home page
   useEffect(() => {
-    if (location.pathname !== '/') return;
+    if (location.pathname !== Routes.HOME) return;
 
     const sectionIds = navItems.map((item) => item.target);
 
@@ -58,16 +60,16 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', updateActive);
   }, [location.pathname]);
 
-  const isOnAbout = location.pathname === '/about';
-  const isOnCV = location.pathname === '/cv';
-  const isOnBlog = location.pathname.startsWith('/blog');
-  const isOnTools = location.pathname === '/tools';
-  const isOnHome = location.pathname === '/';
+  const isOnAbout = location.pathname === Routes.ABOUT;
+  const isOnCV = location.pathname === Routes.CV;
+  const isOnBlog = location.pathname.startsWith(Routes.BLOG);
+  const isOnTools = location.pathname === Routes.TOOLS;
+  const isOnHome = location.pathname === Routes.HOME;
 
   const scrollToSection = (target) => {
     setMobileOpen(false);
     if (!isOnHome) {
-      startTransition('/', { state: { scrollTo: target } });
+      startTransition(Routes.HOME, { state: { scrollTo: target } });
       return;
     }
     const element = document.getElementById(target);
@@ -87,7 +89,7 @@ export default function Navbar() {
       <nav className={`${styles.navbar} ${hidden ? styles.hidden : ''}`} aria-label="Main navigation">
         <button
           className={styles.logo}
-          onClick={() => scrollToSection('hero')}
+          onClick={() => scrollToSection(NavSection.HOME)}
           aria-label={t('nav.goToTop')}
         >
           {t('nav.portfolio')}
@@ -106,7 +108,7 @@ export default function Navbar() {
           ))}
           <button
             className={`${styles.navLink} ${isOnAbout ? styles.navLinkActive : ''}`}
-            onClick={() => { setMobileOpen(false); startTransition('/about'); }}
+            onClick={() => { setMobileOpen(false); startTransition(Routes.ABOUT); }}
             role="listitem"
             aria-current={isOnAbout ? 'page' : undefined}
           >
@@ -114,7 +116,7 @@ export default function Navbar() {
           </button>
           <button
             className={`${styles.navLink} ${isOnBlog ? styles.navLinkActive : ''}`}
-            onClick={() => { setMobileOpen(false); startTransition('/blog'); }}
+            onClick={() => { setMobileOpen(false); startTransition(Routes.BLOG); }}
             role="listitem"
             aria-current={isOnBlog ? 'page' : undefined}
           >
@@ -122,7 +124,7 @@ export default function Navbar() {
           </button>
           <button
             className={`${styles.navLink} ${isOnCV ? styles.navLinkActive : ''}`}
-            onClick={() => { setMobileOpen(false); startTransition('/cv'); }}
+            onClick={() => { setMobileOpen(false); startTransition(Routes.CV); }}
             role="listitem"
             aria-current={isOnCV ? 'page' : undefined}
           >
@@ -130,14 +132,14 @@ export default function Navbar() {
           </button>
           <button
             className={`${styles.navLink} ${isOnTools ? styles.navLinkActive : ''}`}
-            onClick={() => { setMobileOpen(false); startTransition('/tools'); }}
+            onClick={() => { setMobileOpen(false); startTransition(Routes.TOOLS); }}
             role="listitem"
             aria-current={isOnTools ? 'page' : undefined}
           >
             {t('nav.tools')}
           </button>
           <button className={styles.navLink} onClick={toggleLocale} role="listitem">
-            {locale === 'en' ? 'NL' : 'EN'}
+            {locale === Locale.EN ? 'NL' : 'EN'}
           </button>
         </div>
         <button
@@ -173,34 +175,34 @@ export default function Navbar() {
         ))}
         <button
           className={`${styles.mobileLink} ${isOnAbout ? styles.mobileLinkActive : ''}`}
-          onClick={() => { closeMobileMenu(); startTransition('/about'); }}
+          onClick={() => { closeMobileMenu(); startTransition(Routes.ABOUT); }}
           tabIndex={mobileOpen ? 0 : -1}
         >
           {t('nav.about')}
         </button>
         <button
           className={`${styles.mobileLink} ${isOnBlog ? styles.mobileLinkActive : ''}`}
-          onClick={() => { closeMobileMenu(); startTransition('/blog'); }}
+          onClick={() => { closeMobileMenu(); startTransition(Routes.BLOG); }}
           tabIndex={mobileOpen ? 0 : -1}
         >
           Blog
         </button>
         <button
           className={`${styles.mobileLink} ${isOnCV ? styles.mobileLinkActive : ''}`}
-          onClick={() => { closeMobileMenu(); startTransition('/cv'); }}
+          onClick={() => { closeMobileMenu(); startTransition(Routes.CV); }}
           tabIndex={mobileOpen ? 0 : -1}
         >
           CV
         </button>
         <button
           className={`${styles.mobileLink} ${isOnTools ? styles.mobileLinkActive : ''}`}
-          onClick={() => { closeMobileMenu(); startTransition('/tools'); }}
+          onClick={() => { closeMobileMenu(); startTransition(Routes.TOOLS); }}
           tabIndex={mobileOpen ? 0 : -1}
         >
           {t('nav.tools')}
         </button>
         <button className={styles.navLink} onClick={toggleLocale} tabIndex={mobileOpen ? 0 : -1}>
-          {locale === 'en' ? 'NL' : 'EN'}
+          {locale === Locale.EN ? 'NL' : 'EN'}
         </button>
       </div>
     </>

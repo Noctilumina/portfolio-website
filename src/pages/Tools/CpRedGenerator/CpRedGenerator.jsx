@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useI18n } from '../../../i18n/I18nContext';
 import { usePageTransition } from '../../../App';
+import { Routes } from '../../../constants/routes';
 import { generateEncounter, generateNPC, generateLoot, generateLocation, WEAPON_TYPES } from './data';
 import { generateNightMarket, generateMidnightMarket } from './nightmarket';
 import { balanceEncounter, NPC_TEMPLATES } from './encounterbalancer';
@@ -305,7 +306,7 @@ export default function CpRedGenerator() {
       </div>}
 
       <div className={styles.backWrapper}>
-        <button className={styles.backButton} onClick={() => startTransition('/tools')}>
+        <button className={styles.backButton} onClick={() => startTransition(Routes.TOOLS)}>
           {t('cpred.backTools')}
         </button>
       </div>

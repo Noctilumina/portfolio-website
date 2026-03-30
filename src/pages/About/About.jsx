@@ -48,7 +48,7 @@ export default function About() {
           </div>
         </div>
 
-        <ScrollReveal>
+        <ScrollReveal textOnly>
           <div className={styles.card}>
             <div className={styles.intro}>
               <p dangerouslySetInnerHTML={{ __html: t('about.intro') }} />
@@ -56,7 +56,7 @@ export default function About() {
           </div>
         </ScrollReveal>
 
-        <ScrollReveal delay={0.2}>
+        <ScrollReveal textOnly delay={0.2}>
           <div className={styles.card}>
             <h2 className={styles.sectionTitle}>{t('about.backgroundTitle')}</h2>
             <p className={styles.text}>
@@ -65,7 +65,7 @@ export default function About() {
           </div>
         </ScrollReveal>
 
-        <ScrollReveal delay={0.3}>
+        <ScrollReveal textOnly delay={0.3}>
           <div className={styles.card}>
             <h2 className={styles.sectionTitle}>{t('about.whatIDoTitle')}</h2>
             <p className={styles.text}>
@@ -74,7 +74,7 @@ export default function About() {
           </div>
         </ScrollReveal>
 
-        <ScrollReveal delay={0.4}>
+        <ScrollReveal textOnly delay={0.4}>
           <div className={styles.card}>
             <h2 className={styles.sectionTitle}>{t('about.beyondCodeTitle')}</h2>
             <p className={styles.text}>
@@ -92,7 +92,7 @@ export default function About() {
                 <img src={`${import.meta.env.BASE_URL}images/me_heimdall_games.jpeg`} alt="Iris at HEMA" className={styles.beyondImageImg} />
               </div>
             </div>
-            <p className={styles.text} style={{ marginTop: '1.2rem' }}>
+            <p className={`${styles.text} ${styles.hobbiesIntroSpacing}`}>
               {t('about.hobbiesIntro')}
             </p>
             <ul className={styles.hobbyList}>

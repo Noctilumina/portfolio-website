@@ -16,7 +16,7 @@
   letter-spacing: 0.05em;
   border: none;
   cursor: pointer;
-  border-radius: 0.3em;
+  border-radius: var(--radius-md);
   background: var(--color-border);
   padding: 0;
 }
@@ -24,13 +24,13 @@
 .printButtonTop {
   display: block;
   box-sizing: border-box;
-  border: 0.15em solid var(--color-border);
-  border-radius: 0.3em;
+  border: var(--border-medium) solid var(--color-border);
+  border-radius: var(--radius-md);
   padding: 0.75em 1.5em;
   background: var(--color-primary);
   color: #ffffff;
   transform: translateY(-0.2em);
-  transition: transform 0.1s ease;
+  transition: transform var(--transition-fast);
 }
 
 .printButton:hover .printButtonTop {
@@ -43,9 +43,9 @@
 
 .cv {
   background: var(--color-surface);
-  border: 0.2em solid var(--color-border);
-  border-radius: 0.3em;
-  box-shadow: 0.5em 0.5em 0 var(--color-shadow, #000);
+  border: var(--border-heavy) solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-2xl);
   overflow: hidden;
 }
 
@@ -76,7 +76,7 @@
 .portrait {
   width: 170px;
   height: 170px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   border: 3px solid #ffffff;
   overflow: hidden;
   background: var(--color-primary);
@@ -284,7 +284,7 @@
 }
 
 .interestList li::before {
-  content: '→ ';
+  content: '\2192 ';
   color: #ffffff;
 }
 
@@ -307,7 +307,7 @@
   .cv {
     border: none;
     box-shadow: none;
-    border-radius: 0;
+    border-radius: var(--radius-none);
   }
 
   .columns {

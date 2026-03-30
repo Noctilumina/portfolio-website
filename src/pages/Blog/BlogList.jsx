@@ -1,5 +1,6 @@
 import { useI18n } from '../../i18n/I18nContext';
 import { usePageTransition } from '../../App';
+import { Locale } from '../../constants/locale';
 import ScrollReveal from '../../components/ScrollReveal/ScrollReveal';
 import blogIndex from '../../data/blog/index.json';
 import styles from './Blog.module.css';
@@ -33,13 +34,13 @@ export default function BlogList() {
                 </div>
               </div>
               <h2 className={styles.postTitle}>
-                {locale === 'nl' && post.titleNl ? post.titleNl : post.title}
+                {locale === Locale.NL && post.titleNl ? post.titleNl : post.title}
               </h2>
               <p className={styles.postExcerpt}>
-                {locale === 'nl' && post.excerptNl ? post.excerptNl : post.excerpt}
+                {locale === Locale.NL && post.excerptNl ? post.excerptNl : post.excerpt}
               </p>
               <span className={styles.readMore}>
-                {locale === 'nl' ? 'Lees meer →' : 'Read more →'}
+                {locale === Locale.NL ? 'Lees meer →' : 'Read more →'}
               </span>
             </article>
           </ScrollReveal>
@@ -48,7 +49,7 @@ export default function BlogList() {
 
       {sorted.length === 0 && (
         <p className={styles.empty}>
-          {locale === 'nl' ? 'Nog geen posts. Komt binnenkort!' : 'No posts yet. Coming soon!'}
+          {locale === Locale.NL ? 'Nog geen posts. Komt binnenkort!' : 'No posts yet. Coming soon!'}
         </p>
       )}
     </main>

@@ -18,6 +18,8 @@ import CpRedGenerator from './pages/Tools/CpRedGenerator/CpRedGenerator';
 import CpRedWiki from './pages/Tools/CpRedGenerator/CpRedWiki';
 import DiffChecker from './pages/Tools/DiffChecker/DiffChecker';
 import StyleExplorer from './pages/Tools/StyleExplorer/StyleExplorer';
+import { Routes } from './constants/routes';
+import ComponentGallery from './pages/Tools/ComponentGallery/ComponentGallery';
 import styles from './App.module.css';
 
 const TransitionContext = createContext();
@@ -108,20 +110,21 @@ const router = createBrowserRouter(
         </I18nProvider>
       ),
       children: [
-        { path: '/', element: <Home /> },
-        { path: '/project/:slug', element: <ProjectDetail /> },
-        { path: '/about', element: <About /> },
-        { path: '/cv', element: <CV /> },
-        { path: '/blog', element: <BlogList /> },
-        { path: '/blog/:slug', element: <BlogPost /> },
-        { path: '/tools', element: <Tools /> },
-        { path: '/tools/cv-builder', element: <CvBuilder /> },
-        { path: '/tools/md-editor', element: <MdEditor /> },
-        { path: '/tools/json-formatter', element: <JsonFormatter /> },
-        { path: '/tools/cpred-generator', element: <CpRedGenerator /> },
-        { path: '/tools/cpred-wiki', element: <CpRedWiki /> },
-        { path: '/tools/diff-checker', element: <DiffChecker /> },
-        { path: '/tools/style-explorer', element: <StyleExplorer /> },
+        { path: Routes.HOME, element: <Home /> },
+        { path: Routes.PROJECT, element: <ProjectDetail /> },
+        { path: Routes.ABOUT, element: <About /> },
+        { path: Routes.CV, element: <CV /> },
+        { path: Routes.BLOG, element: <BlogList /> },
+        { path: Routes.BLOG_POST, element: <BlogPost /> },
+        { path: Routes.TOOLS, element: <Tools /> },
+        { path: Routes.TOOL_CV_BUILDER, element: <CvBuilder /> },
+        { path: Routes.TOOL_MD_EDITOR, element: <MdEditor /> },
+        { path: Routes.TOOL_JSON_FORMATTER, element: <JsonFormatter /> },
+        { path: Routes.TOOL_CPRED_GENERATOR, element: <CpRedGenerator /> },
+        { path: Routes.TOOL_CPRED_WIKI, element: <CpRedWiki /> },
+        { path: Routes.TOOL_DIFF_CHECKER, element: <DiffChecker /> },
+        { path: Routes.TOOL_STYLE_EXPLORER, element: <StyleExplorer /> },
+        { path: Routes.TOOL_COMPONENT_GALLERY, element: <ComponentGallery /> },
       ],
     },
   ],

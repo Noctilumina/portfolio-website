@@ -1,24 +1,26 @@
 import { createContext, useContext, useState, useCallback } from 'react';
 import en from './en.json';
 import nl from './nl.json';
+import { StorageKey } from '../constants/storage';
+import { Locale } from '../constants/locale';
 
 const translations = { en, nl };
 const I18nContext = createContext();
 
 export function I18nProvider({ children }) {
   const [locale, setLocale] = useState(() => {
-    const saved = localStorage.getItem('portfolio-lang');
+    const saved = localStorage.getItem(StorageKey.LANGUAGE);
     if (saved && translations[saved]) return saved;
     // Dutch for Netherlands (nl-NL) and Flanders/Belgium (nl-BE)
     const lang = navigator.language;
-    if (lang === 'nl' || lang.startsWith('nl-')) return 'nl';
-    return 'en';
+    if (lang === 'nl' || lang.startsWith('nl-')) return Locale.NL;
+    return Locale.EN;
   });
 
   const toggleLocale = useCallback(() => {
     setLocale((current) => {
-      const next = current === 'en' ? 'nl' : 'en';
-      localStorage.setItem('portfolio-lang', next);
+      const next = current === Locale.EN ? Locale.NL : Locale.EN;
+      localStorage.setItem(StorageKey.LANGUAGE, next);
       return next;
     });
   }, []);

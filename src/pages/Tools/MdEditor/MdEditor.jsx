@@ -3,6 +3,7 @@ import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { useI18n } from '../../../i18n/I18nContext';
 import { usePageTransition } from '../../../App';
+import { Routes } from '../../../constants/routes';
 import styles from './MdEditor.module.css';
 
 const DEFAULT_MD = `# Hello World
@@ -68,6 +69,14 @@ export default function MdEditor() {
     URL.revokeObjectURL(url);
   };
 
+  const handlePrint = () => {
+    const style = document.createElement('style');
+    style.textContent = '@page { size: A4; margin: 2cm; }';
+    document.head.appendChild(style);
+    window.print();
+    document.head.removeChild(style);
+  };
+
   const handleOpen = () => {
     const input = document.createElement('input');
     input.type = 'file';
@@ -108,6 +117,7 @@ export default function MdEditor() {
         <button className={styles.toolbarBtn} onClick={handleDownload}>{t('mdEditor.download')}</button>
         <button className={styles.toolbarBtn} onClick={handleCopyMd}>{t('mdEditor.copyMd')}</button>
         <button className={styles.toolbarBtn} onClick={handleCopyHtml}>{t('mdEditor.copyHtml')}</button>
+        <button className={`${styles.toolbarBtn} ${styles.toolbarBtnPrint}`} onClick={handlePrint}>{t('mdEditor.print')}</button>
       </div>
 
       <div className={styles.tabs}>
@@ -144,7 +154,7 @@ export default function MdEditor() {
       </div>
 
       <div className={styles.backWrapper}>
-        <button className={styles.backButton} onClick={() => startTransition('/tools')}>
+        <button className={styles.backButton} onClick={() => startTransition(Routes.TOOLS)}>
           {t('mdEditor.backTools')}
         </button>
       </div>

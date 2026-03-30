@@ -38,21 +38,26 @@
   padding: 0.4em 0.9em;
   background: var(--color-surface);
   color: var(--color-text);
-  border: 0.12em solid var(--color-border);
-  border-radius: 0.2em;
-  box-shadow: 0.15em 0.15em 0 var(--color-shadow, #000);
+  border: var(--border-light) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
   cursor: pointer;
-  transition: transform 0.1s, box-shadow 0.1s;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .toolbarBtn:hover {
   transform: translate(-0.05em, -0.05em);
-  box-shadow: 0.2em 0.2em 0 var(--color-shadow, #000);
+  box-shadow: var(--shadow-md);
+}
+
+.toolbarBtnPrint {
+  background: var(--color-primary);
+  color: #fff;
 }
 
 .toolbarBtn:active {
   transform: translate(0.05em, 0.05em);
-  box-shadow: 0.1em 0.1em 0 var(--color-shadow, #000);
+  box-shadow: var(--shadow-xs);
 }
 
 /* Tabs — visible only on mobile */
@@ -60,8 +65,8 @@
   display: none;
   gap: 0;
   margin-bottom: 1rem;
-  border: 0.15em solid var(--color-border);
-  border-radius: 0.3em;
+  border: var(--border-medium) solid var(--color-border);
+  border-radius: var(--radius-md);
   overflow: hidden;
 }
 
@@ -76,11 +81,11 @@
   color: var(--color-muted);
   border: none;
   cursor: pointer;
-  transition: background 0.15s, color 0.15s;
+  transition: background var(--transition-normal), color var(--transition-normal);
 }
 
 .tab + .tab {
-  border-left: 0.15em solid var(--color-border);
+  border-left: var(--border-medium) solid var(--color-border);
 }
 
 .tabActive {
@@ -106,9 +111,9 @@
   flex: 1;
   min-width: 0;
   background: var(--color-surface);
-  border: 0.2em solid var(--color-border);
-  border-radius: 0.3em;
-  box-shadow: 0.4em 0.4em 0 var(--color-shadow, #000);
+  border: var(--border-heavy) solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xl);
   padding: 2rem;
   overflow-y: auto;
 }
@@ -121,9 +126,9 @@
   padding: 1.25rem;
   background: #1a1a1a;
   color: #f0f0f0;
-  border: 0.2em solid var(--color-border);
-  border-radius: 0.3em;
-  box-shadow: 0.4em 0.4em 0 var(--color-shadow, #000);
+  border: var(--border-heavy) solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xl);
   resize: none;
   outline: none;
   tab-size: 2;
@@ -201,7 +206,7 @@
   font-size: 0.85em;
   background: var(--color-bg);
   border: 2px solid var(--color-border);
-  border-radius: 0.2em;
+  border-radius: var(--radius-sm);
   padding: 0.15em 0.4em;
   color: var(--color-primary);
 }
@@ -209,9 +214,9 @@
 .articleContent :global(pre) {
   background: #1a1a1a !important;
   color: #f0f0f0 !important;
-  border: 0.2em solid var(--color-border);
-  border-radius: 0.3em;
-  box-shadow: 0.3em 0.3em 0 var(--color-shadow, #000);
+  border: var(--border-heavy) solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
   padding: 1.25rem;
   overflow-x: auto;
   margin-bottom: 1.5rem;
@@ -246,9 +251,9 @@
   max-width: 100%;
   max-height: 450px;
   object-fit: cover;
-  border: 0.15em solid var(--color-border);
-  border-radius: 0.3em;
-  box-shadow: 0.25em 0.25em 0 var(--color-shadow, #000);
+  border: var(--border-medium) solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
   margin: 1rem 0;
 }
 
@@ -258,9 +263,9 @@
   border-spacing: 0;
   margin: 1rem 0;
   font-size: 0.85rem;
-  border: 0.15em solid var(--color-border);
-  border-radius: 0.3em;
-  box-shadow: 0.2em 0.2em 0 var(--color-shadow, #000);
+  border: var(--border-medium) solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
   overflow: hidden;
 }
 
@@ -273,7 +278,7 @@
   padding: 0.5em 0.7em;
   background: var(--color-primary);
   color: #fff;
-  border-bottom: 0.15em solid var(--color-border);
+  border-bottom: var(--border-medium) solid var(--color-border);
 }
 
 .articleContent :global(th) + :global(th) {
@@ -328,6 +333,35 @@
 /* Mobile: tabs control visibility */
 .panelHidden {
   display: flex;
+}
+
+@media print {
+  .page {
+    padding: 0 !important;
+    max-width: none !important;
+  }
+
+  .header,
+  .toolbar,
+  .tabs,
+  .editorPane,
+  .backWrapper {
+    display: none !important;
+  }
+
+  .workspace {
+    display: block;
+  }
+
+  .previewPane {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+
+  .panelHidden {
+    display: block !important;
+  }
 }
 
 @media (max-width: 900px) {

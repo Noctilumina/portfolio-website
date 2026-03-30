@@ -4,6 +4,8 @@ import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { useI18n } from '../../i18n/I18nContext';
 import { usePageTransition } from '../../App';
+import { Routes } from '../../constants/routes';
+import { Locale } from '../../constants/locale';
 import blogIndex from '../../data/blog/index.json';
 import styles from './Blog.module.css';
 
@@ -21,9 +23,9 @@ export default function BlogPost() {
     return (
       <main id="main-content" className={styles.page}>
         <div className={styles.notFound}>
-          <h1>{locale === 'nl' ? 'Post niet gevonden' : 'Post not found'}</h1>
-          <button className={styles.backButton} onClick={() => startTransition('/blog')}>
-            {locale === 'nl' ? '← Terug naar blog' : '← Back to blog'}
+          <h1>{locale === Locale.NL ? 'Post niet gevonden' : 'Post not found'}</h1>
+          <button className={styles.backButton} onClick={() => startTransition(Routes.BLOG)}>
+            {locale === Locale.NL ? '← Terug naar blog' : '← Back to blog'}
           </button>
         </div>
       </main>
@@ -33,15 +35,15 @@ export default function BlogPost() {
   // Try localized markdown first, fall back to English
   const nlKey = Object.keys(markdownFiles).find((k) => k.endsWith(`/${slug}.nl.md`));
   const enKey = Object.keys(markdownFiles).find((k) => k.endsWith(`/${slug}.md`) && !k.endsWith('.nl.md'));
-  const content = locale === 'nl' && nlKey ? markdownFiles[nlKey] : (enKey ? markdownFiles[enKey] : '');
+  const content = locale === Locale.NL && nlKey ? markdownFiles[nlKey] : (enKey ? markdownFiles[enKey] : '');
 
-  const title = locale === 'nl' && post.titleNl ? post.titleNl : post.title;
+  const title = locale === Locale.NL && post.titleNl ? post.titleNl : post.title;
 
   return (
     <main id="main-content" className={styles.page}>
       <nav aria-label="Breadcrumb">
-        <button className={styles.backButton} onClick={() => startTransition('/blog')}>
-          {locale === 'nl' ? '← Terug naar blog' : '← Back to blog'}
+        <button className={styles.backButton} onClick={() => startTransition(Routes.BLOG)}>
+          {locale === Locale.NL ? '← Terug naar blog' : '← Back to blog'}
         </button>
       </nav>
 

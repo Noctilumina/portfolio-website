@@ -1,0 +1,35 @@
+/* textOnly mode: container always visible, only text content fades in */
+.textHidden :global(h1),
+.textHidden :global(h2),
+.textHidden :global(h3),
+.textHidden :global(h4),
+.textHidden :global(p),
+.textHidden :global(span),
+.textHidden :global(li),
+.textHidden :global(a),
+.textHidden :global(strong),
+.textHidden :global(em),
+.textHidden :global(label),
+.textHidden :global(time),
+.textHidden :global(small) {
+  opacity: 0;
+  transform: translateY(25px);
+}
+
+.textRevealed :global(h1),
+.textRevealed :global(h2),
+.textRevealed :global(h3),
+.textRevealed :global(h4),
+.textRevealed :global(p),
+.textRevealed :global(span),
+.textRevealed :global(li),
+.textRevealed :global(a),
+.textRevealed :global(strong),
+.textRevealed :global(em),
+.textRevealed :global(label),
+.textRevealed :global(time),
+.textRevealed :global(small) {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity var(--transition-wipe), transform var(--transition-wipe);
+}

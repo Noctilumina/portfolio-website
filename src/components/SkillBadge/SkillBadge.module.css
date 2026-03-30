@@ -4,16 +4,16 @@
   gap: 0.5rem;
   padding: 0.5rem 0.9rem;
   background: var(--color-primary);
-  border: 0.15em solid var(--color-border);
-  border-radius: 0.3em;
-  box-shadow: 0.2em 0.2em 0 var(--color-shadow, #000);
+  border: var(--border-medium) solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
   font-size: 0.85rem;
   color: var(--color-text);
   user-select: none;
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  transition: transform 0.2s, box-shadow 0.2s, color 0.3s;
+  transition: transform var(--transition-slow), box-shadow var(--transition-slow), color var(--transition-paint);
 }
 
 /* Inner fill that wipes away on hover to reveal the primary color behind */
@@ -24,12 +24,12 @@
   background: var(--color-surface);
   z-index: -1;
   transform-origin: right;
-  transition: transform 0.4s ease;
+  transition: transform var(--transition-wipe);
 }
 
 .badge:hover {
   transform: translate(-0.1em, -0.1em);
-  box-shadow: 0.3em 0.3em 0 var(--color-shadow, #000);
+  box-shadow: var(--shadow-lg);
   color: #ffffff;
 }
 

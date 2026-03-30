@@ -14,12 +14,12 @@ export default function Experience() {
 
   return (
     <section id="experience" className={`${styles.section} ${styles.tinted}`}>
-      <ScrollReveal>
+      <ScrollReveal textOnly>
         <h2 className={styles.heading}>{t('experience.heading')}</h2>
       </ScrollReveal>
       <div className={styles.timeline}>
         {localizedExperience.map((entry, i) => (
-          <ScrollReveal key={entry.id} delay={i * 0.15}>
+          <ScrollReveal key={entry.id} delay={i * 0.15} textOnly>
             <TimelineEntry entry={entry} />
           </ScrollReveal>
         ))}
