@@ -64,6 +64,7 @@ export default function Tools() {
 
   const handleCardClick = (tool) => {
     if (tool.route) startTransition(tool.route);
+    else if (tool.liveUrl) window.open(tool.liveUrl, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -105,10 +106,10 @@ export default function Tools() {
         {filtered.map((tool, i) => (
           <ScrollReveal key={tool.slug} delay={i * 0.05}>
             <div
-              className={`${styles.card} ${tool.route ? styles.cardClickable : ''}`}
+              className={`${styles.card} ${(tool.route || tool.liveUrl) ? styles.cardClickable : ''}`}
               onClick={() => handleCardClick(tool)}
-              role={tool.route ? 'link' : undefined}
-              tabIndex={tool.route ? 0 : undefined}
+              role={(tool.route || tool.liveUrl) ? 'link' : undefined}
+              tabIndex={(tool.route || tool.liveUrl) ? 0 : undefined}
               onKeyDown={(e) => e.key === 'Enter' && handleCardClick(tool)}
             >
               <div className={styles.cardHeader}>
@@ -120,21 +121,14 @@ export default function Tools() {
                   <span key={tech} className={styles.tag}>{tech}</span>
                 ))}
               </div>
-              {(tool.githubUrl || tool.liveUrl) && (
+              {tool.githubUrl && (
                 <div className={styles.links}>
-                  {tool.githubUrl && (
-                    <a href={tool.githubUrl} target="_blank" rel="noopener noreferrer" className={styles.link} onClick={(e) => e.stopPropagation()}>
-                      GitHub
-                    </a>
-                  )}
-                  {tool.liveUrl && (
-                    <a href={tool.liveUrl} target="_blank" rel="noopener noreferrer" className={styles.link} onClick={(e) => e.stopPropagation()}>
-                      {t('tools.liveDemo')}
-                    </a>
-                  )}
+                  <a href={tool.githubUrl} target="_blank" rel="noopener noreferrer" className={styles.link} onClick={(e) => e.stopPropagation()}>
+                    GitHub
+                  </a>
                 </div>
               )}
-              {tool.route && <span className={styles.openArrow} aria-hidden="true">&rarr;</span>}
+              {(tool.route || tool.liveUrl) && <span className={styles.openArrow} aria-hidden="true">&rarr;</span>}
             </div>
           </ScrollReveal>
         ))}
