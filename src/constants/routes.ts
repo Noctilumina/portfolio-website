@@ -19,6 +19,12 @@ export enum Routes {
   TOOL_DIFF_CHECKER = '/tools/diff-checker',
   TOOL_STYLE_EXPLORER = '/tools/style-explorer',
   TOOL_COMPONENT_GALLERY = '/tools/component-gallery',
+  TOOL_MONDRIAAN = '/tools/mondriaan',
+  TOOL_HALFTONE = '/tools/halftone',
+  TOOL_OP_ART = '/tools/op-art',
+  TOOL_COLOR_PALETTE = '/tools/color-palette',
+  TOOL_PATTERN_TILER = '/tools/pattern-tiler',
+  TOOL_ASCII_ART = '/tools/ascii-art',
 }
 
 /** Helper to build a parameterized route */

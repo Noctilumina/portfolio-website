@@ -50,7 +50,7 @@ The MVP is working. Here's what's in:
 - **PNG export** with configurable DPI (150 for drafts, 300 for print)
 - **Project save/load** as JSON files
 
-![Early state of the map maker](/images/blog/Mapmaker_initial_state.png)
+![Early state of the map maker](/images/blog/ttrpg-map-maker/Mapmaker_initial_state.png)
 
 Right now I'm using colored placeholder tiles instead of real art, but the system is designed so you can import your own assets. That's coming next.
 

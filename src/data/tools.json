@@ -3,8 +3,13 @@
     "slug": "cv-builder",
     "title": "CV Builder",
     "shortDescription": "Build a professional two-column CV with a live preview and print it as a PDF.",
-    "techStack": ["React", "CSS Modules"],
-    "categories": ["Productivity", "PDF", "Builder"],
+    "techStack": [
+      "React",
+      "CSS"
+    ],
+    "categories": [
+      "Career"
+    ],
     "route": "/tools/cv-builder",
     "githubUrl": "",
     "liveUrl": ""
@@ -13,8 +18,13 @@
     "slug": "md-editor",
     "title": "Markdown Editor",
     "shortDescription": "Write and preview Markdown in the portfolio's pop art style. Open, edit, and download .md files.",
-    "techStack": ["React", "react-markdown"],
-    "categories": ["Editor", "Writing", "Productivity"],
+    "techStack": [
+      "React",
+      "Markdown"
+    ],
+    "categories": [
+      "DevTools"
+    ],
     "route": "/tools/md-editor",
     "githubUrl": "",
     "liveUrl": ""
@@ -23,8 +33,12 @@
     "slug": "json-formatter",
     "title": "JSON Formatter",
     "shortDescription": "Prettify, minify, and explore JSON with a collapsible tree view.",
-    "techStack": ["React"],
-    "categories": ["Developer", "Formatter", "Data"],
+    "techStack": [
+      "React"
+    ],
+    "categories": [
+      "DevTools"
+    ],
     "route": "/tools/json-formatter",
     "githubUrl": "",
     "liveUrl": ""
@@ -33,8 +47,13 @@
     "slug": "cpred-generator",
     "title": "Cyberpunk Red Generator",
     "shortDescription": "Random encounter, NPC, loot, and location generators for Cyberpunk Red TTRPG sessions.",
-    "techStack": ["React"],
-    "categories": ["TTRPG", "Generator", "Creative"],
+    "techStack": [
+      "React"
+    ],
+    "categories": [
+      "Cyberpunk Red",
+      "TTRPG"
+    ],
     "route": "/tools/cpred-generator",
     "githubUrl": "",
     "liveUrl": ""
@@ -43,8 +62,14 @@
     "slug": "cpred-wiki",
     "title": "CPR Rules Reference",
     "shortDescription": "Searchable wiki of Cyberpunk Red core mechanics. Stats, skills, combat, netrunning, and more.",
-    "techStack": ["React", "react-markdown"],
-    "categories": ["TTRPG", "Productivity"],
+    "techStack": [
+      "React",
+      "Markdown"
+    ],
+    "categories": [
+      "Cyberpunk Red",
+      "TTRPG"
+    ],
     "route": "/tools/cpred-wiki",
     "githubUrl": "",
     "liveUrl": ""
@@ -53,8 +78,13 @@
     "slug": "component-gallery",
     "title": "Component Gallery",
     "shortDescription": "Interactive gallery of all UI components used in the portfolio. Toggle themes, adjust props, copy JSX.",
-    "techStack": ["React", "CSS Modules"],
-    "categories": ["Developer", "Design"],
+    "techStack": [
+      "React",
+      "CSS"
+    ],
+    "categories": [
+      "DevTools"
+    ],
     "route": "/tools/component-gallery",
     "githubUrl": "",
     "liveUrl": ""
@@ -63,8 +93,12 @@
     "slug": "diff-checker",
     "title": "Diff Checker",
     "shortDescription": "Compare two texts side-by-side and see differences highlighted line-by-line.",
-    "techStack": ["React"],
-    "categories": ["Developer", "Comparison", "Productivity"],
+    "techStack": [
+      "React"
+    ],
+    "categories": [
+      "DevTools"
+    ],
     "route": "/tools/diff-checker",
     "githubUrl": "",
     "liveUrl": ""
@@ -73,9 +107,105 @@
     "slug": "style-explorer",
     "title": "CSS Style Explorer",
     "shortDescription": "Explore design movements from Pop Art to Cyberpunk. Pick a preset, tweak every property, copy the CSS.",
-    "techStack": ["React", "CSS"],
-    "categories": ["Design", "CSS", "Creative"],
+    "techStack": [
+      "React",
+      "CSS"
+    ],
+    "categories": [
+      "DevTools"
+    ],
     "route": "/tools/style-explorer",
+    "githubUrl": "",
+    "liveUrl": ""
+  },
+  {
+    "slug": "mondriaan-generator",
+    "title": "Mondriaan Generator",
+    "shortDescription": "Generate compositions in the style of Piet Mondriaan. Adjust the grid, colors, and export as SVG.",
+    "techStack": [
+      "React",
+      "SVG"
+    ],
+    "categories": [
+      "Art"
+    ],
+    "route": "/tools/mondriaan",
+    "githubUrl": "",
+    "liveUrl": ""
+  },
+  {
+    "slug": "halftone-converter",
+    "title": "Halftone Image Converter",
+    "shortDescription": "Upload an image and convert it to a halftone dot pattern. Export as SVG or PNG.",
+    "techStack": [
+      "React",
+      "Canvas"
+    ],
+    "categories": [
+      "Art"
+    ],
+    "route": "/tools/halftone",
+    "githubUrl": "",
+    "liveUrl": ""
+  },
+  {
+    "slug": "op-art-generator",
+    "title": "Op Art Pattern Generator",
+    "shortDescription": "Generate mesmerizing optical illusion patterns with adjustable parameters.",
+    "techStack": [
+      "React",
+      "Canvas"
+    ],
+    "categories": [
+      "Art"
+    ],
+    "route": "/tools/op-art",
+    "githubUrl": "",
+    "liveUrl": ""
+  },
+  {
+    "slug": "color-palette",
+    "title": "Color Palette from Image",
+    "shortDescription": "Upload an image and extract its dominant colors. Export as CSS variables or JSON.",
+    "techStack": [
+      "React",
+      "Canvas"
+    ],
+    "categories": [
+      "DevTools",
+      "Art"
+    ],
+    "route": "/tools/color-palette",
+    "githubUrl": "",
+    "liveUrl": ""
+  },
+  {
+    "slug": "pattern-tiler",
+    "title": "Geometric Pattern Tiler",
+    "shortDescription": "Create repeating geometric patterns from shapes. Choose layout, colors, and export.",
+    "techStack": [
+      "React",
+      "Canvas"
+    ],
+    "categories": [
+      "Art"
+    ],
+    "route": "/tools/pattern-tiler",
+    "githubUrl": "",
+    "liveUrl": ""
+  },
+  {
+    "slug": "ascii-art",
+    "title": "ASCII Art Generator",
+    "shortDescription": "Convert images to ASCII art. Choose character sets, adjust contrast, and copy or download.",
+    "techStack": [
+      "React",
+      "Canvas"
+    ],
+    "categories": [
+      "Art"
+    ],
+    "route": "/tools/ascii-art",
     "githubUrl": "",
     "liveUrl": ""
   },
@@ -83,8 +213,12 @@
     "slug": "image-tagger",
     "title": "Image Tagger",
     "shortDescription": "Tag and organize images with custom labels.",
-    "techStack": ["React"],
-    "categories": ["Images", "Productivity"],
+    "techStack": [
+      "React"
+    ],
+    "categories": [
+      "TTRPG"
+    ],
     "githubUrl": "",
     "liveUrl": "https://noctilumina.github.io/MapMaker/tag-editor.html"
   },
@@ -92,8 +226,14 @@
     "slug": "sprite-selector",
     "title": "Sprite Extractor",
     "shortDescription": "Select and extract sprites from sprite sheets.",
-    "techStack": ["React", "Canvas API"],
-    "categories": ["Images", "Gamedev", "Creative"],
+    "techStack": [
+      "React",
+      "Canvas"
+    ],
+    "categories": [
+      "DevTools",
+      "Art"
+    ],
     "githubUrl": "",
     "liveUrl": "https://noctilumina.github.io/MapMaker/sprite-extractor.html"
   },
@@ -101,8 +241,13 @@
     "slug": "ttrpg-map-maker",
     "title": "TTRPG Map Maker",
     "shortDescription": "Grid-based map builder for tabletop RPG sessions.",
-    "techStack": ["React", "Konva.js"],
-    "categories": ["TTRPG", "Gamedev", "Builder", "Creative"],
+    "techStack": [
+      "React",
+      "Canvas"
+    ],
+    "categories": [
+      "TTRPG"
+    ],
     "githubUrl": "",
     "liveUrl": "https://noctilumina.github.io/MapMaker/"
   }

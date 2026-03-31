@@ -3,6 +3,7 @@ import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { useI18n } from '../../../i18n/I18nContext';
 import ToolNavbar from '../../../components/ToolNavbar/ToolNavbar';
+import { Routes } from '../../../constants/routes';
 import { WIKI_ENTRIES, WIKI_CATEGORIES } from './wikidata';
 import { QUICK_REF, QUICK_REF_TOPICS } from './quickref';
 import styles from './CpRedWiki.module.css';
@@ -184,7 +185,7 @@ export default function CpRedWiki() {
 
   return (
     <main id="main-content" className={styles.page}>
-      <ToolNavbar title="CPR Reference" backTo="/tools/cpred-generator" backLabel={t('cpred.backTools')}>
+      <ToolNavbar title="CPR Reference" backTo={Routes.TOOLS} backLabel={t('cpred.backTools')}>
         {mode === 'wiki' && (
           <button className={styles.sidebarToggle} onClick={() => setSidebarOpen(!sidebarOpen)}>
             {sidebarOpen ? '\u2715' : '\u2630'}

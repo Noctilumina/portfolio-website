@@ -36,7 +36,7 @@ Nog vroeg in het proces. Ik ben aan het uitzoeken wat de juiste aanpak is voor d
 
 Het grid-systeem werkt, basis tegel-schilderen zit erin, en ik heb een ruwe UI. Niets wat ik al zou laten zien, maar de basis staat.
 
-![Vroege staat van de map maker](/images/blog/Mapmaker_initial_state.png)
+![Vroege staat van de map maker](/images/blog/ttrpg-map-maker/Mapmaker_initial_state.png)
 
 ## Het moeilijke deel
 

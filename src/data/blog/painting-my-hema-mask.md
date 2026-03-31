@@ -16,7 +16,7 @@ I wanted it to feel a bit intimidating to opponents too. A bit aggressive. So I 
 
 The original stencil also had the name "Iris" in Old Greek, but the resolution of the mesh just didn't allow for legible text.
 
-![The original design](/images/blog/svg_original_design.png)
+![The original design](/images/blog/painting-hema-mask/svg_original_design.png)
 
 ## The Full Process
 
@@ -28,17 +28,17 @@ Here's the actual step-by-step, because it's more involved than you might think.
 
 **3. Base colors.** I was lucky because my mask has a single iron bar running straight down the center, which gave me a perfect dividing line. I taped off one half, spray painted the other. Did the light side first, then the dark side. If your mask doesn't have a natural dividing line, you'll need to get creative with the tape.
 
-![Base backgrounds on the mask](/images/blog/Mask_base_backgrounds.jpeg)
+![Base backgrounds on the mask](/images/blog/painting-hema-mask/Mask_base_backgrounds.jpeg)
 
 **4. Stencils.** Tape off the entire mask again. Prepare your stencil on paper, cut it out, hold it against the mask where it needs to go, and then use a Stanley knife to cut through the tape. This is extremely time-consuming but absolutely worth it. Nothing else gives you that level of detail on mesh.
 
-![Stencils applied to the mask](/images/blog/Mask_stencils.jpeg)
+![Stencils applied to the mask](/images/blog/painting-hema-mask/Mask_stencils.jpeg)
 
 **5. Drying.** Every single step needs to dry for a good while. About two hours per stage if I remember right. Don't rush this.
 
 **6. Touch-ups with brushes.** After removing the tape, you'll find that paint sometimes bleeds underneath, or tape covered areas you didn't intend. Time to fix it with brushes. For me, outlining the wings in white was a blessing in disguise. It gave me really fine detail, and my white brush paint matched the spray paint perfectly.
 
-![Outlining bands on the mask](/images/blog/Mask_band_outlining.jpeg)
+![Outlining bands on the mask](/images/blog/painting-hema-mask/Mask_band_outlining.jpeg)
 
 **7. Detailing.** This is the longest part. The mask is a 3D surface, and if you're not using spray paint, regular paint has a hard time getting into all the little grooves where the mesh contacts itself. This took multiple days of work. Just patience and a steady hand.
 
@@ -46,9 +46,9 @@ Here's the actual step-by-step, because it's more involved than you might think.
 
 **9. Seal it.** Spray the entire mask with a clear lacquer finish. Before that, sand off any thick bits of paint. Then apply the lacquer and let it dry. I dried mine under the hood of our furnace for better air circulation, which worked really well.
 
-![Finished mask](/images/blog/Mask_finished.jpeg)
+![Finished mask](/images/blog/painting-hema-mask/Mask_finished.jpeg)
 
-![Finished mask without tape](/images/blog/helmet_finished_no_cover_no_tape.jpeg)
+![Finished mask without tape](/images/blog/painting-hema-mask/helmet_finished_no_cover_no_tape.jpeg)
 
 ## Working With the Mesh
 

@@ -20,6 +20,12 @@ import DiffChecker from './pages/Tools/DiffChecker/DiffChecker';
 import StyleExplorer from './pages/Tools/StyleExplorer/StyleExplorer';
 import { Routes } from './constants/routes';
 import ComponentGallery from './pages/Tools/ComponentGallery/ComponentGallery';
+import MondriaanGenerator from './pages/Tools/MondriaanGenerator/MondriaanGenerator';
+import HalftoneConverter from './pages/Tools/HalftoneConverter/HalftoneConverter';
+import OpArtGenerator from './pages/Tools/OpArtGenerator/OpArtGenerator';
+import ColorPalette from './pages/Tools/ColorPalette/ColorPalette';
+import PatternTiler from './pages/Tools/PatternTiler/PatternTiler';
+import AsciiArt from './pages/Tools/AsciiArt/AsciiArt';
 import styles from './App.module.css';
 
 const TransitionContext = createContext();
@@ -125,6 +131,12 @@ const router = createBrowserRouter(
         { path: Routes.TOOL_DIFF_CHECKER, element: <DiffChecker /> },
         { path: Routes.TOOL_STYLE_EXPLORER, element: <StyleExplorer /> },
         { path: Routes.TOOL_COMPONENT_GALLERY, element: <ComponentGallery /> },
+        { path: Routes.TOOL_MONDRIAAN, element: <MondriaanGenerator /> },
+        { path: Routes.TOOL_HALFTONE, element: <HalftoneConverter /> },
+        { path: Routes.TOOL_OP_ART, element: <OpArtGenerator /> },
+        { path: Routes.TOOL_COLOR_PALETTE, element: <ColorPalette /> },
+        { path: Routes.TOOL_PATTERN_TILER, element: <PatternTiler /> },
+        { path: Routes.TOOL_ASCII_ART, element: <AsciiArt /> },
       ],
     },
   ],

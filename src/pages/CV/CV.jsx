@@ -32,7 +32,7 @@ export default function CV() {
           {/* Left sidebar */}
           <div className={styles.sideCol}>
             <div className={styles.portrait}>
-              <img src={`${import.meta.env.BASE_URL}images/blog/headshot_turtleneck_iris.jpeg`} alt="Iris Peters" className={styles.portraitImage} />
+              <img src={`${import.meta.env.BASE_URL}images/blog/headshots/headshot_turtleneck_iris.jpeg`} alt="Iris Peters" className={styles.portraitImage} />
             </div>
 
             <section className={styles.section}>

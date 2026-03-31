@@ -1,5 +1,14 @@
 [
   {
+    "slug": "building-art-tools",
+    "title": "Building a Collection of Art Tools (Because Why Not)",
+    "titleNl": "Een Collectie Kunsttools Bouwen (Want Waarom Niet)",
+    "date": "2026-03-31",
+    "tags": ["technical", "art", "creative", "canvas"],
+    "excerpt": "I built six art generator tools: Mondriaan compositions, halftone image converter, op art patterns, color palette extractor, ASCII art, and geometric pattern tiler.",
+    "excerptNl": "Ik bouwde zes kunstgenerator-tools: Mondriaan-composities, halftoon-omzetter, op-art patronen, kleurenpalet-extractor, ASCII-kunst en geometrisch patroon-tiler."
+  },
+  {
     "slug": "building-a-tools-page",
     "title": "Building a Tools Page (Because My Portfolio Was Getting Crowded)",
     "titleNl": "Een Tools Pagina Bouwen (Want Mijn Portfolio Werd Te Vol)",

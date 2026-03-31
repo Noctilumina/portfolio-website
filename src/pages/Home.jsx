@@ -15,6 +15,7 @@ export default function Home() {
       <Skills />
       <SectionDivider color="var(--color-secondary)" />
       <Experience />
+      <SectionDivider flip color="var(--color-secondary)" />
       <Footer />
     </main>
   );

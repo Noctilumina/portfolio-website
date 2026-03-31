@@ -61,13 +61,13 @@
     "title": "About Me",
     "me": "me!",
     "initials": "IP",
-    "intro": "Hi, I'm <strong>Iris Peters</strong> — a fullstack developer based in 's-Hertogenbosch, the Netherlands. I build web applications, cloud infrastructure, and everything in between.",
+    "intro": "Hi, I'm <strong>Iris Peters</strong>, a fullstack developer based in 's-Hertogenbosch, the Netherlands. I build web applications, cloud infrastructure, and everything in between.",
     "backgroundTitle": "Background",
     "background": "With a Bachelor's in Computer Software Engineering from Avans Hogeschool, I've spent 4+ years working across the full stack. From building CI/CD pipelines and Azure infrastructure at Info Support, to developing AR applications on the HoloLens 2, to my current role as a fullstack medior developer at Gynzy building educational software.",
     "backgroundText": "With a Bachelor's in Computer Software Engineering from Avans Hogeschool, I've spent 4+ years working across the full stack. From building CI/CD pipelines and Azure infrastructure at Info Support, to developing AR applications on the HoloLens 2, to my current role as a fullstack medior developer at Gynzy building educational software.",
     "whatIDoTitle": "What I Do",
-    "whatIDo": "I enjoy working across the entire stack — whether that's crafting responsive frontends with Flutter, Ember.js, or React, designing cloud architectures on Azure, or setting up robust DevOps pipelines. I'm always looking to learn new technologies and improve my craft.",
-    "whatIDoText": "I enjoy working across the entire stack — whether that's crafting responsive frontends with Flutter, Ember.js, or React, designing cloud architectures on Azure, or setting up robust DevOps pipelines. I'm always looking to learn new technologies and improve my craft.",
+    "whatIDo": "I enjoy working across the entire stack, whether that's crafting responsive frontends with Flutter, Ember.js, or React, designing cloud architectures on Azure, or setting up robust DevOps pipelines. I'm always looking to learn new technologies and improve my craft.",
+    "whatIDoText": "I enjoy working across the entire stack, whether that's crafting responsive frontends with Flutter, Ember.js, or React, designing cloud architectures on Azure, or setting up robust DevOps pipelines. I'm always looking to learn new technologies and improve my craft.",
     "beyondCodeTitle": "Beyond Code",
     "beyondCode": "When I'm not coding, you can find me enjoying one of my hobbies. My greatest passion so far in life has definitely been HEMA (Historical European Martial Arts), where I fight with a two handed sword called a federschwert.",
     "beyondCodeText": "When I'm not coding, you can find me enjoying one of my hobbies. My greatest passion so far in life has definitely been HEMA (Historical European Martial Arts), where I fight with a two handed sword called a federschwert.",
@@ -99,7 +99,15 @@
     "liveDemo": "Live Demo",
     "searchPlaceholder": "Search tools...",
     "noResults": "No tools match your search.",
-    "backHome": "← Back to home"
+    "backHome": "← Back to home",
+    "categories": {
+      "Art": "Art",
+      "Career": "Career",
+      "Cyberpunk Red": "Cyberpunk Red",
+      "DevTools": "DevTools",
+      "TTRPG": "TTRPG",
+      "All": "All"
+    }
   },
   "diffChecker": {
     "heading": "Diff Checker",

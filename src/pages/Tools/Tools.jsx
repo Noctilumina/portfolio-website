@@ -57,7 +57,7 @@ export default function Tools() {
   };
 
   const filtered = localizedTools.filter((tool) => {
-    const matchesChips = activeChips.length === 0 || activeChips.every((chip) => (tool.categories || []).includes(chip));
+    const matchesChips = activeChips.length === 0 || activeChips.some((chip) => (tool.categories || []).includes(chip));
     const matchesSearch = !search || fuzzyMatch(tool.title, search) || fuzzyMatch(tool.shortDescription, search) || tool.techStack.some((t) => fuzzyMatch(t, search)) || (tool.categories || []).some((c) => fuzzyMatch(c, search));
     return matchesChips && matchesSearch;
   });
@@ -86,13 +86,20 @@ export default function Tools() {
           aria-label={t('tools.searchPlaceholder')}
         />
         <div className={styles.chipRow}>
+          <button
+            className={`${styles.filterChip} ${activeChips.length === 0 ? styles.filterChipActive : ''}`}
+            onClick={() => setActiveChips([])}
+          >
+            <span className={styles.filterChipText}>{t('tools.categories.All')}</span>
+          </button>
+          <div className={styles.chipDivider} aria-hidden="true" />
           {allChips.map((chip) => (
             <button
               key={chip}
               className={`${styles.filterChip} ${activeChips.includes(chip) ? styles.filterChipActive : ''}`}
               onClick={() => toggleChip(chip)}
             >
-              <span className={styles.filterChipText}>{chip}</span>
+              <span className={styles.filterChipText}>{t(`tools.categories.${chip}`) !== `tools.categories.${chip}` ? t(`tools.categories.${chip}`) : chip}</span>
             </button>
           ))}
         </div>

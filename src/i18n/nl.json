@@ -61,13 +61,13 @@
     "title": "Over Mij",
     "me": "ik!",
     "initials": "IP",
-    "intro": "Hoi, ik ben <strong>Iris Peters</strong> — een fullstack developer uit 's-Hertogenbosch, Nederland. Ik bouw webapplicaties, cloudinfrastructuur en alles daartussenin.",
+    "intro": "Hoi, ik ben <strong>Iris Peters</strong>, een fullstack developer uit 's-Hertogenbosch, Nederland. Ik bouw webapplicaties, cloudinfrastructuur en alles daartussenin.",
     "backgroundTitle": "Achtergrond",
     "background": "Met een Bachelor of Applied Science in Computer Software Engineering van Avans Hogeschool, heb ik meer dan 4 jaar ervaring opgebouwd over de hele stack. Van het bouwen van CI/CD-pipelines en Azure-infrastructuur bij Info Support, tot het ontwikkelen van AR-applicaties op de HoloLens 2, tot mijn huidige rol als fullstack medior developer bij Gynzy waar ik educatieve software bouw.",
     "backgroundText": "Met een Bachelor of Applied Science in Computer Software Engineering van Avans Hogeschool, heb ik meer dan 4 jaar ervaring opgebouwd over de hele stack. Van het bouwen van CI/CD-pipelines en Azure-infrastructuur bij Info Support, tot het ontwikkelen van AR-applicaties op de HoloLens 2, tot mijn huidige rol als fullstack medior developer bij Gynzy waar ik educatieve software bouw.",
     "whatIDoTitle": "Wat Ik Doe",
-    "whatIDo": "Ik werk graag over de hele stack — of het nu gaat om het bouwen van responsive frontends met Flutter, Ember.js of React, het ontwerpen van cloudarchitecturen op Azure, of het opzetten van robuuste DevOps-pipelines. Ik ben altijd op zoek naar nieuwe technologieën en manieren om mijn vaardigheden te verbeteren.",
-    "whatIDoText": "Ik werk graag over de hele stack — of het nu gaat om het bouwen van responsive frontends met Flutter, Ember.js of React, het ontwerpen van cloudarchitecturen op Azure, of het opzetten van robuuste DevOps-pipelines. Ik ben altijd op zoek naar nieuwe technologieën en manieren om mijn vaardigheden te verbeteren.",
+    "whatIDo": "Ik werk graag over de hele stack, of het nu gaat om het bouwen van responsive frontends met Flutter, Ember.js of React, het ontwerpen van cloudarchitecturen op Azure, of het opzetten van robuuste DevOps-pipelines. Ik ben altijd op zoek naar nieuwe technologieën en manieren om mijn vaardigheden te verbeteren.",
+    "whatIDoText": "Ik werk graag over de hele stack, of het nu gaat om het bouwen van responsive frontends met Flutter, Ember.js of React, het ontwerpen van cloudarchitecturen op Azure, of het opzetten van robuuste DevOps-pipelines. Ik ben altijd op zoek naar nieuwe technologieën en manieren om mijn vaardigheden te verbeteren.",
     "beyondCodeTitle": "Naast Code",
     "beyondCode": "Als ik niet aan het coderen ben, kun je me vinden bij een van mijn hobby's. Mijn grootste passie tot nu toe is absoluut HEMA (Historische Europese Martial Arts), waar ik vecht met een tweehandig zwaard genaamd een federschwert.",
     "beyondCodeText": "Als ik niet aan het coderen ben, kun je me vinden bij een van mijn hobby's. Mijn grootste passie tot nu toe is absoluut HEMA (Historische Europese Martial Arts), waar ik vecht met een tweehandig zwaard genaamd een federschwert.",
@@ -99,7 +99,15 @@
     "liveDemo": "Live Demo",
     "searchPlaceholder": "Zoek tools...",
     "noResults": "Geen tools gevonden.",
-    "backHome": "← Terug naar home"
+    "backHome": "← Terug naar home",
+    "categories": {
+      "Art": "Kunst",
+      "Career": "Carrière",
+      "Cyberpunk Red": "Cyberpunk Red",
+      "DevTools": "DevTools",
+      "TTRPG": "TTRPG",
+      "All": "Alles"
+    }
   },
   "toolData": {
     "cv-builder": {
@@ -145,6 +153,30 @@
     "ttrpg-map-maker": {
       "title": "TTRPG Map Maker",
       "shortDescription": "Rastergebaseerde kaartbouwer voor tabletop RPG-sessies."
+    },
+    "mondriaan-generator": {
+      "title": "Mondriaan Generator",
+      "shortDescription": "Genereer composities in de stijl van Piet Mondriaan. Pas het raster en kleuren aan en exporteer als SVG."
+    },
+    "halftone-converter": {
+      "title": "Halftoon Omzetter",
+      "shortDescription": "Upload een afbeelding en zet het om naar een halftoonpatroon. Exporteer als SVG of PNG."
+    },
+    "op-art-generator": {
+      "title": "Op Art Generator",
+      "shortDescription": "Genereer betoverende optische illusiepatronen met instelbare parameters."
+    },
+    "color-palette": {
+      "title": "Kleurenpalet uit Afbeelding",
+      "shortDescription": "Upload een afbeelding en extraheer de dominante kleuren. Exporteer als CSS-variabelen of JSON."
+    },
+    "pattern-tiler": {
+      "title": "Geometrisch Patroon Tiler",
+      "shortDescription": "Maak herhalende geometrische patronen van vormen. Kies layout, kleuren en exporteer."
+    },
+    "ascii-art": {
+      "title": "ASCII Art Generator",
+      "shortDescription": "Zet afbeeldingen om naar ASCII-kunst. Kies tekensets, pas contrast aan, kopieer of download."
     }
   },
   "diffChecker": {
