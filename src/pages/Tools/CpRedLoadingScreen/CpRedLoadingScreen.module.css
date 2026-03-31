@@ -334,6 +334,55 @@
   gap: var(--space-2);
 }
 
+/* Category filter chips */
+.categoryChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1-5);
+  align-items: center;
+  margin-bottom: var(--space-3);
+}
+
+.categoryChip {
+  font-family: 'Teko', var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: var(--space-0-5) var(--space-2);
+  background: rgba(255, 60, 60, 0.15);
+  color: #ff3c3c;
+  border: 1px solid #ff3c3c;
+  cursor: pointer;
+  transition: opacity var(--transition-fast), background var(--transition-fast);
+}
+
+.categoryChipActive {
+  background: #ff3c3c;
+  color: #fff;
+}
+
+.categoryChipExcluded {
+  opacity: 0.3;
+  background: transparent;
+  border-color: #333;
+  color: #555;
+}
+
+.chipDivider {
+  width: 1px;
+  height: 1.2em;
+  background: #333;
+  align-self: center;
+}
+
+.deckCount {
+  font-family: 'Teko', var(--font-heading);
+  font-size: var(--text-sm);
+  color: #555;
+  margin-left: auto;
+}
+
 .deckGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -348,7 +397,13 @@
   border: 1px solid #ff3c3c;
   border-radius: 2px;
   overflow: hidden;
-  cursor: default;
+  cursor: pointer;
+  transition: opacity var(--transition-fast), border-color var(--transition-fast);
+}
+
+.deckCardExcluded {
+  opacity: 0.25;
+  border-color: #333;
 }
 
 .deckCardBg {
@@ -515,7 +570,7 @@
   /* Hide interactive elements */
   .prompt, .counter, .printBtn, .modeBtn,
   .navSelect, .scanLines, .deckCardSelect,
-  .deckEmpty {
+  .deckEmpty, .categoryChips {
     display: none !important;
   }
 

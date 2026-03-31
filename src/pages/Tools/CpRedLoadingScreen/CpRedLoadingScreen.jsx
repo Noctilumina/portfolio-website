@@ -18,11 +18,11 @@ function generateDeck() {
   }));
 }
 
-function DeckCard({ card, onChangeImage }) {
+function DeckCard({ card, onChangeImage, isExcluded, onToggle }) {
   const tip = TIPS[card.tipIdx];
   const img = IMAGES[card.imgIdx];
   return (
-    <div className={styles.deckCard}>
+    <div className={`${styles.deckCard} ${isExcluded ? styles.deckCardExcluded : ''}`} onClick={onToggle}>
       {img && <div className={styles.deckCardBg} style={{ backgroundImage: `url(${img})` }} />}
       <div className={styles.deckCardOverlay} />
       {/* Mini corner brackets */}
@@ -76,8 +76,11 @@ export default function CpRedLoadingScreen() {
   const [imgIdx, setImgIdx] = useState(() => IMAGES.length ? Math.floor(Math.random() * IMAGES.length) : -1);
   const [visible, setVisible] = useState(true);
   const [deck, setDeck] = useState(null);
+  const [excluded, setExcluded] = useState(new Set());
   const [cardsPerPage, setCardsPerPage] = useState(8);
   const screenRef = useRef(null);
+
+  const allCategories = useMemo(() => [...new Set(TIPS.map(t => t.category))], []);
 
   const randomize = useCallback(() => {
     setVisible(false);
@@ -90,11 +93,36 @@ export default function CpRedLoadingScreen() {
 
   const handleGenerateDeck = useCallback(() => {
     setDeck(generateDeck());
+    setExcluded(new Set());
   }, []);
 
   const handleChangeCardImage = useCallback((cardIdx, imgIdx) => {
     setDeck((prev) => prev.map((c, i) => i === cardIdx ? { ...c, imgIdx } : c));
   }, []);
+
+  const toggleCard = useCallback((cardIdx) => {
+    setExcluded((prev) => {
+      const next = new Set(prev);
+      if (next.has(cardIdx)) next.delete(cardIdx);
+      else next.add(cardIdx);
+      return next;
+    });
+  }, []);
+
+  const toggleCategory = useCallback((category) => {
+    if (!deck) return;
+    setExcluded((prev) => {
+      const next = new Set(prev);
+      const indicesInCat = deck.map((c, i) => ({ i, cat: TIPS[c.tipIdx].category })).filter(c => c.cat === category).map(c => c.i);
+      const allExcluded = indicesInCat.every(i => next.has(i));
+      if (allExcluded) {
+        indicesInCat.forEach(i => next.delete(i));
+      } else {
+        indicesInCat.forEach(i => next.add(i));
+      }
+      return next;
+    });
+  }, [deck]);
 
   const handlePrintSingle = useCallback(() => {
     const style = document.createElement('style');
@@ -118,7 +146,7 @@ export default function CpRedLoadingScreen() {
   const handlePrintDeck = useCallback(() => {
     const style = document.createElement('style');
     style.textContent = `
-      @page { size: landscape; margin: 5mm; }
+      @page { size: A4 portrait; margin: 0; }
       @media print {
         [role="navigation"] { display: none !important; }
         *, *::before, *::after {
@@ -134,14 +162,19 @@ export default function CpRedLoadingScreen() {
     document.head.removeChild(style);
   }, []);
 
-  const deckPages = useMemo(() => {
+  const includedCards = useMemo(() => {
     if (!deck) return [];
+    return deck.filter((_, i) => !excluded.has(i));
+  }, [deck, excluded]);
+
+  const deckPages = useMemo(() => {
+    if (!includedCards.length) return [];
     const pages = [];
-    for (let i = 0; i < deck.length; i += cardsPerPage) {
-      pages.push(deck.slice(i, i + cardsPerPage));
+    for (let i = 0; i < includedCards.length; i += cardsPerPage) {
+      pages.push(includedCards.slice(i, i + cardsPerPage));
     }
     return pages;
-  }, [deck, cardsPerPage]);
+  }, [includedCards, cardsPerPage]);
 
   const bgImage = IMAGES.length && imgIdx >= 0 ? IMAGES[imgIdx] : null;
   const tipPreview = (t) => t.text.length > 40 ? t.text.slice(0, 40) + '...' : t.text;
@@ -243,19 +276,46 @@ export default function CpRedLoadingScreen() {
           {!deck && (
             <div className={styles.deckEmpty}>
               <p>Click "Generate Deck" to create {TIPS.length} loading screen cards.</p>
-              <p>Each tip gets a random background. You can change any card's image before printing.</p>
+              <p>Each tip gets a random background. Click cards to exclude them. Use the chips to toggle entire categories.</p>
             </div>
           )}
           {deck && (
-            <div className={styles.deckGrid}>
-              {deck.map((card, i) => (
-                <DeckCard
-                  key={i}
-                  card={card}
-                  onChangeImage={(imgIdx) => handleChangeCardImage(i, imgIdx)}
-                />
-              ))}
-            </div>
+            <>
+              <div className={styles.categoryChips}>
+                <button
+                  className={`${styles.categoryChip} ${excluded.size === 0 ? styles.categoryChipActive : ''}`}
+                  onClick={() => setExcluded(new Set())}
+                >
+                  All ({deck.length})
+                </button>
+                <div className={styles.chipDivider} />
+                {allCategories.map((cat) => {
+                  const indicesInCat = deck.map((c, i) => ({ i, cat: TIPS[c.tipIdx].category })).filter(c => c.cat === cat).map(c => c.i);
+                  const allExcl = indicesInCat.every(i => excluded.has(i));
+                  return (
+                    <button
+                      key={cat}
+                      className={`${styles.categoryChip} ${allExcl ? styles.categoryChipExcluded : ''}`}
+                      onClick={() => toggleCategory(cat)}
+                    >
+                      {cat} ({indicesInCat.length - indicesInCat.filter(i => excluded.has(i)).length})
+                    </button>
+                  );
+                })}
+                <span className={styles.deckCount}>{includedCards.length} / {deck.length} cards</span>
+              </div>
+              <div className={styles.deckGrid}>
+                {deck.map((card, i) => (
+                  <DeckCard
+                    key={i}
+                    card={card}
+                    isExcluded={excluded.has(i)}
+                    onToggle={() => toggleCard(i)}
+                    onChangeImage={(imgIdx) => handleChangeCardImage(i, imgIdx)}
+                  />
+                ))}
+              </div>
+            </>
           )}
 
           {/* Hidden print layout */}
