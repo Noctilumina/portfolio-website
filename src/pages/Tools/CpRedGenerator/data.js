@@ -52,6 +52,16 @@ const PERSONALITY = [
   'Darkly humorous', 'Obsessed with self-improvement', 'Haunted by the past',
   'Relentlessly optimistic', 'Perpetually scheming', 'Honour-bound traditionalist',
   'Addicted to danger', 'Deeply spiritual', 'Fiercely independent', 'Desperate and cornered',
+  'Eerily calm under pressure', 'Compulsive liar, even about small things',
+  'Overly friendly in a way that puts people on edge', 'Speaks in metaphors constantly',
+  'Never makes eye contact', 'Always smiling, even when threatening someone',
+  'Pathologically honest', 'Nostalgic for a past that probably never existed',
+  'Treats everything like a business transaction', 'Protective of children, ruthless to everyone else',
+  'Obsessed with their own reputation', 'Philosophical about violence',
+  'Hates technology but is full of cyberware', 'Talks to their weapon like a pet',
+  'Extremely polite, even mid-combat', 'Suffering from obvious PTSD',
+  'Collects trophies from their kills', 'Secretly terrified of dying',
+  'Thinks they\'re smarter than everyone in the room', 'Has a code of honour that makes no sense to anyone else',
 ];
 const MOTIVATIONS = [
   'Paying off a massive debt', 'Revenge against a megacorp', 'Searching for a missing family member',
@@ -60,6 +70,14 @@ const MOTIVATIONS = [
   'Earning enough eddies to leave Night City', 'Hunting a specific target',
   'Keeping a dangerous secret', 'Trying to go legit', 'Looking for their next big score',
   'Atoning for past crimes', 'Chasing a legendary piece of tech',
+  'Trying to find a cure for a terminal illness', 'Working off a blood debt to a fixer',
+  'Searching for a stolen AI personality construct', 'Rebuilding a destroyed nomad pack',
+  'Running from a bounty placed by an ex-employer', 'Trying to get custody of their kid',
+  'Investigating the disappearance of other edgerunners', 'Saving enough to buy a real house outside the city',
+  'Collecting data to write the definitive history of Night City', 'Trying to contact someone beyond the Blackwall',
+  'Building a case to take down a corrupt NCPD captain', 'Seeking the person who sold them faulty cyberware',
+  'Wants to open a legitimate business but keeps getting pulled back in', 'Hoarding weapons for a conflict they believe is coming',
+  'Trying to recreate a lost pre-war technology', 'Driven by a vision from a braindance that may not be real',
 ];
 
 // ── Cyberware (full catalog) ──
@@ -220,16 +238,49 @@ const ENCOUNTER_SCENARIOS = [
   'Assassination attempt on the crew\'s client', 'Caught in crossfire between two gangs',
   'Cornered in an elevator shaft', 'Trapped in a collapsing building',
   'Hit squad waiting at the crew\'s safehouse', 'Netrunner attack through a compromised terminal',
+  'Convoy ambush on the highway outside the city', 'Standoff on a rooftop helipad',
+  'Bomb threat in a crowded lev station', 'Kidnapping in progress outside a nightclub',
+  'Corpo extraction gone sideways in a hotel lobby', 'Underground cage fight turned deadly',
+  'Drug lab raid interrupted by a third party', 'Shootout in a flooded parking structure',
+  'Sabotage at a power relay station', 'Assault on a moving cargo train',
+  'Ambush during a funeral procession', 'Firefight in a construction site scaffold',
+  'Gang initiation turned into a warzone', 'Robbery of a Trauma Team supply AV',
+  'Bounty hunters closing in on someone at the bar', 'Cyberpsycho rampage at a food market',
+  'Running battle through a shopping arcade', 'Snatch-and-grab from a corpo transport van',
+  'Defending a ripperdoc clinic from raiders', 'Escape from a burning building',
+  'Protecting a witness being moved between safehouses', 'Midnight raid on a scavenger den',
+  'Ambush at a bridge chokepoint', 'Shootout during a blackout',
+  'Infiltration blown at a corporate gala', 'Gang war erupts at a Night Market',
+  'Trapped in a subway tunnel with hostiles on both ends', 'Hijacking attempt on an armored truck',
+  'Pursuit through a dense crowd of civilians', 'Defending a cargo container fortress',
+  'Double-cross during a handoff in a junkyard', 'Assassination attempt at a press conference',
+  'Extraction from a collapsed building', 'Rooftop-to-rooftop chase across Kabuki',
+  'Ambush in a dense fog bank rolling off the coast', 'Hit on a target at a packed braindance theater',
 ];
 const TACTICAL_NOTES = [
-  'Heavy cover available — use it', 'Enemies have a netrunner providing overwatch',
+  'Heavy cover available, use it', 'Enemies have a netrunner providing overwatch',
   'Civilians in the crossfire', 'One exit, tightly controlled',
   'Environmental hazard: leaking gas pipes', 'Enemies are expecting the crew',
   'Darkness gives advantage to thermal optics', 'Reinforcements arrive in 3 rounds',
-  'High ground advantage for the enemy', 'Cramped quarters — melee favored',
+  'High ground advantage for the enemy', 'Cramped quarters, melee favored',
   'Enemies are willing to negotiate', 'One enemy is an undercover ally',
   'Security cameras everywhere', 'Automated turret covering the main approach',
   'EMP field disabling electronics in the area',
+  'Multiple levels, enemies on catwalks above', 'Explosive barrels near enemy positions',
+  'Enemies have a hostage', 'Unstable floor, sections may collapse',
+  'Enemies are dug in behind reinforced positions', 'Smoke grenades obscuring the field',
+  'Enemies using flashbang rotation', 'A vehicle provides mobile cover for the enemy',
+  'Friendly NPC pinned down and needs extraction', 'Timer running, bomb or self-destruct in progress',
+  'Enemies have set up tripwire mines', 'Sniper covering the main approach from 200m',
+  'Water on the ground, electrical hazard', 'Enemy netrunner locking doors remotely',
+  'Enemies wearing stolen NCPD uniforms', 'One enemy has a flamethrower',
+  'Toxic gas slowly filling the area', 'Enemies retreating toward a reinforced position',
+  'A drone is spotting for the enemy', 'Tight corridors, no room for shoulder arms',
+  'Enemies have a mounted weapon on a vehicle', 'Broken glass and debris, stealth is difficult',
+  'The area is wired to blow if the crew advances', 'A cyberpsycho is fighting both sides',
+  'Enemies have jammers blocking comms', 'Low ceiling, no grenades without risk',
+  'An innocent bystander is about to do something stupid', 'Heavy rain reducing visibility',
+  'Enemies are retreating to a vehicle for escape', 'The lights are flickering on and off',
 ];
 
 // ── Location data ──
@@ -245,32 +296,79 @@ const VENUE_TYPES = [
   'Megacorp lobby', 'Nomad camp', 'Collapsed overpass', 'Flooded basement club',
   'Rooftop garden', 'Cargo container maze', 'Motel parking lot', 'Scrapyard',
   'Underground netrunner den', 'Illegal racing strip', 'Church of the Second Coming',
-  'Trauma Team landing pad',
+  'Trauma Team landing pad', 'Converted parking garage nightclub', 'Corporate cafeteria',
+  'Pawn shop with a back room', 'Derelict amusement park ride', 'Rooftop boxing ring',
+  'Public bathhouse', 'Abandoned lev station', 'Shipping dock crane yard',
+  'Guerrilla garden on a rooftop', 'Bootleg braindance studio', 'Corpo dead drop location',
+  'Street racing pit stop', 'Recycling plant', 'Condemned apartment block',
+  'Underground sewer junction', 'Makeshift hospital in a school gym', 'Gun range with a secret vault',
+  'Floating barge casino', 'Highway overpass camp', 'Old pre-war bunker',
+  'Tech workshop in a storage unit', 'Laundromat front for a fixer', 'Elevator maintenance shaft',
+  'Rooftop antenna farm', 'Abandoned mall food court', 'Construction crane platform',
 ];
 const ATMOSPHERES = [
   'Neon-lit and hazy with smoke', 'Dark, claustrophobic, and damp',
   'Sterile corporate white and chrome', 'Loud with blasting music and flashing lights',
-  'Eerily quiet — something is wrong', 'Crowded with desperate-looking people',
+  'Eerily quiet, something is wrong', 'Crowded with desperate-looking people',
   'Smells of synthetic food and engine grease', 'Opulent excess dripping with eddies',
-  'Abandoned and decaying', 'Tense — everyone is armed and watching',
+  'Abandoned and decaying', 'Tense, everyone is armed and watching',
   'Rain-soaked and reflective', 'Thick with incense and low chanting',
   'Buzzing with drone surveillance', 'Dusty and sun-blasted',
+  'Flickering emergency lighting, deep shadows', 'Uncomfortably warm, machinery humming',
+  'Cold enough to see your breath', 'Smells like blood and cordite',
+  'Music from a distant speaker, distorted and wrong', 'Graffiti covers every surface',
+  'The red sky is visible through a broken ceiling', 'Chemical smell, eyes watering',
+  'Packed with people trying not to make eye contact', 'Quiet except for dripping water',
+  'Holographic advertisements casting shifting colors', 'The floor vibrates from bass below',
+  'Stale air, no ventilation', 'Broken glass crunches underfoot',
+  'Someone is screaming in the distance', 'Burnt-out vehicles line the street',
+  'Fresh paint on the walls, someone just moved in', 'The smell of cooking food, oddly normal',
+  'Wind howling through gaps in the walls', 'Everything is covered in a thin layer of ash',
+  'Surveillance cameras tracking every movement', 'Uncomfortably bright strip lighting',
+  'Rats scatter as you enter', 'The air tastes metallic',
+  'Quiet jazz playing from somewhere unseen', 'A child is watching you from a window',
 ];
 const LOCATION_HOOKS = [
-  'A fixer is looking for someone to do a quick job — no questions asked',
+  'A fixer is looking for someone to do a quick job, no questions asked',
   'Someone just flatlined in the back room',
   'A corpo is here incognito, trying to hire off-the-books muscle',
-  'The bartender has info on the crew\'s current job — for a price',
+  'The bartender has info on the crew\'s current job, for a price',
   'An old rival spots the crew and isn\'t happy to see them',
-  'NCPD raid incoming — everyone has 2 minutes to vanish',
+  'NCPD raid incoming, everyone has 2 minutes to vanish',
   'A street kid is pickpocketing patrons and just stole from the wrong person',
   'The owner is being shaken down and asks for help',
   'A braindance recording of something very illegal is changing hands',
   'Someone is about to flatline from cyberpsychosis',
   'A Trauma Team AV just crashed nearby',
-  'The power grid just went down — only emergency lights remain',
+  'The power grid just went down, only emergency lights remain',
   'An encrypted data shard is hidden somewhere in this location',
-  'Two gangs just agreed to a ceasefire meeting here — it\'s fragile',
+  'Two gangs just agreed to a ceasefire meeting here, it\'s fragile',
+  'A ripperdoc is offering a discount on suspicious cyberware',
+  'Someone is selling a stolen Militech weapon prototype',
+  'A Media is recording everything and everyone is nervous',
+  'A nomad convoy just arrived and they\'re looking for supplies',
+  'An Arasaka agent is tailing someone in the crowd',
+  'A street preacher is warning about the end of the world, and people are listening',
+  'The vending machines just got hacked to dispense everything for free',
+  'A bounty just got posted on someone in this room',
+  'Two corpos are having a very loud argument about a failed deal',
+  'A delivery drone crashed through a window carrying something valuable',
+  'Someone left a loaded weapon on the bar and walked out',
+  'A Trauma Team subscription card was found on a body outside',
+  'The building\'s NET architecture just got breached, alarms are going off',
+  'A known informant for NCPD is here and people know it',
+  'An underground boxing match is about to start, bets are being placed',
+  'A fixer just got murdered in the bathroom, their agent is still unlocked',
+  'A group of reclaimers found something in the walls and won\'t say what',
+  'Someone is offering free braindance sessions, and the quality is suspiciously good',
+  'A Maelstrom member is showing off new chrome and it\'s making people nervous',
+  'The vents are making a strange noise, like something is crawling in them',
+  'A child is selling hand-drawn maps of the local gang territories',
+  'Someone\'s car just exploded in the parking lot',
+  'A corporate auditor is here taking notes, and the staff is panicking',
+  'Two Trauma Team medics walk in off-duty, looking for a drink and trouble',
+  'A stray dog with a data chip collar just wandered in',
+  'The jukebox keeps playing the same song on repeat and nobody can stop it',
 ];
 
 // ── Night market data ──
@@ -280,6 +378,65 @@ const MARKET_NAMES = [
   'Santo Domingo Swap Meet', 'Watson Waterfront Market', 'Heywood After-Dark Fair',
   'The Neon Alley Market', 'Japantown Black Market', 'The Badlands Trading Post',
   'City Center Shadow Mall', 'Arroyo Flea Market',
+];
+
+const FOOD_ITEMS = [
+  { name: 'Kibble Bowl', cost: 5, flavor: 'It\'s food. Technically. Tastes like cardboard and regret.' },
+  { name: 'Synthetic Sushi', cost: 20, flavor: 'Tastes almost like the real thing. Almost.' },
+  { name: 'NiCola 6-pack', cost: 10, flavor: 'Night City\'s favorite soda. Definitely addictive.' },
+  { name: 'SCOP Protein Bar', cost: 5, flavor: 'Single Cell Organic Protein. The future of nutrition, sadly.' },
+  { name: 'Prepak Meal (Noodles)', cost: 10, flavor: 'Just add boiling water. Flavor: "Meat Adjacent".' },
+  { name: 'Prepak Meal (Curry)', cost: 10, flavor: 'Suspiciously orange. Burns twice.' },
+  { name: 'Real Water, 1L Bottle', cost: 5, flavor: 'Allegedly filtered. Better than tap, which is a low bar.' },
+  { name: 'Smash Energy Drink', cost: 5, flavor: 'Contains enough caffeine to restart a flatline.' },
+  { name: 'Canned Synthbeans', cost: 5, flavor: 'Nobody knows what plant they came from. Don\'t ask.' },
+  { name: 'Kibble Variety Pack (7 days)', cost: 25, flavor: 'Seven flavors of the same flavor.' },
+  { name: 'Synthcaf Coffee (Bag of 20)', cost: 15, flavor: 'It\'s not real coffee, but your brain won\'t know.' },
+  { name: 'Bottle of Synth-Vodka', cost: 10, flavor: 'Made in a bathtub, bottled with optimism.' },
+  { name: 'Six-Pack of Beer (No-Name)', cost: 10, flavor: 'Wet. Cold. Alcoholic. That\'s the sales pitch.' },
+  { name: 'Real Fruit (Apple)', cost: 50, flavor: 'An actual apple. People stare at you while you eat it.' },
+  { name: 'Bag of Jerky (Synthetic)', cost: 10, flavor: 'Chewy, salty, and 0% animal. Probably.' },
+];
+
+const STREET_FOOD_ITEMS = [
+  { name: 'Skewered Mystery Meat', cost: 5, flavor: 'Hot, greasy, and you\'ll never know what it was. That\'s the deal.' },
+  { name: 'Noodle Cup (Extra Spicy)', cost: 10, flavor: 'Made fresh in a cart. The broth has been simmering since the 4th Corporate War.' },
+  { name: 'Stuffed Bao Buns (3)', cost: 10, flavor: 'Fluffy, warm, filled with SCOP. The vendor swears it\'s pork.' },
+  { name: 'Fried Synth-Shrimp Basket', cost: 15, flavor: 'Battered, deep-fried, dipped in sauce. Don\'t check the ingredients.' },
+  { name: 'Grilled Corn on a Stick', cost: 5, flavor: 'Genetically modified to grow in concrete. Still tastes like corn.' },
+  { name: 'Churros (Bag of 5)', cost: 10, flavor: 'Sugar, grease, and happiness. The only honest food in Night City.' },
+  { name: 'Bowl of Pho', cost: 15, flavor: 'Real herbs floating on top. The vendor grows them on their roof.' },
+  { name: 'Takoyaki (6 pieces)', cost: 10, flavor: 'Crispy outside, molten inside. The octopus is synthetic but the burns are real.' },
+  { name: 'Hot Dog (Chicago Style)', cost: 5, flavor: 'Neon green relish. Nobody questions the wiener.' },
+  { name: 'Empanada (2)', cost: 10, flavor: 'Flaky pastry, mystery filling. The vendor\'s abuela\'s recipe, allegedly.' },
+];
+
+const JUNK_VENDOR_ITEMS = [
+  { name: 'Used Mirrorshades', cost: 5, flavor: 'Scratched lenses, bent frame. Someone died in these. Probably.' },
+  { name: 'Bag of Assorted Cables', cost: 2, flavor: 'USB, fiber, power, mystery. Untangle at your own risk.' },
+  { name: 'Broken Agent (Parts Only)', cost: 5, flavor: 'Screen shattered, battery dead. Might have data on it still.' },
+  { name: 'Secondhand Boots', cost: 10, flavor: 'Worn but functional. Previous owner had smaller feet.' },
+  { name: 'Torn Leather Jacket', cost: 15, flavor: 'Has character. Also has bloodstains.' },
+  { name: 'Bag of Loose Screws & Bolts', cost: 1, flavor: 'Various sizes. None of them match anything.' },
+  { name: 'Cracked Mirror', cost: 2, flavor: 'Seven years bad luck or a cheap way to check your six.' },
+  { name: 'Stack of Old Magazines', cost: 1, flavor: 'Fashion tips from 2035. Some things never change.' },
+  { name: 'Dented Thermos', cost: 3, flavor: 'Keeps drinks warm for about 20 minutes. Better than nothing.' },
+  { name: 'Plastic Tarp', cost: 2, flavor: 'Useful for rain, privacy, and not asking what that stain is.' },
+  { name: 'Mismatched Gloves', cost: 2, flavor: 'One leather, one synthetic. Both size medium-ish.' },
+  { name: 'Box of Candle Stubs', cost: 1, flavor: 'For when the power goes out. So, often.' },
+  { name: 'Used Paperback Novel', cost: 1, flavor: 'Romance. Dog-eared at the good parts.' },
+  { name: 'Rusty Multi-Tool', cost: 5, flavor: 'Three of the blades still fold. The rest are decorative.' },
+  { name: 'Salvaged Circuit Boards', cost: 3, flavor: 'Pulled from something. Could be useful to a Tech.' },
+  { name: 'Bundle of Zip Ties', cost: 1, flavor: 'Endless utility. Restraint, repair, fashion.' },
+  { name: 'Chipped Coffee Mug', cost: 1, flavor: 'Says "World\'s Best Solo" on it. Probably ironic.' },
+  { name: 'Bag of Buttons', cost: 1, flavor: 'Every size, every color. No two alike.' },
+  { name: 'Old Road Map (Paper)', cost: 2, flavor: 'Pre-datakrash cartography. Half the roads don\'t exist anymore.' },
+  { name: 'Tangled Fairy Lights', cost: 3, flavor: 'Battery-powered. Only half of them work.' },
+  { name: 'Single Roller Skate', cost: 2, flavor: 'Right foot. Left foot sold separately (and lost).' },
+  { name: 'Bucket', cost: 1, flavor: 'It\'s a bucket. You\'d be surprised how often you need one.' },
+  { name: 'Empty Ammo Box', cost: 1, flavor: 'Sturdy container. Good for storing stuff that isn\'t ammo.' },
+  { name: 'Faded Band T-Shirt', cost: 5, flavor: 'Samurai world tour 2014. Almost certainly bootleg.' },
+  { name: 'Broken Alarm Clock', cost: 1, flavor: 'Stuck at 3:47 AM. The most honest time in Night City.' },
 ];
 
 const VENDOR_TYPES = [
@@ -293,6 +450,9 @@ const VENDOR_TYPES = [
   { type: 'Exotic Goods Trader', sells: 'mixed' },
   { type: 'Fixer\'s Booth', sells: 'jobs' },
   { type: 'Food Vendor', sells: 'food' },
+  { type: 'Junk Peddler', sells: 'junk' },
+  { type: 'Secondhand Stall', sells: 'junk' },
+  { type: 'Street Food Cart', sells: 'streetfood' },
 ];
 
 const VENDOR_QUIRKS = [
@@ -328,10 +488,322 @@ const MARKET_EVENTS = [
 const LOOT_RARITY = ['Common', 'Uncommon', 'Rare', 'Very Rare', 'Legendary'];
 const RARITY_WEIGHTS = [35, 30, 20, 10, 5];
 
+// ── Junk items by profile type ──
+
+const JUNK_UNIVERSAL = [
+  'Crumpled photo of someone they don\'t recognize',
+  'Handful of loose eddies chips (3-5eb total)',
+  'Worn-out lighter that barely works',
+  'Scrap of paper with a scribbled address',
+  'Single earring, cheap metal',
+  'Chewed pen, ink leaking',
+  'Lint and pocket dust',
+  'Cracked mirrorshades',
+  'A single key, no label',
+  'Rubber band ball',
+  'Expired Trauma Team card',
+  'Bent fork',
+  'Handful of mismatched screws',
+  'Sticky candy wrapper',
+  'Broken hair clip',
+  'Faded receipt, totally illegible',
+  'Thumb drive, corrupted',
+  'Religious pendant, unknown faith',
+  'Cracked comb missing half its teeth',
+  'Ticket stub from a braindance parlor',
+  'Small stone, smooth from pocket rubbing',
+  'Button from a jacket, no jacket',
+  'Piece of wire, uselessly short',
+  'Napkin with a lipstick kiss on it',
+  'Empty gum wrapper',
+  'Clip from a broken magazine, no bullets',
+  'Tooth. Not theirs.',
+  'Wrapper from a NiCola bar',
+  'Matchbook from a club that burned down',
+  'Stub of a pencil, no eraser',
+];
+
+const JUNK_BY_PROFILE = {
+  bum: [
+    'Half-eaten kibble bar', 'Broken agent with cracked screen, no charge',
+    'Empty pill bottle, label scratched off', 'Plastic bag full of bottle caps',
+    'Stained blanket, folded small', 'Single shoe (left), worn through the sole',
+    'Collection of bus tickets from years ago', 'Cardboard sign asking for eddies',
+    'Dog-eared paperback with pages missing', 'Coat held together with duct tape',
+    'Empty can used as a cup', 'Newspaper clipping about a missing person',
+    'Faded photo of a child', 'Religious tract, heavily annotated',
+    'Piece of string tied around a rock', 'Broken umbrella',
+    'Filthy sleeping bag, patched with packing tape', 'Collection of interesting rocks',
+    'Hand-carved wooden figurine, surprisingly detailed', 'Tattered map of the city with shelters marked',
+    'Jar of collected rainwater', 'Bundle of old magazines, used as insulation',
+    'Cracked reading glasses held together with wire', 'Half a sandwich wrapped in newspaper',
+    'Small tin of shoe polish, used as face paint', 'Deflated soccer ball',
+    'Origami crane made from a food wrapper', 'List of soup kitchen schedules',
+    'Piece of chalk, worn to a nub', 'Hand-sewn pouch with nothing in it',
+    'Letter from a shelter, never opened', 'Battered harmonica, missing two reeds',
+  ],
+  streetKid: [
+    'Pack of cigarettes, 3 left', 'Cheap energy drink, half empty',
+    'Handful of loose bullets, wrong caliber', 'Stained ripperdoc business card',
+    'Faded gang bandana from a defunct crew', 'Scratched music player with one song',
+    'Switchblade with a broken spring', 'Handful of arcade tokens',
+    'Spray paint can, mostly empty', 'Fake ID, bad quality',
+    'Bag of synthetic jerky', 'Stolen candy bar',
+    'Cracked skateboard wheel', 'Burner phone, dead battery',
+    'Hand-drawn tag design, practiced a hundred times', 'Flyer for an underground party',
+    'Keycard to an abandoned building (their crash spot)', 'Half-used tube of hair dye',
+    'Cheap braindance chip, low-quality recording', 'Stub from a Combat Zone fight night',
+    'Ziplock of miscellaneous pills', 'Bottle cap necklace',
+    'Dog-eared copy of a streetslang dictionary', 'Wrapper from a food vendor, greasy',
+    'Small bag of firecrackers', 'Stolen corpo sunglasses, lens cracked',
+    'Note from a friend: "meet me at the usual spot"', 'Handful of vending machine tokens',
+    'Sticker collection, peeling', 'Bandana soaked in cheap cologne',
+  ],
+  ganger: [
+    'Gang membership token (tattoo ink, colors swatch)', 'Small bag of street drugs',
+    'Trophy from a previous fight (tooth, patch, bullet casing)',
+    'Brass knuckles, decorative', 'Cheap synth-vodka, quarter full',
+    'Tally marks scratched into a lighter', 'Polaroid of their crew',
+    'Intimidating face mask or bandana', 'Stolen corporate pen, fancy',
+    'List of people who owe them money', 'Bag of stimulant pills',
+    'Knife sharpening stone', 'Crude hand-drawn territory map',
+    'Blood-stained bandage, recently used', 'Bullet with a name scratched into it',
+    'Burner phone with only three contacts', 'Handful of protection racket receipts',
+    'Lock of hair tied with wire (trophy or memento)', 'Cheap gold-plated ring',
+    'Threatening note meant for someone else', 'Flask of homemade rotgut',
+    'Sharpened screwdriver, used as a shiv', 'Tattoo gun, battery-powered, cheap',
+    'Photo of a rival gang member, circled face', 'Bag of zip ties',
+    'Vial of synthetic adrenaline', 'Collection of stolen watches, none working',
+    'Scrawled oath of loyalty on a napkin', 'Pair of dice, loaded',
+    'Necklace of shell casings', 'Matchbook with "YOU OWE ME" written inside',
+  ],
+  security: [
+    'Photo of their family in a wallet', 'Corporate employee ID (probably should remove this)',
+    'Energy bar, unopened', 'Small thermos of coffee, still warm',
+    'Duty roster schedule on a folded paper', 'Pack of gum',
+    'Personal communicator with saved messages from home',
+    'Pair of earplugs', 'Stress ball, well-squeezed',
+    'Security manual, dog-eared', 'Flashlight, spare batteries',
+    'Cheap watch, working', 'Sandwich in a bag, homemade',
+    'Badge holder with a clip, spare lanyard', 'Small notebook with incident logs',
+    'Receipt for kids\' school supplies', 'Shift schedule with days crossed off',
+    'Half-finished crossword puzzle', 'Bottle of antacids',
+    'Photo of a dog, "good boy" written on back', 'Union membership card',
+    'Parking garage ticket', 'Crumpled motivational poster printout',
+    'Emergency contact card, laminated', 'Small first aid kit, mostly used up',
+    'Lottery ticket, unchecked', 'Coffee-stained training certificate',
+    'Note from a coworker: "cover my shift?"', 'Company-branded pen, chewed cap',
+    'Personal firearm cleaning cloth', 'Pocket Bible, bookmarked at Psalms',
+  ],
+  professional: [
+    'Lucky charm (bullet casing on a chain, rabbit foot, coin)',
+    'Field ration, military grade', 'Personal note to be delivered if they don\'t come back',
+    'Maintenance kit for their weapon', 'Encrypted data shard, personal logs',
+    'Dog tags (real or fake)', 'Small flask, good quality alcohol',
+    'Worn photograph of someone waiting for them',
+    'Packet of painkillers', 'Compact mirror',
+    'Roll of medical tape', 'Cigar, unsmoked, expensive',
+    'Topo map of a location, routes highlighted', 'Garrote wire, neatly coiled',
+    'Burner phone, last call was 3 days ago', 'Lock pick set, well-used',
+    'Folded list of known aliases', 'Blood-type card, laminated',
+    'Suppressor cleaning brush', 'Small vial of poison, unlabeled',
+    'Challenge coin from a merc company', 'Notebook with tallied jobs completed',
+    'Compact survival kit (matches, wire, blade)', 'Pre-written resignation letter, never sent',
+    'Photo of a sunrise, taken from somewhere high', 'Small bottle of gun oil',
+    'Tactical gloves, spare pair', 'Receipt from an arms dealer, no name',
+    'Compass, old-fashioned, working', 'Worn leather holster, spare',
+  ],
+  corporate: [
+    'Expensive cologne sample', 'Business cards, embossed and pretentious',
+    'Designer pill case with prescription meds', 'Corporate credit chip (frozen)',
+    'Silk handkerchief', 'Small bottle of hand sanitizer',
+    'Appointment card for a high-end ripperdoc', 'Encrypted personal agent',
+    'Receipt from an expensive restaurant', 'Key fob for a luxury vehicle',
+    'Monogrammed pen', 'Small piece of real chocolate',
+    'Loyalty card for a premium gym', 'Dry cleaning receipt for a tailored suit',
+    'Breath mints, designer brand', 'Mini bottle of imported whiskey',
+    'NDA document, partially signed', 'Therapist\'s business card',
+    'Slim case with two anti-anxiety pills left', 'Access card for a private elevator',
+    'Photo of a yacht they can\'t actually afford', 'Corporate motivational pin',
+    'Glasses cleaner for AR lenses', 'Business lunch receipt, 800eb for two',
+    'Encrypted memo about a rival department', 'Premium earbuds, noise-cancelling',
+    'Small mirror for checking appearance', 'Fitness tracker showing 200 steps today',
+    'Invitation to a corpo gala, plus one', 'Resume, heavily embellished',
+  ],
+  elite: [
+    'Mission briefing shard, encrypted', 'Field stim pack, half used',
+    'Dog tags, serial numbers filed off', 'Map with marked positions',
+    'Tactical comm earpiece', 'Blood-type patch sewn into gear',
+    'Photo of a target, crossed out', 'Small medkit, well organized',
+    'Extraction beacon, single use', 'Challenge coin from a unit',
+    'Letter of commendation, classified header', 'Compact binoculars',
+    'Infrared chem light, unused', 'Paracord bracelet, multi-use',
+    'Laminated card with extraction codes', 'Field journal, coded entries',
+    'Photograph of a team, some faces crossed out', 'Emergency transponder, disabled',
+    'Multi-tool, military grade', 'Shrapnel fragment kept as a reminder',
+    'Wristband with unit motto, frayed', 'Signal mirror, scratched',
+    'Tourniquet, folded and ready', 'Small waterproof document bag, empty',
+    'Cyanide capsule (expired)', 'Photo of a safehouse location',
+    'After-action report, redacted', 'Spare suppressor adapter',
+    'Thermal blanket, compact', 'Letter from home, creased from rereading',
+  ],
+  netrunner: [
+    'Data shard collection (unlabeled)', 'Sticker-covered water bottle',
+    'Candy wrappers and energy drink cans', 'Hand-drawn NET architecture diagram',
+    'USB cable collection in a tangle', 'Stress toy shaped like a skull',
+    'Notebook full of passwords and handles', 'Custom sticker set for laptops',
+    'Packet of instant noodles', 'Eye drops for screen fatigue',
+    'Small figurine of an anime character', 'Chip of Black ICE, inert',
+    'Screwdriver set for opening cyberdecks', 'Sticky note: "CHANGE PASSWORD"',
+    'Offline copy of a NET map, outdated', 'Bottle of caffeine pills, nearly empty',
+    'Hand-soldered patch cable', 'Collection of daemon codenames on a napkin',
+    'Anti-static wrist strap', 'Half-eaten bag of synth-cheese puffs',
+    'Blacklight pen for reading hidden notes', 'Cracked virtuality goggles',
+    'Backup battery pack, low charge', 'Printed screenshot of their best hack',
+    'Small plush toy (a digital ghost mascot)', 'Note: "Rache Bartmoss did nothing wrong"',
+    'Finger splints (RSI from too much typing)', 'Receipt for a NET cafe, 47 hours',
+    'Defaced corporate screensaver on a chip', 'Business card: "I know what you did. Call me."',
+  ],
+  solo: [
+    'Weapon maintenance kit, well-organized', 'Bullet with a name on it (their own)',
+    'Tally of confirmed jobs on inner arm', 'Combat stimulant auto-injector, 1 dose left',
+    'Small armored pouch with personal effects', 'Worn combat knife, non-standard issue',
+    'Folded photo of their first squad', 'Hearing protection plugs, custom molded',
+    'Field-stripped cleaning rod', 'Range membership card, unlimited plan',
+    'Tourniquet in a belt pouch', 'List of former employers, some crossed out',
+    'Custom-fit magazine loader', 'Trauma Team subscription card (basic tier)',
+    'Scar treatment cream, half used', 'Bar napkin with a job offer scribbled on it',
+    'Old combat boot lace, used as a bracelet', 'Shell casing from their first firefight',
+    'Tactical pen, doubles as a glass breaker', 'Small tin of weapon lubricant',
+  ],
+  fixer: [
+    'Three burner phones, different networks', 'Address book in personal shorthand',
+    'Collection of favors owed, coded entries', 'Business cards from twenty different aliases',
+    'Small amount of every street drug (samples)', 'Encrypted contact list on a shard',
+    'Receipt from a high-end restaurant, someone else paid', 'Tailored jacket inner pocket full of cards',
+    'Pre-paid credchips in small denominations', 'Key to a storage locker (contents unknown)',
+    'List of safe houses, memorized but backed up', 'Breath mints, always prepared',
+    'Recording device, always running', 'Invitation to a private auction',
+    'Cocktail napkin with a NET address', 'Photo of someone with "DO NOT TRUST" written on back',
+    'Small gift, expensively wrapped, for "smoothing things over"', 'Fake Trauma Team card, decent quality',
+    'Note: "The Afterlife, booth 7, Thursday"', 'Chip with blackmail material, insurance policy',
+  ],
+  tech: [
+    'Soldering iron, portable, battery-powered', 'Bag of assorted resistors and capacitors',
+    'Jeweler\'s loupe for fine work', 'Tube of industrial adhesive, half used',
+    'Wiring diagram on a napkin, surprisingly complex', 'Spare actuator for cyberware, generic',
+    'Multitool with thirty attachments, half broken', 'Small magnet collection',
+    'Calibration tool for optic mounts', 'Bag of salvaged chips, maybe useful',
+    'Grease-stained manual for a vehicle model', 'Roll of electrical tape',
+    'Pocket oscilloscope, cracked screen', 'Prototype component, unlabeled',
+    'Note: "DO NOT connect red to red"', 'Pair of anti-static gloves',
+    'Small bottle of contact cleaner', 'Hand-wound coil of copper wire',
+    'Schematic drawn on a food wrapper', 'Receipt from a parts dealer, paid in favors',
+  ],
+  medtech: [
+    'Stethoscope, folded in a pocket', 'Bottle of medical-grade alcohol',
+    'Suture kit, sealed, pocket-sized', 'Packet of sterile gauze',
+    'Penlight for checking pupil response', 'Small vial of local anesthetic',
+    'Business card: "Discreet. No questions."', 'Blood-stained latex gloves, used',
+    'Reference card for drug interactions', 'Expired medical license, laminated',
+    'Small bag of lollipops (for nervous patients)', 'Ripperdoc catalog, earmarked pages',
+    'Medical alert bracelet for a patient', 'Prescription pad, mostly blank',
+    'Note: "Patient X, follow up Tuesday"', 'Hand cream, medical grade',
+    'Pair of hemostats, slightly rusty', 'Small cooler bag, biohazard symbol',
+    'Jar of unmarked pills (vitamins, probably)', 'Organ donor card, signed by someone else',
+  ],
+  media: [
+    'Digital recorder, always recording', 'Press pass, possibly expired',
+    'Notebook full of shorthand, incomprehensible to anyone else', 'Photo of a crime scene, unpublished',
+    'List of informants, coded names only', 'Business card: "The Truth, Whatever It Costs"',
+    'Copy of their own article, highlighted', 'Camera lens cap, no camera',
+    'USB stick labeled "INSURANCE"', 'Ticket stubs from press events',
+    'Crumpled rejection letter from a publisher', 'Scanner frequencies written on wrist',
+    'Voice modulator for anonymous calls', 'Coffee-stained interview notes',
+    'Photo of a corporate exec with a question mark', 'Small panic button, wearable',
+    'Note: "If I disappear, check locker 47"', 'Fake credentials for three organizations',
+    'Worn copy of a journalism ethics handbook (ironic)', 'Source\'s phone number on a gum wrapper',
+  ],
+  nomad: [
+    'Road map with clan routes marked', 'Jerky, real meat, homemade',
+    'Family clan pendant on a leather cord', 'Pouch of road dust from home',
+    'Vehicle keys on a carabiner with a dozen charms', 'Multi-tool, well-worn but maintained',
+    'Battered canteen, dented from use', 'Solar charger, portable, cracked but working',
+    'Hand-stitched patch of their clan symbol', 'CB radio frequencies scrawled on tape',
+    'Photo of the family convoy', 'Bag of trading goods (batteries, canned food)',
+    'Paracord, 10 meters, always useful', 'Compass with clan motto engraved',
+    'Small bottle of motor oil, "just in case"', 'Road flare, one left',
+    'Letter from a clan elder, folded and refolded', 'Makeshift fishing line and hook',
+    'Leather bracelet with beads, each one a road trip', 'Seed packet, for when things settle down',
+  ],
+  rockerboy: [
+    'Guitar pick on a chain, never leaves their neck', 'Setlist from their last gig, beer-stained',
+    'Flyer for their band, hand-printed', 'Earplugs, custom-molded, expensive',
+    'Lyric notebook, full of crossed-out lines', 'Bottle of throat spray',
+    'Fan letter, crumpled but kept', 'VIP wristband from a venue',
+    'Sticker of their band logo, stack of 50', 'Small amplifier battery, charged',
+    'Pick-up microphone, disguised as a pin', 'Note from a fan: "You changed my life"',
+    'Bandana soaked in stage sweat', 'Demo chip, self-recorded',
+    'Photo of a crowd from the stage', 'Marker for signing autographs',
+    'Capo for a guitar, neon-colored', 'Zippo lighter with band logo engraved',
+    'Torn ticket from the gig that started it all', 'Manifesto, handwritten, passionate and messy',
+  ],
+  lawman: [
+    'NCPD badge, worn at the edges', 'Handcuff key on a retractable cord',
+    'Citation book, half full', 'Photo of their precinct squad',
+    'Folded Miranda rights card (muscle memory, but still)', 'Packet of antacids, economy size',
+    'Business card from Internal Affairs (why do they have this?)', 'Small notepad with witness statements',
+    'Precinct coffee mug, chipped', 'Overtime request forms, unsigned',
+    'Body camera, battery dead', 'Speed loader, spare',
+    'Photo of a suspect, mugshot style', 'NCPD-branded pen, clicking nervously',
+    'Crumpled transfer request', 'Small American flag patch, sewn inside jacket',
+    'List of informants, personal shorthand', 'Energy drink, triple caffeine',
+    'Complaint filed against them, crumpled', 'Wedding ring, no longer worn on finger',
+  ],
+  exec: [
+    'Encrypted personal agent with biometric lock', 'Business cards, Arasaka/Militech/Biotechnica logo',
+    'Slim case of performance-enhancing nootropics', 'Access keycard, executive floor',
+    'Photo of a corner office view', 'Dry cleaning tag for a 5000eb suit',
+    'Expense report, heavily padded', 'Small bottle of top-shelf scotch',
+    'Meeting agenda with passive-aggressive annotations', 'Golden cufflink, single (lost the other)',
+    'Resignation letter, unsent', 'Corporate loyalty pin, 10 years',
+    'Stress medication, prescription', 'Note from assistant: "Your 3pm cancelled"',
+    'Receipt for a private security consultation', 'Divorce lawyer\'s card',
+    'Gym membership to a corpo-only facility', 'Encrypted memo RE: "Project Blackout"',
+    'Real leather wallet, mostly empty after extraction', 'Photo of kids at a private school',
+  ],
+};
+
+export const LOOT_PROFILES = [
+  // Generic archetypes
+  { id: 'random', name: 'Random', weaponQualities: ['Poor', 'Standard', 'Excellent'], eddiesMin: 10, eddiesMax: 2000, cyberwareChance: 0.3, junkPool: 'streetKid', weaponChance: 0.8, gearCount: [1, 3] },
+  { id: 'bum', name: 'Random Bum', weaponQualities: ['Poor'], eddiesMin: 0, eddiesMax: 20, cyberwareChance: 0.05, junkPool: 'bum', weaponChance: 0.15, gearCount: [0, 1] },
+  { id: 'streetKid', name: 'Street Kid', weaponQualities: ['Poor'], eddiesMin: 10, eddiesMax: 50, cyberwareChance: 0.15, junkPool: 'streetKid', weaponChance: 0.4, gearCount: [0, 2] },
+  { id: 'ganger', name: 'Ganger', weaponQualities: ['Poor', 'Standard'], eddiesMin: 20, eddiesMax: 200, cyberwareChance: 0.3, junkPool: 'ganger', weaponChance: 0.9, gearCount: [1, 2] },
+  { id: 'security', name: 'Security Guard', weaponQualities: ['Standard'], eddiesMin: 50, eddiesMax: 500, cyberwareChance: 0.4, junkPool: 'security', weaponChance: 1.0, gearCount: [1, 3] },
+  { id: 'professional', name: 'Armed Professional', weaponQualities: ['Standard', 'Excellent'], eddiesMin: 100, eddiesMax: 2000, cyberwareChance: 0.6, junkPool: 'professional', weaponChance: 1.0, gearCount: [2, 4] },
+  { id: 'corporate', name: 'Corporate', weaponQualities: ['Standard'], eddiesMin: 500, eddiesMax: 5000, cyberwareChance: 0.5, junkPool: 'corporate', weaponChance: 0.3, gearCount: [1, 3] },
+  { id: 'elite', name: 'Elite Operative', weaponQualities: ['Excellent'], eddiesMin: 1000, eddiesMax: 10000, cyberwareChance: 0.8, junkPool: 'elite', weaponChance: 1.0, gearCount: [2, 4] },
+  // CPR Roles
+  { id: 'solo', name: 'Solo', weaponQualities: ['Standard', 'Excellent'], eddiesMin: 100, eddiesMax: 3000, cyberwareChance: 0.7, junkPool: 'solo', weaponChance: 1.0, gearCount: [2, 4] },
+  { id: 'netrunner', name: 'Netrunner', weaponQualities: ['Poor', 'Standard'], eddiesMin: 200, eddiesMax: 2000, cyberwareChance: 0.9, junkPool: 'netrunner', weaponChance: 0.3, gearCount: [1, 3] },
+  { id: 'fixer', name: 'Fixer', weaponQualities: ['Standard'], eddiesMin: 500, eddiesMax: 5000, cyberwareChance: 0.4, junkPool: 'fixer', weaponChance: 0.5, gearCount: [1, 3] },
+  { id: 'tech', name: 'Tech', weaponQualities: ['Poor', 'Standard'], eddiesMin: 100, eddiesMax: 1500, cyberwareChance: 0.5, junkPool: 'tech', weaponChance: 0.5, gearCount: [2, 5] },
+  { id: 'medtech', name: 'Medtech', weaponQualities: ['Poor', 'Standard'], eddiesMin: 200, eddiesMax: 2000, cyberwareChance: 0.6, junkPool: 'medtech', weaponChance: 0.4, gearCount: [2, 4] },
+  { id: 'media', name: 'Media', weaponQualities: ['Poor'], eddiesMin: 100, eddiesMax: 1000, cyberwareChance: 0.3, junkPool: 'media', weaponChance: 0.3, gearCount: [1, 3] },
+  { id: 'nomad', name: 'Nomad', weaponQualities: ['Poor', 'Standard', 'Excellent'], eddiesMin: 50, eddiesMax: 1000, cyberwareChance: 0.25, junkPool: 'nomad', weaponChance: 0.8, gearCount: [2, 4] },
+  { id: 'rockerboy', name: 'Rockerboy', weaponQualities: ['Poor', 'Standard'], eddiesMin: 50, eddiesMax: 1500, cyberwareChance: 0.3, junkPool: 'rockerboy', weaponChance: 0.4, gearCount: [1, 2] },
+  { id: 'lawman', name: 'Lawman', weaponQualities: ['Standard'], eddiesMin: 50, eddiesMax: 800, cyberwareChance: 0.35, junkPool: 'lawman', weaponChance: 1.0, gearCount: [1, 3] },
+  { id: 'exec', name: 'Exec', weaponQualities: ['Standard', 'Excellent'], eddiesMin: 1000, eddiesMax: 10000, cyberwareChance: 0.5, junkPool: 'exec', weaponChance: 0.25, gearCount: [1, 2] },
+];
+
 // ── Generator functions ──
 
-export function generateEncounter() {
-  const enemy = pick(ENEMY_TYPES);
+export const THREAT_LEVELS = [...new Set(ENEMY_TYPES.map(e => e.threat))];
+
+export function generateEncounter({ threat } = {}) {
+  const pool = threat ? ENEMY_TYPES.filter(e => e.threat === threat) : ENEMY_TYPES;
+  const enemy = pick(pool.length ? pool : ENEMY_TYPES);
   return {
     enemy: enemy.name, enemyDesc: enemy.desc, threat: enemy.threat,
     count: roll(2, 8),
@@ -356,18 +828,68 @@ export function generateNPC() {
   };
 }
 
-export function generateLoot(weaponTypeFilter) {
-  const rarity = weightedPick(LOOT_RARITY, RARITY_WEIGHTS);
-  const pool = weaponTypeFilter ? WEAPONS.filter((w) => w.type === weaponTypeFilter) : WEAPONS;
-  const weapon = pick(pool.length ? pool : WEAPONS);
-  const gearCount = roll(1, 3);
-  const eddies = { Common: roll(10, 100), Uncommon: roll(100, 500), Rare: roll(500, 2000), 'Very Rare': roll(2000, 5000), Legendary: roll(5000, 20000) }[rarity] || roll(10, 100);
-  const cw = Math.random() > 0.5 ? pick(CYBERWARE_ITEMS) : null;
+export function generateLoot({ weaponType, maxEddies, quality, profile: profileId } = {}) {
+  const profile = LOOT_PROFILES.find(p => p.id === profileId) || LOOT_PROFILES[0];
+  const hasValueCap = maxEddies !== undefined && maxEddies !== null && maxEddies !== '';
+  const cap = hasValueCap ? +maxEddies : Infinity;
+  let totalValue = 0;
+
+  // Weapon
+  let weapon = null;
+  if (Math.random() < profile.weaponChance) {
+    let pool = WEAPONS;
+    if (weaponType) pool = pool.filter(w => w.type === weaponType);
+    const quals = quality ? [quality] : profile.weaponQualities;
+    pool = pool.filter(w => quals.includes(w.quality));
+    if (pool.length === 0) pool = WEAPONS.filter(w => quals.includes(w.quality));
+    if (pool.length === 0) pool = WEAPONS;
+    // If capped, prefer weapons that fit under the budget
+    if (hasValueCap) {
+      const affordable = pool.filter(w => w.cost <= cap);
+      if (affordable.length > 0) pool = affordable;
+    }
+    weapon = pick(pool);
+    totalValue += weapon.cost;
+  }
+
+  // Gear (skip items that would exceed cap)
+  const gearCount = roll(profile.gearCount[0], profile.gearCount[1]);
+  let gear = [];
+  if (gearCount > 0) {
+    const gearPool = hasValueCap ? GEAR_ITEMS.filter(g => g.cost <= cap - totalValue) : GEAR_ITEMS;
+    const picked = pickN(gearPool.length > 0 ? gearPool : GEAR_ITEMS, gearCount);
+    for (const g of picked) {
+      if (totalValue + g.cost <= cap) {
+        gear.push(g);
+        totalValue += g.cost;
+      }
+    }
+  }
+
+  // Cyberware
+  let cyberware = null;
+  if (Math.random() < profile.cyberwareChance) {
+    const cPool = hasValueCap ? CYBERWARE_ITEMS.filter(c => c.cost <= cap - totalValue) : CYBERWARE_ITEMS;
+    if (cPool.length > 0) {
+      cyberware = pick(cPool);
+      totalValue += cyberware.cost;
+    }
+  }
+
+  // Eddies (fill remaining budget)
+  const eddiesMax = hasValueCap ? Math.max(0, cap - totalValue) : profile.eddiesMax;
+  let eddies = roll(profile.eddiesMin, Math.max(profile.eddiesMin, eddiesMax));
+  if (hasValueCap) eddies = Math.min(eddies, Math.max(0, cap - totalValue));
+  totalValue += eddies;
+
+  // Junk (everyone gets 1-3 items from their profile pool + universal)
+  const profileJunk = JUNK_BY_PROFILE[profile.junkPool] || JUNK_BY_PROFILE.streetKid;
+  const junkCount = roll(1, 3);
+  const junk = pickN([...profileJunk, ...JUNK_UNIVERSAL], junkCount);
+
   return {
-    rarity, weapon,
-    gear: pickN(GEAR_ITEMS, gearCount),
-    cyberware: cw,
-    eddies,
+    profileName: profile.name,
+    weapon, gear, cyberware, eddies, junk, totalValue,
   };
 }
 
@@ -391,7 +913,9 @@ export function generateNightMarket() {
       inventory = pickN(GEAR_ITEMS.filter((g) => g.category === cat), roll(2, 4));
     }
     else if (v.sells === 'mixed') inventory = [...pickN(WEAPONS, 2), ...pickN(GEAR_ITEMS, 2), ...pickN(CYBERWARE_ITEMS, 1)];
-    else if (v.sells === 'food') inventory = [{ name: 'Kibble Bowl', cost: 5, flavor: 'It\'s food. Technically.' }, { name: 'Synthetic Sushi', cost: 20, flavor: 'Tastes almost like the real thing.' }, { name: 'NiCola 6-pack', cost: 10, flavor: 'Night City\'s favorite soda. Probably addictive.' }];
+    else if (v.sells === 'food') inventory = pickN(FOOD_ITEMS, roll(4, 7));
+    else if (v.sells === 'streetfood') inventory = pickN(STREET_FOOD_ITEMS, roll(3, 5));
+    else if (v.sells === 'junk') inventory = pickN(JUNK_VENDOR_ITEMS, roll(5, 10));
     else if (v.sells === 'jobs') inventory = [{ name: 'Quick gig available', cost: 0, flavor: `${pick(ENCOUNTER_SCENARIOS)}. Pays ${roll(500, 3000)} eb.` }];
     return {
       type: v.type,
@@ -408,6 +932,12 @@ export function generateNightMarket() {
     vendors,
     dangerLevel: pick(['Low', 'Medium', 'High']),
   };
+}
+
+export function rerollJunk(profileId) {
+  const profile = LOOT_PROFILES.find(p => p.id === profileId) || LOOT_PROFILES[0];
+  const profileJunk = JUNK_BY_PROFILE[profile.junkPool] || JUNK_BY_PROFILE.streetKid;
+  return pickN([...profileJunk, ...JUNK_UNIVERSAL], roll(1, 3));
 }
 
 export { GEAR_ITEMS, GEAR_CATEGORIES, CYBERWARE_ITEMS };

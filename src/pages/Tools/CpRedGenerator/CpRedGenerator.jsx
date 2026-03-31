@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { useI18n } from '../../../i18n/I18nContext';
 import { usePageTransition } from '../../../App';
 import { Routes } from '../../../constants/routes';
-import { generateEncounter, generateNPC, generateLoot, generateLocation, WEAPON_TYPES } from './data';
+import { generateEncounter, generateNPC, generateLoot, generateLocation, WEAPON_TYPES, LOOT_PROFILES, THREAT_LEVELS, rerollJunk } from './data';
 import { generateNightMarket, generateMidnightMarket } from './nightmarket';
 import { balanceEncounter, NPC_TEMPLATES } from './encounterbalancer';
 import styles from './CpRedGenerator.module.css';
@@ -67,16 +67,31 @@ function ItemBlock({ item, priceModifier }) {
 }
 
 function LootCard({ data }) {
+  const [junk, setJunk] = useState(data.junk || []);
+  const profileId = LOOT_PROFILES.find(p => p.name === data.profileName)?.id || 'random';
+
+  const handleRerollJunk = () => setJunk(rerollJunk(profileId));
+
   return (
     <div className={styles.resultCard}>
       <div className={styles.resultHeader}>
         <span className={styles.resultTitle}>Loot Drop</span>
-        <span className={`${styles.badge} ${styles[`rarity${data.rarity.replace(/\s/g, '')}`]}`}>{data.rarity}</span>
+        {data.profileName && <span className={styles.badge}>{data.profileName}</span>}
         <span className={styles.eddies}>{data.eddies.toLocaleString()} eb</span>
+        {data.totalValue != null && <span className={styles.totalValue}>Total: {data.totalValue.toLocaleString()} eb</span>}
       </div>
-      <ItemBlock item={data.weapon} />
+      {data.weapon && <ItemBlock item={data.weapon} />}
       {data.gear.map((g, i) => <ItemBlock key={i} item={g} />)}
       {data.cyberware && <ItemBlock item={data.cyberware} />}
+      {junk.length > 0 && (
+        <div className={styles.junkSection}>
+          <div className={styles.junkHeader}>
+            <span className={styles.junkLabel}>Pockets</span>
+            <button className={styles.junkReroll} onClick={handleRerollJunk}>reroll</button>
+          </div>
+          {junk.map((j, i) => <p key={i} className={styles.junkItem}>{j}</p>)}
+        </div>
+      )}
     </div>
   );
 }
@@ -226,7 +241,11 @@ export default function CpRedGenerator() {
   const { t } = useI18n();
   const { startTransition } = usePageTransition();
   const [activeTab, setActiveTab] = useState('encounter');
+  const [threatFilter, setThreatFilter] = useState('');
   const [weaponFilter, setWeaponFilter] = useState('');
+  const [lootProfile, setLootProfile] = useState('random');
+  const [maxEddies, setMaxEddies] = useState('');
+  const [qualityFilter, setQualityFilter] = useState('');
   const [results, setResults] = useState({
     encounter: [generateEncounter()],
     npc: [generateNPC()],
@@ -238,9 +257,9 @@ export default function CpRedGenerator() {
 
   const rollNew = () => {
     const generators = {
-      encounter: () => generateEncounter(),
+      encounter: () => generateEncounter({ threat: threatFilter || undefined }),
       npc: () => generateNPC(),
-      loot: () => generateLoot(weaponFilter || undefined),
+      loot: () => generateLoot({ weaponType: weaponFilter || undefined, maxEddies: maxEddies || undefined, quality: qualityFilter || undefined, profile: lootProfile }),
       location: () => generateLocation(),
       nightMarket: () => generateNightMarket(),
       midnightMarket: () => generateMidnightMarket(),
@@ -281,13 +300,46 @@ export default function CpRedGenerator() {
 
       {activeTab === 'balancer' && <BalancerPanel />}
 
+      {activeTab === 'encounter' && (
+        <div className={styles.lootFilters}>
+          <div className={styles.filterRow}>
+            <label className={styles.filterLabel}>Difficulty</label>
+            <select className={styles.filterSelect} value={threatFilter} onChange={(e) => setThreatFilter(e.target.value)}>
+              <option value="">Any</option>
+              {THREAT_LEVELS.map((level) => <option key={level} value={level}>{level}</option>)}
+            </select>
+          </div>
+        </div>
+      )}
+
       {activeTab === 'loot' && (
-        <div className={styles.filterRow}>
-          <label className={styles.filterLabel}>{t('cpred.filterWeapon')}</label>
-          <select className={styles.filterSelect} value={weaponFilter} onChange={(e) => setWeaponFilter(e.target.value)}>
-            <option value="">{t('cpred.allTypes')}</option>
-            {WEAPON_TYPES.map((type) => <option key={type} value={type}>{type}</option>)}
-          </select>
+        <div className={styles.lootFilters}>
+          <div className={styles.filterRow}>
+            <label className={styles.filterLabel}>Profile</label>
+            <select className={styles.filterSelect} value={lootProfile} onChange={(e) => setLootProfile(e.target.value)}>
+              {LOOT_PROFILES.map((p) => <option key={p.id} value={p.id}>{p.name}</option>)}
+            </select>
+          </div>
+          <div className={styles.filterRow}>
+            <label className={styles.filterLabel}>{t('cpred.filterWeapon')}</label>
+            <select className={styles.filterSelect} value={weaponFilter} onChange={(e) => setWeaponFilter(e.target.value)}>
+              <option value="">{t('cpred.allTypes')}</option>
+              {WEAPON_TYPES.map((type) => <option key={type} value={type}>{type}</option>)}
+            </select>
+          </div>
+          <div className={styles.filterRow}>
+            <label className={styles.filterLabel}>Quality</label>
+            <select className={styles.filterSelect} value={qualityFilter} onChange={(e) => setQualityFilter(e.target.value)}>
+              <option value="">Any</option>
+              <option value="Poor">Poor</option>
+              <option value="Standard">Standard</option>
+              <option value="Excellent">Excellent</option>
+            </select>
+          </div>
+          <div className={styles.filterRow}>
+            <label className={styles.filterLabel}>Max Total Value</label>
+            <input className={styles.filterInput} type="number" min="0" max="20000" value={maxEddies} onChange={(e) => setMaxEddies(e.target.value)} placeholder="No limit" />
+          </div>
         </div>
       )}
 
