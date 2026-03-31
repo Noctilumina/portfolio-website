@@ -1,0 +1,652 @@
+.screen {
+  position: fixed;
+  inset: 0;
+  background: #0a0a0c;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  overflow: hidden;
+}
+
+/* Background image -- rendered as an <img> inside imageArea instead */
+.bgImage {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+
+.bgVisible {
+  opacity: 1;
+}
+
+/* Scan line overlay */
+.scanLines {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.15) 2px,
+    rgba(0, 0, 0, 0.15) 4px
+  );
+}
+
+/* HUD corner brackets */
+.hudCorner {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.hudCorner::before,
+.hudCorner::after {
+  content: '';
+  position: absolute;
+  background: #ff3c3c;
+}
+
+.hudTL { top: 70px; left: 24px; }
+.hudTL::before { top: 0; left: 0; width: 24px; height: 2px; }
+.hudTL::after { top: 0; left: 0; width: 2px; height: 24px; }
+
+.hudTR { top: 70px; right: 24px; }
+.hudTR::before { top: 0; right: 0; width: 24px; height: 2px; }
+.hudTR::after { top: 0; right: 0; width: 2px; height: 24px; }
+
+.hudBL { bottom: 24px; left: 24px; }
+.hudBL::before { bottom: 0; left: 0; width: 24px; height: 2px; }
+.hudBL::after { bottom: 0; left: 0; width: 2px; height: 24px; }
+
+.hudBR { bottom: 24px; right: 24px; }
+.hudBR::before { bottom: 0; right: 0; width: 24px; height: 2px; }
+.hudBR::after { bottom: 0; right: 0; width: 2px; height: 24px; }
+
+/* Image area */
+.imageArea {
+  flex: 1;
+  cursor: pointer;
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Loading block */
+.loadingBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.loadingText {
+  font-family: 'Orbitron', var(--font-heading);
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow:
+    0 0 20px rgba(255, 60, 60, 0.4),
+    0 0 60px rgba(255, 60, 60, 0.15);
+  /* Angular clip -- notched corners */
+  clip-path: polygon(
+    4% 0%, 96% 0%,
+    100% 20%, 100% 80%,
+    96% 100%, 4% 100%,
+    0% 80%, 0% 20%
+  );
+  padding: 0.1em 0.5em;
+}
+
+/* Segmented progress bar */
+.loadingBarWrap {
+  display: flex;
+  gap: 3px;
+  width: 300px;
+}
+
+.loadingSegment {
+  flex: 1;
+  height: 8px;
+  background: #1a1a1e;
+  border: 1px solid #333;
+  clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.loadingSegmentFilled {
+  background: #ff3c3c;
+  border-color: #ff5555;
+  box-shadow: 0 0 6px rgba(255, 60, 60, 0.5);
+}
+
+.loadingMeta {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  font-family: 'Orbitron', var(--font-heading);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.loadingPct {
+  color: #ff3c3c;
+  font-weight: 700;
+}
+
+.loadingStatus {
+  color: #444;
+}
+
+/* Tip section */
+.tipBar {
+  position: relative;
+  z-index: 3;
+  background: transparent;
+  padding: var(--space-4) var(--space-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  min-height: 30vh;
+}
+
+/* Tip frame with angular border */
+.tipFrame {
+  position: relative;
+  border: 1px solid #2a2a2e;
+  padding: var(--space-4) var(--space-6);
+  max-width: 750px;
+  width: 100%;
+  background: #0a0a0c;
+}
+
+/* Angular corner accents on tip frame */
+.frameCorner {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+}
+
+.frameCorner::before,
+.frameCorner::after {
+  content: '';
+  position: absolute;
+  background: #ff3c3c;
+}
+
+.frameTL { top: -1px; left: -1px; }
+.frameTL::before { top: 0; left: 0; width: 12px; height: 1px; }
+.frameTL::after { top: 0; left: 0; width: 1px; height: 12px; }
+
+.frameTR { top: -1px; right: -1px; }
+.frameTR::before { top: 0; right: 0; width: 12px; height: 1px; }
+.frameTR::after { top: 0; right: 0; width: 1px; height: 12px; }
+
+.frameBL { bottom: -1px; left: -1px; }
+.frameBL::before { bottom: 0; left: 0; width: 12px; height: 1px; }
+.frameBL::after { bottom: 0; left: 0; width: 1px; height: 12px; }
+
+.frameBR { bottom: -1px; right: -1px; }
+.frameBR::before { bottom: 0; right: 0; width: 12px; height: 1px; }
+.frameBR::after { bottom: 0; right: 0; width: 1px; height: 12px; }
+
+.label {
+  font-family: 'Teko', var(--font-heading);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #ff3c3c;
+  margin-bottom: var(--space-2);
+  font-weight: 700;
+}
+
+.tip {
+  font-family: 'Teko', var(--font-body);
+  font-size: var(--text-xl);
+  color: #ccc;
+  line-height: 1.6;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.tipVisible {
+  opacity: 1;
+}
+
+.prompt {
+  margin-top: var(--space-3);
+  font-family: 'Teko', var(--font-heading);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #333;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+/* Counter */
+.counter {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-4);
+  font-family: 'Teko', var(--font-heading);
+  font-size: var(--text-sm);
+  color: #2a2a2e;
+  letter-spacing: 0.05em;
+}
+
+/* Navbar controls */
+.navSelect {
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  padding: var(--space-0-5) var(--space-1);
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: var(--border-light) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  max-width: 220px;
+}
+
+.navSelect:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 1px;
+}
+
+/* Print button */
+.printBtn {
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: var(--space-1) var(--space-2);
+  background: transparent;
+  color: var(--color-text);
+  border: var(--border-light) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.printBtn:hover {
+  background: var(--color-surface);
+}
+
+/* ── Mode toggle buttons ── */
+.modeBtn {
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: var(--space-0-5) var(--space-2);
+  background: transparent;
+  color: var(--color-muted);
+  border: var(--border-light) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.modeBtnActive {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+
+/* ── Deck view ── */
+.deckView {
+  flex: 1;
+  overflow-y: auto;
+  padding: 80px var(--space-4) var(--space-4);
+  background: #0a0a0c;
+}
+
+.deckEmpty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  color: #555;
+  text-align: center;
+  font-family: 'Teko', var(--font-body);
+  font-size: var(--text-xl);
+  gap: var(--space-2);
+}
+
+.deckGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-3);
+  padding-bottom: var(--space-8);
+}
+
+/* ── Deck card (preview thumbnail) ── */
+.deckCard {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  border: 1px solid #ff3c3c;
+  border-radius: 2px;
+  overflow: hidden;
+  cursor: default;
+}
+
+.deckCardBg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.deckCardOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 30%, rgba(10, 10, 12, 0.85) 70%, rgba(10, 10, 12, 1) 100%);
+}
+
+.deckCardContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8px 12px;
+  z-index: 1;
+}
+
+.deckCardLabel {
+  font-family: 'Teko', var(--font-heading);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #ff3c3c;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.deckCardTip {
+  font-family: 'Teko', var(--font-body);
+  font-size: 0.8rem;
+  color: #ccc;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.deckCardSelect {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  z-index: 2;
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  padding: 2px 4px;
+  background: rgba(10, 10, 12, 0.8);
+  color: #ccc;
+  border: 1px solid #333;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+/* ── Mini corner brackets (shared by deck + print cards) ── */
+.miniCorner {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.miniCorner::before,
+.miniCorner::after {
+  content: '';
+  position: absolute;
+  background: #ff3c3c;
+}
+
+.miniTL { top: 3px; left: 3px; }
+.miniTL::before { top: 0; left: 0; width: 8px; height: 1px; }
+.miniTL::after { top: 0; left: 0; width: 1px; height: 8px; }
+
+.miniTR { top: 3px; right: 3px; }
+.miniTR::before { top: 0; right: 0; width: 8px; height: 1px; }
+.miniTR::after { top: 0; right: 0; width: 1px; height: 8px; }
+
+.miniBL { bottom: 3px; left: 3px; }
+.miniBL::before { bottom: 0; left: 0; width: 8px; height: 1px; }
+.miniBL::after { bottom: 0; left: 0; width: 1px; height: 8px; }
+
+.miniBR { bottom: 3px; right: 3px; }
+.miniBR::before { bottom: 0; right: 0; width: 8px; height: 1px; }
+.miniBR::after { bottom: 0; right: 0; width: 1px; height: 8px; }
+
+/* ── Print deck layout (hidden on screen) ── */
+.deckPrint {
+  display: none;
+}
+
+/* ── Print card (used in print layout) ── */
+.printCard {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #ff3c3c;
+}
+
+.printCardBg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.printCardOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 25%, rgba(10, 10, 12, 0.8) 65%, rgba(10, 10, 12, 1) 100%);
+}
+
+.printCardContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 14px;
+  z-index: 1;
+}
+
+.printCardLabel {
+  font-family: 'Teko', sans-serif;
+  font-size: 9pt;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #ff3c3c;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.printCardTip {
+  font-family: 'Teko', sans-serif;
+  font-size: 9pt;
+  color: #ccc;
+  line-height: 1.4;
+}
+
+.printPage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Print styles */
+@media print {
+  .screen {
+    position: relative !important;
+    width: 100vw;
+    background: #0a0a0c !important;
+    overflow: visible !important;
+  }
+
+  /* Hide interactive elements */
+  .prompt, .counter, .printBtn, .modeBtn,
+  .navSelect, .scanLines, .deckCardSelect,
+  .deckEmpty {
+    display: none !important;
+  }
+
+  /* ── Single mode print ── */
+  .screen[data-mode="single"] {
+    height: 100vh;
+    overflow: hidden !important;
+  }
+
+  .screen[data-mode="single"] .bgImage {
+    position: absolute !important;
+    inset: 0;
+    opacity: 1 !important;
+  }
+
+  .screen[data-mode="single"] .loadingText {
+    color: #fff !important;
+    text-shadow: 0 0 20px rgba(255, 60, 60, 0.4) !important;
+  }
+
+  .screen[data-mode="single"] .loadingSegment {
+    border-color: #333 !important;
+    background: #1a1a1e !important;
+  }
+
+  .screen[data-mode="single"] .loadingSegmentFilled {
+    background: #ff3c3c !important;
+    border-color: #ff5555 !important;
+  }
+
+  .screen[data-mode="single"] .loadingPct { color: #ff3c3c !important; }
+  .screen[data-mode="single"] .loadingStatus { color: #444 !important; }
+
+  .screen[data-mode="single"] .tipBar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    min-height: auto;
+    padding: 24px 48px;
+  }
+
+  .screen[data-mode="single"] .tipFrame {
+    border-color: #2a2a2e !important;
+    background: #0a0a0c !important;
+    padding: 20px 28px;
+  }
+
+  .label { color: #ff3c3c !important; }
+  .tip { opacity: 1 !important; color: #ccc !important; font-size: 1.1rem !important; }
+
+  .hudCorner { position: absolute !important; }
+  .hudCorner::before, .hudCorner::after { background: #ff3c3c !important; }
+  .frameCorner::before, .frameCorner::after { background: #ff3c3c !important; }
+
+  /* ── Deck mode print ── */
+  .screen[data-mode="deck"] .deckGrid {
+    display: none !important;
+  }
+
+  .screen[data-mode="deck"] .deckView {
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  .deckPrint {
+    display: block !important;
+  }
+
+  .printPage {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    page-break-after: always;
+    background: #fff;
+  }
+
+  .printPage:last-child {
+    page-break-after: avoid;
+  }
+
+  .printCard {
+    position: relative;
+    overflow: hidden;
+    border: 1px dashed #999;
+    background: #0a0a0c !important;
+  }
+
+  .printCardBg {
+    position: absolute !important;
+    inset: 0;
+  }
+
+  .printCardOverlay {
+    position: absolute !important;
+    inset: 0;
+  }
+
+  .printCardLabel { color: #ff3c3c !important; }
+  .printCardTip { color: #ccc !important; }
+
+  .miniCorner::before, .miniCorner::after {
+    background: #ff3c3c !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .tipBar {
+    padding: var(--space-3) var(--space-4);
+    min-height: auto;
+  }
+
+  .tipFrame {
+    padding: var(--space-3);
+  }
+
+  .tip {
+    font-size: var(--text-base);
+  }
+
+  .loadingBarWrap {
+    width: 220px;
+  }
+
+  .loadingMeta {
+    width: 220px;
+  }
+
+  .hudCorner {
+    display: none;
+  }
+}

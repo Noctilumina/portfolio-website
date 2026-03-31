@@ -25,6 +25,7 @@ export enum Routes {
   TOOL_COLOR_PALETTE = '/tools/color-palette',
   TOOL_PATTERN_TILER = '/tools/pattern-tiler',
   TOOL_ASCII_ART = '/tools/ascii-art',
+  TOOL_CPRED_LOADING = '/tools/cpred-loading',
 }
 
 /** Helper to build a parameterized route */

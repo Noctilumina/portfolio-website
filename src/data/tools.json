@@ -210,6 +210,22 @@
     "liveUrl": ""
   },
   {
+    "slug": "cpred-loading",
+    "title": "CPR Loading Screen",
+    "shortDescription": "Random Cyberpunk Red loading screen tips. Click or press any key for the next one.",
+    "techStack": [
+      "React",
+      "CSS"
+    ],
+    "categories": [
+      "Cyberpunk Red",
+      "TTRPG"
+    ],
+    "route": "/tools/cpred-loading",
+    "githubUrl": "",
+    "liveUrl": ""
+  },
+  {
     "slug": "image-tagger",
     "title": "Image Tagger",
     "shortDescription": "Tag and organize images with custom labels.",

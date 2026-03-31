@@ -26,6 +26,7 @@ import OpArtGenerator from './pages/Tools/OpArtGenerator/OpArtGenerator';
 import ColorPalette from './pages/Tools/ColorPalette/ColorPalette';
 import PatternTiler from './pages/Tools/PatternTiler/PatternTiler';
 import AsciiArt from './pages/Tools/AsciiArt/AsciiArt';
+import CpRedLoadingScreen from './pages/Tools/CpRedLoadingScreen/CpRedLoadingScreen';
 import styles from './App.module.css';
 
 const TransitionContext = createContext();
@@ -137,6 +138,7 @@ const router = createBrowserRouter(
         { path: Routes.TOOL_COLOR_PALETTE, element: <ColorPalette /> },
         { path: Routes.TOOL_PATTERN_TILER, element: <PatternTiler /> },
         { path: Routes.TOOL_ASCII_ART, element: <AsciiArt /> },
+        { path: Routes.TOOL_CPRED_LOADING, element: <CpRedLoadingScreen /> },
       ],
     },
   ],
