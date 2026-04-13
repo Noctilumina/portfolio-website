@@ -1,26 +1,41 @@
 export const WIKI_CATEGORIES = [
+  // Core mechanics (most basic first)
   'Statistics',
   'Skills',
-  'Combat',
-  'Damage & Armor',
-  'Melee Combat',
-  'Ranged Combat',
-  'Netrunning',
-  'Healing',
-  'Critical Injuries',
-  'Reputation',
-  'Vehicle Combat',
-  'Drugs',
   'Roles',
-  'Cyberware',
-  'Night City',
+  'Reputation',
+
+  // Combat
+  'Combat',
+  'Ranged Combat',
+  'Melee Combat',
+  'Damage & Armor',
+  'Critical Injuries',
+  'Vehicle Combat',
+
+  // Gear & chrome
   'Equipment',
-  'GM Tools',
-  'Character Creation',
+  'Cyberware',
+  'Drugs',
+
+  // Netrunning
+  'Netrunning',
+
+  // Survival & daily life
+  'Healing',
   'Lifestyle',
+  'Everyday Life',
+
+  // World
+  'Night City',
   'Lore & History',
   'Corporations',
-  'Everyday Life',
+
+  // Character building
+  'Character Creation',
+
+  // GM
+  'GM Tools',
   'Adventures',
 ];
 
@@ -331,7 +346,7 @@ All Technique Skills use **TECH** as their linked STAT.
     category: 'Combat',
     content: `## Combat Time
 
-Combat is divided into **Turns** (~3 seconds each). All entities taking their Turns = 1 **Round** (~3 seconds).
+A combat **Round** represents approximately **3 seconds** of in-game time. Every participant takes one **Turn** within that Round. All Turns together = 1 Round (~3 seconds). A 10-round fight is about 30 seconds of in-world action.
 
 ### Initiative
 \`\`\`
@@ -382,7 +397,7 @@ Swimming, climbing, and jumping with a running start cost **2 m/yds per 1 m/yd**
   {
     id: 'aimed-shots',
     title: 'Aimed Shots',
-    category: 'Combat',
+    category: 'Ranged Combat',
     content: `## Aimed Shots
 
 At a maximum of **1 ROF**, you can aim a single Ranged or Melee Attack by taking your entire Action and a **-8 to your Check**.
@@ -712,7 +727,7 @@ If you beat the DV (Defender wins ties), you hit. Apply damage minus armor.
 - **Shotgun**: Can fire Shotgun Shells
 - **Grenade Launcher / Rocket Launcher**: Explosive
 - **Bow/Crossbow**: Never needs Reload Action; basic arrows retrievable`,
-    related: ['range-dv-table', 'autofire', 'suppressive-fire', 'combat-overview'],
+    related: ['aimed-shots', 'range-dv-table', 'autofire', 'suppressive-fire', 'combat-overview'],
   },
   {
     id: 'range-dv-table',
@@ -4414,7 +4429,94 @@ Neural interface technology that records complete sensory experiences -- visual,
 Night City's nightly lottery where six winning numbers are chosen based on **how many corpses** are found in areas of the city. Numbers from six random districts, accumulated by NCPD and verified by Merrill, Asukaga & Finch. Winners contact MA&F by 10 AM. Unclaimed: next night's pot goes up by 1,000eb.
 
 See [[everyday-communications]] for how the Data Pool works and [[role-media]] for the Media Role.`,
-    related: ['everyday-communications', 'role-media', 'corp-network-54', 'role-rockerboy'],
+    related: ['everyday-communications', 'role-media', 'corp-network-54', 'role-rockerboy', 'everyday-braindance', 'everyday-gambling', 'everyday-live-entertainment'],
+  },
+  {
+    id: 'everyday-braindance',
+    title: 'Braindance',
+    category: 'Everyday Life',
+    content: `## Braindance
+
+Neural interface technology that records complete sensory experiences: visual, auditory, emotional, and tactile. A braindance chip lets you feel what the performer felt.
+
+### How It Works
+
+A braindance is recorded by a performer wearing a special headset. The recording captures everything they experience. Playback requires a braindance viewer (1,000eb) or a braindance booth.
+
+### Costs
+
+| Type | Cost |
+|---|---|
+| **Standard BD** | 20eb (Everyday) |
+| **Interactive BD** | 50eb (Costly) |
+| **BD Viewer (hardware)** | 1,000eb (Very Expensive) |
+
+### Legal vs Illegal
+
+Legal BDs cover entertainment: vacations, concerts, sports, nature. The industry is a major employer and revenue source.
+
+Illegal BDs record violence, crime, extreme experiences, and worse. The psychological impact on viewers is significant. Braindance addiction is a recognised condition.
+
+### Prison Braindance
+
+The justice system uses braindance as punishment. Inmates are placed in cryotanks, wired to interface loops, and shut down. The body is frozen but the mind stays fully active in total sensory deprivation. Sentences range from months to fifteen years or more.
+
+See [[everyday-media]] for braindance's place in the wider media landscape.`,
+    related: ['everyday-media', 'everyday-law'],
+  },
+  {
+    id: 'everyday-gambling',
+    title: 'Gambling & the Body Lotto',
+    category: 'Everyday Life',
+    content: `## Gambling in Night City
+
+### The Body Lotto
+
+Night City's nightly lottery. Six winning numbers are chosen based on **how many corpses** are found in six random districts of the Night City Greater Metro Area. Numbers are derived from the locations cadavers are found, accumulated by NCPD and verified by Merrill, Asukaga & Finch.
+
+Winners contact MA&F by 10 AM the next day. Unclaimed prizes roll over, increasing the next night's pot by 1,000eb.
+
+### Casinos
+
+Pre-war Night City had the **Hacienda Hotel** casino in Charter Hill, a luxurious gambling venue for the wealthy. The status of organised gambling in 2045 depends on the district. Corporate zones may have regulated establishments. Everywhere else, gambling is street-level: card games in back rooms, dice in alleys, bets on fights.
+
+### Street Gambling
+
+Informal gambling is everywhere. Betting on fights, races, the Body Lotto, card games, and anything else people can stake eddies on. No regulation, no oversight, no recourse if someone doesn't pay.`,
+    related: ['everyday-media', 'night-city-overview'],
+  },
+  {
+    id: 'everyday-live-entertainment',
+    title: 'Live Entertainment & Sports',
+    category: 'Everyday Life',
+    content: `## Live Entertainment
+
+### Costs
+
+| Event | Cost |
+|---|---|
+| **Live Concert / Sporting Event** | 100eb (Premium) |
+| **Movie** | 20eb (Everyday) |
+| **Video Game** | 50eb (Costly) |
+
+### Music
+
+Live music survives in Night City. Rockerboys perform in clubs, bars, converted spaces, and occasionally open-air lots. A live concert costs 100eb at a proper venue. Street performances are free but unpredictable.
+
+Pre-war bands like **Samurai** (Johnny Silverhand's band) left recordings that survived the DataKrash on physical media. Their music is still played and discussed.
+
+### Sports
+
+Pre-war Night City had **McCartney Stadium**, home of the Superbowl-winning **California Rangers**. The status of professional sports in 2045 is limited. Organised sporting events exist but are less common than before the war. Street-level sports and informal competitions fill the gap.
+
+### Playland by the Sea
+
+Pacifica's pre-war amusement park. It was a major tourist attraction and entertainment hub before the 4th Corporate War. The park closed when Pacifica's Militech security contract lapsed and the district was abandoned by developers. Current status varies by campaign.
+
+### The Slammer
+
+A popular ganger bar on the southside docks with a **cinder block arena** where boosters from across the Combat Zones settle disputes with heavy firepower and edged chrome.`,
+    related: ['everyday-media', 'everyday-gambling', 'role-rockerboy'],
   },
   {
     id: 'everyday-law',

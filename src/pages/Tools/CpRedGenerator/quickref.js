@@ -1119,7 +1119,7 @@ export const QUICK_REF = [
   },
   {
     "id": "how-combat-works",
-    "title": "How combat works (full round structure)",
+    "title": "How combat works (full round structure, ~3 seconds per round)",
     "tags": [
       "combat",
       "round",
@@ -1128,11 +1128,13 @@ export const QUICK_REF = [
       "order",
       "structure",
       "combat flow",
-      "how to fight"
+      "how to fight",
+      "3 seconds",
+      "round length"
     ],
     "icon": "⚔",
     "steps": [
-      "When combat starts, every participant rolls **Initiative: REF + 1d10**. Highest goes first. Ties are broken by higher REF; if still tied, re-roll between the tied characters.",
+      "A combat **Round** represents roughly **3 seconds** of in-game time. When combat starts, every participant rolls **Initiative: REF + 1d10**. Highest goes first. Ties are broken by higher REF; if still tied, re-roll between the tied characters.",
       "Play proceeds in **descending initiative order**. Each participant takes one full Turn before the next person goes. Once everyone has gone, the **Round** ends (~3 seconds of game time).",
       "On your Turn you get: **1 Move Action** (move up to **MOVE x 2 meters**) and **1 Action** (attack, use a skill, reload, etc.). You can split your Move before and after your Action.",
       "After all turns are taken, the Round ends and a **new Round** begins. The GM can either keep the same initiative order or have everyone re-roll (GM choice, but keeping the same order is most common).",
@@ -1877,6 +1879,107 @@ export const QUICK_REF = [
       "**Elite gigs** (extreme risk, major players involved): **2,000-5,000eb+** per person. Examples: steal from Arasaka, assassinate a corporate officer, run a major heist.",
       "Fixers with high Operator rank can negotiate **better pay** (+10% to +20% per rank). The Trading skill can also be used to haggle for more eddies.",
       "Monthly living expenses eat into earnings: a basic **Cargo Container** lifestyle is free but miserable, a **Conapt** costs around **1,000eb/month**, an **Apartment** runs **2,000-5,000eb/month**."
+    ],
+    "topic": "Equipment"
+  },
+  {
+    "id": "buying-weapons",
+    "title": "Where to buy weapons",
+    "tags": [
+      "buy",
+      "weapons",
+      "guns",
+      "purchase",
+      "shop",
+      "night market",
+      "fixer",
+      "arms dealer",
+      "where to get guns"
+    ],
+    "icon": "\ud83d\udd2b",
+    "steps": [
+      "There are no Militech showrooms or gun shops in Night City. Weapons are bought through **Night Markets** or **Fixer connections**.",
+      "**Night Markets** have randomised stock. The GM rolls on the Night Market table to determine what's available in each category (Food & Drugs, Personal Electronics, Weapons & Armor, Cyberware, Clothing, Survival Gear). You take what's there or come back another week.",
+      "**Fixer connections** are more reliable. A Fixer's **Operator Rank** determines what they can source: Rank 1-2 gets basic gear, Rank 5-6 unlocks full Night Market categories, Rank 7+ can find Luxury items and restricted hardware.",
+      "**Pawn shops** sell used and \"obsolete\" weapons at reasonable prices. Finding ammo for old pre-caseless guns is the hard part. If you have an old firearm, you'll need to reload your own ammunition or find a Tech who can.",
+      "**Military surplus** from the 4th Corporate War is scattered across five continents. Handguns, rifles, automatic weapons, missile launchers. If your Fixer can track it down, you can probably buy it.",
+      "**Polymer One-Shots** (Poor Quality Pistols) are cheap, 3D-printed, and available from **Oasis Convenience stores** and some **vending machines**. Bright colours, caseless ammo included.",
+      "**Fully automatic weapons** (SMGs, etc.) are technically illegal to carry under the Federal Weapons Statute. Possession carries a 5-7 year prison sentence. Nobody in Night City cares."
+    ],
+    "topic": "Equipment"
+  },
+  {
+    "id": "buying-everyday-gear",
+    "title": "Where to buy everyday gear and supplies",
+    "tags": [
+      "buy",
+      "gear",
+      "supplies",
+      "shopping",
+      "stores",
+      "convenience",
+      "food",
+      "clothes",
+      "where to buy stuff",
+      "normal shops"
+    ],
+    "icon": "\ud83d\udecd\ufe0f",
+    "steps": [
+      "**Normal stores exist.** Night City has convenience stores (Oasis is a common chain), street vendors, food carts, and small shops. They sell kibble, prepak food, cheap clothing, basic electronics, personal care items, and Polymer One-Shot pistols.",
+      "**Street vendors** sell hot food, cheap clothes, counterfeit goods, and sundries. Available on most inhabited streets during the day. Quality varies. Prices are negotiable.",
+      "**Night Markets** are where you find gear that regular stores won't stock. Weapons, cyberware, programs, exotic items. They pop up in different locations on different nights. Your Fixer tells you where.",
+      "**Midnight Markets** are invite-only. Hosted by top Fixers (Rank 9+) for the extremely wealthy and powerful. Rare items, stolen art, one-of-a-kind cyberware. 1d10+5 items of the GM's choice. If you're invited, you've arrived.",
+      "**Survival gear** (duct tape, rope, camping equipment, lock picks, medtech bags, tech tools) is available at Night Markets under the Survival Gear category.",
+      "**Fashion and clothing** ranges from Generic Chic (cheap and forgettable) to High Fashion (expensive and conspicuous). Gang Colors are available but wearing them signals affiliation. Nomad Leathers signal road life."
+    ],
+    "topic": "Equipment"
+  },
+  {
+    "id": "buying-cyberware",
+    "title": "Where to buy and install cyberware",
+    "tags": [
+      "buy",
+      "cyberware",
+      "chrome",
+      "ripperdoc",
+      "install",
+      "surgery",
+      "where to get cyberware"
+    ],
+    "icon": "\ud83e\uddbf",
+    "steps": [
+      "Cyberware is purchased at **Night Markets** (Cyberware category) or through **Fixer connections**. Availability is rolled randomly by the GM.",
+      "**Installation requires a Surgery check.** You need either a **ripperdoc** (street surgeon) or your party's **Medtech** with the Medicine role ability.",
+      "**Licensed ripperdocs** operate out of clinics with sterile equipment. More expensive, lower risk of complications.",
+      "**Unlicensed ripperdocs** work out of back rooms. Cheaper, but a failed Surgery check means the chrome doesn't take and you may lose Humanity for nothing.",
+      "Your party's **Medtech** can install cyberware if they have access to a **proper facility** (or at minimum a Medtech Bag and a clean space). This is the safest and cheapest option.",
+      "**Fashionware** (Techhair, Light Tattoos, Chemskin, Skinwatch, etc.) has **0 Humanity cost** and is available at clothing vendors and body shops.",
+      "**Borgware** (full limb/body replacement) requires specialist facilities and is only available through high-level Fixer connections or specific ripperdocs."
+    ],
+    "topic": "Equipment"
+  },
+  {
+    "id": "night-market-how-it-works",
+    "title": "How Night Markets work (GM and player reference)",
+    "tags": [
+      "night market",
+      "availability",
+      "stock",
+      "random",
+      "roll",
+      "shopping",
+      "fixer",
+      "operator rank",
+      "what can I buy"
+    ],
+    "icon": "\ud83c\udfea",
+    "steps": [
+      "A Night Market has **7 categories**: Food & Drugs, Personal Electronics, Weapons & Armor, Cyberware, Clothing & Fashionware, Survival Gear. Each category has a **random stock table** the GM rolls on.",
+      "Players don't choose what's available. The GM rolls a **d100 for each category** the market stocks. The result determines which specific items are in stock that week.",
+      "**Which categories are available** depends on the **Fixer's Operator Rank**. At Rank 1-2, only basic categories. At Rank 5-6, all categories including weapons and cyberware. At Rank 9-10, the Fixer can host a **Midnight Market** with rare items.",
+      "If the market doesn't have what you need, you come back next time and the GM rolls again. Or you ask your Fixer to specifically source it (takes time, may cost more).",
+      "**Haggling** uses the Trading skill. Fixer Operator Rank also provides passive price benefits: Rank 1-2 = 10% better prices, Rank 3-4 = buy 5 get 1 free on items of 100eb or less.",
+      "Night Markets move. They show up in different locations on different nights. You don't find the Night Market. Someone tells you where it is tonight."
     ],
     "topic": "Equipment"
   },
@@ -3054,7 +3157,7 @@ export const QUICK_REF = [
       "**Streetrat (Templates)**: everything predetermined -- STATs, Skills, Gear, Cyberware. Best for new players or quick starts. Starting money: **500eb**.",
       "**Edgerunner (Fast and Dirty)**: roll STATs randomly (d10s, arrange as desired), choose Skills from a prioritized package, but Gear/Cyberware still predetermined. Starting money: **500eb**.",
       "**Complete Package (Calculated)**: buy STATs with **62 points** (2-8 range), buy Skills with **86 points** (max 6, all basics at least 2). Starting money: **2,550eb** for gear + **800eb** fashion allowance.",
-      "All methods follow the same steps: 1) Pick a Role (starts at Rank 4), 2) Run Lifepath, 3) Set Stats, 4) Calculate Derived Stats (HP, Humanity, Death Save), 5) Set Skills, 6-8) Record Gear, Armor, Cyberware.",
+      "All methods follow the same steps: **1.** Pick a Role (starts at Rank 4). **2.** Run Lifepath. **3.** Set Stats. **4.** Calculate Derived Stats (HP, Humanity, Death Save). **5.** Set Skills. **6-8.** Record Gear, Armor, Cyberware.",
       "Non-Exec characters start in a rented **Cargo Container** (Suburbs or Combat Zone) with Kibble Lifestyle. First month free; **1,100eb** due on the 1st of next month."
     ],
     "topic": "Character Creation"

@@ -445,7 +445,6 @@
   flex: 1;
   min-width: 0;
   padding: 1.5rem 2.5rem 3rem;
-  max-width: 800px;
 }
 
 .breadcrumb {
@@ -673,6 +672,216 @@
 .relatedLink:hover {
   background: var(--color-primary);
   color: #fff;
+}
+
+/* Source badge */
+.sourceBadge {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.1em 0.4em;
+  margin-left: 0.5em;
+  background: rgba(0, 200, 200, 0.15);
+  color: #00cccc;
+  border: 1px solid rgba(0, 200, 200, 0.3);
+  border-radius: var(--radius-sm);
+  vertical-align: middle;
+}
+
+/* Nav sidebar badge */
+.navBadge {
+  font-size: 0.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.05em 0.3em;
+  margin-left: 0.4em;
+  background: rgba(0, 200, 200, 0.15);
+  color: #00cccc;
+  border-radius: 2px;
+}
+
+/* Homebrew disclaimer banner */
+.homebrewDisclaimer {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: #00cccc;
+  background: rgba(0, 200, 200, 0.08);
+  border: 1px solid rgba(0, 200, 200, 0.2);
+  border-radius: var(--radius-sm);
+  padding: var(--space-1-5) var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+/* Settings gear button */
+.settingsBtn {
+  font-size: 1.2rem;
+  background: none;
+  border: none;
+  color: var(--color-muted);
+  cursor: pointer;
+  padding: 0.2em 0.4em;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast), background var(--transition-fast);
+  position: relative;
+}
+
+.settingsBtn:hover,
+.settingsBtnActive {
+  color: var(--color-text);
+  background: var(--color-surface);
+}
+
+.settingsBtnIndicator::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 6px;
+  height: 6px;
+  background: #00cccc;
+  border-radius: 50%;
+}
+
+/* Settings dropdown */
+.settingsDropdown {
+  position: fixed;
+  top: 3.5rem;
+  right: 0;
+  z-index: var(--z-sidebar);
+  width: 360px;
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
+  background: var(--color-surface);
+  border: var(--border-light) solid var(--color-border);
+  border-radius: 0 0 0 var(--radius-md);
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform var(--transition-normal), opacity var(--transition-normal);
+}
+
+.settingsDropdownOpen {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Preset panel */
+.presetPanel {
+  padding: var(--space-3);
+}
+
+.presetPanelTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-text);
+  margin-bottom: var(--space-1);
+}
+
+.presetPanelDesc {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  margin-bottom: var(--space-3);
+}
+
+.presetRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-1-5) 0;
+  border-bottom: var(--border-light) solid var(--color-border);
+}
+
+.presetToggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1-5);
+  cursor: pointer;
+}
+
+.presetToggle input[type="checkbox"] {
+  accent-color: #00cccc;
+  width: 1.1em;
+  height: 1.1em;
+}
+
+.presetName {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.presetAuthor {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}
+
+.presetActions {
+  display: flex;
+  gap: var(--space-1);
+}
+
+.presetActionBtn {
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.2em 0.5em;
+  background: transparent;
+  color: var(--color-muted);
+  border: var(--border-light) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.presetActionBtn:hover {
+  color: var(--color-text);
+}
+
+.presetBtnRow {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.presetImportBtn {
+  flex: 1;
+  font-family: var(--font-heading);
+  font-size: var(--text-md);
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: var(--space-1-5) var(--space-2);
+  background: var(--color-bg);
+  color: var(--color-text);
+  border: var(--border-light) dashed var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+
+.presetImportBtn:hover {
+  border-color: #00cccc;
+}
+
+/* Homebrew subsections in wiki articles */
+.subsectionsBlock {
+  margin-top: var(--space-6);
+  border-top: 2px dashed rgba(0, 200, 200, 0.3);
+  padding-top: var(--space-4);
+}
+
+.subsection {
+  margin-bottom: var(--space-4);
+}
+
+.subsectionHeader {
+  margin-bottom: var(--space-2);
 }
 
 /* Mobile */

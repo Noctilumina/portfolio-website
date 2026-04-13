@@ -1,0 +1,131 @@
+{
+  "id": "iris-expansion",
+  "name": "Iris Expansion",
+  "author": "Iris Peters",
+  "version": "1.0",
+  "description": "Homebrew factions, locations, and weapon variants for Iris's CPR campaign.",
+  "builtIn": true,
+  "quickref": [
+    {
+      "id": "iris-laser-pointer",
+      "title": "Laser pointer attachment (Homebrew)",
+      "tags": ["laser", "pointer", "aiming", "attachment", "ranged", "accuracy"],
+      "icon": "\ud83d\udfe2",
+      "steps": [
+        "A laser pointer is a **weapon attachment** that costs **100eb** and can be fitted to any pistol, SMG, or assault rifle by a Tech (DV9 Weaponstech check).",
+        "When aiming with a laser pointer equipped, the **Aim action grants +2** instead of the standard +1.",
+        "The laser is visible in smoke, fog, and low-light conditions. Enemies can see the dot and may react to it.",
+        "The pointer runs on a small battery. It lasts **roughly 50 uses** before needing a replacement battery (10eb)."
+      ],
+      "topic": "Combat"
+    },
+    {
+      "id": "iris-arms-dealers",
+      "title": "Arms dealers (physical weapon shops)",
+      "tags": ["arms dealer", "gun shop", "weapons", "store", "buy guns", "physical shop", "lucca"],
+      "icon": "\ud83c\udfea",
+      "steps": [
+        "Arms dealers operate **outside the Night Market system**. Most work out of **vans, car boots, or rundown buildings**, visiting the same spots on a regular schedule. Their regulars know when and where to find them.",
+        "A few rare dealers have **permanent locations**. These are the exception. A fixed shop means overhead, which means the dealer is either very established or very connected. Example: **Leaded Lucca's** in New Westbrook (see wiki).",
+        "Stock is **fixed by the dealer's connections**, not randomly rolled. Most specialise: war surplus, imported hardware, melee, cyberweapons, or ammo. What they carry depends on who they know and what fell off a truck this week.",
+        "**Pricing** varies by dealer. Most charge **base price + 10-30% markup**. Van dealers tend toward the cheaper end. Permanent shops charge more but offer better selection and sometimes test ranges.",
+        "Arms dealers are **not covered by the core Night Market rules**. Their existence, stock, and pricing are set by the GM."
+      ],
+      "topic": "Equipment"
+    },
+    {
+      "id": "iris-named-weapons",
+      "title": "Named weapon variants and street prices",
+      "tags": ["weapons", "named", "variants", "prices", "manufacturer", "brand", "street price", "night market"],
+      "icon": "\ud83d\udd2b",
+      "steps": [
+        "Named variants have the **same base stats** as their weapon type. The difference is manufacturer, availability, and street price.",
+        "**Night Market markup:** base price + 20-30%. **Fixer connection:** base + 10%. **Stolen/hot:** base - 20-30% (might be traced).",
+        "**Named brand premium:** +50-100% over generic. A Militech Ronin costs more than 'an assault rifle' even though the stats are the same.",
+        "**Rare/discontinued:** 200-500% markup. Arasaka WAA Bullpup, Tsunami exotics. **Bulk discount:** 5+ of the same weapon, -10-15%.",
+        "An arms dealer's personality shows in their markup. A professional charges fair and wants repeat customers. A gouger charges whatever the market will bear."
+      ],
+      "topic": "Equipment"
+    }
+  ],
+  "wiki": [
+    {
+      "id": "iris-faction-312-clan",
+      "title": "312 Clan",
+      "category": "Factions",
+      "content": "## 312 Clan\n\n**Type:** Nomad Clan\n**Origin:** Chicago, Illinois\n**Named after:** The Chicago area code (312). They carry the city with them even after it's gone.\n\n---\n\n### What They Do\n\nRunning supply contracts. Kibble, medical basics, goods distribution. Known on the supply routes between cities. Reputable enough that their patch gets a 312 nomad through most doors without question.\n\n### Night City Presence\n\nSmall warehouse in Heywood, used for staging deliveries and storing supplies between runs. Not a permanent base, just a foothold. Clan members pass through when contract work brings them into the city.\n\n### The Patch\n\nA circle with three lines through it. Geometric, simple, faded from sun and distance. A 312 nomad without the patch is considered undressed.\n\n### Reputation\n\nThe 312 are small but trusted. They've never broken a supply contract. Other clans know this. A 312 nomad's word is their bond.\n\n### Notes\n\n- The clan takes contracts seriously. Reputation is everything on the road.\n- A favour with the 312 is a slow burn asset. Worth more later than it is tonight.\n- If a player character has Chicago connections, that recognition matters."
+    },
+    {
+      "id": "iris-faction-ncra",
+      "title": "NCRA (Night City Reclamation Authority)",
+      "category": "Factions",
+      "content": "## Night City Reclamation Authority\n\n**Type:** Para-governmental institution\n**Alias:** \"The Reclaimers\" (informally)\n\n---\n\n### What They Do\n\nOversee reconstruction of Night City post-war. They hold contracts with foreign construction firms and coordinate the slow, grinding process of making the city functional again. They promised Night City would be \"fully reconstructed within a decade.\" That was nine years ago.\n\n### Jurisdiction\n\nNCRA security is technically responsible for areas that haven't been assigned to NCPD jurisdiction yet. In practice, this means large parts of Watson and South Night City have no police response at all. NCRA security responds to corporate property threats only. Everything else is \"not our jurisdiction.\"\n\n### Reconstruction Timeline\n\nThe current estimate is \"ongoing.\" Watson is \"almost finished.\" South Night City is \"in progress.\" Pacifica is \"under evaluation.\" The combat zone is \"challenging.\" Nobody believes any of it.\n\n### Notes\n\n- NCRA contracts with foreign firms (including European companies) are politically sensitive.\n- The gap between NCRA's promises and reality is a source of constant friction with residents.\n- NCRA security dismissed complaints from EU construction workers about gang harassment. The relationship between NCRA and the gangs operating in reconstruction zones is unclear."
+    },
+    {
+      "id": "iris-location-sunrise",
+      "title": "Sunrise",
+      "parentId": "key-locations",
+      "content": "### Sunrise\n\n**Full name:** Red Sunrise (never say this)\n**Type:** Merc bar\n**Address:** 6 Seaview Lane, Charter Hill, New Westbrook\n\nA back street that doesn't feel like it leads anywhere. Low buildings stacked on top of each other. Recessed into the row, a small bar front. Nothing announcing itself. Neon sign above the door, half dead. RED SUNRISE in orange and white, except the R, E, and D are shot out. So it reads: **SUNRISE.**\n\n**Interior:** Dark. Warmer than the street. Fuller than it looks from outside. Low ceiling, booths along the walls, tables in the middle, long bar down one side. Music underneath everything, loud enough to give conversations somewhere to hide. Half the tables have something going on at any given time. Everyone has already clocked you without appearing to. Along the far wall: a row of alcoves with half-circle bench seating, dimly lit.\n\n**Rules of the place:**\n- Say \"Red Sunrise\" and you're a gonk\n- Everyone here is working, looking for work, or pretending to\n- The alcoves belong to whoever's sitting in them\n- Don't stare\n\n**Seaview Lane:** Pre-war plans had terraced apartments with ocean views. There was even a park planned at the end. The bombs turned it all into emergency housing. Containers went up where the park was supposed to be. The name stayed because nobody cared enough to change it."
+    },
+    {
+      "id": "iris-location-weapon-of-nc",
+      "title": "Weapon of Night City",
+      "parentId": "key-locations",
+      "content": "### Weapon of Night City\n\n**Type:** Sushi restaurant\n**Address:** 77 Koi Lane, Upper Marina\n**Locals call it:** \"The Weapon\" or just \"Weapon's\"\n\nRun by the nephew of a Tiger Claw lieutenant. The restaurant has a close relationship with the Tiger Claws. Not a front (the sushi is real, the business is real), but Tiger Claw territory through and through. Eating here means eating under their protection.\n\nThe name was the lieutenant's idea. He wanted a sushi place that sounded dangerous enough that nobody would rob it. \"Who's going to rob a place called Weapon of Night City?\" It worked. The nephew wanted to call it \"Ocean Breeze.\" He was overruled.\n\nThe nephew is a restaurateur, not a gangster. He just happens to have an uncle who is. The sushi uses real fish. That's why the Tiger Claws eat here. Although maybe you'd be better off eating fish flavoured kibble than whatever gets dredged up from the Night City bay."
+    },
+    {
+      "id": "iris-location-leaded-lucca",
+      "title": "Leaded Lucca's",
+      "parentId": "key-locations",
+      "content": "### Leaded Lucca's\n\n**Type:** Arms dealer\n**Address:** New Westbrook, near the Executive Zone border\n**Run by:** Lucca, ex-corporate security manager\n\nOne of the few permanent weapon shops in Night City. The storefront is run down. Faded signage, barred windows, paint peeling off the door frame. Doesn't look like much from the outside. Inside it's a different story: clean, organised, weapons racked neatly on the walls, ammo sorted by calibre behind the counter.\n\nLucca's stock leans heavily on 4th Corporate War surplus. Arasaka sidearms, Militech rifles, corp-manufactured hardware that was abandoned, salvaged, or \"redirected\" after the war ended. If you're looking for a Militech Ronin or an Arasaka WAA Bullpup, Lucca's is the first place to check.\n\nThere's a test range in the back. Concrete walls, paper targets, decent ventilation. Lucca lets customers try before they buy. He says it builds trust. It also lets him see how you handle a weapon, which tells him what kind of customer you are.\n\nLucca himself is professional, clean, relaxed. Ex-corp security, but the corporate edge wore off years ago. He talks to everyone like a favourite uncle. Patient, knowledgeable, never pushy. He prices fairly because he wants you to come back.\n\n**Pricing:** Base price + 10-20% on surplus stock. Rare or discontinued items cost more. He doesn't haggle much but he'll throw in ammo for repeat customers.\n\n**The rule:** Lucca doesn't ask what you need the weapons for. He remembers faces. If you bring trouble to his shop, you don't come back."
+    },
+    {
+      "id": "iris-named-pistols",
+      "title": "Named Pistol Variants",
+      "parentId": "weapons-catalog",
+      "content": "### Named Pistol Variants (Iris Expansion)\n\nAll variants use the base stats of their weapon type. Differences are manufacturer, availability, and street flavour.\n\n| Weapon | Base Type | Street Price | Manufacturer | Notes |\n|---|---|---|---|---|\n| Militech Avenger | Medium Pistol | 50-80 eb | Militech | Standard military sidearm. Reliable. Boring. Everyone has one. |\n| Arasaka Rapid | Light Pistol | 80-120 eb | Arasaka | Sleek, concealable. Popular with corpos. |\n| Constitutional Arms Unity | Medium Pistol | 50-70 eb | Constitutional Arms | American classic. 6th Street favourite. Comes with a flag sticker. |\n| Sternmeyer Type 35 | Heavy Pistol | 100-150 eb | Sternmeyer | German engineering. Loud. Stops what it hits. |\n| Dai Lung Streetmaster | Heavy Pistol | 60-80 eb | Dai Lung | Chinese import. Cheap, disposable. The gun you throw away after. |\n| Budget Arms C-13 | Light Pistol | 30-50 eb | Budget Arms | The cheapest gun in Night City. You get what you pay for. |\n| Federated Arms X-22 | Medium Pistol | 50-60 eb | Federated Arms | Plastic frame, light, accurate enough. Popular with first-time buyers. |"
+    },
+    {
+      "id": "iris-named-smgs",
+      "title": "Named SMG Variants",
+      "parentId": "weapons-catalog",
+      "content": "### Named SMG Variants (Iris Expansion)\n\n| Weapon | Base Type | Street Price | Manufacturer | Notes |\n|---|---|---|---|---|\n| Militech Crusher | SMG | 100-150 eb | Militech | Compact, folding stock. Fits under a jacket. |\n| Arasaka Minami 10 | SMG | 150-200 eb | Arasaka | Precise for an SMG. Expensive. |\n| Sternmeyer SMG-21 | SMG | 120-160 eb | Sternmeyer | Built like a tank. German reliability. |\n| Darra Polytechnic Techscorp | SMG | 60-80 eb | Darra Polytechnic | Pakistani manufacture. Cheap, rattles when you shake it. Works though. |\n| Budget Arms Auto 3 | SMG | 70-90 eb | Budget Arms | Plastic, light, jams on the third magazine. But it's 70 eddies. |\n| Tsunami Arms Helix SMG | Heavy SMG | 500-700 eb | Tsunami Arms | Exotic, helical magazine, looks like it came from space. Showpiece. |"
+    },
+    {
+      "id": "iris-named-shotguns",
+      "title": "Named Shotgun Variants",
+      "parentId": "weapons-catalog",
+      "content": "### Named Shotgun Variants (Iris Expansion)\n\n| Weapon | Base Type | Street Price | Manufacturer | Notes |\n|---|---|---|---|---|\n| Militech Bulldog | Shotgun | 100-150 eb | Militech | Military pump-action. Indestructible. |\n| Constitutional Arms Defender-12 | Shotgun | 100-130 eb | Constitutional Arms | Home defence marketing. American flag on the stock. |\n| Arasaka Rapid Assault | Shotgun | 200-300 eb | Arasaka | Semi-auto, fast cycling. Expensive for a shotgun. |\n| Sternmeyer Stakeout | Shotgun | 120-160 eb | Sternmeyer | Sawed-off variant. Illegal barrel length. Nobody cares. |\n| Budget Arms Sweeper | Shotgun | 60-80 eb | Budget Arms | Single-shot break-action. The cheapest way to put 5d6 downrange. |\n| Nomad Special (custom) | Shotgun | 150-200 eb | Various | Sawed-off, stock wrapped in tape, shells duct-taped to the side. Looks terrible. Works perfectly. |"
+    },
+    {
+      "id": "iris-named-rifles",
+      "title": "Named Assault Rifle & Sniper Variants",
+      "parentId": "weapons-catalog",
+      "content": "### Named Assault Rifle Variants (Iris Expansion)\n\n| Weapon | Base Type | Street Price | Manufacturer | Notes |\n|---|---|---|---|---|\n| Militech Ronin | Assault Rifle | 500-700 eb | Militech | Top-selling AR in the world. The standard everything else is measured against. |\n| Militech Ronin Hyperlight | Assault Rifle | 600-800 eb | Militech | Lighter frame, polymer furniture. Mobile ops. |\n| Sternmeyer M-95A4 | Assault Rifle | 500-800 eb | Sternmeyer | German military workhorse. Heavy, accurate, overengineered. |\n| Sternmeyer M-04 Variable | Assault Rifle | 700-900 eb | Sternmeyer | Modular. Swap barrels, stocks, optics. The gun nerd's choice. |\n| Arasaka WAA Bullpup | Assault Rifle | 1000+ eb | Arasaka | Compact, precise, rare. Collector price. Arasaka doesn't officially sell these anymore. |\n| Chadran Arms Jungle Reaper | Assault Rifle | 300-400 eb | Chadran Arms | Cheap, rugged. The stock wobbles but it fires every time. |\n| Darra Polytechnic Binary | Assault Rifle | 200-350 eb | Darra Polytechnic | Dirt cheap. Questionable quality control. Some fire fine. Some explode. |\n| Constitutional Arms M2067 | Assault Rifle | 500 eb | Constitutional Arms | American patriot branding. 6th Street buys these by the crate. |\n| Stolbovoy ST-5 | Assault Rifle | 400-500 eb | Stolbovoy | Russian. Reliable. Boring. You could bury it in mud and it'd still fire. |\n| Tsunami Arms Helix | Assault Rifle | 800-1000 eb | Tsunami Arms | Exotic design, helical magazine. Beautiful. Impractical. |\n\n### Named Sniper Rifle Variants\n\n| Weapon | Base Type | Street Price | Manufacturer | Notes |\n|---|---|---|---|---|\n| Militech M-76 Omaha | Sniper Rifle | 500-700 eb | Militech | Standard military sniper. Accurate, dependable. |\n| Arasaka HJKE-11 | Sniper Rifle | 800-1200 eb | Arasaka | Japanese precision. Whisper-quiet suppression. Rare. |\n| Sternmeyer M-114 Jaeger | Sniper Rifle | 600-800 eb | Sternmeyer | \"Jaeger\" means hunter. German naming, German accuracy. |\n| Stolbovoy SVT-40 | Sniper Rifle | 400-500 eb | Stolbovoy | Russian surplus. Old design, still lethal at range. Cheap. |\n| Tsunami Arms Distance | Sniper Rifle | 900-1200 eb | Tsunami Arms | Gyroscopic stabilisation. Compensates for wind, breathing, heartbeat. If you can afford it. |"
+    },
+    {
+      "id": "iris-named-melee",
+      "title": "Named Melee & Cyberweapon Variants",
+      "parentId": "weapons-catalog",
+      "content": "### Named Melee Variants (Iris Expansion)\n\n| Weapon | Base Type | Street Price | Notes |\n|---|---|---|---|\n| Kendachi Mono-knife | Light Melee | 200-400 eb | Monomolecular edge. Cuts through most things. Expensive for a knife. |\n| Iron Chapter Longsword | Very Heavy Melee | 300-500 eb | Real steel HEMA sword from Iron Chapter on Bremen Street. Not a weapon, it's sport equipment. Sure. |\n| Nomad Machete | Medium Melee | 50-80 eb | Practical, ugly, road-worn. Every nomad has one. |\n| Maelstrom Custom | Medium Melee | 100-200 eb | Welded rebar, bolted chrome, edged with scrap. Each one unique. Each one a tetanus risk. |\n| Baseball Bat (nailed) | Medium Melee | 20-30 eb | A bat. With nails. The weapon of choice for people who can't afford anything better. |\n\n### Arms Dealer Markup\n\n| Source | Markup |\n|---|---|\n| Night Market | Base + 20-30% |\n| Fixer connection | Base + 10% |\n| Stolen/hot | Base - 20-30% (might be traced) |\n| Named brand premium | +50-100% over generic |\n| Rare/discontinued | +200-500% |\n| Bulk (5+) | -10-15% |"
+    },
+    {
+      "id": "iris-entertainment-street",
+      "title": "Street Entertainment",
+      "parentId": "everyday-live-entertainment",
+      "content": "### Street Entertainment (Iris Expansion)\n\nMost Night City residents can't afford venue entertainment at 100eb a ticket. What they can afford:\n\n**Braindance booths** line the streets in Watson, Heywood, and South Night City. 5eb for fifteen minutes of someone else's life. The booths smell like sweat and ozone. Nobody cleans them. Some people spend their entire evenings in one.\n\n**Street fights** happen in back lots, under bridges, and in basements. Organised enough that people bet on them. Unorganised enough that nobody regulates them. Entry is usually free. Betting is the point.\n\n**Underground racing** runs through the industrial districts after dark. Cars, bikes, anything with an engine. No rules, no safety, no insurance. Spectators line the rooftops.\n\n**Rooftop parties** happen in container housing when the weather allows. Someone brings a speaker, someone brings drinks, everyone brings themselves. The view from the top of a five-stack container block is the closest most people get to feeling above the city.\n\n**At home** is where most entertainment happens. Broadcasts, Data Pool content, arguing with neighbours. A bottle of Night City whisky and whatever's on 82FM. Fun is a budget item."
+    },
+    {
+      "id": "iris-entertainment-absolution",
+      "title": "Absolution (Live Music Venue)",
+      "parentId": "everyday-live-entertainment",
+      "content": "### Absolution (Iris Expansion)\n\n**Address:** 11 Seaview Lane, Charter Hill, New Westbrook\n**Type:** Live music venue / nightclub\n\nA converted Catholic cathedral. A promoter bought it cheap in the late 2030s, kept the bones, ripped out the religion. The confessional is the bar. The stained glass that survived the war is worth more than the sound system.\n\nThree original stained glass windows depict saints nobody can name. During gigs, stage lights hit the glass and throw coloured patterns across the crowd.\n\nAbsolution is one of the better live music venues in Night City. Rockerboys play here. The atmosphere is somewhere between sacred and profane. The drinks are overpriced. The acoustics are genuinely good because cathedrals were built for sound."
+    },
+    {
+      "id": "iris-entertainment-82fm",
+      "title": "82FM Pirate Radio",
+      "parentId": "everyday-media",
+      "content": "### 82FM Pirate Radio (Iris Expansion)\n\nNight City's most listened-to pirate radio station. Broadcasts from a converted shipping container on a rooftop in Watson. One microphone, a mixing board from 2035, and a chair stolen from the 14th precinct.\n\nThe signal reaches most of Night City because the antenna is strapped to a construction crane owned by UrbanStruktur. The crane's owner knows. He listens to the show.\n\nThe host has been running Night City News on 82FM for six years. He's been threatened, bribed, and shot at twice. The station runs the Body Lotto numbers, news, music, and a kibble sponsorship that the host reads with the enthusiasm of a man serving a prison sentence.\n\nThe death lottery broadcast is technically illegal. NCPD tried to shut it down three times. The host argued it was 'public safety information' each time. The third judge agreed."
+    }
+  ]
+}
