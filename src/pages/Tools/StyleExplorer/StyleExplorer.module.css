@@ -4,7 +4,66 @@
   margin: 0 auto;
 }
 
+.pageInspiration {
+  max-width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 .header { margin-bottom: 1rem; }
+
+/* Tab bar */
+.tabBar {
+  display: flex;
+  gap: 0.25rem;
+  margin-top: 1.25rem;
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 0;
+}
+
+.tabBtn {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.5em 1.2em;
+  background: none;
+  color: var(--color-muted);
+  border: 2px solid transparent;
+  border-bottom: none;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  cursor: pointer;
+  transition: color var(--transition-normal), background var(--transition-normal);
+  position: relative;
+  bottom: -2px;
+}
+
+.tabBtn:hover {
+  color: var(--color-text);
+}
+
+.tabBtnActive {
+  color: var(--color-primary);
+  border-color: var(--color-border);
+  border-bottom-color: var(--color-bg);
+  background: var(--color-bg);
+}
+
+/* Inspiration iframe */
+.inspirationWrap {
+  margin-top: 1.5rem;
+  border: var(--border-light) solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.inspirationFrame {
+  display: block;
+  width: 100%;
+  height: 85vh;
+  border: none;
+}
 
 .title {
   font-size: clamp(2rem, 5vw, 3rem);

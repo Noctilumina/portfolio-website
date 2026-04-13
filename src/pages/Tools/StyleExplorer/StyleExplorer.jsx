@@ -161,6 +161,7 @@ const DEFAULT_HOVER = { effect: 'none', scale: 1.05, liftY: -6, glowIntensity: 2
 export default function StyleExplorer() {
   const { t } = useI18n();
   const { startTransition } = usePageTransition();
+  const [tab, setTab] = useState('editor');
   const [s, setS] = useState({ ...PRESETS[0].style });
   const [activePreset, setActivePreset] = useState('Pop Art');
   const [overlay, setOverlay] = useState(null);
@@ -205,13 +206,37 @@ export default function StyleExplorer() {
   })();
 
   return (
-    <main id="main-content" className={styles.page}>
+    <main id="main-content" className={`${styles.page} ${tab === 'inspiration' ? styles.pageInspiration : ''}`}>
       <div className={styles.header}>
         <h1 className={styles.title}>{t('styleExplorer.heading')}</h1>
         <p className={styles.subtitle}>{t('styleExplorer.subtitle')}</p>
+        <div className={styles.tabBar}>
+          <button
+            className={`${styles.tabBtn} ${tab === 'editor' ? styles.tabBtnActive : ''}`}
+            onClick={() => setTab('editor')}
+          >
+            Editor
+          </button>
+          <button
+            className={`${styles.tabBtn} ${tab === 'inspiration' ? styles.tabBtnActive : ''}`}
+            onClick={() => setTab('inspiration')}
+          >
+            Inspiration
+          </button>
+        </div>
       </div>
 
-      <div className={styles.presetSection}>
+      {tab === 'inspiration' && (
+        <div className={styles.inspirationWrap}>
+          <iframe
+            src="/portfolio-website/style-previews.html"
+            className={styles.inspirationFrame}
+            title="Design style inspiration mockups"
+          />
+        </div>
+      )}
+
+      {tab === 'editor' && <><div className={styles.presetSection}>
         <span className={styles.presetsLabel}>{t('styleExplorer.presets')}</span>
         <div className={styles.presetGrid}>
           {PRESETS.map((preset) => (
@@ -433,7 +458,7 @@ export default function StyleExplorer() {
             <pre className={styles.cssCode}>{generateCSS(s, clipEnabled, clipPoints, hover)}</pre>
           </div>
         </div>
-      </div>
+      </div></>}
 
       <div className={styles.backWrapper}>
         <button className={styles.backButton} onClick={() => startTransition(Routes.TOOLS)}>
