@@ -1,4 +1,4 @@
-export const WIKI_VERSION = '1.2.7';
+export const WIKI_VERSION = '1.2.8';
 
 export const WIKI_CATEGORIES = [
   // Core mechanics (most basic first)
