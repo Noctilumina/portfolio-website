@@ -1,4 +1,4 @@
-export const WIKI_VERSION = '1.2.4';
+export const WIKI_VERSION = '1.2.5';
 
 export const WIKI_CATEGORIES = [
   // Core mechanics (most basic first)
@@ -4987,7 +4987,7 @@ In Cyberpunk RED, "explosives" covers three distinct categories handled by diffe
 
 ## Area of Effect Rules
 
-All explosive weapons affect a **10 m/yd × 10 m/yd area** (5×5 squares) centered on the impact point. Roll damage **once** -- every target in the area takes that result.
+All explosive weapons affect a **10 m/yd × 10 m/yd area** (5×5 squares) centered on the impact point. Roll damage **once**. Every target in the area takes that result.
 
 - **REF 8+ targets** can individually attempt to dodge the blast.
 - **Cover with sufficient HP** protects targets fully. If the blast would **destroy the cover** (reduce it to 0 HP), the cover is gone and all targets behind it take **full damage**. Unlike standard ranged attacks, excess damage **passes through** destroyed cover.
@@ -5022,9 +5022,9 @@ Both thrown and fired grenades use the **Grenade Launcher DV column** on the Ran
 
 ## The Demolitions Skill
 
-**Demolitions** (TECH stat, x2 IP cost) is for placing and defusing stationary explosive charges -- not throwing grenades or firing launchers.
+**Demolitions** (TECH stat, x2 IP cost) is for placing and defusing stationary explosive charges. It does not cover throwing grenades or firing launchers.
 
-**x2 IP cost:** Level 1 = 40 IP. Level 10 = 400 IP. This is a major investment. If no one in the crew has it, sourcing pre-configured charges from a Fixer works -- but mishandling explosives without the Skill risks premature detonation at GM discretion.
+**x2 IP cost:** Level 1 = 40 IP. Level 10 = 400 IP. This is a major investment. If no one in the crew has it, sourcing pre-configured charges from a Fixer works. Mishandling explosives without the Skill risks premature detonation at GM discretion.
 
 **Roll:** TECH + Demolitions + 1d10 vs DV.
 
@@ -5056,11 +5056,11 @@ Both thrown and fired grenades use the **Grenade Launcher DV column** on the Ran
 
 A character built around explosives typically spreads across three areas:
 
-- **Demolitions (TECH):** Core for placed charges and precision work. Aim for at least 4 (DV13 reliable) -- it costs double IP, so plan ahead.
+- **Demolitions (TECH):** Core for placed charges and precision work. Aim for at least 4 (DV13 reliable). It costs double IP, so plan ahead.
 - **Heavy Weapons (REF, x2 IP):** For grenade launchers and rocket launchers. REF-based, so also boosts your general combat accuracy.
 - **Athletics (DEX):** Covers thrown grenades with no extra IP cost. High DEX benefits many other skills too.
 
-High Demolitions also lets you **identify explosive traps** and understand **structural weak points** -- invaluable for heist and infiltration runs where you need to know which wall to blow and which one holds up the ceiling.
+High Demolitions also lets you **identify explosive traps** and understand **structural weak points**, invaluable for heist and infiltration runs where you need to know which wall to blow and which one holds up the ceiling.
 
 See [[ammo-types]] for full grenade and rocket ammo options. See [[ranged-combat]] for the Grenade Launcher Range DV table.`,
     related: ['ranged-combat', 'ammo-types', 'autofire', 'cover'],
