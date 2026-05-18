@@ -66,6 +66,16 @@
   color: #fff;
 }
 
+.versionBadge {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.7rem;
+  color: var(--color-text-muted, #888);
+  opacity: 0.7;
+  letter-spacing: 0.04em;
+  user-select: none;
+  white-space: nowrap;
+}
+
 /* Quick Ref Panel */
 .quickRefWrapper {
   max-width: 700px;

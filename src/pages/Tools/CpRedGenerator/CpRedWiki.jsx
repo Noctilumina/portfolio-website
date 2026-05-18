@@ -4,7 +4,7 @@ import remarkGfm from 'remark-gfm';
 import { useI18n } from '../../../i18n/I18nContext';
 import ToolNavbar from '../../../components/ToolNavbar/ToolNavbar';
 import { Routes } from '../../../constants/routes';
-import { WIKI_ENTRIES } from './wikidata';
+import { WIKI_ENTRIES, WIKI_VERSION } from './wikidata';
 import usePresets from './usePresets';
 import styles from './CpRedWiki.module.css';
 
@@ -417,6 +417,7 @@ export default function CpRedWiki() {
             Full Wiki
           </button>
         </div>
+        <span className={styles.versionBadge}>v{WIKI_VERSION}</span>
         <button
           ref={settingsBtnRef}
           className={`${styles.settingsBtn} ${settingsOpen ? styles.settingsBtnActive : ''} ${hasActivePresets ? styles.settingsBtnIndicator : ''}`}

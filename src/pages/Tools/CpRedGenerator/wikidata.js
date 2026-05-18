@@ -1,3 +1,5 @@
+export const WIKI_VERSION = '1.2.1';
+
 export const WIKI_CATEGORIES = [
   // Core mechanics (most basic first)
   'Statistics',
