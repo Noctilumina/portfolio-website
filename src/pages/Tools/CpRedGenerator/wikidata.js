@@ -1497,11 +1497,13 @@ Cannot do Bodysculpting surgery on yourself. Failed surgery destroys materials a
     category: 'Roles',
     content: `## Rockerboy
 
-Rockerboys are rock-and-roll rebels who use performance, art, and rhetoric to fight authority. They influence others through poetry, art, dance, music, or sheer physical presence -- they could be a rocker or a cult leader.
+On the streets, a gun can make one person comply. A Rockerboy can make a *thousand* fight for your cause. Whether you're a punk legend screaming from a rooftop, a cult preacher with a silver tongue, or a vid personality with ten million followers, your voice is your deadliest weapon -- and it only gets louder as your legend grows.
 
 ### Role Ability: Charismatic Impact
 
-Charismatic Impact allows a Rockerboy to influence **Fans**. Non-fans can be converted by rolling Charismatic Impact + 1d10 vs. a DV based on group size:
+Charismatic Impact lets you influence **Fans** -- people who already know and admire you. Non-fans can be converted with a successful check. The higher your Rank, the larger the crowd you can move and the more extreme the favors they'll perform.
+
+**Roll:** Charismatic Impact + 1d10 vs DV based on group size.
 
 | Target | DV |
 |---|---|
@@ -1509,18 +1511,28 @@ Charismatic Impact allows a Rockerboy to influence **Fans**. Non-fans can be con
 | Small Group (up to 6) | 10 |
 | Huge Group | 12 |
 
-### Rank Progression
+On a **failed check**, you cannot ask the same favor from those fans for **one week**.
+
+### What Levelling Up Does
+
+Each Rank in Charismatic Impact increases what you can ask of your fans and what venues you can play. At low Rank, fans do small favors. At high Rank, they're a global cult that will commit crimes, riot, and die for you.
 
 | Rank | Venues | Single Fan (DV8) | Small Group (DV10) | Huge Group (DV12) |
 |---|---|---|---|---|
-| **1-2** | Small local clubs | Small favor (drink, meal, ride) | Fans ask for autographs | No huge groups yet |
-| **3-4** | Well-known clubs | Major favor (bed, good word) | Hang out regularly, provide party favors | Strong local following, buy recordings |
-| **5-6** | Large important clubs | Commit minor crime (shoplift, help in fight) | Act as personal "posse" | Fans all over City, do major favors |
-| **7-8** | Small concert halls, local video | Risk life without question | Commit minor crime for you | Rabidly loyal, fight rival fans, info networks |
-| **9** | Large concert halls, national video | Commit major crime | Commit major crime | Cult-like following; will riot, destroy, even kill |
-| **10** | Huge stadiums, international video | Sacrifice self without question | Risk their lives as protection | Worldwide cult-like army |
+| **1–2** | Small local clubs | Small favor (drink, meal, ride) | Fans ask for autographs | No huge group yet |
+| **3–4** | Well-known clubs | Major favor (bed, good word) | Hang out, provide party favors | Strong local following |
+| **5–6** | Large important clubs | Commit minor crime (fight, shoplift) | Act as personal posse | Fans citywide, major favors |
+| **7–8** | Small concert halls, local video | Risk life without question | Commit minor crime for you | Rabidly loyal, info networks, fight rival fans |
+| **9** | Large concert halls, national video | Commit major crime | Commit major crime | Cult-like; will riot, destroy, even kill |
+| **10** | Huge stadiums, international video | Sacrifice self without question | Risk lives as protection | Worldwide cult-like army |
 
-On a failed Charismatic Impact check, the Rockerboy cannot ask the same favor from those fans for **one week**.`,
+### Examples
+
+**Rank 4 -- Local Conversion:** Maya "Neon Vega" Rodriguez plays a surprise set at an underground club in Pacifica. She rolls CI (4) + 1d10, gets 11 -- beats DV10. The crowd of thirty converts to fans. She needs them to block a Militech patrol for ten minutes while her crew extracts a contact. She just got thirty very willing distractions who think they're doing something revolutionary.
+
+**Rank 7 -- The Posse:** The crew needs to move through Maelstrom territory unharassed. The Rockerboy's fans in that district are rabidly loyal -- they escort the crew personally, feed them rumours about Maelstrom patrol patterns, and pick a fight with a rival gang to clear the main corridor. They weren't asked to do the last part. That's just what Rank 7 fans do.
+
+**Rank 9 -- The Broadcast:** The Shrike streams live from a barricaded Arasaka sub-office, playing three songs while his crew loots the server room behind him. When he points at the corp's logo and calls them murderers live to his national audience, riots break out in two cities within the hour. Nobody at Arasaka has time to look at one building when their headquarters is on fire.`,
     related: ['role-solo', 'role-fixer', 'stats-overview'],
   },
   {
@@ -1529,23 +1541,36 @@ On a failed Charismatic Impact check, the Rockerboy cannot ask the same favor fr
     category: 'Roles',
     content: `## Solo
 
-Solos are assassins, bodyguards, killers, and soldiers-for-hire. They are the elite fighting machines of the Time of the Red, relying on cybernetics, combat drugs, and honed reflexes.
+Solos live in the gap between trigger pull and reaction time. They're assassins, bodyguards, soldiers-for-hire -- the elite fighting machines of the Time of the Red. What separates a Solo from a civilian with a gun isn't just training; it's the way their brain rewires itself after surviving enough firefights that combat becomes a calculation rather than a panic.
 
 ### Role Ability: Combat Awareness
 
-When combat begins (before Initiative), anytime outside of combat, or in combat with an **Action**, a Solo may divide their total Combat Awareness points among the following abilities. Previous assignments persist if not changed.
+Combat Awareness lets you **allocate your Rank in points** across a set of combat sub-abilities before each fight. You can redistribute before combat, between rounds (outside combat), or by spending an **Action** mid-fight. Your allocation is your fighting style -- no two Solos spend their points the same way.
+
+**Total points available = Combat Awareness Rank.** Every point has to go somewhere before combat starts, or it's wasted.
 
 | Ability | Cost | Effect |
 |---|---|---|
-| **Damage Deflection** | 2/4/6/8/10 pts | Decrease first damage taken this Round by 1/2/3/4/5 |
-| **Fumble Recovery** | 4 pts | Ignore critical failures (1s) on attack rolls (still treated as 1) |
+| **Damage Deflection** | 2 / 4 / 6 / 8 / 10 pts | Reduce first damage taken each Round by 1 / 2 / 3 / 4 / 5 |
+| **Fumble Recovery** | 4 pts | Ignore critical failures (natural 1s) on attack rolls -- the 1 still counts as 1 |
 | **Initiative Reaction** | 1 pt each | +1 per point to Initiative rolls |
-| **Precision Attack** | 3/6/9 pts | +1/+2/+3 to Attack checks |
+| **Precision Attack** | 3 / 6 / 9 pts | +1 / +2 / +3 to all Attack checks |
 | **Spot Weakness** | 1 pt each | +1 per point to damage (before armor) of first successful Attack per Round |
 | **Threat Detection** | 1 pt each | +1 per point to Perception checks |
 
-### Example
-A Rank 6 Solo could allocate: Damage Deflection 1 (2 pts) + Spot Weakness 2 (2 pts) + Threat Detection 2 (2 pts). They can reallocate by spending an Action in combat.`,
+### What Levelling Up Does
+
+Each Rank gives you one more point to allocate. At Rank 1, you have 1 point -- enough for a small Initiative or Perception bonus. At Rank 6, you have 6 points -- enough for meaningful combinations. At Rank 10, you have 10 points and can stack powerful combinations like Precision Attack 3 + Spot Weakness 3 + Initiative Reaction 4.
+
+### Examples
+
+**Rank 4 -- The Wall (bodyguard build):** Allocate all 4 points into Damage Deflection (4 pts = reduce first hit by 2). When the assassin's burst connects, the Solo absorbs 2 of it. That's often the difference between their client taking a bullet and not. They spend the rest of combat being a human shield who shoots back.
+
+**Rank 6 -- The Finisher (assassin build):** Ikenna allocates 6 points to Spot Weakness (6 pts = +6 damage on first hit per Round). He finds the gap in the target's armor before every shot. Against someone in Heavy Armorjack, that +6 turns a miss-the-threshold hit into a real wound. He charges a flat 5,000eb per contract.
+
+**Rank 8 -- The Surgeon (precision build):** Lena "Switchboard" Cross starts with 9 points in Precision Attack (+3 to attacks) and 3 points in Initiative Reaction. She goes first. She always hits. Midway through Round 2, she reallocates with an Action -- she's found the pattern, so she switches to Spot Weakness 8 for the kill shot. Her combat fees fund a very comfortable lifestyle in Heywood.
+
+**Rank 10 -- Maximum expression:** 10 points. Full Precision Attack (9 pts, +3 to attacks) + Initiative Reaction 1 (still goes near the top). Or Fumble Recovery (4) + Precision Attack 6 (+2) + Initiative Reaction 0. Or Damage Deflection 10 (reduce first hit by 5) and be basically unkillable for one Round. The ceiling is extremely high.`,
     related: ['role-rockerboy', 'combat-overview', 'role-netrunner'],
   },
   {
