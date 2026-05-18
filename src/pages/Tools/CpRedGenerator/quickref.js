@@ -13882,6 +13882,60 @@ export const QUICK_REF = [
       "**Key details:** Nomads with Moto add their rank. Ship Rat Nomad families specialize in this. Sea vehicle parts may need to be sourced through Fixers."
     ]
   }
+  ,
+  {
+    "id": "throwing-weapons",
+    "title": "Throwing a weapon or object",
+    "tags": [
+      "throw",
+      "thrown weapon",
+      "throwing",
+      "athletics",
+      "melee weapon",
+      "object",
+      "improvised",
+      "ranged"
+    ],
+    "icon": "🗡️",
+    "steps": [
+      "Use an **Action**. Roll **DEX + Athletics + 1d10** vs the **Grenade Launcher DV** for the range (use the Grenade Launcher column on the Range DV table).",
+      "Maximum range is **25 m/yds** regardless of roll. You cannot throw farther than this.",
+      "**Melee weapons** deal their stated damage when thrown and **do not halve the target's SP** (armor applies in full, as with melee). They hit a single target.",
+      "**Other objects** deal damage at GM discretion based on size and mass -- a wrench hurts less than a car door.",
+      "On a **miss**, the object lands somewhere nearby at GM discretion -- it does not hit the intended target.",
+      "The thrown item is expended -- it lands at or near the target. Retrieving it requires moving to that location."
+    ],
+    "topic": "Combat"
+  }
+  ,
+  {
+    "id": "throwing-grenades",
+    "title": "Throwing a grenade",
+    "tags": [
+      "grenade",
+      "throw",
+      "explosive",
+      "frag",
+      "flashbang",
+      "smoke",
+      "emp",
+      "incendiary",
+      "athletics",
+      "area of effect",
+      "aoe",
+      "blast"
+    ],
+    "icon": "💣",
+    "steps": [
+      "Use an **Action**. Roll **DEX + Athletics + 1d10** vs the **Grenade Launcher DV** for the range (same column on the Range DV table). Maximum range: **25 m/yds**.",
+      "On a **hit**: grenade lands at your intended point. All targets in a **10 m/yd × 10 m/yd area** (5×5 squares) are hit. Roll damage **once** -- all targets take that result.",
+      "On a **miss**: the grenade deviates. GM determines where it lands (typically **1d10 meters** in a random direction). It still detonates -- you might hit someone you didn't intend to.",
+      "**Targets with REF 8+** may individually attempt to dodge the blast.",
+      "**Cover:** if cover has enough HP, it protects fully. If the blast would **destroy the cover** (reduce to 0 HP), targets behind it take **full damage** -- unlike ranged attacks, excess damage passes through.",
+      "**Grenade types and effects:** Frag **6d6** explosive | Flashbang DV15 Resist T/D or Damaged Eye + Ear (1 min) | Smoke -4 penalty (1 min) | EMP DV15 Cybertech or 2 cyberware disabled (1 min) | Incendiary 2 HP/turn burn | Teargas DV13 Resist T/D or Damaged Eye (1 min) | Biotoxin DV15 or 3d6 direct HP | Poison DV13 or 2d6 direct HP | Sleep DV13 or Prone + Unconscious (1 min)."
+    ],
+    "topic": "Combat"
+  }
 ];
 
 export const KEYWORD_MAP = {};
