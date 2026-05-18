@@ -1896,26 +1896,40 @@ Each Rank tier is a qualitative jump in the unit's capability. At Rank 4, you ha
     category: 'Roles',
     content: `## Fixer
 
-Fixers are dealmakers, organizers, and information brokers. They navigate the complex social customs of The Street and maintain vast webs of contacts and clients.
+Money talks, but connections shout. A Fixer's power is knowing who to call and what to offer -- a network built over years of deals, favors, and carefully maintained relationships. Operator is the mechanical representation of that network: who you can reach, what you can source, how well you negotiate, and which social circles you can move through invisibly. At low Rank, you know the neighborhood. At Rank 10, you can sit across the table from a Megacorp CEO and haggle.
 
 ### Role Ability: Operator
 
-Operator has four components: **Contacts**, **Reach**, **Haggle**, and **Grease**.
+Operator has four components: **Contacts** (who you know), **Reach** (what you can source), **Haggle** (how well you negotiate), and **Grease** (which social circles you can infiltrate).
 
-**Haggle Check:** COOL + Trading + Operator Rank + 1d10 vs. target's COOL + Trading + their Operator Rank (if Fixer) + 1d10. Only 1 Fixer deal per transaction.
+**Haggle Check:** COOL + Trading + Operator Rank + 1d10 vs target's COOL + Trading + their Operator Rank (if also a Fixer) + 1d10. Only **one Fixer deal** can apply per transaction.
 
 ### Rank Progression
 
 | Rank | Contacts | Reach | Haggle | Grease |
 |---|---|---|---|---|
-| **1-2** | Local honcho, gang lord | Source Cheap/Everyday items | 10% better price | Know your neighborhood + local gangs |
-| **3-4** | City gang honcho, Corp Exec | Source up to Expensive | Buy 5+, get 1 free | +1 culture, +1 language at Skill 4 |
-| **5-6** | Major City player, politico | Set up Night Market (1/month); source up to Super Luxury at market | Negotiate job pay +20% | +2 more cultures, +2 languages |
-| **7-8** | Local Corp president, mayor | Source up to Very Expensive | Luxury/Super Luxury: pay half now, half in 1 month | +3 more cultures (6 total), +3 languages |
-| **9** | Divisional Corp head, state politico | Source up to Luxury; can set up Midnight Market | 20% better buy/sell price | Blend with Corporate and governmental agencies |
+| **1–2** | Local honcho, gang lord | Source Cheap/Everyday items | 10% better price | Know your neighborhood + local gangs |
+| **3–4** | City gang honcho, Corp Exec | Source up to Expensive | Buy 5, get 1 free | +1 culture, +1 language at Skill 4 |
+| **5–6** | Major City player, politico | Set up Night Markets (1/month); source Expensive individually | Negotiate job pay +20% | +2 more cultures, +2 languages |
+| **7–8** | Local Corp president, mayor | Source up to Very Expensive | Luxury/Super Luxury: pay half now, half in 1 month | +3 more cultures (6 total), +3 languages |
+| **9** | Divisional Corp head, state politico | Source up to Luxury; set up Midnight Markets | 20% better buy/sell price | Blend with Corporate and governmental agencies |
 | **10** | Major world leader, major Corp head | Source up to Super Luxury | Double pay for Dangerous Jobs | Blend with almost any group including secret societies |
 
-**Night Markets** are open events where all price categories are available. **Midnight Markets** (Rank 9+) are invite-only flash markets containing 1d10+5 rare items and gathering criminal underworld leadership.`,
+**Night Markets (Rank 5+):** Open events where all price categories are available. Anyone can attend; stock is randomized by GM roll.
+
+**Midnight Markets (Rank 9+):** Invite-only flash markets with 1d10+5 rare items. Criminal underworld leadership attends. High value, high risk.
+
+### What Levelling Up Does
+
+Each Rank tier opens a new Reach ceiling and refines Grease. The Haggle progression is particularly strong -- at Rank 7-8, Luxury items can be bought at half cost now, half in a month, which effectively doubles your purchasing power. Grease means you don't just know people; you can *become* people -- Rank 10 lets you pass as anything from a street criminal to a secret society member.
+
+### Examples
+
+**Rank 3 -- Sourcing under pressure:** The crew needs Assault Rifles before tomorrow. The Fixer calls a contact (city gang honcho who moves weapons). Reach covers Expensive items -- ARs qualify. Haggle Check: COOL + Trading + 3 + 1d10. They beat the supplier's roll. The crew gets the rifles at 10% below market, delivered to a parking garage at midnight. No paperwork.
+
+**Rank 6 -- Night Market:** The Fixer organizes a Night Market in an abandoned warehouse in Watson (once per month). Word goes out through Grease contacts. Fourteen vendors show up. The crew stocks up on Cyberware, grenades, and a replacement vehicle. The Fixer takes a percentage of every transaction and spends three hours doing nothing but shaking hands. It's their most profitable afternoon this month.
+
+**Rank 9 -- Midnight Market:** An invitation-only Midnight Market. 1d10+5 = 11 rare items on offer, including three pieces of military-grade cyberware that aren't on any legal market. Three Corp Fixers are in attendance. With Grease at Rank 9, the Fixer blends into the Corporate tier seamlessly. They leave with a contact they've spent six months trying to reach and a deal for a weapon that doesn't officially exist.`,
     related: ['role-exec', 'role-nomad', 'reputation'],
   },
   {
@@ -1924,38 +1938,52 @@ Operator has four components: **Contacts**, **Reach**, **Haggle**, and **Grease*
     category: 'Roles',
     content: `## Nomad
 
-Nomads are transport experts, road warriors, pirates, and smugglers who keep the world connected. They are the masters of getting people and supplies where they need to go.
+A Nomad doesn't just drive -- they *live* on the road. Moto is the accumulated knowledge of a hundred thousand kilometers of hostile terrain, border runs, ambushes, and vehicular combat. It makes you the best wheelman any crew can hire and gives you access to a rolling arsenal your Family maintains, upgrades, and replaces. When everything else fails, a Nomad can get you out.
 
 ### Role Ability: Moto
 
-**Vehicle Familiarity:** Add Moto Rank to any Drive Land Vehicle, Pilot Air Vehicle, Pilot Sea Vehicle, Air Vehicle Tech, Land Vehicle Tech, or Sea Vehicle Tech Skill Check.
+**Vehicle Familiarity:** Add your Moto Rank to any **Drive Land Vehicle, Pilot Air Vehicle, Pilot Sea Vehicle, Air Vehicle Tech, Land Vehicle Tech, or Sea Vehicle Tech** Skill Check. This applies at all times -- it's always on.
 
-**Family Motorpool:** Each time the Nomad increases Moto Rank, they either add a new stock vehicle of that Rank or lower, or upgrade an existing one.
+**Family Motorpool:** Each time you increase your Moto Rank, you either **add a new stock vehicle** of that Rank or lower to your Family's pool, or **upgrade an existing one** with a vehicle modification.
 
-| Rank | Available Vehicles |
+At any time, only **one Family vehicle** can be out. Swap the next morning. Destroyed vehicles are repaired by the Family in **1 week for 500eb**. At **Rank 10**, you're promoted to Family leadership -- all vehicles can be out simultaneously.
+
+### Available Vehicles by Rank
+
+| Rank | Vehicles Available |
 |---|---|
-| **1-4** | Compact Groundcar, Gyrocopter, Jetski, Roadbike |
-| **5-6** | Helicopter, High Performance Groundcar, Speedboat |
-| **7-8** | AV-4, Cabin Cruiser, Superbike |
-| **9-10** | Aerozep, AV-9, Super Groundcar, Yacht |
-
-**Rules:** Only one Family Vehicle out at a time (swap next morning). Destroyed vehicles repaired by Family in 1 week for 500eb. At **Rank 10**, promoted to Family leadership -- can have all vehicles out at once.
+| **1–4** | Compact Groundcar, Gyrocopter, Jetski, Roadbike |
+| **5–6** | Helicopter, High Performance Groundcar, Speedboat |
+| **7–8** | AV-4, Cabin Cruiser, Superbike |
+| **9–10** | Aerozep, AV-9, Super Groundcar, Yacht |
 
 ### Key Vehicle Upgrades
 
-| Upgrade | Rank | Effect |
+| Upgrade | Min Rank | Effect |
 |---|---|---|
 | Armored Chassis | 5 | SP13 (not glass) |
 | Bulletproof Glass | 1 | Thin (15 HP) or Thick (30 HP) per window |
-| NOS | 1 | Extra Move Action 1/day per tank |
-| Onboard Machine Gun | 1 | AR with 30 rds, Autofire only, driver fires |
-| Onboard Flamethrower | 1 | Driver fires, cannot reload while driving |
+| NOS | 1 | Extra Move Action 1×/day per NOS tank |
+| Onboard Machine Gun | 1 | AR with 30 rounds, Autofire only, driver fires |
+| Onboard Flamethrower | 1 | Driver fires; cannot reload while driving |
 | Combat Plow | 1 | No ram damage to your vehicle, no Whiplash |
 | Heavy Chassis | 1 | +20 SDP, can tow 10 tons |
-| Vehicle Heavy Weapon Mount | 5 | Swiveling mount for 2-handed ranged weapon; first one comes with a free gift weapon |
-| Hover Upgrade | 5 | Travel across water at Cabin Cruiser speed |
+| Vehicle Heavy Weapon Mount | 5 | Swiveling mount for any 2-handed ranged weapon |
+| Hover Upgrade | 5 | Cross water at Cabin Cruiser speed |
 | AV-4 Engine Upgrade | 7 | Land vehicle gains flight capability |
-| Enhanced Interface Plug Integration | 5 | Bikes: dodge attacks while driving (REF 8+) |`,
+| Enhanced Interface Plug Integration | 5 | Bikes: dodge attacks while driving (REF 8+) |
+
+### What Levelling Up Does
+
+Each Rank opens a better vehicle tier and adds Moto to another vehicle check -- but the real compounding effect is that you become dramatically more capable at everything vehicle-related simultaneously. Moto 5 means +5 to Drive, Pilot, and all Vehicle Tech checks with no additional investment. The Motorpool grows into a genuine tactical asset by Rank 7-8.
+
+### Examples
+
+**Rank 3 -- Pursuit specialist:** A Militech groundcar is tailing the crew's van through Heywood. The Nomad (Moto 3) rolls Drive Land Vehicle + 3 + 1d10. They have a meaningful edge over the pursuit vehicle's driver. Three turns, four corners, one construction shortcut that shouldn't fit a van. The tail is gone. The Nomad drove this route last month as a Family scout run -- they know every back street.
+
+**Rank 5 -- Motorpool asset:** The crew needs a helicopter for a rooftop extraction in corpo territory. The Nomad calls the Family. Rank 5 = Helicopter available. It's a decade old and the paint is mostly rust, but the rotors work. The Nomad pilots it (Pilot Air Vehicle + 5 + 1d10) while a crew member mans the Onboard Machine Gun through the side door. Nobody questions whether a Nomad can fly a helicopter. They've been doing it since they were fourteen.
+
+**Rank 8 -- Combat vehicle:** The Nomad's High Performance Groundcar has Armored Chassis (SP13), Bulletproof Glass (Thick, 30 HP per window), a Vehicle Heavy Weapon Mount with an Assault Rifle (the free gift), and a Combat Plow. During the ambush at the checkpoint: the Nomad drives straight through the roadblock (Combat Plow -- no ram damage, no Whiplash), the gunner engages through the mount, and the Nomad uses Enhanced Interface Plug Integration to dodge incoming fire while driving (REF 8+). The ambush takes exactly one Pass to break.`,
     related: ['role-fixer', 'vehicle-combat', 'role-solo'],
   },
 
