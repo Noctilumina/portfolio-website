@@ -1680,37 +1680,58 @@ Each Rank gives you two more Specialty points to distribute. Early Ranks let you
     category: 'Roles',
     content: `## Medtech
 
-Medtechs are unsanctioned street doctors and cyberware medics, patching up meat and metal alike. They keep people alive who should be dead.
+Trauma Team is for people with Corporate coverage and 5,000eb to spare. Everyone else gets a Medtech. More than any other Role Ability, Medicine is what keeps your crew operational when the shooting stops -- and when it doesn't stop, it's what decides whether someone makes it to a safe house or goes into a bag.
 
 ### Role Ability: Medicine
 
-Whenever the Medtech increases their Medicine Rank, they choose **one** of three Medicine Specialties to allocate 1 point to.
+Each time you increase your **Medicine Rank**, you allocate **1 point** to one of three Specialties. Your total Specialty points across all three equal your Medicine Rank. You cannot redistribute points once assigned.
 
 ### Medicine Specialties
 
-**Surgery:** Each point grants **2 points** in the Surgery Skill (max 10). Surgery treats the most severe [[critical-injuries-body]] and implants cyberware. Only available to Medtechs.
+**Surgery**
 
-**Pharmaceuticals (max 5 pts):** Each point grants **1 point** in Medical Tech Skill (max 10) and access to one pharmaceutical:
+Each point grants **2 points in the Surgery Skill** (maximum 10). Surgery is the only way to:
+- Treat the most severe Critical Injuries (Destroyed Eye, Crushed Windpipe, etc.)
+- Install cyberware (only Medtechs can perform installation surgery)
+- Perform stabilizing surgery that heals beyond what First Aid can do
+
+**Pharmaceuticals (max 5 pts)**
+
+Each point grants **+1 Medical Tech Skill** (max 10) and access to one pharmaceutical:
 
 | Pharmaceutical | Effect |
 |---|---|
-| **Antibiotic** | Already-healing target heals extra 2 HP/day for 1 week |
-| **Rapidetox** | Immediately purges effects of any drug, poison, or intoxicant |
-| **Speedheal** | If not Mortally Wounded, heal BODY + WILL HP immediately (1/day) |
-| **Stim** | Ignore Seriously Wounded penalties for 1 hour (1/day) |
-| **Surge** | Function without sleep for 24 hours (1/week) |
+| **Antibiotic** | Already-healing target gains +2 HP/day for 1 week |
+| **Rapidetox** | Immediately purges any drug, poison, or intoxicant |
+| **Speedheal** | If not Mortally Wounded: heal BODY + WILL HP instantly (1×/day) |
+| **Stim** | Ignore Seriously Wounded penalties for 1 hour (1×/day) |
+| **Surge** | Function without sleep for 24 hours (1×/week) |
 
-Synthesize doses: DV13 Medical Tech Check, 200eb materials = doses equal to Medical Tech Skill in 1 hour.
+Synthesize doses: DV13 Medical Tech Check, 200eb materials = doses equal to Medical Tech Skill level, in 1 hour.
 
-**Cryosystem Operation (max 5 pts):**
+**Cryosystem Operation (max 5 pts)**
 
 | Points | Benefit |
 |---|---|
 | 1 | Gain one Cryopump |
-| 2 | Registered Cryotank Technician -- unlimited access to 1 Cryotank |
+| 2 | Registered Cryotank Tech -- unlimited access to 1 Cryotank |
 | 3 | Gain 1 personal Cryotank |
 | 4 | Gain 2 more Cryotanks; Cryopump has 2 charges, holds 2 people |
-| 5 | Gain 3 more Cryotanks; Cryopump has 3 charges, holds 3 people |`,
+| 5 | Gain 3 more Cryotanks; Cryopump has 3 charges, holds 3 people |
+
+Medtechs can also perform **Therapy** to restore lost EMP (and Humanity): 1 full week per session, cannot self-treat.
+
+### What Levelling Up Does
+
+Surgery points compound -- 5 Surgery points = Surgery Skill 10, letting you reliably beat DV17 Surgery checks. Pharmaceuticals becomes more powerful as you unlock more drugs (Speedheal + Stim + Surge is a full suite by point 5). Cryosystem Operation at max means you can put multiple dying patients on ice simultaneously and stop their Death Save clock entirely.
+
+### Examples
+
+**Surgery, Rank 6 (Surgery 3 = Skill 6):** A crew member took a Critical Injury -- Collapsed Lung. Without Surgery, it's permanent. Rena sets up in a safehouse, rolls Surgery Skill (6) + Medical Tech + 1d10 vs the injury DV. Success. The PC recovers over a week of bed rest instead of dying slowly. Rena also installs a Neural Link while they're under -- Surgery is the only way to do it.
+
+**Pharmaceuticals, Rank 4 (Stim unlocked):** Crowe drops to Seriously Wounded mid-fight. The Medtech injects Stim as an Action. For the next hour, Crowe ignores the -2 to all Actions from being Seriously Wounded. He carries the hostage out, gets back to the van, and collapses. That's a successful extraction.
+
+**Cryosystem, Rank 5 (full investment):** Two PCs hit 0 HP in the same firefight. The Medtech stabilizes the first with First Aid (DV15, success), pops them in the Cryopump (charge 1). Stabilizes the second, pops them in (charge 2). Both are preserved. The crew has an hour to find a proper Cryotank. The Death Save clock is stopped. Three Cryotanks and a Cryopump at max spec is why you bring a Medtech.`,
     related: ['healing-overview', 'medtech-pharmaceuticals', 'role-tech'],
   },
   {
@@ -1719,13 +1740,13 @@ Synthesize doses: DV13 Medical Tech Check, 200eb materials = doses equal to Medi
     category: 'Roles',
     content: `## Media
 
-Medias are reporters, media stars, and social influencers risking it all for the truth -- or glory. They can convince audiences and access powerful sources.
+In a world where corporations control every major datastream, the truth is what they say it is -- unless you have the Credibility to be believed over them. A Media's power isn't a gun. It's the ability to make millions of people believe something, access information sources no one else can reach, and publish stories that change the world. At high Rank, a single broadcast can topple a Megacorp. That's not metaphor.
 
 ### Role Ability: Credibility
 
-Credibility determines Audience, Access/Sources, Believability, and Impact of published stories.
+Credibility determines four things: your **Audience** (who hears you), **Access/Sources** (who will talk to you), **Believability** (how convincing your stories are), and **Impact** (what your stories can actually change).
 
-**Rumors:** At least twice per week, the GM secretly rolls Credibility Rank + 1d10 against passive Rumor DVs:
+**Passive Rumor Gathering:** At least twice per week, the GM secretly rolls **Credibility Rank + 1d10** against passive DVs. If you beat it, you hear that rumour through your network without actively looking.
 
 | Rumor Type | Passive DV | Active DV |
 |---|---|---|
@@ -1734,18 +1755,32 @@ Credibility determines Audience, Access/Sources, Believability, and Impact of pu
 | Substantial Rumor | 11 | 17 |
 | Detailed Rumor | 13 | 21 |
 
+**Active Investigation:** Spend time and effort digging. Roll Credibility Rank + 1d10 vs the Active DV for the rumor type.
+
+**Believability:** How convincing your published stories are, rated out of 10. Verifiable evidence grants +1 (one piece) or +2 (four or more pieces). **LUCK cannot be spent on Believability checks.**
+
 ### Rank Progression
 
-| Rank | Access/Sources | Audience | Believability | Impact |
+| Rank | Access / Sources | Audience | Believability | Impact |
 |---|---|---|---|---|
-| **1-2** | Local honcho, gang lord | Immediate neighborhood | 2/10 | Small, incremental change |
-| **3-4** | City gang honcho, minor politician, Corp Exec | Well-known local contributor | 3/10 | Direct effect; small bad guys arrested |
-| **5-6** | Major City player, City politico | Citywide | 4/10 | Changes all over the City |
-| **7-8** | Local Corp president, mayor | Statewide, minor celebrity | 5/10 | Changes across several cities |
+| **1–2** | Local honcho, gang lord | Immediate neighborhood | 2/10 | Small, incremental change |
+| **3–4** | City gang honcho, minor politician, Corp Exec | Known local contributor | 3/10 | Direct effect; small bad guys arrested |
+| **5–6** | Major City player, City politico | Citywide | 4/10 | Changes all over the City |
+| **7–8** | Local Corp president, mayor | Statewide, minor celebrity | 5/10 | Changes across several cities |
 | **9** | Divisional Corp head, State politico | Known nationally | 6/10 | National-level change |
 | **10** | Major world leader, major Corp head | Known worldwide | 7/10 | Worldwide change; Megacorps may fall |
 
-Verifiable evidence grants +1 (single piece) or +2 (4+ pieces) to Believability checks. LUCK cannot be spent on Believability.`,
+### What Levelling Up Does
+
+Each Rank expands your source network and audience simultaneously. More importantly, higher Believability means your stories survive corporate media suppression. A Rank 3 Media breaking a story gets dismissed by the Corp's PR team. A Rank 9 Media breaking the same story causes congressional hearings.
+
+### Examples
+
+**Rank 3 -- Passive network in action:** The GM secretly rolls Credibility (3) + 1d10 = 11 -- beats Substantial Rumor DV11. Without the Media asking, they've heard through their network that the local police precinct is on Maelstrom's payroll. That's actionable intel the crew never had to pay for.
+
+**Rank 6 -- Published impact:** The Media has footage of a Petrochem waste dump in Heywood causing birth defects. Believability 4/10. Four pieces of verifiable evidence: +2. Published citywide. City council opens an inquiry. Petrochem's local operations freeze for a month. People the Media has never met are now angry at exactly the right people.
+
+**Rank 9 -- Megacorp pressure:** A single broadcast linking Arasaka to a political assassination goes national. Believability 6/10 + 2 evidence = 8/10. Three governments demand answers. Two Arasaka North American divisions go quiet. One VP retires and is never seen again. The Media didn't fire a single shot.`,
     related: ['role-rockerboy', 'role-exec', 'reputation'],
   },
   {
