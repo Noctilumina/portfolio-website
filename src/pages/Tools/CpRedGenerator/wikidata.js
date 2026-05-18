@@ -1,4 +1,4 @@
-export const WIKI_VERSION = '1.2.2';
+export const WIKI_VERSION = '1.2.3';
 
 export const WIKI_CATEGORIES = [
   // Core mechanics (most basic first)
@@ -3966,6 +3966,86 @@ As the Rockerboy Lilayah puts it: *"The Time of the Red is almost biblical somet
 
 See [[night-city-overview]] for the current state of Night City and [[timeline-overview]] for the full timeline.`,
     related: ['timeline-overview', 'fourth-corp-war', 'night-city-overview', 'corp-arasaka'],
+  },
+  {
+    id: 'street-slang',
+    title: 'Street Slang & Abbreviations',
+    category: 'Lore & History',
+    content: `## Street Slang & Abbreviations
+
+Night City has its own language. Knowing the terms marks you as someone who belongs. Not knowing them marks you as a tourist -- or worse, a corpo.
+
+### Common Slang
+
+| Term | Meaning |
+|---|---|
+| **Choom** | Friend, buddy. Casual address between people who trust each other. |
+| **Gonk** | Idiot. Mild insult; calling someone a gonk means they just did something stupid. |
+| **Preem** | Premium, top quality. "That chrome is preem." |
+| **Nova** | Excellent, cutting-edge. Higher praise than preem -- implies style as well as quality. |
+| **Flatline** | Kill, or be killed. "They flattened him" or "he got flatlined." Also the permanent-death state. |
+| **Edgerunner** | A freelance operative who works dangerous jobs on the fringe of legality -- mercs, fixers, netrunners, anyone living on the edge. |
+| **Corpo** | Corporate employee or someone who acts like one. Usually an insult on the street. |
+| **Booster** | Gang member, especially one who is aggressive or territorial. |
+| **Boostergang** | Street gang. Usually heavily chromed and territorial. |
+| **Chrome** | Cyberware. "How much chrome are you carrying?" |
+| **Meat** | The human body, as opposed to chrome. "Took the hit in meat, not metal." |
+| **Meatspace** | The physical world, as opposed to the NET. |
+| **Netspace** | The NET itself. Less common term; most just say "the NET." |
+| **Braindance (BD)** | A recorded sensory experience you plug directly into your nervous system -- sight, sound, smell, touch. Legal BDs are entertainment. Illegal BDs include combat recordings and worse. |
+| **Ripperdoc** | A back-alley cyberware surgeon. Installs chrome, repairs it, and asks no questions. Quality varies widely. |
+| **Fixer** | Middleman who connects buyers and sellers, arranges jobs, moves goods. Never touches the product personally. |
+| **Trauma Team** | A corporate emergency medical service. Subscribers get armed extraction by air if critically injured -- assuming they can still pay the premium. |
+| **MaxTac** | Maximum Force Tactical Division. NCPD's cyberpsycho response unit. Full-conversion borgs with legal authorization to engage cyberpsychos with lethal force. |
+| **Cyberpsycho** | Someone who has undergone Humanity Loss severe enough to lose touch with their own humanity. Can become violent, dissociated, or worse. |
+| **The Blackwall** | The AI firewall separating the old, corrupted deep NET from local Data Pools. Nothing gets through. Or it's not supposed to. |
+| **Ghost** | A netrunner or persona that has been killed in the NET. Also used for someone who disappeared without a trace. |
+| **Solo** | A combat specialist for hire. Also the role. |
+| **Street Cred** | Reputation on the street. Opens doors, gets discounts, earns respect. Hard to build, easy to lose. |
+| **Eddies** | Eurodollars (eb). The currency of Night City. |
+| **Scratch** | Money. "Got the scratch?" |
+| **Screamsheet** | A news outlet, physical or digital. Named for how they compete for attention. |
+| **Rockerboy** | A musician or performer who uses their platform as political rebellion. Also the role. |
+| **Netrunner** | A hacker who operates in the NET. Also the role. |
+| **Medtech** | A combat-capable medic or trauma surgeon. Also the role. |
+| **Techie** | A Tech, or anyone mechanically or electronically skilled. |
+| **Nomad** | A member of a mobile clan living outside the city structure. Also the role. |
+| **Lawman** | A law enforcement officer. Also the role. |
+
+### Abbreviations
+
+| Abbreviation | Full Term | Notes |
+|---|---|---|
+| **eb / EB** | Eurodollar | Standard currency. See also: Eddies. |
+| **SP** | Stopping Power | Armor's damage reduction value. |
+| **HP** | Hit Points | Health, called HP in the rules. |
+| **DV** | Difficulty Value | The target number to beat on a roll. |
+| **CI** | Critical Injury | A severe wound with specific mechanical effects. |
+| **REZ** | Rez Points | Health points for Programs and constructs in the NET. |
+| **NCPD** | Night City Police Department | The city's official law enforcement. Undermanned and outgunned. |
+| **MaxTac** | Maximum Force Tactical Division | NCPD's cyberpsycho response unit. |
+| **BD** | Braindance | Recorded sensory experience. |
+| **NET** | Network | The decentralized local-node internet of 2045. Not the global NET of old. |
+| **AI** | Artificial Intelligence | Rogue AIs exist in the deep NET, behind the Blackwall. Local Daemons are distinct. |
+| **CHOOH2** | Biofuel | Biotechnica's synthetic alcohol fuel. Replaced petroleum in most applications. |
+| **IP** | Improvement Points | Experience points used to improve Skills and Stats. |
+| **REF** | Reflexes | STAT abbreviation. |
+| **DEX** | Dexterity | STAT abbreviation. |
+| **TECH** | Technology | STAT abbreviation. |
+| **COOL** | Cool | STAT abbreviation. |
+| **WILL** | Willpower | STAT abbreviation. |
+| **LUCK** | Luck | STAT abbreviation (also a resource that refreshes). |
+| **MOVE** | Movement | STAT abbreviation. |
+| **BODY** | Body | STAT abbreviation. |
+| **EMP** | Empathy | STAT abbreviation. Also determines Humanity. |
+| **INT** | Intelligence | STAT abbreviation. |
+
+### Streetslang as Language
+
+All characters in Cyberpunk RED speak **Streetslang** as a base language -- it's listed on the character sheet as a free Language Skill at level 4. It's not a dialect of English. It's a living pidgin that evolved across Night City's multicultural population, borrowing from dozens of languages and inventing new terms constantly.
+
+If a term isn't in this list, it might still be in use. Night City invents new slang faster than any screamsheet can document it.`,
+    related: ['night-city-overview', 'stats-skills', 'roles-overview', 'time-of-the-red'],
   },
 
   // ============================================================
