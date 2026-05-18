@@ -1,4 +1,4 @@
-export const WIKI_VERSION = '1.2.6';
+export const WIKI_VERSION = '1.2.7';
 
 export const WIKI_CATEGORIES = [
   // Core mechanics (most basic first)
@@ -54,22 +54,22 @@ export const WIKI_ENTRIES = [
 Statistics are numbers that describe your Character's abilities, rated from **1 to 8** (but can go higher). Characters have **10 Primary Statistics** arranged into four groups.
 
 ### Mental Group
-- **INT** (Intelligence) -- Brightness, cleverness, awareness, perception, ability to learn.
-- **WILL** (Willpower) -- Determination, courage, ability to face danger/stress. Important for HP calculation.
-- **COOL** -- Ability to impress/influence people, charisma, social interactions.
-- **EMP** (Empathy) -- Ability to relate to and care for others. Offsets effects of cyberpsychosis.
+- **INT** (Intelligence): Brightness, cleverness, awareness, perception, ability to learn.
+- **WILL** (Willpower): Determination, courage, ability to face danger/stress. Important for HP calculation.
+- **COOL**: Ability to impress/influence people, charisma, social interactions.
+- **EMP** (Empathy): Ability to relate to and care for others. Offsets effects of cyberpsychosis.
 
 ### Combat Group
-- **TECH** (Technique) -- Ability to manipulate tools or instruments. Not the same as REF.
-- **REF** (Reflexes) -- Response time and coordination. Affects ability to hit with ranged weapons.
+- **TECH** (Technique): Ability to manipulate tools or instruments. Not the same as REF.
+- **REF** (Reflexes): Response time and coordination. Affects ability to hit with ranged weapons.
 
 ### Fortune Group
-- **LUCK** -- Points can be spent to offset die rolls. Pool refills at beginning of next session.
+- **LUCK**: Points can be spent to offset die rolls. Pool refills at beginning of next session.
 
 ### Physical Group
-- **BODY** -- Size, toughness, ability to stay alive. Important for HP and Death Save.
-- **DEX** (Dexterity) -- Physical competence, balancing, leaping, combat. Affects melee attacks and dodging.
-- **MOVE** (Movement) -- Speed of movement. Each Turn you can move MOVE x 2 m/yds.`,
+- **BODY**: Size, toughness, ability to stay alive. Important for HP and Death Save.
+- **DEX** (Dexterity): Physical competence, balancing, leaping, combat. Affects melee attacks and dodging.
+- **MOVE** (Movement): Speed of movement. Each Turn you can move MOVE x 2 m/yds.`,
     related: ['derived-stats', 'skills-overview', 'wound-states'],
   },
   {
@@ -358,8 +358,8 @@ Descending order. Ties re-roll. Queue repeats each Round in the same order.
 
 ### Your Turn
 Each Turn you get:
-- **1 Move Action** -- Move up to MOVE x 2 m/yds (or MOVE squares on a grid, including diagonal)
-- **1 Action** -- Attack, Use Skill, Use Object, etc.
+- **1 Move Action**: Move up to MOVE x 2 m/yds (or MOVE squares on a grid, including diagonal)
+- **1 Action**: Attack, Use Skill, Use Object, etc.
 
 ### Combat Actions
 
@@ -425,7 +425,7 @@ At a maximum of **1 ROF**, you can aim a single Ranged or Melee Attack by taking
 ### Golden Rules
 - You are in cover if **fully behind** something that can stop a bullet.
 - If they have **line of sight** on you, you are **not** in cover.
-- There is **no partial cover** -- it either stops a bullet or it doesn't.
+- There is **no partial cover**: it either stops a bullet or it doesn't.
 - Enemies can move to re-establish line of sight.
 - Cover can be destroyed by attacking it. At 0 HP, cover is destroyed.
 - If cover drops to 0 HP, excess damage is **lost** (doesn't harm targets behind it), except with explosives.
@@ -493,8 +493,8 @@ When you take damage:
 **Note:** Some effects (fire, poison, choking) bypass armor entirely.
 
 ### Hit Locations
-- **Body** -- Default location for all attacks
-- **Head** -- Only if targeted via Aimed Shot (-8 penalty); damage that gets through is multiplied by x2
+- **Body**: Default location for all attacks
+- **Head**: Only if targeted via Aimed Shot (-8 penalty); damage that gets through is multiplied by x2
 
 ### Melee Damage vs. Armor
 All melee weapons **ignore half** of the Defender's armor (round up). Example: SP 11 armor is treated as SP 6 vs. melee.
@@ -515,7 +515,7 @@ Brawling attacks do **not** ignore half armor.
 | Metalgear | 18 | -4 REF, DEX, MOVE | 5,000eb (Luxury) |
 
 ### Armor Rules
-- SP does **not stack** -- only highest SP in a location counts.
+- SP does **not stack**: only highest SP in a location counts.
 - Armor penalty applies once (use the worst penalty of all worn armor).
 - Armor penalty can reduce MOVE to 0 (immobile).
 - All worn armor in a location is ablated simultaneously.`,
@@ -546,7 +546,7 @@ Each new Wound State replaces the previous one's effect.
 
 At the start of each Turn while **Mortally Wounded**, roll a Death Save:
 \`\`\`
-Roll d10 -- must roll UNDER your BODY to survive
+Roll d10: must roll UNDER your BODY to survive
 \`\`\`
 
 - A roll of **10 always fails** (automatic death).
@@ -619,7 +619,7 @@ DEX + Brawling + 1d10  vs.  Target's DEX + Brawling + 1d10
 \`\`\`
 
 If you win, choose:
-- **Grab hold** of Defender -- both enter a Grapple (-2 to all Actions for both)
+- **Grab hold** of Defender: both enter a Grapple (-2 to all Actions for both)
 - **Take one object** the Defender is holding
 
 ### While Grappled
@@ -671,7 +671,7 @@ Ignores **half** of Defender's armor (round up). Damage based on BODY:
 
 ## Forms & Special Moves
 
-All forms can use the **Shared** move: **Recovery** -- on Get Up, beat DV13 to not spend an Action.
+All forms can use the **Shared** move: **Recovery** (on Get Up, beat DV13 to not spend an Action).
 
 ### Aikido (Soft Form)
 - **Disarming Combination** (DV15): Hit same target with Brawling + Martial Arts this Turn; disarm one item.
@@ -834,9 +834,9 @@ All explosive weapons deal damage to all targets in a **10 m/yd x 10 m/yd area**
     content: `## What You Need to Netrun
 
 1. **Neural Link + Interface Plugs** (cyberware)
-2. **Cyberdeck** -- modular platform for Programs and Hardware
-3. **Virtuality Goggles** -- projects Cyberspace over real-world vision (without them, you're effectively Unconscious in Meatspace)
-4. **Programs and Hardware** -- loaded into Cyberdeck slots
+2. **Cyberdeck**: modular platform for Programs and Hardware
+3. **Virtuality Goggles**: projects Cyberspace over real-world vision (without them, you're effectively Unconscious in Meatspace)
+4. **Programs and Hardware**: loaded into Cyberdeck slots
 
 ### Cyberdecks
 
@@ -1097,7 +1097,7 @@ Performed by a skilled Medtech using the Medical Tech Skill. Each therapy takes 
 - Humanity cannot be fully regained without removing cyberware
 
 ## Cyberpsychosis
-If Humanity drops below 0, the character enters **cyberpsychosis** -- a dissociative disorder where the character sees themselves and others as collections of parts rather than living beings.
+If Humanity drops below 0, the character enters **cyberpsychosis**, a dissociative disorder where the character sees themselves and others as collections of parts rather than living beings.
 
 ## Mental Trauma (GM-controlled)
 
@@ -1996,7 +1996,7 @@ Each Rank opens a better vehicle tier. Moto 5 means +5 to Drive, Pilot, and all 
     category: 'Cyberware',
     content: `## Cyberware Overview
 
-Cyberware is hardware implanted in or replacing parts of your body. It is a major commitment -- you are replacing or enhancing something you were born with.
+Cyberware is hardware implanted in or replacing parts of your body. It is a major commitment: you are replacing or enhancing something you were born with.
 
 ### Installation Levels
 
@@ -2017,14 +2017,14 @@ Installation surgery is always included at no extra charge during Character Gene
 - **HL (Humanity Loss):** Preset at character generation; after character gen, determined by dice in parentheses
 
 ### 8 Types of Cyberware
-1. **Fashionware** -- Personal adornment (7 Option Slots, no foundation needed)
-2. **Neuralware** -- Reflexes and mental augmentation (Foundation: Neural Link, 5 slots)
-3. **Cyberoptics** -- Visual enhancements (Foundation: Cybereye, 3 slots each)
-4. **Cyberaudio** -- Hearing enhancements (Foundation: Cyberaudio Suite, 3 slots)
-5. **Internal Body Cyberware** -- Implanted organs/systems (7 Option Slots, no foundation)
-6. **External Body Cyberware** -- On/through skin (7 Option Slots, no foundation)
-7. **Cyberlimbs** -- Replacement arms/legs (Foundation: Cyberarm 4 slots / Cyberleg 3 slots)
-8. **Borgware** -- Full body replacement
+1. **Fashionware**: Personal adornment (7 Option Slots, no foundation needed)
+2. **Neuralware**: Reflexes and mental augmentation (Foundation: Neural Link, 5 slots)
+3. **Cyberoptics**: Visual enhancements (Foundation: Cybereye, 3 slots each)
+4. **Cyberaudio**: Hearing enhancements (Foundation: Cyberaudio Suite, 3 slots)
+5. **Internal Body Cyberware**: Implanted organs/systems (7 Option Slots, no foundation)
+6. **External Body Cyberware**: On/through skin (7 Option Slots, no foundation)
+7. **Cyberlimbs**: Replacement arms/legs (Foundation: Cyberarm 4 slots / Cyberleg 3 slots)
+8. **Borgware**: Full body replacement
 
 ### Key Rules
 - Benefits from multiple installations of the same cyberware **do not stack** unless noted
@@ -2048,7 +2048,7 @@ Cyberpsychosis is a dissociative disorder occurring when someone with preexistin
 
 ### How Humanity Works
 - **Starting Humanity** = EMP x 10
-- Installing cyberware costs **Humanity Loss (HL)** -- preset at character gen, rolled after
+- Installing cyberware costs **Humanity Loss (HL)**: preset at character gen, rolled after
 - Your effective **EMP** equals the tens digit of current Humanity (e.g., 44 HUM = EMP 4; 39 HUM = EMP 3)
 - If Humanity drops **below 0**, the character enters **cyberpsychosis** and becomes an NPC
 
@@ -2093,7 +2093,7 @@ Specialized police squads hunt down cyberpsychos. Armed with heavy weapons, Meta
 | Skinwatch | Mall | Subdermal LED watch | 100eb | 0 |
 | Techhair | Mall | Color-light artificial hair; +2 Personal Grooming w/ Chemskin | 100eb | 0 |
 
-### Neuralware (Foundation: Neural Link -- 500eb, Clinic, HL 7, 5 slots)
+### Neuralware (Foundation: Neural Link, 500eb, Clinic, HL 7, 5 slots)
 
 | Name | Install | Effect | Cost | HL |
 |---|---|---|---|---|
@@ -2109,7 +2109,7 @@ Specialized police squads hunt down cyberpsychos. Armed with heavy weapons, Meta
 | Skill Chip | N/A | Chipware: Skill at Level 3 (unless already 3+) | 500eb/1,000eb | 7 |
 | Tactile Boost | N/A | Chipware: detect motion within 20m/yd | 100eb | 7 |
 
-### Cyberoptics (Foundation: Cybereye -- 100eb, Clinic, HL 7, 3 slots each)
+### Cyberoptics (Foundation: Cybereye, 100eb, Clinic, HL 7, 3 slots each)
 
 | Name | Install | Effect | Cost | HL |
 |---|---|---|---|---|
@@ -2126,7 +2126,7 @@ Specialized police squads hunt down cyberpsychos. Armed with heavy weapons, Meta
 | TeleOptics | Clinic | See detail 800m away; +1 Aimed Shots at 51m+ | 500eb | 3 |
 | Virtuality | Mall | Projects cyberspace imagery (paired) | 100eb | 2 |
 
-### Cyberaudio (Foundation: Cyberaudio Suite -- 500eb, Clinic, HL 7, 3 slots)
+### Cyberaudio (Foundation: Cyberaudio Suite, 500eb, Clinic, HL 7, 3 slots)
 
 | Name | Install | Effect | Cost | HL |
 |---|---|---|---|---|
@@ -2220,10 +2220,10 @@ Night City is a city in the process of rebuilding after the 4th Corporate War an
 
 ### History in Brief
 - **1990s:** Founded by Richard Night; Mob takes over after his murder
-- **2009-2011:** Mob War -- Corporations destroy Mob power
+- **2009-2011:** Mob War: Corporations destroy Mob power
 - **2013-2020:** Golden Age under Corporate control
 - **2023:** Nuclear bomb detonates in Arasaka Towers, destroying central city
-- **2023-2045:** Time of the Red -- rebuilding era with red skies from particulate debris
+- **2023-2045:** Time of the Red: rebuilding era with red skies from particulate debris
 
 ### Zone Types
 
@@ -2257,7 +2257,7 @@ Night City is a city in the process of rebuilding after the 4th Corporate War an
 **Overpacked Suburbs:** Heywood (Santo Domingo), Heywood Industrial Zone, New Westbrook, Rancho Coronado
 
 ### Political Structure
-Run by a junta of old city government, Edgerunner factions, Nomad Families, and Corporations (Biotechnica, Continental Brands, Militech, Network 54, Petrochem, Rocklin Augmentics, SovOil, Trauma Team, Zhirafa, and covertly Arasaka). No mayor -- City Managers from each district form a Council.`,
+Run by a junta of old city government, Edgerunner factions, Nomad Families, and Corporations (Biotechnica, Continental Brands, Militech, Network 54, Petrochem, Rocklin Augmentics, SovOil, Trauma Team, Zhirafa, and covertly Arasaka). No mayor; City Managers from each district form a Council.`,
     related: ['gangs-of-night-city', 'key-locations', 'role-lawman'],
   },
   {
@@ -2280,7 +2280,7 @@ The streets crawl with gangs. By day, the streets belong to Corporates and commu
 | **Prime-Time Players** | Poser | Biosculpted to look like old sitcom/TV characters. Extended family gang, fiercely protective of their turf. |
 | **Reckoners** | Apocalyptic Cult | Preach the coming Harvest of Souls. Recruit from homeless. Some are serious crazies with explosives. |
 | **Red Chrome Legion** | Hate | Neo-fascist hate gang. Uniforms and militaristic slogans. Attack anything not "right." |
-| **Scavvers** | Scavenger | Not a gang per se -- desperate homeless squatting in ruins, digging for salable items. Many die in unsafe terrain. |
+| **Scavvers** | Scavenger | Not a gang per se, just desperate homeless squatting in ruins, digging for salable items. Many die in unsafe terrain. |
 | **Steel Vaqueros** | Nomad Pack | Out of Salinas. Run coastal highway from Santa Cruz to southern cities. Smart, relatively honest. Supply deals with Reclaimers. |
 | **Tyger Claws** | Protector | Formerly under Arasaka. Protect the Asian community. Known for fast bikes, enhanced reflexes, killer martial arts. Helped rebuild Japantown. |
 | **Voodoo Boys** | Terrorist | Crime contacts in Florida/Caribbean. Deal non-synthetic drugs. Real Haitian immigrants have been moving in and clashing with them violently. |`,
@@ -2293,60 +2293,60 @@ The streets crawl with gangs. By day, the streets belong to Corporates and commu
     content: `## Key Locations in Night City
 
 ### Hot Zone
-1. **Totentanz** -- Bar at the edge of the Hot Zone. Boostergang hangout. Bad night = body count under 20.
+1. **Totentanz**: Bar at the edge of the Hot Zone. Boostergang hangout. Bad night = body count under 20.
 
 ### Rebuilding Urban Center
 
 **The Glen:**
-2. **1st Night City Bank** -- Main business artery. Marble floors, red velvet lines. Vault on restricted 2nd floor.
-3. **City Hall** -- Seat of local government. Packed with lobbyists and bureaucrats.
-4. **City Police Precinct #1** -- First line of defense against Combat Zone threats.
-5. **Club Atlantis** -- Multi-level club popular with Execs. Moving staircases, mirrored walls, cerulean lighting.
-6. **Hall of Justice** -- Courthouse and jail. Brutalist architecture with oversized towers and portcullis.
-7. **Merrill, Asukaga & Finch Offices** -- Financial firm. Top floors of a central skyscraper. By appointment only.
-8. **Raven Microcybernetics** -- Cyberware corp. Top 10 floors of a shared building.
+2. **1st Night City Bank**: Main business artery. Marble floors, red velvet lines. Vault on restricted 2nd floor.
+3. **City Hall**: Seat of local government. Packed with lobbyists and bureaucrats.
+4. **City Police Precinct #1**: First line of defense against Combat Zone threats.
+5. **Club Atlantis**: Multi-level club popular with Execs. Moving staircases, mirrored walls, cerulean lighting.
+6. **Hall of Justice**: Courthouse and jail. Brutalist architecture with oversized towers and portcullis.
+7. **Merrill, Asukaga & Finch Offices**: Financial firm. Top floors of a central skyscraper. By appointment only.
+8. **Raven Microcybernetics**: Cyberware corp. Top 10 floors of a shared building.
 
 **University District:**
-9. **Biotechnica Campus** -- Geodesic dome greenhouses. Strange sounds at night.
-10. **Night City University** -- Fortified campus. Only opportunity for non-Corp higher education.
+9. **Biotechnica Campus**: Geodesic dome greenhouses. Strange sounds at night.
+10. **Night City University**: Fortified campus. Only opportunity for non-Corp higher education.
 
 **Little Europe:**
-11. **Camden Court** -- Reinforced apartment complex. Staggering security. Solo favorite.
-12. **Continental Brands Offices** -- Features the Oasis Megamart and Cooking with Kibble classes.
-13. **Danger Girl Offices** -- Art deco building. Hot pink shag, cat girls, brightly colored guns.
-14. **Holy Angels Church** -- Run by Father Kevin. Sanctuary for anyone willing to lay down weapons.
-15. **Night City Firestation #2** -- Deploys cybered-up firefighting teams.
-16. **Short Circuit** -- Tech and Netrunner bar. Patrons haul in wrecked tech to tinker with.
+11. **Camden Court**: Reinforced apartment complex. Staggering security. Solo favorite.
+12. **Continental Brands Offices**: Features the Oasis Megamart and Cooking with Kibble classes.
+13. **Danger Girl Offices**: Art deco building. Hot pink shag, cat girls, brightly colored guns.
+14. **Holy Angels Church**: Run by Father Kevin. Sanctuary for anyone willing to lay down weapons.
+15. **Night City Firestation #2**: Deploys cybered-up firefighting teams.
+16. **Short Circuit**: Tech and Netrunner bar. Patrons haul in wrecked tech to tinker with.
 
 **Upper Marina:**
-17. **City Medical Center** -- Research hospital. Therapy and biosculpting available.
-18. **McCartney Field Stadium** -- 75,000-seat stadium. Home to Slammers, Rangers, Heat, Death Dealers.
-19. **REO Meatwagon Offices** -- Trauma Team rival that "meat jumps" their calls.
-20. **The Afterlife** -- Premiere Solo bar in a converted morgue. Run by legendary Solo Rogue.
-21. **Ziggurat Offices** -- Curved skyscraper over the bay. Press conferences only.
+17. **City Medical Center**: Research hospital. Therapy and biosculpting available.
+18. **McCartney Field Stadium**: 75,000-seat stadium. Home to Slammers, Rangers, Heat, Death Dealers.
+19. **REO Meatwagon Offices**: Trauma Team rival that "meat jumps" their calls.
+20. **The Afterlife**: Premiere Solo bar in a converted morgue. Run by legendary Solo Rogue.
+21. **Ziggurat Offices**: Curved skyscraper over the bay. Press conferences only.
 
 **Watson Development:**
-22. **City Police Precinct #3** -- Veteran officers with Militech weaponry.
-23. **Petrochem Offices** -- Across from SovOil. Museum and gift shop, otherwise locked down.
-24. **SovOil Offices** -- Across from Petrochem. Gaudy gilded statues visible past the gates.
-25. **Trauma Team Tower** -- Hospital, AV-4 repair bay, air traffic control.
+22. **City Police Precinct #3**: Veteran officers with Militech weaponry.
+23. **Petrochem Offices**: Across from SovOil. Museum and gift shop, otherwise locked down.
+24. **SovOil Offices**: Across from Petrochem. Gaudy gilded statues visible past the gates.
+25. **Trauma Team Tower**: Hospital, AV-4 repair bay, air traffic control.
 
 ### Combat Zones
-29. **Crisis Medical Center** -- No-questions-asked. Neutral ground for all factions.
-30. **Highcourt Plaza Hotel** -- Classy, well-defended. Glass elevators, 1920s decor.
-31. **The Forlorn Hope** -- Exclusive Solo bar for veterans.
-32. **Jesse James' Kosher Deli** -- Nomad/Booster saloon with a nightly body count.
-33. **Medical Technologies** -- Waterfront body bank growing replacement limbs.
-34. **Savage Docs** -- Ripperdoc joint run by 5 apprentices, protected by Yakuza/Tyger Claws.
-35. **The Slammer** -- Ganger bar with cinder block arena.
+29. **Crisis Medical Center**: No-questions-asked. Neutral ground for all factions.
+30. **Highcourt Plaza Hotel**: Classy, well-defended. Glass elevators, 1920s decor.
+31. **The Forlorn Hope**: Exclusive Solo bar for veterans.
+32. **Jesse James' Kosher Deli**: Nomad/Booster saloon with a nightly body count.
+33. **Medical Technologies**: Waterfront body bank growing replacement limbs.
+34. **Savage Docs**: Ripperdoc joint run by 5 apprentices, protected by Yakuza/Tyger Claws.
+35. **The Slammer**: Ganger bar with cinder block arena.
 
 ### Overpacked Suburbs
-36. **Aldecaldo Camp** -- Major Nomad trade and transport hub at city edge.
-37. **City Police Precinct #2** -- Overworked. Relies on Zhirafa drones.
-38. **MetalStorm** -- Indestructible bar under a bridge. Caters to chromers and full borgs.
-39. **Zhirafa Office Park** -- Built atop existing factories. Drones and animal mecha on patrol.
-40. **Network 54 Offices** -- Neon 54 on the skyline. Live studio audiences, star housing.
-42. **Rocklin Augmentics Campus** -- Offices, hospital, R&D connected by skybridges.`,
+36. **Aldecaldo Camp**: Major Nomad trade and transport hub at city edge.
+37. **City Police Precinct #2**: Overworked. Relies on Zhirafa drones.
+38. **MetalStorm**: Indestructible bar under a bridge. Caters to chromers and full borgs.
+39. **Zhirafa Office Park**: Built atop existing factories. Drones and animal mecha on patrol.
+40. **Network 54 Offices**: Neon 54 on the skyline. Live studio audiences, star housing.
+42. **Rocklin Augmentics Campus**: Offices, hospital, R&D connected by skybridges.`,
     related: ['night-city-overview', 'gangs-of-night-city', 'role-fixer'],
   },
 
@@ -2430,7 +2430,7 @@ The streets crawl with gangs. By day, the streets belong to Corporates and commu
 - **Metalgear:** Solid metal and plastic plates. Stops almost anything but makes you slow.
 
 ### Armor Rules
-- SP does **not stack** -- only highest SP counts
+- SP does **not stack**: only highest SP counts
 - Armor penalty applies once (worst penalty of all worn armor)
 - All worn armor in a location is ablated simultaneously
 - Melee weapons ignore **half** armor (round up); Brawling does not`,
@@ -2621,7 +2621,7 @@ All Exotic Weapons are **Average Quality** and incompatible with Weapon Attachme
     content: `## Running Cyberpunk RED
 
 ### The Four Tricks
-1. **Know the World:** Immerse yourself in the genre. Urban environments should feel gritty -- garbage-strewn alleys, bodies in gutters, firefights at corners.
+1. **Know the World:** Immerse yourself in the genre. Urban environments should feel gritty: garbage-strewn alleys, bodies in gutters, firefights at corners.
 2. **Play for Keeps:** Don't be afraid to kill PCs. Constantly get them into fights, traps, and betrayals. No place is absolutely safe.
 3. **Set the Mood:** Dim blue lights, heavy rock music, encourage leather and mirrorshades. This is the Dark Future.
 4. **Teams are the Hook:** PCs need a solid reason to cooperate. The team is thrown together by fate.
@@ -2740,7 +2740,7 @@ You cannot skip Levels/Ranks. Spend some time at your new Level before advancing
 Roll percentile (2d10) to determine encounters. Adjust based on zone Threat Rating:
 - **Corporate zones:** Avoid encounters above 50 unless desired. Corp police arrive in 1d10 rounds if combat breaks out.
 - **Combat/Hot zones:** Avoid encounters below 50 unless it's a slow day. Combat more likely, peaceful resolution harder.
-- **Executive Zone:** No random encounters -- constant paranoid Corporate surveillance instead.
+- **Executive Zone:** No random encounters; constant paranoid Corporate surveillance instead.
 
 ### Daytime Encounters (d100)
 
@@ -2807,7 +2807,7 @@ Roll percentile (2d10) to determine encounters. Adjust based on zone Threat Rati
 Cyberpunk RED offers three methods for creating a Character, each with different levels of complexity and customization.
 
 ### 1. Streetrat (Templates)
-The fastest method. Everything is predetermined -- STATs, Skills, Weapons, Armor, Gear, and Cyberware are all pre-assigned based on your Role. Best for new players or quick starts.
+The fastest method. Everything is predetermined: STATs, Skills, Weapons, Armor, Gear, and Cyberware are all pre-assigned based on your Role. Best for new players or quick starts.
 - **STATs:** Pre-rolled template values
 - **Skills:** Predetermined by Role
 - **Starting Gear:** Predetermined by Role (see tables below)
@@ -2831,7 +2831,7 @@ The most complex and customizable method. You buy everything with points and mon
 - **Cyberware:** Buy individually from Night Market listings
 
 ### Character Creation Steps (All Methods)
-1. Pick a Role -- set Role Ability to Rank 4
+1. Pick a Role: set Role Ability to Rank 4
 2. Run your [[lifepath-cultural-origins]] and [[lifepath-role-specific]]
 3. Set your Statistics (method varies)
 4. Calculate [[derived-stats]] (HP, Wound Threshold, Death Save, Humanity)
@@ -3239,7 +3239,7 @@ Roll **1d10 - 7** (minimum 0) to see how many tragic love affairs you have had. 
 | 9 | A rival cut you out of the action |
 | 10 | Your lover is imprisoned or exiled |
 
-These tragic affairs are part of what shapes your Character's emotional landscape and can serve as powerful plot hooks for your GM. The details -- who they were, what they looked like, what you had in common -- are entirely up to you.`,
+These tragic affairs are part of what shapes your Character's emotional landscape and can serve as powerful plot hooks for your GM. The details (who they were, what they looked like, what you had in common) are entirely up to you.`,
     related: ['lifepath-friends-enemies', 'lifepath-motivations', 'chargen-overview'],
   },
   {
@@ -3248,7 +3248,7 @@ These tragic affairs are part of what shapes your Character's emotional landscap
     category: 'Character Creation',
     content: `## Taking a Second Role (Multiclassing)
 
-In Cyberpunk RED, your Role is not a job -- it is who you are. However, Characters can pick up a second Role during gameplay.
+In Cyberpunk RED, your Role is not a job; it is who you are. However, Characters can pick up a second Role during gameplay.
 
 ### How It Works
 - Characters start at **Role Ability Rank 4** in their primary Role.
@@ -3582,10 +3582,10 @@ Demons are powerful Black ICE intelligent systems that can operate Control Nodes
 A NET Architecture is a vertical "elevator" of floors. The top floor is the **Lobby** (entry point). Deeper floors contain increasingly valuable data and stronger defenses. The bottom floor is where a Netrunner must reach to leave a permanent [[netrunning-interface]] Virus.
 
 Each floor may contain:
-- **Password** -- blocks progress until bypassed via [[netrunning-interface]] Backdoor
-- **File** -- data that can be copied or identified via Eye-Dee
-- **Control Node** -- allows remote operation of connected physical systems (cameras, drones, turrets, etc.)
-- **Black ICE** -- defensive programs lying in wait
+- **Password**: blocks progress until bypassed via [[netrunning-interface]] Backdoor
+- **File**: data that can be copied or identified via Eye-Dee
+- **Control Node**: allows remote operation of connected physical systems (cameras, drones, turrets, etc.)
+- **Black ICE**: defensive programs lying in wait
 
 See [[netrunning-blackice]] for Black ICE details, [[home-defenses]] for physical defenses linked to Control Nodes, and [[cyberdeck-hardware]] for deck specifications.`,
     related: ['netrunning-overview', 'netrunning-blackice', 'home-defenses', 'cyberdeck-hardware', 'programs-full-catalog'],
@@ -3685,9 +3685,9 @@ Cyberdecks are modular platforms where Programs and Hardware are installed for N
 
 ### Requirements to Netrun
 - **Neural Link** (Cyberware, 500eb, Clinic install)
-- **Interface Plugs** (Cyberware, 500eb, Clinic install) -- plugs in wrist or head to connect to machines
+- **Interface Plugs** (Cyberware, 500eb, Clinic install): plugs in wrist or head to connect to machines
 - **Cyberdeck** loaded with Programs
-- **Virtuality Goggles** (100eb) -- project cyberspace imagery over real-world view
+- **Virtuality Goggles** (100eb): project cyberspace imagery over real-world view
 
 Without Virtuality Goggles, you can still Netrun old-school, but you are effectively **Unconscious** in Meatspace until you Jack Out.
 
@@ -3741,14 +3741,14 @@ The world of Cyberpunk RED is the product of decades of cascading catastrophes. 
 
 | Year(s) | Event |
 |---|---|
-| 1990--1993 | The **Gang of Four** -- a coalition led by the Vice President -- stages a secret coup, ending federal democracy. Many states declare themselves "Free States." |
+| 1990--1993 | The **Gang of Four**: a coalition led by the Vice President that stages a secret coup, ending federal democracy. Many states declare themselves "Free States." |
 | 1990--1993 | **First Central American Conflict** begins. U.S. imperial ambitions kill hundreds of thousands; returning veterans drive demand for cyberware. |
 | 1992 | Treaty of 1992 establishes the **European Economic Community** and the **Eurodollar**. |
 | 1993 | DEA-developed bio-plagues wipe out coca and opium crops worldwide. Colombian drug lords retaliate with a **nuclear device in New York**, killing 15,000. |
-| 1994 | **World Stock Market Crash** -- U.S. caught manipulating markets; worldwide financial meltdown. |
+| 1994 | **World Stock Market Crash**: U.S. caught manipulating markets; worldwide financial meltdown. |
 | 1996 | **Collapse of the United States**. Local governments bankrupt. 1 in 4 Americans homeless. **Nomad Riots**. Constitution suspended, martial law declared. |
-| 1997--1998 | **Mideast Meltdown** -- limited nuclear war destroys much of the Middle East. World oil supply drops by half. |
-| 1998 | **Drought of '98** reduces Midwest to parched grassland. 10.5 quake shatters Los Angeles -- 65,000 killed. |
+| 1997--1998 | **Mideast Meltdown**: limited nuclear war destroys much of the Middle East. World oil supply drops by half. |
+| 1998 | **Drought of '98** reduces Midwest to parched grassland. 10.5 quake shatters Los Angeles (65,000 killed). |
 | 1999 | **Wasting Plague** hits U.S. and Europe, killing millions. Millennium cults appear. |
 
 ### The Cyberpunk Age (2000--2020)
@@ -3757,7 +3757,7 @@ The world of Cyberpunk RED is the product of decades of cascading catastrophes. 
 |---|---|
 | 2000 | Millennium cults self-destruct. **Crystal Palace** space station begins construction. |
 | 2001 | The **NET** framework established via WorldSat network. |
-| 2002 | **Food Crash** -- mutated virus wipes out Canadian/Neo-Soviet crops. |
+| 2002 | **Food Crash**: mutated virus wipes out Canadian/Neo-Soviet crops. |
 | 2003 | **Second Central American War**. Media Tesla Johanneson exposes the Gang of Four; the Gang is swept away. |
 | 2004--2006 | **1st Corporate War** (EBM vs. Orbital Air). First direct Corporate military conflict. |
 | 2007 | **Braindance** developed at UC Santa Cruz. |
@@ -3765,7 +3765,7 @@ The world of Cyberpunk RED is the product of decades of cascading catastrophes. 
 | 2009 | Corporations eradicate mob rule in Night City. |
 | 2013 | Johnny Silverhand concert riot in Night City. **Soulkiller** virus developed by Alt Cunningham at ITS. First true **AI** developed at Microtech. |
 | 2014 | **Ihara-Grubb Transformations** redesign the NET. Rache Bartmoss plants the **DataKrash** virus. |
-| 2016 | **3rd Corporate War** -- fought almost entirely in the NET. |
+| 2016 | **3rd Corporate War**: fought almost entirely in the NET. |
 | 2020 | **Carbon Plague** incident in Night City. Chicago Rebuilding Project begins. |
 
 ### The 4th Corporate War & Aftermath (2021--2025)
@@ -3774,17 +3774,17 @@ The world of Cyberpunk RED is the product of decades of cascading catastrophes. 
 |---|---|
 | 2021--2022 | CINO/OTEC ocean war escalates as [[corp-arasaka]] and [[corp-militech]] are hired, then turn on each other. |
 | 2022 | Rache Bartmoss killed; **DataKrash** virus activates. **4th Corporate War** goes hot. |
-| 2023 | **Night City Holocaust** -- nuclear device detonates in Arasaka Towers. 500,000+ killed. NET officially shut down. **Time of the Red** begins. |
+| 2023 | **Night City Holocaust**: nuclear device detonates in Arasaka Towers. 500,000+ killed. NET officially shut down. **Time of the Red** begins. |
 | 2025 | End of the 4th Corp War. Arasaka reduced to Japan-only. Militech nationalized. |
 
 ### The Time of the Red (2026--2045)
 
 | Year(s) | Event |
 |---|---|
-| 2026--2030 | **The Diaspora** -- displaced groups reclaim abandoned cities. Nomads establish trade convoys. |
+| 2026--2030 | **The Diaspora**: displaced groups reclaim abandoned cities. Nomads establish trade convoys. |
 | 2030--2035 | Start of **CitiNets** and **Data Pools** replacing the dead NET. Night City reconstruction begins. Mega Buildings rise. |
 | 2035--2045 | First Wave Cities reclaimed. New factories replace lost tech. Rumors of [[corp-arasaka]] factions and sightings of Solo Morgan Blackhand. |
-| 2045 | **The Present** -- the world of Cyberpunk RED. |
+| 2045 | **The Present**: the world of Cyberpunk RED. |
 
 See [[timeline-pre-war]], [[fourth-corp-war]], and [[time-of-the-red]] for detailed accounts of each era.`,
     related: ['timeline-pre-war', 'fourth-corp-war', 'time-of-the-red', 'night-city-overview'],
@@ -3808,9 +3808,9 @@ In the latter half of the 20th century, a coalition of U.S. government agencies 
 | **FBI** | Federal Bureau | Used for wiretapping, surveillance, and prosecuting "enemies of the state." Employed mercenary "federal agents." |
 | **DEA** | Drug Enforcement | Provided the excuse for SouthAm invasion. Developed bio-plagues targeting coca and opium plants. |
 
-The Gang's machinations led to the **SouthAm Wars**, the **Crash of '94** (stock manipulation exposed by Interpol), President Allen's assassination, and eventually the **Collapse of 1996** -- martial law, the Nomad Riots, and the fragmentation of the U.S. into Free States.
+The Gang's machinations led to the **SouthAm Wars**, the **Crash of '94** (stock manipulation exposed by Interpol), President Allen's assassination, and eventually the **Collapse of 1996**: martial law, the Nomad Riots, and the fragmentation of the U.S. into Free States.
 
-When WNS Media star **Tesla Johanneson** exposed secret NSA transcripts, armed mobs stormed the Capitol. President Hunt was hunted down and set afire by a cheering mob. The Gang was swept away, and elections resumed -- though heavily influenced by Megacorporations.
+When WNS Media star **Tesla Johanneson** exposed secret NSA transcripts, armed mobs stormed the Capitol. President Hunt was hunted down and set afire by a cheering mob. The Gang was swept away, and elections resumed, though heavily influenced by Megacorporations.
 
 ### The Succession Wars
 
@@ -3818,7 +3818,7 @@ States began leaving the Union through economic strikes and blockades. Californi
 
 ### The Rise of Megacorporations
 
-As governments collapsed, Megacorps stepped into the power vacuum. They were nearly nations in themselves -- with their own laws, cities, factories, and armies. Key sectors included:
+As governments collapsed, Megacorps stepped into the power vacuum. They were nearly nations in themselves, with their own laws, cities, factories, and armies. Key sectors included:
 
 - **Manufacturing:** Oil, steel, automobiles, weapons, computers, cybernetics, biotech
 - **Mediacorps:** Centralized media under a few conglomerates (e.g., [[corp-network-54]]). Controlled public opinion and political narrative.
@@ -3842,7 +3842,7 @@ By the mid-2010s, Megacorps ruled the world economy. Most nations simply collect
 By 2020 the world was divided into distinct power blocs:
 
 - **Unified Europa:** Stable, Corporate-run, relatively prosperous but boring. The "Corporate Beaverville."
-- **Russian Revanchment:** Ruled by the Neo-Soviet Party -- a "capitalist-crony kleptocracy." [[corp-sov-oil]] was the major economic engine.
+- **Russian Revanchment:** Ruled by the Neo-Soviet Party (a "capitalist-crony kleptocracy"). [[corp-sov-oil]] was the major economic engine.
 - **Asia Ascendant:** China, Japan, Korea shifted to CHOOH2 and ocean algae. Dense populations with high food security but limited personal freedoms.
 - **Pan-African Alliance:** Reborn through the Kilimanjaro mass driver project. Nearly one-third of space workers were African. Birthed the **Highriders**.
 - **Central/South America:** Strong union of independent states after wars with U.S. The OAS became a major world power.
@@ -3861,7 +3861,7 @@ The defining conflict of the Cyberpunk world. What began as a proxy war between 
 
 ### Phase One: The Shadow War (2021--2022)
 
-In 2021, **IHAG** (underwater shipping Megacorp) went bankrupt. Rivals **CINO** and **OTEC** squared off for a hostile takeover of IHAG's assets. Starting with stock manipulation and espionage, both escalated to outright warfare -- and hired bigger guns:
+In 2021, **IHAG** (underwater shipping Megacorp) went bankrupt. Rivals **CINO** and **OTEC** squared off for a hostile takeover of IHAG's assets. Starting with stock manipulation and espionage, both escalated to outright warfare, and hired bigger guns:
 
 | Side | Hired Megacorp |
 |---|---|
@@ -3876,7 +3876,7 @@ Both Arasaka and Militech fielded armies in the **tens of thousands**, with adva
 
 - **ACPAs and Combat Cyborgs** fielded in large numbers for the first time
 - **Remotes, battlefield robots, and infantry** clashing in high-tech nightmares
-- **Ortillery** (orbital artillery) -- rocks fired from space with devastating precision
+- **Ortillery** (orbital artillery): rocks fired from space with devastating precision
 - **Bioplagues** deployed against strategic seaport hubs (Hong Kong, Shanghai, Long Beach)
 - **Autonomous sea weapons** sinking friendlies and neutrals alike
 
@@ -3886,12 +3886,12 @@ Both sides attempted to deny the other access to global shipping. The result was
 
 ### The DataKrash
 
-During the NET war, the **DataKrash** -- a deadly viral plague created by Netrunner **Rache Bartmoss** -- tore through the worldwide information network. Bartmoss had hidden his virus inside the I-G Transformation Algorithms that ran the NET itself; every computer running the NET was automatically infected. The virus:
+During the NET war, the **DataKrash** (a deadly viral plague created by Netrunner **Rache Bartmoss**) tore through the worldwide information network. Bartmoss had hidden his virus inside the I-G Transformation Algorithms that ran the NET itself; every computer running the NET was automatically infected. The virus:
 
 - Randomly shifted, erased, or rewrote data worldwide
 - Invalidated the information structure that made Megacorps and governments viable
 - Released AI and Soulkilled Pseudo Intellects to roam the NET freely
-- Spawned **R.A.B.I.D.s** (Roving Autonomous Bartmoss Interface Drones) -- self-replicating killer programs numbering in the hundreds of thousands
+- Spawned **R.A.B.I.D.s** (Roving Autonomous Bartmoss Interface Drones): self-replicating killer programs numbering in the hundreds of thousands
 
 On March 5th, 2023, **Netwatch** gave up and shut down the NET entirely.
 
@@ -3947,11 +3947,11 @@ After the war, Arasaka broke into **three warring factions**:
 
 ### Rebuilding Night City (2030--2045)
 
-- **Resettlement of Suburban Night City** -- foothills and small cities around NC packed with refugees from the radioactive ruins
-- **Nomad High Roads** reestablished -- Nomads now operate ports and container ships. Corps branch out regionally along these routes.
-- **CitiNets** and **Data Pools** replace the dead NET -- local VPNs, "air gapped," with limited access between cities. Built and maintained by [[corp-zhirafa]] subsidiary Ziggurat.
-- **Johnny Silverhand sightings** -- rumors that his body was kept in cold storage by a fullbody conversion fan. Never substantiated.
-- **Mega Buildings** rise to house the homeless population -- "all-in-one" arcologies designed for rapid habitation
+- **Resettlement of Suburban Night City**: foothills and small cities around NC packed with refugees from the radioactive ruins
+- **Nomad High Roads** reestablished: Nomads now operate ports and container ships. Corps branch out regionally along these routes.
+- **CitiNets** and **Data Pools** replace the dead NET: local VPNs, "air gapped," with limited access between cities. Built and maintained by [[corp-zhirafa]] subsidiary Ziggurat.
+- **Johnny Silverhand sightings**: rumors that his body was kept in cold storage by a fullbody conversion fan. Never substantiated.
+- **Mega Buildings** rise to house the homeless population: "all-in-one" arcologies designed for rapid habitation
 - **Netwatch** tried and failed to clear R.A.B.I.D.s from the Old NET over three years, then shut down all major nodes
 
 ### The New United States
@@ -3960,7 +3960,7 @@ The remaining United States became a functional dictatorship under **President E
 
 ### The Present (2045)
 
-The world of Cyberpunk RED. Night City is rebuilding. The red sky has faded to vivid sunrises and sunsets. Corporations are rising again from the wreckage. The NET is gone, replaced by local Data Pools. Edgerunners walk the streets, carving out lives in a world where the old power structures were shattered -- and new ones are hungry to take their place.
+The world of Cyberpunk RED. Night City is rebuilding. The red sky has faded to vivid sunrises and sunsets. Corporations are rising again from the wreckage. The NET is gone, replaced by local Data Pools. Edgerunners walk the streets, carving out lives in a world where the old power structures were shattered, and new ones are hungry to take their place.
 
 As the Rockerboy Lilayah puts it: *"The Time of the Red is almost biblical sometimes. A lot of big stuff went down and the world was changed even more than it had been by the Collapse."*
 
@@ -4071,7 +4071,7 @@ If a term isn't in this list, it might still be in use. Night City invents new s
 
 If you want it protected, Arasaka is still the name. Even after the [[fourth-corp-war]], Arasaka maintains one of the largest armed forces of any Corporation. Though operations are severely reduced and headquarters limited to the Japanese mainland, they hold on to most assets through a strong alliance with the Japanese government.
 
-Post-War, Arasaka troops are covertly licensed to other firms as security guards, couriers, and mercenaries -- wearing the uniforms of their "employers." They are the best trained and hardest operatives in the business, loyal to Arasaka to the point of death. The Corporation is more focused on protecting its own damaged assets than guarding others, using positions of trust to gain inside information and advantages toward their ultimate goal: returning to the heights they once held.
+Post-War, Arasaka troops are covertly licensed to other firms as security guards, couriers, and mercenaries, wearing the uniforms of their "employers." They are the best trained and hardest operatives in the business, loyal to Arasaka to the point of death. The Corporation is more focused on protecting its own damaged assets than guarding others, using positions of trust to gain inside information and advantages toward their ultimate goal: returning to the heights they once held.
 
 ### The Three Factions (as of 2045)
 
@@ -4085,11 +4085,11 @@ All three factions vie for dominance while the aged patriarch **Saburo Arasaka**
 
 ### Face: Hanako Arasaka
 
-The eldest Arasaka daughter, Hanako has always been a recluse. A Netrunner of high skill, she prefers working on digital projects -- particularly a revised version of **Soulkiller** that will allow movement into clone bodies (she alone grasped the true meaning of Alt Cunningham's work). The Old Guard has unified around her as the Kiji faction. She is also instrumental in trying to get her brother Yorinobu to reconcile with the Family.
+The eldest Arasaka daughter, Hanako has always been a recluse. A Netrunner of high skill, she prefers working on digital projects, particularly a revised version of **Soulkiller** that will allow movement into clone bodies (she alone grasped the true meaning of Alt Cunningham's work). The Old Guard has unified around her as the Kiji faction. She is also instrumental in trying to get her brother Yorinobu to reconcile with the Family.
 
 ### Attitude Toward Edgerunners
 
-Arasaka hires through intermediaries. Edgerunners who prove useful may be retained, but Arasaka considers everyone expendable. Trust is rare and always conditional. Betraying Arasaka is a death sentence -- they have long memories and longer reach.
+Arasaka hires through intermediaries. Edgerunners who prove useful may be retained, but Arasaka considers everyone expendable. Trust is rare and always conditional. Betraying Arasaka is a death sentence: they have long memories and longer reach.
 
 See [[fourth-corp-war]] for Arasaka's role in the war and [[adventure-never-fade-away]] for Johnny Silverhand's 2013 raid on their Night City complex.`,
     related: ['corp-militech', 'fourth-corp-war', 'adventure-never-fade-away', 'time-of-the-red'],
@@ -4114,19 +4114,19 @@ See [[fourth-corp-war]] for Arasaka's role in the war and [[adventure-never-fade
 
 One of the major players in the [[fourth-corp-war]], Militech fought [[corp-arasaka]] to a bloody standstill that ended only when the President ordered them to stand down. Currently laboring under controls from Washington D.C. as a **nationalized Corporate asset** of the New United States, MTI is secretly rebuilding to its former role as arms merchant and mercenary army.
 
-Even greatly reduced, Militech is still the world's largest producer of military weapons -- from revolvers to tanks to jet fighters. The New United States is their largest customer, but MTI deals worldwide with anyone who has money.
+Even greatly reduced, Militech is still the world's largest producer of military weapons: revolvers, tanks, jet fighters. The New United States is their largest customer, but MTI deals worldwide with anyone who has money.
 
 ### Key Figures
 
 **Gen. Donald Lundee (CEO):** Ex-Marine who took his war with Arasaka personally. Convinced he would have won if President Kress hadn't reactivated his commission and ordered a ceasefire. Mercurial temper, more enemies than friends, but possessed of a dogged determination. His impulsiveness caused some defeats (like the opening assault on the Osaka Arms Works) but he remains capable of mustering troops.
 
-**Gen. Samantha Lee "Sammy Lee" Young (Face):** Tall, confident Marine General (ret.). Brilliant tactical mind who earned the nickname "Sammy Slaughter Lee" in the SouthAm Wars. Her tactical foresight was folding Arasaka into a defensive posture before the ceasefire. Even in her sixties, she is still a force -- impeccable cyberware, long silver hair, ramrod posture. She never loses her temper, responding to provocations with a wry smile.
+**Gen. Samantha Lee "Sammy Lee" Young (Face):** Tall, confident Marine General (ret.). Brilliant tactical mind who earned the nickname "Sammy Slaughter Lee" in the SouthAm Wars. Her tactical foresight was folding Arasaka into a defensive posture before the ceasefire. Even in her sixties, she is still a force: impeccable cyberware, long silver hair, ramrod posture. She never loses her temper, responding to provocations with a wry smile.
 
-*"I know I'm a soldier. But as a soldier, I know that every time you go to war; every time you pick up that gun, there's a price to pay."* -- General Samantha Lee
+*"I know I'm a soldier. But as a soldier, I know that every time you go to war; every time you pick up that gun, there's a price to pay."* — General Samantha Lee
 
 ### Attitude Toward Edgerunners
 
-Militech hires freelancers regularly -- field testers for new weapons, deniable assets for covert ops, and expendable operatives for dirty work. They pay well but expect results. Double-crossing Militech is unwise; they have the firepower of a small nation and the willingness to use it.`,
+Militech hires freelancers regularly: field testers for new weapons, deniable assets for covert ops, and expendable operatives for dirty work. They pay well but expect results. Double-crossing Militech is unwise; they have the firepower of a small nation and the willingness to use it.`,
     related: ['corp-arasaka', 'fourth-corp-war', 'timeline-overview'],
   },
   {
@@ -4147,23 +4147,23 @@ Militech hires freelancers regularly -- field testers for new weapons, deniable 
 
 ### Background
 
-When the fuel crisis hit in the late 1990s, Biotechnica -- then a small firm with one office -- developed **CHOOH2** (pronounced "chew two"), a complex grain alcohol produced by genetically engineered yeasts and wheat strains. Within a few years, all fuel-burning vehicles and power plants had converted. Unable to meet worldwide demand alone, Biotechnica licensed production to large Agricorps and PetroCorps, making them extremely wealthy but not particularly large.
+When the fuel crisis hit in the late 1990s, Biotechnica (then a small firm with one office) developed **CHOOH2** (pronounced "chew two"), a complex grain alcohol produced by genetically engineered yeasts and wheat strains. Within a few years, all fuel-burning vehicles and power plants had converted. Unable to meet worldwide demand alone, Biotechnica licensed production to large Agricorps and PetroCorps, making them extremely wealthy but not particularly large.
 
 Biotechnica is probably the closest thing to a **"good guy" Corporation** in the Time of the Red. Its labs provide much of the tech enabling the Pacific Confed to develop bio-engineered replacement species. They are active in restoring animals and habitat throughout blighted environments, with projects including:
 
-- **Reference Forests** -- genetically engineered forests to restore decimated woodlands
-- **Project Orchard** -- agricultural genetic engineering for "super crops"
-- **Replacement species** -- bio-engineered flora and fauna for ecosystem restoration
+- **Reference Forests**: genetically engineered forests to restore decimated woodlands
+- **Project Orchard**: agricultural genetic engineering for "super crops"
+- **Replacement species**: bio-engineered flora and fauna for ecosystem restoration
 
 ### Face: Nicolo Loggagia
 
-Brilliant but erratic biochemist. Slight, white-haired, dapper, with a slightly abstracted air. His grandson Mario and wife Luchessia handle business. Loggagia's dream is to **restore the biosphere**, starting with endangered and extinct animals. Knowing the greedy would destroy his creations, he has redesigned many animals with defensive capabilities -- koalas with venomous fangs, for example. He has also created new species: pattern-panthers in the Northwest forests and ptero-raptors in the Canadian Rockies.
+Brilliant but erratic biochemist. Slight, white-haired, dapper, with a slightly abstracted air. His grandson Mario and wife Luchessia handle business. Loggagia's dream is to **restore the biosphere**, starting with endangered and extinct animals. Knowing the greedy would destroy his creations, he has redesigned many animals with defensive capabilities (koalas with venomous fangs, for example). He has also created new species: pattern-panthers in the Northwest forests and ptero-raptors in the Canadian Rockies.
 
 *He may well be the Doctor Moreau of the Time of the Red.*
 
 ### Attitude Toward Edgerunners
 
-Biotechnica frequently hires Edgerunners for site security, specimen recovery, and protection of researchers in the field. They pay fairly and treat freelancers with relative decency -- but don't mistake their pleasant demeanor for weakness. They protect their patents ruthlessly.`,
+Biotechnica frequently hires Edgerunners for site security, specimen recovery, and protection of researchers in the field. They pay fairly and treat freelancers with relative decency, but don't mistake their pleasant demeanor for weakness. They protect their patents ruthlessly.`,
     related: ['corp-petrochem', 'corp-continental-brands', 'everyday-food'],
   },
   {
@@ -4192,11 +4192,11 @@ Still chafing under its CHOOH2 license from Biotechnica, it is only a matter of 
 
 ### Face: Angus Youngblood
 
-Rich young Australian investor who became a major shareholder in 2013, then married the aging Board Chairman Ellen Trieste as a tool to take over. Now that Ellen is dead, he no longer must cater to her romantic fantasies. Always suave, witty, and stylish -- a front that has disarmed many rivals. But make no mistake: Angus Youngblood is as shrewd and ruthless as ever.
+Rich young Australian investor who became a major shareholder in 2013, then married the aging Board Chairman Ellen Trieste as a tool to take over. Now that Ellen is dead, he no longer must cater to her romantic fantasies. Always suave, witty, and stylish: a front that has disarmed many rivals. But make no mistake: Angus Youngblood is as shrewd and ruthless as ever.
 
 ### Attitude Toward Edgerunners
 
-Petrochem hires freelancers for protecting assets, sabotaging competitors, and industrial espionage. The pay is good but the work is often in remote, dangerous locations -- oil fields, agricultural zones, and contested territory.`,
+Petrochem hires freelancers for protecting assets, sabotaging competitors, and industrial espionage. The pay is good but the work is often in remote, dangerous locations: oil fields, agricultural zones, and contested territory.`,
     related: ['corp-biotechnica', 'corp-sov-oil', 'corp-continental-brands', 'fourth-corp-war'],
   },
   {
@@ -4217,9 +4217,9 @@ Petrochem hires freelancers for protecting assets, sabotaging competitors, and i
 
 ### Background
 
-Continental Brands was born from a corporate heist. Originally Continental Agricorp, a subsidiary of [[corp-petrochem]] tasked with selling surplus wheat, the company was spun off through an audacious coup. In 2040, marketing directors **Olivia Forsythe** and **Lewis "Mr. Moo-Moo Burger" McAllister** drafted a secret plan to cut out Petrochem. Over three years, they put half of Petrochem's American Agribusiness into a metaphorical sack and hoisted it over their shoulder -- stealing staff, gas stations, R&D, and even the judge when Petrochem tried to sue.
+Continental Brands was born from a corporate heist. Originally Continental Agricorp, a subsidiary of [[corp-petrochem]] tasked with selling surplus wheat, the company was spun off through an audacious coup. In 2040, marketing directors **Olivia Forsythe** and **Lewis "Mr. Moo-Moo Burger" McAllister** drafted a secret plan to cut out Petrochem. Over three years, they put half of Petrochem's American Agribusiness into a metaphorical sack and hoisted it over their shoulder, stealing staff, gas stations, R&D, and even the judge when Petrochem tried to sue.
 
-Continental Brands capitalizes on food instability with their **Oasis stores** -- if an Oasis is the only place to reliably purchase food, and only sells their brands, profit is assured.
+Continental Brands capitalizes on food instability with their **Oasis stores**: if an Oasis is the only place to reliably purchase food, and only sells their brands, profit is assured.
 
 ### The Oasis Community Loyalty Program
 
@@ -4232,11 +4232,11 @@ Communities are entered into a loyalty point system:
 | **Importing outside food** | Point penalty |
 | **Growing your own food** | Point penalty |
 | **Organizing against CB** | Point penalty, possible "Wanted" posters |
-| **Worst punishment** | The **Discovery Program** -- forced to test a single new kibble flavor until loyalty improves |
+| **Worst punishment** | The **Discovery Program**: forced to test a single new kibble flavor until loyalty improves |
 
 ### Face: Olivia Forsythe
 
-A home-grown monster of the Corporate world, filled with malice toward everything that does not directly benefit her. The public knows her as "The Kibble Queen" -- a mascot persona created by her marketing department. In reality, she detests the character, is rarely seen in public, and wants nothing more than to slink back into the shadows of her Corporate office. She drinks six cans of Triti-Fizz a day and does two lines of synthcoke each morning.
+A home-grown monster of the Corporate world, filled with malice toward everything that does not directly benefit her. The public knows her as "The Kibble Queen," a mascot persona created by her marketing department. In reality, she detests the character, is rarely seen in public, and wants nothing more than to slink back into the shadows of her Corporate office. She drinks six cans of Triti-Fizz a day and does two lines of synthcoke each morning.
 
 ### Attitude Toward Edgerunners
 
@@ -4263,7 +4263,7 @@ Continental Brands hires Edgerunners for supply chain protection, eliminating co
 
 Still one of the largest private medical firms in the world. Equipped with **1,305 AV-4 aerodynes**, thirty Corporate jets, twenty-two Osprey II aircraft, and four C-29 heavy cargo jets. Each franchise office has its own surgical infirmary and hospital arrangements.
 
-During the [[fourth-corp-war]], Trauma Team declared they would not respond to alerts from Arasaka or Militech members -- one battle would tie up every TT team in a city. They responded only to civilian requests at combat rates.
+During the [[fourth-corp-war]], Trauma Team declared they would not respond to alerts from Arasaka or Militech members: one battle would tie up every TT team in a city. They responded only to civilian requests at combat rates.
 
 The War changed TT's look: once-crisp blue and yellow uniforms have given way to mil-spec helmets, heavy armor, power armor support systems, and combat medipacs. The new face of Trauma Team is harried, overworked, angry, and impatient.
 
@@ -4296,7 +4296,7 @@ Trauma Team sells service contracts (see [[trauma-team]]). They are strictly neu
 
 As [[corp-arasaka]] was forced back to Japan after the War, Kei Arasaka's American-born daughter **Michiko** faced deportation. Her solution was characteristically clever: she traveled to Washington D.C. to meet President Elizabeth Kress, apologized for her family's role in the War, and made a deal to remain in America. Part of that deal: **locating and dismantling any Arasaka operations in and around the United States**.
 
-Michiko graduated from Stanford with a degree in criminology, then started **Danger Girl** -- on the surface a private investigation firm for celebrities and socially important clients. Behind the bright pink "Little Detective" logo, she has access to a Presidential slush fund, covert Arasaka databases, and her lifelong bodyguard **Kenichi Zaburo** (once one of Arasaka's top Solos, the only man who could battle Morgan Blackhand to a draw).
+Michiko graduated from Stanford with a degree in criminology, then started **Danger Girl**: on the surface a private investigation firm for celebrities and socially important clients. Behind the bright pink "Little Detective" logo, she has access to a Presidential slush fund, covert Arasaka databases, and her lifelong bodyguard **Kenichi Zaburo** (once one of Arasaka's top Solos, the only man who could battle Morgan Blackhand to a draw).
 
 ### Face: Michiko Sanderson
 
@@ -4327,7 +4327,7 @@ Danger Girl hires Edgerunners for delicate cases requiring deniable assets. The 
 
 ### Background
 
-Network News 54 is a wavelength monopolizer, operating on Channel 54 nationwide. Despite its name, N54 offers far more than news -- every regional office has a slightly different schedule with syndicated series, movies, and local programming. Universal broadcasts include prime-time series and bi-hourly national/world news shows.
+Network News 54 is a wavelength monopolizer, operating on Channel 54 nationwide. Despite its name, N54 offers far more than news: every regional office has a slightly different schedule with syndicated series, movies, and local programming. Universal broadcasts include prime-time series and bi-hourly national/world news shows.
 
 By 2010, Network 54 controlled 62% of all media broadcasting in the U.S. Their reach was severely curtailed by the War but they remain the dominant broadcaster.
 
@@ -4346,7 +4346,7 @@ Widow of founder Edwin Dreyer. To keep her husband's legacy alive, she has almos
 
 ### Attitude Toward Edgerunners
 
-Network 54 hires freelancers for stories -- as subjects, sources, or muscle protecting camera crews in dangerous zones. Getting on N54's good side means publicity; getting on their bad side means being painted as a villain to millions.`,
+Network 54 hires freelancers for stories: as subjects, sources, or muscle protecting camera crews in dangerous zones. Getting on N54's good side means publicity; getting on their bad side means being painted as a villain to millions.`,
     related: ['everyday-media', 'corp-danger-girl'],
   },
   {
@@ -4367,13 +4367,13 @@ Network 54 hires freelancers for stories -- as subjects, sources, or muscle prot
 
 ### Background
 
-Founded in 2004 by Andrew Rocklin as a prosthetic limb supplier. Eclipsed by aggressive cybercorps like Dynalar and Kiroshi, the company eked out an existence through government contracts. Then in 2030, Andrew's daughter **Jacinda Hidalgo** reborn the company as **Rocklin Augmentics** with bleeding-edge designs emphasizing artificial aesthetics -- open frameworks, bizarre color schemes, and brazenly inhuman proportions. Public response was immediate and enthusiastic.
+Founded in 2004 by Andrew Rocklin as a prosthetic limb supplier. Eclipsed by aggressive cybercorps like Dynalar and Kiroshi, the company eked out an existence through government contracts. Then in 2030, Andrew's daughter **Jacinda Hidalgo** reborn the company as **Rocklin Augmentics** with bleeding-edge designs emphasizing artificial aesthetics: open frameworks, bizarre color schemes, and brazenly inhuman proportions. Public response was immediate and enthusiastic.
 
-Her **Signature Cybernetics Series** -- each created by a popular artist (street calligrapher Visser, Art Nouveau stylist Hamilton Welch) -- has made Rocklin's outrageous lines burn up the Data Terms. The company proclaims itself "an American company first and foremost" and employs many people displaced during the Time of the Red.
+Her **Signature Cybernetics Series**, each created by a popular artist (street calligrapher Visser, Art Nouveau stylist Hamilton Welch), has made Rocklin's outrageous lines burn up the Data Terms. The company proclaims itself "an American company first and foremost" and employs many people displaced during the Time of the Red.
 
 ### Controversy
 
-In 2041, former designers claimed they were instructed to sign their names to prototypes implying a "cyberware gestalt" -- possibly violating **AI Protocols**. Netwatch investigated but no charges were filed. One of the whistleblower designers has been missing for two months.
+In 2041, former designers claimed they were instructed to sign their names to prototypes implying a "cyberware gestalt," possibly violating **AI Protocols**. Netwatch investigated but no charges were filed. One of the whistleblower designers has been missing for two months.
 
 ### Face: Jacinda Hidalgo
 
@@ -4408,9 +4408,9 @@ The [[fourth-corp-war]] only delayed the inevitable reckoning. SovOil's Central 
 
 ### Face: Anatoly Novaragov
 
-Large, loud, ostentatious -- exactly the Western idea of a Russian oligarch. Bright expensive shirts open to the navel, gold jewelry, expensive cars. But those who knew the earlier Anatoly recall a faceless bureaucrat in shabby suits who hoarded every penny. Is this the real Novaragov? A midlife crisis? A clever Committee ruse? An actor replacing a man long buried behind a dacha? No one knows.
+Large, loud, ostentatious: exactly the Western idea of a Russian oligarch. Bright expensive shirts open to the navel, gold jewelry, expensive cars. But those who knew the earlier Anatoly recall a faceless bureaucrat in shabby suits who hoarded every penny. Is this the real Novaragov? A midlife crisis? A clever Committee ruse? An actor replacing a man long buried behind a dacha? No one knows.
 
-What has not changed is his reputation for ruthlessness -- leveraging old KGB and **Bratva** (Russian mafia) connections to make rivals disappear, sometimes resurfacing as collections of body parts in St. Petersburg parks.
+What has not changed is his reputation for ruthlessness, leveraging old KGB and **Bratva** (Russian mafia) connections to make rivals disappear, sometimes resurfacing as collections of body parts in St. Petersburg parks.
 
 ### Attitude Toward Edgerunners
 
@@ -4437,7 +4437,7 @@ SovOil hires through Fixers and intermediaries, often for sabotage against Petro
 
 In the wake of the [[fourth-corp-war]], the Neo-Soviet Union was weakened by antiquated technology and an economy based almost entirely on fossil fuels. Russia's few technical exports were recognized by the rest of the world as poor-quality garbage. Zhirafa changed that. Rising from the Russian tech sector, the company has become a major manufacturer of **drones, autonomous robotics, and construction mecha** that are ubiquitous across Night City's rebuilding zones.
 
-Zhirafa equipment is everywhere in Night City -- construction sites, police patrols (City Police Precinct #2 relies on Zhirafa drones), and Corporate office parks. Their **Zhirafa Office Park** in the Heywood Industrial Zone was built on an existing factory park, with drones and animal mecha patrolling the grounds.
+Zhirafa equipment is everywhere in Night City: construction sites, police patrols (City Police Precinct #2 relies on Zhirafa drones), and Corporate office parks. Their **Zhirafa Office Park** in the Heywood Industrial Zone was built on an existing factory park, with drones and animal mecha patrolling the grounds.
 
 ### Ziggurat Subsidiary
 
@@ -4445,7 +4445,7 @@ Zhirafa's subsidiary **Ziggurat** is the backbone of modern communications, buil
 
 ### Attitude Toward Edgerunners
 
-Zhirafa hires Edgerunners for testing new robotics in field conditions, protecting construction sites from sabotage (a growing problem), and retrieving stolen drone technology. Their Russian management style is blunt and transactional -- deliver results, get paid.`,
+Zhirafa hires Edgerunners for testing new robotics in field conditions, protecting construction sites from sabotage (a growing problem), and retrieving stolen drone technology. Their Russian management style is blunt and transactional: deliver results, get paid.`,
     related: ['night-city-overview', 'key-locations', 'everyday-communications', 'time-of-the-red'],
   },
   {
@@ -4454,7 +4454,7 @@ Zhirafa hires Edgerunners for testing new robotics in field conditions, protecti
     category: 'Corporations',
     content: `## Other Notable Corporations
 
-While the major Corps dominate the Time of the Red, dozens of second-tier companies operate in their shadows. These Corps rarely make the screamsheets but provide essential goods and services -- and plenty of work for Edgerunners.
+While the major Corps dominate the Time of the Red, dozens of second-tier companies operate in their shadows. These Corps rarely make the screamsheets but provide essential goods and services, and plenty of work for Edgerunners.
 
 | Corporation | Specialty | Notes |
 |---|---|---|
@@ -4472,11 +4472,11 @@ While the major Corps dominate the Time of the Red, dozens of second-tier compan
 
 ### The Rule of the Faces
 
-Since the end of the 4th Corp War, Corporations must assign a **"Face"** -- the single largest stockholder -- who is **personally responsible** for any malfeasance committed by the company. If the Corporation commits murder or fraud, the Face takes the punishment, potentially including the death penalty. This is intended to keep Corporate behavior in check, or at least ensure the management hides its misdeeds carefully.
+Since the end of the 4th Corp War, Corporations must assign a **"Face"**: the single largest stockholder, who is **personally responsible** for any malfeasance committed by the company. If the Corporation commits murder or fraud, the Face takes the punishment, potentially including the death penalty. This is intended to keep Corporate behavior in check, or at least ensure the management hides its misdeeds carefully.
 
 ### Local Corps
 
-Local Corps make great cannon fodder for Cyberpunk RED games. They have just enough hardware and clout to make local baddies take notice, but are easy pickings for the big players. They often hire freelancers since they cannot afford regular talent, sometimes paying in stock or ownership instead of cash -- which can be a great plot hook.`,
+Local Corps make great cannon fodder for Cyberpunk RED games. They have just enough hardware and clout to make local baddies take notice, but are easy pickings for the big players. They often hire freelancers since they cannot afford regular talent, sometimes paying in stock or ownership instead of cash, which can be a great plot hook.`,
     related: ['corp-arasaka', 'corp-militech', 'corp-rocklin-augmentics', 'corp-zhirafa'],
   },
 
@@ -4491,9 +4491,9 @@ Local Corps make great cannon fodder for Cyberpunk RED games. They have just eno
 
 ### Meet Your Agent
 
-The cell phone of the 2000s has been replaced by the **Agent** -- a device the size of a pack of cigarettes that goes far beyond taking calls.
+The cell phone of the 2000s has been replaced by the **Agent**: a device the size of a pack of cigarettes that goes far beyond taking calls.
 
-**Self-Adaptive AI (SAAI):** Your Agent's programming "learns" by interacting with you. It manages your life -- scheduling, shopping, monitoring your health.
+**Self-Adaptive AI (SAAI):** Your Agent's programming "learns" by interacting with you. It manages your life: scheduling, shopping, monitoring your health.
 
 | Function | Capability |
 |---|---|
@@ -4508,7 +4508,7 @@ The cell phone of the 2000s has been replaced by the **Agent** -- a device the s
 
 ### Data Pools
 
-With the **NET dead** (destroyed by the [[fourth-corp-war]] and the DataKrash), communication now runs through **Data Pools** -- city-wide LAN networks built and maintained by Ziggurat ([[corp-zhirafa]]'s subsidiary).
+With the **NET dead** (destroyed by the [[fourth-corp-war]] and the DataKrash), communication now runs through **Data Pools**: city-wide LAN networks built and maintained by Ziggurat ([[corp-zhirafa]]'s subsidiary).
 
 | Feature | Details |
 |---|---|
@@ -4524,9 +4524,9 @@ Street-corner computer terminals in armored concrete posts. Direct NET link to t
 
 ### The Old NET
 
-The NET is gone. Destroyed by the DataKrash and infested with **R.A.B.I.D.s** (Roving Autonomous Bartmoss Interface Drones) -- self-replicating killer programs. Netwatch tried for three years to clear them out, failed, and shut down all major nodes. Some Netrunners still venture in to loot abandoned systems, but it is extremely dangerous.
+The NET is gone. Destroyed by the DataKrash and infested with **R.A.B.I.D.s** (Roving Autonomous Bartmoss Interface Drones): self-replicating killer programs. Netwatch tried for three years to clear them out, failed, and shut down all major nodes. Some Netrunners still venture in to loot abandoned systems, but it is extremely dangerous.
 
-Rumors persist of "NET ghosts" -- memory scans of Netrunners trapped when the NET was closed. Are they sentient? Professor Killgrave Shaw says yes: *"They feel the emotions the Netrunner would have felt. This makes them living beings."* Reverend Phillip Longfellow disagrees: *"A program is just that, a program."*
+Rumors persist of "NET ghosts": memory scans of Netrunners trapped when the NET was closed. Are they sentient? Professor Killgrave Shaw says yes: *"They feel the emotions the Netrunner would have felt. This makes them living beings."* Reverend Phillip Longfellow disagrees: *"A program is just that, a program."*
 
 See [[netrunning-overview]] for current Netrunning rules and [[fourth-corp-war]] for how the NET was destroyed.`,
     related: ['netrunning-overview', 'corp-zhirafa', 'fourth-corp-war', 'everyday-media'],
@@ -4541,17 +4541,17 @@ Years of economic strife and civil unrest have discouraged new transportation de
 
 ### Ground Transport
 
-**Groundcars** -- No major changes since the 1980s externally. Almost all powered by **CHOOH2** or methane. Electric cars are the exception (no charging infrastructure). Cybernetic control systems let you "stud in" and think the car through its motions. Top speed: 100--300 MPH. SDP: 50.
+**Groundcars**: No major changes since the 1980s externally. Almost all powered by **CHOOH2** or methane. Electric cars are the exception (no charging infrastructure). Cybernetic control systems let you "stud in" and think the car through its motions. Top speed: 100--300 MPH. SDP: 50.
 
-**Cyberbikes** -- Huge variety. Hydro or CHOOH2 fueled. Brands: Kundalini, Harlon-Dawson, Zondo, Toyo-Tomo. Top speed: 100--300 MPH. SDP: 35.
+**Cyberbikes**: Huge variety. Hydro or CHOOH2 fueled. Brands: Kundalini, Harlon-Dawson, Zondo, Toyo-Tomo. Top speed: 100--300 MPH. SDP: 35.
 
 ### Sea Transport
 
-**Speedboats** -- Light mono-hulled craft for smuggling, rescue, law enforcement, piracy. Dense polymer hulls with titanium reinforcement. Common upgrades: onboard machine guns. 60 MPH, SDP: 50.
+**Speedboats**: Light mono-hulled craft for smuggling, rescue, law enforcement, piracy. Dense polymer hulls with titanium reinforcement. Common upgrades: onboard machine guns. 60 MPH, SDP: 50.
 
-**Minisubs** (OTEC Hammerhead) -- Shuttle subs used as taxis. 60 MPH submerged. SDP: 100.
+**Minisubs** (OTEC Hammerhead): Shuttle subs used as taxis. 60 MPH submerged. SDP: 100.
 
-**Cargo Subs** (CINO RELaCS) -- Over 100m long, 10+ decks. Operated by full Nomad clans. Can be crewed by just 6 people. SDP: 300.
+**Cargo Subs** (CINO RELaCS): Over 100m long, 10+ decks. Operated by full Nomad clans. Can be crewed by just 6 people. SDP: 300.
 
 ### Air Transport
 
@@ -4565,9 +4565,9 @@ Years of economic strife and civil unrest have discouraged new transportation de
 
 ### Mass Transit
 
-**Light Rail Lev Trains** -- Superconductor magnetic levitation. 300 MPH. Underground in cities, elevated in suburbs. 1eb per station passed. Corporate lev stations are clean and guarded; city stations are not. Tickets from automatic machines.
+**Light Rail Lev Trains**: Superconductor magnetic levitation. 300 MPH. Underground in cities, elevated in suburbs. 1eb per station passed. Corporate lev stations are clean and guarded; city stations are not. Tickets from automatic machines.
 
-**AeroZeps** (K151) -- Cargo hauler airships based on the pre-War Overlord design. Primary heavy-lift transports for aerial Nomad Families. Always kept far from Combat Zones, guarded by fast-strike combat AVs.
+**AeroZeps** (K151): Cargo hauler airships based on the pre-War Overlord design. Primary heavy-lift transports for aerial Nomad Families. Always kept far from Combat Zones, guarded by fast-strike combat AVs.
 
 ### Getting Weapons Where You're Going
 
@@ -4584,19 +4584,19 @@ Pollution, toxic waste, and wanton resource stripping have left many croplands b
 
 ### SynthFood
 
-**Kibble** -- The baseline. Mass-produced nutrient made from kelp, plankton, and soy proteins. Smells and tastes about as good as its canine namesake. Neocorps dispense it to laborers (cost deducted from pay). Most urban dwellers have at least one kibble meal per day.
+**Kibble**: The baseline. Mass-produced nutrient made from kelp, plankton, and soy proteins. Smells and tastes about as good as its canine namesake. Neocorps dispense it to laborers (cost deducted from pay). Most urban dwellers have at least one kibble meal per day.
 
-**Prepack** -- Step up. Microwaveable or self-heating meals. Soy and grain-based "faux food" with better flavoring and maybe some real meat or veggies. "Good Prepack" has a higher percentage of natural food -- like restaurant fare in a bag. Press the tab, heat and eat. Significantly more expensive; common in Executive homes.
+**Prepack**: Step up. Microwaveable or self-heating meals. Soy and grain-based "faux food" with better flavoring and maybe some real meat or veggies. "Good Prepack" has a higher percentage of natural food, like restaurant fare in a bag. Press the tab, heat and eat. Significantly more expensive; common in Executive homes.
 
 ### Fresh Food
 
 Fresh food was always standard for the City elite and a rare luxury for everyone else. After the War, getting any food into cities past raiders, warring Megacorps, and broken transportation was nearly impossible.
 
-**Guerrilla Gardening** -- Edgerunners tore up abandoned lots and built rooftop gardens. Within a couple years, small farming sites were feeding local Conapts and squats. The food was actually good (if you ignored the radioactivity).
+**Guerrilla Gardening**: Edgerunners tore up abandoned lots and built rooftop gardens. Within a couple years, small farming sites were feeding local Conapts and squats. The food was actually good (if you ignored the radioactivity).
 
-**Killing for Cabbages** -- Non-farming communities (Boosters, gogangers) launched savage wars over food-growing areas. Neighborhoods armed up and patrolled their rooftop gardens, ready to maim anyone who touched a tomato.
+**Killing for Cabbages**: Non-farming communities (Boosters, gogangers) launched savage wars over food-growing areas. Neighborhoods armed up and patrolled their rooftop gardens, ready to maim anyone who touched a tomato.
 
-**Meet the Meat** -- Enterprising farmers began raising real chickens, dwarf pigs, and goats (cows remain rare). Herds ship under Nomad protection with heavy Solo escort -- a modern "cattle drive." Rustlers end up in the Night City equivalent of Boot Hill.
+**Meet the Meat**: Enterprising farmers began raising real chickens, dwarf pigs, and goats (cows remain rare). Herds ship under Nomad protection with heavy Solo escort: a modern "cattle drive." Rustlers end up in the Night City equivalent of Boot Hill.
 
 ### Food Costs
 
@@ -4633,9 +4633,9 @@ Screamsheets are the primary way people stay informed on The Street. In the game
 Far fewer channels than the old days. Most are cable/subscriber channels limited to a single city or a few hundred miles. Coverage includes sports, news, music videos, old movies, foreign shows, religious programming, adult content, business news, and weather. Plus many single-band pirate radio stations.
 
 Three networks dominate in the U.S.:
-- **New Century Broadcasting (NCB)** -- recent arrival
+- **New Century Broadcasting (NCB)**: recent arrival
 - **World Broadcasting Network (WBN)**
-- **[[corp-network-54]]** -- the biggest, on Channel 54 everywhere
+- **[[corp-network-54]]**: the biggest, on Channel 54 everywhere
 
 ### PopMedia
 
@@ -4645,15 +4645,15 @@ The post-War replacement for traditional media. Entertainment and news created b
 |---|---|
 | **New Mediacorps** | Can be huge multi-city operations or as small as a dozen artists/techs/producers |
 | **Rockerboys** | Concert footage, music tracks, personal observations, braindance experiences |
-| **Idols** | Reality-show-style content -- all about the Idol |
+| **Idols** | Reality-show-style content, all about the Idol |
 | **Independents** | News, gossip, documentaries, commentary |
 | **Medias** | Investigative reporting, talk shows, informational programming |
 
-Most PopMedia is consumed via **The Garden** -- Ziggurat's content platform. Anyone can set up a free **Garden Patch** to share creations. Ziggurat runs targeted ads and cuts creators in for 10% of revenue.
+Most PopMedia is consumed via **The Garden**: Ziggurat's content platform. Anyone can set up a free **Garden Patch** to share creations. Ziggurat runs targeted ads and cuts creators in for 10% of revenue.
 
 ### Braindance
 
-Neural interface technology that records complete sensory experiences -- visual, auditory, emotional, and tactile. Braindance chips let you feel what the performer felt. Once seen as the next great entertainment step, psychological addiction and expensive production have made it less popular than predicted. Still used to pacify prisoners (see [[everyday-law]]).
+Neural interface technology that records complete sensory experiences: visual, auditory, emotional, and tactile. Braindance chips let you feel what the performer felt. Once seen as the next great entertainment step, psychological addiction and expensive production have made it less popular than predicted. Still used to pacify prisoners (see [[everyday-law]]).
 
 ### The Body Lotto
 
@@ -4757,18 +4757,18 @@ A popular ganger bar on the southside docks with a **cinder block arena** where 
 
 ### The Lawmen
 
-Most police are now called **Lawmen**, since their jurisdiction covers far more than the old city beat. They are organized much as in the 20th century -- Homicide, Vice, Burglary, Traffic Squads (about 5 per squad) -- plus the **Cyberpsycho Squad (Psycho Squad / MAX-TAC)** which deploys aerogyros, AV-4s, miniguns, assault weapons, and Stinger missile launchers.
+Most police are now called **Lawmen**, since their jurisdiction covers far more than the old city beat. They are organized much as in the 20th century (Homicide, Vice, Burglary, Traffic Squads, about 5 per squad) plus the **Cyberpsycho Squad (Psycho Squad / MAX-TAC)** which deploys aerogyros, AV-4s, miniguns, assault weapons, and Stinger missile launchers.
 
 | Officer Type | Equipment | Jurisdiction |
 |---|---|---|
 | **City Cops** | Armored squad cars, armor jackets, helmets, smart-chipped Minami-10 | All city areas |
 | **Corporate Cops** | Better armed/armored, full Trauma Team coverage. More vicious. | Corporate facilities (can cover entire downtown regions) |
-| **Highway Lawmen** | Wandering marshals like Wyatt Earps -- hard riding, fast shooting | Open highways and Reclaimed Cities without police forces |
+| **Highway Lawmen** | Wandering marshals like Wyatt Earps: hard riding, fast shooting | Open highways and Reclaimed Cities without police forces |
 | **Psycho Squad** | AV-4s, miniguns, assault weapons, Stinger missiles | Citywide; cyberpsycho incidents |
 
 ### The Legal Code
 
-After the **Purge of 1996** (citizens' groups lynched hundreds of criminal defense lawyers), martial law replaced the legal structure. The **Military Justice Code** became the basis for the **Uniform Civilian Justice Code** -- still the law of the land.
+After the **Purge of 1996** (citizens' groups lynched hundreds of criminal defense lawyers), martial law replaced the legal structure. The **Military Justice Code** became the basis for the **Uniform Civilian Justice Code**: still the law of the land.
 
 Night City is not part of the New United States but bases its laws on the Uniform Civilian Justice Code. How much gets enforced depends entirely on **what part of the City you are in and your annual income**.
 
@@ -4776,8 +4776,8 @@ Night City is not part of the New United States but bases its laws on the Unifor
 
 | Crime | Reality |
 |---|---|
-| **Theft** | Too common to police. The Street deals with it -- beatings, hunting, killing. Corps burn out your frontal lobes. |
-| **Fraud** | A way of life. Corps are "pretty legal" about it -- they hand what is left of you to authorities. Eventually. |
+| **Theft** | Too common to police. The Street deals with it: beatings, hunting, killing. Corps burn out your frontal lobes. |
+| **Fraud** | A way of life. Corps are "pretty legal" about it: they hand what is left of you to authorities. Eventually. |
 | **Drugs** | Theoretically illegal but designer drugs are defined as "medicinal." Night City is not part of the U.S. anyway. |
 | **Assault/Rape** | Not much difference on The Street. Hire Solos for justice. Assaulting a Nomad = dragged behind a vehicle until you are hamburger. |
 | **Murder** | If you both had weapons, The Street considers it self-defense and whoever died probably deserved it. |
@@ -4826,11 +4826,11 @@ By 1997, gun-control statutes were buried under public protest as crime rates ma
 
 There are no Militech showrooms anymore. Sources include:
 
-- **Night Markets** -- through a Fixer. Potluck selection but you might score a classic Malorian or wheellock.
-- **Pawn shops** -- Used Berettas, Webleys, and "obsolete" weapons at reasonable prices. Ammo for old guns requires loading your own (caseless ammo is standard now).
-- **Military Surplus** -- After a war across five continents, hardware is everywhere. Handguns, rifles, missile launchers, flamethrowers.
-- **Vendit Machines** -- Some actually dispense guns and ammo.
-- **Polymer One-Shots** -- 3D-printed disposable handguns. Bright designer colors. Available in Oasis Convenience stores. "The perfect gift for the young consumer interested in personal defense."
+- **Night Markets**: through a Fixer. Potluck selection but you might score a classic Malorian or wheellock.
+- **Pawn shops**: Used Berettas, Webleys, and "obsolete" weapons at reasonable prices. Ammo for old guns requires loading your own (caseless ammo is standard now).
+- **Military Surplus**: After a war across five continents, hardware is everywhere. Handguns, rifles, missile launchers, flamethrowers.
+- **Vendit Machines**: Some actually dispense guns and ammo.
+- **Polymer One-Shots**: 3D-printed disposable handguns. Bright designer colors. Available in Oasis Convenience stores. "The perfect gift for the young consumer interested in personal defense."
 
 ### Ammunition
 
@@ -4859,9 +4859,9 @@ In Cyberpunk RED, **screamsheets** serve double duty: they are both in-world new
 ### How They Work
 
 Each screamsheet contains:
-- **In-world news articles** -- real screamsheet content your players can read
-- **Player Information** -- what the Edgerunners know going in
-- **Gamemaster Notes** -- the real story, NPC stats, twists, and complications
+- **In-world news articles**: real screamsheet content your players can read
+- **Player Information**: what the Edgerunners know going in
+- **Gamemaster Notes**: the real story, NPC stats, twists, and complications
 
 ### Published Screamsheets in the Core Book
 
@@ -4884,7 +4884,7 @@ Each screamsheet contains:
 - May turn on the crew if they are badly wounded
 
 #### The Big Break (pp. 431--433)
-3D print artist **JayeZK** hires the crew as protection at a street art show where she is presenting to a Sanroo rep. She is being harassed by "Gangster 3D" -- actually a hired face for **DizCom**, a design firm run by half-a-man Netrunner **Winston Frumighter**. Features hologram-concealed drones, cartoon character battles (Buster Swine, Electric Bunny, Hyper-Active Hyena, Captain Piranha), and two NET Architectures.
+3D print artist **JayeZK** hires the crew as protection at a street art show where she is presenting to a Sanroo rep. She is being harassed by "Gangster 3D," actually a hired face for **DizCom**, a design firm run by half-a-man Netrunner **Winston Frumighter**. Features hologram-concealed drones, cartoon character battles (Buster Swine, Electric Bunny, Hyper-Active Hyena, Captain Piranha), and two NET Architectures.
 
 **Key details:**
 - DizCom on the 20th floor with multiple security layers
@@ -4914,7 +4914,7 @@ See [[running-the-game]] for adventure structure and [[encounter-tables]] for ra
 
 ### The Setup
 
-Alt Cunningham, ITS's pet Netrunner, created **Soulkiller** -- an AI superroutine that tears out a Netrunner's brain and recreates it in a frozen storage matrix. [[corp-arasaka]] wants her to build a mobile version: a black-program assassin that can walk the NET freely. They extract her through a staged boostergang attack that nearly kills Johnny.
+Alt Cunningham, ITS's pet Netrunner, created **Soulkiller**: an AI superroutine that tears out a Netrunner's brain and recreates it in a frozen storage matrix. [[corp-arasaka]] wants her to build a mobile version: a black-program assassin that can walk the NET freely. They extract her through a staged boostergang attack that nearly kills Johnny.
 
 ### The Cast
 
@@ -4935,7 +4935,7 @@ Thompson tracks Alt to Arasaka's office complex. Johnny calls in markers: Rogue 
 1. **Johnny stages a massive concert** in Industrial Park, directly opposite the 22-story Arasaka complex, drawing 6,000 fans
 2. **Santiago** positions on a rooftop with his sniper rifle
 3. **Rogue and Thompson** infiltrate during the chaos
-4. Johnny turns the crowd toward the complex -- a human wave that forces Arasaka guards to choose between holding position and massacring civilians
+4. Johnny turns the crowd toward the complex: a human wave that forces Arasaka guards to choose between holding position and massacring civilians
 
 ### The Assault
 
