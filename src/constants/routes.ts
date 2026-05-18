@@ -26,6 +26,7 @@ export enum Routes {
   TOOL_PATTERN_TILER = '/tools/pattern-tiler',
   TOOL_ASCII_ART = '/tools/ascii-art',
   TOOL_CPRED_LOADING = '/tools/cpred-loading',
+  TOOL_DOCX_EDITOR = '/tools/docx-editor',
 }
 
 /** Helper to build a parameterized route */
