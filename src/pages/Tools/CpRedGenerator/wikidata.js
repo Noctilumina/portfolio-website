@@ -1,4 +1,4 @@
-export const WIKI_VERSION = '1.2.5';
+export const WIKI_VERSION = '1.2.6';
 
 export const WIKI_CATEGORIES = [
   // Core mechanics (most basic first)
@@ -1614,7 +1614,7 @@ Each of the following costs 1 NET Action (except Scanner):
 
 ### What Levelling Up Does
 
-Each additional Rank of Interface gives you more NET Actions, the most powerful lever in your toolkit. At Rank 3 you can Pathfind and Backdoor in the same Turn. At Rank 7 you can fight Black ICE, Cloak yourself, Control a turret, and still have an Action left. At Rank 10, 5 NET Actions means you can do almost anything in a single Turn.
+Each additional Rank of Interface gives you more NET Actions. At Rank 3 you can Pathfind and Backdoor in the same Turn. At Rank 7 you can fight Black ICE, Cloak yourself, Control a turret, and still have an Action left. At Rank 10, 5 NET Actions means you can do almost anything in a single Turn.
 
 ### Examples
 
@@ -1879,7 +1879,7 @@ As an **Action**, roll **1d10 equal to or under your Backup Rank** to call in re
 
 ### What Levelling Up Does
 
-Each Rank tier is a qualitative jump in the unit's capability. At Rank 4, you have four beat cops in groundcars: solid for deterrence, unreliable in serious firefights. At Rank 8, one Recovery Zone Marshal is a walking weapons platform who can handle most threats alone. At Rank 9, C-SWAT makes most problems go away very quickly, very loudly.
+At Rank 4, you have four beat cops in groundcars: solid for deterrence, unreliable in serious firefights. At Rank 8, one Recovery Zone Marshal is a walking weapons platform who can handle most threats alone. At Rank 9, C-SWAT makes most problems go away very quickly, very loudly.
 
 ### Examples
 
@@ -1929,7 +1929,7 @@ Each Rank tier opens a new Reach ceiling and refines Grease. The Haggle progress
 
 **Rank 6, Night Market:** The Fixer organizes a Night Market in an abandoned warehouse in Watson (once per month). Word goes out through Grease contacts. Fourteen vendors show up. The crew stocks up on Cyberware, grenades, and a replacement vehicle. The Fixer takes a percentage of every transaction and spends three hours doing nothing but shaking hands. It's their most profitable afternoon this month.
 
-**Rank 9, Midnight Market:** An invitation-only Midnight Market. 1d10+5 = 11 rare items on offer, including three pieces of military-grade cyberware that aren't on any legal market. Three Corp Fixers are in attendance. With Grease at Rank 9, the Fixer blends into the Corporate tier seamlessly. They leave with a contact they've spent six months trying to reach and a deal for a weapon that doesn't officially exist.`,
+**Rank 9, Midnight Market:** An invitation-only Midnight Market. 1d10+5 = 11 rare items on offer, including three pieces of military-grade cyberware that aren't on any legal market. Three Corp Fixers are in attendance. With Grease at Rank 9, the Fixer passes for Corporate without a second glance. They leave with a contact they've spent six months trying to reach and a deal for a weapon that doesn't officially exist.`,
     related: ['role-exec', 'role-nomad', 'reputation'],
   },
   {
@@ -1975,11 +1975,11 @@ At any time, only **one Family vehicle** can be out. Swap the next morning. Dest
 
 ### What Levelling Up Does
 
-Each Rank opens a better vehicle tier. The real compounding effect is becoming dramatically more capable at everything vehicle-related simultaneously. Moto 5 means +5 to Drive, Pilot, and all Vehicle Tech checks with no additional investment. The Motorpool grows into a genuine tactical asset by Rank 7-8.
+Each Rank opens a better vehicle tier. Moto 5 means +5 to Drive, Pilot, and all Vehicle Tech checks at no extra investment. The Motorpool grows into a real force multiplier by Rank 7-8.
 
 ### Examples
 
-**Rank 3, Pursuit specialist:** A Militech groundcar is tailing the crew's van through Heywood. The Nomad (Moto 3) rolls Drive Land Vehicle + 3 + 1d10. They have a meaningful edge over the pursuit vehicle's driver. Three turns, four corners, one construction shortcut that shouldn't fit a van. The tail is gone. The Nomad drove this route last month as a Family scout run. They know every back street.
+**Rank 3, Pursuit specialist:** A Militech groundcar is tailing the crew's van through Heywood. The Nomad (Moto 3) rolls Drive Land Vehicle + 3 + 1d10. The Nomad has +3 over the pursuit driver. Three turns, four corners, one construction shortcut that shouldn't fit a van. The tail is gone. The Nomad drove this route last month as a Family scout run. They know every back street.
 
 **Rank 5, Motorpool asset:** The crew needs a helicopter for a rooftop extraction in corpo territory. The Nomad calls the Family. Rank 5 = Helicopter available. It's a decade old and the paint is mostly rust, but the rotors work. The Nomad pilots it (Pilot Air Vehicle + 5 + 1d10) while a crew member mans the Onboard Machine Gun through the side door. Nobody questions whether a Nomad can fly a helicopter. They've been doing it since they were fourteen.
 
