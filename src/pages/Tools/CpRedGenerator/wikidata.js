@@ -1579,34 +1579,52 @@ Each Rank gives you one more point to allocate. At Rank 1, you have 1 point -- e
     category: 'Roles',
     content: `## Netrunner
 
-Netrunners are cybernetic master hackers of the post-NET world. They interface with cyberdecks to control computers, electronics, and associated programming.
+Everyone else sees a locked door. A Netrunner sees the system controlling the lock -- and then takes control of the system. While the rest of the crew is shooting, a Netrunner is cutting the lights, locking the guards in their room, turning the building's own turrets against its owners, and copying the data before the first body hits the floor. The NET is their battlefield, and on that battlefield they have no equals.
 
 ### Role Ability: Interface
 
-Interface allows the Netrunner to Netrun and gives access to a suite of Interface Abilities. The Interface Rank determines NET Actions per Turn:
+Interface is your ability to access and operate within NET Architectures. It determines how many **NET Actions** you get each Turn -- and every NET Action is a potential weapon, bypass, or advantage.
+
+On any given Turn, you choose: take your normal **Meat Action** (act in the physical world), OR take **NET Actions** (act inside the NET). You always get your **Move Action** regardless of which you choose.
+
+**NET Actions per Turn by Interface Rank:**
 
 | Interface Rank | NET Actions per Turn |
 |---|---|
-| 1-3 | 2 |
-| 4-6 | 3 |
-| 7-9 | 4 |
+| 1–3 | 2 |
+| 4–6 | 3 |
+| 7–9 | 4 |
 | 10 | 5 |
 
 ### Interface Abilities
 
+Each of the following costs 1 NET Action (except Scanner):
+
 | Ability | Effect |
 |---|---|
-| **Backdoor** | Break through Passwords in an Architecture |
-| **Cloak** | Hide traces of your presence and any Virus |
-| **Control** | Control things attached to the Architecture (cameras, drones, turrets) |
-| **Eye-Dee** | Identify found data and its value |
-| **Pathfinder** | Reveal the "map" of the Architecture |
-| **Scanner** | Find Meatspace locations of access points (Meat Action) |
-| **Slide** | Slip away from one Non-Demon Black ICE |
-| **Virus** | Leave a custom virus at the core of the Architecture |
-| **Zap** | 1d6 damage to Program REZ or directly to Netrunner's brain |
+| **Scanner** *(Meat Action)* | Find Meatspace locations of access points to nearby NET Architectures |
+| **Backdoor** | Break through Passwords blocking your path in an Architecture |
+| **Cloak** | Hide your traces and any active Virus -- others must beat your Cloak Check to find you |
+| **Control** | Operate cameras, drones, turrets, elevators attached to the Architecture via Control Nodes |
+| **Eye-Dee** | Identify what a found file is and its black-market value |
+| **Pathfinder** | Reveal the Architecture's map -- see floors equal to your check, up to the first obstruction |
+| **Slide** | Escape combat with one non-Demon Black ICE -- roll Interface vs ICE Perception, success = flee |
+| **Virus** | Leave a custom Virus at the Architecture's lowest floor to perform up to 2 actions/changes |
+| **Zap** | Attack a Program or enemy Netrunner for **1d6 damage** (REZ or directly to brain) |
 
-See [[netrunning-overview]] for full Netrunning rules.`,
+### What Levelling Up Does
+
+Each additional Rank of Interface gives you more NET Actions -- the most powerful lever in your toolkit. At Rank 3 you can Pathfind and Backdoor in the same Turn. At Rank 7 you can fight Black ICE, Cloak yourself, Control a turret, and still have an Action left. At Rank 10, 5 NET Actions means you can do almost anything in a single Turn.
+
+### Examples
+
+**Rank 3 -- Entry-level infiltration:** Ash jacks in at the lobby access point. 2 NET Actions: Pathfinder (sees 3 floors of the corporate local node), then Control (gains camera access, DV8). She feeds her crew a real-time view of every corridor. They clear the floor without firing a shot.
+
+**Rank 7 -- Split focus:** Creed is fighting a Killer-class Black ICE while his crew is pinned behind cover in meatspace. Turn structure: he uses Zap on the ICE (1d6 REZ damage), then Slide to escape it (Interface vs ICE Perception -- he wins, escapes to the next floor). NET Actions done. He pops into Meat Action: fires his pistol at the guard cornering his team. Two jobs, one Round.
+
+**Rank 10 -- God mode:** Interface 10 = 5 NET Actions. In a single Turn: Backdoor past the password, Pathfind to the core, plant a Virus (shuts down the building's remote access for a week), Control two gun turrets to face inward, Jack Out clean. The crew walks in through a building that's fighting itself. The whole operation takes less time than the security checkpoint.
+
+See [[netrunning-overview]] for full Netrunning rules, [[netrunning-interface]] for Interface Ability details, and [[netrunning-blackice]] for Black ICE.`,
     related: ['netrunning-overview', 'netrunning-interface', 'role-tech'],
   },
   {
@@ -1615,32 +1633,45 @@ See [[netrunning-overview]] for full Netrunning rules.`,
     category: 'Roles',
     content: `## Tech
 
-Techs are renegade mechanics and supertech inventors who keep the Dark Future running. They fix, improve, modify, make, and invent new items.
+The Corps spend billions on R&D labs, teams of engineers, and years of testing. A Tech needs a workbench, salvaged parts, and an afternoon. Maker isn't just the ability to fix things -- it's a bone-deep understanding of *how things work* that lets you improve them, reinvent them, or occasionally turn them into something the manufacturer never intended and would probably be horrified by.
 
 ### Role Ability: Maker
 
-Whenever a Tech increases their Maker Rank by 1, they gain **1 Rank in two different Maker Specialties** of their choice.
+Each time you increase your **Maker Rank**, you gain **1 Rank in two different Maker Specialties** of your choice. You distribute your Rank across four Specialties, building a unique technical profile. A Tech who maxes Upgrade and Fabrication is very different from one who maxes Field and Invention.
 
 ### Maker Specialties
 
-| Specialty | Effect |
+| Specialty | What It Does |
 |---|---|
-| **Field Expertise** | Add Rank to any TECH Skill Check for non-Maker purposes. Can jury-rig items to perfect condition as an Action (lasts 10 min per Rank, then reverts). |
-| **Upgrade Expertise** | Improve items: lower HL by 1d6, add option slots, simplify repair time, make weapons concealable, raise weapon quality, add SP +1, etc. Roll TECH + repair Skill + Rank + 1d10 vs. DV. |
-| **Fabrication Expertise** | Create items from materials one price category lower. Roll TECH + repair Skill + Rank + 1d10 vs. DV. |
-| **Invention Expertise** | Invent new items/upgrades. GM sets Price Category (minimum Expensive). Roll TECH + repair Skill + Rank + 1d10 vs. DV. |
+| **Field Expertise** | Add your Rank to any TECH Skill Check. Jury-rig items to perfect condition as an Action (lasts 10 min × Rank, then reverts). |
+| **Upgrade Expertise** | Improve items: lower HL by 1d6, add option slots, make weapons concealable, raise weapon quality, add SP+1, simplify repair time. Roll **TECH + repair Skill + Rank + 1d10** vs DV. |
+| **Fabrication Expertise** | Create items from materials **one price category lower** than normal. Same roll formula vs DV. |
+| **Invention Expertise** | Invent entirely new items or upgrades (minimum Expensive). GM sets price category. Same roll formula vs DV. |
 
-### Upgrade/Fabricate/Invent DV & Time
+### DV and Time by Price Category
 
 | Price Category | DV | Time |
 |---|---|---|
-| Cheap/Everyday | 9 | 1 hour |
+| Cheap / Everyday | 9 | 1 hour |
 | Costly | 13 | 6 hours |
 | Premium | 17 | 1 day |
 | Expensive | 21 | 1 week |
 | Very Expensive | 24 | 2 weeks |
-| Luxury | 29 | 1 month |
-| Super Luxury | 29 | 1 month per 10,000eb |`,
+| Luxury / Super Luxury | 29 | 1 month |
+
+### What Levelling Up Does
+
+Each Rank gives you two more Specialty points to distribute. Early Ranks let you pick a focus (Field + one other). By Rank 5-6, you're covering two Specialties meaningfully. By Rank 10, you can have 5 ranks in two Specialties or spread across all four. The DV table doesn't change -- what changes is your ability to reliably beat higher DVs.
+
+### Examples
+
+**Field Expertise, Rank 4 -- Mid-fight repair:** Ghost's assault rifle jams in the middle of a Maelstrom ambush. The Tech spends an Action to jury-rig it (Rank 4 = lasts 40 minutes). That's enough to finish the fight, get out, and find a safe house before it falls apart. Ghost asks no questions. The Tech charges 200eb for "emergency services."
+
+**Upgrade Expertise, Rank 6 -- Reducing Humanity Loss:** A PC is installing a Kiroshi Mk.3 Cybereye (HL 2d6). The Tech rolls TECH + Cybertech + 6 + 1d10 vs DV17. Success: reduce HL by 1d6 *and* add a concealability option so it doesn't ping on corporate scanners. The Corps pay their R&D teams for 6 months to develop this. The Tech did it in an afternoon.
+
+**Fabrication Expertise, Rank 7 -- Building gear from scratch:** The crew needs a Military-grade radio scrambler (Very Expensive, 1,000eb). The Tech sources Expensive-tier parts (500eb) and fabricates it over two weeks (DV24). The scrambler's not pretty -- it's held together with tape and spite -- but it blocks Militech IFF signals perfectly.
+
+**Invention Expertise, Rank 9 -- Original design:** The Tech invents a modular breaching tool that combines a cutting torch with a shaped charge primer, reducing wall-breach time from 3 Rounds to 1. The GM sets it as Expensive (DV21). The Tech beats it. The crew names it "the Knocker." Two runs later, three different gangs are asking where to buy one.`,
     related: ['role-medtech', 'skill-list-tech', 'role-netrunner'],
   },
   {
