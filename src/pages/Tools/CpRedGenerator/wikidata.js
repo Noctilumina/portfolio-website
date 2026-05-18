@@ -1789,47 +1789,63 @@ Each Rank expands your source network and audience simultaneously. More importan
     category: 'Roles',
     content: `## Exec
 
-Execs are corporate power brokers and business raiders. They build a team whose members help accomplish goals, whether legal or not.
+An Exec doesn't win fights. They build organizations that win fights for them. Teamwork is the art of employing capable people and keeping them loyal enough to stay employable -- which means consistent, generous leadership and never leaving your people hanging when it counts. In return, you get corporate resources that no street-level crew can match: housing, medical coverage, and professionals who will work for you so long as you treat them right.
 
 ### Role Ability: Teamwork
 
+Teamwork gives you **GM-controlled NPC team members** -- corporate employees who carry out tasks based on their **Loyalty score**. For each task, the GM rolls **1d6 under Loyalty**. Roll under = they do it. Fail = they refuse, botch it, or actively betray you depending on how low Loyalty is.
+
+### Corporate Perks by Rank
+
 | Rank | Benefit |
 |---|---|
-| **1** | Signing Bonus: suit (Jacket, Top, Bottom, Footwear) |
+| **1** | Signing Bonus: corporate suit (Jacket, Top, Bottom, Footwear) |
 | **2** | Corporate Housing: free Conapt |
-| **3** | First Team Member |
+| **3** | First Team Member (rolled from chart) |
 | **5** | Second Team Member |
-| **6** | Trauma Team Silver coverage (paid by Corp) |
+| **6** | Trauma Team Silver coverage (paid by your Corp) |
 | **7** | Housing upgraded to Beaverville House in Executive Zone |
 | **8** | Coverage upgraded to Trauma Team Executive |
-| **9** | Third Team Member (max 3 total) |
+| **9** | Third Team Member (maximum 3 total) |
 | **10** | Housing upgraded to McMansion or Luxury Penthouse |
 
-### Team Members
-- Rolled from special charts (Company Bodyguard, Covert Operative, Driver, Netrunner, Technician)
-- Controlled by the GM based on **Loyalty** (starting: 1d6+1, max 10 between sessions)
-- Cannot wear armor heavier than Light Armorjack
-- Do not improve Skills
+**Team member types:** Company Bodyguard, Covert Operative, Driver, Netrunner, Technician (rolled from specific charts at each tier).
+
+**Constraints:** Team members cannot wear armor heavier than Light Armorjack and do not improve Skills over time.
 
 ### Loyalty
 
-| Action | Gain/Loss |
-|---|---|
-| Compliment work | +1 |
-| Give bonus/perk (200eb+) | +4 |
-| Support against Management | +4 |
-| Give 20% cut of earnings | +6 |
-| Paid time off (entire session) | +6 |
-| Risk physical harm for them | +8 |
-| No Loyalty gained during session | -1 |
-| Berate/chew out | -2 |
-| Ignore contribution | -4 |
-| Forget birthday | -6 |
-| Fail to deliver promised bonus | -6 |
-| Throw under bus to Management | -8 |
-| Abandon under fire | losing all remaining |
+Loyalty starts at **1d6+1** (max 10 between sessions). The GM rolls Loyalty for each task assigned.
 
-**Loyalty Save:** GM rolls 1d6 under current Loyalty for each task. Failure = refuse/botch/betray. At 0 or below = active betrayal.`,
+| Action | Loyalty Change |
+|---|---|
+| Compliment their work | +1 |
+| Give bonus/perk (200eb+) | +4 |
+| Support them against Management | +4 |
+| Give 20% cut of earnings | +6 |
+| Paid time off (full session) | +6 |
+| Risk physical harm for them | +8 |
+| No Loyalty gained during session | −1 |
+| Berate or chew out | −2 |
+| Ignore their contribution | −4 |
+| Forget their birthday | −6 |
+| Fail to deliver promised bonus | −6 |
+| Throw under the bus to Management | −8 |
+| Abandon under fire | Lose all remaining Loyalty |
+
+At **0 or below:** active betrayal. They go to Management, sabotage the operation, or worse.
+
+### What Levelling Up Does
+
+Rank unlocks perks and team members. The real power isn't combat -- it's the compounding advantage of having reliable specialists handle work your crew can't. A Rank 9 Exec has a Corp bodyguard (combat capable), an Operative (infiltration, surveillance), and a Driver (extractions), all coordinated while you handle the deal.
+
+### Examples
+
+**Rank 3, Loyalty 6 -- Reliable backup:** A threat emerges at a meeting. The Exec's Company Bodyguard (Loyalty 6) is stationed outside. The GM rolls 1d6: gets 2. Under 6 -- they step in front of the threat. The Exec walks out. That's exactly what the bodyguard is for.
+
+**Loyalty crisis -- The undelivered bonus:** After a run, the Exec promised the Operative a 400eb bonus and forgot. Loyalty drops −6 to 2. Next assignment, the GM rolls 1d6: gets 3. Not under 2 -- the Operative doesn't show up. The surveillance mission happens without them. The Exec is alone at the meeting they needed intel for.
+
+**Rank 9, Full team -- Corporate operations:** The Exec sends the Covert Operative to surveil a rival's apartment, the Driver to prep the extraction vehicle, and the Bodyguard to cover the lobby. All three at Loyalty 7+. The GM rolls once per NPC -- all three succeed. This is what it looks like when Corporate power operates at street level. The crew didn't need to hire freelancers. They own the freelancers.`,
     related: ['role-lawman', 'role-fixer', 'trauma-team'],
   },
   {
@@ -1838,26 +1854,40 @@ Execs are corporate power brokers and business raiders. They build a team whose 
     category: 'Roles',
     content: `## Lawman
 
-Lawmen are maximum law enforcers patrolling the mean streets and barbarian highways beyond.
+A Lawman's greatest weapon isn't a gun -- it's a radio. Backup turns the lone officer into the tip of a spear, able to summon law enforcement assets scaled to the threat. At low Rank, that's a few beat cops with pistols. At high Rank, it's C-SWAT dropping from an AV-4. The catch: you have to succeed the Backup roll first, and there's always a delay before they arrive. Those rounds of waiting are entirely your problem.
 
 ### Role Ability: Backup
 
-As an **Action**, roll **d10 equal to or under your Backup Rank** to get someone to respond. Then roll **d6** = number of Rounds until arrival. On a **6**, backup arrives from the **next highest tier** (or two groups at Rank 10).
+As an **Action**, roll **1d10 equal to or under your Backup Rank** to call in reinforcements. On success, roll **1d6** to determine the number of Rounds until they arrive. On a **d6 result of 6**, the backup from the **next highest tier** arrives instead. At Rank 10, a roll of 6 sends **two groups**.
 
-### Backup Ranks
+### Backup by Rank
 
-| Rank | Unit | Combat# | SP | HP | MOVE/BODY |
+| Rank | Unit | Combat # | SP | HP | MOVE / BODY |
 |---|---|---|---|---|---|
-| **1-2** | 4 Corporate Security (foot, Heavy Pistols, Kevlar) | 8 | 7 | 20 | 4 |
-| **3-4** | 4 Local Beat Cops (2 Compact Groundcars, Heavy Pistols, Kevlar) | 10 | 7 | 25 | 5 |
-| **5-7** | 2 County Mounties (High Perf. Groundcar, Heavy Pistols + Assault Rifles, Heavy Armorjack) | 14 | 13 | 35 | 4 |
+| **1–2** | 4 Corporate Security (foot, Heavy Pistols, Kevlar) | 8 | 7 | 20 | 4 |
+| **3–4** | 4 Local Beat Cops (2 Compact Groundcars, Heavy Pistols, Kevlar) | 10 | 7 | 25 | 5 |
+| **5–7** | 2 County Mounties (High Perf. Groundcar, Heavy Pistols + ARs, Heavy Armorjack) | 14 | 13 | 35 | 4 |
 | **8** | 1 Recovery Zone Marshal (Superbike, VH Pistol + AR + Grenade Launcher, Flak) | 16 | 15 | 50 | 6 |
 | **9** | 2 C-SWAT (AV-4, Assault Rifles + Rocket Launchers, Metalgear) | 15 | 18 | 35 | 4 |
-| **10** | 2 National/Interpol/FBI/Netwatch (AV-4, VH Pistols + ARs, Light Armorjack) | 14 | 11 | 35 | 6 |
+| **10** | 2 National/Interpol/FBI/Netwatch Agents (AV-4, VH Pistols + ARs, Light Armorjack) | 14 | 11 | 35 | 6 |
 
-**Rank 10 Special:** These agents stick around to investigate, respond to all related calls until the "case" is closed, and can use their Combat Number for investigation Skills (Accounting, Criminology, Deduction, Perception, Stealth, Tracking, etc.).
+**Combat Number** combines STAT + Skill. Add 1d10 for attacks or defense. Backup **cannot dodge bullets**.
 
-**Combat Number** combines STAT + Skill. Add d10 for attacks or defense. Backup **cannot dodge bullets**. Abusing Backup gets you fired or fined.`,
+**Rank 10 Special:** These agents stay and investigate -- they respond to all related calls, and can use their Combat Number for investigation Skills (Accounting, Criminology, Deduction, Perception, Stealth, Tracking).
+
+**Abusing Backup** (calling it for personal gain, endangering civilians, false reports) gets you fined, demoted, or fired.
+
+### What Levelling Up Does
+
+Each Rank tier is a qualitative jump in the unit's capability. At Rank 4, you have four beat cops in groundcars -- solid for deterrence, unreliable in serious firefights. At Rank 8, one Recovery Zone Marshal is a walking weapons platform who can handle most threats alone. At Rank 9, C-SWAT makes most problems go away very quickly, very loudly.
+
+### Examples
+
+**Rank 3 -- Ambush response:** The crew is ambushed in a parking structure by six Maelstrom grunts. The Lawman calls Backup (rolls 1d10: gets 3 -- under Rank 4, success). Arrival roll: 1d6 = 4 Rounds. They have to survive 4 Rounds. Two Local Beat Cop groundcars roll in from opposite entrances on Round 4. Maelstrom splits. The crew catches their breath.
+
+**Rank 6 -- The lucky roll:** County Mounties were called. The GM rolls 1d6 for arrival: 6. Instead of County Mounties, the Recovery Zone Marshal shows up -- on a Superbike, with a Grenade Launcher. Nobody expected this. Neither did the four armed men blocking the road. The Marshal handles it with exactly one grenade.
+
+**Rank 9 -- Full response:** The target has barricaded themselves in a warehouse with eight armed guards and a Nomad technical. The Lawman calls C-SWAT. Two agents drop from an AV-4: Metalgear armor (SP18), Assault Rifles and Rocket Launchers. Combat# 15. The barricade survives about one Round. The Lawman is there to make the arrest; the C-SWAT team is there to make sure there's someone left to arrest.`,
     related: ['role-solo', 'role-exec', 'combat-overview'],
   },
   {
