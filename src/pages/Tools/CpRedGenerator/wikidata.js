@@ -4742,4 +4742,98 @@ Never Fade Away establishes the key lore threads of the Cyberpunk universe:
 See [[fourth-corp-war]] for the later assault on Arasaka Tower in 2023 and [[corp-arasaka]] for the Corporation's current state.`,
     related: ['fourth-corp-war', 'corp-arasaka', 'timeline-overview', 'night-city-overview'],
   },
+  {
+    id: 'explosives-demolitions',
+    title: 'Explosives & Demolitions',
+    category: 'Equipment',
+    content: `## Explosives & Demolitions
+
+In Cyberpunk RED, "explosives" covers three distinct categories handled by different Skills. Confusing them is expensive and occasionally fatal.
+
+| Category | Examples | Skill Used |
+|---|---|---|
+| **Thrown grenades** | Frag, flashbang, smoke | DEX + Athletics |
+| **Fired explosive weapons** | Grenade launcher, rocket launcher | REF + Heavy Weapons (x2 IP) |
+| **Placed charges** | C4-equivalent, mines, shaped charges | TECH + Demolitions (x2 IP) |
+
+## Area of Effect Rules
+
+All explosive weapons affect a **10 m/yd × 10 m/yd area** (5×5 squares) centered on the impact point. Roll damage **once** -- every target in the area takes that result.
+
+- **REF 8+ targets** can individually attempt to dodge the blast.
+- **Cover with sufficient HP** protects targets fully. If the blast would **destroy the cover** (reduce it to 0 HP), the cover is gone and all targets behind it take **full damage**. Unlike standard ranged attacks, excess damage **passes through** destroyed cover.
+- **Enclosed spaces:** If the room is smaller than the blast radius, there is no escaping the blast. Everyone inside takes damage.
+- **Vehicles:** Take normal explosive damage. No Critical Injuries, but can be destroyed (0 SDP).
+
+## Grenade Types
+
+Grenades are purchased individually. All types use the **Grenade Launcher DV column** on the Range DV table for thrown range checks.
+
+| Type | Cost | Damage / Effect |
+|---|---|---|
+| **Basic (Frag)** | 50eb | 6d6 explosive, 10m × 10m area |
+| **Biotoxin** | 500eb | No damage; DV15 Resist Torture/Drugs or 3d6 direct to HP |
+| **EMP** | 500eb | No damage; DV15 Cybertech or GM disables 2 cyberware/electronics for 1 min |
+| **Flashbang** | 100eb | No damage; DV15 Resist T/D or Damaged Eye + Damaged Ear for 1 min |
+| **Incendiary** | 100eb | If damage penetrates armor, target ignited: 2 HP/turn until extinguished |
+| **Poison** | 100eb | No damage; DV13 Resist T/D or 2d6 direct to HP |
+| **Sleep** | 500eb | No damage; DV13 Resist T/D or Prone + Unconscious for 1 min |
+| **Smoke** | 50eb | Obscures 10m × 10m area for 1 min; all within take **-4 penalty** to Actions |
+| **Teargas** | 50eb | No damage; DV13 Resist T/D or Damaged Eye for 1 min (meat eyes only) |
+
+## Throwing vs. Firing
+
+| Method | Skill | Stat | Max Range | Damage |
+|---|---|---|---|---|
+| **Thrown grenade** | Athletics | DEX | 25 m/yds | Per grenade type |
+| **Grenade Launcher** | Heavy Weapons (x2 IP) | REF | Per range table | 6d6 |
+| **Rocket Launcher** | Heavy Weapons (x2 IP) | REF | Per range table | 8d6 |
+
+Both thrown and fired grenades use the **Grenade Launcher DV column** on the Range DV table. Firing is more accurate at distance; throwing is accessible to anyone with Athletics.
+
+## The Demolitions Skill
+
+**Demolitions** (TECH stat, x2 IP cost) is for placing and defusing stationary explosive charges -- not throwing grenades or firing launchers.
+
+**x2 IP cost:** Level 1 = 40 IP. Level 10 = 400 IP. This is a major investment. If no one in the crew has it, sourcing pre-configured charges from a Fixer works -- but mishandling explosives without the Skill risks premature detonation at GM discretion.
+
+**Roll:** TECH + Demolitions + 1d10 vs DV.
+
+| Task | DV |
+|---|---|
+| Simple detonation (blow a door off its hinges) | 9 |
+| Shaped charge (direct blast through a wall, minimum spread) | 13 |
+| Precision demolition (collapse a structure without hitting adjacent rooms) | 15 |
+| Complex timed or triggered sequence | 17 |
+| Multi-stage coordinated demolition | 21+ |
+| **Defusing** a charge | Opposed vs setter's TECH + Demolitions + 1d10, or GM-set DV |
+
+**Failure when setting:** premature detonation or dud (GM decides which is worse for you right now).
+**Failure when defusing:** it detonates.
+
+## Which Skill for What
+
+| Situation | Skill |
+|---|---|
+| Throw a grenade | DEX + Athletics |
+| Fire a grenade/rocket launcher | REF + Heavy Weapons (x2 IP) |
+| Plant a shaped charge on a wall | TECH + Demolitions (x2 IP) |
+| Defuse a bomb or mine | TECH + Demolitions (x2 IP) |
+| Set a tripwire mine | TECH + Demolitions (x2 IP) |
+| Build an improvised explosive | TECH + Demolitions (x2 IP) |
+| Repair a grenade launcher | TECH + Weaponstech |
+
+## Building an Explosives-Focused Character
+
+A character built around explosives typically spreads across three areas:
+
+- **Demolitions (TECH):** Core for placed charges and precision work. Aim for at least 4 (DV13 reliable) -- it costs double IP, so plan ahead.
+- **Heavy Weapons (REF, x2 IP):** For grenade launchers and rocket launchers. REF-based, so also boosts your general combat accuracy.
+- **Athletics (DEX):** Covers thrown grenades with no extra IP cost. High DEX benefits many other skills too.
+
+High Demolitions also lets you **identify explosive traps** and understand **structural weak points** -- invaluable for heist and infiltration runs where you need to know which wall to blow and which one holds up the ceiling.
+
+See [[ammo-types]] for full grenade and rocket ammo options. See [[ranged-combat]] for the Grenade Launcher Range DV table.`,
+    related: ['ranged-combat', 'ammo-types', 'autofire', 'cover'],
+  },
 ];
