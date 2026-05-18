@@ -1,4 +1,4 @@
-export const WIKI_VERSION = '1.2.3';
+export const WIKI_VERSION = '1.2.4';
 
 export const WIKI_CATEGORIES = [
   // Core mechanics (most basic first)
@@ -3973,7 +3973,7 @@ See [[night-city-overview]] for the current state of Night City and [[timeline-o
     category: 'Lore & History',
     content: `## Street Slang & Abbreviations
 
-Night City has its own language. Knowing the terms marks you as someone who belongs. Not knowing them marks you as a tourist -- or worse, a corpo.
+Night City has its own language. Knowing the terms marks you as someone who belongs. Not knowing them marks you as a tourist, or worse, a corpo.
 
 ### Common Slang
 
@@ -3982,9 +3982,9 @@ Night City has its own language. Knowing the terms marks you as someone who belo
 | **Choom** | Friend, buddy. Casual address between people who trust each other. |
 | **Gonk** | Idiot. Mild insult; calling someone a gonk means they just did something stupid. |
 | **Preem** | Premium, top quality. "That chrome is preem." |
-| **Nova** | Excellent, cutting-edge. Higher praise than preem -- implies style as well as quality. |
+| **Nova** | Excellent, cutting-edge. Higher praise than preem. Implies style as well as quality. |
 | **Flatline** | Kill, or be killed. "They flattened him" or "he got flatlined." Also the permanent-death state. |
-| **Edgerunner** | A freelance operative who works dangerous jobs on the fringe of legality -- mercs, fixers, netrunners, anyone living on the edge. |
+| **Edgerunner** | A freelance operative who works dangerous jobs on the fringe of legality: mercs, fixers, netrunners, anyone living on the edge. |
 | **Corpo** | Corporate employee or someone who acts like one. Usually an insult on the street. |
 | **Booster** | Gang member, especially one who is aggressive or territorial. |
 | **Boostergang** | Street gang. Usually heavily chromed and territorial. |
@@ -3992,10 +3992,10 @@ Night City has its own language. Knowing the terms marks you as someone who belo
 | **Meat** | The human body, as opposed to chrome. "Took the hit in meat, not metal." |
 | **Meatspace** | The physical world, as opposed to the NET. |
 | **Netspace** | The NET itself. Less common term; most just say "the NET." |
-| **Braindance (BD)** | A recorded sensory experience you plug directly into your nervous system -- sight, sound, smell, touch. Legal BDs are entertainment. Illegal BDs include combat recordings and worse. |
+| **Braindance (BD)** | A recorded sensory experience you plug directly into your nervous system: sight, sound, smell, touch. Legal BDs are entertainment. Illegal BDs include combat recordings and worse. |
 | **Ripperdoc** | A back-alley cyberware surgeon. Installs chrome, repairs it, and asks no questions. Quality varies widely. |
 | **Fixer** | Middleman who connects buyers and sellers, arranges jobs, moves goods. Never touches the product personally. |
-| **Trauma Team** | A corporate emergency medical service. Subscribers get armed extraction by air if critically injured -- assuming they can still pay the premium. |
+| **Trauma Team** | A corporate emergency medical service. Subscribers get armed extraction by air if critically injured, assuming they can still pay the premium. |
 | **MaxTac** | Maximum Force Tactical Division. NCPD's cyberpsycho response unit. Full-conversion borgs with legal authorization to engage cyberpsychos with lethal force. |
 | **Cyberpsycho** | Someone who has undergone Humanity Loss severe enough to lose touch with their own humanity. Can become violent, dissociated, or worse. |
 | **The Blackwall** | The AI firewall separating the old, corrupted deep NET from local Data Pools. Nothing gets through. Or it's not supposed to. |
@@ -4042,7 +4042,7 @@ Night City has its own language. Knowing the terms marks you as someone who belo
 
 ### Streetslang as Language
 
-All characters in Cyberpunk RED speak **Streetslang** as a base language -- it's listed on the character sheet as a free Language Skill at level 4. It's not a dialect of English. It's a living pidgin that evolved across Night City's multicultural population, borrowing from dozens of languages and inventing new terms constantly.
+All characters in Cyberpunk RED speak **Streetslang** as a base language, listed on the character sheet as a free Language Skill at level 4. It's a living pidgin that evolved across Night City's multicultural population, borrowing from dozens of languages and inventing new terms constantly.
 
 If a term isn't in this list, it might still be in use. Night City invents new slang faster than any screamsheet can document it.`,
     related: ['night-city-overview', 'stats-skills', 'roles-overview', 'time-of-the-red'],
