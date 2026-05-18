@@ -6343,7 +6343,7 @@ export const QUICK_REF = [
       "**Rank 3–4:** Gain **+1 culture** and **+1 language** at Skill Level 4 (free, on top of normal Skills).",
       "**Rank 5–6:** Gain **+2 more cultures** and **+2 more languages** (3 cultures, 3 languages total from Grease).",
       "**Rank 7–8:** Gain **+3 more cultures** and **+3 more languages** (6 total each from Grease).",
-      "**Rank 9:** Blend seamlessly with **Corporate and governmental agencies** — pass as an insider.",
+      "**Rank 9:** Pass undetected in **Corporate and governmental agencies** — pass as an insider.",
       "**Rank 10:** Blend with **almost any group** including secret societies, foreign intelligence, and exclusive circles.",
       "Cultural knowledge helps with Streetwise, Conversation, and Human Perception checks in those contexts."
     ]

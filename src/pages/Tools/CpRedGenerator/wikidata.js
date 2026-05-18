@@ -1,4 +1,4 @@
-export const WIKI_VERSION = '1.2.8';
+export const WIKI_VERSION = '1.2.9';
 
 export const WIKI_CATEGORIES = [
   // Core mechanics (most basic first)
@@ -3267,7 +3267,7 @@ In Cyberpunk RED, your Role is not a job; it is who you are. However, Characters
 The IP cost to raise a Role Ability from one Rank to the next varies by Role. Each Role has its own progression table. Consult the specific Role Ability section for exact IP costs.
 
 ### Why Multiclass?
-Some combinations offer powerful synergies. A Solo/Netrunner can protect themselves in both Meatspace and the NET. A Fixer/Exec can leverage both corporate connections and street-level deal-making. However, spreading IP across two Roles means slower progression in each.
+Some combinations work well together. A Solo/Netrunner can protect themselves in both Meatspace and the NET. A Fixer/Exec can draw on both corporate connections and street-level deal-making. However, spreading IP across two Roles means slower progression in each.
 
 See [[role-rockerboy]], [[role-solo]], [[role-netrunner]], and other Role entries for specific Role Ability details.`,
     related: ['chargen-overview', 'role-rockerboy', 'role-solo', 'role-netrunner', 'improvement-points'],
