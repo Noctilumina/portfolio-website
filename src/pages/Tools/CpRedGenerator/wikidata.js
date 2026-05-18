@@ -1,4 +1,4 @@
-export const WIKI_VERSION = '1.2.1';
+export const WIKI_VERSION = '1.2.2';
 
 export const WIKI_CATEGORIES = [
   // Core mechanics (most basic first)
@@ -1497,11 +1497,11 @@ Cannot do Bodysculpting surgery on yourself. Failed surgery destroys materials a
     category: 'Roles',
     content: `## Rockerboy
 
-On the streets, a gun can make one person comply. A Rockerboy can make a *thousand* fight for your cause. Whether you're a punk legend screaming from a rooftop, a cult preacher with a silver tongue, or a vid personality with ten million followers, your voice is your deadliest weapon -- and it only gets louder as your legend grows.
+On the streets, a gun can make one person comply. A Rockerboy can make a *thousand* fight for your cause. Whether you're a punk legend screaming from a rooftop, a cult preacher with a silver tongue, or a vid personality with ten million followers, your voice is your deadliest weapon. It only grows louder as your legend does.
 
 ### Role Ability: Charismatic Impact
 
-Charismatic Impact lets you influence **Fans** -- people who already know and admire you. Non-fans can be converted with a successful check. The higher your Rank, the larger the crowd you can move and the more extreme the favors they'll perform.
+Charismatic Impact lets you influence **Fans**, people who already know and admire you. Non-fans can be converted with a successful check. The higher your Rank, the larger the crowd you can move and the more extreme the favors they'll perform.
 
 **Roll:** Charismatic Impact + 1d10 vs DV based on group size.
 
@@ -1528,11 +1528,11 @@ Each Rank in Charismatic Impact increases what you can ask of your fans and what
 
 ### Examples
 
-**Rank 4 -- Local Conversion:** Maya "Neon Vega" Rodriguez plays a surprise set at an underground club in Pacifica. She rolls CI (4) + 1d10, gets 11 -- beats DV10. The crowd of thirty converts to fans. She needs them to block a Militech patrol for ten minutes while her crew extracts a contact. She just got thirty very willing distractions who think they're doing something revolutionary.
+**Rank 4, Local Conversion:** Maya "Neon Vega" Rodriguez plays a surprise set at an underground club in Pacifica. She rolls CI (4) + 1d10, gets 11. Beats DV10. The crowd of thirty converts to fans. She needs them to block a Militech patrol for ten minutes while her crew extracts a contact. She just got thirty very willing distractions who think they're doing something revolutionary.
 
-**Rank 7 -- The Posse:** The crew needs to move through Maelstrom territory unharassed. The Rockerboy's fans in that district are rabidly loyal -- they escort the crew personally, feed them rumours about Maelstrom patrol patterns, and pick a fight with a rival gang to clear the main corridor. They weren't asked to do the last part. That's just what Rank 7 fans do.
+**Rank 7, The Posse:** The crew needs to move through Maelstrom territory unharassed. The Rockerboy's fans in that district are rabidly loyal. They escort the crew personally, feed them rumours about Maelstrom patrol patterns, and pick a fight with a rival gang to clear the main corridor. They weren't asked to do the last part. That's just what Rank 7 fans do.
 
-**Rank 9 -- The Broadcast:** The Shrike streams live from a barricaded Arasaka sub-office, playing three songs while his crew loots the server room behind him. When he points at the corp's logo and calls them murderers live to his national audience, riots break out in two cities within the hour. Nobody at Arasaka has time to look at one building when their headquarters is on fire.`,
+**Rank 9, The Broadcast:** The Shrike streams live from a barricaded Arasaka sub-office, playing three songs while his crew loots the server room behind him. When he points at the corp's logo and calls them murderers live to his national audience, riots break out in two cities within the hour. Nobody at Arasaka has time to look at one building when their headquarters is on fire.`,
     related: ['role-solo', 'role-fixer', 'stats-overview'],
   },
   {
@@ -1541,18 +1541,18 @@ Each Rank in Charismatic Impact increases what you can ask of your fans and what
     category: 'Roles',
     content: `## Solo
 
-Solos live in the gap between trigger pull and reaction time. They're assassins, bodyguards, soldiers-for-hire -- the elite fighting machines of the Time of the Red. What separates a Solo from a civilian with a gun isn't just training; it's the way their brain rewires itself after surviving enough firefights that combat becomes a calculation rather than a panic.
+Solos live in the gap between trigger pull and reaction time. They're assassins, bodyguards, soldiers-for-hire, the elite fighting machines of the Time of the Red. After enough firefights, combat becomes a calculation rather than a panic.
 
 ### Role Ability: Combat Awareness
 
-Combat Awareness lets you **allocate your Rank in points** across a set of combat sub-abilities before each fight. You can redistribute before combat, between rounds (outside combat), or by spending an **Action** mid-fight. Your allocation is your fighting style -- no two Solos spend their points the same way.
+Combat Awareness lets you **allocate your Rank in points** across a set of combat sub-abilities before each fight. You can redistribute before combat, between rounds (outside combat), or by spending an **Action** mid-fight. Your allocation is your fighting style. No two Solos spend their points the same way.
 
 **Total points available = Combat Awareness Rank.** Every point has to go somewhere before combat starts, or it's wasted.
 
 | Ability | Cost | Effect |
 |---|---|---|
 | **Damage Deflection** | 2 / 4 / 6 / 8 / 10 pts | Reduce first damage taken each Round by 1 / 2 / 3 / 4 / 5 |
-| **Fumble Recovery** | 4 pts | Ignore critical failures (natural 1s) on attack rolls -- the 1 still counts as 1 |
+| **Fumble Recovery** | 4 pts | Ignore critical failures (natural 1s) on attack rolls (the 1 still counts as 1) |
 | **Initiative Reaction** | 1 pt each | +1 per point to Initiative rolls |
 | **Precision Attack** | 3 / 6 / 9 pts | +1 / +2 / +3 to all Attack checks |
 | **Spot Weakness** | 1 pt each | +1 per point to damage (before armor) of first successful Attack per Round |
@@ -1560,17 +1560,17 @@ Combat Awareness lets you **allocate your Rank in points** across a set of comba
 
 ### What Levelling Up Does
 
-Each Rank gives you one more point to allocate. At Rank 1, you have 1 point -- enough for a small Initiative or Perception bonus. At Rank 6, you have 6 points -- enough for meaningful combinations. At Rank 10, you have 10 points and can stack powerful combinations like Precision Attack 3 + Spot Weakness 3 + Initiative Reaction 4.
+Each Rank gives you one more point to allocate. At Rank 1, you have 1 point, enough for a small Initiative or Perception bonus. At Rank 6, you have 6 points, enough for meaningful combinations. At Rank 10, you have 10 points and can stack powerful combinations like Precision Attack 3 + Spot Weakness 3 + Initiative Reaction 4.
 
 ### Examples
 
-**Rank 4 -- The Wall (bodyguard build):** Allocate all 4 points into Damage Deflection (4 pts = reduce first hit by 2). When the assassin's burst connects, the Solo absorbs 2 of it. That's often the difference between their client taking a bullet and not. They spend the rest of combat being a human shield who shoots back.
+**Rank 4, The Wall (bodyguard build):** Allocate all 4 points into Damage Deflection (4 pts = reduce first hit by 2). When the assassin's burst connects, the Solo absorbs 2 of it. That's often the difference between their client taking a bullet and not. They spend the rest of combat being a human shield who shoots back.
 
-**Rank 6 -- The Finisher (assassin build):** Ikenna allocates 6 points to Spot Weakness (6 pts = +6 damage on first hit per Round). He finds the gap in the target's armor before every shot. Against someone in Heavy Armorjack, that +6 turns a miss-the-threshold hit into a real wound. He charges a flat 5,000eb per contract.
+**Rank 6, The Finisher (assassin build):** Ikenna allocates 6 points to Spot Weakness (6 pts = +6 damage on first hit per Round). He finds the gap in the target's armor before every shot. Against someone in Heavy Armorjack, that +6 turns a miss-the-threshold hit into a real wound. He charges a flat 5,000eb per contract.
 
-**Rank 8 -- The Surgeon (precision build):** Lena "Switchboard" Cross starts with 9 points in Precision Attack (+3 to attacks) and 3 points in Initiative Reaction. She goes first. She always hits. Midway through Round 2, she reallocates with an Action -- she's found the pattern, so she switches to Spot Weakness 8 for the kill shot. Her combat fees fund a very comfortable lifestyle in Heywood.
+**Rank 8, The Surgeon (precision build):** Lena "Switchboard" Cross starts with 9 points in Precision Attack (+3 to attacks) and 3 points in Initiative Reaction. She goes first. She always hits. Midway through Round 2, she reallocates with an Action. She's found the pattern, so she switches to Spot Weakness 8 for the kill shot. Her combat fees fund a very comfortable lifestyle in Heywood.
 
-**Rank 10 -- Maximum expression:** 10 points. Full Precision Attack (9 pts, +3 to attacks) + Initiative Reaction 1 (still goes near the top). Or Fumble Recovery (4) + Precision Attack 6 (+2) + Initiative Reaction 0. Or Damage Deflection 10 (reduce first hit by 5) and be basically unkillable for one Round. The ceiling is extremely high.`,
+**Rank 10, Maximum expression:** 10 points. Full Precision Attack (9 pts, +3 to attacks) + Initiative Reaction 1 (still goes near the top). Or Fumble Recovery (4) + Precision Attack 6 (+2) + Initiative Reaction 0. Or Damage Deflection 10 (reduce first hit by 5) and be basically unkillable for one Round. The ceiling is extremely high.`,
     related: ['role-rockerboy', 'combat-overview', 'role-netrunner'],
   },
   {
@@ -1579,11 +1579,11 @@ Each Rank gives you one more point to allocate. At Rank 1, you have 1 point -- e
     category: 'Roles',
     content: `## Netrunner
 
-Everyone else sees a locked door. A Netrunner sees the system controlling the lock -- and then takes control of the system. While the rest of the crew is shooting, a Netrunner is cutting the lights, locking the guards in their room, turning the building's own turrets against its owners, and copying the data before the first body hits the floor. The NET is their battlefield, and on that battlefield they have no equals.
+Everyone else sees a locked door. A Netrunner sees the system controlling the lock, then takes control of the system. While the rest of the crew is shooting, a Netrunner is cutting the lights, locking the guards in their room, turning the building's own turrets against its owners, and copying the data before the first body hits the floor. The NET is their battlefield, and on that battlefield they have no equals.
 
 ### Role Ability: Interface
 
-Interface is your ability to access and operate within NET Architectures. It determines how many **NET Actions** you get each Turn -- and every NET Action is a potential weapon, bypass, or advantage.
+Interface is your ability to access and operate within NET Architectures. It determines how many **NET Actions** you get each Turn. Every NET Action is a potential weapon, bypass, or advantage.
 
 On any given Turn, you choose: take your normal **Meat Action** (act in the physical world), OR take **NET Actions** (act inside the NET). You always get your **Move Action** regardless of which you choose.
 
@@ -1604,25 +1604,25 @@ Each of the following costs 1 NET Action (except Scanner):
 |---|---|
 | **Scanner** *(Meat Action)* | Find Meatspace locations of access points to nearby NET Architectures |
 | **Backdoor** | Break through Passwords blocking your path in an Architecture |
-| **Cloak** | Hide your traces and any active Virus -- others must beat your Cloak Check to find you |
+| **Cloak** | Hide your traces and any active Virus. Others must beat your Cloak Check to find you |
 | **Control** | Operate cameras, drones, turrets, elevators attached to the Architecture via Control Nodes |
 | **Eye-Dee** | Identify what a found file is and its black-market value |
-| **Pathfinder** | Reveal the Architecture's map -- see floors equal to your check, up to the first obstruction |
-| **Slide** | Escape combat with one non-Demon Black ICE -- roll Interface vs ICE Perception, success = flee |
+| **Pathfinder** | Reveal the Architecture's map. See floors equal to your check, up to the first obstruction |
+| **Slide** | Escape combat with one non-Demon Black ICE. Roll Interface vs ICE Perception; success = flee |
 | **Virus** | Leave a custom Virus at the Architecture's lowest floor to perform up to 2 actions/changes |
 | **Zap** | Attack a Program or enemy Netrunner for **1d6 damage** (REZ or directly to brain) |
 
 ### What Levelling Up Does
 
-Each additional Rank of Interface gives you more NET Actions -- the most powerful lever in your toolkit. At Rank 3 you can Pathfind and Backdoor in the same Turn. At Rank 7 you can fight Black ICE, Cloak yourself, Control a turret, and still have an Action left. At Rank 10, 5 NET Actions means you can do almost anything in a single Turn.
+Each additional Rank of Interface gives you more NET Actions, the most powerful lever in your toolkit. At Rank 3 you can Pathfind and Backdoor in the same Turn. At Rank 7 you can fight Black ICE, Cloak yourself, Control a turret, and still have an Action left. At Rank 10, 5 NET Actions means you can do almost anything in a single Turn.
 
 ### Examples
 
-**Rank 3 -- Entry-level infiltration:** Ash jacks in at the lobby access point. 2 NET Actions: Pathfinder (sees 3 floors of the corporate local node), then Control (gains camera access, DV8). She feeds her crew a real-time view of every corridor. They clear the floor without firing a shot.
+**Rank 3, Entry-level infiltration:** Ash jacks in at the lobby access point. 2 NET Actions: Pathfinder (sees 3 floors of the corporate local node), then Control (gains camera access, DV8). She feeds her crew a real-time view of every corridor. They clear the floor without firing a shot.
 
-**Rank 7 -- Split focus:** Creed is fighting a Killer-class Black ICE while his crew is pinned behind cover in meatspace. Turn structure: he uses Zap on the ICE (1d6 REZ damage), then Slide to escape it (Interface vs ICE Perception -- he wins, escapes to the next floor). NET Actions done. He pops into Meat Action: fires his pistol at the guard cornering his team. Two jobs, one Round.
+**Rank 7, Split focus:** Creed is fighting a Killer-class Black ICE while his crew is pinned behind cover in meatspace. Turn structure: he uses Zap on the ICE (1d6 REZ damage), then Slide to escape it (Interface vs ICE Perception; he wins, escapes to the next floor). NET Actions done. He pops into Meat Action: fires his pistol at the guard cornering his team. Two jobs, one Round.
 
-**Rank 10 -- God mode:** Interface 10 = 5 NET Actions. In a single Turn: Backdoor past the password, Pathfind to the core, plant a Virus (shuts down the building's remote access for a week), Control two gun turrets to face inward, Jack Out clean. The crew walks in through a building that's fighting itself. The whole operation takes less time than the security checkpoint.
+**Rank 10, God mode:** Interface 10 = 5 NET Actions. In a single Turn: Backdoor past the password, Pathfind to the core, plant a Virus (shuts down the building's remote access for a week), Control two gun turrets to face inward, Jack Out clean. The crew walks in through a building that's fighting itself. The whole operation takes less time than the security checkpoint.
 
 See [[netrunning-overview]] for full Netrunning rules, [[netrunning-interface]] for Interface Ability details, and [[netrunning-blackice]] for Black ICE.`,
     related: ['netrunning-overview', 'netrunning-interface', 'role-tech'],
@@ -1633,7 +1633,7 @@ See [[netrunning-overview]] for full Netrunning rules, [[netrunning-interface]] 
     category: 'Roles',
     content: `## Tech
 
-The Corps spend billions on R&D labs, teams of engineers, and years of testing. A Tech needs a workbench, salvaged parts, and an afternoon. Maker isn't just the ability to fix things -- it's a bone-deep understanding of *how things work* that lets you improve them, reinvent them, or occasionally turn them into something the manufacturer never intended and would probably be horrified by.
+The Corps spend billions on R&D labs, teams of engineers, and years of testing. A Tech needs a workbench, salvaged parts, and an afternoon. Maker is a deep understanding of how things work. Techs use it to improve items, reinvent them, or build things the manufacturer never anticipated.
 
 ### Role Ability: Maker
 
@@ -1661,17 +1661,17 @@ Each time you increase your **Maker Rank**, you gain **1 Rank in two different M
 
 ### What Levelling Up Does
 
-Each Rank gives you two more Specialty points to distribute. Early Ranks let you pick a focus (Field + one other). By Rank 5-6, you're covering two Specialties meaningfully. By Rank 10, you can have 5 ranks in two Specialties or spread across all four. The DV table doesn't change -- what changes is your ability to reliably beat higher DVs.
+Each Rank gives you two more Specialty points to distribute. Early Ranks let you pick a focus (Field + one other). By Rank 5-6, you're covering two Specialties meaningfully. By Rank 10, you can have 5 ranks in two Specialties or spread across all four. The DV table doesn't change. What changes is your ability to reliably beat higher DVs.
 
 ### Examples
 
-**Field Expertise, Rank 4 -- Mid-fight repair:** Ghost's assault rifle jams in the middle of a Maelstrom ambush. The Tech spends an Action to jury-rig it (Rank 4 = lasts 40 minutes). That's enough to finish the fight, get out, and find a safe house before it falls apart. Ghost asks no questions. The Tech charges 200eb for "emergency services."
+**Field Expertise, Rank 4, Mid-fight repair:** Ghost's assault rifle jams in the middle of a Maelstrom ambush. The Tech spends an Action to jury-rig it (Rank 4 = lasts 40 minutes). That's enough to finish the fight, get out, and find a safe house before it falls apart. Ghost asks no questions. The Tech charges 200eb for "emergency services."
 
-**Upgrade Expertise, Rank 6 -- Reducing Humanity Loss:** A PC is installing a Kiroshi Mk.3 Cybereye (HL 2d6). The Tech rolls TECH + Cybertech + 6 + 1d10 vs DV17. Success: reduce HL by 1d6 *and* add a concealability option so it doesn't ping on corporate scanners. The Corps pay their R&D teams for 6 months to develop this. The Tech did it in an afternoon.
+**Upgrade Expertise, Rank 6, Reducing Humanity Loss:** A PC is installing a Kiroshi Mk.3 Cybereye (HL 2d6). The Tech rolls TECH + Cybertech + 6 + 1d10 vs DV17. Success: reduce HL by 1d6 *and* add a concealability option so it doesn't ping on corporate scanners. The Corps pay their R&D teams for 6 months to develop this. The Tech did it in an afternoon.
 
-**Fabrication Expertise, Rank 7 -- Building gear from scratch:** The crew needs a Military-grade radio scrambler (Very Expensive, 1,000eb). The Tech sources Expensive-tier parts (500eb) and fabricates it over two weeks (DV24). The scrambler's not pretty -- it's held together with tape and spite -- but it blocks Militech IFF signals perfectly.
+**Fabrication Expertise, Rank 7, Building gear from scratch:** The crew needs a Military-grade radio scrambler (Very Expensive, 1,000eb). The Tech sources Expensive-tier parts (500eb) and fabricates it over two weeks (DV24). The scrambler's not pretty, held together with tape and spite, but it blocks Militech IFF signals perfectly.
 
-**Invention Expertise, Rank 9 -- Original design:** The Tech invents a modular breaching tool that combines a cutting torch with a shaped charge primer, reducing wall-breach time from 3 Rounds to 1. The GM sets it as Expensive (DV21). The Tech beats it. The crew names it "the Knocker." Two runs later, three different gangs are asking where to buy one.`,
+**Invention Expertise, Rank 9, Original design:** The Tech invents a modular breaching tool that combines a cutting torch with a shaped charge primer, reducing wall-breach time from 3 Rounds to 1. The GM sets it as Expensive (DV21). The Tech beats it. The crew names it "the Knocker." Two runs later, three different gangs are asking where to buy one.`,
     related: ['role-medtech', 'skill-list-tech', 'role-netrunner'],
   },
   {
@@ -1680,7 +1680,7 @@ Each Rank gives you two more Specialty points to distribute. Early Ranks let you
     category: 'Roles',
     content: `## Medtech
 
-Trauma Team is for people with Corporate coverage and 5,000eb to spare. Everyone else gets a Medtech. More than any other Role Ability, Medicine is what keeps your crew operational when the shooting stops -- and when it doesn't stop, it's what decides whether someone makes it to a safe house or goes into a bag.
+Trauma Team is for people with Corporate coverage and 5,000eb to spare. Everyone else gets a Medtech. More than any other Role Ability, Medicine is what keeps your crew operational when the shooting stops. When it keeps going, it decides who makes it to a safe house.
 
 ### Role Ability: Medicine
 
@@ -1714,7 +1714,7 @@ Synthesize doses: DV13 Medical Tech Check, 200eb materials = doses equal to Medi
 | Points | Benefit |
 |---|---|
 | 1 | Gain one Cryopump |
-| 2 | Registered Cryotank Tech -- unlimited access to 1 Cryotank |
+| 2 | Registered Cryotank Tech: unlimited access to 1 Cryotank |
 | 3 | Gain 1 personal Cryotank |
 | 4 | Gain 2 more Cryotanks; Cryopump has 2 charges, holds 2 people |
 | 5 | Gain 3 more Cryotanks; Cryopump has 3 charges, holds 3 people |
@@ -1723,11 +1723,11 @@ Medtechs can also perform **Therapy** to restore lost EMP (and Humanity): 1 full
 
 ### What Levelling Up Does
 
-Surgery points compound -- 5 Surgery points = Surgery Skill 10, letting you reliably beat DV17 Surgery checks. Pharmaceuticals becomes more powerful as you unlock more drugs (Speedheal + Stim + Surge is a full suite by point 5). Cryosystem Operation at max means you can put multiple dying patients on ice simultaneously and stop their Death Save clock entirely.
+Surgery compounds: 5 Surgery points = Surgery Skill 10, letting you reliably beat DV17 Surgery checks. Pharmaceuticals becomes more powerful as you unlock more drugs (Speedheal + Stim + Surge is a full suite by point 5). Cryosystem Operation at max means you can put multiple dying patients on ice simultaneously and stop their Death Save clock entirely.
 
 ### Examples
 
-**Surgery, Rank 6 (Surgery 3 = Skill 6):** A crew member took a Critical Injury -- Collapsed Lung. Without Surgery, it's permanent. Rena sets up in a safehouse, rolls Surgery Skill (6) + Medical Tech + 1d10 vs the injury DV. Success. The PC recovers over a week of bed rest instead of dying slowly. Rena also installs a Neural Link while they're under -- Surgery is the only way to do it.
+**Surgery, Rank 6 (Surgery 3 = Skill 6):** A crew member took a Critical Injury: Collapsed Lung. Without Surgery, it's permanent. Rena sets up in a safehouse, rolls Surgery Skill (6) + Medical Tech + 1d10 vs the injury DV. Success. The PC recovers over a week of bed rest instead of dying slowly. Rena also installs a Neural Link while they're under. Surgery is the only way to do it.
 
 **Pharmaceuticals, Rank 4 (Stim unlocked):** Crowe drops to Seriously Wounded mid-fight. The Medtech injects Stim as an Action. For the next hour, Crowe ignores the -2 to all Actions from being Seriously Wounded. He carries the hostage out, gets back to the van, and collapses. That's a successful extraction.
 
@@ -1740,7 +1740,7 @@ Surgery points compound -- 5 Surgery points = Surgery Skill 10, letting you reli
     category: 'Roles',
     content: `## Media
 
-In a world where corporations control every major datastream, the truth is what they say it is -- unless you have the Credibility to be believed over them. A Media's power isn't a gun. It's the ability to make millions of people believe something, access information sources no one else can reach, and publish stories that change the world. At high Rank, a single broadcast can topple a Megacorp. That's not metaphor.
+In a world where corporations control every major datastream, the truth is what they say it is, unless you have the Credibility to be believed over them. A Media's power is the ability to make millions believe something, access information no one else can reach, and publish stories that change the world. At high Rank, a single broadcast can topple a Megacorp.
 
 ### Role Ability: Credibility
 
@@ -1776,11 +1776,11 @@ Each Rank expands your source network and audience simultaneously. More importan
 
 ### Examples
 
-**Rank 3 -- Passive network in action:** The GM secretly rolls Credibility (3) + 1d10 = 11 -- beats Substantial Rumor DV11. Without the Media asking, they've heard through their network that the local police precinct is on Maelstrom's payroll. That's actionable intel the crew never had to pay for.
+**Rank 3, Passive network in action:** The GM secretly rolls Credibility (3) + 1d10 = 11. Beats Substantial Rumor DV11. Without the Media asking, they've heard through their network that the local police precinct is on Maelstrom's payroll. That's actionable intel the crew never had to pay for.
 
-**Rank 6 -- Published impact:** The Media has footage of a Petrochem waste dump in Heywood causing birth defects. Believability 4/10. Four pieces of verifiable evidence: +2. Published citywide. City council opens an inquiry. Petrochem's local operations freeze for a month. People the Media has never met are now angry at exactly the right people.
+**Rank 6, Published impact:** The Media has footage of a Petrochem waste dump in Heywood causing birth defects. Believability 4/10. Four pieces of verifiable evidence: +2. Published citywide. City council opens an inquiry. Petrochem's local operations freeze for a month. People the Media has never met are now angry at exactly the right people.
 
-**Rank 9 -- Megacorp pressure:** A single broadcast linking Arasaka to a political assassination goes national. Believability 6/10 + 2 evidence = 8/10. Three governments demand answers. Two Arasaka North American divisions go quiet. One VP retires and is never seen again. The Media didn't fire a single shot.`,
+**Rank 9, Megacorp pressure:** A single broadcast linking Arasaka to a political assassination goes national. Believability 6/10 + 2 evidence = 8/10. Three governments demand answers. Two Arasaka North American divisions go quiet. One VP retires and is never seen again. The Media didn't fire a single shot.`,
     related: ['role-rockerboy', 'role-exec', 'reputation'],
   },
   {
@@ -1789,11 +1789,11 @@ Each Rank expands your source network and audience simultaneously. More importan
     category: 'Roles',
     content: `## Exec
 
-An Exec doesn't win fights. They build organizations that win fights for them. Teamwork is the art of employing capable people and keeping them loyal enough to stay employable -- which means consistent, generous leadership and never leaving your people hanging when it counts. In return, you get corporate resources that no street-level crew can match: housing, medical coverage, and professionals who will work for you so long as you treat them right.
+Execs build organizations that win fights for them. Teamwork is the art of employing capable people and keeping them loyal through consistent, generous leadership and never leaving people behind when it counts. In return, you get corporate resources that no street-level crew can match: housing, medical coverage, and professionals who will work for you so long as you treat them right.
 
 ### Role Ability: Teamwork
 
-Teamwork gives you **GM-controlled NPC team members** -- corporate employees who carry out tasks based on their **Loyalty score**. For each task, the GM rolls **1d6 under Loyalty**. Roll under = they do it. Fail = they refuse, botch it, or actively betray you depending on how low Loyalty is.
+Teamwork gives you **GM-controlled NPC team members**: corporate employees who carry out tasks based on their **Loyalty score**. For each task, the GM rolls **1d6 under Loyalty**. Roll under = they do it. Fail = they refuse, botch it, or actively betray you depending on how low Loyalty is.
 
 ### Corporate Perks by Rank
 
@@ -1837,15 +1837,15 @@ At **0 or below:** active betrayal. They go to Management, sabotage the operatio
 
 ### What Levelling Up Does
 
-Rank unlocks perks and team members. The real power isn't combat -- it's the compounding advantage of having reliable specialists handle work your crew can't. A Rank 9 Exec has a Corp bodyguard (combat capable), an Operative (infiltration, surveillance), and a Driver (extractions), all coordinated while you handle the deal.
+Rank unlocks perks and team members. The real power is the compounding advantage of having reliable specialists handle work your crew can't. A Rank 9 Exec has a Corp bodyguard (combat capable), an Operative (infiltration, surveillance), and a Driver (extractions), all coordinated while you handle the deal.
 
 ### Examples
 
-**Rank 3, Loyalty 6 -- Reliable backup:** A threat emerges at a meeting. The Exec's Company Bodyguard (Loyalty 6) is stationed outside. The GM rolls 1d6: gets 2. Under 6 -- they step in front of the threat. The Exec walks out. That's exactly what the bodyguard is for.
+**Rank 3, Loyalty 6, Reliable backup:** A threat emerges at a meeting. The Exec's Company Bodyguard (Loyalty 6) is stationed outside. The GM rolls 1d6: gets 2. Under 6; they step in front of the threat. The Exec walks out. That's exactly what the bodyguard is for.
 
-**Loyalty crisis -- The undelivered bonus:** After a run, the Exec promised the Operative a 400eb bonus and forgot. Loyalty drops −6 to 2. Next assignment, the GM rolls 1d6: gets 3. Not under 2 -- the Operative doesn't show up. The surveillance mission happens without them. The Exec is alone at the meeting they needed intel for.
+**Loyalty crisis, The undelivered bonus:** After a run, the Exec promised the Operative a 400eb bonus and forgot. Loyalty drops −6 to 2. Next assignment, the GM rolls 1d6: gets 3. Not under 2; the Operative doesn't show up. The surveillance mission happens without them. The Exec is alone at the meeting they needed intel for.
 
-**Rank 9, Full team -- Corporate operations:** The Exec sends the Covert Operative to surveil a rival's apartment, the Driver to prep the extraction vehicle, and the Bodyguard to cover the lobby. All three at Loyalty 7+. The GM rolls once per NPC -- all three succeed. This is what it looks like when Corporate power operates at street level. The crew didn't need to hire freelancers. They own the freelancers.`,
+**Rank 9, Full team, Corporate operations:** The Exec sends the Covert Operative to surveil a rival's apartment, the Driver to prep the extraction vehicle, and the Bodyguard to cover the lobby. All three at Loyalty 7+. The GM rolls once per NPC; all three succeed. This is what it looks like when Corporate power operates at street level. The crew didn't need to hire freelancers. They own the freelancers.`,
     related: ['role-lawman', 'role-fixer', 'trauma-team'],
   },
   {
@@ -1854,7 +1854,7 @@ Rank unlocks perks and team members. The real power isn't combat -- it's the com
     category: 'Roles',
     content: `## Lawman
 
-A Lawman's greatest weapon isn't a gun -- it's a radio. Backup turns the lone officer into the tip of a spear, able to summon law enforcement assets scaled to the threat. At low Rank, that's a few beat cops with pistols. At high Rank, it's C-SWAT dropping from an AV-4. The catch: you have to succeed the Backup roll first, and there's always a delay before they arrive. Those rounds of waiting are entirely your problem.
+Backup turns the lone officer into the tip of a spear, able to summon law enforcement assets scaled to the threat. A radio and the right Rank changes everything. At low Rank, that's a few beat cops with pistols. At high Rank, it's C-SWAT dropping from an AV-4. The catch: you have to succeed the Backup roll first, and there's always a delay before they arrive. Those rounds of waiting are entirely your problem.
 
 ### Role Ability: Backup
 
@@ -1873,21 +1873,21 @@ As an **Action**, roll **1d10 equal to or under your Backup Rank** to call in re
 
 **Combat Number** combines STAT + Skill. Add 1d10 for attacks or defense. Backup **cannot dodge bullets**.
 
-**Rank 10 Special:** These agents stay and investigate -- they respond to all related calls, and can use their Combat Number for investigation Skills (Accounting, Criminology, Deduction, Perception, Stealth, Tracking).
+**Rank 10 Special:** These agents stay and investigate. They respond to all related calls and can use their Combat Number for investigation Skills (Accounting, Criminology, Deduction, Perception, Stealth, Tracking).
 
 **Abusing Backup** (calling it for personal gain, endangering civilians, false reports) gets you fined, demoted, or fired.
 
 ### What Levelling Up Does
 
-Each Rank tier is a qualitative jump in the unit's capability. At Rank 4, you have four beat cops in groundcars -- solid for deterrence, unreliable in serious firefights. At Rank 8, one Recovery Zone Marshal is a walking weapons platform who can handle most threats alone. At Rank 9, C-SWAT makes most problems go away very quickly, very loudly.
+Each Rank tier is a qualitative jump in the unit's capability. At Rank 4, you have four beat cops in groundcars: solid for deterrence, unreliable in serious firefights. At Rank 8, one Recovery Zone Marshal is a walking weapons platform who can handle most threats alone. At Rank 9, C-SWAT makes most problems go away very quickly, very loudly.
 
 ### Examples
 
-**Rank 3 -- Ambush response:** The crew is ambushed in a parking structure by six Maelstrom grunts. The Lawman calls Backup (rolls 1d10: gets 3 -- under Rank 4, success). Arrival roll: 1d6 = 4 Rounds. They have to survive 4 Rounds. Two Local Beat Cop groundcars roll in from opposite entrances on Round 4. Maelstrom splits. The crew catches their breath.
+**Rank 3, Ambush response:** The crew is ambushed in a parking structure by six Maelstrom grunts. The Lawman calls Backup (rolls 1d10: gets 3, under Rank 4, success). Arrival roll: 1d6 = 4 Rounds. They have to survive 4 Rounds. Two Local Beat Cop groundcars roll in from opposite entrances on Round 4. Maelstrom splits. The crew catches their breath.
 
-**Rank 6 -- The lucky roll:** County Mounties were called. The GM rolls 1d6 for arrival: 6. Instead of County Mounties, the Recovery Zone Marshal shows up -- on a Superbike, with a Grenade Launcher. Nobody expected this. Neither did the four armed men blocking the road. The Marshal handles it with exactly one grenade.
+**Rank 6, The lucky roll:** County Mounties were called. The GM rolls 1d6 for arrival: 6. Instead of County Mounties, the Recovery Zone Marshal shows up on a Superbike with a Grenade Launcher. Nobody expected this. Neither did the four armed men blocking the road. The Marshal handles it with exactly one grenade.
 
-**Rank 9 -- Full response:** The target has barricaded themselves in a warehouse with eight armed guards and a Nomad technical. The Lawman calls C-SWAT. Two agents drop from an AV-4: Metalgear armor (SP18), Assault Rifles and Rocket Launchers. Combat# 15. The barricade survives about one Round. The Lawman is there to make the arrest; the C-SWAT team is there to make sure there's someone left to arrest.`,
+**Rank 9, Full response:** The target has barricaded themselves in a warehouse with eight armed guards and a Nomad technical. The Lawman calls C-SWAT. Two agents drop from an AV-4: Metalgear armor (SP18), Assault Rifles and Rocket Launchers. Combat# 15. The barricade survives about one Round. The Lawman is there to make the arrest; the C-SWAT team is there to make sure there's someone left to arrest.`,
     related: ['role-solo', 'role-exec', 'combat-overview'],
   },
   {
@@ -1896,7 +1896,7 @@ Each Rank tier is a qualitative jump in the unit's capability. At Rank 4, you ha
     category: 'Roles',
     content: `## Fixer
 
-Money talks, but connections shout. A Fixer's power is knowing who to call and what to offer -- a network built over years of deals, favors, and carefully maintained relationships. Operator is the mechanical representation of that network: who you can reach, what you can source, how well you negotiate, and which social circles you can move through invisibly. At low Rank, you know the neighborhood. At Rank 10, you can sit across the table from a Megacorp CEO and haggle.
+Money talks, but connections shout. A Fixer's power is knowing who to call and what to offer: a network built over years of deals, favors, and maintained relationships. Operator is the mechanical representation of that network: who you can reach, what you can source, how well you negotiate, and which social circles you can move through invisibly. At low Rank, you know the neighborhood. At Rank 10, you can sit across the table from a Megacorp CEO and haggle.
 
 ### Role Ability: Operator
 
@@ -1921,15 +1921,15 @@ Operator has four components: **Contacts** (who you know), **Reach** (what you c
 
 ### What Levelling Up Does
 
-Each Rank tier opens a new Reach ceiling and refines Grease. The Haggle progression is particularly strong -- at Rank 7-8, Luxury items can be bought at half cost now, half in a month, which effectively doubles your purchasing power. Grease means you don't just know people; you can *become* people -- Rank 10 lets you pass as anything from a street criminal to a secret society member.
+Each Rank tier opens a new Reach ceiling and refines Grease. The Haggle progression is particularly strong: at Rank 7-8, Luxury items can be bought at half cost now, half in a month, which effectively doubles your purchasing power. Grease means you can move through social circles invisibly. Rank 10 lets you pass as anything from a street criminal to a secret society member.
 
 ### Examples
 
-**Rank 3 -- Sourcing under pressure:** The crew needs Assault Rifles before tomorrow. The Fixer calls a contact (city gang honcho who moves weapons). Reach covers Expensive items -- ARs qualify. Haggle Check: COOL + Trading + 3 + 1d10. They beat the supplier's roll. The crew gets the rifles at 10% below market, delivered to a parking garage at midnight. No paperwork.
+**Rank 3, Sourcing under pressure:** The crew needs Assault Rifles before tomorrow. The Fixer calls a contact (city gang honcho who moves weapons). Reach covers Expensive items; ARs qualify. Haggle Check: COOL + Trading + 3 + 1d10. They beat the supplier's roll. The crew gets the rifles at 10% below market, delivered to a parking garage at midnight. No paperwork.
 
-**Rank 6 -- Night Market:** The Fixer organizes a Night Market in an abandoned warehouse in Watson (once per month). Word goes out through Grease contacts. Fourteen vendors show up. The crew stocks up on Cyberware, grenades, and a replacement vehicle. The Fixer takes a percentage of every transaction and spends three hours doing nothing but shaking hands. It's their most profitable afternoon this month.
+**Rank 6, Night Market:** The Fixer organizes a Night Market in an abandoned warehouse in Watson (once per month). Word goes out through Grease contacts. Fourteen vendors show up. The crew stocks up on Cyberware, grenades, and a replacement vehicle. The Fixer takes a percentage of every transaction and spends three hours doing nothing but shaking hands. It's their most profitable afternoon this month.
 
-**Rank 9 -- Midnight Market:** An invitation-only Midnight Market. 1d10+5 = 11 rare items on offer, including three pieces of military-grade cyberware that aren't on any legal market. Three Corp Fixers are in attendance. With Grease at Rank 9, the Fixer blends into the Corporate tier seamlessly. They leave with a contact they've spent six months trying to reach and a deal for a weapon that doesn't officially exist.`,
+**Rank 9, Midnight Market:** An invitation-only Midnight Market. 1d10+5 = 11 rare items on offer, including three pieces of military-grade cyberware that aren't on any legal market. Three Corp Fixers are in attendance. With Grease at Rank 9, the Fixer blends into the Corporate tier seamlessly. They leave with a contact they've spent six months trying to reach and a deal for a weapon that doesn't officially exist.`,
     related: ['role-exec', 'role-nomad', 'reputation'],
   },
   {
@@ -1938,15 +1938,15 @@ Each Rank tier opens a new Reach ceiling and refines Grease. The Haggle progress
     category: 'Roles',
     content: `## Nomad
 
-A Nomad doesn't just drive -- they *live* on the road. Moto is the accumulated knowledge of a hundred thousand kilometers of hostile terrain, border runs, ambushes, and vehicular combat. It makes you the best wheelman any crew can hire and gives you access to a rolling arsenal your Family maintains, upgrades, and replaces. When everything else fails, a Nomad can get you out.
+Nomads live on the road. Moto is the accumulated knowledge of a hundred thousand kilometers of hostile terrain, border runs, ambushes, and vehicular combat. It makes you the best wheelman any crew can hire and gives you access to a rolling arsenal your Family maintains, upgrades, and replaces. When everything else fails, a Nomad can get you out.
 
 ### Role Ability: Moto
 
-**Vehicle Familiarity:** Add your Moto Rank to any **Drive Land Vehicle, Pilot Air Vehicle, Pilot Sea Vehicle, Air Vehicle Tech, Land Vehicle Tech, or Sea Vehicle Tech** Skill Check. This applies at all times -- it's always on.
+**Vehicle Familiarity:** Add your Moto Rank to any **Drive Land Vehicle, Pilot Air Vehicle, Pilot Sea Vehicle, Air Vehicle Tech, Land Vehicle Tech, or Sea Vehicle Tech** Skill Check. This applies at all times.
 
 **Family Motorpool:** Each time you increase your Moto Rank, you either **add a new stock vehicle** of that Rank or lower to your Family's pool, or **upgrade an existing one** with a vehicle modification.
 
-At any time, only **one Family vehicle** can be out. Swap the next morning. Destroyed vehicles are repaired by the Family in **1 week for 500eb**. At **Rank 10**, you're promoted to Family leadership -- all vehicles can be out simultaneously.
+At any time, only **one Family vehicle** can be out. Swap the next morning. Destroyed vehicles are repaired by the Family in **1 week for 500eb**. At **Rank 10**, you're promoted to Family leadership: all vehicles can be out simultaneously.
 
 ### Available Vehicles by Rank
 
@@ -1975,15 +1975,15 @@ At any time, only **one Family vehicle** can be out. Swap the next morning. Dest
 
 ### What Levelling Up Does
 
-Each Rank opens a better vehicle tier and adds Moto to another vehicle check -- but the real compounding effect is that you become dramatically more capable at everything vehicle-related simultaneously. Moto 5 means +5 to Drive, Pilot, and all Vehicle Tech checks with no additional investment. The Motorpool grows into a genuine tactical asset by Rank 7-8.
+Each Rank opens a better vehicle tier. The real compounding effect is becoming dramatically more capable at everything vehicle-related simultaneously. Moto 5 means +5 to Drive, Pilot, and all Vehicle Tech checks with no additional investment. The Motorpool grows into a genuine tactical asset by Rank 7-8.
 
 ### Examples
 
-**Rank 3 -- Pursuit specialist:** A Militech groundcar is tailing the crew's van through Heywood. The Nomad (Moto 3) rolls Drive Land Vehicle + 3 + 1d10. They have a meaningful edge over the pursuit vehicle's driver. Three turns, four corners, one construction shortcut that shouldn't fit a van. The tail is gone. The Nomad drove this route last month as a Family scout run -- they know every back street.
+**Rank 3, Pursuit specialist:** A Militech groundcar is tailing the crew's van through Heywood. The Nomad (Moto 3) rolls Drive Land Vehicle + 3 + 1d10. They have a meaningful edge over the pursuit vehicle's driver. Three turns, four corners, one construction shortcut that shouldn't fit a van. The tail is gone. The Nomad drove this route last month as a Family scout run. They know every back street.
 
-**Rank 5 -- Motorpool asset:** The crew needs a helicopter for a rooftop extraction in corpo territory. The Nomad calls the Family. Rank 5 = Helicopter available. It's a decade old and the paint is mostly rust, but the rotors work. The Nomad pilots it (Pilot Air Vehicle + 5 + 1d10) while a crew member mans the Onboard Machine Gun through the side door. Nobody questions whether a Nomad can fly a helicopter. They've been doing it since they were fourteen.
+**Rank 5, Motorpool asset:** The crew needs a helicopter for a rooftop extraction in corpo territory. The Nomad calls the Family. Rank 5 = Helicopter available. It's a decade old and the paint is mostly rust, but the rotors work. The Nomad pilots it (Pilot Air Vehicle + 5 + 1d10) while a crew member mans the Onboard Machine Gun through the side door. Nobody questions whether a Nomad can fly a helicopter. They've been doing it since they were fourteen.
 
-**Rank 8 -- Combat vehicle:** The Nomad's High Performance Groundcar has Armored Chassis (SP13), Bulletproof Glass (Thick, 30 HP per window), a Vehicle Heavy Weapon Mount with an Assault Rifle (the free gift), and a Combat Plow. During the ambush at the checkpoint: the Nomad drives straight through the roadblock (Combat Plow -- no ram damage, no Whiplash), the gunner engages through the mount, and the Nomad uses Enhanced Interface Plug Integration to dodge incoming fire while driving (REF 8+). The ambush takes exactly one Pass to break.`,
+**Rank 8, Combat vehicle:** The Nomad's High Performance Groundcar has Armored Chassis (SP13), Bulletproof Glass (Thick, 30 HP per window), a Vehicle Heavy Weapon Mount with an Assault Rifle (the free gift), and a Combat Plow. During the ambush at the checkpoint: the Nomad drives straight through the roadblock (Combat Plow: no ram damage, no Whiplash), the gunner engages through the mount, and the Nomad uses Enhanced Interface Plug Integration to dodge incoming fire while driving (REF 8+). The ambush takes exactly one Pass to break.`,
     related: ['role-fixer', 'vehicle-combat', 'role-solo'],
   },
 
