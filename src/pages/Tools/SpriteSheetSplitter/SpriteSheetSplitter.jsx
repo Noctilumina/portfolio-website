@@ -104,8 +104,6 @@ function removeBackground(srcData, width, height, bgColor, tolerance) {
   return out;
 }
 
-// Extract a tile from source image with per-edge adjustments applied.
-// adj = { t, r, b, l } in pixels; positive = expand that edge outward.
 function extractTile(sourceData, srcW, srcH, x0, y0, x1, y1, adj, bgColor, tolerance) {
   const ax0 = Math.max(0, x0 - (adj?.l ?? 0));
   const ax1 = Math.min(srcW, x1 + (adj?.r ?? 0));
@@ -131,32 +129,27 @@ function extractTile(sourceData, srcW, srcH, x0, y0, x1, y1, adj, bgColor, toler
   return { data: processed, width: tw, height: th };
 }
 
-function splitTiles(imageData, imgW, imgH, cols, rows, colDivs, rowDivs) {
-  const useDetectedCols = colDivs.length === cols - 1;
-  const useDetectedRows = rowDivs.length === rows - 1;
-  const colEdges = useDetectedCols
-    ? [0, ...colDivs, imgW]
-    : Array.from({ length: cols + 1 }, (_, i) => Math.round(i * imgW / cols));
-  const rowEdges = useDetectedRows
-    ? [0, ...rowDivs, imgH]
-    : Array.from({ length: rows + 1 }, (_, i) => Math.round(i * imgH / rows));
+function makeEvenDivs(n, size) {
+  return Array.from({ length: n - 1 }, (_, i) => Math.round((i + 1) * size / n));
+}
 
+function buildRects(imgW, imgH, colDivs, rowDivs) {
+  const ce = [0, ...colDivs, imgW];
+  const re = [0, ...rowDivs, imgH];
   const rects = [];
-  for (let r = 0; r < rows; r++) {
-    for (let c = 0; c < cols; c++) {
-      rects.push({ x0: colEdges[c], y0: rowEdges[r], x1: colEdges[c+1], y1: rowEdges[r+1] });
-    }
-  }
+  for (let r = 0; r < re.length - 1; r++)
+    for (let c = 0; c < ce.length - 1; c++)
+      rects.push({ x0: ce[c], y0: re[r], x1: ce[c+1], y1: re[r+1] });
   return rects;
 }
 
 // ── TileCard ───────────────────────────────────────────────────────────────────
 
 const ZERO_ADJ = { t: 0, r: 0, b: 0, l: 0 };
+const HANDLE_SPAN = 10;
 
 function TileCard({ sourceData, srcW, srcH, rect, bgColor, tolerance, name, index, adj, onAdjChange, onNameChange, onDownload }) {
   const canvasRef = useRef(null);
-  const [showAdj, setShowAdj] = useState(false);
   const maxPreview = 160;
 
   const tile = useMemo(
@@ -176,16 +169,72 @@ function TileCard({ sourceData, srcW, srcH, rect, bgColor, tolerance, name, inde
     canvas.getContext('2d').putImageData(new ImageData(tile.data, tile.width, tile.height), 0, 0);
   }, [tile]);
 
-  const setEdge = (edge, val) => {
-    const n = parseInt(val, 10);
-    onAdjChange({ ...adj, [edge]: isNaN(n) ? 0 : n });
-  };
+  const startEdgeDrag = useCallback((edge) => (e) => {
+    e.preventDefault();
+    const sx = e.clientX, sy = e.clientY;
+    const sa = { ...adj };
+    // source px per display px at drag start
+    const spx = tile.width / Math.max(1, dw);
+    const spy = tile.height / Math.max(1, dh);
+    const onMove = (me) => {
+      const dx = me.clientX - sx, dy = me.clientY - sy;
+      const na = { ...sa };
+      if (edge === 't') na.t = sa.t + Math.round(-dy * spy);
+      if (edge === 'b') na.b = sa.b + Math.round(dy * spy);
+      if (edge === 'l') na.l = sa.l + Math.round(-dx * spx);
+      if (edge === 'r') na.r = sa.r + Math.round(dx * spx);
+      onAdjChange(na);
+    };
+    const onUp = () => {
+      window.removeEventListener('mousemove', onMove);
+      window.removeEventListener('mouseup', onUp);
+    };
+    window.addEventListener('mousemove', onMove);
+    window.addEventListener('mouseup', onUp);
+  }, [adj, dw, dh, tile.width, tile.height, onAdjChange]);
+
+  const hasAdj = adj.t !== 0 || adj.r !== 0 || adj.b !== 0 || adj.l !== 0;
 
   return (
     <div className={styles.tileCard}>
-      <div className={styles.tilePreview} style={{ width: dw, height: dh }}>
-        <canvas ref={canvasRef} className={styles.tileCanvas} style={{ width: dw, height: dh }} />
+      {/* Outer wrapper with HANDLE_SPAN padding on each side for drag handles */}
+      <div style={{ position: 'relative', width: dw + HANDLE_SPAN * 2, height: dh + HANDLE_SPAN * 2, flexShrink: 0 }}>
+        <div className={styles.tilePreview} style={{ position: 'absolute', left: HANDLE_SPAN, top: HANDLE_SPAN, width: dw, height: dh }}>
+          <canvas ref={canvasRef} className={styles.tileCanvas} style={{ width: dw, height: dh }} />
+        </div>
+        <div
+          className={`${styles.handle} ${styles.handleT} ${adj.t !== 0 ? styles.handleNonzero : ''}`}
+          style={{ left: HANDLE_SPAN, width: dw }}
+          onMouseDown={startEdgeDrag('t')}
+          title={`Top edge · drag up to expand, down to shrink (${adj.t > 0 ? '+' : ''}${adj.t}px)`}
+        />
+        <div
+          className={`${styles.handle} ${styles.handleB} ${adj.b !== 0 ? styles.handleNonzero : ''}`}
+          style={{ left: HANDLE_SPAN, width: dw }}
+          onMouseDown={startEdgeDrag('b')}
+          title={`Bottom edge · drag down to expand, up to shrink (${adj.b > 0 ? '+' : ''}${adj.b}px)`}
+        />
+        <div
+          className={`${styles.handle} ${styles.handleL} ${adj.l !== 0 ? styles.handleNonzero : ''}`}
+          style={{ top: HANDLE_SPAN, height: dh }}
+          onMouseDown={startEdgeDrag('l')}
+          title={`Left edge · drag left to expand, right to shrink (${adj.l > 0 ? '+' : ''}${adj.l}px)`}
+        />
+        <div
+          className={`${styles.handle} ${styles.handleR} ${adj.r !== 0 ? styles.handleNonzero : ''}`}
+          style={{ top: HANDLE_SPAN, height: dh }}
+          onMouseDown={startEdgeDrag('r')}
+          title={`Right edge · drag right to expand, left to shrink (${adj.r > 0 ? '+' : ''}${adj.r}px)`}
+        />
       </div>
+      {hasAdj && (
+        <div className={styles.adjBadges}>
+          {adj.t !== 0 && <span>↑{adj.t > 0 ? '+' : ''}{adj.t}</span>}
+          {adj.b !== 0 && <span>↓{adj.b > 0 ? '+' : ''}{adj.b}</span>}
+          {adj.l !== 0 && <span>←{adj.l > 0 ? '+' : ''}{adj.l}</span>}
+          {adj.r !== 0 && <span>→{adj.r > 0 ? '+' : ''}{adj.r}</span>}
+        </div>
+      )}
       <div className={styles.tileFooter}>
         <input
           className={styles.tileName}
@@ -193,36 +242,8 @@ function TileCard({ sourceData, srcW, srcH, rect, bgColor, tolerance, name, inde
           onChange={e => onNameChange(e.target.value)}
           placeholder={`tile_${String(index + 1).padStart(2, '0')}`}
         />
-        <button
-          className={`${styles.adjToggle} ${showAdj ? styles.adjToggleActive : ''}`}
-          onClick={() => setShowAdj(v => !v)}
-          title="Adjust crop edges (expand/shrink per side in px)"
-        >⊡</button>
         <button className={styles.tileDownload} onClick={() => onDownload(tile)} title="Download this tile">↓</button>
       </div>
-      {showAdj && (
-        <div className={styles.adjPanel}>
-          <div className={styles.adjGrid}>
-            <div className={styles.adjRow}>
-              <label className={styles.adjLabel}>↑</label>
-              <input className={styles.adjInput} type="number" value={adj.t} onChange={e => setEdge('t', e.target.value)} title="Expand top edge outward (px). Negative shrinks." />
-            </div>
-            <div className={styles.adjRow}>
-              <label className={styles.adjLabel}>↓</label>
-              <input className={styles.adjInput} type="number" value={adj.b} onChange={e => setEdge('b', e.target.value)} title="Expand bottom edge outward (px). Negative shrinks." />
-            </div>
-            <div className={styles.adjRow}>
-              <label className={styles.adjLabel}>←</label>
-              <input className={styles.adjInput} type="number" value={adj.l} onChange={e => setEdge('l', e.target.value)} title="Expand left edge outward (px). Negative shrinks." />
-            </div>
-            <div className={styles.adjRow}>
-              <label className={styles.adjLabel}>→</label>
-              <input className={styles.adjInput} type="number" value={adj.r} onChange={e => setEdge('r', e.target.value)} title="Expand right edge outward (px). Negative shrinks." />
-            </div>
-          </div>
-          <p className={styles.adjHint}>+ expands edge · − shrinks · affects crop &amp; export</p>
-        </div>
-      )}
     </div>
   );
 }
@@ -236,18 +257,32 @@ export default function SpriteSheetSplitter() {
   const [imgDims, setImgDims] = useState({ w: 0, h: 0 });
   const [cols, setCols] = useState(3);
   const [rows, setRows] = useState(1);
+  const [colDivs, setColDivs] = useState([]);
+  const [rowDivs, setRowDivs] = useState([]);
   const [tolerance, setTolerance] = useState(30);
   const [bgColor, setBgColor] = useState([255, 255, 255]);
   const [detectedGrid, setDetectedGrid] = useState(null);
-  const [rects, setRects] = useState([]);
   const [names, setNames] = useState([]);
   const [adjs, setAdjs] = useState([]);
   const [baseName, setBaseName] = useState('tile');
   const [isDragging, setIsDragging] = useState(false);
 
+  // Refs for use inside drag handlers (avoid stale closures)
+  const colDivsRef = useRef([]);
+  const rowDivsRef = useRef([]);
+  const imgDimsRef = useRef({ w: 0, h: 0 });
   const overlayCanvasRef = useRef(null);
   const fileInputRef = useRef(null);
   const blobUrlRef = useRef(null);
+
+  useEffect(() => { colDivsRef.current = colDivs; }, [colDivs]);
+  useEffect(() => { rowDivsRef.current = rowDivs; }, [rowDivs]);
+  useEffect(() => { imgDimsRef.current = imgDims; }, [imgDims]);
+
+  const maxW = 640;
+  const scale = imgDims.w > maxW ? maxW / imgDims.w : 1;
+  const dispW = Math.round(imgDims.w * scale);
+  const dispH = Math.round(imgDims.h * scale);
 
   const loadImage = useCallback((file) => {
     if (!file?.type.startsWith('image/')) return;
@@ -263,28 +298,23 @@ export default function SpriteSheetSplitter() {
       const id = ctx.getImageData(0, 0, c.width, c.height);
       const w = img.naturalWidth, h = img.naturalHeight;
       const pixelData = new Uint8ClampedArray(id.data);
+      const grid = detectGrid(pixelData, w, h, 30);
+      const newColDivs = grid.colDivs.length === grid.cols - 1 ? grid.colDivs : makeEvenDivs(grid.cols, w);
+      const newRowDivs = grid.rowDivs.length === grid.rows - 1 ? grid.rowDivs : makeEvenDivs(grid.rows, h);
       setImgDims({ w, h });
       setImageData(pixelData);
       setImageSrc(url);
-      const grid = detectGrid(pixelData, w, h, 30);
       setDetectedGrid(grid);
+      setBgColor(grid.bgColor);
       setCols(grid.cols);
       setRows(grid.rows);
-      setBgColor(grid.bgColor);
+      setColDivs(newColDivs);
+      setRowDivs(newRowDivs);
     };
     img.src = url;
   }, []);
 
-  // Recompute rects whenever grid params change
-  useEffect(() => {
-    if (!imageData || !imgDims.w) return;
-    const { w, h } = imgDims;
-    const cd = detectedGrid?.colDivs ?? [];
-    const rd = detectedGrid?.rowDivs ?? [];
-    setRects(splitTiles(imageData, w, h, cols, rows, cd, rd));
-  }, [imageData, imgDims, cols, rows, detectedGrid]);
-
-  // Resize names + adjs when tile count changes
+  // Resize names + adjs array when tile count changes
   useEffect(() => {
     const n = cols * rows;
     setNames(prev => prev.length === n ? prev :
@@ -295,24 +325,116 @@ export default function SpriteSheetSplitter() {
     );
   }, [cols, rows]);
 
-  // Draw grid overlay
+  // Draw divider lines on overlay
   useEffect(() => {
     const canvas = overlayCanvasRef.current;
     if (!canvas || !imgDims.w) return;
     const ctx = canvas.getContext('2d');
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.strokeStyle = 'rgba(255, 70, 70, 0.85)';
-    ctx.lineWidth = 1.5;
-    ctx.setLineDash([5, 4]);
-    for (let c = 1; c < cols; c++) {
-      const x = (c / cols) * canvas.width;
-      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, canvas.height); ctx.stroke();
+    const sx = canvas.width / imgDims.w;
+    const sy = canvas.height / imgDims.h;
+
+    const drawLine = (type, srcPos) => {
+      ctx.strokeStyle = 'rgba(255,80,60,0.9)';
+      ctx.lineWidth = 1.5;
+      ctx.setLineDash([4, 3]);
+      ctx.beginPath();
+      if (type === 'col') {
+        const x = srcPos * sx;
+        ctx.moveTo(x, 0); ctx.lineTo(x, canvas.height); ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.fillStyle = 'rgba(255,80,60,1)'; ctx.strokeStyle = '#fff'; ctx.lineWidth = 1;
+        ctx.beginPath(); ctx.arc(x, canvas.height / 2, 5, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+      } else {
+        const y = srcPos * sy;
+        ctx.moveTo(0, y); ctx.lineTo(canvas.width, y); ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.fillStyle = 'rgba(255,80,60,1)'; ctx.strokeStyle = '#fff'; ctx.lineWidth = 1;
+        ctx.beginPath(); ctx.arc(canvas.width / 2, y, 5, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+      }
+    };
+
+    colDivs.forEach(srcX => drawLine('col', srcX));
+    rowDivs.forEach(srcY => drawLine('row', srcY));
+  }, [colDivs, rowDivs, imgDims, dispW, dispH]);
+
+  const startDividerDrag = useCallback((type, idx, capDispW, capDispH, capImgDims) => {
+    const canvas = overlayCanvasRef.current;
+    const onMove = (e) => {
+      const canvasRect = canvas?.getBoundingClientRect();
+      if (!canvasRect) return;
+      if (type === 'col') {
+        const mx = Math.max(0, Math.min(e.clientX - canvasRect.left, capDispW));
+        const srcX = Math.round(mx * capImgDims.w / capDispW);
+        const cur = colDivsRef.current;
+        const lo = idx > 0 ? cur[idx - 1] + 8 : 8;
+        const hi = idx < cur.length - 1 ? cur[idx + 1] - 8 : capImgDims.w - 8;
+        setColDivs(prev => { const a = [...prev]; a[idx] = Math.max(lo, Math.min(hi, srcX)); return a; });
+      } else {
+        const my = Math.max(0, Math.min(e.clientY - canvasRect.top, capDispH));
+        const srcY = Math.round(my * capImgDims.h / capDispH);
+        const cur = rowDivsRef.current;
+        const lo = idx > 0 ? cur[idx - 1] + 8 : 8;
+        const hi = idx < cur.length - 1 ? cur[idx + 1] - 8 : capImgDims.h - 8;
+        setRowDivs(prev => { const a = [...prev]; a[idx] = Math.max(lo, Math.min(hi, srcY)); return a; });
+      }
+    };
+    const onUp = () => {
+      window.removeEventListener('mousemove', onMove);
+      window.removeEventListener('mouseup', onUp);
+    };
+    window.addEventListener('mousemove', onMove);
+    window.addEventListener('mouseup', onUp);
+  }, []);
+
+  const handleOverlayMouseDown = useCallback((e) => {
+    const canvas = overlayCanvasRef.current;
+    if (!canvas || !imgDims.w) return;
+    const canvasRect = canvas.getBoundingClientRect();
+    const mx = e.clientX - canvasRect.left;
+    const my = e.clientY - canvasRect.top;
+    const sx = dispW / imgDims.w;
+    const sy = dispH / imgDims.h;
+    for (let i = 0; i < colDivs.length; i++) {
+      if (Math.abs(mx - colDivs[i] * sx) <= 8) {
+        e.preventDefault();
+        startDividerDrag('col', i, dispW, dispH, imgDims);
+        return;
+      }
     }
-    for (let r = 1; r < rows; r++) {
-      const y = (r / rows) * canvas.height;
-      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(canvas.width, y); ctx.stroke();
+    for (let i = 0; i < rowDivs.length; i++) {
+      if (Math.abs(my - rowDivs[i] * sy) <= 8) {
+        e.preventDefault();
+        startDividerDrag('row', i, dispW, dispH, imgDims);
+        return;
+      }
     }
-  }, [cols, rows, imgDims]);
+  }, [colDivs, rowDivs, dispW, dispH, imgDims, startDividerDrag]);
+
+  const handleOverlayMouseMove = useCallback((e) => {
+    const canvas = overlayCanvasRef.current;
+    if (!canvas || !imgDims.w) return;
+    const canvasRect = canvas.getBoundingClientRect();
+    const mx = e.clientX - canvasRect.left;
+    const my = e.clientY - canvasRect.top;
+    const sx = dispW / imgDims.w;
+    const sy = dispH / imgDims.h;
+    let cursor = 'default';
+    for (const srcX of colDivs) {
+      if (Math.abs(mx - srcX * sx) <= 8) { cursor = 'col-resize'; break; }
+    }
+    if (cursor === 'default') {
+      for (const srcY of rowDivs) {
+        if (Math.abs(my - srcY * sy) <= 8) { cursor = 'row-resize'; break; }
+      }
+    }
+    canvas.style.cursor = cursor;
+  }, [colDivs, rowDivs, dispW, dispH, imgDims]);
+
+  const rects = useMemo(
+    () => imgDims.w ? buildRects(imgDims.w, imgDims.h, colDivs, rowDivs) : [],
+    [imgDims, colDivs, rowDivs]
+  );
 
   const handleDrop = useCallback((e) => {
     e.preventDefault(); setIsDragging(false);
@@ -321,7 +443,9 @@ export default function SpriteSheetSplitter() {
 
   const handleClear = useCallback(() => {
     if (blobUrlRef.current) { URL.revokeObjectURL(blobUrlRef.current); blobUrlRef.current = null; }
-    setImageSrc(null); setImageData(null); setRects([]); setDetectedGrid(null);
+    setImageSrc(null); setImageData(null); setDetectedGrid(null);
+    setColDivs([]); setRowDivs([]);
+    setImgDims({ w: 0, h: 0 });
   }, []);
 
   const downloadTile = useCallback((tile, name) => {
@@ -347,20 +471,36 @@ export default function SpriteSheetSplitter() {
     });
   }, [rects, adjs, imageData, imgDims, bgColor, tolerance, names, downloadTile]);
 
-  const resetNames = () => {
-    setNames(Array.from({ length: cols * rows }, (_, i) =>
-      `${baseName}_${String(i + 1).padStart(2, '0')}`
-    ));
+  const resetNames = () => setNames(
+    Array.from({ length: cols * rows }, (_, i) => `${baseName}_${String(i + 1).padStart(2, '0')}`)
+  );
+
+  const resetAdjs = () => setAdjs(
+    Array.from({ length: cols * rows }, () => ({ ...ZERO_ADJ }))
+  );
+
+  // Change cols/rows and redistribute dividers evenly
+  const changeCols = (delta) => {
+    const n = Math.max(1, cols + delta);
+    setCols(n);
+    if (imgDims.w) setColDivs(makeEvenDivs(n, imgDims.w));
   };
 
-  const resetAdjs = () => {
-    setAdjs(Array.from({ length: cols * rows }, () => ({ ...ZERO_ADJ })));
+  const changeRows = (delta) => {
+    const n = Math.max(1, rows + delta);
+    setRows(n);
+    if (imgDims.h) setRowDivs(makeEvenDivs(n, imgDims.h));
   };
 
-  const maxW = 640;
-  const scale = imgDims.w > maxW ? maxW / imgDims.w : 1;
-  const dispW = Math.round(imgDims.w * scale);
-  const dispH = Math.round(imgDims.h * scale);
+  const resetToDetected = () => {
+    if (!detectedGrid) return;
+    setCols(detectedGrid.cols);
+    setRows(detectedGrid.rows);
+    setColDivs(detectedGrid.colDivs.length === detectedGrid.cols - 1
+      ? detectedGrid.colDivs : makeEvenDivs(detectedGrid.cols, imgDims.w));
+    setRowDivs(detectedGrid.rowDivs.length === detectedGrid.rows - 1
+      ? detectedGrid.rowDivs : makeEvenDivs(detectedGrid.rows, imgDims.h));
+  };
 
   return (
     <main className={styles.page}>
@@ -379,22 +519,22 @@ export default function SpriteSheetSplitter() {
             <div className={styles.row}>
               <span className={styles.label}>Columns</span>
               <div className={styles.stepper}>
-                <button onClick={() => setCols(c => Math.max(1, c - 1))}>−</button>
+                <button onClick={() => changeCols(-1)}>−</button>
                 <span>{cols}</span>
-                <button onClick={() => setCols(c => c + 1)}>+</button>
+                <button onClick={() => changeCols(1)}>+</button>
               </div>
             </div>
             <div className={styles.row}>
               <span className={styles.label}>Rows</span>
               <div className={styles.stepper}>
-                <button onClick={() => setRows(r => Math.max(1, r - 1))}>−</button>
+                <button onClick={() => changeRows(-1)}>−</button>
                 <span>{rows}</span>
-                <button onClick={() => setRows(r => r + 1)}>+</button>
+                <button onClick={() => changeRows(1)}>+</button>
               </div>
             </div>
+            <p className={styles.hint}>Drag red lines on preview to fine-tune dividers.</p>
             {detectedGrid && (
-              <button className={styles.detectBtn}
-                onClick={() => { setCols(detectedGrid.cols); setRows(detectedGrid.rows); }}>
+              <button className={styles.detectBtn} onClick={resetToDetected}>
                 Reset to detected ({detectedGrid.cols}×{detectedGrid.rows})
               </button>
             )}
@@ -461,7 +601,14 @@ export default function SpriteSheetSplitter() {
             <div className={styles.previewArea}>
               <div className={styles.imageWrapper} style={{ width: dispW, height: dispH }}>
                 <img src={imageSrc} className={styles.previewImg} style={{ width: dispW, height: dispH }} alt="sprite sheet" />
-                <canvas ref={overlayCanvasRef} className={styles.overlay} width={dispW} height={dispH} />
+                <canvas
+                  ref={overlayCanvasRef}
+                  className={styles.overlay}
+                  width={dispW}
+                  height={dispH}
+                  onMouseDown={handleOverlayMouseDown}
+                  onMouseMove={handleOverlayMouseMove}
+                />
               </div>
               <button className={styles.clearBtn} onClick={handleClear}>× Clear</button>
             </div>
