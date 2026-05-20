@@ -1,12 +1,9 @@
 import { useState, useRef, useCallback } from 'react';
 import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
-import Underline from '@tiptap/extension-underline';
-import Table from '@tiptap/extension-table';
-import TableRow from '@tiptap/extension-table-row';
-import TableHeader from '@tiptap/extension-table-header';
-import TableCell from '@tiptap/extension-table-cell';
-import Image from '@tiptap/extension-image';
+import { Underline } from '@tiptap/extension-underline';
+import { Table, TableRow, TableHeader, TableCell } from '@tiptap/extension-table';
+import { Image } from '@tiptap/extension-image';
 import mammoth from 'mammoth';
 import EditorToolbar from './EditorToolbar';
 import styles from './DocxEditor.module.css';
@@ -58,9 +55,45 @@ export default function DocxEditor() {
   };
 
   const handleDownload = async () => {
-    const htmlToDocx = (await import('html-to-docx')).default;
-    const content = `<!DOCTYPE html><html><body>${editor.getHTML()}</body></html>`;
-    const blob = await htmlToDocx(content, null, { orientation: 'portrait', margins: { top: 720, right: 720, bottom: 720, left: 720 } });
+    const { Document, Packer, Paragraph, TextRun, HeadingLevel, UnderlineType } = await import('docx');
+
+    const getRuns = (el) => {
+      const runs = [];
+      const walk = (node, fmt = {}) => {
+        if (node.nodeType === 3) {
+          if (node.textContent) runs.push(new TextRun({ text: node.textContent, ...fmt }));
+        } else if (node.nodeType === 1) {
+          const t = node.tagName.toLowerCase();
+          const f = { ...fmt };
+          if (t === 'strong' || t === 'b') f.bold = true;
+          if (t === 'em' || t === 'i') f.italics = true;
+          if (t === 'u') f.underline = { type: UnderlineType.SINGLE };
+          node.childNodes.forEach(c => walk(c, f));
+        }
+      };
+      walk(el);
+      return runs;
+    };
+
+    const parsed = new DOMParser().parseFromString(editor.getHTML(), 'text/html');
+    const children = [];
+    for (const el of parsed.body.children) {
+      const tag = el.tagName.toLowerCase();
+      if (tag === 'h1') {
+        children.push(new Paragraph({ children: getRuns(el), heading: HeadingLevel.HEADING_1 }));
+      } else if (tag === 'h2') {
+        children.push(new Paragraph({ children: getRuns(el), heading: HeadingLevel.HEADING_2 }));
+      } else if (tag === 'ul' || tag === 'ol') {
+        for (const li of el.children) {
+          children.push(new Paragraph({ children: getRuns(li), bullet: { level: 0 } }));
+        }
+      } else {
+        children.push(new Paragraph({ children: getRuns(el) }));
+      }
+    }
+
+    const doc = new Document({ sections: [{ children }] });
+    const blob = await Packer.toBlob(doc);
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
