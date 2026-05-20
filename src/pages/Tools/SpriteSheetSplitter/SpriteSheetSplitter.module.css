@@ -373,6 +373,79 @@
 
 .tileDownload:hover { opacity: 0.8; }
 
+.adjToggle {
+  padding: 3px 6px;
+  font-size: var(--text-sm);
+  background: transparent;
+  border: var(--border-light) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-muted);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+
+.adjToggle:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.adjToggleActive {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  background: color-mix(in srgb, var(--color-primary) 10%, transparent);
+}
+
+.adjPanel {
+  border-top: var(--border-light) solid var(--color-border);
+  padding-top: var(--space-2);
+  margin-top: var(--space-1);
+}
+
+.adjGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-1);
+}
+
+.adjRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.adjLabel {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  width: 14px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.adjInput {
+  width: 52px;
+  padding: 2px 4px;
+  font-size: var(--text-xs, 10px);
+  font-variant-numeric: tabular-nums;
+  background: var(--color-bg);
+  border: var(--border-light) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  outline: none;
+  text-align: right;
+}
+
+.adjInput:focus {
+  border-color: var(--color-primary);
+}
+
+.adjHint {
+  font-size: var(--text-xs, 10px);
+  color: var(--color-muted);
+  line-height: 1.4;
+  margin-top: var(--space-1);
+}
+
 /* ── Back ── */
 .backWrapper {
   margin-top: var(--space-8);

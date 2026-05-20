@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback, useEffect } from 'react';
+import { useState, useRef, useCallback, useEffect, useMemo } from 'react';
 import { usePageTransition } from '../../../App';
 import { Routes } from '../../../constants/routes';
 import styles from './SpriteSheetSplitter.module.css';
@@ -104,7 +104,34 @@ function removeBackground(srcData, width, height, bgColor, tolerance) {
   return out;
 }
 
-function splitTiles(imageData, imgW, imgH, cols, rows, colDivs, rowDivs, bgColor, tolerance) {
+// Extract a tile from source image with per-edge adjustments applied.
+// adj = { t, r, b, l } in pixels; positive = expand that edge outward.
+function extractTile(sourceData, srcW, srcH, x0, y0, x1, y1, adj, bgColor, tolerance) {
+  const ax0 = Math.max(0, x0 - (adj?.l ?? 0));
+  const ax1 = Math.min(srcW, x1 + (adj?.r ?? 0));
+  const ay0 = Math.max(0, y0 - (adj?.t ?? 0));
+  const ay1 = Math.min(srcH, y1 + (adj?.b ?? 0));
+  const tw = ax1 - ax0, th = ay1 - ay0;
+  if (tw <= 0 || th <= 0) return { data: new Uint8ClampedArray(4), width: 1, height: 1 };
+
+  const tilePixels = new Uint8ClampedArray(tw * th * 4);
+  for (let ty = 0; ty < th; ty++) {
+    for (let tx = 0; tx < tw; tx++) {
+      const si = ((ay0 + ty) * srcW + (ax0 + tx)) * 4;
+      const di = (ty * tw + tx) * 4;
+      tilePixels[di]   = sourceData[si];
+      tilePixels[di+1] = sourceData[si+1];
+      tilePixels[di+2] = sourceData[si+2];
+      tilePixels[di+3] = sourceData[si+3];
+    }
+  }
+  const processed = tolerance > 0
+    ? removeBackground(tilePixels, tw, th, bgColor, tolerance)
+    : tilePixels;
+  return { data: processed, width: tw, height: th };
+}
+
+function splitTiles(imageData, imgW, imgH, cols, rows, colDivs, rowDivs) {
   const useDetectedCols = colDivs.length === cols - 1;
   const useDetectedRows = rowDivs.length === rows - 1;
   const colEdges = useDetectedCols
@@ -114,37 +141,29 @@ function splitTiles(imageData, imgW, imgH, cols, rows, colDivs, rowDivs, bgColor
     ? [0, ...rowDivs, imgH]
     : Array.from({ length: rows + 1 }, (_, i) => Math.round(i * imgH / rows));
 
-  const tiles = [];
+  const rects = [];
   for (let r = 0; r < rows; r++) {
     for (let c = 0; c < cols; c++) {
-      const x0 = colEdges[c], x1 = colEdges[c + 1];
-      const y0 = rowEdges[r], y1 = rowEdges[r + 1];
-      const tw = x1 - x0, th = y1 - y0;
-      const tilePixels = new Uint8ClampedArray(tw * th * 4);
-      for (let ty = 0; ty < th; ty++) {
-        for (let tx = 0; tx < tw; tx++) {
-          const si = ((y0 + ty) * imgW + (x0 + tx)) * 4;
-          const di = (ty * tw + tx) * 4;
-          tilePixels[di]   = imageData[si];
-          tilePixels[di+1] = imageData[si+1];
-          tilePixels[di+2] = imageData[si+2];
-          tilePixels[di+3] = imageData[si+3];
-        }
-      }
-      const processed = tolerance > 0
-        ? removeBackground(tilePixels, tw, th, bgColor, tolerance)
-        : tilePixels;
-      tiles.push({ data: processed, width: tw, height: th });
+      rects.push({ x0: colEdges[c], y0: rowEdges[r], x1: colEdges[c+1], y1: rowEdges[r+1] });
     }
   }
-  return tiles;
+  return rects;
 }
 
 // ── TileCard ───────────────────────────────────────────────────────────────────
 
-function TileCard({ tile, name, index, onNameChange, onDownload }) {
+const ZERO_ADJ = { t: 0, r: 0, b: 0, l: 0 };
+
+function TileCard({ sourceData, srcW, srcH, rect, bgColor, tolerance, name, index, adj, onAdjChange, onNameChange, onDownload }) {
   const canvasRef = useRef(null);
+  const [showAdj, setShowAdj] = useState(false);
   const maxPreview = 160;
+
+  const tile = useMemo(
+    () => extractTile(sourceData, srcW, srcH, rect.x0, rect.y0, rect.x1, rect.y1, adj, bgColor, tolerance),
+    [sourceData, srcW, srcH, rect, adj, bgColor, tolerance]
+  );
+
   const scale = Math.min(1, maxPreview / Math.max(tile.width, tile.height));
   const dw = Math.round(tile.width * scale);
   const dh = Math.round(tile.height * scale);
@@ -154,9 +173,13 @@ function TileCard({ tile, name, index, onNameChange, onDownload }) {
     if (!canvas) return;
     canvas.width = tile.width;
     canvas.height = tile.height;
-    const ctx = canvas.getContext('2d');
-    ctx.putImageData(new ImageData(tile.data, tile.width, tile.height), 0, 0);
+    canvas.getContext('2d').putImageData(new ImageData(tile.data, tile.width, tile.height), 0, 0);
   }, [tile]);
+
+  const setEdge = (edge, val) => {
+    const n = parseInt(val, 10);
+    onAdjChange({ ...adj, [edge]: isNaN(n) ? 0 : n });
+  };
 
   return (
     <div className={styles.tileCard}>
@@ -170,8 +193,36 @@ function TileCard({ tile, name, index, onNameChange, onDownload }) {
           onChange={e => onNameChange(e.target.value)}
           placeholder={`tile_${String(index + 1).padStart(2, '0')}`}
         />
-        <button className={styles.tileDownload} onClick={onDownload} title="Download this tile">↓</button>
+        <button
+          className={`${styles.adjToggle} ${showAdj ? styles.adjToggleActive : ''}`}
+          onClick={() => setShowAdj(v => !v)}
+          title="Adjust crop edges (expand/shrink per side in px)"
+        >⊡</button>
+        <button className={styles.tileDownload} onClick={() => onDownload(tile)} title="Download this tile">↓</button>
       </div>
+      {showAdj && (
+        <div className={styles.adjPanel}>
+          <div className={styles.adjGrid}>
+            <div className={styles.adjRow}>
+              <label className={styles.adjLabel}>↑</label>
+              <input className={styles.adjInput} type="number" value={adj.t} onChange={e => setEdge('t', e.target.value)} title="Expand top edge outward (px). Negative shrinks." />
+            </div>
+            <div className={styles.adjRow}>
+              <label className={styles.adjLabel}>↓</label>
+              <input className={styles.adjInput} type="number" value={adj.b} onChange={e => setEdge('b', e.target.value)} title="Expand bottom edge outward (px). Negative shrinks." />
+            </div>
+            <div className={styles.adjRow}>
+              <label className={styles.adjLabel}>←</label>
+              <input className={styles.adjInput} type="number" value={adj.l} onChange={e => setEdge('l', e.target.value)} title="Expand left edge outward (px). Negative shrinks." />
+            </div>
+            <div className={styles.adjRow}>
+              <label className={styles.adjLabel}>→</label>
+              <input className={styles.adjInput} type="number" value={adj.r} onChange={e => setEdge('r', e.target.value)} title="Expand right edge outward (px). Negative shrinks." />
+            </div>
+          </div>
+          <p className={styles.adjHint}>+ expands edge · − shrinks · affects crop &amp; export</p>
+        </div>
+      )}
     </div>
   );
 }
@@ -188,8 +239,9 @@ export default function SpriteSheetSplitter() {
   const [tolerance, setTolerance] = useState(30);
   const [bgColor, setBgColor] = useState([255, 255, 255]);
   const [detectedGrid, setDetectedGrid] = useState(null);
-  const [tiles, setTiles] = useState([]);
+  const [rects, setRects] = useState([]);
   const [names, setNames] = useState([]);
+  const [adjs, setAdjs] = useState([]);
   const [baseName, setBaseName] = useState('tile');
   const [isDragging, setIsDragging] = useState(false);
 
@@ -223,24 +275,24 @@ export default function SpriteSheetSplitter() {
     img.src = url;
   }, []);
 
-  // Reprocess tiles whenever relevant params change
+  // Recompute rects whenever grid params change
   useEffect(() => {
     if (!imageData || !imgDims.w) return;
     const { w, h } = imgDims;
     const cd = detectedGrid?.colDivs ?? [];
     const rd = detectedGrid?.rowDivs ?? [];
-    setTiles(splitTiles(imageData, w, h, cols, rows, cd, rd, bgColor, tolerance));
-  }, [imageData, imgDims, cols, rows, tolerance, bgColor, detectedGrid]);
+    setRects(splitTiles(imageData, w, h, cols, rows, cd, rd));
+  }, [imageData, imgDims, cols, rows, detectedGrid]);
 
-  // Resize names array when tile count changes, preserve existing names
+  // Resize names + adjs when tile count changes
   useEffect(() => {
-    setNames(prev => {
-      const n = cols * rows;
-      if (prev.length === n) return prev;
-      return Array.from({ length: n }, (_, i) =>
-        prev[i] ?? `${baseName}_${String(i + 1).padStart(2, '0')}`
-      );
-    });
+    const n = cols * rows;
+    setNames(prev => prev.length === n ? prev :
+      Array.from({ length: n }, (_, i) => prev[i] ?? `${baseName}_${String(i + 1).padStart(2, '0')}`)
+    );
+    setAdjs(prev => prev.length === n ? prev :
+      Array.from({ length: n }, (_, i) => prev[i] ?? { ...ZERO_ADJ })
+    );
   }, [cols, rows]);
 
   // Draw grid overlay
@@ -269,7 +321,7 @@ export default function SpriteSheetSplitter() {
 
   const handleClear = useCallback(() => {
     if (blobUrlRef.current) { URL.revokeObjectURL(blobUrlRef.current); blobUrlRef.current = null; }
-    setImageSrc(null); setImageData(null); setTiles([]); setDetectedGrid(null);
+    setImageSrc(null); setImageData(null); setRects([]); setDetectedGrid(null);
   }, []);
 
   const downloadTile = useCallback((tile, name) => {
@@ -286,15 +338,23 @@ export default function SpriteSheetSplitter() {
   }, []);
 
   const downloadAll = useCallback(() => {
-    tiles.forEach((tile, i) => {
-      setTimeout(() => downloadTile(tile, names[i] || `tile_${i + 1}`), i * 200);
+    if (!imageData) return;
+    rects.forEach((rect, i) => {
+      setTimeout(() => {
+        const tile = extractTile(imageData, imgDims.w, imgDims.h, rect.x0, rect.y0, rect.x1, rect.y1, adjs[i], bgColor, tolerance);
+        downloadTile(tile, names[i] || `tile_${i + 1}`);
+      }, i * 200);
     });
-  }, [tiles, names, downloadTile]);
+  }, [rects, adjs, imageData, imgDims, bgColor, tolerance, names, downloadTile]);
 
   const resetNames = () => {
     setNames(Array.from({ length: cols * rows }, (_, i) =>
       `${baseName}_${String(i + 1).padStart(2, '0')}`
     ));
+  };
+
+  const resetAdjs = () => {
+    setAdjs(Array.from({ length: cols * rows }, () => ({ ...ZERO_ADJ })));
   };
 
   const maxW = 640;
@@ -368,9 +428,15 @@ export default function SpriteSheetSplitter() {
             <p className={styles.hint}>Names editable per tile below. Click ↺ to reset all.</p>
           </fieldset>
 
-          {tiles.length > 0 && (
+          {rects.length > 0 && adjs.some(a => a.t || a.r || a.b || a.l) && (
+            <button className={styles.detectBtn} onClick={resetAdjs} title="Clear all per-tile crop adjustments">
+              Reset all crop offsets
+            </button>
+          )}
+
+          {rects.length > 0 && (
             <button className={styles.downloadAll} onClick={downloadAll}>
-              ↓ Download all ({tiles.length})
+              ↓ Download all ({rects.length})
             </button>
           )}
         </aside>
@@ -401,16 +467,23 @@ export default function SpriteSheetSplitter() {
             </div>
           )}
 
-          {tiles.length > 0 && (
+          {rects.length > 0 && imageData && (
             <div className={styles.tileGrid}>
-              {tiles.map((tile, i) => (
+              {rects.map((rect, i) => (
                 <TileCard
                   key={i}
-                  tile={tile}
+                  sourceData={imageData}
+                  srcW={imgDims.w}
+                  srcH={imgDims.h}
+                  rect={rect}
+                  bgColor={bgColor}
+                  tolerance={tolerance}
                   name={names[i] ?? ''}
                   index={i}
+                  adj={adjs[i] ?? ZERO_ADJ}
+                  onAdjChange={a => setAdjs(prev => { const n = [...prev]; n[i] = a; return n; })}
                   onNameChange={n => setNames(prev => { const a = [...prev]; a[i] = n; return a; })}
-                  onDownload={() => downloadTile(tile, names[i] || `tile_${i + 1}`)}
+                  onDownload={tile => downloadTile(tile, names[i] || `tile_${i + 1}`)}
                 />
               ))}
             </div>
