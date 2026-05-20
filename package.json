@@ -16,6 +16,7 @@
     "cache:clear": "rm -rf node_modules/.vite"
   },
   "dependencies": {
+    "@floating-ui/dom": "^1.7.6",
     "@react-three/drei": "^9.122.0",
     "@react-three/fiber": "^8.18.0",
     "@tiptap/extension-image": "^3.23.4",
