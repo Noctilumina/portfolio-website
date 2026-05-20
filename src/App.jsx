@@ -28,6 +28,7 @@ import PatternTiler from './pages/Tools/PatternTiler/PatternTiler';
 import AsciiArt from './pages/Tools/AsciiArt/AsciiArt';
 import CpRedLoadingScreen from './pages/Tools/CpRedLoadingScreen/CpRedLoadingScreen';
 import DocxEditor from './pages/Tools/DocxEditor/DocxEditor';
+import SpriteSheetSplitter from './pages/Tools/SpriteSheetSplitter/SpriteSheetSplitter';
 import styles from './App.module.css';
 
 const TransitionContext = createContext();
@@ -141,6 +142,7 @@ const router = createBrowserRouter(
         { path: Routes.TOOL_ASCII_ART, element: <AsciiArt /> },
         { path: Routes.TOOL_CPRED_LOADING, element: <CpRedLoadingScreen /> },
         { path: Routes.TOOL_DOCX_EDITOR, element: <DocxEditor /> },
+        { path: Routes.TOOL_SPRITE_SPLITTER, element: <SpriteSheetSplitter /> },
       ],
     },
   ],

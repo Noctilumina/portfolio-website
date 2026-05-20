@@ -282,5 +282,14 @@
     ],
     "githubUrl": "",
     "liveUrl": "https://noctilumina.github.io/MapMaker/"
+  },
+  {
+    "slug": "sprite-sheet-splitter",
+    "title": "Sprite Sheet Splitter",
+    "shortDescription": "Split AI-generated sprite sheets into individually named, transparent PNG tiles with auto grid detection.",
+    "techStack": ["React", "Canvas API"],
+    "categories": ["Image", "Utility"],
+    "route": "/tools/sprite-splitter",
+    "githubUrl": ""
   }
 ]

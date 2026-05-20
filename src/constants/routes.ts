@@ -27,6 +27,7 @@ export enum Routes {
   TOOL_ASCII_ART = '/tools/ascii-art',
   TOOL_CPRED_LOADING = '/tools/cpred-loading',
   TOOL_DOCX_EDITOR = '/tools/docx-editor',
+  TOOL_SPRITE_SPLITTER = '/tools/sprite-splitter',
 }
 
 /** Helper to build a parameterized route */
