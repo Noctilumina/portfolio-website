@@ -1,6 +1,7 @@
 import { useState, useRef, useCallback, useEffect, useMemo } from 'react';
 import { usePageTransition } from '../../../App';
 import { Routes } from '../../../constants/routes';
+import Button from '../../../components/Button/Button';
 import styles from './SpriteSheetSplitter.module.css';
 
 // ── Image processing utils ─────────────────────────────────────────────────────
@@ -536,17 +537,17 @@ export default function SpriteSheetSplitter() {
             <div className={styles.row}>
               <span className={styles.label}>Columns</span>
               <div className={styles.stepper}>
-                <button onClick={() => changeCols(-1)}>−</button>
+                <Button small onClick={() => changeCols(-1)}>−</Button>
                 <span>{cols}</span>
-                <button onClick={() => changeCols(1)}>+</button>
+                <Button small onClick={() => changeCols(1)}>+</Button>
               </div>
             </div>
             <div className={styles.row}>
               <span className={styles.label}>Rows</span>
               <div className={styles.stepper}>
-                <button onClick={() => changeRows(-1)}>−</button>
+                <Button small onClick={() => changeRows(-1)}>−</Button>
                 <span>{rows}</span>
-                <button onClick={() => changeRows(1)}>+</button>
+                <Button small onClick={() => changeRows(1)}>+</Button>
               </div>
             </div>
             <p className={styles.hint}>Drag red lines on preview to fine-tune dividers.</p>
