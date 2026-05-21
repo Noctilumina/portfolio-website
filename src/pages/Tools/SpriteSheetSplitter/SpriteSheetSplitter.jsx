@@ -95,12 +95,29 @@ function removeBackground(srcData, width, height, bgColor, tolerance) {
   for (let y = 1; y < height - 1; y++) { enqueue(0, y); enqueue(width - 1, y); }
 
   let qi = 0;
-  while (qi < queue.length) {
-    const x = queue[qi++], y = queue[qi++];
-    out[(y * width + x) * 4 + 3] = 0;
-    enqueue(x+1, y); enqueue(x-1, y);
-    enqueue(x, y+1); enqueue(x, y-1);
+  const runBFS = () => {
+    while (qi < queue.length) {
+      const x = queue[qi++], y = queue[qi++];
+      out[(y * width + x) * 4 + 3] = 0;
+      enqueue(x+1, y); enqueue(x-1, y);
+      enqueue(x, y+1); enqueue(x, y-1);
+    }
+  };
+  runBFS();
+
+  // Second pass: seed from any unvisited interior background pixel (e.g. inside a circle).
+  for (let y = 0; y < height; y++) {
+    for (let x = 0; x < width; x++) {
+      const idx = y * width + x;
+      if (visited[idx]) continue;
+      const pi = idx * 4;
+      if (out[pi + 3] === 0) continue;
+      if (colorDist(out[pi], out[pi+1], out[pi+2], bgR, bgG, bgB) > tolerance) continue;
+      enqueue(x, y);
+      runBFS();
+    }
   }
+
   return out;
 }
 
