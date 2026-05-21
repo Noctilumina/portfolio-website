@@ -563,9 +563,15 @@ export default function SpriteSheetSplitter() {
               <span className={styles.label}>Tolerance</span>
               <span className={styles.value}>{tolerance}</span>
             </div>
-            <input type="range" min={0} max={120} value={tolerance}
-              onChange={e => setTolerance(Number(e.target.value))}
-              className={styles.slider} />
+            <div className={styles.sliderWrap}>
+              <input type="range" min={0} max={441} value={tolerance}
+                onChange={e => setTolerance(Number(e.target.value))}
+                className={styles.slider} />
+              <div className={styles.sliderTick} style={{ left: `${(255/441)*100}%` }} title="Above 255 the tolerance exceeds the per-channel max. Colours very different from the background may start getting removed.">
+                <span className={styles.sliderTickLabel}>255</span>
+                <div className={styles.sliderTickLine} />
+              </div>
+            </div>
             <div className={styles.row} style={{ marginTop: 8 }}>
               <span className={styles.label}>Detected bg</span>
               <div className={styles.colorSwatch}
