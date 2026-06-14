@@ -1,4 +1,4 @@
-export const WIKI_VERSION = '1.2.9';
+export const WIKI_VERSION = '1.3.0';
 
 export const WIKI_CATEGORIES = [
   // Core mechanics (most basic first)
@@ -4530,6 +4530,48 @@ Rumors persist of "NET ghosts": memory scans of Netrunners trapped when the NET 
 
 See [[netrunning-overview]] for current Netrunning rules and [[fourth-corp-war]] for how the NET was destroyed.`,
     related: ['netrunning-overview', 'corp-zhirafa', 'fourth-corp-war', 'everyday-media'],
+  },
+  {
+    id: 'everyday-language',
+    title: 'Language & Translation',
+    category: 'Everyday Life',
+    content: `## Language & Translation in the Time of the Red
+
+The Cyberpunk world is loud, crowded, and multicultural. People from a hundred backgrounds share the same Combat Zone — and in 2045 there is **no slick neural translator** to smooth it over. You understand someone because you *learned* their language, because you both fall back on the street's common tongue, or because you brought someone who can.
+
+### Language is a Skill, not Chrome
+
+In CP Red, knowing a language is a **Skill**, not an implant. The **Language (specific)** Skill is INT-based, and you buy each language separately.
+
+| Skill Base | What it means |
+|---|---|
+| **10** | Get by on the street. You miss most of the slang. |
+| **14** | Fluent. Most people assume you grew up speaking it. |
+| **18** | Mastery. Slang, dialects, and all the situational ins and outs. |
+
+Every character speaks two languages for free at creation: their **Cultural Origin language** (see [[lifepath-cultural-origins]]) and **Streetslang** at level 4.
+
+### Streetslang: the Common Tongue
+
+**Streetslang** is Night City's living pidgin — a mongrel of dozens of languages plus homegrown slang, evolving faster than any screamsheet can track. Because nearly everyone on The Street has it, it's the default way strangers communicate when their native tongues don't match. If two Edgerunners share nothing else, they usually share Streetslang.
+
+### When You Can't Speak It
+
+No common language? The Dark Future's answer is old-fashioned:
+- **Learn it** — spend the IP, buy the Language Skill.
+- **Fall back on Streetslang** — crude, but it usually works.
+- **Hire a mouth** — a [[roles-overview|Fixer]]'s *Grease* covers knowing the language and social codes of a culture, and a flesh-and-blood **translator** is a perfectly normal thing to bring to a deal. A human interpreter is also a quiet status symbol: it says you can afford one.
+
+### "Isn't There an Implant for That?"
+
+**Not really — not in 2045.** There is **no translator cyberware** in the standard chrome catalogue. The Cyberaudio Suite can amplify hearing, record audio, run comms, and host an [[everyday-communications|Internal Agent]], but **none of it translates languages live.** This is a deliberate feature of the era: after the **DataKrash** wrecked the old NET, a lot of pre-war cloud-and-AI conveniences degraded or vanished, and reliable real-time translation went with them.
+
+> **GM Option — Prototype Translators (rare, high-end).** A handful of people have *something approaching* live translation, and it is firmly bleeding-edge, not street-standard. **Diplomats and C-suite corporate executives** are the likeliest owners, running a **rudimentary translator implant** — usually an Internal Agent loadout — that only covers a **handful of pre-loaded languages**, not the full range. They got it one of two ways: they're **opted into a corporate translation trial** (the corp gets their usage data; the exec gets a beta perk), or they're running a **jury-rigged personal build** cobbled together by a trusted Tech. Either way expect lag, dropped idioms, and outright mistranslations, and it leans on a network connection to do the heavy lifting.
+>
+> The genuinely powerful don't trust the beta: a **UN ambassador** keeps **personal (human) translators** on call rather than stake a treaty on a glitchy implant. Real-time, no-language-left-behind neural translation is a thing of the *future* — by 2077 it's everywhere, but in the Time of the Red it's a luxury prototype, not a fact of life.
+
+See [[everyday-communications]] for Agents and the Data Pool, [[stats-skills]] for how Skills work, and [[lifepath-cultural-origins]] for choosing your languages at creation.`,
+    related: ['everyday-communications', 'stats-skills', 'lifepath-cultural-origins', 'roles-overview'],
   },
   {
     id: 'everyday-transport',
