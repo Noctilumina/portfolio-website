@@ -1,4 +1,4 @@
-export const WIKI_VERSION = '1.3.0';
+export const WIKI_VERSION = '1.4.0';
 
 export const WIKI_CATEGORIES = [
   // Core mechanics (most basic first)
@@ -687,8 +687,117 @@ All forms can use the **Shared** move: **Recovery** (on Get Up, beat DV13 to not
 
 ### Taekwondo (Hard Form)
 - **Pressure Point Strike** (WILL 8+): 1 ROF; inflicts Spinal Injury. With -8, targets head for Brain Injury instead.
-- **Flying Kick** (MOVE 8+, moved 4+ m/yds): 1 ROF; fling 4 m/yds toward target, deal damage, target is Prone and knocked off open vehicles.`,
-    related: ['melee-combat', 'grappling', 'critical-injuries-body'],
+- **Flying Kick** (MOVE 8+, moved 4+ m/yds): 1 ROF; fling 4 m/yds toward target, deal damage, target is Prone and knocked off open vehicles.
+
+---
+**Each Form has its own detailed card:** [[ma-aikido|Aikido]] · [[ma-karate|Karate]] · [[ma-judo|Judo]] · [[ma-taekwondo|Taekwondo]].`,
+    related: ['melee-combat', 'grappling', 'critical-injuries-body', 'ma-aikido', 'ma-karate', 'ma-judo', 'ma-taekwondo'],
+  },
+  {
+    id: 'ma-aikido',
+    title: 'Martial Arts Form: Aikido',
+    category: 'Melee Combat',
+    content: `## Aikido — Soft Form
+
+*"This soft form practices sweeping hand and body techniques to lock and disarm opponents, turning their power against themselves."*
+
+A **soft form** built around control rather than destruction: Aikido strips an opponent of their weapon and pins them in place. Shines against armed enemies and anyone you've grappled.
+
+> **Form basics:** Martial Arts is DEX-linked, costs **x2 IP**, attacks at **ROF 2**, and **halves the target's armor** (round up). You need at least 1 point in *Aikido specifically* to use its moves. Full attack rules: [[martial-arts]].
+
+### Special Move — Disarming Combination
+**Requirement:** You hit the **same target** with a **Brawling Attack** *and* a **Martial Arts Attack** in the same Turn.
+**Effect:** Once per Turn, use the Martial Arts Special Move Resolution to beat **DV15**. On a success, **one object held in that target's hands** is either taken into your hands or knocked to the floor (your choice).
+
+### Special Move — Iron Grip
+**Requirement:** You have a target successfully **Grabbed** who isn't already affected by Iron Grip.
+**Effect:** Once per Turn, as an **Action**, beat **DV15**. On a success, that target makes all future attempts to escape the Grapple at an **additional −2**, and **cannot make Ranged Attacks** until the Grapple is broken.
+
+### Shared Move — Recovery
+Like every Form, Aikido can use **Recovery**: when you take the Get Up Action, beat **DV13** to stand **without spending the Action**.
+
+See [[martial-arts]] for general rules and [[grappling]] for Grab/Throw mechanics.`,
+    related: ['martial-arts', 'grappling', 'melee-combat'],
+  },
+  {
+    id: 'ma-karate',
+    title: 'Martial Arts Form: Karate',
+    category: 'Melee Combat',
+    content: `## Karate — Hard Form
+
+*"This hard form practices strikes and blows designed to break an opponent's bones or armor."*
+
+A **hard form** about raw damage and shredding defenses: Karate chews through worn armor and cracks the skeleton underneath. Strong against armored targets.
+
+> **Form basics:** DEX-linked, **x2 IP**, **ROF 2**, **halves armor**. Needs at least 1 point in *Karate*. See [[martial-arts]].
+
+### Special Move — Armor Breaking Combination
+**Requirement:** You hit the **same target** with a **Melee Weapon** *and* a **Martial Arts Attack** in the same Turn.
+**Effect:** Once per Turn, beat **DV15**. On a success, that target's worn armor is **ablated by an additional 2 points** (on top of any normal ablation).
+
+### Special Move — Bone Breaking Strike
+**Requirement:** **WILL 8+**.
+**Effect:** Instead of making your 2 Martial Arts Attacks, spend your Action on a **single strike** (Martial Arts Special Move Resolution) against a target in Melee range. On a hit, the target suffers the **Broken Ribs** [[critical-injuries-body|Critical Injury]] in addition to your normal Martial Arts damage.
+**Going for the head:** Take a **−8 to the Check** to target the head like an Aimed Shot. On a hit, the target instead suffers the **Cracked Skull** [[critical-injuries-head|Critical Injury]].
+
+### Shared Move — Recovery
+Beat **DV13** on a Get Up to stand without spending the Action.
+
+See [[martial-arts]], [[critical-injuries-body]], and [[critical-injuries-head]].`,
+    related: ['martial-arts', 'critical-injuries-body', 'critical-injuries-head'],
+  },
+  {
+    id: 'ma-judo',
+    title: 'Martial Arts Form: Judo',
+    category: 'Melee Combat',
+    content: `## Judo — Soft Form
+
+*"This soft form practices grabs, throws, and escapes."*
+
+A **soft form** of reversals: Judo turns an attacker's aggression into a throw and lets you break out of holds — with a snapped arm as a parting gift. Excellent for defensive fighters and anyone who keeps getting grabbed.
+
+> **Form basics:** DEX-linked, **x2 IP**, **ROF 2**, **halves armor**. Needs at least 1 point in *Judo*. See [[martial-arts]].
+
+### Special Move — Counter Throw
+**Requirement:** You **dodged all Melee Attacks** targeted at you since your last Turn.
+**Effect:** Once per Turn, as an **Action**, beat **DV15**. On a success, perform the **Throw Action** on one target in Melee range whose attack you dodged — this **throw cannot be avoided**, and you **don't need to be grappling them**.
+
+### Special Move — Grab Escape
+**Requirement:** You hit a target that is **grappling you** with **2 Melee Attacks** this Turn.
+**Effect:** Once per Turn, beat **DV15**. On a success, you are **no longer grappled** by that target, and they suffer the **Broken Arm** [[critical-injuries-body|Critical Injury]] (you choose the arm) if they didn't already have it.
+
+### Shared Move — Recovery
+Beat **DV13** on a Get Up to stand without spending the Action.
+
+See [[martial-arts]] and [[grappling]].`,
+    related: ['martial-arts', 'grappling', 'critical-injuries-body'],
+  },
+  {
+    id: 'ma-taekwondo',
+    title: 'Martial Arts Form: Taekwondo',
+    category: 'Melee Combat',
+    content: `## Taekwondo — Hard Form
+
+*"This hard form practices high kicks and precision strikes to break through defenses and cause severe injury through attacking pressure points."*
+
+A **hard form** of mobility and precision: Taekwondo strikes nerve clusters for crippling injuries and closes distance with a flying kick that knocks riders out of the saddle. Great for aggressive, mobile fighters.
+
+> **Form basics:** DEX-linked, **x2 IP**, **ROF 2**, **halves armor**. Needs at least 1 point in *Taekwondo*. See [[martial-arts]].
+
+### Special Move — Pressure Point Strike
+**Requirement:** **WILL 8+**.
+**Effect:** Instead of your 2 attacks, spend your Action on a **single strike** against a target in Melee range. On a hit, the target suffers the **Spinal Injury** [[critical-injuries-body|Critical Injury]] in addition to your Martial Arts damage.
+**Going for the head:** Take a **−8 to the Check** to target the head like an Aimed Shot. On a hit, the target instead suffers the **Brain Injury** [[critical-injuries-head|Critical Injury]].
+
+### Special Move — Flying Kick
+**Requirement:** **MOVE 8+**, and you must have already moved at least **4 m/yds** this Turn.
+**Effect:** Spend your Action and **all remaining Movement** to fling forward in a straight line toward a target up to **4 m/yds** away. On a hit, deal damage to the target's body as a Martial Arts Attack, knock the target **Prone**, and **remove them from any motorcycle or open-cabin vehicle** they were on or in.
+
+### Shared Move — Recovery
+Beat **DV13** on a Get Up to stand without spending the Action.
+
+See [[martial-arts]], [[critical-injuries-body]], and [[critical-injuries-head]].`,
+    related: ['martial-arts', 'critical-injuries-body', 'critical-injuries-head'],
   },
 
   // ============================================================

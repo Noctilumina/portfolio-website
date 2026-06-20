@@ -1,5 +1,68 @@
 [
   {
+    "slug": "mapmaker-tabs-and-polish",
+    "title": "Map Maker Update: Multiple Maps, a Random Stamp, and a Lot of Polish",
+    "titleNl": "Map Maker Update: Meerdere Maps, een Willekeurige Stempel en Veel Verbeteringen",
+    "date": "2026-05-20",
+    "tags": ["technical", "ttrpg"],
+    "excerpt": "Multi-map tabs, a random stamp tool, expandable sidebar, resizable panels, placement previews, and nine new rug assets.",
+    "excerptNl": "Meerdere maptabs, een willekeurige stempel, inklapbare zijbalk, aanpasbare panelen, plaatsingspreviews en negen nieuwe tapijten."
+  },
+  {
+    "slug": "mapmaker-new-tools",
+    "title": "Map Maker Update: Seven New Placement Tools (And a Prefab System)",
+    "titleNl": "Map Maker Update: Zeven Nieuwe Plaatsingstools (En een Prefab Systeem)",
+    "date": "2026-05-20",
+    "tags": ["technical", "ttrpg"],
+    "excerpt": "Rect-stamp, line-stamp, scatter brush, replace tool, auto-wall borders, door/window controls, a prefab system, and a measure tool.",
+    "excerptNl": "Rechthoekstempel, lijnstempel, scatter-kwast, vervangingstool, automatische wandranden, deur/raam-besturing, een prefab-systeem en een meetgereedschap."
+  },
+  {
+    "slug": "mapmaker-lighting-and-print",
+    "title": "Map Maker Update: Lights, Shadows, and Finally a Print Button",
+    "titleNl": "Map Maker Update: Verlichting, Schaduwen en Eindelijk een Printknop",
+    "date": "2026-05-20",
+    "tags": ["technical", "ttrpg"],
+    "excerpt": "The map maker now has a full lighting system with occlusion and a multi-page print dialog with configurable DPI and A4 support.",
+    "excerptNl": "De map maker heeft nu een volledig verlichtingssysteem met occlusie en een meerpagina-printdialoog met instelbaar DPI en A4-ondersteuning."
+  },
+  {
+    "slug": "sprite-sheet-splitter",
+    "title": "Sprite Sheet Splitter: Upload a Sheet, Get Individual Sprites",
+    "titleNl": "Sprite Sheet Splitter: Upload een Sheet, Krijg Losse Sprites",
+    "date": "2026-05-20",
+    "tags": ["technical", "tools"],
+    "excerpt": "Auto-detects the grid from a sprite sheet and splits it into individual sprites. Download separately or as a ZIP.",
+    "excerptNl": "Detecteert automatisch het raster van een sprite sheet en knipt die op in losse sprites. Download afzonderlijk of als ZIP."
+  },
+  {
+    "slug": "docx-editor",
+    "title": "DOCX Editor: Edit Word Files Without Installing Word",
+    "titleNl": "DOCX Editor: Word-Bestanden Bewerken Zonder Word te Installeren",
+    "date": "2026-05-20",
+    "tags": ["technical", "devtools"],
+    "excerpt": "Drop a .docx file, edit it in a full rich text editor in the browser, and download the result. No upload, no account.",
+    "excerptNl": "Sleep een .docx-bestand erin, bewerk het in een volwaardige rich text editor in de browser en download het resultaat. Geen upload, geen account."
+  },
+  {
+    "slug": "cpr-wiki-new-content",
+    "title": "New in the CPR Wiki: Homebrew Rules, Explosives, and Night City Slang",
+    "titleNl": "Nieuw in de CPR Wiki: Homebrew Regels, Explosieven en Night City Straattaal",
+    "date": "2026-05-20",
+    "tags": ["technical", "ttrpg", "cyberpunk-red"],
+    "excerpt": "The Iris homebrew expansion, an Explosives & Demolitions article, a Street Slang reference, and two new throwing weapons quickref cards.",
+    "excerptNl": "De Iris homebrew-uitbreiding, een Explosieven & Demolitie-artikel, een Straattaal-naslagwerk en twee nieuwe quickref-kaarten voor gooi-wapens."
+  },
+  {
+    "slug": "cpr-wiki-role-articles",
+    "title": "The CPR Wiki Now Has Actual Role Articles (Not Just Stat Blocks)",
+    "titleNl": "De CPR Wiki Heeft Nu Echte Role-Artikelen (Niet Alleen Stat Blokken)",
+    "date": "2026-05-20",
+    "tags": ["technical", "ttrpg", "cyberpunk-red"],
+    "excerpt": "All ten Cyberpunk Red roles now have full articles covering character, mechanics, table play, and worked examples.",
+    "excerptNl": "Alle tien Cyberpunk Red-roles hebben nu volledige artikelen over karakter, mechanica, hoe de role aan tafel werkt en concrete voorbeelden."
+  },
+  {
     "slug": "building-art-tools",
     "title": "Building a Collection of Art Tools (Because Why Not)",
     "titleNl": "Een Collectie Kunsttools Bouwen (Want Waarom Niet)",

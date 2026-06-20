@@ -1,5 +1,20 @@
 [
   {
+    "slug": "neography",
+    "title": "Neography",
+    "shortDescription": "Type a Dutch sentence and transform it into hand-built constructed scripts. Renders live and exports as SVG.",
+    "techStack": [
+      "React",
+      "SVG"
+    ],
+    "categories": [
+      "Art"
+    ],
+    "route": "/tools/neography",
+    "githubUrl": "",
+    "liveUrl": ""
+  },
+  {
     "slug": "docx-editor",
     "title": "DOCX Editor",
     "shortDescription": "Upload a Word document, edit it in the browser with full rich text support, and download the result.",

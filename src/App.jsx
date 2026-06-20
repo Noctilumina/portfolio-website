@@ -29,6 +29,8 @@ import AsciiArt from './pages/Tools/AsciiArt/AsciiArt';
 import CpRedLoadingScreen from './pages/Tools/CpRedLoadingScreen/CpRedLoadingScreen';
 import DocxEditor from './pages/Tools/DocxEditor/DocxEditor';
 import SpriteSheetSplitter from './pages/Tools/SpriteSheetSplitter/SpriteSheetSplitter';
+import Neography from './pages/Tools/Neography/Neography';
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import styles from './App.module.css';
 
 const TransitionContext = createContext();
@@ -118,6 +120,13 @@ const router = createBrowserRouter(
           </ThemeProvider>
         </I18nProvider>
       ),
+      errorElement: (
+        <I18nProvider>
+          <ThemeProvider>
+            <ErrorBoundary />
+          </ThemeProvider>
+        </I18nProvider>
+      ),
       children: [
         { path: Routes.HOME, element: <Home /> },
         { path: Routes.PROJECT, element: <ProjectDetail /> },
@@ -143,6 +152,7 @@ const router = createBrowserRouter(
         { path: Routes.TOOL_CPRED_LOADING, element: <CpRedLoadingScreen /> },
         { path: Routes.TOOL_DOCX_EDITOR, element: <DocxEditor /> },
         { path: Routes.TOOL_SPRITE_SPLITTER, element: <SpriteSheetSplitter /> },
+        { path: Routes.TOOL_NEOGRAPHY, element: <Neography /> },
       ],
     },
   ],
