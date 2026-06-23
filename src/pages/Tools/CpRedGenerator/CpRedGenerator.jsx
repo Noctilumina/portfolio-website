@@ -5,9 +5,10 @@ import { Routes } from '../../../constants/routes';
 import { generateEncounter, generateNPC, generateLoot, generateLocation, WEAPON_TYPES, LOOT_PROFILES, THREAT_LEVELS, rerollJunk } from './data';
 import { generateNightMarket, generateMidnightMarket } from './nightmarket';
 import { balanceEncounter, NPC_TEMPLATES } from './encounterbalancer';
+import { generateGig, generateVehicle, generateFixer, generateName } from './extraGenerators';
 import styles from './CpRedGenerator.module.css';
 
-const TABS = ['encounter', 'npc', 'loot', 'location', 'nightMarket', 'midnightMarket', 'balancer'];
+const TABS = ['encounter', 'npc', 'gig', 'fixer', 'vehicle', 'name', 'loot', 'location', 'nightMarket', 'midnightMarket', 'balancer'];
 
 function EncounterCard({ data }) {
   return (
@@ -18,8 +19,14 @@ function EncounterCard({ data }) {
       </div>
       <div className={styles.resultRow}><span className={styles.label}>Enemy</span><span>{data.enemy} x{data.count}</span></div>
       <p className={styles.flavorText}>{data.enemyDesc}</p>
+      {data.statBlock && (
+        <div className={styles.resultRow}><span className={styles.label}>Stat block</span><span>HP {data.statBlock.hp} · SP {data.statBlock.armorSP} · Init {data.statBlock.init} · Combat {data.statBlock.combatSkill} · {data.statBlock.weapon} ({data.statBlock.damage})</span></div>
+      )}
       <div className={styles.resultRow}><span className={styles.label}>Location</span><span>{data.location}</span></div>
+      {data.terrain && <div className={styles.resultRow}><span className={styles.label}>Terrain</span><span>{data.terrain}</span></div>}
+      {data.objective && <div className={styles.resultRow}><span className={styles.label}>Objective</span><span>{data.objective}</span></div>}
       <div className={styles.resultRow}><span className={styles.label}>Tactical</span><span>{data.tacticalNote}</span></div>
+      {data.complication && <div className={styles.hookBox}><span className={styles.label}>Complication</span><p>{data.complication}</p></div>}
     </div>
   );
 }
@@ -34,7 +41,17 @@ function NpcCard({ data }) {
       <p className={styles.flavorText}>{data.roleDesc}</p>
       <div className={styles.resultRow}><span className={styles.label}>Personality</span><span>{data.personality}</span></div>
       <div className={styles.resultRow}><span className={styles.label}>Motivation</span><span>{data.motivation}</span></div>
+      {data.backstory && <div className={styles.resultRow}><span className={styles.label}>Background</span><span>{data.backstory}</span></div>}
+      {data.combat && (
+        <div className={styles.resultRow}><span className={styles.label}>Combat</span><span>HP {data.combat.hp} · {data.combat.armor} (SP {data.combat.armorSP}) · {data.combat.weapon} ({data.combat.weaponDamage})</span></div>
+      )}
+      {data.skills && data.skills.length > 0 && (
+        <div className={styles.resultRow}><span className={styles.label}>Skills</span><span>{data.skills.map((s) => `${s.name} ${s.level}`).join(', ')}</span></div>
+      )}
       <div className={styles.resultRow}><span className={styles.label}>Cyberware</span><span>{data.cyberware.join(', ')}</span></div>
+      {data.gear && data.gear.length > 0 && (
+        <div className={styles.resultRow}><span className={styles.label}>Gear</span><span>{data.gear.map((g) => g.name).join(', ')}</span></div>
+      )}
       <div className={styles.statsGrid}>
         {Object.entries(data.stats).map(([stat, val]) => (
           <div key={stat} className={styles.statBox}>
@@ -43,6 +60,7 @@ function NpcCard({ data }) {
           </div>
         ))}
       </div>
+      {data.quote && <p className={`${styles.flavorText} ${styles.npcQuote}`}>{data.quote}</p>}
     </div>
   );
 }
@@ -109,6 +127,96 @@ function LocationCard({ data }) {
       <div className={styles.hookBox}><span className={styles.label}>Hook</span><p>{data.hook}</p></div>
     </div>
   );
+}
+
+function GigCard({ data }) {
+  return (
+    <div className={styles.resultCard}>
+      <div className={styles.resultHeader}>
+        <span className={styles.resultTitle}>{data.title}</span>
+        <span className={styles.badge}>{data.difficulty}</span>
+      </div>
+      <p className={styles.flavorText}>{data.hook}</p>
+      <div className={styles.resultRow}><span className={styles.label}>Job type</span><span>{data.jobType}</span></div>
+      <div className={styles.resultRow}><span className={styles.label}>Fixer</span><span>{data.fixer}</span></div>
+      <div className={styles.resultRow}><span className={styles.label}>Client</span><span>{data.client}</span></div>
+      <div className={styles.resultRow}><span className={styles.label}>Target</span><span>{data.target}</span></div>
+      <div className={styles.resultRow}><span className={styles.label}>Location</span><span>{data.location}</span></div>
+      <div className={styles.resultRow}><span className={styles.label}>Payout</span><span className={styles.eddies}>{data.payout.toLocaleString()} eb</span></div>
+      <div className={styles.resultRow}><span className={styles.label}>Complication</span><span>{data.complication}</span></div>
+      <div className={styles.hookBox}><span className={styles.label}>Twist</span><p>{data.twist}</p></div>
+    </div>
+  );
+}
+
+function VehicleCard({ data }) {
+  return (
+    <div className={styles.resultCard}>
+      <div className={styles.resultHeader}>
+        <span className={styles.resultTitle}>{data.name}</span>
+        <span className={styles.badge}>{data.klass}</span>
+      </div>
+      <p className={styles.flavorText}>{data.flavor}</p>
+      <div className={styles.statsGrid}>
+        <div className={styles.statBox}><span className={styles.statLabel}>SDP</span><span className={styles.statVal}>{data.sdp}</span></div>
+        <div className={styles.statBox}><span className={styles.statLabel}>SP</span><span className={styles.statVal}>{data.sp}</span></div>
+        <div className={styles.statBox}><span className={styles.statLabel}>SEATS</span><span className={styles.statVal}>{data.seats}</span></div>
+      </div>
+      <div className={styles.resultRow}><span className={styles.label}>Speed</span><span>{data.speed}</span></div>
+      <div className={styles.resultRow}><span className={styles.label}>Mod</span><span>{data.mod}</span></div>
+    </div>
+  );
+}
+
+function FixerCard({ data }) {
+  return (
+    <div className={styles.resultCard}>
+      <div className={styles.resultHeader}>
+        <span className={styles.resultTitle}>{data.name}</span>
+        <span className={styles.badge}>{data.attitude}</span>
+      </div>
+      {data.realName && <p className={styles.flavorText}>a.k.a. {data.realName}</p>}
+      <div className={styles.resultRow}><span className={styles.label}>Specialty</span><span>{data.specialty}</span></div>
+      <div className={styles.resultRow}><span className={styles.label}>Territory</span><span>{data.territory}</span></div>
+      <div className={styles.resultRow}><span className={styles.label}>Price</span><span>{data.price}</span></div>
+      <div className={styles.resultRow}><span className={styles.label}>Known for</span><span>{data.reputation}</span></div>
+      <div className={styles.resultRow}><span className={styles.label}>Signature deal</span><span>{data.signatureOffer}</span></div>
+      <div className={styles.hookBox}><span className={styles.label}>Quirk</span><p>{data.quirk}</p></div>
+    </div>
+  );
+}
+
+function NameCard({ data }) {
+  return (
+    <div className={styles.resultCard}>
+      <div className={styles.resultHeader}>
+        <span className={styles.resultTitle}>&ldquo;{data.handle}&rdquo;</span>
+        <span className={styles.badge}>{data.vibe}</span>
+      </div>
+      <div className={styles.resultRow}><span className={styles.label}>Full name</span><span>{data.fullName}</span></div>
+    </div>
+  );
+}
+
+// Flatten a generated result into copy/print-friendly text
+function resultToText(data) {
+  const fmtItem = (x) => {
+    if (x && typeof x === 'object') {
+      return x.name ? (x.level ? `${x.name} ${x.level}` : x.name) : Object.values(x).join(' ');
+    }
+    return String(x);
+  };
+  const fmtVal = (v) => {
+    if (Array.isArray(v)) return v.map(fmtItem).join(', ');
+    if (v && typeof v === 'object') {
+      return Object.entries(v).map(([k, val]) => `${k} ${val}`).join(', ');
+    }
+    return String(v);
+  };
+  return Object.entries(data)
+    .filter(([, v]) => v !== null && v !== undefined && v !== '')
+    .map(([k, v]) => `${k}: ${fmtVal(v)}`)
+    .join('\n');
 }
 
 function NightMarketCard({ data }) {
@@ -246,9 +354,14 @@ export default function CpRedGenerator() {
   const [lootProfile, setLootProfile] = useState('random');
   const [maxEddies, setMaxEddies] = useState('');
   const [qualityFilter, setQualityFilter] = useState('');
+  const [copiedIdx, setCopiedIdx] = useState(null);
   const [results, setResults] = useState({
     encounter: [generateEncounter()],
     npc: [generateNPC()],
+    gig: [generateGig()],
+    fixer: [generateFixer()],
+    vehicle: [generateVehicle()],
+    name: [generateName()],
     loot: [generateLoot()],
     location: [generateLocation()],
     nightMarket: [generateNightMarket()],
@@ -259,6 +372,10 @@ export default function CpRedGenerator() {
     const generators = {
       encounter: () => generateEncounter({ threat: threatFilter || undefined }),
       npc: () => generateNPC(),
+      gig: () => generateGig(),
+      fixer: () => generateFixer(),
+      vehicle: () => generateVehicle(),
+      name: () => generateName(),
       loot: () => generateLoot({ weaponType: weaponFilter || undefined, maxEddies: maxEddies || undefined, quality: qualityFilter || undefined, profile: lootProfile }),
       location: () => generateLocation(),
       nightMarket: () => generateNightMarket(),
@@ -270,9 +387,33 @@ export default function CpRedGenerator() {
     }));
   };
 
+  const handleCopy = (item, idx) => {
+    const text = resultToText(item);
+    if (navigator.clipboard) navigator.clipboard.writeText(text).catch(() => {});
+    setCopiedIdx(idx);
+    setTimeout(() => setCopiedIdx((c) => (c === idx ? null : c)), 1500);
+  };
+
+  const handlePrint = () => {
+    const items = results[activeTab] || [];
+    const esc = (s) => s.replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]));
+    const body = items.map((it) => `<pre>${esc(resultToText(it))}</pre>`).join('');
+    const html = `<!doctype html><html><head><title>Cyberpunk RED — ${activeTab}</title><style>body{font-family:'Courier New',monospace;padding:32px;color:#111;}h1{text-transform:uppercase;letter-spacing:1px;}pre{white-space:pre-wrap;border:2px solid #000;padding:12px 16px;margin:0 0 16px;}</style></head><body><h1>Cyberpunk RED — ${activeTab} sheet</h1>${body}</body></html>`;
+    const w = window.open('', '_blank');
+    if (!w) return;
+    w.document.write(html);
+    w.document.close();
+    w.focus();
+    w.print();
+  };
+
   const tabLabels = {
     encounter: t('cpred.encounters'),
     npc: t('cpred.npcs'),
+    gig: 'Gigs',
+    fixer: 'Fixers',
+    vehicle: 'Vehicles',
+    name: 'Names',
     loot: t('cpred.loot'),
     location: t('cpred.locations'),
     nightMarket: t('cpred.nightMarket'),
@@ -280,7 +421,7 @@ export default function CpRedGenerator() {
     balancer: t('cpred.balancer'),
   };
 
-  const CardComponent = { encounter: EncounterCard, npc: NpcCard, loot: LootCard, location: LocationCard, nightMarket: NightMarketCard, midnightMarket: NightMarketCard };
+  const CardComponent = { encounter: EncounterCard, npc: NpcCard, gig: GigCard, fixer: FixerCard, vehicle: VehicleCard, name: NameCard, loot: LootCard, location: LocationCard, nightMarket: NightMarketCard, midnightMarket: NightMarketCard };
   const ActiveCard = CardComponent[activeTab];
 
   return (
@@ -344,14 +485,22 @@ export default function CpRedGenerator() {
       )}
 
       {activeTab !== 'balancer' && (
-        <button className={styles.rollBtn} onClick={rollNew}>
-          {t('cpred.roll')}
-        </button>
+        <div className={styles.actionRow}>
+          <button className={styles.rollBtn} onClick={rollNew}>
+            {t('cpred.roll')}
+          </button>
+          <button className={styles.printBtn} onClick={handlePrint} title="Open a printable session sheet of these results">
+            Print sheet
+          </button>
+        </div>
       )}
 
       {activeTab !== 'balancer' && <div className={styles.results}>
         {results[activeTab].map((item, i) => (
           <div key={i} className={i === 0 ? styles.newest : styles.older}>
+            <button className={styles.copyBtn} onClick={() => handleCopy(item, i)} title="Copy to clipboard">
+              {copiedIdx === i ? '✓ copied' : 'copy'}
+            </button>
             <ActiveCard data={item} />
           </div>
         ))}

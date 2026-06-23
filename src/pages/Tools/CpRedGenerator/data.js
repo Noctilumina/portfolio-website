@@ -801,30 +801,127 @@ export const LOOT_PROFILES = [
 
 export const THREAT_LEVELS = [...new Set(ENEMY_TYPES.map(e => e.threat))];
 
+// ── Depth & cross-linking tables ──
+const ARMOR_TYPES = [
+  { name: 'Leathers', sp: 4 }, { name: 'Kevlar®', sp: 7 }, { name: 'Bodyweight Suit', sp: 7 },
+  { name: 'Light Armorjack', sp: 11 }, { name: 'Medium Armorjack', sp: 12 },
+  { name: 'Heavy Armorjack', sp: 13 }, { name: 'Flak (MetalGear)', sp: 18 },
+];
+const SKILL_POOL = [
+  'Handgun', 'Shoulder Arms', 'Heavy Weapons', 'Autofire', 'Melee Weapon', 'Brawling', 'Martial Arts',
+  'Evasion', 'Stealth', 'Athletics', 'Perception', 'Streetwise', 'Persuasion', 'Conversation',
+  'Tracking', 'Concentration', 'Local Expert', 'Drive Land Vehicle', 'First Aid', 'Interface',
+  'Cybertech', 'Electronics/Security Tech', 'Pick Lock', 'Demolitions', 'Trading',
+];
+const ROLE_SKILLS = {
+  Solo: ['Handgun', 'Shoulder Arms', 'Melee Weapon', 'Evasion'], Netrunner: ['Interface', 'Electronics/Security Tech', 'Stealth'],
+  Fixer: ['Trading', 'Persuasion', 'Streetwise'], Tech: ['Cybertech', 'Electronics/Security Tech', 'Demolitions'],
+  Medtech: ['First Aid', 'Concentration', 'Perception'], Media: ['Conversation', 'Perception', 'Persuasion'],
+  Nomad: ['Drive Land Vehicle', 'Handgun', 'Tracking'], Exec: ['Persuasion', 'Trading', 'Conversation'],
+  Lawman: ['Handgun', 'Perception', 'Tracking'], Rockerboy: ['Persuasion', 'Conversation', 'Brawling'],
+};
+const NPC_QUOTES = [
+  '"Eddies up front. Always."', '"You didn\'t see me here."', '"Everybody\'s got a price, choom."',
+  '"I don\'t do charity. I do business."', '"Flatline or payday — your call."', '"Trust is a luxury I can\'t afford."',
+  '"Chrome don\'t lie. People do."', '"Run if you\'re smart. Stay if you\'re stupid."', '"This city eats dreamers for breakfast."',
+  '"I\'ve buried better than you."', '"Keep your hands where my optics can see them."', '"Nothing personal. It\'s just the gig."',
+  '"You want clean? Wrong part of town."', '"I owe nobody, and nobody owes me."', '"Talk fast. My patience runs on a meter."',
+  '"Last crew that crossed me? Trauma Team couldn\'t even ID the bodies."', '"Stay frosty."', '"I\'m the reason you\'re still breathing."',
+];
+const BACKSTORY_HOOKS = [
+  'Burned by their last corporate handler and out for payback.', 'Owes a dangerous fixer a favour they can never repay.',
+  'Ex-MAX-TAC, quietly hiding from their old unit.', 'Lost everything in the 4th Corporate War and never recovered.',
+  'Raising a younger sibling on stolen eddies.', 'Carrying experimental cyberware they don\'t fully understand.',
+  'Sold out their old crew and lives with the ghosts.', 'Climbing the gang ladder one body at a time.',
+  'Saving up to leave Night City for good — supposedly.', 'Hunting the ripperdoc who botched their last install.',
+  'Believes a braindance they saw was a prophecy.', 'Secretly informing for the NCPD to stay out of prison.',
+  'Last survivor of a nomad pack wiped out on the Badlands.', 'Trying to recover a data shard that could topple a corp.',
+  'Addicted to the rush of cyberware and one install from going psycho.', 'Built their rep on a single legendary job nobody can verify.',
+];
+const TERRAIN_FEATURES = [
+  'Tight cover everywhere — overturned cars and dumpsters', 'Wide open killing ground with almost no cover',
+  'Multi-level — catwalks and stairs overhead', 'Pitch dark; light sources are scarce', 'Flooded floor, knee-deep and slick',
+  'Crowded with civilians who panic and scatter', 'Flickering neon and dense smoke cut visibility', 'Narrow chokepoints force single file',
+  'Explosive hazards — fuel drums and gas lines', 'Rain-slick rooftops with lethal drops', 'Tangle of market stalls and hanging wires',
+  'Reinforced doors and security shutters everywhere',
+];
+const ENCOUNTER_OBJECTIVES = [
+  'Survive and escape — the enemy just wants you dead', 'Protect a VIP who refuses to take cover',
+  'Grab the package and get out before reinforcements arrive', 'Capture a target alive — no easy kills',
+  'Hold the position for a set number of rounds', 'Destroy or disable a specific device', 'Stop a hostage from being executed',
+  'Extract data from a terminal under fire', 'Buy time for an ally to finish a task', 'Pursue a fleeing target through the chaos',
+];
+const ENCOUNTER_COMPLICATIONS = [
+  'A third faction arrives mid-fight with their own agenda', 'NCPD response is inbound — clock is ticking',
+  'The crew\'s client is secretly working with the enemy', 'A wounded enemy triggers a deadman switch',
+  'Cyberware malfunction at the worst possible moment', 'Civilians are caught directly in the crossfire',
+  'The enemy has a netrunner attacking from cover', 'Reinforcements double the enemy count after a few rounds',
+  'The objective turns out to be a trap', 'A Trauma Team AV drops in to extract one of the enemies',
+  'The building starts collapsing or catches fire', 'An enemy reveals milspec hardware nobody expected',
+];
+// threat tier → representative mook stat block ranges
+const TIER_STATS = {
+  'Low-Medium': { hp: [25, 35], sp: [7, 11], skill: [8, 12], init: [8, 12] },
+  Medium: { hp: [30, 40], sp: [11, 12], skill: [10, 14], init: [10, 14] },
+  'Medium-High': { hp: [35, 45], sp: [12, 13], skill: [12, 15], init: [12, 16] },
+  High: { hp: [40, 50], sp: [13, 15], skill: [13, 16], init: [14, 18] },
+  'Very High': { hp: [45, 60], sp: [15, 18], skill: [14, 17], init: [16, 20] },
+  Extreme: { hp: [55, 70], sp: [18, 20], skill: [15, 18], init: [18, 24] },
+};
+const calcHP = (body, will) => 10 + 5 * Math.ceil((body + will) / 2);
+
 export function generateEncounter({ threat } = {}) {
   const pool = threat ? ENEMY_TYPES.filter(e => e.threat === threat) : ENEMY_TYPES;
   const enemy = pick(pool.length ? pool : ENEMY_TYPES);
+  const tier = TIER_STATS[enemy.threat] || TIER_STATS.Medium;
+  const weapon = pick(WEAPONS);
   return {
     enemy: enemy.name, enemyDesc: enemy.desc, threat: enemy.threat,
     count: roll(2, 8),
     scenario: pick(ENCOUNTER_SCENARIOS),
     tacticalNote: pick(TACTICAL_NOTES),
     location: `${pick(DISTRICTS)} — ${pick(VENUE_TYPES).toLowerCase()}`,
+    statBlock: {
+      hp: roll(tier.hp[0], tier.hp[1]),
+      armorSP: roll(tier.sp[0], tier.sp[1]),
+      weapon: weapon.name, damage: weapon.damage,
+      combatSkill: roll(tier.skill[0], tier.skill[1]),
+      init: roll(tier.init[0], tier.init[1]),
+    },
+    terrain: pick(TERRAIN_FEATURES),
+    objective: pick(ENCOUNTER_OBJECTIVES),
+    complication: pick(ENCOUNTER_COMPLICATIONS),
   };
 }
 
 export function generateNPC() {
   const role = pick(ROLES);
+  const stats = {
+    INT: roll(3, 8), REF: roll(3, 8), DEX: roll(3, 8), TECH: roll(3, 8), COOL: roll(3, 8),
+    WILL: roll(3, 8), LUCK: roll(3, 8), MOVE: roll(3, 8), BODY: roll(3, 8), EMP: roll(2, 8),
+  };
+  const armor = pick(ARMOR_TYPES);
+  const weapon = pick(WEAPONS);
+  const signature = ROLE_SKILLS[role.name] || [];
+  const extra = pickN(SKILL_POOL.filter(s => !signature.includes(s)), roll(2, 3));
+  const skills = [...signature, ...extra].map(name => ({ name, level: roll(4, 14) }))
+    .sort((a, b) => b.level - a.level);
   return {
     name: `${pick(FIRST_NAMES)} "${pick(HANDLES)}" ${pick(LAST_NAMES)}`,
     role: role.name, roleDesc: role.desc,
     personality: pick(PERSONALITY),
     motivation: pick(MOTIVATIONS),
+    backstory: pick(BACKSTORY_HOOKS),
+    quote: pick(NPC_QUOTES),
     cyberware: pickN(CYBERWARE, roll(1, 4)),
-    stats: {
-      INT: roll(3, 8), REF: roll(3, 8), DEX: roll(3, 8), TECH: roll(3, 8), COOL: roll(3, 8),
-      WILL: roll(3, 8), LUCK: roll(3, 8), MOVE: roll(3, 8), BODY: roll(3, 8), EMP: roll(2, 8),
+    stats,
+    combat: {
+      hp: calcHP(stats.BODY, stats.WILL),
+      armor: armor.name, armorSP: armor.sp,
+      weapon: weapon.name, weaponDamage: weapon.damage,
     },
+    skills,
+    gear: pickN(GEAR_ITEMS, roll(1, 3)),
   };
 }
 
