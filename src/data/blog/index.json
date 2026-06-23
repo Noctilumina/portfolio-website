@@ -1,5 +1,41 @@
 [
   {
+    "slug": "new-art-tools",
+    "title": "Four New Art Tools: Flow Fields, Mesh Gradients, Dithering and Blobs",
+    "titleNl": "Vier Nieuwe Kunsttools: Flow Fields, Mesh Gradients, Dithering en Blobs",
+    "date": "2026-06-23",
+    "tags": ["technical", "art", "tools"],
+    "excerpt": "A flow field generator, a mesh gradient maker, an image ditherer, and an organic SVG blob generator. All client-side, all exportable.",
+    "excerptNl": "Een flow field generator, een mesh gradient maker, een afbeelding-ditherer en een organische SVG-blob-generator. Allemaal client-side, allemaal exporteerbaar."
+  },
+  {
+    "slug": "new-devtools",
+    "title": "Four Small DevTools I Kept Wishing I Had",
+    "titleNl": "Vier Kleine DevTools Die Ik Steeds Miste",
+    "date": "2026-06-23",
+    "tags": ["technical", "devtools", "tools"],
+    "excerpt": "A cubic-bezier easing editor, a live regex tester, a QR code generator, and a WCAG contrast checker.",
+    "excerptNl": "Een cubic-bezier easing-editor, een live regex-tester, een QR-code-generator en een WCAG-contrastchecker."
+  },
+  {
+    "slug": "new-ttrpg-tools",
+    "title": "Two Tools for the Cyberpunk RED Table",
+    "titleNl": "Twee Tools voor de Cyberpunk RED Tafel",
+    "date": "2026-06-23",
+    "tags": ["technical", "ttrpg", "cyberpunk-red"],
+    "excerpt": "A dice roller with a Cyberpunk RED check mode and initiative tracker, plus a procedural Night City screamsheet generator you can print.",
+    "excerptNl": "Een dobbelsteenroller met Cyberpunk RED check-modus en initiatief-tracker, plus een procedurele Night City screamsheet-generator die je kunt printen."
+  },
+  {
+    "slug": "cpred-generator-upgrade",
+    "title": "The Cyberpunk RED Generator Got a Big Upgrade",
+    "titleNl": "De Cyberpunk RED Generator Heeft een Grote Upgrade Gekregen",
+    "date": "2026-06-23",
+    "tags": ["technical", "ttrpg", "cyberpunk-red"],
+    "excerpt": "Deeper NPCs and encounters with real stat blocks, four new generators (gigs, fixers, vehicles, names), and copy and print on every result.",
+    "excerptNl": "Diepere NPC's en ontmoetingen met echte statblokken, vier nieuwe generatoren (gigs, fixers, voertuigen, namen) en kopieer- en printknoppen op elk resultaat."
+  },
+  {
     "slug": "mapmaker-tabs-and-polish",
     "title": "Map Maker Update: Multiple Maps, a Random Stamp, and a Lot of Polish",
     "titleNl": "Map Maker Update: Meerdere Maps, een Willekeurige Stempel en Veel Verbeteringen",
