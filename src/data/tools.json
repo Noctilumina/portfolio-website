@@ -1,5 +1,142 @@
 [
   {
+    "slug": "flow-field",
+    "title": "Flow Field Generator",
+    "shortDescription": "Paint flowing generative art driven by a noise field. Tweak particles, palette and flow, then export PNG or SVG.",
+    "techStack": [
+      "React",
+      "Canvas"
+    ],
+    "categories": [
+      "Art"
+    ],
+    "route": "/tools/flow-field",
+    "githubUrl": "",
+    "liveUrl": ""
+  },
+  {
+    "slug": "dither",
+    "title": "Image Ditherer",
+    "shortDescription": "Turn any image into dithered pixel art with Floyd–Steinberg and ordered Bayer algorithms, retro palettes and downscaling.",
+    "techStack": [
+      "React",
+      "Canvas"
+    ],
+    "categories": [
+      "Art",
+      "Image"
+    ],
+    "route": "/tools/dither",
+    "githubUrl": "",
+    "liveUrl": ""
+  },
+  {
+    "slug": "svg-blob",
+    "title": "SVG Blob Generator",
+    "shortDescription": "Generate smooth organic blob shapes. Copy the SVG, the path, or a CSS clip-path, or download as a file.",
+    "techStack": [
+      "React",
+      "SVG"
+    ],
+    "categories": [
+      "Art",
+      "DevTools"
+    ],
+    "route": "/tools/svg-blob",
+    "githubUrl": "",
+    "liveUrl": ""
+  },
+  {
+    "slug": "cubic-bezier",
+    "title": "Cubic Bezier Editor",
+    "shortDescription": "Drag an easing curve, preview it live, and copy the cubic-bezier() timing function for your CSS transitions.",
+    "techStack": [
+      "React",
+      "SVG"
+    ],
+    "categories": [
+      "DevTools"
+    ],
+    "route": "/tools/cubic-bezier",
+    "githubUrl": "",
+    "liveUrl": ""
+  },
+  {
+    "slug": "regex-tester",
+    "title": "Regex Tester",
+    "shortDescription": "Test regular expressions live with match highlighting, capture groups, a replace preview and a token cheatsheet.",
+    "techStack": [
+      "React"
+    ],
+    "categories": [
+      "DevTools"
+    ],
+    "route": "/tools/regex-tester",
+    "githubUrl": "",
+    "liveUrl": ""
+  },
+  {
+    "slug": "qr-code",
+    "title": "QR Code Generator",
+    "shortDescription": "Turn text or a URL into a QR code with custom colors and error correction, then download it as SVG or PNG.",
+    "techStack": [
+      "React",
+      "qrcode"
+    ],
+    "categories": [
+      "DevTools",
+      "Utility"
+    ],
+    "route": "/tools/qr-code",
+    "githubUrl": "",
+    "liveUrl": ""
+  },
+  {
+    "slug": "contrast-checker",
+    "title": "Contrast Checker",
+    "shortDescription": "Check colour contrast against WCAG AA and AAA, preview real text, and get a suggested passing colour.",
+    "techStack": [
+      "React"
+    ],
+    "categories": [
+      "DevTools",
+      "Art"
+    ],
+    "route": "/tools/contrast-checker",
+    "githubUrl": "",
+    "liveUrl": ""
+  },
+  {
+    "slug": "dice-roller",
+    "title": "Dice Roller & Initiative",
+    "shortDescription": "Roll any dice expression with Cyberpunk RED exploding d10s, plus a built-in initiative tracker for the table.",
+    "techStack": [
+      "React"
+    ],
+    "categories": [
+      "TTRPG"
+    ],
+    "route": "/tools/dice-roller",
+    "githubUrl": "",
+    "liveUrl": ""
+  },
+  {
+    "slug": "screamsheet",
+    "title": "Screamsheet Generator",
+    "shortDescription": "Generate a printable Night City tabloid front page: headlines, rumours and corp ads, reshuffled every roll.",
+    "techStack": [
+      "React"
+    ],
+    "categories": [
+      "TTRPG",
+      "Cyberpunk Red",
+      "Art"
+    ],
+    "route": "/tools/screamsheet",
+    "githubUrl": "",
+    "liveUrl": ""
+  },
+  {
     "slug": "neography",
     "title": "Neography",
     "shortDescription": "Type a Dutch sentence and transform it into hand-built constructed scripts. Renders live and exports as SVG.",
@@ -305,6 +442,15 @@
     "techStack": ["React", "Canvas API"],
     "categories": ["Image", "Utility"],
     "route": "/tools/sprite-splitter",
+    "githubUrl": ""
+  },
+  {
+    "slug": "mesh-gradient",
+    "title": "Mesh Gradient Maker",
+    "shortDescription": "Place color points and create smooth mesh gradients. Export as CSS or PNG.",
+    "techStack": ["React", "Canvas", "CSS"],
+    "categories": ["Art", "Design"],
+    "route": "/tools/mesh-gradient",
     "githubUrl": ""
   }
 ]

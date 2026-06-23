@@ -106,6 +106,9 @@
       "Cyberpunk Red": "Cyberpunk Red",
       "DevTools": "DevTools",
       "TTRPG": "TTRPG",
+      "Design": "Design",
+      "Image": "Image",
+      "Utility": "Utility",
       "All": "All"
     }
   },
@@ -238,6 +241,56 @@
     "addEducation": "Add Education",
     "print": "Print / Save as PDF",
     "clearAll": "Clear All",
+    "backTools": "← Back to tools"
+  },
+  "meshGradient": {
+    "heading": "Mesh Gradient Maker",
+    "subtitle": "Click to place color points and create smooth mesh gradients. Export as CSS or PNG.",
+    "backTools": "← Back to tools"
+  },
+  "flowField": {
+    "heading": "Flow Field Generator",
+    "subtitle": "Generative art driven by a noise field. Tune the particles, palette and flow, then export PNG or SVG.",
+    "backTools": "← Back to tools"
+  },
+  "dither": {
+    "heading": "Image Ditherer",
+    "subtitle": "Turn any image into dithered pixel art. Pick an algorithm, palette and pixel scale, then download the result.",
+    "backTools": "← Back to tools"
+  },
+  "svgBlob": {
+    "heading": "SVG Blob Generator",
+    "subtitle": "Generate smooth organic blob shapes. Copy the SVG, the path, or a CSS clip-path, or download a file.",
+    "backTools": "← Back to tools"
+  },
+  "cubicBezier": {
+    "heading": "Cubic Bezier Editor",
+    "subtitle": "Drag the easing curve and preview it live, then copy the cubic-bezier() timing function for your CSS.",
+    "backTools": "← Back to tools"
+  },
+  "regexTester": {
+    "heading": "Regex Tester",
+    "subtitle": "Test regular expressions live with match highlighting, capture groups, a replace preview and a cheatsheet.",
+    "backTools": "← Back to tools"
+  },
+  "qrCode": {
+    "heading": "QR Code Generator",
+    "subtitle": "Turn text or a URL into a QR code with custom colors and error correction. Download it as SVG or PNG.",
+    "backTools": "← Back to tools"
+  },
+  "contrastChecker": {
+    "heading": "Contrast Checker",
+    "subtitle": "Check colour contrast against WCAG AA and AAA, preview real text, and get a suggested passing colour.",
+    "backTools": "← Back to tools"
+  },
+  "diceRoller": {
+    "heading": "Dice Roller & Initiative",
+    "subtitle": "Roll any dice expression with Cyberpunk RED exploding d10s, plus an initiative tracker for the table.",
+    "backTools": "← Back to tools"
+  },
+  "screamsheet": {
+    "heading": "Screamsheet Generator",
+    "subtitle": "Generate a printable Night City tabloid front page. Headlines, rumours and corp ads, reshuffled every roll.",
     "backTools": "← Back to tools"
   },
   "projectDetail": {

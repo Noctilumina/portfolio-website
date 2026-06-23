@@ -106,10 +106,53 @@
       "Cyberpunk Red": "Cyberpunk Red",
       "DevTools": "DevTools",
       "TTRPG": "TTRPG",
+      "Design": "Design",
+      "Image": "Afbeelding",
+      "Utility": "Hulpprogramma",
       "All": "Alles"
     }
   },
   "toolData": {
+    "flow-field": {
+      "title": "Flow Field Generator",
+      "shortDescription": "Genereer vloeiende generatieve kunst met een ruisveld. Stel deeltjes, palet en stroming in en exporteer als PNG of SVG."
+    },
+    "mesh-gradient": {
+      "title": "Mesh Gradient Maker",
+      "shortDescription": "Plaats kleurpunten en sleep ze om vloeiende mesh-verlopen te maken. Kopieer de CSS of download als PNG."
+    },
+    "dither": {
+      "title": "Afbeelding Ditheren",
+      "shortDescription": "Zet elke afbeelding om in geditherde pixelkunst met Floyd–Steinberg en Bayer-algoritmes, retropaletten en schaling."
+    },
+    "svg-blob": {
+      "title": "SVG Blob Generator",
+      "shortDescription": "Genereer vloeiende organische blob-vormen. Kopieer de SVG, het pad of een CSS clip-path, of download een bestand."
+    },
+    "cubic-bezier": {
+      "title": "Cubic Bezier Editor",
+      "shortDescription": "Sleep een easing-curve, bekijk hem live en kopieer de cubic-bezier() timing-functie voor je CSS-transities."
+    },
+    "regex-tester": {
+      "title": "Regex Tester",
+      "shortDescription": "Test reguliere expressies live met gemarkeerde matches, capture-groepen, een vervang-preview en een spiekbrief."
+    },
+    "qr-code": {
+      "title": "QR-code Generator",
+      "shortDescription": "Zet tekst of een URL om in een QR-code met eigen kleuren en foutcorrectie, en download als SVG of PNG."
+    },
+    "contrast-checker": {
+      "title": "Contrast Checker",
+      "shortDescription": "Controleer kleurcontrast tegen WCAG AA en AAA, bekijk echte tekst en krijg een geschikte kleur voorgesteld."
+    },
+    "dice-roller": {
+      "title": "Dobbelsteen & Initiatief",
+      "shortDescription": "Gooi elke dobbelexpressie met Cyberpunk RED exploderende d10's, plus een ingebouwde initiatief-tracker."
+    },
+    "screamsheet": {
+      "title": "Screamsheet Generator",
+      "shortDescription": "Genereer een printbare Night City tabloid-voorpagina: koppen, geruchten en corp-advertenties, elke keer opnieuw."
+    },
     "cv-builder": {
       "title": "CV Bouwer",
       "shortDescription": "Maak een professioneel tweekoloms CV met live preview en print het als PDF."
@@ -178,6 +221,56 @@
       "title": "ASCII Art Generator",
       "shortDescription": "Zet afbeeldingen om naar ASCII-kunst. Kies tekensets, pas contrast aan, kopieer of download."
     }
+  },
+  "meshGradient": {
+    "heading": "Mesh Gradient Maker",
+    "subtitle": "Klik om kleurpunten te plaatsen en vloeiende mesh-verlopen te maken. Exporteer als CSS of PNG.",
+    "backTools": "← Terug naar tools"
+  },
+  "flowField": {
+    "heading": "Flow Field Generator",
+    "subtitle": "Generatieve kunst aangedreven door een ruisveld. Stel deeltjes, palet en stroming in en exporteer als PNG of SVG.",
+    "backTools": "← Terug naar tools"
+  },
+  "dither": {
+    "heading": "Afbeelding Ditheren",
+    "subtitle": "Zet elke afbeelding om in geditherde pixelkunst. Kies een algoritme, palet en pixelschaal en download het resultaat.",
+    "backTools": "← Terug naar tools"
+  },
+  "svgBlob": {
+    "heading": "SVG Blob Generator",
+    "subtitle": "Genereer vloeiende organische blob-vormen. Kopieer de SVG, het pad of een CSS clip-path, of download een bestand.",
+    "backTools": "← Terug naar tools"
+  },
+  "cubicBezier": {
+    "heading": "Cubic Bezier Editor",
+    "subtitle": "Sleep de easing-curve en bekijk hem live, kopieer daarna de cubic-bezier() timing-functie voor je CSS.",
+    "backTools": "← Terug naar tools"
+  },
+  "regexTester": {
+    "heading": "Regex Tester",
+    "subtitle": "Test reguliere expressies live met gemarkeerde matches, capture-groepen, een vervang-preview en een spiekbrief.",
+    "backTools": "← Terug naar tools"
+  },
+  "qrCode": {
+    "heading": "QR-code Generator",
+    "subtitle": "Zet tekst of een URL om in een QR-code met eigen kleuren en foutcorrectie. Download als SVG of PNG.",
+    "backTools": "← Terug naar tools"
+  },
+  "contrastChecker": {
+    "heading": "Contrast Checker",
+    "subtitle": "Controleer kleurcontrast tegen WCAG AA en AAA, bekijk echte tekst en krijg een geschikte kleur voorgesteld.",
+    "backTools": "← Terug naar tools"
+  },
+  "diceRoller": {
+    "heading": "Dobbelsteen & Initiatief",
+    "subtitle": "Gooi elke dobbelexpressie met Cyberpunk RED exploderende d10's, plus een initiatief-tracker voor aan tafel.",
+    "backTools": "← Terug naar tools"
+  },
+  "screamsheet": {
+    "heading": "Screamsheet Generator",
+    "subtitle": "Genereer een printbare Night City tabloid-voorpagina. Koppen, geruchten en corp-advertenties, elke keer opnieuw.",
+    "backTools": "← Terug naar tools"
   },
   "diffChecker": {
     "heading": "Diff Checker",

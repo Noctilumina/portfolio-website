@@ -20,6 +20,7 @@ export enum Routes {
   TOOL_STYLE_EXPLORER = '/tools/style-explorer',
   TOOL_COMPONENT_GALLERY = '/tools/component-gallery',
   TOOL_MONDRIAAN = '/tools/mondriaan',
+  TOOL_MESH_GRADIENT = '/tools/mesh-gradient',
   TOOL_HALFTONE = '/tools/halftone',
   TOOL_OP_ART = '/tools/op-art',
   TOOL_COLOR_PALETTE = '/tools/color-palette',
@@ -29,6 +30,15 @@ export enum Routes {
   TOOL_DOCX_EDITOR = '/tools/docx-editor',
   TOOL_SPRITE_SPLITTER = '/tools/sprite-splitter',
   TOOL_NEOGRAPHY = '/tools/neography',
+  TOOL_FLOW_FIELD = '/tools/flow-field',
+  TOOL_DITHER = '/tools/dither',
+  TOOL_SVG_BLOB = '/tools/svg-blob',
+  TOOL_CUBIC_BEZIER = '/tools/cubic-bezier',
+  TOOL_REGEX_TESTER = '/tools/regex-tester',
+  TOOL_QR_CODE = '/tools/qr-code',
+  TOOL_CONTRAST_CHECKER = '/tools/contrast-checker',
+  TOOL_DICE_ROLLER = '/tools/dice-roller',
+  TOOL_SCREAMSHEET = '/tools/screamsheet',
 }
 
 /** Helper to build a parameterized route */

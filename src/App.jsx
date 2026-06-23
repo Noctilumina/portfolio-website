@@ -30,6 +30,16 @@ import CpRedLoadingScreen from './pages/Tools/CpRedLoadingScreen/CpRedLoadingScr
 import DocxEditor from './pages/Tools/DocxEditor/DocxEditor';
 import SpriteSheetSplitter from './pages/Tools/SpriteSheetSplitter/SpriteSheetSplitter';
 import Neography from './pages/Tools/Neography/Neography';
+import MeshGradient from './pages/Tools/MeshGradient/MeshGradient';
+import FlowField from './pages/Tools/FlowField/FlowField';
+import Dither from './pages/Tools/Dither/Dither';
+import SvgBlob from './pages/Tools/SvgBlob/SvgBlob';
+import CubicBezier from './pages/Tools/CubicBezier/CubicBezier';
+import RegexTester from './pages/Tools/RegexTester/RegexTester';
+import QrCode from './pages/Tools/QrCode/QrCode';
+import ContrastChecker from './pages/Tools/ContrastChecker/ContrastChecker';
+import DiceRoller from './pages/Tools/DiceRoller/DiceRoller';
+import Screamsheet from './pages/Tools/Screamsheet/Screamsheet';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import styles from './App.module.css';
 
@@ -144,6 +154,7 @@ const router = createBrowserRouter(
         { path: Routes.TOOL_STYLE_EXPLORER, element: <StyleExplorer /> },
         { path: Routes.TOOL_COMPONENT_GALLERY, element: <ComponentGallery /> },
         { path: Routes.TOOL_MONDRIAAN, element: <MondriaanGenerator /> },
+        { path: Routes.TOOL_MESH_GRADIENT, element: <MeshGradient /> },
         { path: Routes.TOOL_HALFTONE, element: <HalftoneConverter /> },
         { path: Routes.TOOL_OP_ART, element: <OpArtGenerator /> },
         { path: Routes.TOOL_COLOR_PALETTE, element: <ColorPalette /> },
@@ -153,6 +164,15 @@ const router = createBrowserRouter(
         { path: Routes.TOOL_DOCX_EDITOR, element: <DocxEditor /> },
         { path: Routes.TOOL_SPRITE_SPLITTER, element: <SpriteSheetSplitter /> },
         { path: Routes.TOOL_NEOGRAPHY, element: <Neography /> },
+        { path: Routes.TOOL_FLOW_FIELD, element: <FlowField /> },
+        { path: Routes.TOOL_DITHER, element: <Dither /> },
+        { path: Routes.TOOL_SVG_BLOB, element: <SvgBlob /> },
+        { path: Routes.TOOL_CUBIC_BEZIER, element: <CubicBezier /> },
+        { path: Routes.TOOL_REGEX_TESTER, element: <RegexTester /> },
+        { path: Routes.TOOL_QR_CODE, element: <QrCode /> },
+        { path: Routes.TOOL_CONTRAST_CHECKER, element: <ContrastChecker /> },
+        { path: Routes.TOOL_DICE_ROLLER, element: <DiceRoller /> },
+        { path: Routes.TOOL_SCREAMSHEET, element: <Screamsheet /> },
       ],
     },
   ],
