@@ -39,6 +39,7 @@ export enum Routes {
   TOOL_CONTRAST_CHECKER = '/tools/contrast-checker',
   TOOL_DICE_ROLLER = '/tools/dice-roller',
   TOOL_SCREAMSHEET = '/tools/screamsheet',
+  TOOL_JSON_SCHEMA = '/tools/json-schema',
 }
 
 /** Helper to build a parameterized route */

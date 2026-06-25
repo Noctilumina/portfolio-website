@@ -293,6 +293,11 @@
     "subtitle": "Generate a printable Night City tabloid front page. Headlines, rumours and corp ads, reshuffled every roll.",
     "backTools": "← Back to tools"
   },
+  "jsonSchema": {
+    "heading": "JSON Schema Extractor",
+    "subtitle": "Paste JSON and get just its structure back, with every value stripped out. Export it as a type skeleton, a JSON Schema, or a redacted copy, so you can share a config's structure without leaking secrets.",
+    "backTools": "← Back to tools"
+  },
   "projectDetail": {
     "notFound": "Project not found",
     "backHome": "← Back to home",

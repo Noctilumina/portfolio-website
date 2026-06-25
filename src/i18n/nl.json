@@ -113,6 +113,10 @@
     }
   },
   "toolData": {
+    "json-schema": {
+      "title": "JSON Schema Extractor",
+      "shortDescription": "Plak JSON en krijg de structuur met alle waarden eruit gestript, als type-skelet, JSON Schema of geredigeerde kopie. Deel de structuur van een config zonder secrets te lekken."
+    },
     "flow-field": {
       "title": "Flow Field Generator",
       "shortDescription": "Genereer vloeiende generatieve kunst met een ruisveld. Stel deeltjes, palet en stroming in en exporteer als PNG of SVG."
@@ -270,6 +274,11 @@
   "screamsheet": {
     "heading": "Screamsheet Generator",
     "subtitle": "Genereer een printbare Night City tabloid-voorpagina. Koppen, geruchten en corp-advertenties, elke keer opnieuw.",
+    "backTools": "← Terug naar tools"
+  },
+  "jsonSchema": {
+    "heading": "JSON Schema Extractor",
+    "subtitle": "Plak JSON en krijg alleen de structuur terug, met alle waarden eruit gestript. Exporteer als type-skelet, JSON Schema of geredigeerde kopie, zodat je de structuur van een config kunt delen zonder secrets te lekken.",
     "backTools": "← Terug naar tools"
   },
   "diffChecker": {

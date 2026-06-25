@@ -1,5 +1,20 @@
 [
   {
+    "slug": "json-schema",
+    "title": "JSON Schema Extractor",
+    "shortDescription": "Paste JSON and get its structure with every value stripped out, as a type skeleton, JSON Schema, or redacted copy. Share a config's structure without leaking secrets.",
+    "techStack": [
+      "React"
+    ],
+    "categories": [
+      "DevTools",
+      "Utility"
+    ],
+    "route": "/tools/json-schema",
+    "githubUrl": "",
+    "liveUrl": ""
+  },
+  {
     "slug": "flow-field",
     "title": "Flow Field Generator",
     "shortDescription": "Paint flowing generative art driven by a noise field. Tweak particles, palette and flow, then export PNG or SVG.",

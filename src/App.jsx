@@ -40,6 +40,7 @@ import QrCode from './pages/Tools/QrCode/QrCode';
 import ContrastChecker from './pages/Tools/ContrastChecker/ContrastChecker';
 import DiceRoller from './pages/Tools/DiceRoller/DiceRoller';
 import Screamsheet from './pages/Tools/Screamsheet/Screamsheet';
+import JsonSchema from './pages/Tools/JsonSchema/JsonSchema';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import styles from './App.module.css';
 
@@ -173,6 +174,7 @@ const router = createBrowserRouter(
         { path: Routes.TOOL_CONTRAST_CHECKER, element: <ContrastChecker /> },
         { path: Routes.TOOL_DICE_ROLLER, element: <DiceRoller /> },
         { path: Routes.TOOL_SCREAMSHEET, element: <Screamsheet /> },
+        { path: Routes.TOOL_JSON_SCHEMA, element: <JsonSchema /> },
       ],
     },
   ],
