@@ -425,14 +425,16 @@
     {
       "title": "Dawaco",
       "shortDescription": "Grondwaterdatasoftware voor Nederlandse waterbeheerders, gebouwd en beheerd als enige developer.",
-      "description": "Dawaco maakt de software waarmee Nederlandse waterschappen en drinkwaterbedrijven hun grondwatermetingen beheren. Als enige interne developer ben ik verantwoordelijk voor de hele stack: het Waterplatform (een .NET-backend en TypeScript-webapp), de Azure-infrastructuur waarop het draait, en de DataFlex-desktopsuite waar klanten dagelijks mee werken. Ik schrijf de deploymentplannen, houd staging en productie gelijk via infrastructure as code, bouw en onderteken desktopreleases en installeer ze samen met klanten. Naast de code geef ik vorm aan hoe het team werkt, van retrospectives en release gates tot architectuurkeuzes en ISO 27001 met ons partnerteam in Duitsland.",
+      "description": "Dawaco maakt de software waarmee Nederlandse waterschappen en drinkwaterbedrijven hun grondwatermetingen beheren. Als enige interne developer ben ik verantwoordelijk voor de hele stack: het Waterplatform (een .NET-backend en TypeScript-webapp), de Azure-infrastructuur waarop het draait, en de DataFlex-desktopsuite waar klanten dagelijks mee werken. Ik schrijf de deploymentplannen, houd staging en productie gelijk via infrastructure as code, bouw en onderteken desktopreleases en installeer ze samen met klanten. Naast de code stuur ik het teamproces aan: ik plan de projecten, organiseer refinements en beheer de tickets, houd stakeholders en klanten op de hoogte, en leid retrospectives, release gates, architectuurkeuzes en ISO 27001 met ons partnerteam in Duitsland.",
       "features": [
         "Enige developer voor platform, infrastructuur en releases",
         "Azure infrastructure as code met Bicep en GitHub Actions",
         "Waterplatform: .NET-backend met een TypeScript-webapp",
         "DataFlex-desktopsuite: builds, code signing en installaties bij klanten",
         "Databasewerk op SQL Server, PostgreSQL en Oracle",
-        "Teamproces: retrospectives, release gates, ISO 27001"
+        "Projectplanning, refinement en ticketbeheer",
+        "Stakeholdermanagement en klantcommunicatie",
+        "Retrospectives, release gates en ISO 27001"
       ]
     },
     {
@@ -498,7 +500,7 @@
       "role": "Fullstack Senior DevOps Engineer",
       "company": "Dawaco",
       "period": "Mei 2026 — Heden",
-      "description": "Enige interne developer bij Dawaco, dat grondwater- en waterdatasoftware bouwt voor Nederlandse waterschappen en drinkwaterbedrijven. Eindverantwoordelijk voor de ontwikkeling: het .NET- en TypeScript-Waterplatform, de Azure-infrastructuur eronder (Bicep, GitHub Actions, staging en productie) en de DataFlex-desktopsuite, van het bouwen en ondertekenen van releases tot de installatie bij klanten. Daarnaast het teamproces: retrospectives, release gates en ISO 27001, samen met een extern partnerteam."
+      "description": "Enige interne developer bij Dawaco, dat grondwater- en waterdatasoftware bouwt voor Nederlandse waterschappen en drinkwaterbedrijven. Eindverantwoordelijk voor de ontwikkeling: het .NET- en TypeScript-Waterplatform, de Azure-infrastructuur eronder (Bicep, GitHub Actions, staging en productie) en de DataFlex-desktopsuite, van het bouwen en ondertekenen van releases tot de installatie bij klanten. Daarnaast het teamproces: projectplanning, refinement, ticketbeheer, stakeholdermanagement en klantcommunicatie, retrospectives, release gates en ISO 27001, samen met een extern partnerteam."
     },
     {
       "role": "Fullstack Medior Developer",

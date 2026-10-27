@@ -3,7 +3,7 @@
     "slug": "dawaco",
     "title": "Dawaco",
     "shortDescription": "Groundwater data software for Dutch water authorities, built and run as the sole developer.",
-    "description": "Dawaco makes the software Dutch water boards and drinking-water companies use to manage groundwater measurements. As the sole in-house developer I own the whole stack: the Water Platform (a .NET backend and TypeScript web app), the Azure infrastructure it runs on, and the long-running DataFlex desktop suite that customers still rely on daily. I write the deployment plans, keep staging and production in line through infrastructure as code, build and code-sign desktop releases, and install them together with customers. Alongside the code I shape how the team works, from retrospectives and release gates to architecture decisions and ISO 27001 alignment with our partner team in Germany.",
+    "description": "Dawaco makes the software Dutch water boards and drinking-water companies use to manage groundwater measurements. As the sole in-house developer I own the whole stack: the Water Platform (a .NET backend and TypeScript web app), the Azure infrastructure it runs on, and the long-running DataFlex desktop suite that customers still rely on daily. I write the deployment plans, keep staging and production in line through infrastructure as code, build and code-sign desktop releases, and install them together with customers. Alongside the code I run how the team works: I plan the projects, organise refinement and manage the ticket backlog, keep stakeholders and customers informed, and lead retrospectives, release gates, architecture decisions and ISO 27001 alignment with our partner team in Germany.",
     "image": "/images/dawaco_well.png",
     "techStack": ["C#", ".NET", "TypeScript", "Microsoft Azure", "Bicep", "GitHub Actions", "DataFlex", "SQL Server", "PostgreSQL", "Oracle"],
     "features": [
@@ -12,7 +12,9 @@
       "Water Platform: .NET backend with a TypeScript web app",
       "DataFlex desktop suite: builds, code signing and customer installs",
       "Database work on SQL Server, PostgreSQL and Oracle",
-      "Team process: retrospectives, release gates, ISO 27001"
+      "Project planning, refinement and ticket management",
+      "Stakeholder and customer communication",
+      "Retrospectives, release gates and ISO 27001"
     ],
     "liveUrl": "",
     "githubUrl": ""
