@@ -28,9 +28,9 @@ export const SPRITES = {
   owlBlink: { w: 5, h: 6, frames: [owl('kEkEk'), owl('kekek'), owl('klllk')] },
   owlTurn: { w: 5, h: 6, frames: [owl('EkEkk'), owl('kkkkk'), owl('kkEkE')] },
   moonRabbit: {
-    w: 7,
-    h: 6,
-    frames: [['.r.r...', '.r.r...', '.rrr...', 'rrrrr..', '.rrrrr.', '..r..r.']],
+    w: 5,
+    h: 5,
+    frames: [['r.r..', 'r.r..', 'rrr..', 'rrrr.', '.rrrr']],
   },
   mousePeek: {
     w: 5,
@@ -72,15 +72,18 @@ export const SPRITES = {
   },
 };
 
-/** Draws one frame with (x, y) at the sprite's bottom centre, in art pixels. */
-export function drawSprite(ctx, sprite, frameIndex, x, y, flip = false) {
+/**
+ * Draws one frame with (x, y) at the sprite's bottom centre, in art pixels.
+ * `mask(x, y)`, when given, decides per pixel whether it may be drawn.
+ */
+export function drawSprite(ctx, sprite, frameIndex, x, y, flip = false, mask = null) {
   const frame = sprite.frames[frameIndex % sprite.frames.length];
   const left = Math.round(x) - Math.floor(sprite.w / 2);
   const top = Math.round(y) - sprite.h + 1;
   frame.forEach((row, ry) => {
     for (let rx = 0; rx < sprite.w; rx++) {
       const ch = row[flip ? sprite.w - 1 - rx : rx];
-      if (ch === '.') continue;
+      if (ch === '.' || (mask && !mask(left + rx, top + ry))) continue;
       ctx.fillStyle = PALETTE[ch];
       ctx.fillRect(left + rx, top + ry, 1, 1);
     }

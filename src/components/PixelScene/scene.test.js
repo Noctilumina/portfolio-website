@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { layoutScene } from './scene';
+import { layoutScene, moonLit } from './scene';
 
 const SIZES = [
   [360, 225], // 1440x900 desktop
@@ -53,5 +53,14 @@ describe.each(SIZES)('scene layout at %ix%i', (W, H) => {
 
   test('the layout is the same every time', () => {
     expect(layoutScene(W, H).anchors).toEqual(s.anchors);
+  });
+});
+
+describe('the moon', () => {
+  test('is lit on its thick side and dark in the bite', () => {
+    const r = 13;
+    expect(moonLit(Math.round(r * 0.6), -Math.round(r * 0.2), r)).toBe(true);
+    expect(moonLit(-Math.round(r * 0.5), Math.round(r * 0.2), r)).toBe(false); // inside the bite
+    expect(moonLit(r + 1, 0, r)).toBe(false); // outside the disc
   });
 });

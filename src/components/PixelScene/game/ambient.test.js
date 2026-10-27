@@ -24,13 +24,30 @@ const segmentHitsBand = (s, b) => {
 };
 
 describe('shooting star', () => {
-  test('the first one comes 20 to 40 seconds in', () => {
+  test('the first one comes 6 to 12 seconds in, so a short visit still sees one', () => {
     const rand = seededRandom(1);
     const state = createAmbient(rand, 0, scene);
     const now = untilStar(state, rand);
     expect(state.star.start).toBe(now);
-    expect(now).toBeGreaterThanOrEqual(20000);
-    expect(now).toBeLessThanOrEqual(40000 + 110);
+    expect(now).toBeGreaterThanOrEqual(6000);
+    expect(now).toBeLessThanOrEqual(12000 + 110);
+  });
+
+  test('after that one comes every 12 to 25 seconds', () => {
+    const rand = seededRandom(7);
+    const state = createAmbient(rand, 0, scene);
+    const first = untilStar(state, rand);
+    stepAmbient(state, first + 1600, scene, rand);
+    const second = untilStar(state, rand, first + 1600);
+    expect(second - first).toBeGreaterThanOrEqual(12000);
+    expect(second - first).toBeLessThanOrEqual(25000 + 220);
+  });
+
+  test('the streak is long enough to notice: a 2px head and a 10px tail', () => {
+    const rand = seededRandom(8);
+    const state = createAmbient(rand, 0, scene);
+    untilStar(state, rand);
+    expect(starPoints(state.star, state.star.start + 700)).toHaveLength(11);
   });
 
   test('it is on screen for 1.5 seconds', () => {

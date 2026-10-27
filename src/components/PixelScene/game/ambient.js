@@ -2,13 +2,13 @@
 // shooting star. Both are rare. The star is slow and forgiving to catch (secret 5).
 
 export const STAR_MS = 1500;
-const STAR_TAIL = 6;
+const STAR_TAIL = 10;
 const between = (rand, lo, hi) => lo + rand() * (hi - lo);
 
 export function createAmbient(rand, now) {
   return {
     nextLeafAt: now + between(rand, 15000, 30000),
-    nextStarAt: now + between(rand, 20000, 40000),
+    nextStarAt: now + between(rand, 6000, 12000), // early, so a short visit still sees one
     star: null,
     leaf: null,
   };
@@ -43,7 +43,7 @@ export function stepAmbient(state, now, scene, rand) {
     // A star whose moment passed while the timer was paused is skipped, not shown late.
     const path = now - state.nextStarAt <= STAR_MS ? pickStarPath(scene, rand) : null;
     if (path) state.star = { start: now, ...path };
-    state.nextStarAt = now + between(rand, 20000, 40000);
+    state.nextStarAt = now + between(rand, 12000, 25000);
   }
 
   if (state.leaf) {

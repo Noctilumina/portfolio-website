@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
-import { buildScene } from './scene';
+import { buildScene, moonLit } from './scene';
+import { constellationHint } from './game/hint';
 import { SPRITES, drawSprite } from './sprites';
 import { SECRET_IDS, isComplete, loadFound, markFound } from './game/progress';
 import { isTap, resolveClick } from './game/hit';
@@ -110,8 +111,13 @@ export default function PixelScene() {
       }
       const [name, f] = reduced ? STILL[id] : REACTIONS[id][tick];
       if (id === 'owl') drawSprite(ctx, SPRITES[name], f, anchors.owl.x, anchors.owl.y + 2);
-      if (id === 'burrow') drawSprite(ctx, SPRITES[name], f, anchors.burrow.x, anchors.burrow.y - 1);
-      if (id === 'moonRabbit') drawSprite(ctx, SPRITES[name], f, anchors.moon.x + Math.round(anchors.moon.r * 0.4), anchors.moon.y + 3);
+      if (id === 'burrow') drawSprite(ctx, SPRITES[name], f, anchors.burrow.x, anchors.burrow.y + 1);
+      if (id === 'moonRabbit') {
+        // sits on the thick part of the crescent and is only drawn where the moon is lit
+        const { moon } = anchors;
+        drawSprite(ctx, SPRITES[name], f, moon.x + Math.round(moon.r * 0.5), moon.y + Math.round(moon.r * 0.3), false,
+          (x, y) => moonLit(x - moon.x, y - moon.y, moon.r));
+      }
     };
 
     const draw = () => {
@@ -139,13 +145,29 @@ export default function PixelScene() {
       });
 
       const star = activeStar(ambient, starTime(now));
-      if (star) starPoints(star, starTime(now)).forEach((p, i) => dot(p.x, p.y, i === 0 ? STAR_BRIGHT : STAR_GLOW, p.alpha));
+      if (star) {
+        const pts = starPoints(star, starTime(now));
+        pts.forEach((p, i) => dot(p.x, p.y, i < 2 ? STAR_BRIGHT : STAR_GLOW, p.alpha));
+        // a 2px head with a faint glow around it, so the streak catches the eye
+        const h = pts[0];
+        dot(h.x, h.y - 1, STAR_BRIGHT);
+        [[-1, 0], [1, -1], [0, 1], [0, -2]].forEach(([dx, dy]) => dot(h.x + dx, h.y + dy, STAR_GLOW, 0.6));
+      }
 
       if (ambient.leaf && !reduced) {
         const { x, y, landed } = ambient.leaf;
         const fade = landed >= 0 ? 0.6 - landed * 0.3 : 1;
         dot(x, y, LEAF, fade);
         dot(x + 1, y, LEAF_DARK, fade);
+      }
+
+      // Hint: now and then the constellation's stars light up one after another.
+      if (!reduced && !reactions.has('constellation')) {
+        const lit = constellationHint(frame, scene.anchors.constellation.length);
+        scene.anchors.constellation.slice(0, lit).forEach((s, i) => {
+          dot(s.x, s.y, STAR_BRIGHT);
+          if (i === lit - 1) [[-1, 0], [1, 0], [0, -1], [0, 1]].forEach(([dx, dy]) => dot(s.x + dx, s.y + dy, STAR_GLOW));
+        });
       }
 
       reactions.forEach((start, id) => drawReaction(id, frame - start));

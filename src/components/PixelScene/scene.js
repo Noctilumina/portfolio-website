@@ -17,7 +17,7 @@ const NEAR_RIM = toRgb('#33245e');
 const OWL = toRgb('#0b1a22');
 const OWL_EYE = toRgb('#c9b25a');
 const BURROW = toRgb('#06040f');
-const CONSTELLATION_STAR = toRgb('#c4b5f0');
+const CONSTELLATION_STAR = toRgb('#e4dcff');
 
 // Owl silhouette, anchored so its eyes sit one row above `owl.y`.
 const OWL_SHAPE = ['#...#', '#####', '#e#e#', '#####', '.###.', '.###.'];
@@ -44,6 +44,14 @@ function makeLayer(W, H) {
   };
   const commit = () => ctx.putImageData(img, 0, 0);
   return { canvas, ctx, put, commit };
+}
+
+/** Whether a point (relative to the moon's centre) is on the lit crescent. */
+export function moonLit(dx, dy, r) {
+  if (dx * dx + dy * dy > r * r) return false;
+  const bx = dx + r * 0.55;
+  const by = dy - r * 0.25;
+  return bx * bx + by * by >= (r * 0.9) ** 2;
 }
 
 /**
@@ -153,10 +161,7 @@ export function buildScene(W, H) {
   // Moon: a crescent, kept clear of the name.
   for (let y = -moon.r; y <= moon.r; y++) {
     for (let x = -moon.r; x <= moon.r; x++) {
-      if (x * x + y * y > moon.r * moon.r) continue;
-      const ox = x + moon.r * 0.55;
-      const oy = y - moon.r * 0.25;
-      if (ox * ox + oy * oy < (moon.r * 0.9) ** 2) continue;
+      if (!moonLit(x, y, moon.r)) continue;
       bg.put(moon.x + x, moon.y + y, (x + y) / moon.r > 0.35 ? MOON_SHADE : MOON);
     }
   }
@@ -169,18 +174,18 @@ export function buildScene(W, H) {
     for (let y = g; y < H; y++) bg.put(x, y, y === g ? NEAR_RIM : NEAR);
   }
 
-  // Burrow: a little mound of dug-up earth with a dark opening, rim-lit like the hill.
-  const bw = narrow ? 3 : 4;
-  for (let x = -bw; x <= bw; x++) {
-    const h = Math.abs(x) === bw ? 1 : 2;
-    for (let y = 1; y <= h; y++) bg.put(burrow.x + x, burrow.y - y, NEAR);
-    bg.put(burrow.x + x, burrow.y - h - 1, NEAR_RIM);
-  }
-  for (let x = -1; x <= 1; x++) {
-    bg.put(burrow.x + x, burrow.y - 1, BURROW);
-    bg.put(burrow.x + x, burrow.y, BURROW);
-  }
-  bg.put(burrow.x, burrow.y - 2, BURROW);
+  // Burrow: a hole dug into the hillside. The ground's rim light dips into it, a few
+  // grains of dug-up earth lie beside it, and the opening is the darkest thing on the hill.
+  const hole = narrow ? ['.###.', '#####', '.###.'] : ['.####.', '######', '######', '.####.'];
+  const hw = hole[0].length;
+  hole.forEach((row, ry) => {
+    [...row].forEach((ch, rx) => {
+      if (ch === '#') bg.put(burrow.x + rx - Math.floor(hw / 2), burrow.y + ry, BURROW);
+    });
+  });
+  bg.put(burrow.x - Math.floor(hw / 2) - 1, burrow.y, NEAR_RIM);
+  bg.put(burrow.x + hw - Math.floor(hw / 2), burrow.y, NEAR_RIM);
+  [[-hw, 1], [hw - 1, 2], [-hw + 1, 2]].forEach(([dx, dy]) => bg.put(burrow.x + dx, burrow.y + dy, NEAR_RIM));
   bg.commit();
   bg.ctx.drawImage(drawTree(W, H, L), 0, 0);
 
