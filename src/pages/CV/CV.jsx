@@ -12,8 +12,8 @@ export default function CV() {
     ...(t(`experienceData.${i}`) || {}),
   }));
 
-  const workExperience = localizedExperience.filter((e) => e.id <= 5);
-  const education = localizedExperience.filter((e) => e.id >= 6);
+  const workExperience = localizedExperience.filter((e) => e.id <= 6);
+  const education = localizedExperience.filter((e) => e.id >= 7);
 
   const handlePrint = () => window.print();
 
