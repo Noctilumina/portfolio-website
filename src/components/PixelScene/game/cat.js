@@ -83,3 +83,11 @@ export function isSteerKey(e) {
   if (k === 'ArrowRight' || k === 'd') return 1;
   return 0;
 }
+
+/** For key releases: any steering key counts, whatever is focused or held, so the cat never walks on by itself. */
+export function releasedSteerKey(e) {
+  const k = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+  if (k === 'ArrowLeft' || k === 'a') return -1;
+  if (k === 'ArrowRight' || k === 'd') return 1;
+  return 0;
+}

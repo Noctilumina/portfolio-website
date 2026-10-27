@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
 import { layoutScene } from '../scene';
-import { catSprite, catY, createCat, isSteerKey, restX, stepCat } from './cat';
+import { catSprite, catY, createCat, isSteerKey, releasedSteerKey, restX, stepCat } from './cat';
 
 const scene = layoutScene(360, 225);
 const still = { dir: 0 };
@@ -110,5 +110,14 @@ describe('steering keys', () => {
   test('shortcuts with modifiers are left alone', () => {
     expect(isSteerKey(key('ArrowLeft', { ctrlKey: true }))).toBe(0);
     expect(isSteerKey(key('ArrowLeft', { altKey: true }))).toBe(0);
+  });
+});
+
+describe('releasing a steering key', () => {
+  test('counts even with a modifier held or focus in a field', () => {
+    expect(releasedSteerKey({ key: 'ArrowRight', shiftKey: true })).toBe(1);
+    expect(releasedSteerKey({ key: 'D', target: document.createElement('input') })).toBe(1);
+    expect(releasedSteerKey({ key: 'a', metaKey: true })).toBe(-1);
+    expect(releasedSteerKey({ key: 'ArrowDown' })).toBe(0);
   });
 });

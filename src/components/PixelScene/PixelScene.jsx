@@ -2,11 +2,12 @@ import { useEffect, useRef } from 'react';
 import { buildScene } from './scene';
 import { SPRITES, drawSprite } from './sprites';
 import { SECRET_IDS, isComplete, loadFound, markFound } from './game/progress';
-import { hitTest } from './game/hit';
-import { activeStar, createAmbient, hitStar, starPoints, stepAmbient } from './game/ambient';
+import { isTap, resolveClick } from './game/hit';
+import { activeStar, createAmbient, starPoints, stepAmbient } from './game/ambient';
 import { popupFrame, spawnPlusOne, spawnSparkle, stepPopups } from './game/popups';
 import { glowLevels } from './game/glow';
-import { catSprite, catY, createCat, isSteerKey, stepCat } from './game/cat';
+import { catSprite, catY, createCat, isSteerKey, releasedSteerKey, stepCat } from './game/cat';
+import { artSize, needsRebuild } from './game/size';
 import { prefersReducedMotion, seededRandom, toRgb } from '../../utils/pixel';
 import styles from './PixelScene.module.css';
 
@@ -52,6 +53,8 @@ export default function PixelScene() {
     let W = 0;
     let H = 0;
     let px = 4;
+    let size = null;
+    let press = null; // where the current pointer press started, to tell a tap from a swipe
     let frame = 0;
     let timer = null;
     let visible = true;
@@ -66,13 +69,10 @@ export default function PixelScene() {
 
     const build = () => {
       const rect = host.getBoundingClientRect();
-      // art pixels grow on big screens so the scene keeps its detail level instead of looking empty
-      px = Math.max(3, Math.round(Math.min(rect.width, rect.height * 1.6) / 360));
-      const nextW = Math.max(1, Math.ceil(rect.width / px));
-      const nextH = Math.max(1, Math.ceil(rect.height / px));
-      if (scene && nextW === W && nextH === H) return; // building the scene is the expensive part
-      W = nextW;
-      H = nextH;
+      const next = artSize(rect.width, rect.height);
+      if (!needsRebuild(size, next)) return;
+      size = next;
+      ({ px, W, H } = next);
       canvas.width = W;
       canvas.height = H;
       // Whole-number scale keeps every art pixel the same size; the hero clips the overhang.
@@ -214,17 +214,25 @@ export default function PixelScene() {
       return { x: (e.clientX - rect.left) / px, y: (e.clientY - rect.top) / px };
     };
 
+    // Act on release, and only for a tap: a swipe that starts on the hero is someone scrolling.
     const onPointerDown = (e) => {
-      if (!scene) return;
+      press = { x: e.clientX, y: e.clientY, button: e.button, cancelled: false };
+    };
+    const onPointerCancel = () => {
+      if (press) press.cancelled = true;
+    };
+    const onPointerUp = (e) => {
+      const down = press;
+      press = null;
+      if (!scene || !down || !isTap(down, { x: e.clientX, y: e.clientY }, down.cancelled)) return;
       const p = toArt(e);
-      const now = performance.now();
-      if (hitStar(ambient, p, starTime(now))) {
+      const id = resolveClick(p, scene, ambient, starTime(performance.now()), { touch: e.pointerType !== 'mouse' });
+      if (id === 'shootingStar') {
         ambient.star = null; // caught
         found1('shootingStar', Math.round(p.x), Math.round(p.y));
         draw();
         return;
       }
-      const id = hitTest(p, scene, { touch: e.pointerType !== 'mouse' });
       if (id) {
         reactions.set(id, frame);
         const a = id === 'constellation' ? scene.anchors.constellation[0] : id === 'moonRabbit' ? scene.anchors.moon : scene.anchors[id];
@@ -242,17 +250,29 @@ export default function PixelScene() {
       pointer = null;
     };
 
-    const onKey = (e) => {
+    const onKeyDown = (e) => {
       const dir = isSteerKey(e);
-      if (!dir) return;
-      const down = e.type === 'keydown';
-      if (down && (!cat || !visible)) return;
-      if (dir < 0) keys.left = down;
-      else keys.right = down;
-      if (down) e.preventDefault();
+      if (!dir || !cat || !visible) return;
+      if (dir < 0) keys.left = true;
+      else keys.right = true;
+      e.preventDefault();
+    };
+    const onKeyUp = (e) => {
+      const dir = releasedSteerKey(e);
+      if (dir < 0) keys.left = false;
+      if (dir > 0) keys.right = false;
+    };
+    // A key released while the page lost focus never sends keyup, so let go of everything.
+    const releaseKeys = () => {
+      keys.left = keys.right = false;
     };
 
-    const onVisibility = () => (document.hidden ? stop() : start());
+    const onVisibility = () => {
+      if (document.hidden) {
+        stop();
+        releaseKeys();
+      } else start();
+    };
 
     build();
     start();
@@ -264,15 +284,18 @@ export default function PixelScene() {
       if (visible) start();
       else {
         stop();
-        keys.left = keys.right = false;
+        releaseKeys();
       }
     });
     seen.observe(host);
     host.addEventListener('pointerdown', onPointerDown);
+    host.addEventListener('pointerup', onPointerUp);
+    host.addEventListener('pointercancel', onPointerCancel);
     host.addEventListener('pointermove', onPointerMove);
     host.addEventListener('pointerleave', onPointerLeave);
-    window.addEventListener('keydown', onKey);
-    window.addEventListener('keyup', onKey);
+    window.addEventListener('keydown', onKeyDown);
+    window.addEventListener('keyup', onKeyUp);
+    window.addEventListener('blur', releaseKeys);
     document.addEventListener('visibilitychange', onVisibility);
 
     if (import.meta.env.DEV) {
@@ -307,10 +330,13 @@ export default function PixelScene() {
       resize.disconnect();
       seen.disconnect();
       host.removeEventListener('pointerdown', onPointerDown);
+      host.removeEventListener('pointerup', onPointerUp);
+      host.removeEventListener('pointercancel', onPointerCancel);
       host.removeEventListener('pointermove', onPointerMove);
       host.removeEventListener('pointerleave', onPointerLeave);
-      window.removeEventListener('keydown', onKey);
-      window.removeEventListener('keyup', onKey);
+      window.removeEventListener('keydown', onKeyDown);
+      window.removeEventListener('keyup', onKeyUp);
+      window.removeEventListener('blur', releaseKeys);
       document.removeEventListener('visibilitychange', onVisibility);
       if (import.meta.env.DEV) delete window.__hero;
     };
