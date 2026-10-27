@@ -500,7 +500,7 @@
       "role": "Fullstack Senior DevOps Engineer",
       "company": "Dawaco",
       "period": "Mei 2026 — Heden",
-      "description": "Enige interne developer bij Dawaco, dat grondwater- en waterdatasoftware bouwt voor Nederlandse waterschappen en drinkwaterbedrijven. Eindverantwoordelijk voor de ontwikkeling: het .NET- en TypeScript-Waterplatform, de Azure-infrastructuur eronder (Bicep, GitHub Actions, staging en productie) en de DataFlex-desktopsuite, van het bouwen en ondertekenen van releases tot de installatie bij klanten. Daarnaast het teamproces: projectplanning, refinement, ticketbeheer, stakeholdermanagement en klantcommunicatie, retrospectives, release gates en ISO 27001, samen met een extern partnerteam."
+      "description": "Enige interne developer van grondwatersoftware voor Nederlandse waterschappen en drinkwaterbedrijven. Verantwoordelijk voor het .NET- en TypeScript-Waterplatform, de Azure-infrastructuur en de DataFlex-desktopsuite, plus projectplanning, refinement en stakeholdercommunicatie."
     },
     {
       "role": "Fullstack Medior Developer",
