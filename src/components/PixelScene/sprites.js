@@ -6,7 +6,7 @@ export const PALETTE = {
   e: '#c9b25a', // owl eye, resting
   E: '#ffe08a', // owl eye, lit
   l: '#24343c', // owl eyelid
-  r: '#b8955a', // rabbit on the moon
+  r: '#8a6a3e', // rabbit on the moon
   g: '#6b6487', // mouse fur
   p: '#c98aa0', // mouse ear
   b: '#06040f', // mouse eye

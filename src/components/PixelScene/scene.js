@@ -22,9 +22,9 @@ const CONSTELLATION_STAR = toRgb('#c4b5f0');
 // Owl silhouette, anchored so its eyes sit one row above `owl.y`.
 const OWL_SHAPE = ['#...#', '#####', '#e#e#', '#####', '.###.', '.###.'];
 
-// Sitting-cat outline for the constellation secret: ears, head, body, tail.
-const CAT_STARS = [[0, 0], [5, 0], [-1, 5], [6, 5], [-3, 13], [8, 13], [11, 8]];
-const CAT_LINES = [[0, 2], [2, 4], [4, 5], [5, 3], [3, 1], [1, 0], [5, 6]];
+// Sitting-cat outline for the constellation secret: two pointed ears, head, body, tail.
+const CAT_STARS = [[0, 0], [3, 2], [6, 0], [-1, 5], [7, 5], [-2, 13], [8, 13], [12, 9]];
+const CAT_LINES = [[0, 1], [1, 2], [0, 3], [2, 4], [3, 5], [4, 6], [5, 6], [6, 7]];
 
 function makeLayer(W, H) {
   const canvas = document.createElement('canvas');

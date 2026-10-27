@@ -28,6 +28,7 @@ export function stepCat(cat, input, scene, { reduced }) {
 
   if (cat.state === 'enter') {
     walk(1);
+    if (cat.x < restX(scene)) cat.x++; // trots in at double speed
     if (cat.x >= restX(scene)) cat.state = 'idle';
     return cat;
   }
