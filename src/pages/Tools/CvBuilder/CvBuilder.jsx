@@ -60,7 +60,7 @@ const PREFILLED_DATA = {
     { category: 'Languages', skills: 'Dutch (native), English (fluent)' },
   ],
   experience: [
-    { role: 'Fullstack Senior DevOps Engineer', company: 'Dawaco', period: 'May 2026 — Present', description: 'Working as a fullstack senior DevOps engineer at Dawaco in Culemborg. Focus on Microsoft Azure and project management in a hybrid team environment.', clients: [] },
+    { role: 'Fullstack Senior DevOps Engineer', company: 'Dawaco', period: 'May 2026 — Present', description: 'Sole in-house developer at Dawaco, which builds groundwater and water-data software for Dutch water boards and drinking-water companies. Own development end to end: the .NET and TypeScript Water Platform, its Azure infrastructure (Bicep, GitHub Actions, staging and production), and the DataFlex desktop suite, from building and code-signing releases to installing them with customers. Also run the team process: retrospectives, release gates and ISO 27001 alignment, together with an external partner team.', clients: [] },
     { role: 'Fullstack Medior Developer', company: 'Gynzy', period: 'May 2025 — May 2026', description: 'Built educational software as a fullstack developer. Worked with Flutter for cross-platform development and Ember.js for web applications in a hybrid team environment.', clients: [] },
     {
       role: 'IT Consultant', company: 'Info Support', period: 'Feb 2021 — May 2025',
