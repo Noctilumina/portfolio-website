@@ -27,3 +27,10 @@ export function markFound(found, id) {
   }
   return { isNew: true, complete: isComplete(found) };
 }
+
+/** True the first time a secret is found on this visit, so its "+1" shows even for a returning visitor. */
+export function cheerOnce(cheered, id) {
+  if (cheered.has(id)) return false;
+  cheered.add(id);
+  return true;
+}

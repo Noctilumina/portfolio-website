@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { GROW_TICKS, REVEAL_R, clickStar, createSky, drawnLines, nearestStar, revealed } from './constellation';
+import { GROW_TICKS, hoverLines, REVEAL_R, clickStar, createSky, drawnLines, nearestStar, revealed } from './constellation';
 
 const stars = [{ x: 10, y: 10 }, { x: 14, y: 12 }, { x: 18, y: 10 }, { x: 9, y: 17 }];
 const lines = [[0, 1], [1, 2], [0, 3], [2, 3]];
@@ -61,5 +61,13 @@ describe('hovering', () => {
     expect(revealed(stars, { x: 10, y: 10 }, 5)).toEqual([0, 1]);
     expect(revealed(stars, { x: 60, y: 60 }, REVEAL_R)).toEqual([]);
     expect(revealed(stars, null, REVEAL_R)).toEqual([]);
+  });
+});
+
+describe('hover lines', () => {
+  test('a line shows when both its stars are revealed by the mouse', () => {
+    expect(hoverLines(lines, [0, 1])).toEqual([[0, 1]]);
+    expect(hoverLines(lines, [0, 1, 3])).toEqual([[0, 1], [0, 3]]);
+    expect(hoverLines(lines, [2])).toEqual([]);
   });
 });

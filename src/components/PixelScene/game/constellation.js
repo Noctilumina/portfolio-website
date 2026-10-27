@@ -3,7 +3,7 @@
 // reveals only the stars close to the mouse.
 
 export const GROW_TICKS = 4; // ticks a line takes to reach the next star
-export const REVEAL_R = 12; // art pixels around the mouse in which the cat's stars show
+export const REVEAL_R = 14; // art pixels around the mouse in which the cat's stars show
 
 const dist = (p, s) => Math.hypot(p.x - s.x, p.y - s.y);
 
@@ -40,3 +40,6 @@ export function drawnLines(sky, lines, tick, grow) {
 /** Indices of the stars within reach of the mouse (none without a mouse). */
 export const revealed = (stars, pointer, reach) =>
   pointer ? stars.flatMap((s, i) => (dist(pointer, s) <= reach ? [i] : [])) : [];
+
+/** The outline's lines whose two stars are both revealed by the mouse. */
+export const hoverLines = (lines, shown) => lines.filter(([a, b]) => shown.includes(a) && shown.includes(b));

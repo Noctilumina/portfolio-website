@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react';
 import { buildScene, moonLit } from './scene';
 import { constellationHint, hintLines } from './game/hint';
-import { GROW_TICKS, REVEAL_R, clickStar, createSky, drawnLines, nearestStar, revealed } from './game/constellation';
+import { GROW_TICKS, REVEAL_R, clickStar, createSky, drawnLines, hoverLines, nearestStar, revealed } from './game/constellation';
 import { SPRITES, drawSprite } from './sprites';
-import { SECRET_IDS, isComplete, loadFound, markFound } from './game/progress';
+import { SECRET_IDS, cheerOnce, isComplete, loadFound, markFound } from './game/progress';
 import { isTap, resolveClick } from './game/hit';
 import { activeStar, createAmbient, starPoints, stepAmbient } from './game/ambient';
 import { popupFrame, spawnPlusOne, spawnSparkle, stepPopups } from './game/popups';
@@ -21,6 +21,7 @@ const STAR_GLOW = toRgb('#c4b5f0');
 const LEAF = toRgb('#69b08a');
 const LEAF_DARK = toRgb('#2f7468');
 const CONSTELLATION_LINE = toRgb('#7f6fc0');
+const CONSTELLATION_HOVER = toRgb('#5e519c'); // dimmer: only a glimpse of the outline
 const TICK_MS = 110; // stepped animation, ~9 frames a second, like a sprite
 const STILL_TICKS = 11; // reduced motion: a reaction shows one still frame for about 1.2s
 
@@ -50,6 +51,7 @@ export default function PixelScene() {
     const ctx = canvas.getContext('2d');
     const reduced = prefersReducedMotion();
     const found = loadFound();
+    const cheered = new Set(); // secrets that got their "+1" on this visit
     let scene = null;
     let flies = [];
     let W = 0;
@@ -175,8 +177,12 @@ export default function PixelScene() {
       });
       sky.clicked.forEach((_, i) => dot(cs[i].x, cs[i].y, STAR_BRIGHT));
 
-      // Near the mouse, only the cat's stars within reach show themselves.
-      revealed(cs, pointer, REVEAL_R).forEach((i) => {
+      // Near the mouse, only the cat's stars within reach show themselves, with the lines between them.
+      const shown = revealed(cs, pointer, REVEAL_R);
+      hoverLines(scene.constellationLines, shown).forEach(([a, b]) => {
+        if (!sky.clicked.has(a) && !sky.clicked.has(b)) line(cs[a], cs[b], CONSTELLATION_HOVER);
+      });
+      shown.forEach((i) => {
         dot(cs[i].x, cs[i].y, STAR_BRIGHT);
         [[-1, 0], [1, 0], [0, -1], [0, 1]].forEach(([dx, dy]) => dot(cs[i].x + dx, cs[i].y + dy, STAR_GLOW, 0.7));
       });
@@ -244,8 +250,8 @@ export default function PixelScene() {
     };
 
     const found1 = (id, x, y) => {
-      const { isNew, complete } = markFound(found, id);
-      if (isNew) {
+      const { complete } = markFound(found, id);
+      if (cheerOnce(cheered, id)) {
         spawnSparkle(popups, x, y);
         spawnPlusOne(popups, x, y - 4);
       }

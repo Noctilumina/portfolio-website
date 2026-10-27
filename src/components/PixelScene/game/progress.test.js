@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
-import { SECRET_IDS, isComplete, loadFound, markFound } from './progress';
+import { SECRET_IDS, cheerOnce, isComplete, loadFound, markFound } from './progress';
 
 const KEY = 'pixel-hero-secrets-v1';
 
@@ -54,5 +54,14 @@ describe('saved secret progress', () => {
     expect(found.size).toBe(0);
     expect(markFound(found, 'owl')).toEqual({ isNew: true, complete: false });
     expect(found.has('owl')).toBe(true);
+  });
+});
+
+describe('the "+1"', () => {
+  test('shows the first time a secret is found on this visit, even if it was found on an earlier one', () => {
+    const cheered = new Set();
+    expect(cheerOnce(cheered, 'constellation')).toBe(true);
+    expect(cheerOnce(cheered, 'constellation')).toBe(false);
+    expect(cheerOnce(cheered, 'owl')).toBe(true);
   });
 });
