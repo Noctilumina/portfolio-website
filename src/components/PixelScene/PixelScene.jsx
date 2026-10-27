@@ -8,7 +8,7 @@ import { isTap, resolveClick } from './game/hit';
 import { activeStar, createAmbient, starPoints, stepAmbient } from './game/ambient';
 import { popupFrame, spawnPlusOne, spawnSparkle, stepPopups } from './game/popups';
 import { glowLevels } from './game/glow';
-import { catSprite, catY, createCat, isSteerKey, releasedSteerKey, stepCat } from './game/cat';
+import { catSprite, catY, createCat, isJumpKey, isSteerKey, jump, releasedSteerKey, stepCat } from './game/cat';
 import { artSize, needsRebuild } from './game/size';
 import { prefersReducedMotion, toRgb } from '../../utils/pixel';
 import styles from './PixelScene.module.css';
@@ -276,7 +276,9 @@ export default function PixelScene() {
         draw();
         return;
       }
-      if (cat && p.y > scene.groundAt(Math.round(p.x)) - 8) cat.target = Math.round(p.x);
+      // a tap on the cat makes it jump; a tap on the ground near the hill sends it there
+      if (cat && Math.hypot(p.x - cat.x, p.y - (catY(cat, scene) - 4)) <= (e.pointerType !== 'mouse' ? 9 : 6)) jump(cat);
+      else if (cat && p.y > scene.groundAt(Math.round(p.x)) - 8) cat.target = Math.round(p.x);
     };
 
     const onPointerMove = (e) => {
@@ -287,6 +289,12 @@ export default function PixelScene() {
     };
 
     const onKeyDown = (e) => {
+      // Space and up only belong to the cat while the hero is mostly on screen; past that they scroll.
+      if (cat && visible && isJumpKey(e) && host.getBoundingClientRect().bottom > window.innerHeight * 0.5) {
+        jump(cat);
+        e.preventDefault();
+        return;
+      }
       const dir = isSteerKey(e);
       if (!dir || !cat || !visible) return;
       if (dir < 0) keys.left = true;
@@ -351,7 +359,7 @@ export default function PixelScene() {
         },
         unlock: () => SECRET_IDS.forEach((id) => found1(id, W / 2, H / 2)),
         // read-only views for automated checks
-        cat: () => cat && { x: cat.x, state: cat.state },
+        cat: () => cat && { x: cat.x, y: catY(cat, scene), air: cat.air, state: cat.state },
         starHead: () => {
           const now = starTime(performance.now());
           const s = activeStar(ambient, now);

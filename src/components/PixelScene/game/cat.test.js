@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
 import { layoutScene } from '../scene';
-import { catSprite, catY, createCat, isSteerKey, releasedSteerKey, restX, stepCat } from './cat';
+import { JUMP_ARC, WALK_SPEED, catSprite, catY, createCat, isJumpKey, isSteerKey, jump, releasedSteerKey, restX, stepCat } from './cat';
 
 const scene = layoutScene(360, 225);
 const still = { dir: 0 };
@@ -24,11 +24,12 @@ describe('the cat', () => {
     expect(cat.x).toBe(restX(scene));
   });
 
-  test('holding right walks one pixel a tick', () => {
+  test('holding right walks three pixels a tick', () => {
+    expect(WALK_SPEED).toBe(3);
     const cat = createCat(scene, { reduced: true });
     const x = cat.x;
     run(cat, 10, { dir: 1 });
-    expect(cat.x).toBe(x + 10);
+    expect(cat.x).toBe(x + 30);
     expect(cat.facing).toBe(1);
     expect(cat.state).toBe('walk');
   });
@@ -46,9 +47,9 @@ describe('the cat', () => {
 
   test('a tap target walks it there and then it sits', () => {
     const cat = createCat(scene, { reduced: true });
-    cat.target = cat.x + 6;
-    run(cat, 6);
-    expect(cat.x).toBe(restX(scene) + 6);
+    cat.target = cat.x + 7;
+    run(cat, 3); // 3 + 3 + 1: it doesn't overshoot
+    expect(cat.x).toBe(restX(scene) + 7);
     run(cat, 1);
     expect(cat.target).toBeNull();
     expect(cat.state).toBe('idle');
@@ -85,6 +86,59 @@ describe('the cat', () => {
       seen.add(JSON.stringify(catSprite(cat)));
     }
     expect(seen.size).toBeGreaterThan(1);
+  });
+});
+
+describe('jumping', () => {
+  test('a jump lifts it off the ground in an arc and lands it again', () => {
+    const cat = createCat(scene, { reduced: true });
+    const ground = catY(cat, scene);
+    expect(jump(cat)).toBe(true);
+    const heights = [];
+    for (let i = 0; i < JUMP_ARC.length; i++) {
+      stepCat(cat, still, scene, { reduced: true });
+      heights.push(ground - catY(cat, scene));
+    }
+    expect(Math.max(...heights)).toBeGreaterThanOrEqual(6);
+    expect(heights.at(-1)).toBe(0);
+    expect(catY(cat, scene)).toBe(ground);
+  });
+
+  test('it cannot jump again while in the air', () => {
+    const cat = createCat(scene, { reduced: true });
+    jump(cat);
+    stepCat(cat, still, scene, { reduced: true });
+    expect(jump(cat)).toBe(false);
+    run(cat, JUMP_ARC.length);
+    expect(jump(cat)).toBe(true);
+  });
+
+  test('it can be steered in the air', () => {
+    const cat = createCat(scene, { reduced: true });
+    const x = cat.x;
+    jump(cat);
+    run(cat, 3, { dir: 1 });
+    expect(cat.x).toBe(x + 9);
+    expect(catSprite(cat).name).toBe('catWalk');
+  });
+
+  test('it cannot jump while still walking in', () => {
+    const cat = createCat(scene, { reduced: false });
+    expect(jump(cat)).toBe(false);
+  });
+});
+
+describe('jump keys', () => {
+  const key = (k, extra = {}) => ({ key: k, target: document.body, ...extra });
+
+  test('up, W and space jump', () => {
+    for (const k of ['ArrowUp', 'w', 'W', ' ']) expect(isJumpKey(key(k)), k).toBe(true);
+  });
+
+  test('other keys, typing and shortcuts are left alone', () => {
+    for (const k of ['ArrowDown', 'PageDown', 'a']) expect(isJumpKey(key(k)), k).toBe(false);
+    expect(isJumpKey(key(' ', { target: document.createElement('input') }))).toBe(false);
+    expect(isJumpKey(key('ArrowUp', { ctrlKey: true }))).toBe(false);
   });
 });
 
