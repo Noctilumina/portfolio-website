@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { buildScene, moonLit } from './scene';
 import { constellationHint, hintLines } from './game/hint';
+import { GROW_TICKS, REVEAL_R, clickStar, createSky, drawnLines, nearestStar, revealed } from './game/constellation';
 import { SPRITES, drawSprite } from './sprites';
 import { SECRET_IDS, isComplete, loadFound, markFound } from './game/progress';
 import { isTap, resolveClick } from './game/hit';
@@ -31,7 +32,7 @@ const REACTIONS = {
   ],
   moonRabbit: Array(20).fill(['moonRabbit', 0]),
   burrow: [1, 2, 2, 2, 2, 2, 2, 2, 1, 0].map((f) => ['mousePeek', f]),
-  constellation: Array(7 + 20).fill(null), // lines appear one per tick, hold, then vanish
+  constellation: Array(10).fill(null), // the finished cat flashes
 };
 const STILL = { owl: ['owlBlink', 2], moonRabbit: ['moonRabbit', 0], burrow: ['mousePeek', 2], constellation: null };
 
@@ -64,6 +65,9 @@ export default function PixelScene() {
     const keys = { left: false, right: false };
     const reactions = new Map(); // secret id -> tick it started
     const popups = [];
+    const sky = createSky(); // which of the cat's stars have been clicked this visit
+    // Without a mouse there is no hover, so the cat's stars light up by themselves now and then.
+    const hoverless = window.matchMedia?.('(hover: none)').matches ?? false;
     const ambient = createAmbient(Math.random, performance.now());
     // With reduced motion the shooting star holds still halfway along its path.
     const starTime = (now) => (reduced && ambient.star ? ambient.star.start + 750 : now);
@@ -104,9 +108,10 @@ export default function PixelScene() {
     const drawReaction = (id, tick) => {
       const { anchors } = scene;
       if (id === 'constellation') {
-        const shown = reduced ? scene.constellationLines.length : Math.min(scene.constellationLines.length, tick + 1);
-        scene.constellationLines.slice(0, shown).forEach(([a, b]) => line(anchors.constellation[a], anchors.constellation[b], CONSTELLATION_LINE));
-        anchors.constellation.forEach((s) => dot(s.x, s.y, STAR_BRIGHT));
+        anchors.constellation.forEach((s) => {
+          dot(s.x, s.y, STAR_BRIGHT);
+          if (reduced || tick % 4 < 2) [[-1, 0], [1, 0], [0, -1], [0, 1]].forEach(([dx, dy]) => dot(s.x + dx, s.y + dy, STAR_GLOW));
+        });
         return;
       }
       const [name, f] = reduced ? STILL[id] : REACTIONS[id][tick];
@@ -161,10 +166,24 @@ export default function PixelScene() {
         dot(x + 1, y, LEAF_DARK, fade);
       }
 
-      // Hint: now and then the constellation's stars light up one after another.
-      if (!reduced && !reactions.has('constellation')) {
-        const lit = constellationHint(frame, scene.anchors.constellation.length);
-        const cs = scene.anchors.constellation;
+      // The cat's lines grow out of every star clicked so far, and those stars stay lit.
+      const cs = scene.anchors.constellation;
+      drawnLines(sky, scene.constellationLines, frame, reduced ? 1 : GROW_TICKS).forEach(({ from, to, t }) => {
+        const a = cs[from];
+        const b = cs[to];
+        line(a, { x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t }, CONSTELLATION_LINE);
+      });
+      sky.clicked.forEach((_, i) => dot(cs[i].x, cs[i].y, STAR_BRIGHT));
+
+      // Near the mouse, only the cat's stars within reach show themselves.
+      revealed(cs, pointer, REVEAL_R).forEach((i) => {
+        dot(cs[i].x, cs[i].y, STAR_BRIGHT);
+        [[-1, 0], [1, 0], [0, -1], [0, 1]].forEach(([dx, dy]) => dot(cs[i].x + dx, cs[i].y + dy, STAR_GLOW, 0.7));
+      });
+
+      // Hint on touch screens: now and then the constellation's stars light up one after another.
+      if (hoverless && !reduced && !reactions.has('constellation') && sky.clicked.size === 0) {
+        const lit = constellationHint(frame, cs.length);
         hintLines(scene.constellationLines, lit).forEach(([a, b]) => line(cs[a], cs[b], CONSTELLATION_LINE, 0.55));
         cs.slice(0, lit).forEach((s, i) => {
           dot(s.x, s.y, STAR_BRIGHT);
@@ -257,9 +276,21 @@ export default function PixelScene() {
         draw();
         return;
       }
+      if (id === 'constellation') {
+        const cs = scene.anchors.constellation;
+        const i = nearestStar(p, cs, e.pointerType !== 'mouse' ? 8 : 5);
+        if (i >= 0 && clickStar(sky, i, frame, cs.length).complete) {
+          reactions.set(id, frame);
+          // the "+1" rises from under the cat, clear of the menu above it
+          const b = scene.constellationBox;
+          found1(id, Math.round((b.x0 + b.x1) / 2) - 2, b.y1 + 4);
+        }
+        draw();
+        return;
+      }
       if (id) {
         reactions.set(id, frame);
-        const a = id === 'constellation' ? scene.anchors.constellation[0] : id === 'moonRabbit' ? scene.anchors.moon : scene.anchors[id];
+        const a = id === 'moonRabbit' ? scene.anchors.moon : scene.anchors[id];
         found1(id, a.x, a.y - 4);
         draw();
         return;
