@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { buildScene, moonLit } from './scene';
-import { constellationHint } from './game/hint';
+import { constellationHint, hintLines } from './game/hint';
 import { SPRITES, drawSprite } from './sprites';
 import { SECRET_IDS, isComplete, loadFound, markFound } from './game/progress';
 import { isTap, resolveClick } from './game/hit';
@@ -96,9 +96,9 @@ export default function PixelScene() {
       ctx.fillRect(Math.round(x), Math.round(y), 1, 1);
     };
 
-    const line = (a, b, c) => {
+    const line = (a, b, c, alpha = 1) => {
       const n = Math.max(Math.abs(b.x - a.x), Math.abs(b.y - a.y));
-      for (let i = 0; i <= n; i++) dot(a.x + ((b.x - a.x) * i) / n, a.y + ((b.y - a.y) * i) / n, c);
+      for (let i = 0; i <= n; i++) dot(a.x + ((b.x - a.x) * i) / n, a.y + ((b.y - a.y) * i) / n, c, alpha);
     };
 
     const drawReaction = (id, tick) => {
@@ -164,7 +164,9 @@ export default function PixelScene() {
       // Hint: now and then the constellation's stars light up one after another.
       if (!reduced && !reactions.has('constellation')) {
         const lit = constellationHint(frame, scene.anchors.constellation.length);
-        scene.anchors.constellation.slice(0, lit).forEach((s, i) => {
+        const cs = scene.anchors.constellation;
+        hintLines(scene.constellationLines, lit).forEach(([a, b]) => line(cs[a], cs[b], CONSTELLATION_LINE, 0.55));
+        cs.slice(0, lit).forEach((s, i) => {
           dot(s.x, s.y, STAR_BRIGHT);
           if (i === lit - 1) [[-1, 0], [1, 0], [0, -1], [0, 1]].forEach(([dx, dy]) => dot(s.x + dx, s.y + dy, STAR_GLOW));
         });
@@ -343,7 +345,7 @@ export default function PixelScene() {
           const s = activeStar(ambient, now);
           return s && starPoints(s, now)[0];
         },
-        layout: () => ({ px, anchors: scene.anchors, titleBand: scene.titleBand }),
+        layout: () => ({ px, anchors: scene.anchors, titleBand: scene.titleBand, constellationBox: scene.constellationBox }),
       };
     }
 

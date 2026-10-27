@@ -92,9 +92,13 @@ export function layoutScene(W, H) {
   const owl = { x: Math.round(cx - lightDir * cr * 0.3), y: Math.round(cy + cr * 0.1) };
 
   // Constellation: a quiet corner of the sky away from the moon, the crown and the name.
-  const cs = narrow ? 1 : 1.5;
+  const cs = 1.5;
   const origin = narrow ? { x: W * 0.12, y: H * 0.1 } : { x: W * 0.86, y: H * 0.08 }; // below the menu bar
   const constellation = CAT_STARS.map(([x, y]) => ({ x: Math.round(origin.x + x * cs), y: Math.round(origin.y + y * cs) }));
+  // No ordinary stars in this patch, so the cat's own stars aren't lost among them.
+  const xs = constellation.map((p) => p.x);
+  const ys = constellation.map((p) => p.y);
+  const constellationBox = { x0: Math.min(...xs) - 3, x1: Math.max(...xs) + 3, y0: Math.min(...ys) - 3, y1: Math.max(...ys) + 3 };
 
   const burrowX = Math.round(narrow ? W * 0.22 : W * 0.45);
   const burrow = { x: burrowX, y: groundAt(burrowX) };
@@ -112,6 +116,7 @@ export function layoutScene(W, H) {
     shape,
     crown,
     constellationLines: CAT_LINES,
+    constellationBox,
     anchors: { owl, moon, constellation, burrow, treeX },
   };
 }
@@ -140,6 +145,8 @@ export function buildScene(W, H) {
     const x = (rand() * W) | 0;
     const y = (rand() ** 1.6 * horizon * 0.8) | 0;
     const bright = rand() < 0.3;
+    const box = L.constellationBox;
+    if (x >= box.x0 - 3 && x <= box.x1 + 3 && y >= box.y0 - 3 && y <= box.y1 + 3) continue; // room for a sparkle's arms too
     bg.put(x, y, bright ? STAR : STAR_DIM);
     stars.push({ x, y });
     if (rand() < 0.06) {

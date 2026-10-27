@@ -51,6 +51,16 @@ describe.each(SIZES)('scene layout at %ix%i', (W, H) => {
     }
   });
 
+  test('the constellation has a clear patch of sky around it', () => {
+    const b = s.constellationBox;
+    for (const p of constellation) {
+      expect(p.x - b.x0).toBeGreaterThanOrEqual(3);
+      expect(b.x1 - p.x).toBeGreaterThanOrEqual(3);
+      expect(p.y - b.y0).toBeGreaterThanOrEqual(3);
+      expect(b.y1 - p.y).toBeGreaterThanOrEqual(3);
+    }
+  });
+
   test('the layout is the same every time', () => {
     expect(layoutScene(W, H).anchors).toEqual(s.anchors);
   });
