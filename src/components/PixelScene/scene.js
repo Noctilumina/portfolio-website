@@ -1,6 +1,6 @@
 // Draws the placeholder hero scene (night sky, moon, hills, a tree) at art resolution.
-// Returns a static background, a few tree frames for the sway, and the points the
-// animation layer needs (stars that twinkle, where the fireflies live).
+// Returns the static picture plus the points the animation layer needs
+// (stars that twinkle, where the fireflies live).
 
 import { bayer, fbm, seededRandom, toRgb } from '../../utils/pixel';
 
@@ -14,8 +14,6 @@ const FAR = toRgb('#2a1d55');
 const FAR_RIM = toRgb('#4b3486');
 const NEAR = toRgb('#120d26');
 const NEAR_RIM = toRgb('#33245e');
-
-export const SWAY_FRAMES = [0, 1, 2, 1, 0, -1, -2, -1];
 
 function makeLayer(W, H) {
   const canvas = document.createElement('canvas');
@@ -95,24 +93,25 @@ export function buildScene(W, H) {
   }
   bg.commit();
 
-  // Tree: same seed for every frame, so only the sway changes between frames.
+  // Tree: kept low enough that its crown stays under the name.
+  const treeX = narrow ? W * 0.5 : W * 0.78;
   const tree = {
-    x: narrow ? W * 0.5 : W * 0.76,
-    baseY: ground((narrow ? W * 0.5 : W * 0.76) | 0) + 1,
-    scale: Math.min(H * (narrow ? 0.33 : 0.5), W * (narrow ? 0.55 : 0.3)),
+    x: treeX,
+    baseY: ground(treeX | 0) + 1,
+    scale: Math.min(H * (narrow ? 0.33 : 0.42), W * (narrow ? 0.55 : 0.28)),
   };
   const lightDir = moon.x < tree.x ? -1 : 1;
-  const frames = [-2, -1, 0, 1, 2].map((sway) => drawTree(W, H, tree, sway, lightDir));
+  const ctx = bg.canvas.getContext('2d');
+  ctx.drawImage(drawTree(W, H, tree, lightDir), 0, 0);
 
   return {
     background: bg.canvas,
-    treeFrames: frames,
     twinkles,
     crown: { x: tree.x, y: tree.baseY - tree.scale * 0.62, rx: tree.scale * 0.55, ry: tree.scale * 0.35 },
   };
 }
 
-function drawTree(W, H, tree, sway, lightDir) {
+function drawTree(W, H, tree, lightDir) {
   const layer = makeLayer(W, H);
   const rand = seededRandom(11);
   const clusters = [];
@@ -121,11 +120,9 @@ function drawTree(W, H, tree, sway, lightDir) {
     for (let y = -r; y <= r; y++) for (let x = -r; x <= r; x++) if (x * x + y * y <= r * r + r) layer.put(cx + x, cy + y, c);
   };
 
-  // Higher branches bend further, like wind moving the crown more than the trunk.
   const branch = (x, y, ang, len, w, depth) => {
-    const bend = sway * (5 - depth) * 0.012;
-    const x2 = x + Math.cos(ang + bend) * len;
-    const y2 = y + Math.sin(ang + bend) * len;
+    const x2 = x + Math.cos(ang) * len;
+    const y2 = y + Math.sin(ang) * len;
     const steps = Math.ceil(len);
     for (let i = 0; i <= steps; i++) {
       const t = i / steps;

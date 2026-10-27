@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { buildScene, SWAY_FRAMES } from './scene';
+import { buildScene } from './scene';
 import { prefersReducedMotion, seededRandom, toRgb } from '../../utils/pixel';
 import styles from './PixelScene.module.css';
 
@@ -8,11 +8,10 @@ const FIREFLY_GLOW = toRgb('#b88a3a');
 const STAR_BRIGHT = toRgb('#ffffff');
 const STAR_OFF = toRgb('#5a4a9a');
 const TICK_MS = 110; // stepped animation, ~9 frames a second, like a sprite
-const FOLLOWERS = 3; // fireflies that drift toward the cursor
 
 /**
  * Placeholder hero art, drawn at low resolution and scaled up with crisp pixels.
- * At rest: stars twinkle, the tree sways, fireflies wander. A few fireflies follow the cursor.
+ * Stars twinkle and fireflies wander around the tree.
  */
 export default function PixelScene() {
   const canvasRef = useRef(null);
@@ -26,16 +25,14 @@ export default function PixelScene() {
     let flies = [];
     let W = 0;
     let H = 0;
-    let scale = 4;
     let frame = 0;
     let timer = null;
     let visible = true;
-    const pointer = { x: 0, y: 0, active: false };
 
     const build = () => {
       const rect = host.getBoundingClientRect();
-      const px = window.innerWidth < 600 ? 3 : 4;
-      scale = px;
+      // art pixels grow on big screens so the scene keeps its detail level instead of looking empty
+      const px = Math.max(3, Math.round(Math.min(rect.width, rect.height * 1.6) / 360));
       const nextW = Math.max(1, Math.ceil(rect.width / px));
       const nextH = Math.max(1, Math.ceil(rect.height / px));
       if (scene && nextW === W && nextH === H) return; // building the scene is the expensive part
@@ -51,7 +48,7 @@ export default function PixelScene() {
       const { crown } = scene;
       flies = Array.from({ length: 16 }, (_, i) => {
         const home = { x: crown.x + (rand() - 0.5) * crown.rx * 2.4, y: crown.y + (rand() - 0.5) * crown.ry * 3 };
-        return { ...home, home, follower: i < FOLLOWERS, phase: (rand() * 6) | 0 };
+        return { ...home, home, phase: (rand() * 6) | 0 };
       });
       draw();
     };
@@ -63,9 +60,7 @@ export default function PixelScene() {
 
     const draw = () => {
       if (!scene) return;
-      const sway = reduced ? 0 : SWAY_FRAMES[Math.floor(frame / 6) % SWAY_FRAMES.length];
       ctx.drawImage(scene.background, 0, 0);
-      ctx.drawImage(scene.treeFrames[sway + 2], 0, 0);
 
       if (!reduced) {
         scene.twinkles.forEach((s) => {
@@ -95,10 +90,8 @@ export default function PixelScene() {
     const step = () => {
       frame++;
       flies.forEach((f) => {
-        const target = f.follower && pointer.active ? pointer : f.home;
-        const pull = f.follower && pointer.active ? 0.18 : 0.04;
-        f.x += (target.x - f.x) * pull + (Math.random() - 0.5) * 1.6;
-        f.y += (target.y - f.y) * pull + (Math.random() - 0.5) * 1.6;
+        f.x += (f.home.x - f.x) * 0.04 + (Math.random() - 0.5) * 1.6;
+        f.y += (f.home.y - f.y) * 0.04 + (Math.random() - 0.5) * 1.6;
       });
       draw();
     };
@@ -112,15 +105,6 @@ export default function PixelScene() {
       timer = null;
     };
 
-    const onPointer = (e) => {
-      const rect = host.getBoundingClientRect();
-      pointer.x = (e.clientX - rect.left) / scale;
-      pointer.y = (e.clientY - rect.top) / scale;
-      pointer.active = pointer.y >= 0 && pointer.y <= H;
-    };
-    const onLeave = () => {
-      pointer.active = false;
-    };
     const onVisibility = () => (document.hidden ? stop() : start());
 
     build();
@@ -134,16 +118,12 @@ export default function PixelScene() {
       else stop();
     });
     seen.observe(host);
-    host.addEventListener('pointermove', onPointer);
-    host.addEventListener('pointerleave', onLeave);
     document.addEventListener('visibilitychange', onVisibility);
 
     return () => {
       stop();
       resize.disconnect();
       seen.disconnect();
-      host.removeEventListener('pointermove', onPointer);
-      host.removeEventListener('pointerleave', onLeave);
       document.removeEventListener('visibilitychange', onVisibility);
     };
   }, []);

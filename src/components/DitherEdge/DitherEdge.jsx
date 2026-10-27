@@ -27,7 +27,8 @@ export default function DitherEdge({ from, to, seed = 0 }) {
     let colB = [0, 0, 0];
 
     const build = () => {
-      const px = window.innerWidth < 600 ? 3 : 4;
+      // same pixel size as the hero art
+      const px = Math.max(3, Math.round(Math.min(window.innerWidth, window.innerHeight * 1.6) / 360));
       W = Math.max(1, Math.ceil(host.offsetWidth / px));
       H = Math.max(1, Math.ceil(host.offsetHeight / px));
       canvas.width = W;
