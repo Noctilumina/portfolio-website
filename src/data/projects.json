@@ -1,9 +1,25 @@
 [
   {
+    "slug": "dawaco",
+    "title": "Dawaco",
+    "shortDescription": "Fullstack and DevOps engineering on Microsoft Azure.",
+    "description": "Working at Dawaco in Culemborg as a fullstack senior DevOps engineer. Building and running software on Microsoft Azure, combined with project management in a hybrid team.",
+    "image": "/images/dawaco_well.png",
+    "techStack": ["Microsoft Azure"],
+    "features": [
+      "Fullstack development",
+      "DevOps on Microsoft Azure",
+      "Project management",
+      "Hybrid team collaboration"
+    ],
+    "liveUrl": "",
+    "githubUrl": ""
+  },
+  {
     "slug": "gynzy-education-platform",
     "title": "Gynzy Education Platform",
     "shortDescription": "Cross-platform educational software built with Flutter and Ember.js for classrooms.",
-    "description": "Contributing to Gynzy's interactive education platform used by teachers and students. Working as a fullstack medior developer building features across the Flutter mobile/desktop app and the Ember.js web application. Focus on delivering intuitive, reliable tools for classroom use.",
+    "description": "Contributed to Gynzy's interactive education platform used by teachers and students. Worked as a fullstack medior developer building features across the Flutter mobile/desktop app and the Ember.js web application. Focused on delivering intuitive, reliable tools for classroom use.",
     "image": "/images/classroom_banner.gif",
     "techStack": ["Flutter", "Ember.js", "Lit", "Gatsby", "Storyblok", "Dart", "JavaScript"],
     "features": [

@@ -63,8 +63,8 @@
     "initials": "IP",
     "intro": "Hi, I'm <strong>Iris Peters</strong>, a fullstack developer based in 's-Hertogenbosch, the Netherlands. I build web applications, cloud infrastructure, and everything in between.",
     "backgroundTitle": "Background",
-    "background": "With a Bachelor's in Computer Software Engineering from Avans Hogeschool, I've spent 4+ years working across the full stack. From building CI/CD pipelines and Azure infrastructure at Info Support, to developing AR applications on the HoloLens 2, to my current role as a fullstack medior developer at Gynzy building educational software.",
-    "backgroundText": "With a Bachelor's in Computer Software Engineering from Avans Hogeschool, I've spent 4+ years working across the full stack. From building CI/CD pipelines and Azure infrastructure at Info Support, to developing AR applications on the HoloLens 2, to my current role as a fullstack medior developer at Gynzy building educational software.",
+    "background": "With a Bachelor's in Computer Software Engineering from Avans Hogeschool, I've spent 5+ years working across the full stack. From building CI/CD pipelines and Azure infrastructure at Info Support, to developing AR applications on the HoloLens 2, to building educational software at Gynzy, to my current role as a fullstack senior DevOps engineer at Dawaco.",
+    "backgroundText": "With a Bachelor's in Computer Software Engineering from Avans Hogeschool, I've spent 5+ years working across the full stack. From building CI/CD pipelines and Azure infrastructure at Info Support, to developing AR applications on the HoloLens 2, to building educational software at Gynzy, to my current role as a fullstack senior DevOps engineer at Dawaco.",
     "whatIDoTitle": "What I Do",
     "whatIDo": "I enjoy working across the entire stack, whether that's crafting responsive frontends with Flutter, Ember.js, or React, designing cloud architectures on Azure, or setting up robust DevOps pipelines. I'm always looking to learn new technologies and improve my craft.",
     "whatIDoText": "I enjoy working across the entire stack, whether that's crafting responsive frontends with Flutter, Ember.js, or React, designing cloud architectures on Azure, or setting up robust DevOps pipelines. I'm always looking to learn new technologies and improve my craft.",
@@ -309,9 +309,20 @@
   },
   "projectData": [
     {
+      "title": "Dawaco",
+      "shortDescription": "Fullstack and DevOps engineering on Microsoft Azure.",
+      "description": "Working at Dawaco in Culemborg as a fullstack senior DevOps engineer. Building and running software on Microsoft Azure, combined with project management in a hybrid team.",
+      "features": [
+        "Fullstack development",
+        "DevOps on Microsoft Azure",
+        "Project management",
+        "Hybrid team collaboration"
+      ]
+    },
+    {
       "title": "Gynzy Education Platform",
       "shortDescription": "Cross-platform educational software built with Flutter and Ember.js for classrooms.",
-      "description": "Contributing to Gynzy's interactive education platform used by teachers and students. Working as a fullstack medior developer building features across the Flutter mobile/desktop app and the Ember.js web application. Focus on delivering intuitive, reliable tools for classroom use.",
+      "description": "Contributed to Gynzy's interactive education platform used by teachers and students. Worked as a fullstack medior developer building features across the Flutter mobile/desktop app and the Ember.js web application. Focused on delivering intuitive, reliable tools for classroom use.",
       "features": [
         "Cross-platform development with Flutter",
         "Interactive web application with Ember.js",
@@ -368,10 +379,16 @@
   ],
   "experienceData": [
     {
+      "role": "Fullstack Senior DevOps Engineer",
+      "company": "Dawaco",
+      "period": "May 2026 — Present",
+      "description": "Working as a fullstack senior DevOps engineer at Dawaco in Culemborg. Focus on Microsoft Azure and project management in a hybrid team environment."
+    },
+    {
       "role": "Fullstack Medior Developer",
       "company": "Gynzy",
-      "period": "May 2025 — Present",
-      "description": "Building educational software as a fullstack developer. Working with Flutter and Dart for cross-platform development, Ember.js and Lit for web components, and Gatsby with Storyblok for content-driven pages."
+      "period": "May 2025 — May 2026",
+      "description": "Built educational software as a fullstack developer. Worked with Flutter and Dart for cross-platform development, Ember.js and Lit for web components, and Gatsby with Storyblok for content-driven pages."
     },
     {
       "role": "IT Consultant",

@@ -63,8 +63,8 @@
     "initials": "IP",
     "intro": "Hoi, ik ben <strong>Iris Peters</strong>, een fullstack developer uit 's-Hertogenbosch, Nederland. Ik bouw webapplicaties, cloudinfrastructuur en alles daartussenin.",
     "backgroundTitle": "Achtergrond",
-    "background": "Met een Bachelor of Applied Science in Computer Software Engineering van Avans Hogeschool, heb ik meer dan 4 jaar ervaring opgebouwd over de hele stack. Van het bouwen van CI/CD-pipelines en Azure-infrastructuur bij Info Support, tot het ontwikkelen van AR-applicaties op de HoloLens 2, tot mijn huidige rol als fullstack medior developer bij Gynzy waar ik educatieve software bouw.",
-    "backgroundText": "Met een Bachelor of Applied Science in Computer Software Engineering van Avans Hogeschool, heb ik meer dan 4 jaar ervaring opgebouwd over de hele stack. Van het bouwen van CI/CD-pipelines en Azure-infrastructuur bij Info Support, tot het ontwikkelen van AR-applicaties op de HoloLens 2, tot mijn huidige rol als fullstack medior developer bij Gynzy waar ik educatieve software bouw.",
+    "background": "Met een Bachelor of Applied Science in Computer Software Engineering van Avans Hogeschool, heb ik meer dan 5 jaar ervaring opgebouwd over de hele stack. Van het bouwen van CI/CD-pipelines en Azure-infrastructuur bij Info Support, tot het ontwikkelen van AR-applicaties op de HoloLens 2, tot het bouwen van educatieve software bij Gynzy, tot mijn huidige rol als fullstack senior DevOps engineer bij Dawaco.",
+    "backgroundText": "Met een Bachelor of Applied Science in Computer Software Engineering van Avans Hogeschool, heb ik meer dan 5 jaar ervaring opgebouwd over de hele stack. Van het bouwen van CI/CD-pipelines en Azure-infrastructuur bij Info Support, tot het ontwikkelen van AR-applicaties op de HoloLens 2, tot het bouwen van educatieve software bij Gynzy, tot mijn huidige rol als fullstack senior DevOps engineer bij Dawaco.",
     "whatIDoTitle": "Wat Ik Doe",
     "whatIDo": "Ik werk graag over de hele stack, of het nu gaat om het bouwen van responsive frontends met Flutter, Ember.js of React, het ontwerpen van cloudarchitecturen op Azure, of het opzetten van robuuste DevOps-pipelines. Ik ben altijd op zoek naar nieuwe technologieën en manieren om mijn vaardigheden te verbeteren.",
     "whatIDoText": "Ik werk graag over de hele stack, of het nu gaat om het bouwen van responsive frontends met Flutter, Ember.js of React, het ontwerpen van cloudarchitecturen op Azure, of het opzetten van robuuste DevOps-pipelines. Ik ben altijd op zoek naar nieuwe technologieën en manieren om mijn vaardigheden te verbeteren.",
@@ -423,9 +423,20 @@
   },
   "projectData": [
     {
+      "title": "Dawaco",
+      "shortDescription": "Fullstack- en DevOps-engineering op Microsoft Azure.",
+      "description": "Werkzaam bij Dawaco in Culemborg als fullstack senior DevOps engineer. Software bouwen en draaien op Microsoft Azure, gecombineerd met projectmanagement in een hybride team.",
+      "features": [
+        "Fullstack ontwikkeling",
+        "DevOps op Microsoft Azure",
+        "Projectmanagement",
+        "Hybride teamsamenwerking"
+      ]
+    },
+    {
       "title": "Gynzy Educatieplatform",
       "shortDescription": "Cross-platform educatieve software gebouwd met Flutter en Ember.js voor klaslokalen.",
-      "description": "Bijdragen aan het interactieve educatieplatform van Gynzy dat wordt gebruikt door docenten en leerlingen. Werkzaam als fullstack medior developer aan features voor de Flutter mobiele/desktop app en de Ember.js webapplicatie. Focus op het leveren van intuïtieve, betrouwbare tools voor gebruik in het klaslokaal.",
+      "description": "Bijgedragen aan het interactieve educatieplatform van Gynzy dat wordt gebruikt door docenten en leerlingen. Als fullstack medior developer features gebouwd voor de Flutter mobiele/desktop app en de Ember.js webapplicatie. Focus lag op het leveren van intuïtieve, betrouwbare tools voor gebruik in het klaslokaal.",
       "features": [
         "Cross-platform ontwikkeling met Flutter",
         "Interactieve webapplicatie met Ember.js",
@@ -482,10 +493,16 @@
   ],
   "experienceData": [
     {
+      "role": "Fullstack Senior DevOps Engineer",
+      "company": "Dawaco",
+      "period": "Mei 2026 — Heden",
+      "description": "Werkzaam als fullstack senior DevOps engineer bij Dawaco in Culemborg. Focus op Microsoft Azure en projectmanagement in een hybride team."
+    },
+    {
       "role": "Fullstack Medior Developer",
       "company": "Gynzy",
-      "period": "Mei 2025 — Heden",
-      "description": "Educatieve software bouwen als fullstack developer. Werken met Flutter en Dart voor cross-platform ontwikkeling. Ember.js en Lit voor web components. Gatsby met Storyblok voor content-gedreven pagina's."
+      "period": "Mei 2025 — Mei 2026",
+      "description": "Educatieve software gebouwd als fullstack developer. Gewerkt met Flutter en Dart voor cross-platform ontwikkeling. Ember.js en Lit voor web components. Gatsby met Storyblok voor content-gedreven pagina's."
     },
     {
       "role": "IT Consultant",
