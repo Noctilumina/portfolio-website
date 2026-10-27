@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { buildScene, moonLit } from './scene';
 import { constellationHint, hintLines } from './game/hint';
-import { GROW_TICKS, REVEAL_R, clickStar, createSky, drawnLines, hoverLines, nearestStar, revealed } from './game/constellation';
+import { GROW_TICKS, REVEAL_R, clickStar, createSky, drawnLines, hoverLines, litStars, nearestStar, revealed } from './game/constellation';
 import { SPRITES, drawSprite } from './sprites';
 import { SECRET_IDS, cheerOnce, isComplete, loadFound, markFound } from './game/progress';
 import { isTap, resolveClick } from './game/hit';
@@ -10,11 +10,9 @@ import { popupFrame, spawnPlusOne, spawnSparkle, stepPopups } from './game/popup
 import { glowLevels } from './game/glow';
 import { catSprite, catY, createCat, isSteerKey, releasedSteerKey, stepCat } from './game/cat';
 import { artSize, needsRebuild } from './game/size';
-import { prefersReducedMotion, seededRandom, toRgb } from '../../utils/pixel';
+import { prefersReducedMotion, toRgb } from '../../utils/pixel';
 import styles from './PixelScene.module.css';
 
-const FIREFLY = toRgb('#ffe08a');
-const FIREFLY_GLOW = toRgb('#b88a3a');
 const STAR_BRIGHT = toRgb('#ffffff');
 const STAR_OFF = toRgb('#5a4a9a');
 const STAR_GLOW = toRgb('#c4b5f0');
@@ -39,7 +37,7 @@ const STILL = { owl: ['owlBlink', 2], moonRabbit: ['moonRabbit', 0], burrow: ['m
 
 /**
  * Placeholder hero art, drawn at low resolution and scaled up with crisp pixels.
- * Stars twinkle and fireflies wander; now and then a leaf falls or a star shoots past.
+ * Stars twinkle; now and then a leaf falls or a star shoots past.
  * Five secrets hide in the scene, and finding all of them brings out a cat.
  */
 export default function PixelScene() {
@@ -53,7 +51,6 @@ export default function PixelScene() {
     const found = loadFound();
     const cheered = new Set(); // secrets that got their "+1" on this visit
     let scene = null;
-    let flies = [];
     let W = 0;
     let H = 0;
     let px = 4;
@@ -86,12 +83,6 @@ export default function PixelScene() {
       canvas.style.width = `${W * px}px`;
       canvas.style.height = `${H * px}px`;
       scene = buildScene(W, H);
-      const rand = seededRandom(3);
-      const { crown } = scene;
-      flies = Array.from({ length: 16 }, () => {
-        const home = { x: crown.x + (rand() - 0.5) * crown.rx * 2.4, y: crown.y + (rand() - 0.5) * crown.ry * 3 };
-        return { ...home, home, phase: (rand() * 6) | 0 };
-      });
       // A returning visitor who already found everything gets their cat back, sitting.
       if (!cat && isComplete(found)) cat = createCat(scene, { reduced: true });
       draw();
@@ -168,14 +159,14 @@ export default function PixelScene() {
         dot(x + 1, y, LEAF_DARK, fade);
       }
 
-      // The cat's lines grow out of every star clicked so far, and those stars stay lit.
+      // The cat's lines grow out of every star clicked so far; stars they reach light up.
       const cs = scene.anchors.constellation;
       drawnLines(sky, scene.constellationLines, frame, reduced ? 1 : GROW_TICKS).forEach(({ from, to, t }) => {
         const a = cs[from];
         const b = cs[to];
         line(a, { x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t }, CONSTELLATION_LINE);
       });
-      sky.clicked.forEach((_, i) => dot(cs[i].x, cs[i].y, STAR_BRIGHT));
+      litStars(sky, scene.constellationLines, frame, reduced ? 1 : GROW_TICKS).forEach((i) => dot(cs[i].x, cs[i].y, STAR_BRIGHT));
 
       // Near the mouse, only the cat's stars within reach show themselves, with the lines between them.
       const shown = revealed(cs, pointer, REVEAL_R);
@@ -199,18 +190,6 @@ export default function PixelScene() {
 
       reactions.forEach((start, id) => drawReaction(id, frame - start));
 
-      flies.forEach((f) => {
-        const on = reduced || (frame + f.phase) % 6 !== 0;
-        if (!on) return;
-        if ((frame + f.phase) % 3 === 0) {
-          dot(f.x - 1, f.y, FIREFLY_GLOW);
-          dot(f.x + 1, f.y, FIREFLY_GLOW);
-          dot(f.x, f.y - 1, FIREFLY_GLOW);
-          dot(f.x, f.y + 1, FIREFLY_GLOW);
-        }
-        dot(f.x, f.y, FIREFLY);
-      });
-
       if (cat) {
         const { name, frame: f } = catSprite(cat);
         drawSprite(ctx, SPRITES[name], f, cat.x, catY(cat, scene) - 1, cat.facing < 0);
@@ -227,10 +206,6 @@ export default function PixelScene() {
       const now = performance.now();
       // The shooting star is a secret, so it still comes with reduced motion (as a still streak).
       stepAmbient(ambient, now, scene, Math.random);
-      flies.forEach((f) => {
-        f.x += (f.home.x - f.x) * 0.04 + (Math.random() - 0.5) * 1.6;
-        f.y += (f.home.y - f.y) * 0.04 + (Math.random() - 0.5) * 1.6;
-      });
       reactions.forEach((start, id) => {
         const length = reduced ? STILL_TICKS : REACTIONS[id].length;
         if (frame - start >= length) reactions.delete(id);
@@ -285,7 +260,7 @@ export default function PixelScene() {
       if (id === 'constellation') {
         const cs = scene.anchors.constellation;
         const i = nearestStar(p, cs, e.pointerType !== 'mouse' ? 8 : 5);
-        if (i >= 0 && clickStar(sky, i, frame, cs.length).complete) {
+        if (i >= 0 && clickStar(sky, i, frame, scene.constellationLines, cs.length).complete) {
           reactions.set(id, frame);
           // the "+1" rises from under the cat, clear of the menu above it
           const b = scene.constellationBox;

@@ -1,5 +1,6 @@
-// The cat constellation is found star by star: each click lights a star and grows its lines
-// out toward its neighbours; once every star is lit the cat is complete. Hovering near it
+// The cat constellation is found by connecting the dots: a click lights a star and grows its
+// lines out to its neighbours, which light up when a line reaches them. Once every star is
+// lit the cat is complete and the rest of its outline draws itself. Hovering near it
 // reveals only the stars close to the mouse.
 
 export const GROW_TICKS = 4; // ticks a line takes to reach the next star
@@ -16,12 +17,24 @@ export function nearestStar(point, stars, reach) {
   return best;
 }
 
-export const createSky = () => ({ clicked: new Map() }); // star index -> tick it was clicked
+// clicked: star index -> tick it was clicked; doneAt: tick every star was lit
+export const createSky = () => ({ clicked: new Map(), doneAt: undefined });
 
-export function clickStar(sky, i, tick, count) {
+const reached = (sky, lines) => {
+  const lit = new Set(sky.clicked.keys());
+  lines.forEach(([a, b]) => {
+    if (sky.clicked.has(a)) lit.add(b);
+    if (sky.clicked.has(b)) lit.add(a);
+  });
+  return lit;
+};
+
+export function clickStar(sky, i, tick, lines, count) {
   const isNew = !sky.clicked.has(i);
   if (isNew) sky.clicked.set(i, tick);
-  return { isNew, complete: isNew && sky.clicked.size === count };
+  const complete = sky.doneAt === undefined && reached(sky, lines).size === count;
+  if (complete) sky.doneAt = tick;
+  return { isNew, complete };
 }
 
 /** Lines to draw: from the star clicked first toward the other, t = how far along (0..1]. */
@@ -30,11 +43,23 @@ export function drawnLines(sky, lines, tick, grow) {
   lines.forEach(([a, b]) => {
     const ta = sky.clicked.get(a);
     const tb = sky.clicked.get(b);
-    if (ta === undefined && tb === undefined) return;
+    if (ta === undefined && tb === undefined) {
+      if (sky.doneAt !== undefined) out.push({ from: a, to: b, t: Math.min(1, (tick - sky.doneAt + 1) / grow) });
+      return;
+    }
     const [from, to, start] = tb === undefined || (ta !== undefined && ta <= tb) ? [a, b, ta] : [b, a, tb];
     out.push({ from, to, t: Math.min(1, (tick - start + 1) / grow) });
   });
   return out;
+}
+
+/** Stars that are lit: clicked ones, and those a fully grown line has reached. */
+export function litStars(sky, lines, tick, grow) {
+  const lit = new Set(sky.clicked.keys());
+  drawnLines(sky, lines, tick, grow).forEach(({ from, to, t }) => {
+    if (t === 1) lit.add(from).add(to);
+  });
+  return [...lit].sort((a, b) => a - b);
 }
 
 /** Indices of the stars within reach of the mouse (none without a mouse). */
