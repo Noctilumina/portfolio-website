@@ -13,7 +13,7 @@
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  transition: transform var(--transition-slow), box-shadow var(--transition-slow), color var(--transition-paint);
+  transition: transform 0.1s steps(2), box-shadow 0.1s steps(2), color var(--transition-paint);
 }
 
 /* Inner fill that wipes away on hover to reveal the primary color behind */
@@ -31,6 +31,11 @@
   transform: translate(-0.1em, -0.1em);
   box-shadow: var(--shadow-lg);
   color: #ffffff;
+}
+
+.badge:active {
+  transform: translate(0.15em, 0.15em);
+  box-shadow: none;
 }
 
 .badge:hover::after {

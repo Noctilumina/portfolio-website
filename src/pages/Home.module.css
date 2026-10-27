@@ -1,0 +1,42 @@
+/*
+ * Pixel palette for the home page. The page runs from the night hero down through
+ * the last light of a sunset (peach, rose, lavender) and ends in night again.
+ * The theme colours are pinned here so the sections read the same in every theme.
+ */
+.home {
+  --px-ground: #120d26;
+  --px-s1: #fde3c8;
+  --px-s2: #f4cfd8;
+  --px-s3: #dcd3ef;
+  --px-night: #2b2350;
+  --px-ink: #22203a;
+  --px-paper: #fffaf2;
+  --px-accent: #d9542f;
+
+  --color-text: var(--px-ink);
+  --color-muted: #5a5170;
+  --color-surface: var(--px-paper);
+  --color-border: var(--px-ink);
+  --color-shadow: var(--px-ink);
+  --color-primary: var(--px-accent);
+  --color-secondary: #4a2f6b;
+
+  background: var(--px-night);
+  color: var(--px-ink);
+}
+
+.home > footer {
+  background: var(--px-night);
+  color: #c9bfe6;
+  border-top: 0;
+  padding: 2.5rem 2rem 3rem;
+  font-family: 'Silkscreen', var(--font-heading);
+  letter-spacing: 0.05em;
+}
+
+.home h2 {
+  font-family: 'Pixelify Sans', var(--font-heading);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+}

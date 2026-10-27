@@ -34,6 +34,20 @@
   transition: transform var(--transition-paint);
 }
 
+/* On top of the home hero art the bar disappears and only the links remain. */
+.overHero {
+  background: transparent;
+  border-bottom-color: transparent;
+  box-shadow: none;
+  --color-text: #fffaf2;
+  --color-primary: #ffd27a;
+}
+
+.overHero .logo,
+.overHero .navLink {
+  text-shadow: 2px 2px 0 #0d0b24;
+}
+
 .hidden {
   transform: translateY(-100%);
 }
@@ -90,7 +104,7 @@
   height: 2px;
   background: var(--color-primary);
   display: block;
-  transition: 0.5s;
+  transition: width 0.3s steps(6); /* wipes in a few pixels at a time */
 }
 
 .navLink:hover::after,

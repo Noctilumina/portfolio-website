@@ -1,0 +1,17 @@
+.edge {
+  position: relative;
+  height: 120px;
+  overflow: hidden;
+  margin: -1px 0; /* no hairline gap against the sections above and below */
+}
+
+.canvas {
+  display: block;
+  image-rendering: pixelated;
+}
+
+@media (max-width: 600px) {
+  .edge {
+    height: 84px;
+  }
+}

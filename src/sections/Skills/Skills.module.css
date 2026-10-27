@@ -1,7 +1,12 @@
 .section {
   padding: 6rem 2rem;
+  background: var(--px-s2, transparent);
+}
+
+.section > * {
   max-width: 1100px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .heading {

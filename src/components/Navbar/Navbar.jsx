@@ -11,6 +11,7 @@ export default function Navbar() {
   const [hidden, setHidden] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [overHero, setOverHero] = useState(true);
   const [activeSection, setActiveSection] = useState(NavSection.HOME);
   const location = useLocation();
   const { startTransition } = usePageTransition();
@@ -29,6 +30,7 @@ export default function Navbar() {
       const currentY = window.scrollY;
       setHidden(currentY > lastScrollY && currentY > 100);
       setLastScrollY(currentY);
+      setOverHero(currentY < window.innerHeight - 80);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -86,7 +88,10 @@ export default function Navbar() {
       <a href="#main-content" className={styles.skipLink}>
         {t('nav.skipToContent')}
       </a>
-      <nav className={`${styles.navbar} ${hidden ? styles.hidden : ''}`} aria-label="Main navigation">
+      <nav
+        className={`${styles.navbar} ${hidden ? styles.hidden : ''} ${isOnHome && overHero ? styles.overHero : ''}`}
+        aria-label="Main navigation"
+      >
         <button
           className={styles.logo}
           onClick={() => scrollToSection(NavSection.HOME)}

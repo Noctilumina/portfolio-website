@@ -1,0 +1,8 @@
+.scene {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  image-rendering: pixelated;
+  background: #0d0b24;
+}

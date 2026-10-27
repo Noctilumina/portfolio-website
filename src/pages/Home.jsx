@@ -2,20 +2,21 @@ import Hero from '../sections/Hero/Hero';
 import Projects from '../sections/Projects/Projects';
 import Skills from '../sections/Skills/Skills';
 import Experience from '../sections/Experience/Experience';
-import SectionDivider from '../components/SectionDivider/SectionDivider';
+import DitherEdge from '../components/DitherEdge/DitherEdge';
 import Footer from '../components/Footer/Footer';
+import styles from './Home.module.css';
 
 export default function Home() {
   return (
-    <main id="main-content">
+    <main id="main-content" className={styles.home}>
       <Hero />
-      <SectionDivider color="var(--color-primary)" />
+      <DitherEdge from="--px-ground" to="--px-s1" seed={1} />
       <Projects />
-      <SectionDivider flip color="var(--color-primary)" />
+      <DitherEdge from="--px-s1" to="--px-s2" seed={2} />
       <Skills />
-      <SectionDivider color="var(--color-secondary)" />
+      <DitherEdge from="--px-s2" to="--px-s3" seed={3} />
       <Experience />
-      <SectionDivider flip color="var(--color-secondary)" />
+      <DitherEdge from="--px-s3" to="--px-night" seed={4} />
       <Footer />
     </main>
   );

@@ -6,7 +6,7 @@
 
 .tinted {
   max-width: 100%;
-  background: var(--color-secondary);
+  background: var(--px-s3, var(--color-secondary));
   --tl-text: #1a1a1a;
   --tl-muted: #666666;
   --tl-accent: var(--color-primary);
@@ -27,7 +27,7 @@
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 800;
   margin-bottom: 3rem;
-  color: #ffffff;
+  color: var(--color-text);
 }
 
 .timeline {

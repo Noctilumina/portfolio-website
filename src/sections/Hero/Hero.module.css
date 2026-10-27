@@ -1,62 +1,60 @@
 .hero {
   position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 100vh;
+  height: 100svh;
+  min-height: 520px;
   overflow: hidden;
+  background: #0d0b24;
 }
 
-.content {
-  position: relative;
-  text-align: center;
-  z-index: 1;
-}
-
-.accentBlock {
+/* The name sits in the sky, centred, with a hard one-step pixel shadow. */
+.title {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 110%;
-  height: 70%;
-  background: var(--color-primary);
-  border: 0.25em solid var(--color-border);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-2xl);
-  z-index: -1;
-  transform-origin: left center;
+  left: 0;
+  right: 0;
+  top: 26%;
+  transform: translateY(-50%);
+  z-index: 1;
+  padding: 0 1rem;
+  text-align: center;
+  color: #fffaf2;
+  pointer-events: none;
 }
 
 .name {
-  font-size: clamp(3rem, 10vw, 7rem);
-  font-weight: 700;
-  color: var(--color-surface);
-  line-height: 1;
-  margin-bottom: 0.3em;
-  text-shadow: 0.04em 0.04em 0 var(--color-border);
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
-}
-
-.tagline {
-  font-size: clamp(1rem, 3vw, 1.8rem);
-  font-family: var(--font-heading);
-  color: var(--color-text);
+  font-family: 'Pixelify Sans', var(--font-heading);
   font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
+  font-size: clamp(44px, 8vw, 104px);
+  line-height: 1;
+  text-shadow: 4px 4px 0 #0d0b24;
+  animation: drop 0.5s steps(5) both;
 }
 
-.developerWord {
-  color: var(--color-surface);
+.role {
+  margin-top: 14px;
+  font-family: 'Pixelify Sans', var(--font-heading);
+  font-size: clamp(17px, 2vw, 24px);
+  color: #ffd27a;
+  text-shadow: 2px 2px 0 #0d0b24;
+  animation: drop 0.5s 0.25s steps(5) both;
 }
 
-.decorLine {
-  margin: 1.5em auto 0;
-  width: 4em;
-  height: 0.25em;
-  background: #000000;
-  border: var(--border-thin) solid var(--color-border);
-  transform-origin: left center;
+/* Lands from above in a few hard steps, with a one-step bounce. */
+@keyframes drop {
+  0% { transform: translateY(-24px); opacity: 0; }
+  60% { transform: translateY(4px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@media (max-width: 600px) {
+  .title {
+    top: 34%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .name,
+  .role {
+    animation: none;
+  }
 }
