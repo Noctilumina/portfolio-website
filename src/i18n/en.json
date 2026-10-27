@@ -15,8 +15,8 @@
   },
   "hero": {
     "name": "Iris Peters",
-    "rolePrefix": "Fullstack Senior DevOps",
-    "roleSuffix": "Engineer"
+    "rolePrefix": "Fullstack",
+    "roleSuffix": "Developer"
   },
   "projects": {
     "heading": "Projects",
