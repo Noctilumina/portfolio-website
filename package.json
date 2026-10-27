@@ -13,7 +13,8 @@
     "deploy": "npm run build && gh-pages -d dist",
     "clean": "rm -rf dist node_modules/.vite",
     "fresh": "rm -rf node_modules && npm install",
-    "cache:clear": "rm -rf node_modules/.vite"
+    "cache:clear": "rm -rf node_modules/.vite",
+    "test": "vitest run"
   },
   "dependencies": {
     "@floating-ui/dom": "^1.7.6",
@@ -45,7 +46,9 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.14",
     "globals": "^15.11.0",
+    "jsdom": "^29.1.1",
     "typescript": "^6.0.2",
-    "vite": "^6.0.1"
+    "vite": "^6.0.1",
+    "vitest": "^5.0.5"
   }
 }
